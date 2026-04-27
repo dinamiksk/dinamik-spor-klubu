@@ -163,7 +163,7 @@ class AdminPanel {
     `).join('');
   }
 
-  handleDuyuruForm(form) {
+  async handleDuyuruForm(form) {
     const formData = new FormData(form);
     const id = formData.get('id');
 
@@ -184,6 +184,25 @@ class AdminPanel {
     }
 
     DinamikSK.DB.setData(this.data);
+
+    if (window.FB?.ready) {
+      try {
+        const { db, doc, setDoc, serverTimestamp } = window.FB;
+        await setDoc(doc(db, "duyurular", item.id), {
+          baslik: item.baslik,
+          icerik: item.icerik,
+          tarih: item.tarih,
+          gorunum: item.gorunum,
+          oncelik: item.oncelik,
+          guncellendi: serverTimestamp()
+        });
+        console.log("✅ Firestore'a yazıldı:", item.id);
+      } catch (e) {
+        console.error("❌ Firestore yazma hatası:", e);
+        DinamikSK.Toast.show("Bulut kaydı başarısız (lokalde kaydedildi)", "error");
+      }
+    }
+
     DinamikSK.Toast.show(id ? 'Duyuru güncellendi!' : 'Duyuru eklendi!');
     this.closeModal('modal-duyuru');
     this.renderSection('duyurular');
@@ -759,8 +778,19 @@ class AdminPanel {
     }
   }
 
-  deleteItem(type, id) {
+  async deleteItem(type, id) {
     if (!confirm('Bu kaydı silmek istediğinizden emin misiniz?')) return;
+
+    if (type === 'duyurular' && window.FB?.ready) {
+      try {
+        const { db, doc, deleteDoc } = window.FB;
+        await deleteDoc(doc(db, "duyurular", id));
+        console.log("🗑️ Firestore'dan silindi:", id);
+      } catch (e) {
+        console.error("❌ Firestore silme hatası:", e);
+      }
+    }
+
 
     switch(type) {
       case 'duyurular':

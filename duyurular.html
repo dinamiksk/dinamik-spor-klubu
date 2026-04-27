@@ -1211,9 +1211,10 @@
     </div>
   </footer>
 
+  <script type="module" src="firebase-init.js"></script>
   <script src="main.js"></script>
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', async () => {
 
     /* ── Hero saat / tarih ──────────────────── */
     (function () {
@@ -1232,8 +1233,27 @@
     })();
 
     /* ── Veri ───────────────────────────────── */
-    function getDB() {
-      try { return JSON.parse(localStorage.getItem('dinamikSK_data') || '{}'); } catch(e) { return {}; }
+    async function getDB() {
+      let db = {};
+      try { db = JSON.parse(localStorage.getItem('dinamikSK_data') || '{}'); } catch(e) { db = {}; }
+
+      // Firestore'dan duyuruları çek (varsa) — herkes görsün diye
+      try {
+        if (window.firebaseReady) await window.firebaseReady;
+        if (window.FB?.ready) {
+          const { db: fdb, collection, getDocs } = window.FB;
+          const snap = await getDocs(collection(fdb, "duyurular"));
+          const fsList = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+          const fsIds = new Set(fsList.map(d => d.id));
+          const lsRest = (db.duyurular || []).filter(d => !fsIds.has(d.id));
+          db.duyurular = [...fsList, ...lsRest];
+          console.log(`📡 Firestore'dan ${fsList.length} duyuru yüklendi`);
+        }
+      } catch (e) {
+        console.error("Firestore okuma hatası:", e);
+      }
+
+      return db;
     }
 
     const BOLUM = {
@@ -1504,7 +1524,7 @@
     }
 
     /* ── Init ─────────────────────────────── */
-    const db = getDB();
+    const db = await getDB();
     tumFeed = buildFeed(db);
 
     // Demo veri — sadece hiç içerik yoksa

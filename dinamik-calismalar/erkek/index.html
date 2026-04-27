@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinamik SK Erkek | Yürek. İrade. Kardeşlik.</title>
+  <meta name="description" content="Dinamik SK Erkek — sahanın terinden kampın ateşine, gencin adam olma yolculuğu. Bilek güreşinden gece nöbetine, izcilik mirasıyla yetişen erkek topluluğu.">
+  <meta property="og:title" content="Dinamik SK Erkek — Yürek. İrade. Kardeşlik.">
+  <meta property="og:description" content="Bir gencin adam olma yolculuğu.">
+  <link rel="canonical" href="https://dinamikspor.com/dinamik-calismalar/erkek/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏕️</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+
+  <style>
+    /* Dinamik SK Erkek — Yeşil & Altın */
+    :root {
+      --er-ink:       #0a1410;
+      --er-bg:        #0f1a14;
+      --er-bg-soft:   #142a1c;
+      --er-deep:      #0a1f12;
+      --er-paper:     #f4ecdf;
+
+      --er-green:     #16a34a;
+      --er-green-d:   #0e6b32;
+      --er-green-l:   #4ade80;
+      --er-forest:    #1f3a2c;
+
+      --er-gold:      #c9a351;
+      --er-gold-l:    #e3c378;
+      --er-gold-d:    #8a6f30;
+
+      --er-line:      rgba(201,163,81,.18);
+      --er-muted:     rgba(244,236,223,.6);
+    }
+
+    body { background: var(--er-ink); color: var(--er-paper); margin: 0; font-family: 'DM Sans', sans-serif; }
+
+    .header {
+      background: rgba(10,20,16,.78) !important;
+      border-bottom: 1px solid rgba(244,236,223,.06) !important;
+      backdrop-filter: blur(14px);
+    }
+    .header .nav-link { color: rgba(244,236,223,.7) !important; }
+    .header .nav-link:hover { color: var(--er-paper) !important; }
+    .header .nav-link.active { color: var(--er-gold-l) !important; }
+    .header .logo-text { color: var(--er-paper) !important; }
+    .header .logo-text span { color: var(--er-gold-l) !important; }
+    .header .nav-cta { background: var(--er-gold) !important; color: var(--er-deep) !important; }
+
+    /* HERO */
+    .er-hero {
+      position: relative;
+      min-height: 95vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 140px 24px 100px;
+    }
+    .er-hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1517438476312-10d79c5f6e85?w=1920&q=85&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.35) saturate(1.15) contrast(1.05);
+      animation: erZoom 22s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    @keyframes erZoom { 0% {transform:scale(1.04);} 100%{transform:scale(1.14);} }
+
+    .er-hero__overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(10,20,16,.92) 0%, rgba(31,58,44,.5) 50%, rgba(10,20,16,.95) 100%),
+        radial-gradient(ellipse at 20% 30%, rgba(22,163,74,.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(201,163,81,.14) 0%, transparent 60%);
+      z-index: 1;
+    }
+
+    .er-hero__pattern {
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(201,163,81,.04) 60px, rgba(201,163,81,.04) 61px);
+      z-index: 1;
+    }
+
+    .er-hero__fade {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 25%;
+      background: linear-gradient(to top, var(--er-ink), transparent);
+      z-index: 2;
+    }
+
+    .er-hero__inner {
+      position: relative; z-index: 3;
+      max-width: 1240px; width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .er-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--er-gold-l);
+      text-decoration: none;
+      margin-bottom: 28px;
+      transition: gap 0.3s ease;
+    }
+    .er-hero__back:hover { gap: 14px; }
+    .er-hero__back svg { width: 14px; height: 14px; }
+
+    .er-hero__mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--er-green-l);
+      margin-bottom: 26px;
+    }
+    .er-hero__mark::before { content: ''; width: 40px; height: 1px; background: var(--er-green-l); }
+
+    .er-hero__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin: 0 0 28px;
+      color: var(--er-paper);
+      text-shadow: 0 6px 50px rgba(0,0,0,.5);
+    }
+    .er-hero__title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--er-gold-l);
+      display: block;
+    }
+
+    .er-hero__lead {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: rgba(244,236,223,.78);
+      max-width: 520px;
+      margin: 0 0 36px;
+    }
+    .er-hero__lead strong { color: var(--er-gold-l); font-weight: 600; }
+
+    .er-cta {
+      display: flex; gap: 16px; flex-wrap: wrap;
+    }
+    .er-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .er-btn--gold {
+      background: var(--er-gold);
+      color: var(--er-deep);
+      box-shadow: 0 10px 32px rgba(201,163,81,.25);
+    }
+    .er-btn--gold:hover { background: var(--er-gold-l); transform: translateY(-2px); }
+    .er-btn--ghost { background: transparent; color: var(--er-paper); border-color: rgba(244,236,223,.28); }
+    .er-btn--ghost:hover { border-color: var(--er-gold-l); color: var(--er-gold-l); }
+
+    /* Hero showcase (sağ taraf) */
+    .er-hero__showcase { position: relative; aspect-ratio: 3/4; }
+    .er-hero__card {
+      position: absolute;
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--er-bg-soft);
+      border: 1px solid var(--er-line);
+      box-shadow: 0 30px 60px rgba(0,0,0,.55);
+    }
+    .er-hero__card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .er-hero__card--1 { width: 70%; height: 70%; top: 0; right: 0; transform: rotate(2deg); }
+    .er-hero__card--2 { width: 50%; height: 55%; bottom: 0; left: 0; transform: rotate(-3deg); }
+    .er-hero__stat {
+      position: absolute;
+      bottom: 8%; right: 6%;
+      background: var(--er-green);
+      color: #fff;
+      padding: 18px 24px;
+      border-radius: 2px;
+      box-shadow: 0 15px 40px rgba(22,163,74,.4);
+      z-index: 2;
+    }
+    .er-hero__stat b {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+    .er-hero__stat span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* SECTIONS */
+    .er-section { padding: 100px 0; background: var(--er-bg); }
+    .er-section--alt { background: linear-gradient(180deg, var(--er-bg) 0%, var(--er-deep) 100%); }
+    .er-section__container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+    .er-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--er-gold-l);
+      margin-bottom: 18px;
+    }
+    .er-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--er-gold); }
+
+    .er-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.2rem, 4.6vw, 3.8rem);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--er-paper);
+      margin: 0 0 22px;
+    }
+    .er-title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--er-gold-l);
+    }
+    .er-lead {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(244,236,223,.7);
+      max-width: 600px;
+    }
+
+    /* PILLARS */
+    .er-pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin-top: 52px;
+    }
+    .er-pillar {
+      background: rgba(244,236,223,.025);
+      border: 1px solid var(--er-line);
+      padding: 36px 28px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .er-pillar::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 60px; height: 2px;
+      background: var(--er-green-l);
+    }
+    .er-pillar:hover {
+      background: rgba(22,163,74,.06);
+      border-color: rgba(22,163,74,.35);
+      transform: translateY(-6px);
+    }
+    .er-pillar__icon {
+      width: 52px; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(22,163,74,.12);
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    .er-pillar__icon svg { width: 24px; height: 24px; stroke: var(--er-green-l); fill: none; stroke-width: 1.6; }
+    .er-pillar h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      color: var(--er-paper);
+      margin: 0 0 12px;
+    }
+    .er-pillar p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: rgba(244,236,223,.6);
+      margin: 0;
+    }
+
+    /* PROGRAM GRID */
+    .er-programs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+      margin-top: 52px;
+      background: rgba(201,163,81,.1);
+      border: 1px solid var(--er-line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .er-program {
+      background: rgba(15,26,20,.96);
+      padding: 36px 32px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .er-program::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0; height: 2px;
+      background: var(--er-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .er-program:hover { background: rgba(22,163,74,.08); }
+    .er-program:hover::after { transform: scaleX(1); }
+
+    .er-program__num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.6rem;
+      color: var(--er-gold-l);
+      opacity: 0.55;
+      margin-bottom: 10px;
+    }
+    .er-program__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      color: var(--er-paper);
+      margin: 0 0 10px;
+    }
+    .er-program__desc {
+      font-size: 0.9rem;
+      color: rgba(244,236,223,.55);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ACTIVITIES */
+    .er-activities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .er-activity {
+      background: rgba(244,236,223,.025);
+      border: 1px solid var(--er-line);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .er-activity:hover { transform: translateY(-4px); border-color: rgba(201,163,81,.4); }
+    .er-activity__img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .er-activity__body { padding: 22px 24px 26px; }
+    .er-activity__body h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      color: var(--er-paper);
+      margin: 0 0 8px;
+    }
+    .er-activity__body p { font-size: 0.88rem; color: rgba(244,236,223,.55); margin: 0; line-height: 1.6; }
+
+    /* QUOTE */
+    .er-quote {
+      background: linear-gradient(135deg, var(--er-bg-soft) 0%, var(--er-forest) 100%);
+      border: 1px solid var(--er-line);
+      border-radius: 8px;
+      padding: 80px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .er-quote::before {
+      content: '"';
+      position: absolute;
+      top: -32px; left: 40px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14rem;
+      color: var(--er-gold-l);
+      opacity: 0.12;
+      line-height: 1;
+    }
+    .er-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.8vw, 2.1rem);
+      line-height: 1.55;
+      color: var(--er-paper);
+      max-width: 820px;
+      margin: 0 auto 24px;
+    }
+    .er-quote-author {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--er-gold-l);
+      font-weight: 600;
+    }
+
+    /* CTA */
+    .er-cta-strip {
+      background: linear-gradient(135deg, rgba(22,163,74,.1), rgba(201,163,81,.06)), var(--er-bg-soft);
+      border: 1px solid var(--er-gold);
+      border-radius: 8px;
+      padding: 56px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .er-cta-strip h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+      text-transform: uppercase;
+      color: var(--er-paper);
+      margin: 0 0 8px;
+    }
+    .er-cta-strip h3 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      color: var(--er-gold-l);
+    }
+    .er-cta-strip p { color: rgba(244,236,223,.65); margin: 0; max-width: 480px; font-size: 0.92rem; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.d1 { transition-delay: 0.12s; }
+    .reveal.d2 { transition-delay: 0.24s; }
+    .reveal.d3 { transition-delay: 0.36s; }
+    .reveal.d4 { transition-delay: 0.48s; }
+
+    /* FOOTER */
+    .footer.er-footer { background: var(--er-ink); border-top: 1px solid var(--er-line); }
+    .er-footer .footer-title { color: var(--er-gold-l); }
+
+    @media (max-width: 1024px) {
+      .er-hero__inner { grid-template-columns: 1fr; gap: 56px; }
+      .er-hero__showcase { max-width: 420px; margin: 0 auto; }
+    }
+    @media (max-width: 768px) {
+      .er-hero { padding: 120px 20px 80px; }
+      .er-hero__title { font-size: clamp(2.4rem, 11vw, 4rem); }
+      .er-section { padding: 72px 0; }
+      .er-cta-strip { flex-direction: column; align-items: flex-start; padding: 36px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo">
+        <img src="../../assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo">
+        <span class="logo-text">Dinamik <span>SK</span></span>
+      </a>
+      <nav class="nav">
+        <a href="../../index.html" class="nav-link">Ana Sayfa</a>
+        <a href="../../dinamik-calismalar.html" class="nav-link active">Dinamik Çalışmalar</a>
+        <a href="../../sporlar.html" class="nav-link">Sporlar</a>
+        <a href="../../vefa.html" class="nav-link">Vefa</a>
+        <a href="../../orman.html" class="nav-link">Hatıra Ormanı</a>
+        <a href="../../duyurular.html" class="nav-link">Duyurular</a>
+        <a href="../../iletisim.html" class="nav-link">İletişim</a>
+        <a href="../../admin.html" class="nav-cta">Yönetim</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="er-hero">
+    <div class="er-hero__bg"></div>
+    <div class="er-hero__overlay"></div>
+    <div class="er-hero__pattern"></div>
+    <div class="er-hero__fade"></div>
+
+    <div class="er-hero__inner">
+      <div>
+        <a href="../../dinamik-calismalar.html" class="er-hero__back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Dinamik Çalışmalar
+        </a>
+        <div class="er-hero__mark">Dinamik SK Erkek</div>
+        <h1 class="er-hero__title">
+          Yürek.<br>
+          İrade.<br>
+          <em>Kardeşlik.</em>
+        </h1>
+        <p class="er-hero__lead">
+          Sahanın <strong>terinde</strong>, kampın <strong>ateşinde</strong>, gece nöbetinin sessizliğinde — bir gencin <strong>adam olma</strong> yolculuğu. Burada güç bilekte değil, omurgada aranır.
+        </p>
+        <div class="er-cta">
+          <a href="../../iletisim.html" class="er-btn er-btn--gold">
+            Aramıza Katıl
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#program" class="er-btn er-btn--ghost">Programı İncele</a>
+        </div>
+      </div>
+
+      <div class="er-hero__showcase">
+        <div class="er-hero__card er-hero__card--1">
+          <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800&q=85" alt="Erkek sporcu">
+        </div>
+        <div class="er-hero__card er-hero__card--2">
+          <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&q=85" alt="Antrenman">
+        </div>
+        <div class="er-hero__stat">
+          <b>180+</b>
+          <span>Erkek Sporcu</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SÜTUNLAR -->
+  <section class="er-section">
+    <div class="er-section__container">
+      <div class="reveal" style="max-width: 720px;">
+        <div class="er-eyebrow">Üç Sütun</div>
+        <h2 class="er-title">Bir Adamın <em>İskeleti.</em></h2>
+        <p class="er-lead">Dinamik SK Erkek'te yetişen her gencin omuzlarında üç ağırlık var: söz, sözünden dönmemek ve sözünün sahibi olmak.</p>
+      </div>
+
+      <div class="er-pillars">
+        <div class="er-pillar reveal d1">
+          <div class="er-pillar__icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>İman</h3>
+          <p>Önce kalp yetiştirilir; sonra kol. İnancı diri olan gencin, her zorlukta sığınacağı bir adresi vardır.</p>
+        </div>
+        <div class="er-pillar reveal d2">
+          <div class="er-pillar__icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Disiplin</h3>
+          <p>Sahaya zamanında gelmek, sözünü tutmak, antrenman bitmeden çıkmamak. Ufak gibi görünen bu büyük şeyler.</p>
+        </div>
+        <div class="er-pillar reveal d3">
+          <div class="er-pillar__icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Kardeşlik</h3>
+          <p>Birbirine sırtını döndürmeyen bir abi-kardeş düzeni. Her yeni gelen, eskinin omzunda yükselir.</p>
+        </div>
+        <div class="er-pillar reveal d4">
+          <div class="er-pillar__icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Liyakat</h3>
+          <p>Hak edenin yeri vardır. Sözle değil, alın teriyle kazanılan bir mevkiyle yetişir genç.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM -->
+  <section class="er-section er-section--alt" id="program">
+    <div class="er-section__container">
+      <div class="reveal" style="text-align: center; max-width: 720px; margin: 0 auto;">
+        <div class="er-eyebrow" style="justify-content: center;">Çalışma Programı</div>
+        <h2 class="er-title">Saha. <em>Kamp.</em> Ocak.</h2>
+        <p class="er-lead" style="margin: 0 auto;">Üç ortam. Üç farklı imtihan. Üç farklı pişme alanı.</p>
+      </div>
+
+      <div class="er-programs">
+        <div class="er-program reveal d1">
+          <div class="er-program__num">01.</div>
+          <h3 class="er-program__title">Bilek Güreşi</h3>
+          <p class="er-program__desc">Masa başında karşı karşıya gelmek; hem teknik, hem mental dayanıklılık. Kazanmaktan önce — yenilmeyi öğrenmek.</p>
+        </div>
+        <div class="er-program reveal d2">
+          <div class="er-program__num">02.</div>
+          <h3 class="er-program__title">Dalgıçlık</h3>
+          <p class="er-program__desc">Mavinin derinliğinde nefesi tutmak. Akdeniz'in dibinde sabrın, panik anında soğukkanlılığın okulu.</p>
+        </div>
+        <div class="er-program reveal d3">
+          <div class="er-program__num">03.</div>
+          <h3 class="er-program__title">İzcilik &amp; Kamp</h3>
+          <p class="er-program__desc">Doğanın içinde, yıldızların altında — pratik beceri, birlik şuuru, hayatta kalma terbiyesi.</p>
+        </div>
+        <div class="er-program reveal d4">
+          <div class="er-program__num">04.</div>
+          <h3 class="er-program__title">Sohbet Halkaları</h3>
+          <p class="er-program__desc">Antrenmandan sonra çay başı. Büyüklerle, akranlarla; hayatın, sözün, niyetin konuşulduğu meydan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAALİYETLER -->
+  <section class="er-section">
+    <div class="er-section__container">
+      <div class="reveal" style="max-width: 720px; margin-bottom: 8px;">
+        <div class="er-eyebrow">Faaliyetler</div>
+        <h2 class="er-title">Dört Duvarın <em>Dışında.</em></h2>
+        <p class="er-lead">Antrenman bittiğinde program başlar. Kamp ateşinde, fidan dikiminde, mahallede — hep birlikteyiz.</p>
+      </div>
+
+      <div class="er-activities">
+        <div class="er-activity reveal d1">
+          <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=85" alt="Yaz Kampı" class="er-activity__img">
+          <div class="er-activity__body">
+            <h4>Yaz Kampı</h4>
+            <p>Toros yaylasında bir hafta — çadır, ateş, sabah sporu.</p>
+          </div>
+        </div>
+        <div class="er-activity reveal d2">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=85" alt="Doğa Yürüyüşü" class="er-activity__img">
+          <div class="er-activity__body">
+            <h4>Doğa Yürüyüşü</h4>
+            <p>Antalya'nın patikalarında, omuz omuza yürünen rotalar.</p>
+          </div>
+        </div>
+        <div class="er-activity reveal d3">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=85" alt="Fidan Dikimi" class="er-activity__img">
+          <div class="er-activity__body">
+            <h4>Fidan Dikimi</h4>
+            <p>Hatıra Ormanı'na her sezon yeni bir hatıra.</p>
+          </div>
+        </div>
+        <div class="er-activity reveal d4">
+          <img src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=600&q=85" alt="Sohbet Halkası" class="er-activity__img">
+          <div class="er-activity__body">
+            <h4>Sohbet Halkası</h4>
+            <p>Cuma akşamları çay ikramıyla başlayan büyük buluşmalar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="er-section er-section--alt">
+    <div class="er-section__container">
+      <div class="er-quote reveal">
+        <p>"Bir genci adam etmek; bir <em>ömrü kazanmaktır.</em> Burada bilek güreşi sadece bahanedir — esas dert, bir sözün arkasında durabilen bir nesil yetiştirmektir."</p>
+        <div class="er-quote-author">— Dinamik SK Erkek</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="er-section">
+    <div class="er-section__container">
+      <div class="er-cta-strip reveal">
+        <div>
+          <h3>Bu <em>Yola</em> Çıkmak Var mı?</h3>
+          <p>Ücretsiz deneme antrenmanı için bize ulaş. Önce gel, gör; sonra karar ver.</p>
+        </div>
+        <a href="../../iletisim.html" class="er-btn er-btn--gold">
+          Başvuru Yap
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer er-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../../index.html" class="logo">
+            <img src="../../assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height: 40px;">
+            <span class="logo-text">Dinamik <span style="color: var(--er-gold-l);">SK</span></span>
+          </a>
+          <p style="margin-top: 16px;">İman. Disiplin. Spor. 2010'dan beri Antalya'da gençleri güçlü bireyler olarak yetiştiriyoruz.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Çalışmalarımız</h4>
+          <div class="footer-links">
+            <a href="../../dinamik-calismalar.html">Dinamik Çalışmalar</a>
+            <a href="../../dinamik-calismalar/erkek/index.html">Dinamik SK Erkek</a>
+            <a href="../../dinamik-calismalar/kiz/index.html">Dinamik SK Kız</a>
+            <a href="../../sporlar.html">Sporlar</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Hızlı Linkler</h4>
+          <div class="footer-links">
+            <a href="../../index.html">Ana Sayfa</a>
+            <a href="../../vefa.html">Vefa</a>
+            <a href="../../orman.html">Hatıra Ormanı</a>
+            <a href="../../iletisim.html">İletişim</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Sosyal Medya</h4>
+          <div class="footer-social">
+            <a href="https://instagram.com/dinamikspor" target="_blank" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Dinamik Spor Kulübü. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    });
+  </script>
+</body>
+</html>

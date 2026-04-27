@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hatıra Ormanı | Dinamik Spor Kulübü</title>
+  <meta name="description" content="Geleceği yeşertiyoruz. Bağış yapın, fidan dikin, Hatıra Ormanı'mıza katkıda bulunun.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌲</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Hatıra Ormanı - Soft Orman & Altın Tema */
+    :root {
+      --orman-bg: #0a1a0f;
+      --orman-surface: #122414;
+      --orman-card: rgba(255,255,255,0.03);
+      --orman-border: rgba(200,168,75,0.15);
+      --orman-gold: #c8a84b;
+      --orman-gold-light: #e8c86a;
+      --orman-green: #2d5a2d;
+
+      /* Hero-özel soft tonlar */
+      --hero-cream: #f4efdf;
+      --hero-sage: #d9e3cc;
+      --hero-moss: #365d3a;
+      --hero-deep: #1f3d22;
+      --hero-bark: #6e5a35;
+      --hero-gold: #b08b3a;
+      --hero-gold-soft: #d4a94d;
+    }
+
+    body {
+      background: var(--orman-bg);
+    }
+
+    /* Hero — Soft Orman */
+    .orman-hero {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 140px 24px 80px;
+      background-color: var(--hero-cream);
+    }
+
+    .orman-hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(180deg, rgba(244,239,223,0.05) 0%, rgba(244,239,223,0.0) 40%, rgba(244,239,223,0.1) 100%),
+        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=85');
+      background-size: cover;
+      background-position: center 45%;
+      filter: brightness(0.95) saturate(1.05) contrast(1);
+      z-index: 0;
+    }
+
+    .orman-hero__bg-blur {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&q=60');
+      background-size: cover;
+      background-position: center;
+      filter: blur(2px) brightness(0.9);
+      opacity: 0.18;
+      mix-blend-mode: screen;
+      z-index: 0;
+    }
+
+    .orman-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(244,239,223,0.35) 0%, rgba(244,239,223,0.5) 45%, rgba(244,239,223,0.82) 100%),
+        radial-gradient(ellipse at 22% 28%, rgba(255,228,160,0.45) 0%, transparent 50%),
+        radial-gradient(ellipse at 78% 72%, rgba(140,185,130,0.3) 0%, transparent 60%);
+      z-index: 1;
+    }
+
+    .orman-hero__fog {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 55%;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(244,239,223,0.55) 0%, transparent 70%),
+        linear-gradient(to top, rgba(244,239,223,0.9) 0%, rgba(244,239,223,0.4) 45%, transparent 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Orman sırası — alt silueti */
+    .orman-treeline {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 180px;
+      z-index: 3;
+      pointer-events: none;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 180' preserveAspectRatio='none'><g fill='%231f3d22' opacity='0.55'><polygon points='0,180 40,120 60,150 90,80 120,140 150,100 180,160 210,90 250,150 280,110 320,70 360,140 400,95 440,160 480,100 520,130 560,85 600,150 640,110 680,75 720,145 760,95 800,155 840,110 880,80 920,140 960,100 1000,150 1040,95 1080,130 1120,85 1160,145 1200,110 1240,75 1280,140 1320,100 1360,155 1400,110 1440,135 1440,180'/></g><g fill='%23365d3a' opacity='0.9'><polygon points='0,180 25,150 55,170 80,120 110,165 145,130 180,175 215,135 250,170 290,145 325,115 360,170 395,140 430,175 465,150 500,165 535,125 570,170 605,145 640,120 680,170 715,135 750,175 790,145 820,115 855,170 890,135 925,170 965,130 1000,165 1035,140 1075,170 1110,140 1145,115 1180,170 1215,135 1250,175 1290,140 1320,165 1360,140 1400,170 1440,150 1440,180'/></g></svg>") bottom center / 100% 100% no-repeat;
+    }
+
+    /* Işık huzmeleri */
+    .orman-rays {
+      position: absolute;
+      top: -20%;
+      left: 15%;
+      width: 35%;
+      height: 120%;
+      background:
+        linear-gradient(100deg, transparent 40%, rgba(255,235,160,0.22) 50%, transparent 60%),
+        linear-gradient(110deg, transparent 45%, rgba(255,235,160,0.12) 52%, transparent 58%);
+      filter: blur(2px);
+      z-index: 2;
+      pointer-events: none;
+      transform: rotate(-4deg);
+    }
+
+    /* Alt bölümlere soft geçiş */
+    .orman-hero::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, var(--orman-bg));
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .orman-hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .orman-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(110,90,53,0.25);
+      color: var(--hero-moss);
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(31,61,34,0.08);
+    }
+
+    .orman-badge svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .orman-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #5a9a4a;
+      box-shadow: 0 0 10px rgba(90,154,74,0.6);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    .orman-hero h1 {
+      font-family: var(--font-display-alt);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      color: var(--hero-deep);
+      margin-bottom: 24px;
+      letter-spacing: 0.01em;
+      line-height: 1.05;
+      text-shadow: 0 2px 24px rgba(244,239,223,0.6);
+    }
+
+    .orman-hero h1 span {
+      color: var(--hero-gold);
+      font-style: italic;
+      font-family: var(--font-display), serif;
+    }
+
+    .orman-hero-lead {
+      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+      color: rgba(31,61,34,0.8);
+      max-width: 640px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .orman-hero-lead strong {
+      color: var(--hero-gold);
+      font-weight: 700;
+    }
+
+    /* İlerleme çubuğu */
+    .orman-progress {
+      max-width: 540px;
+      margin: 0 auto 40px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(200,168,75,0.25);
+      border-radius: 12px;
+      padding: 20px 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .orman-progress-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+
+    .orman-progress-label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .orman-progress-count {
+      font-family: var(--font-display-alt);
+      font-size: 1.1rem;
+      color: var(--orman-gold);
+    }
+
+    .orman-progress-count strong {
+      font-size: 1.5rem;
+      color: white;
+      margin-right: 4px;
+    }
+
+    .orman-progress-bar {
+      height: 8px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .orman-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #4ade80 0%, var(--orman-gold) 100%);
+      border-radius: 999px;
+      width: 0;
+      transition: width 2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 0 15px rgba(200,168,75,0.5);
+    }
+
+    .orman-progress-note {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* Hero CTA */
+    .orman-hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-orman-primary,
+    .btn-orman-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-orman-primary {
+      background: linear-gradient(135deg, var(--hero-moss) 0%, #4a7a4e 100%);
+      color: var(--hero-cream);
+      box-shadow: 0 10px 30px rgba(31,61,34,0.28), inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+
+    .btn-orman-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(31,61,34,0.38), inset 0 1px 0 rgba(255,255,255,0.15);
+    }
+
+    .btn-orman-secondary {
+      background: rgba(255,255,255,0.55);
+      color: var(--hero-deep);
+      border: 1px solid rgba(31,61,34,0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-orman-secondary:hover {
+      background: rgba(255,255,255,0.8);
+      border-color: var(--hero-gold);
+      color: var(--hero-gold);
+    }
+
+    /* Scroll indicator */
+    .orman-scroll {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      animation: scroll-bounce 2.5s ease-in-out infinite;
+    }
+
+    .orman-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, rgba(200,168,75,0.6));
+    }
+
+    @keyframes scroll-bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+      50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+    }
+
+    /* Yaprak partikülleri */
+    .orman-leaves {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .orman-leaf {
+      position: absolute;
+      top: -5%;
+      font-size: 1.4rem;
+      opacity: 0;
+      animation: leaf-fall linear infinite;
+    }
+
+    @keyframes leaf-fall {
+      0% {
+        transform: translateY(-5vh) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: 0.7; }
+      90% { opacity: 0.5; }
+      100% {
+        transform: translateY(105vh) translateX(60px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    /* Particles */
+    .orman-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .orman-particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: radial-gradient(circle, rgba(200,168,75,0.6) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: ormanFloat 8s ease-in-out infinite;
+    }
+
+    @keyframes ormanFloat {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.2;
+      }
+      50% {
+        transform: translateY(-40px) translateX(10px);
+        opacity: 0.5;
+      }
+    }
+
+    /* Section */
+    .orman-section {
+      background: var(--orman-bg);
+      padding: 80px 0;
+    }
+
+    .orman-section-alt {
+      background: var(--orman-surface);
+    }
+
+    .orman-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orman-gold);
+      margin-bottom: 12px;
+    }
+
+    .orman-tag::before,
+    .orman-tag::after {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--orman-gold);
+      opacity: 0.5;
+    }
+
+    /* About Grid */
+    .orman-about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .orman-about-img {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--orman-border);
+    }
+
+    .orman-about-img img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    .orman-about-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: white;
+      margin-bottom: 24px;
+    }
+
+    .orman-about-text p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .orman-highlight {
+      color: var(--orman-gold) !important;
+      font-style: italic;
+    }
+
+    /* Stats Grid */
+    .orman-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(200,168,75,0.08);
+      border: 1px solid var(--orman-border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 48px;
+    }
+
+    .orman-stat {
+      background: var(--orman-card);
+      padding: 40px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .orman-stat:hover {
+      background: rgba(200,168,75,0.06);
+    }
+
+    .orman-stat-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(200,168,75,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .orman-stat-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--orman-gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .orman-stat-num {
+      font-family: var(--font-display-alt);
+      font-size: 3rem;
+      color: var(--orman-gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .orman-stat-label {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* Donation Cards */
+    .orman-donation {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .orman-card {
+      background: var(--orman-card);
+      border: 1px solid var(--orman-border);
+      border-radius: 8px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .orman-card:hover {
+      border-color: rgba(200,168,75,0.3);
+    }
+
+    .orman-card-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: white;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .orman-card-title svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--orman-gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .orman-info-box {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(200,168,75,0.15);
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .orman-info-row {
+      margin-bottom: 16px;
+    }
+
+    .orman-info-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .orman-info-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .orman-info-value {
+      font-size: 1rem;
+      color: white;
+    }
+
+    .orman-info-value.mono {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+    }
+
+    /* Form */
+    .orman-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .orman-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .orman-form-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .orman-form-input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(200,168,75,0.2);
+      border-radius: 6px;
+      padding: 12px 16px;
+      color: white;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .orman-form-input:focus {
+      outline: none;
+      border-color: var(--orman-gold);
+      background: rgba(200,168,75,0.05);
+    }
+
+    .orman-form-input::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+
+    .orman-form textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .btn-orman {
+      background: var(--orman-gold);
+      color: var(--orman-bg);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .btn-orman:hover {
+      background: var(--orman-gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* CTA */
+    .orman-cta {
+      background: rgba(200,168,75,0.08);
+      border: 1px solid var(--orman-gold);
+      border-radius: 8px;
+      padding: 48px;
+      text-align: center;
+    }
+
+    .orman-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .orman-cta h2 span {
+      color: var(--orman-gold);
+    }
+
+    .orman-cta p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 500px;
+      margin: 0 auto 24px;
+    }
+
+    /* Footer */
+    .orman-footer {
+      background: var(--orman-bg);
+      border-top: 1px solid var(--orman-border);
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal.delay-1 { transition-delay: 0.12s; }
+    .reveal.delay-2 { transition-delay: 0.24s; }
+    .reveal.delay-3 { transition-delay: 0.36s; }
+
+    /* ============ HİKAYEMİZ — OHAA ============ */
+    .orman-story {
+      background: var(--orman-bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .orman-story-banner {
+      position: relative;
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 120px 24px;
+    }
+
+    .orman-story-banner__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1920&q=85');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.48) saturate(1.15);
+      transform: scale(1.06);
+      transition: transform 12s ease-out;
+    }
+
+    .orman-story-banner.visible .orman-story-banner__bg {
+      transform: scale(1);
+    }
+
+    .orman-story-banner__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(10,26,15,0.65) 0%, rgba(10,26,15,0.35) 50%, rgba(10,26,15,0.92) 100%),
+        radial-gradient(ellipse at 50% 45%, transparent 25%, rgba(10,26,15,0.7) 100%);
+    }
+
+    .orman-story-banner__grain {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.8 0 0 0 0 0.7 0 0 0 0 0.3 0 0 0 0.2 0'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='0.4'/></svg>");
+      opacity: 0.25;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+
+    .orman-story-banner__content {
+      position: relative;
+      max-width: 960px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .orman-story-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--orman-gold-light);
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+
+    .orman-story-eyebrow::before,
+    .orman-story-eyebrow::after {
+      content: '';
+      width: 56px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.5;
+    }
+
+    .orman-story-banner-title {
+      font-family: var(--font-display-alt);
+      font-size: clamp(2.6rem, 7.5vw, 6rem);
+      line-height: 1.04;
+      color: var(--hero-cream);
+      margin-bottom: 44px;
+      text-shadow: 0 6px 50px rgba(0,0,0,0.55);
+      letter-spacing: 0.005em;
+    }
+
+    .orman-story-banner-title em {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--orman-gold-light);
+      font-weight: 400;
+    }
+
+    .orman-story-banner-line {
+      width: 1px;
+      height: 90px;
+      background: linear-gradient(to bottom, var(--orman-gold) 0%, transparent 100%);
+      margin: 0 auto;
+      opacity: 0.7;
+    }
+
+    /* 3 Bölüm */
+    .orman-chapters {
+      padding: 140px 0 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 160px;
+      position: relative;
+    }
+
+    .orman-chapters::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 60px;
+      bottom: 60px;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(200,168,75,0.2) 15%, rgba(200,168,75,0.2) 85%, transparent);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .orman-chapter {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .orman-chapter--flip {
+      direction: rtl;
+    }
+
+    .orman-chapter--flip > * {
+      direction: ltr;
+    }
+
+    .orman-chapter__img-wrap {
+      position: relative;
+    }
+
+    .orman-chapter__num {
+      position: absolute;
+      top: -60px;
+      left: -30px;
+      font-family: var(--font-display-alt);
+      font-size: clamp(7rem, 14vw, 12rem);
+      color: rgba(200,168,75,0.1);
+      line-height: 1;
+      z-index: 0;
+      pointer-events: none;
+      letter-spacing: -0.02em;
+    }
+
+    .orman-chapter--flip .orman-chapter__num {
+      left: auto;
+      right: -30px;
+    }
+
+    .orman-chapter__img {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      z-index: 1;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(200,168,75,0.12);
+    }
+
+    .orman-chapter__img img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      transition: transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: block;
+    }
+
+    .orman-chapter:hover .orman-chapter__img img {
+      transform: scale(1.05);
+    }
+
+    .orman-chapter__img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(10,26,15,0.6) 100%);
+      pointer-events: none;
+    }
+
+    .orman-chapter__badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(10,26,15,0.82);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(200,168,75,0.6);
+      padding: 10px 18px;
+      border-radius: 4px;
+      color: var(--orman-gold-light);
+      font-family: var(--font-sans);
+      font-size: 0.66rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .orman-chapter__body {
+      position: relative;
+      z-index: 2;
+    }
+
+    .orman-chapter__eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--orman-gold);
+      margin-bottom: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .orman-chapter__eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .orman-chapter__title {
+      font-family: var(--font-display-alt);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      line-height: 1.08;
+      color: white;
+      margin-bottom: 28px;
+      letter-spacing: 0.005em;
+    }
+
+    .orman-chapter__title em {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--orman-gold-light);
+      font-weight: 400;
+    }
+
+    .orman-chapter__text p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.88;
+      margin-bottom: 18px;
+    }
+
+    .orman-chapter__text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .orman-chapter__text strong {
+      color: var(--orman-gold);
+      font-weight: 600;
+    }
+
+    /* Pull Quote */
+    .orman-story-quote {
+      max-width: 960px;
+      margin: 0 auto 140px;
+      text-align: center;
+      padding: 0 32px;
+      position: relative;
+    }
+
+    .orman-story-quote::before {
+      content: '"';
+      position: absolute;
+      top: -90px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 18rem;
+      line-height: 1;
+      color: rgba(200,168,75,0.1);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .orman-story-quote blockquote {
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+      line-height: 1.45;
+      color: var(--hero-cream);
+      margin: 0 0 36px;
+      letter-spacing: 0.005em;
+    }
+
+    .orman-story-quote blockquote em {
+      color: var(--orman-gold-light);
+    }
+
+    .orman-story-quote cite {
+      font-family: var(--font-sans);
+      font-style: normal;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(200,168,75,0.85);
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .orman-story-quote cite::before {
+      content: '';
+      width: 48px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    /* Before / After Impact */
+    .orman-impact {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 1120px;
+      margin: 0 auto 80px;
+    }
+
+    .orman-impact__col {
+      position: relative;
+    }
+
+    .orman-impact__img {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      aspect-ratio: 4/3;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(200,168,75,0.1);
+    }
+
+    .orman-impact__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .orman-impact__col--before .orman-impact__img {
+      filter: grayscale(0.3) brightness(0.85);
+    }
+
+    .orman-impact__info {
+      padding: 24px 0 0;
+      text-align: center;
+    }
+
+    .orman-impact__year {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--orman-gold);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .orman-impact__count {
+      font-family: var(--font-display-alt);
+      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+      color: white;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .orman-impact__label {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.58);
+    }
+
+    .orman-impact__arrow {
+      color: var(--orman-gold);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .orman-impact__arrow-line {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--orman-gold), transparent);
+    }
+
+    .orman-impact__arrow svg {
+      width: 28px;
+      height: 28px;
+      stroke-width: 1.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .orman-chapter,
+      .orman-impact {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .orman-chapter--flip {
+        direction: ltr;
+      }
+
+      .orman-chapters {
+        gap: 100px;
+        padding: 80px 0;
+      }
+
+      .orman-chapters::before {
+        display: none;
+      }
+
+      .orman-impact__arrow {
+        flex-direction: row;
+      }
+
+      .orman-impact__arrow-line {
+        width: 60px;
+      }
+
+      .orman-story-quote::before {
+        font-size: 10rem;
+        top: -50px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .orman-about,
+      .orman-donation,
+      .orman-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .orman-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .orman-cta {
+        padding: 32px 24px;
+      }
+
+      .orman-story-banner {
+        min-height: 70vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" style="background: rgba(5,15,5,0.95);">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo">
+        <span class="logo-text">Dinamik <span>SK</span></span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Ana Sayfa</a>
+        <a href="dinamik-calismalar.html" class="nav-link">Dinamik Çalışmalar</a>
+        <a href="sporlar.html" class="nav-link">Sporlar</a>
+        <a href="vefa.html" class="nav-link">Vefa</a>
+        <a href="orman.html" class="nav-link active">Hatıra Ormanı</a>
+        <a href="duyurular.html" class="nav-link">Duyurular</a>
+        <a href="iletisim.html" class="nav-link">İletişim</a>
+        <a href="admin.html" class="nav-cta">Yönetim</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero — Sinematik Orman -->
+  <section class="orman-hero">
+    <div class="orman-hero__bg"></div>
+    <div class="orman-hero__bg-blur"></div>
+    <div class="orman-hero__overlay"></div>
+    <div class="orman-rays"></div>
+
+    <!-- Düşen yapraklar -->
+    <div class="orman-leaves">
+      <span class="orman-leaf" style="left: 6%; animation-duration: 14s; animation-delay: 0s;">🍃</span>
+      <span class="orman-leaf" style="left: 14%; animation-duration: 18s; animation-delay: 3s;">🌿</span>
+      <span class="orman-leaf" style="left: 22%; animation-duration: 16s; animation-delay: 6s;">🍃</span>
+      <span class="orman-leaf" style="left: 32%; animation-duration: 20s; animation-delay: 2s;">🌱</span>
+      <span class="orman-leaf" style="left: 42%; animation-duration: 15s; animation-delay: 8s;">🍂</span>
+      <span class="orman-leaf" style="left: 54%; animation-duration: 19s; animation-delay: 4s;">🌿</span>
+      <span class="orman-leaf" style="left: 64%; animation-duration: 17s; animation-delay: 10s;">🍃</span>
+      <span class="orman-leaf" style="left: 74%; animation-duration: 16s; animation-delay: 1s;">🌱</span>
+      <span class="orman-leaf" style="left: 84%; animation-duration: 21s; animation-delay: 7s;">🍂</span>
+      <span class="orman-leaf" style="left: 94%; animation-duration: 18s; animation-delay: 12s;">🌿</span>
+    </div>
+
+    <div class="orman-hero__fog"></div>
+    <div class="orman-treeline"></div>
+
+    <div class="orman-hero-content">
+      <div class="orman-badge">
+        <span class="orman-badge-dot"></span>
+        Canlı Bağış Kampanyası — 2020'den Beri
+      </div>
+
+      <h1>Her Fidan, <span>Bir Vefa.</span><br>Her Bağış, Bir <span>Miras.</span></h1>
+
+      <p class="orman-hero-lead">
+        Antalya'nın yeşil geleceği için <strong>1000 fidan</strong> hedefliyoruz. Senin adına dikilen her fidan, <strong>nesiller boyu</strong> yaşayacak bir iz — bir kalpte, bir toprakta, bir umutta.
+      </p>
+
+      <!-- İlerleme çubuğu -->
+      <div class="orman-progress">
+        <div class="orman-progress-head">
+          <span class="orman-progress-label">Dikilen Fidan</span>
+          <span class="orman-progress-count"><strong id="hero-fidan">0</strong>/<span id="hero-hedef">1000</span></span>
+        </div>
+        <div class="orman-progress-bar">
+          <div class="orman-progress-fill" id="hero-progress-fill"></div>
+        </div>
+        <div class="orman-progress-note">
+          <span id="hero-kalan">477</span> fidana daha ihtiyacımız var — hedefe ulaşmak senin elinde.
+        </div>
+      </div>
+
+      <div class="orman-hero-actions">
+        <a href="#bagis" class="btn-orman-primary">
+          Şimdi Fidan Bağışla
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#hikaye" class="btn-orman-secondary">
+          Hikayemizi Dinle
+        </a>
+      </div>
+    </div>
+
+    <div class="orman-scroll">
+      Keşfet
+      <div class="orman-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- HİKAYEMİZ — Cinematic Story Arc -->
+  <section class="orman-story" id="hikaye">
+    <!-- Cinematic Banner -->
+    <div class="orman-story-banner reveal">
+      <div class="orman-story-banner__bg"></div>
+      <div class="orman-story-banner__overlay"></div>
+      <div class="orman-story-banner__grain"></div>
+      <div class="orman-story-banner__content">
+        <div class="orman-story-eyebrow">Hikayemiz</div>
+        <h2 class="orman-story-banner-title">
+          Her büyük orman,<br>
+          <em>tek bir fidanla</em> başladı.
+        </h2>
+        <div class="orman-story-banner-line"></div>
+      </div>
+    </div>
+
+    <!-- 3 Bölüm Story Arc -->
+    <div class="container">
+      <div class="orman-chapters">
+
+        <article class="orman-chapter reveal">
+          <div class="orman-chapter__img-wrap">
+            <div class="orman-chapter__num">01</div>
+            <div class="orman-chapter__img">
+              <img src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=900&q=85" alt="Kurak toprak, yalnız bir ağaç">
+              <div class="orman-chapter__badge">Başlangıç · 2020</div>
+            </div>
+          </div>
+          <div class="orman-chapter__body">
+            <span class="orman-chapter__eyebrow">Bölüm Bir</span>
+            <h3 class="orman-chapter__title">Toprak <em>kurumuştu.</em><br>Ama umudumuz değil.</h3>
+            <div class="orman-chapter__text">
+              <p>2020 yılı, rekor sıcaklıklar. Antrenman sahasının kenarındaki tek gölge ağacı bir sabah yaprakları sararmış halde uyandı. Sporcularımız yine koşuyordu — gölgesiz.</p>
+              <p>O gün kaptanımız antrenmanı durdurdu ve tek cümle kurdu: <strong>"Bu sadece bir ağaç değildi. Bizim gölgemizdi."</strong></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="orman-chapter orman-chapter--flip reveal">
+          <div class="orman-chapter__img-wrap">
+            <div class="orman-chapter__num">02</div>
+            <div class="orman-chapter__img">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=85" alt="İlk fidan dikim töreni">
+              <div class="orman-chapter__badge">Söz · 2020</div>
+            </div>
+          </div>
+          <div class="orman-chapter__body">
+            <span class="orman-chapter__eyebrow">Bölüm İki</span>
+            <h3 class="orman-chapter__title">Bir söz verdik:<br><em>"Aldığımızdan fazlasını vereceğiz."</em></h3>
+            <div class="orman-chapter__text">
+              <p>İlk <strong>12 fidanı</strong> sporcularımız kendi elleriyle dikti. Her biri bir şampiyonluğun, bir dostluğun, bir anının adıydı.</p>
+              <p>Adını <strong>Hatıra Ormanı</strong> koyduk — çünkü her fidanın bir hikayesi, her hikayenin bir sahibi olacaktı.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="orman-chapter reveal">
+          <div class="orman-chapter__img-wrap">
+            <div class="orman-chapter__num">03</div>
+            <div class="orman-chapter__img">
+              <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=900&q=85" alt="Yeşeren orman, güneş ışıkları">
+              <div class="orman-chapter__badge">Miras · 2026</div>
+            </div>
+          </div>
+          <div class="orman-chapter__body">
+            <span class="orman-chapter__eyebrow">Bölüm Üç</span>
+            <h3 class="orman-chapter__title">Bugün <em>523 fidan</em><br>sabırla büyüyor.</h3>
+            <div class="orman-chapter__text">
+              <p>6 yıl, 87 bağışçı, 523 fidan. Her biri hâlâ genç, hâlâ hassas — ama her biri bir neslin imzasını taşıyor.</p>
+              <p><strong>Hedefimiz 1000 fidan.</strong> 50 yıl sonra burada bir çocuk, gölgede oturup kitap okuduğunda — senin adını bilmeyecek. Ama o gölge, <em>senin sözünden</em> büyüyecek.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Pull Quote -->
+      <figure class="orman-story-quote reveal">
+        <blockquote>
+          Bir sporcuyu yetiştirmek kadar, diktiğin bir fidana göz kulak olmak da <em>sorumluluktur.</em><br>
+          Biz sporu topraktan öğrendik —<br>borcumuzu ona ödüyoruz.
+        </blockquote>
+        <cite>Kulüp Başkanı</cite>
+      </figure>
+
+      <!-- Before / After Impact -->
+      <div class="orman-impact reveal">
+        <div class="orman-impact__col orman-impact__col--before">
+          <div class="orman-impact__img">
+            <img src="https://images.unsplash.com/photo-1604187354081-67d42d04b11a?w=800&q=85" alt="2020 — Kurak saha">
+          </div>
+          <div class="orman-impact__info">
+            <span class="orman-impact__year">2020</span>
+            <div class="orman-impact__count">0</div>
+            <div class="orman-impact__label">Fidan · Bir söz verdik.</div>
+          </div>
+        </div>
+        <div class="orman-impact__arrow">
+          <div class="orman-impact__arrow-line"></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+          <div class="orman-impact__arrow-line"></div>
+        </div>
+        <div class="orman-impact__col">
+          <div class="orman-impact__img">
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=85" alt="2026 — Yeşeren orman">
+          </div>
+          <div class="orman-impact__info">
+            <span class="orman-impact__year">2026 · Bugün</span>
+            <div class="orman-impact__count" id="impact-count">523</div>
+            <div class="orman-impact__label">Fidan · Hâlâ büyüyoruz.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="orman-section">
+    <div class="container">
+      <div class="orman-stats reveal">
+        <div class="orman-stat">
+          <div class="orman-stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22v-7"/><path d="M6 9l6-6 6 6"/><path d="M12 6v3"/></svg>
+          </div>
+          <div class="orman-stat-num" id="fidan-sayisi">523</div>
+          <div class="orman-stat-label">Toplam Fidan</div>
+        </div>
+
+        <div class="orman-stat">
+          <div class="orman-stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          </div>
+          <div class="orman-stat-num" id="kisi-sayisi">87</div>
+          <div class="orman-stat-label">Bağışçı Sayısı</div>
+        </div>
+
+        <div class="orman-stat">
+          <div class="orman-stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="orman-stat-num" id="hedef-sayisi">1000</div>
+          <div class="orman-stat-label">Hedef Fidan</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donation -->
+  <section class="orman-section orman-section-alt" id="bagis">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
+        <div class="orman-tag" style="justify-content: center;">Bağış Yap</div>
+        <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); color: white; margin-bottom: 16px;">Bağış Bilgileri</h2>
+        <p style="color: rgba(255,255,255,0.55);">Havale veya EFT yoluyla bağışınızı yapabilirsiniz.</p>
+      </div>
+
+      <div class="orman-donation">
+        <div class="orman-card reveal delay-1">
+          <h3 class="orman-card-title">
+            <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Banka Hesap Bilgileri
+          </h3>
+          <div class="orman-info-box">
+            <div class="orman-info-row">
+              <div class="orman-info-label">Hesap Adı</div>
+              <div class="orman-info-value">Akdeniz Dinamik Spor Kulübü</div>
+            </div>
+            <div class="orman-info-row">
+              <div class="orman-info-label">Banka</div>
+              <div class="orman-info-value">Ziraat Bankası</div>
+            </div>
+            <div class="orman-info-row">
+              <div class="orman-info-label">IBAN</div>
+              <div class="orman-info-value mono">TR12 3456 7890 1234 5678 9012 34</div>
+            </div>
+            <div class="orman-info-row">
+              <div class="orman-info-label">Açıklama</div>
+              <div class="orman-info-value" style="color: var(--orman-gold);">"Hatıra Ormanı - Fidan Bağışı"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="orman-card reveal delay-2">
+          <h3 class="orman-card-title">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Bağış Bildirim Formu
+          </h3>
+          <form id="bagis-form" class="orman-form">
+            <div class="orman-form-group">
+              <label class="orman-form-label">Ad Soyad *</label>
+              <input type="text" name="ad" class="orman-form-input" required placeholder="Adınız ve soyadınız">
+            </div>
+            <div class="orman-form-group">
+              <label class="orman-form-label">Bağış Miktarı (TL) *</label>
+              <input type="number" name="miktar" class="orman-form-input" required placeholder="100" min="1">
+            </div>
+            <div class="orman-form-group">
+              <label class="orman-form-label">Not (opsiyonel)</label>
+              <textarea name="not" class="orman-form-input" placeholder="Kısa bir not..."></textarea>
+            </div>
+            <button type="submit" class="btn-orman">Bağış Bildir</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="orman-section">
+    <div class="container">
+      <div class="orman-cta reveal">
+        <h2>50 Yıl Sonra Burayı<br>Sen <span>Yeşerteceksin.</span></h2>
+        <p>Bugün diktiğin fidan, yarın bir çocuğun altında soluklandığı gölge olacak. Bir iz bırak — kalıcı, yeşil, senin.</p>
+        <a href="#bagis" class="btn-orman-primary" style="padding: 16px 36px;">
+          Hemen Bağış Yap
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer orman-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height: 40px;">
+            <span class="logo-text">Dinamik <span>SK</span></span>
+          </a>
+          <p style="margin-top: 16px;">İman. Disiplin. Spor. 2010'dan beri Antalya'da gençleri güçlü bireyler olarak yetiştiriyoruz.</p>
+        </div>
+        <div>
+          <h4 class="footer-title" style="color: var(--orman-gold);">Hızlı Linkler</h4>
+          <div class="footer-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="dinamik-calismalar.html">Dinamik Çalışmalar</a>
+            <a href="sporlar.html">Sporlar</a>
+            <a href="iletisim.html">İletişim</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title" style="color: var(--orman-gold);">Sosyal Medya</h4>
+          <div class="footer-social">
+            <a href="https://instagram.com/dinamikspor" target="_blank" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Dinamik Spor Kulübü. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load bagis stats from DB
+      const data = DinamikSK.DB.getData();
+      const bagis = data.bagis || { toplamFidan: 523, toplamKisi: 87, hedef: 1000 };
+
+      document.getElementById('fidan-sayisi').textContent = bagis.toplamFidan;
+      document.getElementById('kisi-sayisi').textContent = bagis.toplamKisi;
+      document.getElementById('hedef-sayisi').textContent = bagis.hedef;
+      const impactEl = document.getElementById('impact-count');
+      if (impactEl) impactEl.textContent = bagis.toplamFidan;
+
+      // Hero progress — canlı sayaç + çubuk animasyonu
+      const heroFidan = document.getElementById('hero-fidan');
+      const heroHedef = document.getElementById('hero-hedef');
+      const heroKalan = document.getElementById('hero-kalan');
+      const heroFill = document.getElementById('hero-progress-fill');
+      heroHedef.textContent = bagis.hedef;
+      heroKalan.textContent = Math.max(0, bagis.hedef - bagis.toplamFidan);
+
+      const yuzde = Math.min(100, (bagis.toplamFidan / bagis.hedef) * 100);
+      setTimeout(() => { heroFill.style.width = yuzde + '%'; }, 400);
+
+      // Sayaç animasyonu
+      let current = 0;
+      const target = bagis.toplamFidan;
+      const step = Math.max(1, Math.ceil(target / 60));
+      const sayacAnim = setInterval(() => {
+        current = Math.min(target, current + step);
+        heroFidan.textContent = current;
+        if (current >= target) clearInterval(sayacAnim);
+      }, 30);
+
+      // Bagis form
+      document.getElementById('bagis-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const ad = formData.get('ad');
+        const miktar = formData.get('miktar');
+
+        if (ad && miktar) {
+          DinamikSK.Toast.show(`${ad}, bağışınız için teşekkür ederiz!`);
+          e.target.reset();
+        }
+      });
+
+      // Scroll reveal
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+    });
+  </script>
+</body>
+</html>

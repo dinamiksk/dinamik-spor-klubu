@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Editör/IDE
+.vscode/
+.idea/
+*.swp
+
+# Geçici dosyalar
+.tmp/
+*.tmp
+*.log
+
+# Bağımlılıklar (varsa)
+node_modules/
+
+# Hassas bilgiler
+.env
+.env.local
+*.key
+credentials.json
+
+# Build çıktıları
+dist/
+build/

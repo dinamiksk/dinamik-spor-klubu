@@ -1,0 +1,2998 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 595.28 841.89" width="595.280029296875" height="841.8900146484375">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#luminosity-invert-noclip-24);
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath-76);
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath-51);
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath-143);
+      }
+
+      .cls-5 {
+        mask: url(#mask-35);
+      }
+
+      .cls-6, .cls-7, .cls-8 {
+        fill-rule: evenodd;
+      }
+
+      .cls-6, .cls-9 {
+        fill: #1a61ac;
+      }
+
+      .cls-10 {
+        clip-path: url(#clippath-34);
+      }
+
+      .cls-11 {
+        clip-path: url(#clippath-107);
+      }
+
+      .cls-12 {
+        clip-path: url(#clippath-133);
+      }
+
+      .cls-13 {
+        mask: url(#mask-64);
+      }
+
+      .cls-14 {
+        clip-path: url(#clippath-38);
+      }
+
+      .cls-15 {
+        clip-path: url(#clippath-21);
+      }
+
+      .cls-16 {
+        mask: url(#mask-15);
+      }
+
+      .cls-17 {
+        filter: url(#luminosity-invert-noclip-13);
+      }
+
+      .cls-18 {
+        clip-path: url(#clippath-6);
+      }
+
+      .cls-19 {
+        clip-path: url(#clippath-7);
+      }
+
+      .cls-20 {
+        clip-path: url(#clippath-17);
+      }
+
+      .cls-21 {
+        clip-path: url(#clippath-80);
+      }
+
+      .cls-22 {
+        clip-path: url(#clippath-31);
+      }
+
+      .cls-23 {
+        mask: url(#mask-5);
+      }
+
+      .cls-24 {
+        mask: url(#mask-78);
+      }
+
+      .cls-25 {
+        clip-path: url(#clippath-79);
+      }
+
+      .cls-26 {
+        mask: url(#mask-13);
+      }
+
+      .cls-27 {
+        clip-path: url(#clippath-138);
+      }
+
+      .cls-28 {
+        clip-path: url(#clippath-75);
+      }
+
+      .cls-29 {
+        mask: url(#mask-63);
+      }
+
+      .cls-30 {
+        clip-path: url(#clippath-15);
+      }
+
+      .cls-31 {
+        filter: url(#luminosity-invert-noclip-41);
+      }
+
+      .cls-32 {
+        clip-path: url(#clippath-33);
+      }
+
+      .cls-33 {
+        clip-path: url(#clippath-61);
+      }
+
+      .cls-34 {
+        mask: url(#mask-79);
+      }
+
+      .cls-35 {
+        clip-path: url(#clippath-116);
+      }
+
+      .cls-36 {
+        filter: url(#luminosity-invert-noclip-20);
+      }
+
+      .cls-37 {
+        clip-path: url(#clippath-100);
+      }
+
+      .cls-38 {
+        clip-path: url(#clippath-18);
+      }
+
+      .cls-39 {
+        clip-path: url(#clippath-47);
+      }
+
+      .cls-40 {
+        clip-path: url(#clippath-4);
+      }
+
+      .cls-41 {
+        clip-path: url(#clippath-71);
+      }
+
+      .cls-42 {
+        clip-path: url(#clippath-126);
+      }
+
+      .cls-43 {
+        clip-path: url(#clippath-120);
+      }
+
+      .cls-44 {
+        clip-path: url(#clippath-22);
+      }
+
+      .cls-45 {
+        mask: url(#mask-1);
+      }
+
+      .cls-46 {
+        mask: url(#mask-56);
+      }
+
+      .cls-47 {
+        clip-path: url(#clippath-103);
+      }
+
+      .cls-48 {
+        clip-path: url(#clippath-23);
+      }
+
+      .cls-49 {
+        filter: url(#luminosity-invert-noclip-29);
+      }
+
+      .cls-50 {
+        clip-path: url(#clippath-140);
+      }
+
+      .cls-51 {
+        mask: url(#mask-77);
+      }
+
+      .cls-52 {
+        clip-path: url(#clippath-82);
+      }
+
+      .cls-53 {
+        filter: url(#luminosity-invert-noclip-12);
+      }
+
+      .cls-54 {
+        clip-path: url(#clippath-54);
+      }
+
+      .cls-55 {
+        clip-path: url(#clippath-66);
+      }
+
+      .cls-56 {
+        clip-path: url(#clippath-114);
+      }
+
+      .cls-57 {
+        filter: url(#luminosity-invert-noclip-34);
+      }
+
+      .cls-58 {
+        clip-path: url(#clippath-149);
+      }
+
+      .cls-59 {
+        mask: url(#mask-80);
+      }
+
+      .cls-60 {
+        mask: url(#mask-10);
+      }
+
+      .cls-61 {
+        mask: url(#mask-46);
+      }
+
+      .cls-62 {
+        mask: url(#mask-6);
+      }
+
+      .cls-63 {
+        clip-path: url(#clippath-128);
+      }
+
+      .cls-64 {
+        clip-path: url(#clippath-9);
+      }
+
+      .cls-65 {
+        clip-path: url(#clippath-142);
+      }
+
+      .cls-66 {
+        clip-path: url(#clippath-121);
+      }
+
+      .cls-67 {
+        mask: url(#mask-7);
+      }
+
+      .cls-68 {
+        clip-path: url(#clippath-102);
+      }
+
+      .cls-69 {
+        clip-path: url(#clippath-70);
+      }
+
+      .cls-70 {
+        clip-path: url(#clippath-10);
+      }
+
+      .cls-71 {
+        mask: url(#mask-18);
+      }
+
+      .cls-72 {
+        clip-path: url(#clippath-42);
+      }
+
+      .cls-73 {
+        clip-path: url(#clippath-132);
+      }
+
+      .cls-74 {
+        clip-path: url(#clippath-59);
+      }
+
+      .cls-75 {
+        clip-path: url(#clippath-148);
+      }
+
+      .cls-76, .cls-8 {
+        fill: #fff;
+      }
+
+      .cls-77 {
+        mask: url(#mask-17);
+      }
+
+      .cls-78 {
+        filter: url(#luminosity-invert-noclip-38);
+      }
+
+      .cls-79 {
+        mask: url(#mask);
+      }
+
+      .cls-80 {
+        clip-path: url(#clippath-43);
+      }
+
+      .cls-81 {
+        filter: url(#luminosity-invert-noclip-10);
+      }
+
+      .cls-82 {
+        clip-path: url(#clippath-64);
+      }
+
+      .cls-83 {
+        filter: url(#luminosity-invert-noclip-3);
+      }
+
+      .cls-84 {
+        clip-path: url(#clippath-101);
+      }
+
+      .cls-85 {
+        clip-path: url(#clippath-25);
+      }
+
+      .cls-86 {
+        clip-path: url(#clippath-27);
+      }
+
+      .cls-87 {
+        clip-path: url(#clippath-139);
+      }
+
+      .cls-88 {
+        clip-path: url(#clippath-109);
+      }
+
+      .cls-89 {
+        filter: url(#luminosity-invert-noclip);
+      }
+
+      .cls-90 {
+        filter: url(#luminosity-invert-noclip-23);
+      }
+
+      .cls-91 {
+        mask: url(#mask-30);
+      }
+
+      .cls-92 {
+        clip-path: url(#clippath-130);
+      }
+
+      .cls-7 {
+        fill: #f07f0b;
+      }
+
+      .cls-93 {
+        mask: url(#mask-37);
+      }
+
+      .cls-94 {
+        clip-path: url(#clippath-60);
+      }
+
+      .cls-95 {
+        mask: url(#mask-73);
+      }
+
+      .cls-96 {
+        mask: url(#mask-67);
+      }
+
+      .cls-97 {
+        filter: url(#luminosity-invert-noclip-33);
+      }
+
+      .cls-98 {
+        clip-path: url(#clippath-113);
+      }
+
+      .cls-99 {
+        clip-path: url(#clippath-93);
+      }
+
+      .cls-100 {
+        mask: url(#mask-20);
+      }
+
+      .cls-101 {
+        clip-path: url(#clippath-11);
+      }
+
+      .cls-102 {
+        clip-path: url(#clippath-57);
+      }
+
+      .cls-103 {
+        mask: url(#mask-38);
+      }
+
+      .cls-104 {
+        clip-path: url(#clippath-88);
+      }
+
+      .cls-105 {
+        filter: url(#luminosity-invert-noclip-30);
+      }
+
+      .cls-106 {
+        fill: none;
+      }
+
+      .cls-107 {
+        clip-path: url(#clippath-85);
+      }
+
+      .cls-108 {
+        clip-path: url(#clippath-111);
+      }
+
+      .cls-109 {
+        clip-path: url(#clippath-105);
+      }
+
+      .cls-110 {
+        clip-path: url(#clippath-36);
+      }
+
+      .cls-111 {
+        clip-path: url(#clippath-92);
+      }
+
+      .cls-112 {
+        filter: url(#luminosity-invert-noclip-40);
+      }
+
+      .cls-113 {
+        mask: url(#mask-59);
+      }
+
+      .cls-114 {
+        mask: url(#mask-81);
+      }
+
+      .cls-115 {
+        clip-path: url(#clippath-147);
+      }
+
+      .cls-116 {
+        clip-path: url(#clippath-35);
+      }
+
+      .cls-117 {
+        clip-path: url(#clippath-98);
+      }
+
+      .cls-118 {
+        clip-path: url(#clippath-48);
+      }
+
+      .cls-119 {
+        clip-path: url(#clippath-104);
+      }
+
+      .cls-120 {
+        mask: url(#mask-50);
+      }
+
+      .cls-121 {
+        mask: url(#mask-8);
+      }
+
+      .cls-122 {
+        filter: url(#luminosity-invert-noclip-35);
+      }
+
+      .cls-123 {
+        mask: url(#mask-36);
+      }
+
+      .cls-124 {
+        clip-path: url(#clippath-28);
+      }
+
+      .cls-125 {
+        mask: url(#mask-83);
+      }
+
+      .cls-126 {
+        mask: url(#mask-2);
+      }
+
+      .cls-127 {
+        clip-path: url(#clippath-118);
+      }
+
+      .cls-128 {
+        mask: url(#mask-57);
+      }
+
+      .cls-129 {
+        filter: url(#luminosity-invert-noclip-11);
+      }
+
+      .cls-130 {
+        mask: url(#mask-31);
+      }
+
+      .cls-131 {
+        mask: url(#mask-9);
+      }
+
+      .cls-132 {
+        filter: url(#luminosity-invert-noclip-21);
+      }
+
+      .cls-133 {
+        filter: url(#luminosity-invert-noclip-6);
+      }
+
+      .cls-134 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-135 {
+        clip-path: url(#clippath-56);
+      }
+
+      .cls-136 {
+        clip-path: url(#clippath-108);
+      }
+
+      .cls-137 {
+        filter: url(#luminosity-invert-noclip-4);
+      }
+
+      .cls-138 {
+        filter: url(#luminosity-invert-noclip-17);
+      }
+
+      .cls-139 {
+        clip-path: url(#clippath-141);
+      }
+
+      .cls-140 {
+        mask: url(#mask-21);
+      }
+
+      .cls-141 {
+        clip-path: url(#clippath-90);
+      }
+
+      .cls-142 {
+        clip-path: url(#clippath-45);
+      }
+
+      .cls-143 {
+        isolation: isolate;
+      }
+
+      .cls-144 {
+        clip-path: url(#clippath-110);
+      }
+
+      .cls-145 {
+        clip-path: url(#clippath-99);
+      }
+
+      .cls-146 {
+        clip-path: url(#clippath-89);
+      }
+
+      .cls-147 {
+        clip-path: url(#clippath-46);
+      }
+
+      .cls-148 {
+        mask: url(#mask-43);
+      }
+
+      .cls-149 {
+        clip-path: url(#clippath-40);
+      }
+
+      .cls-150 {
+        filter: url(#luminosity-invert-noclip-14);
+      }
+
+      .cls-151 {
+        clip-path: url(#clippath-96);
+      }
+
+      .cls-152 {
+        clip-path: url(#clippath-5);
+      }
+
+      .cls-153 {
+        clip-path: url(#clippath-20);
+      }
+
+      .cls-154 {
+        clip-path: url(#clippath-95);
+      }
+
+      .cls-155 {
+        mask: url(#mask-65);
+      }
+
+      .cls-156 {
+        clip-path: url(#clippath-8);
+      }
+
+      .cls-157 {
+        mask: url(#mask-28);
+      }
+
+      .cls-158 {
+        mask: url(#mask-47);
+      }
+
+      .cls-159 {
+        mask: url(#mask-42);
+      }
+
+      .cls-160 {
+        clip-path: url(#clippath-52);
+      }
+
+      .cls-161 {
+        mask: url(#mask-23);
+      }
+
+      .cls-162 {
+        filter: url(#luminosity-invert-noclip-22);
+      }
+
+      .cls-163 {
+        clip-path: url(#clippath-41);
+      }
+
+      .cls-164 {
+        mask: url(#mask-39);
+      }
+
+      .cls-165 {
+        mask: url(#mask-53);
+      }
+
+      .cls-166 {
+        clip-path: url(#clippath-67);
+      }
+
+      .cls-167 {
+        filter: url(#luminosity-invert-noclip-31);
+      }
+
+      .cls-168 {
+        clip-path: url(#clippath-74);
+      }
+
+      .cls-169 {
+        mask: url(#mask-34);
+      }
+
+      .cls-170 {
+        mask: url(#mask-26);
+      }
+
+      .cls-171 {
+        filter: url(#luminosity-invert-noclip-27);
+      }
+
+      .cls-172 {
+        filter: url(#luminosity-invert-noclip-42);
+      }
+
+      .cls-173 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-174 {
+        mask: url(#mask-55);
+      }
+
+      .cls-175 {
+        clip-path: url(#clippath-146);
+      }
+
+      .cls-176 {
+        mask: url(#mask-62);
+      }
+
+      .cls-177 {
+        clip-path: url(#clippath-26);
+      }
+
+      .cls-178 {
+        mask: url(#mask-61);
+      }
+
+      .cls-179 {
+        clip-path: url(#clippath-91);
+      }
+
+      .cls-180 {
+        clip-path: url(#clippath-137);
+      }
+
+      .cls-181 {
+        font-size: 22.87px;
+      }
+
+      .cls-181, .cls-182 {
+        fill: #f9fbfd;
+        font-family: AbrilFatface-Regular, 'Abril Fatface';
+      }
+
+      .cls-183 {
+        clip-path: url(#clippath-12);
+      }
+
+      .cls-184 {
+        mask: url(#mask-54);
+      }
+
+      .cls-185 {
+        clip-path: url(#clippath-135);
+      }
+
+      .cls-186 {
+        clip-path: url(#clippath-50);
+      }
+
+      .cls-187 {
+        mask: url(#mask-24);
+      }
+
+      .cls-188 {
+        filter: url(#luminosity-invert-noclip-39);
+      }
+
+      .cls-189 {
+        filter: url(#luminosity-invert-noclip-25);
+      }
+
+      .cls-190 {
+        clip-path: url(#clippath-14);
+      }
+
+      .cls-191 {
+        mask: url(#mask-66);
+      }
+
+      .cls-192 {
+        filter: url(#luminosity-invert-noclip-32);
+      }
+
+      .cls-193 {
+        mask: url(#mask-16);
+      }
+
+      .cls-194 {
+        filter: url(#luminosity-invert-noclip-15);
+      }
+
+      .cls-195 {
+        filter: url(#luminosity-invert-noclip-37);
+      }
+
+      .cls-196 {
+        filter: url(#luminosity-invert-noclip-5);
+      }
+
+      .cls-197 {
+        mask: url(#mask-32);
+      }
+
+      .cls-198 {
+        clip-path: url(#clippath-97);
+      }
+
+      .cls-199 {
+        clip-path: url(#clippath-30);
+      }
+
+      .cls-200 {
+        mask: url(#mask-19);
+      }
+
+      .cls-201 {
+        clip-path: url(#clippath-112);
+      }
+
+      .cls-202 {
+        clip-path: url(#clippath-77);
+      }
+
+      .cls-203 {
+        clip-path: url(#clippath-19);
+      }
+
+      .cls-204 {
+        clip-path: url(#clippath-127);
+      }
+
+      .cls-205 {
+        clip-path: url(#clippath-117);
+      }
+
+      .cls-206 {
+        mask: url(#mask-76);
+      }
+
+      .cls-207 {
+        mask: url(#mask-51);
+      }
+
+      .cls-208 {
+        clip-path: url(#clippath-78);
+      }
+
+      .cls-209 {
+        mask: url(#mask-33);
+      }
+
+      .cls-210 {
+        mask: url(#mask-58);
+      }
+
+      .cls-211 {
+        clip-path: url(#clippath-72);
+      }
+
+      .cls-212 {
+        clip-path: url(#clippath-84);
+      }
+
+      .cls-213 {
+        fill: #1c61ac;
+      }
+
+      .cls-214 {
+        clip-path: url(#clippath-32);
+      }
+
+      .cls-215 {
+        mask: url(#mask-25);
+      }
+
+      .cls-216 {
+        clip-path: url(#clippath-145);
+      }
+
+      .cls-217 {
+        mask: url(#mask-72);
+      }
+
+      .cls-218 {
+        clip-path: url(#clippath-55);
+      }
+
+      .cls-219 {
+        mask: url(#mask-29);
+      }
+
+      .cls-220 {
+        filter: url(#luminosity-invert-noclip-19);
+      }
+
+      .cls-221 {
+        clip-path: url(#clippath-123);
+      }
+
+      .cls-222 {
+        clip-path: url(#clippath-129);
+      }
+
+      .cls-223 {
+        filter: url(#luminosity-invert-noclip-28);
+      }
+
+      .cls-224 {
+        mask: url(#mask-49);
+      }
+
+      .cls-225 {
+        mask: url(#mask-11);
+      }
+
+      .cls-226 {
+        clip-path: url(#clippath-73);
+      }
+
+      .cls-227 {
+        mask: url(#mask-48);
+      }
+
+      .cls-228 {
+        filter: url(#luminosity-invert-noclip-36);
+      }
+
+      .cls-229 {
+        clip-path: url(#clippath-53);
+      }
+
+      .cls-230 {
+        fill: #010101;
+      }
+
+      .cls-231 {
+        clip-path: url(#clippath-39);
+      }
+
+      .cls-182 {
+        font-size: 15.3px;
+      }
+
+      .cls-232 {
+        mask: url(#mask-12);
+      }
+
+      .cls-233 {
+        mask: url(#mask-44);
+      }
+
+      .cls-234 {
+        clip-path: url(#clippath-122);
+      }
+
+      .cls-235 {
+        clip-path: url(#clippath-81);
+      }
+
+      .cls-236 {
+        filter: url(#luminosity-invert-noclip-2);
+      }
+
+      .cls-237 {
+        mask: url(#mask-69);
+      }
+
+      .cls-238 {
+        mask: url(#mask-60);
+      }
+
+      .cls-239 {
+        clip-path: url(#clippath-106);
+      }
+
+      .cls-240 {
+        clip-path: url(#clippath-125);
+      }
+
+      .cls-241 {
+        clip-path: url(#clippath-16);
+      }
+
+      .cls-242 {
+        mask: url(#mask-22);
+      }
+
+      .cls-243 {
+        clip-path: url(#clippath-119);
+      }
+
+      .cls-244 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-245 {
+        mask: url(#mask-75);
+      }
+
+      .cls-246 {
+        mask: url(#mask-45);
+      }
+
+      .cls-247 {
+        mask: url(#mask-4);
+      }
+
+      .cls-248 {
+        clip-path: url(#clippath-29);
+      }
+
+      .cls-249 {
+        clip-path: url(#clippath-131);
+      }
+
+      .cls-250 {
+        mask: url(#mask-74);
+      }
+
+      .cls-251 {
+        mask: url(#mask-70);
+      }
+
+      .cls-252 {
+        clip-path: url(#clippath-49);
+      }
+
+      .cls-253 {
+        clip-path: url(#clippath-37);
+      }
+
+      .cls-254 {
+        clip-path: url(#clippath-58);
+      }
+
+      .cls-255 {
+        clip-path: url(#clippath-124);
+      }
+
+      .cls-256 {
+        clip-path: url(#clippath-13);
+      }
+
+      .cls-257 {
+        clip-path: url(#clippath-136);
+      }
+
+      .cls-258 {
+        filter: url(#luminosity-invert-noclip-18);
+      }
+
+      .cls-259 {
+        mask: url(#mask-52);
+      }
+
+      .cls-260 {
+        mask: url(#mask-14);
+      }
+
+      .cls-261 {
+        clip-path: url(#clippath-86);
+      }
+
+      .cls-262 {
+        clip-path: url(#clippath-144);
+      }
+
+      .cls-263 {
+        filter: url(#luminosity-invert-noclip-8);
+      }
+
+      .cls-264 {
+        clip-path: url(#clippath-63);
+      }
+
+      .cls-265 {
+        filter: url(#luminosity-invert-noclip-7);
+      }
+
+      .cls-266 {
+        clip-path: url(#clippath-24);
+      }
+
+      .cls-267 {
+        filter: url(#luminosity-invert-noclip-16);
+      }
+
+      .cls-268 {
+        clip-path: url(#clippath-94);
+      }
+
+      .cls-269 {
+        mask: url(#mask-71);
+      }
+
+      .cls-270 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-271 {
+        clip-path: url(#clippath-87);
+      }
+
+      .cls-272 {
+        clip-path: url(#clippath-68);
+      }
+
+      .cls-273 {
+        clip-path: url(#clippath-83);
+      }
+
+      .cls-274 {
+        filter: url(#luminosity-invert-noclip-26);
+      }
+
+      .cls-275 {
+        filter: url(#luminosity-invert-noclip-9);
+      }
+
+      .cls-276 {
+        clip-path: url(#clippath-65);
+      }
+
+      .cls-277 {
+        mask: url(#mask-27);
+      }
+
+      .cls-278 {
+        clip-path: url(#clippath-134);
+      }
+
+      .cls-279 {
+        mask: url(#mask-40);
+      }
+
+      .cls-280 {
+        clip-path: url(#clippath-44);
+      }
+
+      .cls-281 {
+        clip-path: url(#clippath-115);
+      }
+
+      .cls-282 {
+        mask: url(#mask-68);
+      }
+
+      .cls-283 {
+        mask: url(#mask-3);
+      }
+
+      .cls-284 {
+        mask: url(#mask-41);
+      }
+
+      .cls-285 {
+        clip-path: url(#clippath-62);
+      }
+
+      .cls-286 {
+        clip-path: url(#clippath-69);
+      }
+
+      .cls-287 {
+        mask: url(#mask-82);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-89">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-2">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-2" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-2" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-236">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-4">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-5">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-3" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-40">
+          <g class="cls-152">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-1" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-126">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-283">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-6">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-7">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-8">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-3" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-4" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-83">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-9">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-10">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-4" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-6" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-137">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-11">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-12">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-7" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-101">
+          <g class="cls-183">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-5" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-62">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-67">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-13">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-14">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-15">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-5" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-8" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-196">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-16">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-17">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-6" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-10" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-133">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-18">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-19">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-11" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-38">
+          <g class="cls-203">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-9" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-60">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-225">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-20">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-21">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-22">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-7" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-12" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-265">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-23">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-24">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-8" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-14" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-263">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-25">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-26">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-15" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-85">
+          <g class="cls-177">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-13" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-260">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-16">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-27">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-28">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-29">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-9" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-16" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-275">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-30">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-31">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-10" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-18" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-81">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-32">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-33">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-19" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-214">
+          <g class="cls-32">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-17" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-71">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-200">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-34">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-35">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-36">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-11" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-20" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-129">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-37">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-38">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-12" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-22" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-53">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-39">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-40">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-23" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-231">
+          <g class="cls-149">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-21" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-242">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-161">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-41">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-42">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-43">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-13" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-24" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-17">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-44">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-45">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-14" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-26" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-150">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-46">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-47">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-27" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-147">
+          <g class="cls-39">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-25" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-170">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-277">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-48">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-49">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-50">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-15" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-28" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-194">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-51">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-52">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-16" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-30" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-267">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-53">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-54">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-31" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-229">
+          <g class="cls-54">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-29" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-91">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-130">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-55">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-56">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-57">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-17" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-32" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-138">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-58">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-59">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-18" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-34" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-258">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-60">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-61">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-35" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-94">
+          <g class="cls-33">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-33" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-169">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-5">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-62">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-63">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-64">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-19" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-36" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-220">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-65">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-66">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-20" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-38" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-36">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-67">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-68">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-39" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-166">
+          <g class="cls-272">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-37" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-103">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-164">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-69">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-70">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-71">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-21" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-40" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-132">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-72">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-73">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-22" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-42" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-162">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-74">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-75">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-43" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-168">
+          <g class="cls-28">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-41" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-159">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-148">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-76">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-77">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-78">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-23" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-44" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-90">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-79">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-80">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-24" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-46" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-1">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-81">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-82">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-47" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-235">
+          <g class="cls-52">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-45" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-61">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-158">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-83">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-84">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-85">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-25" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-48" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-189">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-86">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-87">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-26" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-50" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-274">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-88">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-89">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-51" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-104">
+          <g class="cls-146">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-49" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-120">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-207">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-90">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-91">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-92">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-27" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-52" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-171">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-93">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-94">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-28" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-54" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-223">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-95">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-96">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-55" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-154">
+          <g class="cls-151">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-53" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-184">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-174">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-97">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-98">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-99">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-29" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-56" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-49">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-100">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-101">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-30" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-58" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-105">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-102">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-103">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-59" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-68">
+          <g class="cls-47">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-57" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-210">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-113">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-104">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-105">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-106">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-31" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-60" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-167">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-107">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-108">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-32" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-62" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-192">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-109">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-110">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-63" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-88">
+          <g class="cls-144">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-61" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-176">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-29">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-111">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-112">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-113">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-33" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-64" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-97">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-114">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-115">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-34" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-66" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-57">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-116">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-117">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-67" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-35">
+          <g class="cls-205">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-65" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-191">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-96">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-118">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-119">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-120">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-35" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-68" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-122">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-121">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-122">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-36" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-70" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-228">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-123">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-124">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-71" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-221">
+          <g class="cls-255">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-69" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-251">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-269">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-125">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-126">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-127">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-37" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-72" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-195">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-128">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-129">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-38" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-74" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-78">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-130">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-131">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-75" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-92">
+          <g class="cls-249">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-73" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-250">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-245">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-132">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-133">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-134">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-39" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-76" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-188">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-135">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-136">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-40" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-78" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-112">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-137">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-138">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-79" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-180">
+          <g class="cls-27">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-77" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-24">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-34">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-139">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-140">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-141">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-41" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-80" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
+      <g class="cls-31">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-142">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-143">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <filter id="luminosity-invert-noclip-42" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="cm" in2="bg"/>
+    </filter>
+    <mask id="mask-82" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
+      <g class="cls-172">
+        <rect class="cls-230" x="87.88" y="308.9" width="362.66" height="336.13"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-144">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-145">
+      <rect class="cls-106" x="87.88" y="308.91" width="363.02" height="336.47"/>
+    </clipPath>
+    <mask id="mask-83" x="87.88" y="308.9" width="363.04" height="336.5" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-262">
+          <g class="cls-216">
+            <rect class="cls-230" x="87.88" y="308.91" width="363.04" height="336.48"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <mask id="mask-81" x="87.53" y="308.54" width="363.39" height="336.85" maskUnits="userSpaceOnUse">
+      <g class="cls-143">
+        <g class="cls-287">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+        <g class="cls-125">
+          <g class="cls-143">
+            <rect class="cls-230" x="89.36" y="310.34" width="361.08" height="333.57"/>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <clipPath id="clippath-146">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+    <clipPath id="clippath-147">
+      <rect class="cls-106" x="87.53" y="308.54" width="363.37" height="336.84"/>
+    </clipPath>
+    <clipPath id="clippath-148">
+      <rect class="cls-106" x="168.39" y="362.48" width="213.19" height="32.73"/>
+    </clipPath>
+    <clipPath id="clippath-149">
+      <rect class="cls-106" x="87.88" y="308.9" width="362.66" height="336.13"/>
+    </clipPath>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.2, SVG Export Plug-In . SVG Version: 1.2.0 Build 154)  -->
+  <g>
+    <g id="katman_1">
+      <g>
+        <g class="cls-270">
+          <g class="cls-143">
+            <g class="cls-134">
+              <g class="cls-79">
+                <g class="cls-143">
+                  <g class="cls-244">
+                    <g class="cls-173">
+                      <path class="cls-6" d="M134.08,335.76l14.28-18.17.25-.03c10.07,4.37,21.16,6.79,32.82,6.79,16.99,0,32.79-5.15,45.95-13.96,12.76,11.66,29,18.82,46.75,19.28,17.73-.46,33.97-7.62,46.75-19.28,13.15,8.81,28.95,13.96,45.95,13.96,11.66,0,22.76-2.42,32.82-6.79l.25.03,14.28,18.17.31,2.48c-13.74,14.83-22.14,34.73-22.14,56.59,0,29.36,15.15,55.17,38.01,69.98l.29,2.32-16.99,13.83c5.87,48.04-9.15,88.13-56.9,115.72l-82.65-.3-82.65.3c-47.75-27.59-62.77-67.66-56.9-115.72l-16.99-13.83.29-2.32c22.89-14.82,38.02-40.62,38.02-69.98,0-21.86-8.4-41.74-22.12-56.59l.31-2.48Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-45">
+                <g class="cls-143">
+                  <g class="cls-18">
+                    <g class="cls-19">
+                      <path class="cls-6" d="M134.08,335.76l14.28-18.17.25-.03c10.07,4.37,21.16,6.79,32.82,6.79,16.99,0,32.79-5.15,45.95-13.96,12.76,11.66,29,18.82,46.75,19.28,17.73-.46,33.97-7.62,46.75-19.28,13.15,8.81,28.95,13.96,45.95,13.96,11.66,0,22.76-2.42,32.82-6.79l.25.03,14.28,18.17.31,2.48c-13.74,14.83-22.14,34.73-22.14,56.59,0,29.36,15.15,55.17,38.01,69.98l.29,2.32-16.99,13.83c5.87,48.04-9.15,88.13-56.9,115.72l-82.65-.3-82.65.3c-47.75-27.59-62.77-67.66-56.9-115.72l-16.99-13.83.29-2.32c22.89-14.82,38.02-40.62,38.02-69.98,0-21.86-8.4-41.74-22.12-56.59l.31-2.48Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-156">
+              <g class="cls-247">
+                <g class="cls-143">
+                  <g class="cls-64">
+                    <g class="cls-70">
+                      <path class="cls-7" d="M139.11,337.06c13.91,16.03,21.55,36.43,21.55,57.77,0,28.52-13.68,55-36.52,71.47l15.49,12.6-.32,2.63c-2.34,19.16-1.47,38.72,5.41,56.91,8.99,23.75,26.59,40.81,48.05,53.45l81.38-.28,81.35.28c21.47-12.63,39.07-29.7,48.05-53.45,6.88-18.2,7.75-37.76,5.41-56.91l-.32-2.63,15.49-12.6c-22.84-16.49-36.52-42.97-36.52-71.47,0-21.34,7.63-41.74,21.53-57.77l-10.85-13.8c-10.04,3.88-20.69,5.86-31.48,5.86-16.12,0-31.79-4.4-45.51-12.8-13.29,11.11-29.61,17.65-47.07,18.11h-.24c-17.46-.44-33.78-7-47.07-18.11-13.72,8.4-29.39,12.8-45.51,12.8-10.79,0-21.44-1.98-31.48-5.86l-10.8,13.8Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-23">
+                <g class="cls-143">
+                  <g class="cls-256">
+                    <g class="cls-190">
+                      <path class="cls-7" d="M139.11,337.06c13.91,16.03,21.55,36.43,21.55,57.77,0,28.52-13.68,55-36.52,71.47l15.49,12.6-.32,2.63c-2.34,19.16-1.47,38.72,5.41,56.91,8.99,23.75,26.59,40.81,48.05,53.45l81.38-.28,81.35.28c21.47-12.63,39.07-29.7,48.05-53.45,6.88-18.2,7.75-37.76,5.41-56.91l-.32-2.63,15.49-12.6c-22.84-16.49-36.52-42.97-36.52-71.47,0-21.34,7.63-41.74,21.53-57.77l-10.85-13.8c-10.04,3.88-20.69,5.86-31.48,5.86-16.12,0-31.79-4.4-45.51-12.8-13.29,11.11-29.61,17.65-47.07,18.11h-.24c-17.46-.44-33.78-7-47.07-18.11-13.72,8.4-29.39,12.8-45.51,12.8-10.79,0-21.44-1.98-31.48-5.86l-10.8,13.8Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-30">
+              <g class="cls-121">
+                <g class="cls-143">
+                  <g class="cls-241">
+                    <g class="cls-20">
+                      <path class="cls-6" d="M384.33,411.36l-104.17,28.03-115.74-31.14c.63-4.41.97-8.89.97-13.42,0-21.12-7.1-41.43-20.18-57.84l6.32-8.06c9.61,3.31,19.7,4.97,29.89,4.97,15.84,0,31.32-4.04,45.08-11.79,13.66,10.55,30.02,16.68,47.37,17.11h.47c17.35-.44,33.71-6.55,47.37-17.11,13.78,7.75,29.24,11.79,45.08,11.79,10.18,0,20.26-1.67,29.87-4.97l6.32,8.06c-13.07,16.43-20.18,36.72-20.18,57.84,0,5.59.5,11.13,1.47,16.53"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-131">
+                <g class="cls-143">
+                  <g class="cls-153">
+                    <g class="cls-15">
+                      <path class="cls-6" d="M384.33,411.36l-104.17,28.03-115.74-31.14c.63-4.41.97-8.89.97-13.42,0-21.12-7.1-41.43-20.18-57.84l6.32-8.06c9.61,3.31,19.7,4.97,29.89,4.97,15.84,0,31.32-4.04,45.08-11.79,13.66,10.55,30.02,16.68,47.37,17.11h.47c17.35-.44,33.71-6.55,47.37-17.11,13.78,7.75,29.24,11.79,45.08,11.79,10.18,0,20.26-1.67,29.87-4.97l6.32,8.06c-13.07,16.43-20.18,36.72-20.18,57.84,0,5.59.5,11.13,1.47,16.53"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-44">
+              <g class="cls-232">
+                <g class="cls-143">
+                  <g class="cls-48">
+                    <g class="cls-266">
+                      <path class="cls-6" d="M89.36,538.72c25.86,8.31,51.74,8.44,77.61-2.63l31.77,41.4c-42.64,20.41-79.2,20.72-108.99-1.42,8.96-1.08,18.04-3.16,27.54-9.09-13.65-6.61-21.8-16.78-27.94-28.27"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-26">
+                <g class="cls-143">
+                  <g class="cls-86">
+                    <g class="cls-124">
+                      <path class="cls-6" d="M89.36,538.72c25.86,8.31,51.74,8.44,77.61-2.63l31.77,41.4c-42.64,20.41-79.2,20.72-108.99-1.42,8.96-1.08,18.04-3.16,27.54-9.09-13.65-6.61-21.8-16.78-27.94-28.27"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-248">
+              <g class="cls-193">
+                <g class="cls-143">
+                  <g class="cls-199">
+                    <g class="cls-22">
+                      <path class="cls-7" d="M99.89,546.55c5.07,6.75,11.27,12.18,19.48,16.16l7.77,3.76-7.32,4.58c-5.67,3.54-11.36,5.9-17.38,7.51,28.24,15.37,59.53,10.13,88.9-2.89l-25.92-33.79c-21.59,8.46-43.45,9.61-65.52,4.65"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-77">
+                <g class="cls-143">
+                  <g class="cls-10">
+                    <g class="cls-116">
+                      <path class="cls-7" d="M99.89,546.55c5.07,6.75,11.27,12.18,19.48,16.16l7.77,3.76-7.32,4.58c-5.67,3.54-11.36,5.9-17.38,7.51,28.24,15.37,59.53,10.13,88.9-2.89l-25.92-33.79c-21.59,8.46-43.45,9.61-65.52,4.65"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-110">
+              <g class="cls-100">
+                <g class="cls-143">
+                  <g class="cls-253">
+                    <g class="cls-14">
+                      <path class="cls-6" d="M449.44,537.53c-25.86,8.31-51.74,8.44-77.61-2.63l-31.77,41.4c42.64,20.41,79.2,20.72,108.99-1.42-8.96-1.08-18.04-3.16-27.54-9.09,13.65-6.63,21.81-16.8,27.94-28.27"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-140">
+                <g class="cls-143">
+                  <g class="cls-163">
+                    <g class="cls-72">
+                      <path class="cls-6" d="M449.44,537.53c-25.86,8.31-51.74,8.44-77.61-2.63l-31.77,41.4c42.64,20.41,79.2,20.72,108.99-1.42-8.96-1.08-18.04-3.16-27.54-9.09,13.65-6.63,21.81-16.8,27.94-28.27"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-80">
+              <g class="cls-187">
+                <g class="cls-143">
+                  <g class="cls-280">
+                    <g class="cls-142">
+                      <path class="cls-7" d="M438.91,545.35c-5.07,6.75-11.27,12.18-19.48,16.16l-7.77,3.76,7.32,4.58c5.67,3.54,11.36,5.92,17.38,7.51-28.24,15.37-59.53,10.13-88.9-2.89l25.92-33.77c21.59,8.46,43.45,9.61,65.52,4.65"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-215">
+                <g class="cls-143">
+                  <g class="cls-118">
+                    <g class="cls-252">
+                      <path class="cls-7" d="M438.91,545.35c-5.07,6.75-11.27,12.18-19.48,16.16l-7.77,3.76,7.32,4.58c5.67,3.54,11.36,5.92,17.38,7.51-28.24,15.37-59.53,10.13-88.9-2.89l25.92-33.77c21.59,8.46,43.45,9.61,65.52,4.65"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-186">
+              <g class="cls-157">
+                <g class="cls-143">
+                  <g class="cls-3">
+                    <g class="cls-160">
+                      <path class="cls-8" d="M163.62,412.97c-4.13,20.86-15.3,39.75-31.83,53.43l12.87,10.48-.65,5.24c-2.24,18.36-1.46,37.2,5.14,54.64,8.43,22.27,24.88,38.36,44.91,50.36l80.11-.28,80.04.28c20.03-12,36.48-28.09,44.91-50.36,6.6-17.43,7.38-36.28,5.13-54.64l-.63-5.24,12.87-10.48c-15.71-13-26.59-30.73-31.17-50.36l-105.14,28.29-116.55-31.36Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-219">
+                <g class="cls-143">
+                  <g class="cls-218">
+                    <g class="cls-135">
+                      <path class="cls-8" d="M163.62,412.97c-4.13,20.86-15.3,39.75-31.83,53.43l12.87,10.48-.65,5.24c-2.24,18.36-1.46,37.2,5.14,54.64,8.43,22.27,24.88,38.36,44.91,50.36l80.11-.28,80.04.28c20.03-12,36.48-28.09,44.91-50.36,6.6-17.43,7.38-36.28,5.13-54.64l-.63-5.24,12.87-10.48c-15.71-13-26.59-30.73-31.17-50.36l-105.14,28.29-116.55-31.36Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-102">
+              <g class="cls-197">
+                <g class="cls-143">
+                  <g class="cls-254">
+                    <g class="cls-74">
+                      <path class="cls-7" d="M181.88,503.31v-48.27h48.66c40.13,0,44.46,90.67,0,90.67h-49.08v-29.28h26.96v8.49h11.86c20.03,0,19.51-48.66,0-48.66h-11.86v27.26l-26.54-.21Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-209">
+                <g class="cls-143">
+                  <g class="cls-285">
+                    <g class="cls-264">
+                      <path class="cls-7" d="M181.88,503.31v-48.27h48.66c40.13,0,44.46,90.67,0,90.67h-49.08v-29.28h26.96v8.49h11.86c20.03,0,19.51-48.66,0-48.66h-11.86v27.26l-26.54-.21Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-82">
+              <g class="cls-123">
+                <g class="cls-143">
+                  <g class="cls-276">
+                    <g class="cls-55">
+                      <path class="cls-6" d="M368.08,495.43v48.27h-48.66c-40.12,0-44.46-90.67,0-90.67h49.06v29.28h-26.94v-8.49h-11.86c-20.03,0-19.51,48.66,0,48.66h11.86v-27.25l26.54.19Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-93">
+                <g class="cls-143">
+                  <g class="cls-286">
+                    <g class="cls-69">
+                      <path class="cls-6" d="M368.08,495.43v48.27h-48.66c-40.12,0-44.46-90.67,0-90.67h49.06v29.28h-26.94v-8.49h-11.86c-20.03,0-19.51,48.66,0,48.66h11.86v-27.25l26.54.19Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-41">
+              <g class="cls-279">
+                <g class="cls-143">
+                  <g class="cls-211">
+                    <g class="cls-226">
+                      <polygon class="cls-7" points="247.23 453.23 274.14 500.04 301.45 452.53 273.89 480.21 247.23 453.23"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-284">
+                <g class="cls-143">
+                  <g class="cls-2">
+                    <g class="cls-202">
+                      <polygon class="cls-7" points="247.23 453.23 274.14 500.04 301.45 452.53 273.89 480.21 247.23 453.23"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-208">
+              <g class="cls-233">
+                <g class="cls-143">
+                  <g class="cls-25">
+                    <g class="cls-21">
+                      <polygon class="cls-6" points="247.23 546.86 274.14 500.05 301.45 547.56 273.89 519.87 247.23 546.86"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-246">
+                <g class="cls-143">
+                  <g class="cls-273">
+                    <g class="cls-212">
+                      <polygon class="cls-6" points="247.23 546.86 274.14 500.05 301.45 547.56 273.89 519.87 247.23 546.86"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-107">
+              <g class="cls-227">
+                <g class="cls-143">
+                  <g class="cls-261">
+                    <g class="cls-271">
+                      <path class="cls-76" d="M298.12,357.99l4.67-10.45h-1.95l-.52.03-.37.3-.37.89-.34,1.31-.71.5v-3.39h7.34l-4.7,10.42h2.14l.5-.03.4-.3.43-1.08c.25-.89.38-1.46.53-2.21h.72v4.04l-7.78-.03ZM293.99,344.76l.1-.47.6-.49.74.1.47.61-.09.77-.59.46-.77-.09-.46-.61v-.28ZM292.6,357.99v-.37h.93v-10.07h-.93v-.37h4.66v.37h-.93v10.08h.93v.37h-4.66ZM282.44,357.99v-.37h.93v-10.07h-.93v-.37h4.27l3.91,7.79v-7.42h-1.36v-.37h2.76v.37h-.93v10.45h-2.03l-5.22-10.42v10.05h1.36v.37h-2.76ZM272.87,357.99v-.37h.93v-10.07h-.93v-.37h8.34v3.42h-.56l-.34-1.23-.32-1-.4-.69-.47-.12h-2.52v4.63h.65l1.03-.62.38-1.54h.43v4.61h-.43l-.03-.1-.88-1.98h-1.16v5.08h2.36c.32,0,.55-.03.68-.09l.32-.25c.34-.77.6-1.77.93-3.29h.6v4l-8.61-.03ZM265.8,347.54v10.05h.41c1.28,0,2.12-.56,2.51-1.67.22-.62.32-1.74.32-3.35s-.1-2.73-.32-3.35c-.4-1.12-1.24-1.68-2.51-1.68h-.41ZM262.02,347.17h3.85c1,0,1.83.07,2.45.21l1.61.55c1.68,1.51,2.23,2.88,2.23,4.65s-.53,3.07-1.61,4.04l-1.34.93c-1.49.35-2.33.44-3.35.44h-3.83v-.4h.99v-10.04h-.99v-.38ZM255.35,352.13l4.19-4.59h-1.41v-.37h3.07v.37h-1.06l-2.67,2.91,3.8,7.17h.74v.37h-3.55l-3.09-5.86ZM251.47,358v-.37h.93v-10.08h-.93v-.37h4.66v.37h-.93v10.08h.93v.37h-4.66ZM240.64,358v-.37h.84l3.54-10.55h1.77l3.49,10.55h.83v.37h-4.94v-.37h1.13l-1.13-3.85h-2.9l-1.28,3.85h1.3v.37h-2.64ZM243.39,353.37h2.64l-1.22-4.34-1.41,4.34Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-224">
+                <g class="cls-143">
+                  <g class="cls-141">
+                    <g class="cls-179">
+                      <path class="cls-76" d="M298.12,357.99l4.67-10.45h-1.95l-.52.03-.37.3-.37.89-.34,1.31-.71.5v-3.39h7.34l-4.7,10.42h2.14l.5-.03.4-.3.43-1.08c.25-.89.38-1.46.53-2.21h.72v4.04l-7.78-.03ZM293.99,344.76l.1-.47.6-.49.74.1.47.61-.09.77-.59.46-.77-.09-.46-.61v-.28ZM292.6,357.99v-.37h.93v-10.07h-.93v-.37h4.66v.37h-.93v10.08h.93v.37h-4.66ZM282.44,357.99v-.37h.93v-10.07h-.93v-.37h4.27l3.91,7.79v-7.42h-1.36v-.37h2.76v.37h-.93v10.45h-2.03l-5.22-10.42v10.05h1.36v.37h-2.76ZM272.87,357.99v-.37h.93v-10.07h-.93v-.37h8.34v3.42h-.56l-.34-1.23-.32-1-.4-.69-.47-.12h-2.52v4.63h.65l1.03-.62.38-1.54h.43v4.61h-.43l-.03-.1-.88-1.98h-1.16v5.08h2.36c.32,0,.55-.03.68-.09l.32-.25c.34-.77.6-1.77.93-3.29h.6v4l-8.61-.03ZM265.8,347.54v10.05h.41c1.28,0,2.12-.56,2.51-1.67.22-.62.32-1.74.32-3.35s-.1-2.73-.32-3.35c-.4-1.12-1.24-1.68-2.51-1.68h-.41ZM262.02,347.17h3.85c1,0,1.83.07,2.45.21l1.61.55c1.68,1.51,2.23,2.88,2.23,4.65s-.53,3.07-1.61,4.04l-1.34.93c-1.49.35-2.33.44-3.35.44h-3.83v-.4h.99v-10.04h-.99v-.38ZM255.35,352.13l4.19-4.59h-1.41v-.37h3.07v.37h-1.06l-2.67,2.91,3.8,7.17h.74v.37h-3.55l-3.09-5.86ZM251.47,358v-.37h.93v-10.08h-.93v-.37h4.66v.37h-.93v10.08h.93v.37h-4.66ZM240.64,358v-.37h.84l3.54-10.55h1.77l3.49,10.55h.83v.37h-4.94v-.37h1.13l-1.13-3.85h-2.9l-1.28,3.85h1.3v.37h-2.64ZM243.39,353.37h2.64l-1.22-4.34-1.41,4.34Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-111">
+              <g class="cls-259">
+                <g class="cls-143">
+                  <g class="cls-99">
+                    <g class="cls-268">
+                      <path class="cls-76" d="M368.73,378.08l6.5-7.17h-2.21v-.59h4.78v.59h-1.65l-4.17,4.53,5.94,11.2h1.15v.59h-5.54l-4.79-9.15ZM362.68,387.24v-.59h1.46v-15.75h-1.46v-.59h7.28v.59h-1.46v15.75h1.46v.59h-7.28ZM356.46,366.59l.15-.75.93-.77,1.16.15.74.94-.15,1.2-.93.72-1.19-.15-.71-.94v-.4ZM354.3,387.24v-.59h1.46v-15.75h-1.46v-.59h7.28v.59h-1.46v15.75h1.46v.59h-7.28ZM340.47,387.24v-.59h1.46v-15.75h-1.46v-.59h8.06v.59h-2.24v15.75h2.79c.8,0,1.36-.27,1.69-.78l.37-.86c.5-1.82.78-2.89,1.09-4.24h.9v6.46h-12.66ZM330.75,391.7l.46-.94c1.11.59,2,.87,2.71.87l1.36-.35-.43-1.76h-1.05s-.37.04-.37.04l-.19-2.32h.87v1.4l.4-.06h.37l1.16.15.96,1.24c0,1.31-.28,1.83-.84,2.21l-1.06.49c-1.64,0-2.84-.32-4.35-.97h0ZM338.38,371.08v4.78h-.81c-.49-1.71-.96-3.06-1.41-4.01l-.49-.86-.9-.49c-2.18,0-3.3,1.06-3.88,3.19-.31,1.17-.47,2.89-.47,5.17,0,2.94.29,5.05.88,6.3.59,1.25,1.55,1.89,2.89,1.89,1.21,0,2.31-1.64,3.29-4.93l.28-.96h.97v5.21c-1.37.81-3.04,1.23-4.98,1.23-2.2,0-4.02-.69-5.47-2.07-1.36-1.3-2.2-2.85-2.52-4.65l-.16-1.24c0-3.29.77-5.4,2.3-7.01,1.68-1.76,3.8-2.63,6.34-2.63,1.59,0,2.98.37,4.14,1.09h0ZM309.41,387.24v-.59h1.46v-15.75h-1.46v-.59h6.68l6.1,12.16v-11.57h-2.11v-.59h4.3v.59h-1.46v16.34h-3.21l-8.15-16.28v15.69h2.11v.59h-4.26ZM294.48,387.24v-.59h1.46v-15.75h-1.46v-.59h13.04v5.34h-.88l-.53-1.9c-.28-.92-.52-1.56-.77-2.1l-.37-.55-.72-.19h-3.95v7.23h1.02c.91,0,1.62-.96,2.11-2.89l.12-.47h.66v7.19h-.66l-.04-.15c-.63-2.07-1.37-3.08-2.21-3.08h-.97v7.93h3.68c.5,0,.85-.04,1.06-.13l.52-.38c.53-1.2.94-2.77,1.44-5.14h.94v6.24h-13.49ZM292.46,385.65l-2.7,1.45c-1,.32-2.14.49-3.42.49-2.43,0-4.35-.84-5.73-2.52-1.31-1.58-1.97-3.6-1.97-6.08,0-2.75.8-4.94,2.39-6.57,1.59-1.62,3.76-2.45,6.5-2.45l4.45.72v5.02h-.93l-.44-1.37c-.47-1.2-.74-1.84-1.13-2.72l-1.05-1.12c-2.68,0-3.85,1.11-4.44,3.31-.31,1.17-.47,2.95-.47,5.37,0,2.27.07,3.85.25,4.72.4,2.11,1.3,3.17,2.68,3.17l1.27-.24c.49-.83.59-1.42.59-2.24v-4.62h-1.65v-.63h7.06v.63h-1.24v5.68ZM260.67,378.08l6.5-7.17h-2.21v-.59h4.78v.59h-1.65l-4.17,4.53,5.94,11.2h1.15v.59h-5.54l-4.79-9.15ZM254.63,387.24v-.59h1.46v-15.75h-1.46v-.59h7.28v.59h-1.46v15.75h1.46v.59h-7.28ZM248.41,366.59l.15-.75.93-.77,1.16.15.74.94-.15,1.2-.93.72-1.19-.15-.71-.94v-.4ZM246.24,387.24v-.59h1.46v-15.75h-1.46v-.59h7.28v.59h-1.46v15.75h1.46v.59h-7.28ZM226.36,387.24v-.59h1.46v-15.75h-1.46v-.59h6.41l2.9,10.69,3.21-10.69h6.26v.59h-1.43v15.75h1.43v.59h-7.83v-.59h1.96v-15.59l-4.72,16.16h-1.55l-4.5-16.32v15.75h1.77v.59h-3.93ZM209.54,387.24v-.59h1.3l5.53-16.47h2.76l5.45,16.47h1.3v.59h-7.74v-.59h1.77l-1.77-6.02h-4.55l-2,6.02h2.03v.59h-4.07ZM213.85,380.01h4.13l-1.9-6.79-2.23,6.79ZM194.32,387.24v-.59h1.46v-15.75h-1.46v-.59h6.68l6.1,12.16v-11.57h-2.14v-.59h4.3v.59h-1.46v16.34h-3.17l-8.15-16.28v15.69h2.11v.59h-4.27ZM188.22,366.59l.15-.75.93-.77,1.16.15.74.94-.15,1.2-.93.72-1.19-.15-.71-.94v-.4ZM186.05,387.24v-.59h1.46v-15.75h-1.46v-.59h7.28v.59h-1.46v15.75h1.46v.59h-7.28ZM175.03,370.92v15.69h.63c2,0,3.32-.87,3.92-2.6.34-.96.52-2.72.52-5.24s-.18-4.27-.52-5.23c-.62-1.77-1.93-2.64-3.92-2.64h-.63ZM169.13,370.33h6c1.56,0,2.84.1,3.83.34l3.4,1.67c1.71,1.54,2.58,3.69,2.58,6.45s-.84,4.78-2.51,6.33l-3.42,1.79c-.99.24-2.28.35-3.89.35h-6v-.63h1.55v-15.72h-1.55v-.58Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-165">
+                <g class="cls-143">
+                  <g class="cls-198">
+                    <g class="cls-117">
+                      <path class="cls-76" d="M368.73,378.08l6.5-7.17h-2.21v-.59h4.78v.59h-1.65l-4.17,4.53,5.94,11.2h1.15v.59h-5.54l-4.79-9.15ZM362.68,387.24v-.59h1.46v-15.75h-1.46v-.59h7.28v.59h-1.46v15.75h1.46v.59h-7.28ZM356.46,366.59l.15-.75.93-.77,1.16.15.74.94-.15,1.2-.93.72-1.19-.15-.71-.94v-.4ZM354.3,387.24v-.59h1.46v-15.75h-1.46v-.59h7.28v.59h-1.46v15.75h1.46v.59h-7.28ZM340.47,387.24v-.59h1.46v-15.75h-1.46v-.59h8.06v.59h-2.24v15.75h2.79c.8,0,1.36-.27,1.69-.78l.37-.86c.5-1.82.78-2.89,1.09-4.24h.9v6.46h-12.66ZM330.75,391.7l.46-.94c1.11.59,2,.87,2.71.87l1.36-.35-.43-1.76h-1.05s-.37.04-.37.04l-.19-2.32h.87v1.4l.4-.06h.37l1.16.15.96,1.24c0,1.31-.28,1.83-.84,2.21l-1.06.49c-1.64,0-2.84-.32-4.35-.97h0ZM338.38,371.08v4.78h-.81c-.49-1.71-.96-3.06-1.41-4.01l-.49-.86-.9-.49c-2.18,0-3.3,1.06-3.88,3.19-.31,1.17-.47,2.89-.47,5.17,0,2.94.29,5.05.88,6.3.59,1.25,1.55,1.89,2.89,1.89,1.21,0,2.31-1.64,3.29-4.93l.28-.96h.97v5.21c-1.37.81-3.04,1.23-4.98,1.23-2.2,0-4.02-.69-5.47-2.07-1.36-1.3-2.2-2.85-2.52-4.65l-.16-1.24c0-3.29.77-5.4,2.3-7.01,1.68-1.76,3.8-2.63,6.34-2.63,1.59,0,2.98.37,4.14,1.09h0ZM309.41,387.24v-.59h1.46v-15.75h-1.46v-.59h6.68l6.1,12.16v-11.57h-2.11v-.59h4.3v.59h-1.46v16.34h-3.21l-8.15-16.28v15.69h2.11v.59h-4.26ZM294.48,387.24v-.59h1.46v-15.75h-1.46v-.59h13.04v5.34h-.88l-.53-1.9c-.28-.92-.52-1.56-.77-2.1l-.37-.55-.72-.19h-3.95v7.23h1.02c.91,0,1.62-.96,2.11-2.89l.12-.47h.66v7.19h-.66l-.04-.15c-.63-2.07-1.37-3.08-2.21-3.08h-.97v7.93h3.68c.5,0,.85-.04,1.06-.13l.52-.38c.53-1.2.94-2.77,1.44-5.14h.94v6.24h-13.49ZM292.46,385.65l-2.7,1.45c-1,.32-2.14.49-3.42.49-2.43,0-4.35-.84-5.73-2.52-1.31-1.58-1.97-3.6-1.97-6.08,0-2.75.8-4.94,2.39-6.57,1.59-1.62,3.76-2.45,6.5-2.45l4.45.72v5.02h-.93l-.44-1.37c-.47-1.2-.74-1.84-1.13-2.72l-1.05-1.12c-2.68,0-3.85,1.11-4.44,3.31-.31,1.17-.47,2.95-.47,5.37,0,2.27.07,3.85.25,4.72.4,2.11,1.3,3.17,2.68,3.17l1.27-.24c.49-.83.59-1.42.59-2.24v-4.62h-1.65v-.63h7.06v.63h-1.24v5.68ZM260.67,378.08l6.5-7.17h-2.21v-.59h4.78v.59h-1.65l-4.17,4.53,5.94,11.2h1.15v.59h-5.54l-4.79-9.15ZM254.63,387.24v-.59h1.46v-15.75h-1.46v-.59h7.28v.59h-1.46v15.75h1.46v.59h-7.28ZM248.41,366.59l.15-.75.93-.77,1.16.15.74.94-.15,1.2-.93.72-1.19-.15-.71-.94v-.4ZM246.24,387.24v-.59h1.46v-15.75h-1.46v-.59h7.28v.59h-1.46v15.75h1.46v.59h-7.28ZM226.36,387.24v-.59h1.46v-15.75h-1.46v-.59h6.41l2.9,10.69,3.21-10.69h6.26v.59h-1.43v15.75h1.43v.59h-7.83v-.59h1.96v-15.59l-4.72,16.16h-1.55l-4.5-16.32v15.75h1.77v.59h-3.93ZM209.54,387.24v-.59h1.3l5.53-16.47h2.76l5.45,16.47h1.3v.59h-7.74v-.59h1.77l-1.77-6.02h-4.55l-2,6.02h2.03v.59h-4.07ZM213.85,380.01h4.13l-1.9-6.79-2.23,6.79ZM194.32,387.24v-.59h1.46v-15.75h-1.46v-.59h6.68l6.1,12.16v-11.57h-2.14v-.59h4.3v.59h-1.46v16.34h-3.17l-8.15-16.28v15.69h2.11v.59h-4.27ZM188.22,366.59l.15-.75.93-.77,1.16.15.74.94-.15,1.2-.93.72-1.19-.15-.71-.94v-.4ZM186.05,387.24v-.59h1.46v-15.75h-1.46v-.59h7.28v.59h-1.46v15.75h1.46v.59h-7.28ZM175.03,370.92v15.69h.63c2,0,3.32-.87,3.92-2.6.34-.96.52-2.72.52-5.24s-.18-4.27-.52-5.23c-.62-1.77-1.93-2.64-3.92-2.64h-.63ZM169.13,370.33h6c1.56,0,2.84.1,3.83.34l3.4,1.67c1.71,1.54,2.58,3.69,2.58,6.45s-.84,4.78-2.51,6.33l-3.42,1.79c-.99.24-2.28.35-3.89.35h-6v-.63h1.55v-15.72h-1.55v-.58Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-145">
+              <g class="cls-46">
+                <g class="cls-143">
+                  <g class="cls-37">
+                    <g class="cls-84">
+                      <path class="cls-76" d="M317.17,395.97l.09-.46.59-.46.71.09.46.58-.09.74-.56.44-.75-.09-.43-.56M320,395.97l.09-.46.57-.46.71.09.46.58-.09.74-.56.43-.75-.09-.43-.56v-.27ZM314.52,398.73v-.37h4.82v.37h-1.09v7.16c0,.97.07,1.67.25,2.05l.8.96c1.44,0,1.96-.19,2.36-.59l.55-.8c.13-.9.16-1.43.16-2.18v-6.61h-1.16v-.37h2.53v.37h-.88v7.08c0,.63-.03,1.12-.1,1.46l-.69,1.49c-1.33.53-1.97.63-2.77.63-1.44,0-2.46-.31-3.07-.93-.5-.52-.74-1.54-.74-3.08v-6.66h-.96ZM310.28,403.4l1.89.28c1.36,1.05,1.67,1.68,1.67,2.46,0,1.25-.62,2.11-1.87,2.58-.8.3-1.95.44-3.46.44h-4.17v-.37h.93v-10.1h-.93v-.37h4.55c.93,0,1.59.03,1.99.07l.69.13c1.28.62,1.8,1.36,1.8,2.38,0,1.45-1.03,2.27-3.08,2.48ZM308.05,403.64v5.17h.6l1.55-.22c.63-.84.77-1.52.77-2.49l-.19-1.51c-.77-.75-1.39-.94-2.25-.94h-.47ZM308.05,398.73v4.55h.44c1.39,0,2.06-.77,2.06-2.32l-.15-1.37c-.6-.68-1.15-.86-1.95-.86h-.41ZM297.11,395.97l.09-.46.59-.46.71.09.46.58-.09.74-.56.44-.75-.09-.43-.56v-.28ZM299.94,395.97l.09-.46.57-.46.71.09.46.58-.09.74-.56.43-.75-.09-.43-.56v-.27ZM294.46,398.73v-.37h4.82v.37h-1.09v7.16c0,.97.07,1.67.25,2.05l.8.96c1.44,0,1.96-.19,2.36-.59l.55-.8c.13-.9.16-1.43.16-2.18v-6.61h-1.16v-.37h2.53v.37h-.88v7.08c0,.63-.03,1.12-.1,1.46l-.69,1.49c-1.33.53-1.97.63-2.77.63-1.44,0-2.46-.31-3.07-.93-.5-.52-.74-1.54-.74-3.08v-6.66h-.96ZM285.6,409.18v-.37h.93v-10.1h-.93v-.37h5.16v.37h-1.43v10.08h1.78l.87-.16.44-.89c.32-1.17.5-1.84.69-2.72h.57v4.13h-8.09ZM275.73,398.73v-.37h4.82v.37h-1.09v7.16c0,.97.07,1.67.25,2.05l.8.96c1.44,0,1.96-.19,2.36-.59l.55-.8c.13-.9.16-1.43.16-2.18v-6.61h-1.16v-.37h2.53v.37h-.88v7.08c0,.63-.03,1.12-.1,1.46l-.69,1.49c-1.33.53-1.97.63-2.77.63-1.44,0-2.46-.31-3.07-.93-.5-.52-.74-1.54-.74-3.08v-6.66h-.96ZM268.95,403.32l4.19-4.59h-1.41v-.37h3.07v.37h-1.06l-2.67,2.91,3.8,7.17h.74v.37h-3.55l-3.09-5.86ZM265.07,409.19v-.37h.93v-10.11h-.93v-.37h4.66v.37h-.93v10.08h.93v.37l-4.66.03ZM250.22,398.36h5.04c1.39,0,2.3.1,2.73.31l1.46,1.24c0,2.49-.88,3.38-2.64,3.69l2.84,5.23h.63v.37h-3.27l-2.48-4.92c-.16-.32-.35-.5-.59-.55v5.09h.93v.37h-4.66v-.37h.93v-10.11h-.93v-.35ZM253.95,398.73v4.68h.35s1.39-.15,1.39-.15c.81-.8,1.02-1.4,1.02-2.21l-.15-1.36c-.62-.77-1.15-.96-1.9-.96h-.71ZM244.68,398.13c1.49,0,2.65.59,3.51,1.76.77,1.05,1.15,2.33,1.15,3.88s-.38,2.83-1.15,3.88c-.85,1.17-2.03,1.74-3.51,1.74s-2.65-.58-3.51-1.74c-.77-1.03-1.15-2.33-1.15-3.88s.38-2.83,1.15-3.88c.85-1.17,2.02-1.76,3.51-1.76ZM244.68,398.46l-1.16.77c-.31,2.17-.35,3.17-.35,4.53,0,1.48.04,2.48.12,3.03l.68,2.27,1.95-.75c.31-2.11.35-3.13.35-4.55s-.04-2.39-.13-3.03l-.69-2.27h-.75ZM233.93,403.4h.4l1.34-.19c.52-.72.63-1.31.63-2.18l-.1-1.33-.94-.97h-1.33v4.68ZM230.26,409.18v-.4h.87v-10.07h-.87v-.37h4.8c1.37,0,2.28.12,2.76.35l1.4,1.24c0,2.2-.47,2.98-1.4,3.41l-1.62.44h-2.28v4.96h1.25v.4l-4.91.03ZM221.97,408.42v-3.23h.66l.62,2.18c.53,1.17,1.13,1.64,1.9,1.64l1.09-.15,1.05-1.06c0-1.3-.85-2.11-2.55-2.97l-.32-.16-1.47-.93c-.8-1.06-.99-1.68-.99-2.39l.43-1.86c1.61-1.11,2.52-1.37,3.6-1.37l2.9.75v2.85h-.69l-.35-1.14-.5-1.24c-.44-.68-.9-.87-1.56-.87l-1,.12-1.02.93c0,1.24.62,1.9,1.83,2.52l.68.34c1.15.58,1.92,1.03,2.3,1.37l.96,1.25c0,1.96-.47,2.83-1.4,3.48l-2.95.87c-1.36,0-2.42-.32-3.18-.97v.03Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-128">
+                <g class="cls-143">
+                  <g class="cls-119">
+                    <g class="cls-109">
+                      <path class="cls-76" d="M317.17,395.97l.09-.46.59-.46.71.09.46.58-.09.74-.56.44-.75-.09-.43-.56M320,395.97l.09-.46.57-.46.71.09.46.58-.09.74-.56.43-.75-.09-.43-.56v-.27ZM314.52,398.73v-.37h4.82v.37h-1.09v7.16c0,.97.07,1.67.25,2.05l.8.96c1.44,0,1.96-.19,2.36-.59l.55-.8c.13-.9.16-1.43.16-2.18v-6.61h-1.16v-.37h2.53v.37h-.88v7.08c0,.63-.03,1.12-.1,1.46l-.69,1.49c-1.33.53-1.97.63-2.77.63-1.44,0-2.46-.31-3.07-.93-.5-.52-.74-1.54-.74-3.08v-6.66h-.96ZM310.28,403.4l1.89.28c1.36,1.05,1.67,1.68,1.67,2.46,0,1.25-.62,2.11-1.87,2.58-.8.3-1.95.44-3.46.44h-4.17v-.37h.93v-10.1h-.93v-.37h4.55c.93,0,1.59.03,1.99.07l.69.13c1.28.62,1.8,1.36,1.8,2.38,0,1.45-1.03,2.27-3.08,2.48ZM308.05,403.64v5.17h.6l1.55-.22c.63-.84.77-1.52.77-2.49l-.19-1.51c-.77-.75-1.39-.94-2.25-.94h-.47ZM308.05,398.73v4.55h.44c1.39,0,2.06-.77,2.06-2.32l-.15-1.37c-.6-.68-1.15-.86-1.95-.86h-.41ZM297.11,395.97l.09-.46.59-.46.71.09.46.58-.09.74-.56.44-.75-.09-.43-.56v-.28ZM299.94,395.97l.09-.46.57-.46.71.09.46.58-.09.74-.56.43-.75-.09-.43-.56v-.27ZM294.46,398.73v-.37h4.82v.37h-1.09v7.16c0,.97.07,1.67.25,2.05l.8.96c1.44,0,1.96-.19,2.36-.59l.55-.8c.13-.9.16-1.43.16-2.18v-6.61h-1.16v-.37h2.53v.37h-.88v7.08c0,.63-.03,1.12-.1,1.46l-.69,1.49c-1.33.53-1.97.63-2.77.63-1.44,0-2.46-.31-3.07-.93-.5-.52-.74-1.54-.74-3.08v-6.66h-.96ZM285.6,409.18v-.37h.93v-10.1h-.93v-.37h5.16v.37h-1.43v10.08h1.78l.87-.16.44-.89c.32-1.17.5-1.84.69-2.72h.57v4.13h-8.09ZM275.73,398.73v-.37h4.82v.37h-1.09v7.16c0,.97.07,1.67.25,2.05l.8.96c1.44,0,1.96-.19,2.36-.59l.55-.8c.13-.9.16-1.43.16-2.18v-6.61h-1.16v-.37h2.53v.37h-.88v7.08c0,.63-.03,1.12-.1,1.46l-.69,1.49c-1.33.53-1.97.63-2.77.63-1.44,0-2.46-.31-3.07-.93-.5-.52-.74-1.54-.74-3.08v-6.66h-.96ZM268.95,403.32l4.19-4.59h-1.41v-.37h3.07v.37h-1.06l-2.67,2.91,3.8,7.17h.74v.37h-3.55l-3.09-5.86ZM265.07,409.19v-.37h.93v-10.11h-.93v-.37h4.66v.37h-.93v10.08h.93v.37l-4.66.03ZM250.22,398.36h5.04c1.39,0,2.3.1,2.73.31l1.46,1.24c0,2.49-.88,3.38-2.64,3.69l2.84,5.23h.63v.37h-3.27l-2.48-4.92c-.16-.32-.35-.5-.59-.55v5.09h.93v.37h-4.66v-.37h.93v-10.11h-.93v-.35ZM253.95,398.73v4.68h.35s1.39-.15,1.39-.15c.81-.8,1.02-1.4,1.02-2.21l-.15-1.36c-.62-.77-1.15-.96-1.9-.96h-.71ZM244.68,398.13c1.49,0,2.65.59,3.51,1.76.77,1.05,1.15,2.33,1.15,3.88s-.38,2.83-1.15,3.88c-.85,1.17-2.03,1.74-3.51,1.74s-2.65-.58-3.51-1.74c-.77-1.03-1.15-2.33-1.15-3.88s.38-2.83,1.15-3.88c.85-1.17,2.02-1.76,3.51-1.76ZM244.68,398.46l-1.16.77c-.31,2.17-.35,3.17-.35,4.53,0,1.48.04,2.48.12,3.03l.68,2.27,1.95-.75c.31-2.11.35-3.13.35-4.55s-.04-2.39-.13-3.03l-.69-2.27h-.75ZM233.93,403.4h.4l1.34-.19c.52-.72.63-1.31.63-2.18l-.1-1.33-.94-.97h-1.33v4.68ZM230.26,409.18v-.4h.87v-10.07h-.87v-.37h4.8c1.37,0,2.28.12,2.76.35l1.4,1.24c0,2.2-.47,2.98-1.4,3.41l-1.62.44h-2.28v4.96h1.25v.4l-4.91.03ZM221.97,408.42v-3.23h.66l.62,2.18c.53,1.17,1.13,1.64,1.9,1.64l1.09-.15,1.05-1.06c0-1.3-.85-2.11-2.55-2.97l-.32-.16-1.47-.93c-.8-1.06-.99-1.68-.99-2.39l.43-1.86c1.61-1.11,2.52-1.37,3.6-1.37l2.9.75v2.85h-.69l-.35-1.14-.5-1.24c-.44-.68-.9-.87-1.56-.87l-1,.12-1.02.93c0,1.24.62,1.9,1.83,2.52l.68.34c1.15.58,1.92,1.03,2.3,1.37l.96,1.25c0,1.96-.47,2.83-1.4,3.48l-2.95.87c-1.36,0-2.42-.32-3.18-.97v.03Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-239">
+              <g class="cls-238">
+                <g class="cls-143">
+                  <g class="cls-11">
+                    <g class="cls-136">
+                      <path class="cls-6" d="M162.26,573.25c-46.91,9.21,27.66,75.42,43.77,70.4,46.93-14.61,94.1-15.54,141.56,0,28.49-15.06,92.47-51.5,41.75-73.52-8.44,9.43-19.14,18.02-32.33,25.64-27.54-5.55-51.48-9.49-79.02-9.58l-86.26,9.58c-11.73-6.77-21.49-14.32-29.45-22.54"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-178">
+                <g class="cls-143">
+                  <g class="cls-108">
+                    <g class="cls-201">
+                      <path class="cls-6" d="M162.26,573.25c-46.91,9.21,27.66,75.42,43.77,70.4,46.93-14.61,94.1-15.54,141.56,0,28.49-15.06,92.47-51.5,41.75-73.52-8.44,9.43-19.14,18.02-32.33,25.64-27.54-5.55-51.48-9.49-79.02-9.58l-86.26,9.58c-11.73-6.77-21.49-14.32-29.45-22.54"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-98">
+              <g class="cls-13">
+                <g class="cls-143">
+                  <g class="cls-56">
+                    <g class="cls-281">
+                      <path class="cls-7" d="M149.29,596.97c6.68,15.31,26.42,33.55,41.4,42.08,4.33.84,8.74,1.14,13.35.09l41.99-16.99,42.09,1.54,58.74,13.53c.44.12-.4,1.06.27,1.28,2.52.84,11.55-.9,12.9-1.64,19.2-10.63,41.58-24.93,47.18-40.72l-5.19.19-43.51-1.43c-.5.3-1,.59-1.52.89l-5.64-1.12-91.71-3-42.55,1.31-25.38,2.82c-1.11-.63-2.2-1.28-3.27-1.93l-18.2.56-20.94,2.54Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-155">
+                <g class="cls-143">
+                  <g class="cls-127">
+                    <g class="cls-243">
+                      <path class="cls-7" d="M149.29,596.97c6.68,15.31,26.42,33.55,41.4,42.08,4.33.84,8.74,1.14,13.35.09l41.99-16.99,42.09,1.54,58.74,13.53c.44.12-.4,1.06.27,1.28,2.52.84,11.55-.9,12.9-1.64,19.2-10.63,41.58-24.93,47.18-40.72l-5.19.19-43.51-1.43c-.5.3-1,.59-1.52.89l-5.64-1.12-91.71-3-42.55,1.31-25.38,2.82c-1.11-.63-2.2-1.28-3.27-1.93l-18.2.56-20.94,2.54Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-43">
+              <g class="cls-282">
+                <g class="cls-143">
+                  <g class="cls-66">
+                    <g class="cls-234">
+                      <path class="cls-7" d="M278.91,575.98l-95.49,16.65,2.68-1.64c-10.33-5.96-11.58-7.35-20.54-15.41-3.45.94-12.6,4.97-13.35,8.87-1.67,4.4,1.25,10.76,3.39,14.51,4.05,7.13,10.1,13.92,15.99,19.56,6.16,5.9,13.32,11.68,20.69,15.99,2.61,1.54,5.53,3.06,8.42,3.99.83.27,3.04.87,3.91.61,47.5-14.79,95.04-15.72,142.51-.61,9.34-4.97,18.58-10.23,27.4-16.1,8.62-5.76,29.8-20.78,28.97-32.78-.43-6.29-10.67-12.68-16.36-15.5-10.63,8.97-10.02,10.41-21.4,16.97l-1.55.9-1.75-.35c-26.13-5.27-56.81-15.51-83.53-15.65"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-237">
+                <g class="cls-143">
+                  <g class="cls-240">
+                    <g class="cls-42">
+                      <path class="cls-7" d="M278.91,575.98l-95.49,16.65,2.68-1.64c-10.33-5.96-11.58-7.35-20.54-15.41-3.45.94-12.6,4.97-13.35,8.87-1.67,4.4,1.25,10.76,3.39,14.51,4.05,7.13,10.1,13.92,15.99,19.56,6.16,5.9,13.32,11.68,20.69,15.99,2.61,1.54,5.53,3.06,8.42,3.99.83.27,3.04.87,3.91.61,47.5-14.79,95.04-15.72,142.51-.61,9.34-4.97,18.58-10.23,27.4-16.1,8.62-5.76,29.8-20.78,28.97-32.78-.43-6.29-10.67-12.68-16.36-15.5-10.63,8.97-10.02,10.41-21.4,16.97l-1.55.9-1.75-.35c-26.13-5.27-56.81-15.51-83.53-15.65"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-204">
+              <g class="cls-217">
+                <g class="cls-143">
+                  <g class="cls-63">
+                    <g class="cls-222">
+                      <path class="cls-76" d="M303.48,615.5c-2.08,0-3.85-.94-5.31-2.86-1.56-2.01-2.34-4.61-2.34-7.82,0-2.72.59-5.08,1.75-7.07,1.4-2.39,3.37-3.59,5.9-3.59,2.06,0,3.83.94,5.34,2.83l1.75,3.5c.41,1.36.6,2.82.6,4.34,0,2.72-.59,5.08-1.78,7.08-1.41,2.41-3.39,3.6-5.91,3.6M301.01,604.82c0,3.93.18,6.58.55,7.97l1.02,2.07c2.17,0,2.93-1.48,3.27-4.41.09-.83.13-2.7.13-5.62,0-3.96-.18-6.61-.55-7.99l-1-2.05c-2.15,0-2.93,1.48-3.26,4.41-.1.87-.15,2.76-.15,5.62h-.01ZM282.2,615.09v-.71h2.18v-16.28c-.81.63-1.95,1.28-3.4,1.93l-.32-.69c2.61-1,4.6-2.67,5.98-4.96h2.8v20h1.86v.71h-9.09ZM268.86,615.5c-2.08,0-3.85-.94-5.31-2.86-1.56-2.01-2.34-4.61-2.34-7.82,0-2.72.59-5.08,1.75-7.07,1.4-2.39,3.36-3.59,5.9-3.59,2.06,0,3.83.94,5.34,2.83l1.75,3.5c.41,1.36.6,2.82.6,4.34,0,2.72-.59,5.08-1.78,7.08-1.41,2.41-3.39,3.6-5.91,3.6h0ZM266.39,604.82c0,3.93.18,6.58.55,7.97l1.02,2.07c2.17,0,2.95-1.48,3.27-4.41.09-.83.13-2.7.13-5.62,0-3.96-.18-6.61-.55-7.99l-1-2.05c-2.15,0-2.93,1.48-3.26,4.41-.1.87-.15,2.76-.15,5.62h-.01ZM244.04,615.09v-4.18c6.01-3.37,9.02-7.28,9.02-11.72,0-2.88-.94-4.32-2.83-4.32-1.11,0-2.02.87-2.73,2.61-.22.56-.59,1.89-1.09,3.99h-1.47v-5.77c1.41-.75,2.9-1.25,4.48-1.48l1-.1c2.59,0,4.3.4,5.67,1.2,1.68.97,2.52,2.42,2.52,4.34,0,2.73-1.8,5.17-5.39,7.31-.87.5-2.67,1.48-5.39,2.89l-2.03,1.05h11.75v-2.27h.68v6.45h-14.18Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-95">
+                <g class="cls-143">
+                  <g class="cls-73">
+                    <g class="cls-12">
+                      <path class="cls-76" d="M303.48,615.5c-2.08,0-3.85-.94-5.31-2.86-1.56-2.01-2.34-4.61-2.34-7.82,0-2.72.59-5.08,1.75-7.07,1.4-2.39,3.37-3.59,5.9-3.59,2.06,0,3.83.94,5.34,2.83l1.75,3.5c.41,1.36.6,2.82.6,4.34,0,2.72-.59,5.08-1.78,7.08-1.41,2.41-3.39,3.6-5.91,3.6M301.01,604.82c0,3.93.18,6.58.55,7.97l1.02,2.07c2.17,0,2.93-1.48,3.27-4.41.09-.83.13-2.7.13-5.62,0-3.96-.18-6.61-.55-7.99l-1-2.05c-2.15,0-2.93,1.48-3.26,4.41-.1.87-.15,2.76-.15,5.62h-.01ZM282.2,615.09v-.71h2.18v-16.28c-.81.63-1.95,1.28-3.4,1.93l-.32-.69c2.61-1,4.6-2.67,5.98-4.96h2.8v20h1.86v.71h-9.09ZM268.86,615.5c-2.08,0-3.85-.94-5.31-2.86-1.56-2.01-2.34-4.61-2.34-7.82,0-2.72.59-5.08,1.75-7.07,1.4-2.39,3.36-3.59,5.9-3.59,2.06,0,3.83.94,5.34,2.83l1.75,3.5c.41,1.36.6,2.82.6,4.34,0,2.72-.59,5.08-1.78,7.08-1.41,2.41-3.39,3.6-5.91,3.6h0ZM266.39,604.82c0,3.93.18,6.58.55,7.97l1.02,2.07c2.17,0,2.95-1.48,3.27-4.41.09-.83.13-2.7.13-5.62,0-3.96-.18-6.61-.55-7.99l-1-2.05c-2.15,0-2.93,1.48-3.26,4.41-.1.87-.15,2.76-.15,5.62h-.01ZM244.04,615.09v-4.18c6.01-3.37,9.02-7.28,9.02-11.72,0-2.88-.94-4.32-2.83-4.32-1.11,0-2.02.87-2.73,2.61-.22.56-.59,1.89-1.09,3.99h-1.47v-5.77c1.41-.75,2.9-1.25,4.48-1.48l1-.1c2.59,0,4.3.4,5.67,1.2,1.68.97,2.52,2.42,2.52,4.34,0,2.73-1.8,5.17-5.39,7.31-.87.5-2.67,1.48-5.39,2.89l-2.03,1.05h11.75v-2.27h.68v6.45h-14.18Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-278">
+              <g class="cls-206">
+                <g class="cls-143">
+                  <g class="cls-185">
+                    <g class="cls-257">
+                      <path class="cls-9" d="M149.35,592.17c23.79,2.88,52.17-5.99,78.86-10.92,19.35-3.57,37.83-6.98,53.31-7.07h.01c20.32.07,37.98,3.62,55.55,7.16,21.19,4.27,42.27,12.13,67.56,10.02l.4,4.75c-25.92,2.15-47.35-5.79-68.91-10.11-17.33-3.48-34.77-6.98-54.57-7.06-14.99.09-33.26,3.47-52.42,7-27.06,4.99-55.86,13.93-80.35,10.97l.57-4.74Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-51">
+                <g class="cls-143">
+                  <g class="cls-87">
+                    <g class="cls-50">
+                      <path class="cls-9" d="M149.35,592.17c23.79,2.88,52.17-5.99,78.86-10.92,19.35-3.57,37.83-6.98,53.31-7.07h.01c20.32.07,37.98,3.62,55.55,7.16,21.19,4.27,42.27,12.13,67.56,10.02l.4,4.75c-25.92,2.15-47.35-5.79-68.91-10.11-17.33-3.48-34.77-6.98-54.57-7.06-14.99.09-33.26,3.47-52.42,7-27.06,4.99-55.86,13.93-80.35,10.97l.57-4.74Z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <g class="cls-143">
+            <g class="cls-139">
+              <g class="cls-59">
+                <g class="cls-143">
+                  <g class="cls-65">
+                    <g class="cls-4">
+                      <path class="cls-6" d="M274.57,452.53c4.39,0,7.94,3.57,7.94,7.97s-3.55,7.97-7.94,7.97-7.94-3.57-7.94-7.97,3.55-7.97,7.94-7.97"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              <g class="cls-114">
+                <g class="cls-143">
+                  <g class="cls-175">
+                    <g class="cls-115">
+                      <path class="cls-6" d="M274.57,452.53c4.39,0,7.94,3.57,7.94,7.97s-3.55,7.97-7.94,7.97-7.94-3.57-7.94-7.97,3.55-7.97,7.94-7.97"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g class="cls-75">
+          <rect class="cls-9" x="168.39" y="362.48" width="213.16" height="32.73"/>
+          <text/>
+        </g>
+        <rect class="cls-9" x="197.89" y="341.43" width="154.78" height="23.77"/>
+        <g class="cls-58">
+          <text class="cls-181" transform="translate(218.89 386.6)"><tspan x="0" y="0">D</tspan></text>
+          <text class="cls-181" transform="translate(237.41 386.6)"><tspan x="0" y="0">İ</tspan></text>
+          <text class="cls-181" transform="translate(246.78 386.6)"><tspan x="0" y="0">N</tspan></text>
+          <text class="cls-181" transform="translate(263.35 386.6)"><tspan x="0" y="0">A</tspan></text>
+          <text class="cls-181" transform="translate(280.47 386.6)"><tspan x="0" y="0">M</tspan></text>
+          <text class="cls-181" transform="translate(300.92 386.6)"><tspan x="0" y="0">İ</tspan></text>
+          <text class="cls-181" transform="translate(310.3 386.6)"><tspan x="0" y="0">K</tspan></text>
+          <rect class="cls-213" x="212.45" y="395.22" width="120.26" height="19.04"/>
+        </g>
+        <text class="cls-182" transform="translate(240.64 358.13) scale(.97 1)"><tspan x="0" y="0">AKDENİZ</tspan></text>
+        <rect class="cls-106" x="204.87" y="389.14" width="154.78" height="23.77"/>
+        <text class="cls-182" transform="translate(221.13 409.03) scale(.98 1)"><tspan x="0" y="0">SPOR KULÜBÜ</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

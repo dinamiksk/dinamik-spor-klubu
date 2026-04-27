@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>if('scrollRestoration'in history)history.scrollRestoration='manual';</script>
+<title>Dinamik Spor Kulübü — İman. Disiplin. Spor. · Antalya · MMX</title>
+<meta name="description" content="Antalya merkezli, değerler odaklı spor kulübü. Dalgıçlık, bilek güreşi, kamp ve ENP ile gençleri güçlü bireyler olarak yetiştiriyoruz.">
+<meta property="og:title" content="Dinamik Spor Kulübü — İman. Disiplin. Spor.">
+<meta property="og:description" content="Antalya merkezli, değerler odaklı spor kulübü.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="canonical" href="https://dinamikspor.org/">
+<link rel="icon" type="image/svg+xml" href="assets/images/dinamik-logo.svg">
+
+<!-- Fonts: Editorial poster stack -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   DEMO — Editorial Monument Edition
+   Paper + Ink · Brand Blue (#1a61ac) · Brand Orange (#f07f0b)
+   No parallax. No marquee. No spin. Stillness, typography, grid.
+========================================================================== */
+
+:root{
+  --paper:       #f1e7d2;
+  --paper-2:     #ead9b6;
+  --paper-3:     #e4cfa1;
+  --ink:         #0b0e14;
+  --ink-2:       #171c26;
+  --ink-soft:    #2a313d;
+  --muted:       #5a6170;
+  --rule:        rgba(11,14,20,0.15);
+  --rule-strong: rgba(11,14,20,0.85);
+  --blue:        #1a61ac;
+  --blue-ink:    #0f4887;
+  --orange:      #f07f0b;
+  --orange-ink:  #c46606;
+  --gold:        #b08a3f;
+
+  --f-display:   "Archivo Black", "Helvetica Neue", Arial, sans-serif;
+  --f-condensed: "Anton", "Helvetica Neue", Arial, sans-serif;
+  --f-serif:     "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --f-body:      "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --w-max: 1440px;
+  --pad-x: clamp(24px, 5vw, 72px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth; scroll-padding-top:96px}
+html,body{background:var(--paper);color:var(--ink);font-family:var(--f-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-size:16px;line-height:1.6;overflow-x:hidden; opacity:0; transition: opacity .7s cubic-bezier(.2,.7,.2,1)}
+body.ready{opacity:1}
+
+/* Skip link (sr-only by default; visible on focus) */
+.skip-link{
+  position:absolute; left:-9999px; top:8px;
+  padding:10px 16px; background:var(--ink); color:var(--paper);
+  font-family:var(--f-body); font-size:13px; font-weight:600;
+  letter-spacing:.18em; text-transform:uppercase; z-index:200;
+  border:1px solid var(--orange);
+}
+.skip-link:focus{ left:8px; }
+
+/* Scroll progress (very subtle, top edge) */
+.scroll-bar{
+  position:fixed; top:0; left:0; height:2px; width:0%;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--orange) 100%);
+  z-index:100; pointer-events:none;
+  transition: width .15s linear;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;background:none;border:0;cursor:pointer;color:inherit}
+::selection{background:var(--ink);color:var(--paper)}
+
+/* Paper grain (very subtle) */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.35;mix-blend-mode:multiply;
+  background-image:
+    radial-gradient(rgba(0,0,0,.045) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,.025) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 2px;
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+  background:
+    radial-gradient(120% 60% at 50% -10%, rgba(240,127,11,.06), transparent 55%),
+    radial-gradient(90% 50% at 110% 110%, rgba(26,97,172,.07), transparent 60%);
+}
+
+/* ============= HEADER ============= */
+.top{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(241,231,210,.72);
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  border-bottom:1px solid transparent;
+  transition: border-color .3s ease, background .3s ease, padding .3s ease;
+}
+.top.scrolled{ background:rgba(241,231,210,.94); border-bottom-color:var(--rule); }
+.top__inner{
+  max-width:var(--w-max); margin:0 auto; padding:18px var(--pad-x);
+  display:grid; grid-template-columns: auto 1fr auto; align-items:center; gap:32px;
+  transition:padding .3s ease;
+}
+.top.scrolled .top__inner{ padding:12px var(--pad-x); }
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:38px;width:auto}
+.brand__wordmark{display:flex;flex-direction:column;line-height:1}
+.brand__wordmark b{font-family:var(--f-display);font-size:17px;letter-spacing:.02em}
+.brand__wordmark i{font-family:var(--f-serif);font-style:italic;font-size:12px;color:var(--muted);margin-top:3px;letter-spacing:.08em}
+.nav{display:flex;justify-content:center;gap:4px;font-family:var(--f-body);font-size:13px;font-weight:500}
+.nav a{
+  padding:10px 14px;border-radius:2px;color:var(--ink-soft);
+  transition:color .2s, background .2s;
+  letter-spacing:.02em;
+}
+.nav a:hover{color:var(--ink);background:rgba(11,14,20,.05)}
+.nav a.active{color:var(--ink);font-weight:600}
+.top__cta{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 18px;background:var(--ink);color:var(--paper);
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--ink); transition:transform .2s, background .2s, border-color .2s;
+}
+.top__cta:hover{ background:var(--blue); border-color:var(--blue); transform:translateY(-1px); }
+.menu-btn{display:none}
+
+/* ============= HERO — Championship Poster ============= */
+.hero{
+  position:relative; padding: 148px var(--pad-x) 0; max-width:var(--w-max); margin:0 auto;
+  min-height: 100vh; min-height: 100svh; display:flex; flex-direction:column;
+  z-index:2;
+}
+/* Ghost numeral 01 — paper poster character */
+.hero__ghost{
+  position:absolute;
+  right: -3vw; top: clamp(40px, 6vw, 90px);
+  font-family:var(--f-display);
+  font-size: clamp(18rem, 38vw, 44rem);
+  line-height:.78;
+  color: rgba(11,14,20,0.045);
+  letter-spacing:-.06em;
+  pointer-events:none;
+  z-index:0;
+  user-select:none;
+}
+.hero__poster{ position:relative; }
+.hero__poster > .poster-left,
+.hero__poster > .poster-side{ position:relative; z-index:2; }
+.hero__slug, .hero__tape{ position:relative; z-index:2; }
+.hero__slug{
+  display:grid; grid-template-columns: 1fr auto 1fr; align-items:center; gap:24px;
+  padding:16px 0; border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule);
+  font-family:var(--f-body); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--ink);
+}
+.hero__slug .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--orange);margin-right:8px;vertical-align:middle;animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(1.22)}}
+.hero__slug .mid{font-family:var(--f-serif);font-style:italic;font-size:15px;letter-spacing:.02em;text-transform:none;color:var(--muted)}
+.hero__slug .right{text-align:right}
+
+.hero__poster{
+  flex:1; display:grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr);
+  gap: clamp(24px, 4vw, 56px);
+  padding: clamp(36px,6vw,72px) 0 clamp(28px,4vw,48px);
+  position:relative;
+}
+
+.poster-title{
+  font-family:var(--f-condensed);
+  font-size: clamp(5.5rem, 14vw, 17rem);
+  line-height:.88;
+  letter-spacing:-.01em;
+  color:var(--ink);
+  text-transform:uppercase;
+}
+.poster-title .row{display:block}
+.poster-title .kazanirsin{color:var(--blue)}
+.poster-title .sen{
+  -webkit-text-stroke: 2px var(--ink);
+  color: transparent;
+  font-family:var(--f-serif); font-style:italic; font-weight:400;
+  font-size: .78em;
+  letter-spacing:.01em;
+  margin-left: .18em;
+  transform: translateY(-.06em);
+  display:inline-block;
+}
+.poster-title .istersen{
+  color:var(--orange);
+  font-family:var(--f-serif); font-style:italic; font-weight:400;
+  font-size: .72em;
+  letter-spacing:-.005em;
+  display:inline-block;
+  margin-top:-.04em;
+}
+.poster-title .punc{
+  color:var(--ink);
+  font-family:var(--f-condensed); font-style:normal; font-weight:400;
+  letter-spacing:0;
+  font-size:.62em;
+  margin-left:.02em;
+  vertical-align: .04em;
+  display:inline-block;
+}
+.poster-title .istersen + .punc{
+  font-family:var(--f-serif); font-style:italic; font-weight:400;
+  font-size:.68em;
+  vertical-align: -.02em;
+  letter-spacing:.02em;
+}
+
+.poster-foot{
+  margin-top: clamp(20px, 3vw, 36px);
+  display:grid;
+  grid-template-columns: minmax(260px,1.3fr) minmax(0,1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items:start;
+}
+.poster-desc{
+  font-family:var(--f-serif);
+  font-style:italic;
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height:1.45;
+  color:var(--ink);
+  max-width: 42ch;
+}
+.poster-desc b{font-family:var(--f-body);font-style:normal;font-weight:700;color:var(--blue)}
+.poster-actions{display:flex;flex-direction:column;gap:10px;align-items:flex-start;padding-top:4px}
+.btn-primary, .btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 26px;
+  font-family:var(--f-body);font-size:13px;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;
+  border:1px solid var(--ink);
+  transition: transform .2s, background .2s, color .2s, border-color .2s;
+}
+.btn-primary{ background:var(--ink); color:var(--paper); }
+.btn-primary:hover{ background:var(--orange); border-color:var(--orange); transform:translateY(-2px); }
+.btn-ghost{ background:transparent; color:var(--ink); }
+.btn-ghost:hover{ background:var(--ink); color:var(--paper); transform:translateY(-2px); }
+.btn-primary svg, .btn-ghost svg{ width:16px; height:16px; }
+
+/* Right column — monogram + meta */
+.poster-side{
+  position:relative;
+  border-left:1px solid var(--rule-strong);
+  padding-left: clamp(24px, 3vw, 40px);
+  display:flex; flex-direction:column; justify-content:space-between;
+  min-height: 300px;
+}
+.poster-side__stamp{
+  position:relative;
+  aspect-ratio: 1 / 1;
+  width: min(100%, 360px);
+  border:1px solid var(--rule-strong);
+  border-radius: 50%;
+  display:grid; place-items:center;
+  background: radial-gradient(100% 100% at 50% 0%, rgba(240,127,11,.12), transparent 55%), var(--paper);
+}
+.poster-side__stamp::before, .poster-side__stamp::after{
+  content:""; position:absolute; inset:8px; border:1px dashed rgba(11,14,20,.25); border-radius:50%;
+}
+.poster-side__stamp::after{ inset:16px; border-style:solid; border-color:rgba(11,14,20,.08); }
+.stamp__logo{ width:45%; height:auto; position:relative; z-index:2; filter: drop-shadow(0 2px 8px rgba(0,0,0,.08)); }
+.stamp__ring{
+  position:absolute; inset:0; z-index:1;
+  display:grid; place-items:center;
+  pointer-events:none;
+}
+.stamp__ring svg{ width:100%; height:100%; }
+.stamp__ring text{ font-family:var(--f-body); font-weight:600; font-size:13px; letter-spacing:6px; fill:var(--ink); text-transform:uppercase; }
+
+.poster-side__meta{
+  margin-top: clamp(18px, 2.5vw, 28px);
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 24px;
+}
+.meta-cell{ border-top:1px solid var(--rule); padding-top:10px; }
+.meta-cell b{display:block;font-family:var(--f-body);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;font-weight:500}
+.meta-cell span{font-family:var(--f-display);font-size:22px;letter-spacing:-.01em;color:var(--ink);display:block;line-height:1}
+.meta-cell em{font-family:var(--f-serif);font-style:italic;font-size:16px;color:var(--muted);display:block;margin-top:2px}
+
+/* Hero footer tape */
+.hero__tape{
+  margin-top:auto;
+  border-top:1px solid var(--rule-strong);
+  border-bottom:1px solid var(--rule-strong);
+  padding:18px 0;
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:24px;
+  font-family:var(--f-display);
+  font-size:clamp(14px, 1.3vw, 18px);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ink);
+}
+.hero__tape .cell{display:flex;align-items:baseline;gap:10px;justify-content:center}
+.hero__tape .cell:nth-child(1){justify-content:flex-start}
+.hero__tape .cell:last-child{justify-content:flex-end}
+.hero__tape .num{font-family:var(--f-serif);font-style:italic;font-size:.72em;color:var(--muted);font-weight:400;letter-spacing:0}
+.hero__tape .kw.blue{color:var(--blue)}
+.hero__tape .kw.orange{color:var(--orange)}
+
+/* ============= SECTION FRAME ============= */
+.section{
+  position:relative; z-index:2;
+  padding: clamp(80px, 10vw, 140px) var(--pad-x);
+  max-width:var(--w-max); margin:0 auto;
+}
+.section--dark{
+  max-width:100%; margin:0;
+  background:var(--ink);
+  color:var(--paper);
+}
+.section--dark .section__inner{ max-width:var(--w-max); margin:0 auto; padding:0; }
+.eyebrow{
+  font-family:var(--f-body); font-size:11px; font-weight:600;
+  letter-spacing:.26em; text-transform:uppercase; color:var(--orange);
+  display:inline-flex; align-items:center; gap:12px;
+  margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.eyebrow--dark{color:var(--orange)}
+.eyebrow--muted{color:var(--muted)}
+.eyebrow--blue{color:var(--blue)}
+
+.chapter-mark{
+  font-family:var(--f-serif); font-style:italic;
+  font-size:clamp(13px, 1vw, 15px); color:var(--muted);
+  letter-spacing:.06em;
+}
+
+.section-title{
+  font-family:var(--f-display);
+  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  line-height:.95; letter-spacing:-.015em;
+  color:var(--ink);
+  max-width: 15ch;
+}
+.section--dark .section-title{color:var(--paper)}
+.section-title em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--blue)}
+.section-title .orange{color:var(--orange)}
+
+/* ============= CHAPTER INDEX STRIP ============= */
+.index-strip{
+  position:relative; z-index:3;
+  border-top:1px solid var(--rule-strong);
+  border-bottom:1px solid var(--rule);
+  padding:18px var(--pad-x);
+  max-width:var(--w-max); margin:0 auto;
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap:16px;
+  font-family:var(--f-body); font-size:11px;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.index-strip a{ display:flex; align-items:baseline; gap:10px; transition:color .2s; }
+.index-strip a:hover{ color:var(--blue); }
+.index-strip .rn{font-family:var(--f-serif); font-style:italic; font-size:14px; color:var(--orange); letter-spacing:0; text-transform:none}
+
+/* ============= II. HAKKIMIZDA — Editorial Drop-Cap ============= */
+.about-grid{
+  display:grid;
+  grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items:start;
+}
+.about-body p{
+  font-size: clamp(17px, 1.25vw, 19px);
+  line-height:1.7; color:var(--ink-soft);
+  margin-bottom:18px;
+  max-width: 58ch;
+}
+.about-body p:first-of-type::first-letter{
+  font-family:var(--f-display);
+  font-size: 5.6em;
+  float:left;
+  line-height:.85;
+  padding:.08em .14em 0 0;
+  color:var(--blue);
+}
+.about-body em{font-family:var(--f-serif);font-style:italic;color:var(--orange);font-weight:500}
+
+.about-pillars{
+  margin-top: clamp(48px, 6vw, 80px);
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:0;
+  border-top:1px solid var(--rule-strong);
+  border-bottom:1px solid var(--rule-strong);
+}
+.pillar{
+  padding: clamp(24px, 3vw, 36px) clamp(20px, 2vw, 28px);
+  border-right:1px solid var(--rule);
+  display:flex; flex-direction:column; gap:12px;
+  position:relative;
+}
+.pillar:last-child{border-right:0}
+.pillar .rn{
+  font-family:var(--f-serif); font-style:italic; font-size:clamp(38px, 4vw, 54px);
+  color:var(--orange); line-height:1;
+}
+.pillar h3{
+  font-family:var(--f-display); font-size:clamp(20px, 1.6vw, 26px);
+  letter-spacing:-.01em; line-height:1.1;
+}
+.pillar p{font-size:15px;line-height:1.65;color:var(--ink-soft);max-width:38ch}
+.pillar .tag{
+  position:absolute; top:clamp(24px,3vw,36px); right:clamp(20px,2vw,28px);
+  font-family:var(--f-body); font-size:10px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* ============= FEDERASYON / SERTİFİKA ŞERİDİ ============= */
+.creds{
+  position:relative; z-index:3;
+  border-top:1px solid var(--rule-strong);
+  border-bottom:1px solid var(--rule-strong);
+  background: var(--paper);
+}
+.creds__inner{
+  max-width:var(--w-max); margin:0 auto;
+  padding: clamp(24px, 3vw, 36px) var(--pad-x);
+  display:grid;
+  grid-template-columns: minmax(260px, 1fr) auto minmax(0,2fr);
+  align-items:center;
+  gap: clamp(20px, 3vw, 48px);
+}
+.creds__label{
+  display:flex; flex-direction:column; gap:6px;
+}
+.creds__label b{
+  font-family:var(--f-body); font-size:11px; font-weight:600;
+  letter-spacing:.26em; text-transform:uppercase; color:var(--orange);
+}
+.creds__label em{
+  font-family:var(--f-serif); font-style:italic;
+  font-size:clamp(15px, 1.2vw, 18px); color:var(--ink-soft); line-height:1.4;
+  max-width:32ch;
+}
+.creds__rule{ width:1px; height:64px; background:var(--rule-strong); justify-self:center; }
+.creds__list{
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: clamp(12px, 2vw, 28px);
+  align-items:center;
+}
+.cred{
+  display:flex; flex-direction:column; align-items:flex-start; gap:6px;
+  padding: 8px 0; border-left: 1px solid var(--rule);
+  padding-left: clamp(12px, 1.4vw, 18px);
+}
+.cred:first-child{border-left:0; padding-left:0}
+.cred__mark{
+  font-family:var(--f-display); font-size: clamp(20px, 2vw, 28px);
+  color:var(--ink); line-height:1; letter-spacing:-.01em;
+}
+.cred__mark.blue{color:var(--blue)}
+.cred__mark.orange{color:var(--orange)}
+.cred__sub{
+  font-family:var(--f-body); font-size:10px; font-weight:500;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--muted);
+}
+.cred__sub em{font-family:var(--f-serif); font-style:italic; letter-spacing:0; text-transform:none; color:var(--ink-soft); font-size:13px; font-weight:400}
+
+/* ============= KURUCU MÜHRÜ — Founder's Seal ============= */
+.seal{
+  margin-top: clamp(56px, 6vw, 80px);
+  display:grid; grid-template-columns: auto 1fr auto; gap:clamp(20px,3vw,40px); align-items:center;
+  padding: clamp(20px,3vw,32px) 0;
+  border-top:1px solid var(--rule);
+}
+.seal__mono{
+  width:64px; height:64px;
+  border:1px solid var(--rule-strong);
+  border-radius:50%;
+  display:grid; place-items:center;
+  font-family:var(--f-display); font-size:22px; color:var(--blue);
+  letter-spacing:-.01em;
+  position:relative;
+  background: radial-gradient(60% 60% at 30% 30%, rgba(240,127,11,.1), transparent 70%), var(--paper);
+}
+.seal__mono::before{ content:""; position:absolute; inset:5px; border:1px dashed rgba(11,14,20,.18); border-radius:50%; }
+.seal__text{
+  font-family:var(--f-serif); font-style:italic;
+  font-size:clamp(17px, 1.3vw, 20px); line-height:1.5; color:var(--ink-soft);
+}
+.seal__text b{font-family:var(--f-body); font-style:normal; font-weight:600; color:var(--ink)}
+.seal__date{
+  font-family:var(--f-body); font-size:11px; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--muted);
+  text-align:right;
+  display:flex; flex-direction:column; gap:4px;
+}
+.seal__date span{font-family:var(--f-display); font-size:18px; color:var(--ink); letter-spacing:0; text-transform:none}
+
+/* ============= III. MANIFESTO ============= */
+.manifesto{
+  padding: clamp(120px, 14vw, 180px) var(--pad-x);
+  position:relative; overflow:hidden; z-index:3;
+}
+.manifesto::before{
+  content:""; position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(26,97,172,.08) 50%, transparent 100%),
+    radial-gradient(60% 100% at 20% 30%, rgba(240,127,11,.08), transparent 60%);
+}
+.manifesto__inner{ position:relative; max-width:var(--w-max); margin:0 auto; }
+.manifesto__head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(241,231,210,.18);padding-bottom:22px;margin-bottom:clamp(40px,6vw,80px);gap:24px;flex-wrap:wrap}
+.manifesto__head .eyebrow{color:var(--orange)}
+.manifesto__triptych{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+.trip{
+  border-right:1px solid rgba(241,231,210,.18);
+  padding: 20px clamp(18px,3vw,36px);
+  display:flex; flex-direction:column; gap:14px;
+}
+.trip:last-child{border-right:0}
+.trip__word{
+  font-family:var(--f-display);
+  font-size:clamp(3rem, 7vw, 7rem);
+  line-height:.9;
+  letter-spacing:-.015em;
+}
+.trip__word.iman{color:var(--paper)}
+.trip__word.disiplin{color:var(--blue)}
+.trip__word.spor{color:var(--orange)}
+.trip__desc{
+  font-family:var(--f-serif); font-style:italic;
+  font-size:clamp(17px, 1.3vw, 20px); line-height:1.5;
+  color:rgba(241,231,210,.78); max-width:28ch;
+}
+.trip__rn{font-family:var(--f-body); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:rgba(241,231,210,.5)}
+
+.manifesto__quote{
+  max-width: 900px;
+  font-family:var(--f-serif);
+  font-style:italic;
+  font-size:clamp(22px, 2.4vw, 32px);
+  line-height:1.4;
+  color:var(--paper);
+  position:relative;
+  padding-left: clamp(32px, 4vw, 56px);
+}
+.manifesto__quote::before{
+  content:"\201C";
+  font-family:var(--f-serif);
+  font-size:clamp(80px, 10vw, 140px);
+  position:absolute; left:-12px; top:-.4em;
+  color:var(--orange);
+  line-height:1;
+}
+.manifesto__quote cite{
+  display:block; margin-top:24px;
+  font-family:var(--f-body); font-style:normal;
+  font-size:12px; letter-spacing:.22em; text-transform:uppercase;
+  color:rgba(241,231,210,.6);
+}
+
+/* ============= IV. MISSION / VISION ============= */
+.mv{
+  display:grid; grid-template-columns: 1fr 1fr; gap:0;
+  border-top:1px solid var(--rule-strong);
+  border-bottom:1px solid var(--rule-strong);
+}
+.mv__col{
+  padding: clamp(36px, 5vw, 64px) clamp(24px, 4vw, 56px);
+  border-right:1px solid var(--rule);
+  position:relative;
+  display:flex; flex-direction:column; gap:18px;
+}
+.mv__col:last-child{border-right:0}
+.mv__label{
+  font-family:var(--f-body); font-size:11px; font-weight:600;
+  letter-spacing:.26em; text-transform:uppercase;
+}
+.mv__col:nth-child(1) .mv__label{color:var(--blue)}
+.mv__col:nth-child(2) .mv__label{color:var(--orange)}
+.mv__title{
+  font-family:var(--f-display);
+  font-size:clamp(1.7rem, 2.8vw, 2.6rem);
+  line-height:1.05; letter-spacing:-.015em;
+}
+.mv__title em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--orange)}
+.mv__col:nth-child(1) .mv__title em{color:var(--blue)}
+.mv__text{font-size:17px;line-height:1.65;color:var(--ink-soft);max-width:46ch}
+.mv__text em{font-family:var(--f-serif);font-style:italic;color:var(--ink)}
+
+.mv__rn{
+  position:absolute;
+  top:clamp(36px,5vw,64px); right:clamp(24px,4vw,56px);
+  font-family:var(--f-serif); font-style:italic;
+  font-size:clamp(44px, 5vw, 68px);
+  color:rgba(11,14,20,.08);
+  line-height:1;
+}
+
+.big-stats{
+  margin-top: 0;
+  display:grid; grid-template-columns: repeat(5, 1fr);
+  gap:0;
+  border-bottom:1px solid var(--rule-strong);
+}
+.big-stat{
+  padding: clamp(28px, 3.5vw, 48px) clamp(20px, 2vw, 32px);
+  border-right:1px solid var(--rule);
+  position:relative;
+}
+.big-stat:last-child{border-right:0}
+.big-stat b{
+  display:block;
+  font-family:var(--f-display);
+  font-size:clamp(2.6rem, 5vw, 4.2rem);
+  line-height:1; letter-spacing:-.02em;
+  color:var(--ink);
+}
+.big-stat b sup{font-family:var(--f-serif);font-style:italic;font-size:.5em;color:var(--orange);vertical-align:top;line-height:1}
+.big-stat b.blue{color:var(--blue)}
+.big-stat span{
+  display:block; margin-top:10px;
+  font-family:var(--f-body); font-size:11px; font-weight:500;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--muted);
+}
+.big-stat em{
+  display:block; margin-top:6px;
+  font-family:var(--f-serif); font-style:italic;
+  font-size:14px; color:var(--ink-soft);
+}
+
+/* ============= V. MODÜLLER — EDITORIAL CONTENTS ============= */
+.toc-head{
+  display:grid; grid-template-columns: 1fr auto; align-items:end; gap:24px;
+  margin-bottom: clamp(36px, 4vw, 56px);
+}
+.toc-head p{font-family:var(--f-serif); font-style:italic; font-size:clamp(17px,1.4vw,21px); color:var(--muted); max-width:36ch}
+.toc{ border-top:1px solid var(--rule-strong); }
+.toc__row{
+  display:grid;
+  grid-template-columns: 80px minmax(220px, 1.3fr) minmax(0,1.8fr) auto;
+  gap: clamp(16px, 3vw, 40px);
+  align-items:center;
+  padding: clamp(22px, 3vw, 34px) 4px;
+  border-bottom:1px solid var(--rule);
+  position:relative;
+  transition: background .25s ease, padding-left .3s ease;
+}
+.toc__row::after{
+  content:""; position:absolute; left:0; right:0; bottom:-1px; height:1px;
+  background: linear-gradient(90deg, var(--accent, var(--ink)) 0%, transparent 70%);
+  opacity:0; transition:opacity .3s;
+}
+.toc__row:hover{ padding-left:14px; background: rgba(11,14,20,.025); }
+.toc__row:hover::after{ opacity:1; }
+.toc__num{
+  font-family:var(--f-serif); font-style:italic;
+  font-size:clamp(32px, 4vw, 52px);
+  color:var(--accent, var(--ink));
+  line-height:1;
+}
+.toc__title{
+  font-family:var(--f-display);
+  font-size:clamp(22px, 2.4vw, 34px);
+  letter-spacing:-.01em; line-height:1.05;
+  color:var(--ink);
+  transition:color .25s;
+}
+.toc__row:hover .toc__title{ color:var(--accent, var(--ink)); }
+.toc__desc{
+  font-family:var(--f-serif); font-style:italic;
+  font-size:clamp(16px, 1.2vw, 19px);
+  color:var(--ink-soft); line-height:1.45;
+  max-width: 52ch;
+}
+.toc__arrow{
+  width:44px; height:44px;
+  border:1px solid var(--rule-strong); border-radius:50%;
+  display:grid; place-items:center;
+  transition: background .25s, border-color .25s, transform .25s;
+}
+.toc__arrow svg{width:16px;height:16px;transition:transform .25s, stroke .25s}
+.toc__row:hover .toc__arrow{ background:var(--accent, var(--ink)); border-color:var(--accent, var(--ink)); }
+.toc__row:hover .toc__arrow svg{ stroke:var(--paper); transform: translateX(3px); }
+
+.toc__row[data-acc="blue"]{--accent:var(--blue)}
+.toc__row[data-acc="orange"]{--accent:var(--orange)}
+.toc__row[data-acc="gold"]{--accent:var(--gold)}
+.toc__row[data-acc="rose"]{--accent:#b21858}
+.toc__row[data-acc="ink"]{--accent:var(--ink)}
+.toc__row[data-acc="leaf"]{--accent:#2f7a3d}
+
+/* ============= VI. HABER MERKEZİ ============= */
+.news-head{
+  display:grid; grid-template-columns: 1fr auto; align-items:end; gap:24px; margin-bottom: clamp(32px,4vw,56px);
+}
+.news-head a.all{
+  font-family:var(--f-body); font-size:12px; font-weight:600;
+  letter-spacing:.22em; text-transform:uppercase;
+  padding:12px 18px; border:1px solid var(--ink); color:var(--ink);
+  transition: background .2s, color .2s;
+}
+.news-head a.all:hover{ background:var(--ink); color:var(--paper); }
+
+.news-grid{
+  display:grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: clamp(16px, 2vw, 32px);
+}
+.news-card{
+  display:flex; flex-direction:column; gap:14px;
+  padding: 22px 0 24px 0;
+  border-top:1px solid var(--rule-strong);
+  transition: transform .25s;
+}
+.news-card:hover{ transform: translateY(-2px); }
+.news-card.featured{
+  grid-row: span 2; grid-column: 1;
+  padding: 28px clamp(24px, 3vw, 40px) 32px;
+  border-top:2px solid var(--ink);
+  border-bottom:1px solid var(--rule);
+  background:
+    linear-gradient(180deg, rgba(26,97,172,.04) 0%, transparent 60%),
+    radial-gradient(80% 60% at 100% 0%, rgba(240,127,11,.06), transparent 60%);
+  position:relative;
+}
+.news-card.featured::before{
+  content:"İŞARETLENEN";
+  position:absolute; top:14px; right:clamp(24px, 3vw, 40px);
+  font-family:var(--f-body); font-size:9px; font-weight:600;
+  letter-spacing:.3em; color:var(--orange);
+}
+.news-card.featured .news-card__title{
+  font-size: clamp(28px, 3vw, 44px);
+  line-height:1.05; letter-spacing:-.015em;
+  margin-top: 8px;
+}
+.news-card.featured .news-card__desc{
+  font-family:var(--f-serif); font-style:italic;
+  font-size: clamp(17px, 1.3vw, 20px);
+  color:var(--ink-soft);
+  max-width: 50ch;
+}
+.news-card.featured .news-card__num-mega{
+  display:block;
+  font-family:var(--f-serif); font-style:italic;
+  font-size: clamp(48px, 5vw, 80px);
+  color: var(--blue);
+  line-height:.9;
+  margin: 8px 0 4px;
+}
+.news-card__meta{display:flex;gap:14px;align-items:center;font-family:var(--f-body);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.news-card__cat{color:var(--blue)}
+.news-card__cat.orange{color:var(--orange)}
+.news-card__title{
+  font-family:var(--f-display); font-size:clamp(20px, 1.7vw, 26px);
+  line-height:1.15; letter-spacing:-.005em;
+  color:var(--ink);
+  transition:color .2s;
+}
+.news-card:hover .news-card__title{color:var(--blue)}
+.news-card__desc{font-family:var(--f-body);font-size:15px;line-height:1.55;color:var(--ink-soft);max-width:42ch}
+.news-card__foot{
+  margin-top:auto; padding-top:16px;
+  display:flex; justify-content:space-between; align-items:center;
+  border-top:1px solid var(--rule);
+  font-family:var(--f-body); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted);
+}
+.news-card__foot span{display:inline-flex;align-items:center;gap:6px}
+.news-card__foot svg{width:12px;height:12px}
+
+/* ============= VII. JOIN CTA ============= */
+.join{
+  margin: 0;
+  max-width:100%;
+  padding: clamp(100px, 12vw, 160px) var(--pad-x);
+  background: var(--ink);
+  color:var(--paper);
+  position:relative; overflow:hidden; z-index:3;
+}
+.join::before{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(50% 80% at 80% 100%, rgba(240,127,11,.18), transparent 60%),
+    radial-gradient(50% 80% at 0% 0%, rgba(26,97,172,.18), transparent 60%);
+}
+.join__inner{ position:relative; max-width:var(--w-max); margin:0 auto; display:grid; grid-template-columns: 1.3fr 1fr; gap:48px; align-items:end; }
+.join__head .eyebrow{color:var(--orange)}
+.join__title{
+  font-family:var(--f-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height:.95; letter-spacing:-.02em;
+}
+.join__title em{font-family:var(--f-serif); font-style:italic; font-weight:400; color:var(--orange)}
+.join__title .blue{color:var(--blue)}
+.join__desc{
+  font-family:var(--f-serif); font-style:italic;
+  font-size:clamp(18px, 1.6vw, 24px); line-height:1.5;
+  color:rgba(241,231,210,.82); max-width:40ch;
+  margin-top:20px;
+}
+.join__actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.btn-join-primary, .btn-join-ghost{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:18px 28px;
+  font-family:var(--f-body); font-size:13px; font-weight:600;
+  letter-spacing:.18em; text-transform:uppercase;
+  transition: transform .2s, background .2s, color .2s, border-color .2s;
+}
+.btn-join-primary{ background:var(--orange); color:var(--ink); border:1px solid var(--orange); }
+.btn-join-primary:hover{ background:var(--paper); border-color:var(--paper); transform:translateY(-2px); }
+.btn-join-ghost{ background:transparent; color:var(--paper); border:1px solid rgba(241,231,210,.5); }
+.btn-join-ghost:hover{ border-color:var(--paper); background:var(--paper); color:var(--ink); transform:translateY(-2px); }
+
+/* ============= FOOTER ============= */
+.ft{
+  background:var(--paper-2);
+  padding: clamp(60px, 7vw, 92px) var(--pad-x) 28px;
+  border-top:1px solid var(--rule-strong);
+  position:relative; z-index:3;
+}
+.ft__inner{ max-width:var(--w-max); margin:0 auto; }
+.ft__grid{ display:grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap:36px; padding-bottom: 36px; border-bottom:1px solid var(--rule); }
+.ft__brand img{height:40px;width:auto;margin-bottom:18px}
+.ft__brand p{font-family:var(--f-serif);font-style:italic;font-size:17px;line-height:1.55;color:var(--ink-soft);max-width:34ch}
+.ft__col h4{font-family:var(--f-body); font-size:11px; font-weight:600; letter-spacing:.26em; text-transform:uppercase; color:var(--ink); margin-bottom:18px}
+.ft__col a{display:block; font-family:var(--f-body); font-size:14px; color:var(--ink-soft); padding:5px 0; transition:color .2s}
+.ft__col a:hover{color:var(--blue)}
+.ft__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-family:var(--f-body);font-size:12px;color:var(--muted);flex-wrap:wrap;gap:12px}
+
+/* ============= REVEAL ============= */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.05s}.d2{transition-delay:.12s}.d3{transition-delay:.2s}.d4{transition-delay:.28s}.d5{transition-delay:.36s}.d6{transition-delay:.44s}
+
+/* ============= RESPONSIVE ============= */
+@media (max-width:1100px){
+  .hero__poster{grid-template-columns:1fr}
+  .poster-side{border-left:0;border-top:1px solid var(--rule-strong); padding-left:0; padding-top:32px; flex-direction:row; align-items:flex-start; gap:24px; min-height:auto; flex-wrap:wrap}
+  .poster-side__stamp{width:200px;flex-shrink:0}
+  .poster-side__meta{flex:1; margin-top:0; min-width:260px}
+  .mv{grid-template-columns:1fr}
+  .mv__col{border-right:0;border-bottom:1px solid var(--rule)}
+  .mv__col:last-child{border-bottom:0}
+  .big-stats{grid-template-columns:repeat(2,1fr)}
+  .big-stat:nth-child(2n){border-right:0}
+  .big-stat{border-bottom:1px solid var(--rule)}
+  .big-stat:nth-child(n+4){border-bottom:0}
+  .toc__row{grid-template-columns: 60px 1fr auto; gap:20px}
+  .toc__desc{grid-column:2; margin-top:-8px}
+  .news-grid{grid-template-columns:repeat(2,1fr); grid-template-rows:auto}
+  .news-card.featured{grid-row:auto; grid-column:1 / -1}
+  .creds__inner{grid-template-columns:1fr; gap:24px}
+  .creds__rule{display:none}
+  .creds__list{grid-template-columns:repeat(5,1fr); gap:12px}
+  .seal{grid-template-columns:auto 1fr; gap:20px}
+  .seal__date{grid-column:2; text-align:left; flex-direction:row; gap:12px; align-items:baseline}
+  .about-grid{grid-template-columns:1fr}
+  .about-pillars{grid-template-columns:1fr}
+  .pillar{border-right:0;border-bottom:1px solid var(--rule)}
+  .pillar:last-child{border-bottom:0}
+  .manifesto__triptych{grid-template-columns:1fr}
+  .trip{border-right:0;border-bottom:1px solid rgba(241,231,210,.18)}
+  .trip:last-child{border-bottom:0}
+  .join__inner{grid-template-columns:1fr;gap:32px;align-items:start}
+  .poster-foot{grid-template-columns:1fr}
+  .index-strip{grid-template-columns:repeat(2,1fr); gap:12px}
+}
+@media (max-width:820px){
+  .nav{display:none}
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--ink); background:transparent}
+  .menu-btn svg{width:20px;height:20px}
+  .top__inner{grid-template-columns: auto auto;}
+  .top__cta{display:none}
+  .hero{padding-top:120px}
+  .hero__slug{grid-template-columns: 1fr 1fr; font-size:10px}
+  .hero__slug .mid{display:none}
+  .hero__tape{grid-template-columns:1fr 1fr; gap:10px; font-size:14px}
+  .hero__tape .cell{justify-content:flex-start !important}
+  .hero__ghost{ font-size: clamp(12rem, 55vw, 18rem); right:-8vw; top:auto; bottom:36%; color: rgba(11,14,20,0.06); }
+  .ft__grid{grid-template-columns:1fr 1fr; gap:28px}
+  .ft__brand{grid-column:1/-1}
+  .news-grid{grid-template-columns:1fr; grid-template-rows:auto}
+  .news-card.featured{grid-column:1; padding:24px 18px}
+  .creds__list{grid-template-columns:repeat(2,1fr); gap:14px 18px}
+  .cred:nth-child(odd){border-left:0; padding-left:0}
+  .big-stats{grid-template-columns:1fr}
+  .big-stat{border-right:0;border-bottom:1px solid var(--rule)}
+  .big-stat:last-child{border-bottom:0}
+  .toc__row{grid-template-columns: 50px 1fr auto; padding:20px 0}
+  .toc__num{font-size:28px}
+  .toc__arrow{width:36px;height:36px}
+  .toc__desc{font-size:14px}
+  .join__title{font-size:3rem}
+  .poster-title{font-size:clamp(4rem, 22vw, 7rem)}
+  .poster-side__stamp{width:160px}
+  .poster-side__meta{grid-template-columns:1fr}
+  .manifesto__head{flex-direction:column;gap:16px;align-items:flex-start}
+  .about-body p:first-of-type::first-letter{font-size:4em}
+  .section-title{font-size:clamp(2rem,10vw,3rem)}
+}
+
+/* Reduced motion — respect user preference */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+  body{opacity:1 !important}
+  .reveal{opacity:1 !important; transform:none !important}
+}
+
+/* Mobile drawer */
+.drawer{position:fixed;inset:0;background:var(--paper);z-index:60;display:none;padding:24px var(--pad-x);overflow-y:auto}
+.drawer.open{display:block}
+.drawer__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}
+.drawer__close{width:42px;height:42px;border:1px solid var(--ink);display:grid;place-items:center;background:transparent}
+.drawer__nav{display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--rule-strong)}
+.drawer__nav a{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--rule);font-family:var(--f-display);font-size:28px;color:var(--ink)}
+.drawer__nav a small{font-family:var(--f-serif);font-style:italic;font-size:14px;color:var(--muted);font-weight:400}
+</style>
+</head>
+<body>
+
+<a href="#ana-icerik" class="skip-link">İçeriğe atla</a>
+<div class="scroll-bar" id="scroll-bar" aria-hidden="true"></div>
+
+<!-- ============= HEADER ============= -->
+<header class="top" id="top">
+  <div class="top__inner">
+    <a href="index.html" class="brand" aria-label="Dinamik Spor Kulübü ana sayfa">
+      <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü logosu">
+      <div class="brand__wordmark">
+        <b>DİNAMİK SK</b>
+        <i>Antalya · MMX</i>
+      </div>
+    </a>
+    <nav class="nav" aria-label="Ana menü">
+      <a href="index.html" class="active">Ana Sayfa</a>
+      <a href="dinamik-calismalar.html">Dinamik Çalışmalar</a>
+      <a href="sporlar.html">Sporlar</a>
+      <a href="vefa.html">Vefa</a>
+      <a href="orman.html">Hatıra Ormanı</a>
+      <a href="duyurular.html">Duyurular</a>
+    </nav>
+    <a href="iletisim.html" class="top__cta">Bize Katıl</a>
+    <button class="menu-btn" aria-label="Menü" onclick="document.getElementById('drawer').classList.add('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer" role="dialog" aria-label="Menü">
+  <div class="drawer__head">
+    <a href="index.html" class="brand" aria-label="Ana sayfa">
+      <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü logosu">
+      <div class="brand__wordmark"><b>DİNAMİK SK</b><i>Antalya · MMX</i></div>
+    </a>
+    <button class="drawer__close" aria-label="Menüyü kapat" onclick="document.getElementById('drawer').classList.remove('open')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav class="drawer__nav">
+    <a href="index.html">Ana Sayfa <small>I.</small></a>
+    <a href="dinamik-calismalar.html">Dinamik Çalışmalar <small>II.</small></a>
+    <a href="sporlar.html">Sporlar <small>III.</small></a>
+    <a href="vefa.html">Vefa Köşesi <small>IV.</small></a>
+    <a href="dinamik-calismalar/kiz/index.html">Dinamik SK Kız <small>V.</small></a>
+    <a href="orman.html">Hatıra Ormanı <small>VI.</small></a>
+    <a href="duyurular.html">Duyurular <small>VII.</small></a>
+    <a href="iletisim.html">İletişim <small>VIII.</small></a>
+  </nav>
+</div>
+
+<main id="ana-icerik">
+<!-- ============= HERO — CHAMPIONSHIP POSTER ============= -->
+<section class="hero" aria-labelledby="poster-title">
+
+  <div class="hero__slug">
+    <div class="left"><span class="dot"></span> Canlı · Antalya · MMX</div>
+    <div class="mid">— Dünyada bir spor kulübü var, diye gösterilen kulüp olmak. —</div>
+    <div class="right">Sayı <b>N°</b> 01 · Nisan 2026</div>
+  </div>
+
+  <div class="hero__poster">
+    <div class="hero__ghost" aria-hidden="true">01</div>
+    <div class="poster-left">
+      <h1 id="poster-title" class="poster-title">
+        <span class="row"><span class="kazanirsin">Kazanırsın</span><span class="punc">..!</span></span>
+        <span class="row"><span class="sen">Sen</span></span>
+        <span class="row"><span class="istersen">İstersen</span><span class="punc">...</span></span>
+      </h1>
+
+      <div class="poster-foot">
+        <p class="poster-desc">
+          <b>İman, ahlak ve sporla</b> yoğrulmuş 15 yıllık bir yolculuk. 500'den fazla gence dokunduk — bu yolda durmayacağız.
+        </p>
+        <div class="poster-actions">
+          <a href="#moduller" class="btn-primary">
+            Alanlarımızı Keşfet
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="iletisim.html" class="btn-ghost">
+            Bize Katıl
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <aside class="poster-side">
+      <div class="poster-side__stamp" aria-hidden="true">
+        <div class="stamp__ring">
+          <svg viewBox="0 0 300 300">
+            <defs>
+              <path id="stamp-circle" d="M 150,28 a 122,122 0 1,1 0,244 a 122,122 0 1,1 0,-244" />
+            </defs>
+            <text>
+              <textPath href="#stamp-circle" startOffset="0">DİNAMİK SK · ANTALYA · EST. MMX · İMAN · DİSİPLİN · SPOR · </textPath>
+            </text>
+          </svg>
+        </div>
+        <img src="assets/images/dinamik-logo.svg" alt="" class="stamp__logo">
+      </div>
+
+      <div class="poster-side__meta">
+        <div class="meta-cell">
+          <b>Kuruluş</b>
+          <span>2010</span>
+          <em>MMX · Antalya</em>
+        </div>
+        <div class="meta-cell">
+          <b>Alanlar</b>
+          <span>06</span>
+          <em>altı modül</em>
+        </div>
+        <div class="meta-cell">
+          <b>Sporcular</b>
+          <span>500<sup>+</sup></span>
+          <em>aktif üye</em>
+        </div>
+        <div class="meta-cell">
+          <b>Tecrübe</b>
+          <span>15<sup>+</sup></span>
+          <em>yıl</em>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="hero__tape">
+    <div class="cell"><span class="num">i.</span> <span class="kw">İman</span></div>
+    <div class="cell"><span class="num">ii.</span> <span class="kw blue">Disiplin</span></div>
+    <div class="cell"><span class="num">iii.</span> <span class="kw orange">Spor</span></div>
+    <div class="cell"><span class="num">— kapak</span> <span class="kw">Antalya · MMX</span></div>
+  </div>
+</section>
+
+<!-- ============= INDEX STRIP ============= -->
+<nav class="index-strip" aria-label="İçindekiler">
+  <a href="#hakkimizda"><span class="rn">I.</span> Hakkımızda</a>
+  <a href="#manifesto"><span class="rn">II.</span> İlkeler</a>
+  <a href="#misyon"><span class="rn">III.</span> Misyon</a>
+  <a href="#moduller"><span class="rn">IV.</span> Modüller</a>
+  <a href="#haber"><span class="rn">V.</span> Haberler</a>
+</nav>
+
+<!-- ============= HAKKIMIZDA ============= -->
+<section class="section" id="hakkimizda">
+  <div class="about-grid">
+    <header class="reveal">
+      <div class="eyebrow">I · Hakkımızda</div>
+      <h2 class="section-title">Nereden <em>Geliyoruz?</em></h2>
+      <p class="chapter-mark" style="margin-top:20px">— Bir vizyonun, bir kulübün ve bir neslin hikâyesi.</p>
+    </header>
+    <div class="about-body reveal d2">
+      <p>
+        2010'da bir vizyonla yola çıktık: bedeni güçlendirmek, ruhu beslemek, gençliği <em>değerleriyle donandırmak.</em> Antalya'nın öncü kulübü olmak tesadüf değil — yılların adanmışlığının ürünü.
+      </p>
+      <p>
+        Sporu hedef değil araç olarak gördük. Sahada ter akıttık, kampta büyüttük, değerlerle yoğurduk. Bugün Akdeniz'de bir ismimiz varsa, bu 15 yılın her anını birebir yaşayarak kazanılmış bir isimdir.
+      </p>
+    </div>
+  </div>
+
+  <div class="about-pillars reveal d3">
+    <article class="pillar">
+      <span class="rn">I.</span>
+      <h3>İman & Karakter</h3>
+      <p>Sporu bir araç olarak görüyoruz. Asıl hedefimiz imanlı, ahlâklı ve güçlü bireyler yetiştirmek — tüm faaliyetlerimiz bu temele dayanır.</p>
+      <span class="tag">İman</span>
+    </article>
+    <article class="pillar">
+      <span class="rn">II.</span>
+      <h3>Sahada Büyüyoruz</h3>
+      <p>Kamp, atölye ve açık hava faaliyetleriyle gençler sadece öğrenmekle kalmıyor — dönüşüyor. Teori burada sahada hayat buluyor.</p>
+      <span class="tag">Pratik</span>
+    </article>
+    <article class="pillar">
+      <span class="rn">III.</span>
+      <h3>Öncü Branşlar</h3>
+      <p>Dalgıçlık ve bilek güreşinde Antalya'nın öncüsüyüz. CMAS sertifikasyonu ve TABS federasyonu bağlantısıyla en yüksek standartlarda eğitim.</p>
+      <span class="tag">Spor</span>
+    </article>
+  </div>
+
+  <!-- Founder's Seal -->
+  <div class="seal reveal d4" aria-label="Kurucu mührü">
+    <div class="seal__mono" aria-hidden="true">DSK</div>
+    <p class="seal__text">
+      <b>Bu hikâye 2010'da başladı</b> — bugün 500'den fazla genç bu yolda yürüdü. Kalemimiz hâlâ açık: yarın yazılacak satırlar, dünkülerden daha güçlü olacak.
+    </p>
+    <div class="seal__date">
+      <small>Antalya · Akdeniz</small>
+      <span>MMX – MMXXVI</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FEDERASYON / SERTİFİKA ŞERİDİ ============= -->
+<section class="creds reveal" aria-label="Sertifikalar ve bağlantılar">
+  <div class="creds__inner">
+    <div class="creds__label">
+      <b>Yetkilendirme & Bağlantılar</b>
+      <em>Çalışmalarımız federasyon, sertifikasyon ve kurum bağlantılarıyla desteklenir.</em>
+    </div>
+    <div class="creds__rule"></div>
+    <div class="creds__list">
+      <div class="cred">
+        <span class="cred__mark blue">CMAS</span>
+        <span class="cred__sub"><em>Dalgıçlık Sertifikası</em></span>
+      </div>
+      <div class="cred">
+        <span class="cred__mark orange">TABS</span>
+        <span class="cred__sub"><em>Bilek Güreşi Fed.</em></span>
+      </div>
+      <div class="cred">
+        <span class="cred__mark">TSSF</span>
+        <span class="cred__sub"><em>Sualtı Sporları</em></span>
+      </div>
+      <div class="cred">
+        <span class="cred__mark">GSB</span>
+        <span class="cred__sub"><em>Gençlik & Spor</em></span>
+      </div>
+      <div class="cred">
+        <span class="cred__mark">N°&nbsp;01</span>
+        <span class="cred__sub"><em>Antalya · Akdeniz</em></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= MANIFESTO ============= -->
+<section class="section section--dark manifesto" id="manifesto">
+  <div class="manifesto__inner">
+    <div class="manifesto__head">
+      <div>
+        <div class="eyebrow eyebrow--dark">II · Manifesto</div>
+        <h2 class="section-title" style="color:var(--paper);max-width:18ch;margin-top:14px">
+          Üç kelime, <em style="color:var(--orange)">bir duruş.</em>
+        </h2>
+      </div>
+      <div class="chapter-mark" style="color:rgba(241,231,210,.55)">— Her kulüp bir slogan söyler; biz onu yaşadık.</div>
+    </div>
+
+    <div class="manifesto__triptych reveal">
+      <div class="trip">
+        <span class="trip__rn">i · birinci ilke</span>
+        <span class="trip__word iman">İman.</span>
+        <p class="trip__desc">Yüreği sağlam, niyeti temiz, yolunu bilen bir gençlik. Her şeyin merkezi burası.</p>
+      </div>
+      <div class="trip">
+        <span class="trip__rn">ii · ikinci ilke</span>
+        <span class="trip__word disiplin">Disiplin.</span>
+        <p class="trip__desc">Kendine verilen söz, antrenmana gelen ayak, işe sahip çıkan el. Karakter burada şekillenir.</p>
+      </div>
+      <div class="trip">
+        <span class="trip__rn">iii · üçüncü ilke</span>
+        <span class="trip__word spor">Spor.</span>
+        <p class="trip__desc">Beden, irade ve mücadelenin buluşma yeri. Sahada söylenen her şey gerçektir.</p>
+      </div>
+    </div>
+
+    <blockquote class="manifesto__quote reveal d2">
+      İman, ahlak ve sporla yoğrulmuş 15 yıllık bir yolculuk. 500'den fazla gence dokunduk — bu yolda durmayacağız.
+      <cite>— Dinamik Spor Kulübü · Antalya</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============= MİSYON & VİZYON ============= -->
+<section class="section" id="misyon">
+  <header class="reveal" style="margin-bottom: clamp(32px,4vw,56px); display:grid; grid-template-columns:1fr auto; align-items:end; gap:24px;">
+    <div>
+      <div class="eyebrow">III · Misyon & Vizyon</div>
+      <h2 class="section-title"><em>İman.</em> Disiplin. <span class="orange">Spor.</span></h2>
+    </div>
+    <p class="chapter-mark" style="max-width:32ch">2010'dan beri gençliği güçlü değerlerle yetiştiren kulübümüz.</p>
+  </header>
+
+  <div class="mv reveal d2">
+    <article class="mv__col">
+      <span class="mv__rn">I.</span>
+      <span class="mv__label">Misyonumuz</span>
+      <h3 class="mv__title">Gençleri güçlü bireyler olarak <em>yetiştirmek.</em></h3>
+      <p class="mv__text">Gençleri; <em>imanlı, ahlâklı, disiplinli ve güçlü</em> bireyler olarak yetiştirirken, bu süreci spor ve saha faaliyetleriyle pekiştiriyoruz.</p>
+    </article>
+    <article class="mv__col">
+      <span class="mv__rn">II.</span>
+      <span class="mv__label">Vizyonumuz</span>
+      <h3 class="mv__title">Öncü bir <em>kulüp olmak.</em></h3>
+      <p class="mv__text">Yetiştirdiği gençlerle örnek gösterilen, sahadaki gücü ve değerleriyle fark oluşturan, inanç ile disiplini bir araya getiren <em>öncü bir kulüp</em> olmak.</p>
+    </article>
+  </div>
+
+  <div class="big-stats reveal d3">
+    <div class="big-stat"><b class="blue">2010</b><span>Kuruluş Yılı</span><em>· MMX</em></div>
+    <div class="big-stat"><b>14<sup>+</sup></b><span>Yıllık Tecrübe</span><em>· sahada</em></div>
+    <div class="big-stat"><b>500<sup>+</sup></b><span>Aktif Üye</span><em>· ailemiz</em></div>
+    <div class="big-stat"><b>523</b><span>Hatıra Fidanı</span><em>· dikildi</em></div>
+    <div class="big-stat"><b>04</b><span>Aktif Proje</span><em>· devam ediyor</em></div>
+  </div>
+</section>
+
+<!-- ============= MODÜLLER ============= -->
+<section class="section" id="moduller">
+  <div class="toc-head reveal">
+    <div>
+      <div class="eyebrow">IV · Modüllerimiz</div>
+      <h2 class="section-title">Kulübümüzün <em>Alanları.</em></h2>
+    </div>
+    <p>— Her biri farklı bir değeri temsil eden altı temel alan.</p>
+  </div>
+
+  <div class="toc reveal d2">
+    <a href="dinamik-calismalar.html" class="toc__row" data-acc="leaf">
+      <span class="toc__num">I.</span>
+      <span class="toc__title">Dinamik Çalışmalar</span>
+      <span class="toc__desc">Sonsuzluğa giden yolun koruyucuları — Erkek &amp; Kız çalışma kollarımız.</span>
+      <span class="toc__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="sporlar.html" class="toc__row" data-acc="blue">
+      <span class="toc__num">II.</span>
+      <span class="toc__title">Sporlar</span>
+      <span class="toc__desc">Bilek güreşi ve dalgıçlık branşlarında profesyonel eğitim.</span>
+      <span class="toc__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="vefa.html" class="toc__row" data-acc="gold">
+      <span class="toc__num">III.</span>
+      <span class="toc__title">Vefa Köşesi</span>
+      <span class="toc__desc">Kulübümüze emeği geçen değerli isimler.</span>
+      <span class="toc__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="dinamik-calismalar/kiz/index.html" class="toc__row" data-acc="rose">
+      <span class="toc__num">IV.</span>
+      <span class="toc__title">Dinamik SK Kız</span>
+      <span class="toc__desc">Güçlü, zarif, kararlı — kız sporcularımıza özel çalışma kolu.</span>
+      <span class="toc__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="orman.html" class="toc__row" data-acc="leaf">
+      <span class="toc__num">V.</span>
+      <span class="toc__title">Hatıra Ormanı</span>
+      <span class="toc__desc">Geleceği yeşertiyoruz. Bağış yapın, fidan dikin.</span>
+      <span class="toc__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+    <a href="duyurular.html" class="toc__row" data-acc="orange">
+      <span class="toc__num">VI.</span>
+      <span class="toc__title">Duyurular</span>
+      <span class="toc__desc">Güncel haberler ve yaklaşan etkinlikler.</span>
+      <span class="toc__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<!-- ============= HABER MERKEZİ ============= -->
+<section class="section" id="haber">
+  <div class="news-head reveal">
+    <div>
+      <div class="eyebrow eyebrow--blue">V · Haber Merkezi</div>
+      <h2 class="section-title">Kulüpten <em>haberler.</em></h2>
+      <p class="chapter-mark" style="margin-top:16px">— Dalgıçlık, Kızlar, ENP ve Bilek Güreşi'nden tüm gelişmeler.</p>
+    </div>
+    <a href="duyurular.html" class="all">Tüm Duyurular →</a>
+  </div>
+
+  <div class="news-grid" id="news-grid"></div>
+</section>
+
+<!-- ============= JOIN CTA ============= -->
+<section class="join" id="katil" aria-labelledby="join-title">
+  <div class="join__inner">
+    <div class="join__head reveal">
+      <div class="eyebrow">VI · Katılım</div>
+      <h2 id="join-title" class="join__title">
+        Kulübümüze <br><em>katıl.</em>
+      </h2>
+      <p class="join__desc">İman, disiplin ve sporu bir araya getiren ailemizin bir parçası olmak için bizimle iletişime geçin.</p>
+    </div>
+    <div class="join__actions reveal d2">
+      <a href="iletisim.html" class="btn-join-primary">
+        İletişime Geç
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:+902421234567" class="btn-join-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +90 242 123 45 67
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============= FOOTER ============= -->
+<footer class="ft">
+  <div class="ft__inner">
+    <div class="ft__grid">
+      <div class="ft__brand">
+        <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü">
+        <p>İman. Disiplin. Spor. 2010'dan beri Antalya'da gençleri güçlü bireyler olarak yetiştiriyoruz.</p>
+      </div>
+      <div class="ft__col">
+        <h4>Kulüp</h4>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="dinamik-calismalar.html">Dinamik Çalışmalar</a>
+        <a href="sporlar.html">Sporlar</a>
+        <a href="vefa.html">Vefa Köşesi</a>
+      </div>
+      <div class="ft__col">
+        <h4>Projeler</h4>
+        <a href="dinamik-calismalar/kiz/index.html">Dinamik SK Kız</a>
+        <a href="orman.html">Hatıra Ormanı</a>
+        <a href="duyurular.html">Duyurular</a>
+        <a href="iletisim.html">İletişim</a>
+      </div>
+      <div class="ft__col">
+        <h4>Bağlantı</h4>
+        <a href="https://instagram.com/dinamikspor" target="_blank" rel="noopener">Instagram</a>
+        <a href="tel:+902421234567">+90 242 123 45 67</a>
+        <a href="iletisim.html">Antalya, Türkiye</a>
+      </div>
+    </div>
+    <div class="ft__bottom">
+      <span>© 2026 Dinamik Spor Kulübü · Antalya · Kuruluş: MMX</span>
+      <span style="font-family:var(--f-serif);font-style:italic">İman · Disiplin · Spor</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============= JS ============= -->
+<script>
+(function(){
+  // Body fade-in (no FOUC)
+  requestAnimationFrame(() => document.body.classList.add('ready'));
+
+  const top = document.getElementById('top');
+  const bar = document.getElementById('scroll-bar');
+  const onScroll = () => {
+    const y = window.scrollY;
+    top.classList.toggle('scrolled', y > 40);
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = h > 0 ? Math.min(100, (y / h) * 100) : 0;
+    if(bar) bar.style.width = pct + '%';
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  onScroll();
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('#drawer a').forEach(a => a.addEventListener('click', () => document.getElementById('drawer').classList.remove('open')));
+
+  // News feed
+  const STORE = 'dinamikSK_data';
+  const grid = document.getElementById('news-grid');
+
+  const seedDemo = () => ([
+    { id:'s1', baslik:'Dalgıçlık CMAS Eğitimleri Başladı', ozet:'2026 sezon dalışları için CMAS sertifikalı eğitim programımız başladı.', kategori:'sporlar', tarih:'2026-04-22', gorunum:true },
+    { id:'s2', baslik:'Bilek Güreşi Türkiye Şampiyonası', ozet:'TABS federasyonu ile düzenlenen şampiyona 12 Mayıs\'ta Antalya\'da.', kategori:'sporlar', tarih:'2026-04-18', gorunum:true },
+    { id:'s3', baslik:'Hatıra Ormanı 600 Fidana Ulaştı', ozet:'523 fidanımızı 600\'e çıkardık. Yeşil bir gelecek için bağışlarınız sürüyor.', kategori:'orman', tarih:'2026-04-10', gorunum:true },
+  ]);
+
+  function readFeed(){
+    try{
+      const raw = localStorage.getItem(STORE);
+      if(!raw) return [];
+      const data = JSON.parse(raw);
+      const items = Array.isArray(data && data.duyurular) ? data.duyurular : [];
+      return items.filter(x => x && x.gorunum !== false);
+    }catch(e){ return []; }
+  }
+
+  function tarihFmt(d){
+    if(!d) return '—';
+    try{
+      const dt = new Date(d);
+      return dt.toLocaleDateString('tr-TR', {day:'2-digit', month:'long', year:'numeric'});
+    }catch(e){ return d; }
+  }
+
+  function kategoriLabel(k){
+    const map = { sporlar:'Spor', enp:'ENP', vefa:'Vefa', kizlar:'Kızlar', orman:'Orman', genel:'Kulüp', etkinlik:'Etkinlik' };
+    return (map[k] || 'Kulüp').toUpperCase();
+  }
+  function kategoriAccent(k){ return (k==='sporlar' || k==='etkinlik') ? 'orange' : ''; }
+
+  function escapeHTML(s){
+    return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function cardHTML(item, idx, featured){
+    const kat = kategoriLabel(item.kategori);
+    const acc = kategoriAccent(item.kategori);
+    const num = String(idx+1).padStart(2,'0');
+    const cls = featured ? 'news-card featured' : 'news-card';
+    const megaNum = featured ? '<span class="news-card__num-mega">N°&nbsp;' + num + '</span>' : '';
+    const metaNum = featured ? '' : '<span>N° ' + num + '</span>';
+    return '<article class="' + cls + '">' +
+      '<div class="news-card__meta">' +
+        '<span class="news-card__cat ' + acc + '">' + kat + '</span>' +
+        metaNum +
+      '</div>' +
+      megaNum +
+      '<h3 class="news-card__title">' + escapeHTML(item.baslik || 'Başlıksız') + '</h3>' +
+      '<p class="news-card__desc">' + escapeHTML(item.ozet || '') + '</p>' +
+      '<div class="news-card__foot">' +
+        '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> ' + tarihFmt(item.tarih) + '</span>' +
+        '<span>Devamı &rarr;</span>' +
+      '</div>' +
+    '</article>';
+  }
+
+  function render(){
+    let items = readFeed();
+    if(!items.length) items = seedDemo();
+    items = items.slice(0,3);
+    grid.innerHTML = items.map((item, i) => cardHTML(item, i, i === 0)).join('');
+    grid.querySelectorAll('.news-card').forEach((c,i) => {
+      c.classList.add('reveal');
+      c.style.transitionDelay = (0.06 * i) + 's';
+      io.observe(c);
+    });
+  }
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinamik SK Kız | Güçlü. Zarif. Kararlı.</title>
+  <meta name="description" content="Dinamik SK Kız — spor, kardeşlik ve özgüvenle büyüyen genç kızların topluluğu. Bilek güreşinden dalgıçlığa, her branşta kadınsı gücün merkezi.">
+  <meta property="og:title" content="Dinamik SK Kız — Güçlü. Zarif. Kararlı.">
+  <meta property="og:description" content="Kadınsı gücün spordaki adı.">
+  <link rel="canonical" href="https://dinamikspor.com/dinamik-calismalar/kiz/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    /* Kızlar — Bordo + Rose Gold */
+    :root {
+      --kz-bg:        #14060f;
+      --kz-surface:   #1f0a18;
+      --kz-deep:      #2a0d1f;
+      --kz-card:      rgba(255,255,255,0.035);
+      --kz-border:    rgba(232,128,158,0.2);
+      --kz-rose:      #E8809E;
+      --kz-rose-lt:   #f7a9c0;
+      --kz-rose-dark: #b74d6e;
+      --kz-gold:      #d4a373;
+      --kz-accent:    #ff7aa3;
+    }
+
+    body { background: var(--kz-bg); color: #fff; margin: 0; }
+
+    /* HEADER override */
+    .header { background: rgba(20,6,15,.92) !important; backdrop-filter: blur(12px); }
+    .header .nav-link { color: rgba(255,255,255,.7) !important; }
+    .header .nav-link.active { color: var(--kz-rose) !important; }
+    .header .logo-text span { color: var(--kz-rose) !important; }
+    .header .nav-cta { background: var(--kz-rose) !important; color: #14060f !important; }
+
+    /* HERO */
+    .kz-hero {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 140px 24px 100px;
+    }
+    .kz-hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1920&q=85');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.4) saturate(1.2) contrast(1.1);
+      z-index: 0;
+    }
+    .kz-hero__overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(20,6,15,0.75) 0%, rgba(42,13,31,0.6) 50%, rgba(20,6,15,0.95) 100%),
+        radial-gradient(ellipse at 20% 30%, rgba(232,128,158,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(255,122,163,0.1) 0%, transparent 60%);
+      z-index: 1;
+    }
+    .kz-hero__noise {
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+      opacity: 0.15;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .kz-hero__fade {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 30%;
+      background: linear-gradient(to top, var(--kz-bg), transparent);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .kz-hero__inner {
+      position: relative; z-index: 3;
+      max-width: 1200px; width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .kz-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--kz-rose);
+      text-decoration: none;
+      margin-bottom: 24px;
+      transition: gap 0.3s ease;
+    }
+    .kz-hero__back:hover { gap: 14px; }
+    .kz-hero__back svg { width: 14px; height: 14px; }
+
+    .kz-hero__mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--kz-rose);
+      margin-bottom: 28px;
+    }
+    .kz-hero__mark::before { content: ''; width: 40px; height: 1px; background: var(--kz-rose); }
+
+    .kz-hero__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-weight: 900;
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.015em;
+      color: #fff;
+      margin: 0 0 28px;
+      text-shadow: 0 4px 40px rgba(0,0,0,0.4);
+    }
+    .kz-hero__title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--kz-rose);
+      text-transform: none;
+      letter-spacing: 0;
+      display: block;
+      font-size: 0.95em;
+    }
+
+    .kz-hero__lead {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.82);
+      max-width: 480px;
+      margin: 0 0 40px;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .kz-hero__lead strong { color: var(--kz-rose-lt); font-weight: 600; }
+
+    .kz-hero__cta { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .btn-rose-primary, .btn-rose-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: 2px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .btn-rose-primary {
+      background: var(--kz-rose);
+      color: #1a0812;
+      box-shadow: 0 8px 32px rgba(232,128,158,0.25);
+    }
+    .btn-rose-primary:hover { background: var(--kz-rose-lt); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(232,128,158,0.4); }
+    .btn-rose-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.25); }
+    .btn-rose-ghost:hover { border-color: var(--kz-rose); color: var(--kz-rose); }
+
+    .kz-hero__showcase { position: relative; aspect-ratio: 3/4; }
+    .kz-hero__card {
+      position: absolute; border-radius: 4px; overflow: hidden;
+      background: var(--kz-deep);
+      border: 1px solid var(--kz-border);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    }
+    .kz-hero__card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .kz-hero__card--1 { width: 70%; height: 70%; top: 0; right: 0; transform: rotate(2deg); }
+    .kz-hero__card--2 { width: 50%; height: 55%; bottom: 0; left: 0; transform: rotate(-4deg); }
+    .kz-hero__stat {
+      position: absolute; bottom: 10%; right: 8%;
+      background: var(--kz-rose);
+      color: #14060f;
+      padding: 18px 24px;
+      border-radius: 2px;
+      box-shadow: 0 15px 40px rgba(232,128,158,0.35);
+      z-index: 2;
+    }
+    .kz-hero__stat b {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+    .kz-hero__stat span {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* MANIFESTO */
+    .kz-manifesto {
+      background: var(--kz-deep);
+      padding: 80px 24px;
+      border-top: 1px solid var(--kz-border);
+      border-bottom: 1px solid var(--kz-border);
+      overflow: hidden;
+    }
+    .kz-manifesto-track {
+      display: flex; justify-content: center; gap: 48px;
+      flex-wrap: wrap; align-items: center;
+    }
+    .kz-manifesto-word {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.95);
+    }
+    .kz-manifesto-word:nth-child(2) {
+      color: var(--kz-rose);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      text-transform: none;
+    }
+    .kz-manifesto-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--kz-rose); }
+
+    /* SECTIONS */
+    .kz-section { padding: 100px 0; background: var(--kz-bg); }
+    .kz-section-alt { background: var(--kz-surface); }
+
+    .kz-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--kz-rose); margin-bottom: 20px;
+    }
+    .kz-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--kz-rose); }
+
+    .kz-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1; color: #fff;
+      margin: 0 0 20px;
+    }
+    .kz-title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-weight: 600;
+      color: var(--kz-rose);
+      text-transform: none; letter-spacing: 0;
+    }
+
+    .kz-lead {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem; line-height: 1.8;
+      color: rgba(255,255,255,0.65);
+      max-width: 560px;
+    }
+
+    /* HAKKIMIZDA */
+    .kz-about { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .kz-about-img { position: relative; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; }
+    .kz-about-img img { width: 100%; height: 100%; object-fit: cover; }
+    .kz-about-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(20,6,15,0.4), transparent 50%);
+    }
+    .kz-about-badge {
+      position: absolute; bottom: 24px; left: 24px;
+      background: rgba(232,128,158,0.95);
+      color: #14060f;
+      padding: 14px 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700; font-size: 0.75rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      z-index: 2; border-radius: 2px;
+    }
+    .kz-about-text p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem; line-height: 1.85;
+      color: rgba(255,255,255,0.72);
+      margin: 0 0 18px;
+    }
+    .kz-about-text p strong { color: var(--kz-rose-lt); font-weight: 600; }
+
+    /* DEĞERLER */
+    .kz-values {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px; margin-top: 64px;
+    }
+    .kz-value {
+      background: var(--kz-card); border: 1px solid var(--kz-border);
+      padding: 40px 32px; border-radius: 4px;
+      position: relative; transition: all 0.4s ease; overflow: hidden;
+    }
+    .kz-value::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 60px;
+      background: linear-gradient(to bottom, var(--kz-rose), transparent);
+      transition: height 0.4s ease;
+    }
+    .kz-value:hover {
+      background: rgba(232,128,158,0.06);
+      border-color: rgba(232,128,158,0.4);
+      transform: translateY(-6px);
+    }
+    .kz-value:hover::before { height: 100%; }
+
+    .kz-value-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: 2.5rem;
+      color: var(--kz-rose); opacity: 0.5;
+      line-height: 1; margin-bottom: 20px;
+    }
+    .kz-value h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 1.8rem;
+      text-transform: uppercase; letter-spacing: 0.01em;
+      color: #fff; margin: 0 0 14px;
+    }
+    .kz-value p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem; line-height: 1.75;
+      color: rgba(255,255,255,0.6); margin: 0;
+    }
+
+    /* HABERLER */
+    .kz-haber-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px; margin-top: 48px;
+    }
+    .kz-haber {
+      background: var(--kz-card); border: 1px solid var(--kz-border);
+      border-radius: 4px; overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .kz-haber:hover { transform: translateY(-4px); border-color: rgba(232,128,158,0.4); }
+    .kz-haber-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+    .kz-haber-body { padding: 24px; }
+    .kz-haber-date {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--kz-rose); margin-bottom: 10px;
+    }
+    .kz-haber-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 1.3rem;
+      text-transform: uppercase;
+      color: #fff; margin: 0 0 10px;
+      line-height: 1.15;
+    }
+    .kz-haber-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem; line-height: 1.65;
+      color: rgba(255,255,255,0.55);
+      margin: 0;
+    }
+
+    /* ETKİNLİKLER */
+    .kz-events {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px; margin-top: 48px;
+    }
+    .kz-event {
+      background: var(--kz-card); border: 1px solid var(--kz-border);
+      padding: 32px 24px; text-align: center;
+      border-radius: 4px; transition: all 0.3s ease;
+    }
+    .kz-event:hover { background: rgba(232,128,158,0.06); transform: translateY(-4px); }
+    .kz-event-icon {
+      width: 56px; height: 56px;
+      border: 1px solid var(--kz-border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+      background: rgba(232,128,158,0.08);
+    }
+    .kz-event-icon svg { width: 24px; height: 24px; stroke: var(--kz-rose); fill: none; stroke-width: 1.5; }
+    .kz-event h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-size: 1.2rem;
+      text-transform: uppercase;
+      color: #fff; margin: 0 0 8px;
+    }
+    .kz-event p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin: 0 0 8px;
+    }
+    .kz-event-date {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      color: var(--kz-rose);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+
+    /* QUOTE */
+    .kz-quote {
+      background: linear-gradient(135deg, var(--kz-surface) 0%, var(--kz-deep) 100%);
+      border: 1px solid var(--kz-border);
+      border-radius: 8px;
+      padding: 80px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .kz-quote::before {
+      content: '"';
+      position: absolute; top: -30px; left: 40px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14rem;
+      color: var(--kz-rose);
+      opacity: 0.15;
+      line-height: 1;
+    }
+    .kz-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-weight: 400;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      color: #fff;
+      max-width: 800px;
+      margin: 0 auto 24px;
+      line-height: 1.5;
+    }
+    .kz-quote-author {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--kz-rose);
+      font-weight: 600;
+    }
+
+    /* CTA */
+    .kz-cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .kz-cta-card {
+      background: var(--kz-card); border: 1px solid var(--kz-border);
+      border-radius: 4px; padding: 48px 40px;
+      transition: all 0.3s ease;
+      position: relative; overflow: hidden;
+    }
+    .kz-cta-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px; background: var(--kz-rose);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .kz-cta-card:hover { background: rgba(232,128,158,0.06); }
+    .kz-cta-card:hover::after { transform: scaleX(1); }
+    .kz-cta-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 1.8rem;
+      text-transform: uppercase;
+      color: #fff; margin: 0 0 14px;
+    }
+    .kz-cta-card p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem; line-height: 1.7;
+      color: rgba(255,255,255,0.6); margin: 0 0 24px;
+    }
+
+    /* FOOTER */
+    .kz-footer { background: var(--kz-bg); border-top: 1px solid var(--kz-border); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.d1 { transition-delay: 0.12s; }
+    .reveal.d2 { transition-delay: 0.24s; }
+    .reveal.d3 { transition-delay: 0.36s; }
+
+    @media (max-width: 1024px) {
+      .kz-hero__inner { grid-template-columns: 1fr; gap: 60px; }
+      .kz-hero__showcase { max-width: 400px; margin: 0 auto; }
+      .kz-about { grid-template-columns: 1fr; gap: 48px; }
+    }
+    @media (max-width: 768px) {
+      .kz-hero { padding: 120px 20px 80px; }
+      .kz-hero__title { font-size: clamp(2.8rem, 11vw, 4rem); }
+      .kz-cta-grid { grid-template-columns: 1fr; }
+      .kz-manifesto-track { gap: 24px; }
+      .kz-section { padding: 72px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo">
+        <img src="../../assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo">
+        <span class="logo-text">Dinamik <span>SK</span></span>
+      </a>
+      <nav class="nav">
+        <a href="../../index.html" class="nav-link">Ana Sayfa</a>
+        <a href="../../dinamik-calismalar.html" class="nav-link active">Dinamik Çalışmalar</a>
+        <a href="../../sporlar.html" class="nav-link">Sporlar</a>
+        <a href="../../vefa.html" class="nav-link">Vefa</a>
+        <a href="../../orman.html" class="nav-link">Hatıra Ormanı</a>
+        <a href="../../duyurular.html" class="nav-link">Duyurular</a>
+        <a href="../../iletisim.html" class="nav-link">İletişim</a>
+        <a href="../../admin.html" class="nav-cta">Yönetim</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="kz-hero">
+    <div class="kz-hero__bg"></div>
+    <div class="kz-hero__overlay"></div>
+    <div class="kz-hero__noise"></div>
+    <div class="kz-hero__fade"></div>
+
+    <div class="kz-hero__inner">
+      <div>
+        <a href="../../dinamik-calismalar.html" class="kz-hero__back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Dinamik Çalışmalar
+        </a>
+        <div class="kz-hero__mark">Dinamik SK Kız</div>
+
+        <h1 class="kz-hero__title">
+          Güçlü.<br>
+          <em>Zarif.</em><br>
+          Kararlı.
+        </h1>
+
+        <p class="kz-hero__lead">
+          Sahada <strong>yürek</strong>, hayatta <strong>karakter.</strong> Dinamik SK Kız, spor yoluyla özgüven kazanan — kardeşlik, disiplin ve inançla büyüyen genç kadınların evi.
+        </p>
+
+        <div class="kz-hero__cta">
+          <a href="../../iletisim.html" class="btn-rose-primary">
+            Aramıza Katıl
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#hikaye" class="btn-rose-ghost">Hikayemizi Keşfet</a>
+        </div>
+      </div>
+
+      <div class="kz-hero__showcase">
+        <div class="kz-hero__card kz-hero__card--1">
+          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=800&q=85" alt="Kız sporcu">
+        </div>
+        <div class="kz-hero__card kz-hero__card--2">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=85" alt="Kız sporcular">
+        </div>
+        <div class="kz-hero__stat">
+          <b>120+</b>
+          <span>Kız Sporcu</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="kz-manifesto">
+    <div class="kz-manifesto-track">
+      <span class="kz-manifesto-word">Güç</span>
+      <span class="kz-manifesto-dot"></span>
+      <span class="kz-manifesto-word">Zarafet</span>
+      <span class="kz-manifesto-dot"></span>
+      <span class="kz-manifesto-word">Kardeşlik</span>
+    </div>
+  </section>
+
+  <!-- HAKKIMIZDA -->
+  <section class="kz-section" id="hikaye">
+    <div class="container">
+      <div class="kz-about">
+        <div class="kz-about-img reveal">
+          <img src="https://images.unsplash.com/photo-1518310383802-640c2de933d2?w=900&q=85" alt="Kız Sporcular">
+          <div class="kz-about-badge">2018'den beri</div>
+        </div>
+        <div class="kz-about-text reveal d1">
+          <div class="kz-eyebrow">Hikayemiz</div>
+          <h2 class="kz-title">Bir Kızın<br><em>Cesareti</em><br>Her Şeydir.</h2>
+          <p>Dinamik SK Kız, sadece bir spor topluluğu değil — <strong>kardeşçe yetişen bir ablalık.</strong> Bilek güreşi minderinde ter döken, dalgıçlıkta nefesini tutan, kampta ateş etrafında ayetler okuyan kız kardeşlerin ortak yuvası.</p>
+          <p>Burada güç <strong>fiziksel değil, önce ruhsaldır.</strong> Zarafet; nezaket ve metanetle yoğrulmuş bir duruştur. Kardeşlik ise verilmez, emekle kazanılır.</p>
+          <p>2018'den beri Antalya'nın kız sporcularına ilham olan, <strong>güçlü bir kadınsı geleneğin</strong> devamıyız.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEĞERLER -->
+  <section class="kz-section kz-section-alt">
+    <div class="container">
+      <div class="reveal" style="max-width: 600px;">
+        <div class="kz-eyebrow">Değerlerimiz</div>
+        <h2 class="kz-title">Nasıl <em>Yetişiyoruz?</em></h2>
+        <p class="kz-lead">Üç temel ilke üzerine kurulu — her antrenman, her kamp, her karşılaşma bu değerlerin inşasıdır.</p>
+      </div>
+
+      <div class="kz-values">
+        <div class="kz-value reveal d1">
+          <div class="kz-value-num">01.</div>
+          <h3>Özgüven</h3>
+          <p>Sahada kazanılan her galibiyet, hayatta karşılaşılan her zorluğa hazırlık. Kendine inanan kadın — dünyaya meydan okur.</p>
+        </div>
+
+        <div class="kz-value reveal d2">
+          <div class="kz-value-num">02.</div>
+          <h3>Kardeşlik</h3>
+          <p>Rekabet değil, birlikte yükselmek. Her kız kardeşimiz, bir diğerinin destekçisi, sırdaşı ve ilham kaynağıdır.</p>
+        </div>
+
+        <div class="kz-value reveal d3">
+          <div class="kz-value-num">03.</div>
+          <h3>Karakter</h3>
+          <p>Fiziksel güç geçicidir; karakterli bir duruş ömürlük. İnanç, ahlak ve cesaret — en büyük mirasımız.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HABERLER -->
+  <section class="kz-section">
+    <div class="container">
+      <div class="reveal" style="max-width: 600px; margin-bottom: 48px;">
+        <div class="kz-eyebrow">Haberler</div>
+        <h2 class="kz-title">Kızlardan <em>Haberler</em></h2>
+        <p class="kz-lead">Başarılar, duyurular ve kardeşlik hikayeleri.</p>
+      </div>
+
+      <div id="haber-listesi" class="kz-haber-grid"></div>
+    </div>
+  </section>
+
+  <!-- ETKİNLİKLER -->
+  <section class="kz-section kz-section-alt">
+    <div class="container">
+      <div class="reveal" style="max-width: 600px; margin-bottom: 48px;">
+        <div class="kz-eyebrow">Takvim</div>
+        <h2 class="kz-title">Yaklaşan <em>Etkinlikler</em></h2>
+        <p class="kz-lead">Bir sonraki buluşma, kampın veya atölyenin ne zaman?</p>
+      </div>
+
+      <div id="etkinlik-listesi" class="kz-events"></div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="kz-section">
+    <div class="container">
+      <div class="kz-quote reveal">
+        <p>"Güçlü olmak, bir tercih değil — <em>bir sorumluluktur.</em> Çünkü senin cesaretin, bir başka genç kızın hayalidir."</p>
+        <div class="kz-quote-author">— Dinamik SK Kız</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="kz-section kz-section-alt">
+    <div class="container">
+      <div class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto 56px;">
+        <div class="kz-eyebrow" style="justify-content: center;">Seni Bekliyoruz</div>
+        <h2 class="kz-title">Bu Aile <em>Seninle</em> Tamam.</h2>
+      </div>
+
+      <div class="kz-cta-grid">
+        <div class="kz-cta-card reveal d1">
+          <h3>Instagram'da Takip Et</h3>
+          <p>Kamp anları, antrenmanlardan kareler ve kız kardeşlerimizin hikayeleri — hepsi akışta.</p>
+          <a href="https://instagram.com/dinamikspor" target="_blank" class="btn-rose-primary">
+            @dinamikspor
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="kz-cta-card reveal d2">
+          <h3>Üye Ol</h3>
+          <p>Yaşın ne olursa olsun, eğer yürek varsa yer var. Ücretsiz deneme antrenmanı için bize ulaş.</p>
+          <a href="../../iletisim.html" class="btn-rose-ghost">
+            Başvuru Yap
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer kz-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../../index.html" class="logo">
+            <img src="../../assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height: 40px;">
+            <span class="logo-text">Dinamik <span style="color: var(--kz-rose);">SK</span></span>
+          </a>
+          <p style="margin-top: 16px;">İman. Disiplin. Spor. 2010'dan beri Antalya'da gençleri güçlü bireyler olarak yetiştiriyoruz.</p>
+        </div>
+        <div>
+          <h4 class="footer-title" style="color: var(--kz-rose);">Çalışmalarımız</h4>
+          <div class="footer-links">
+            <a href="../../dinamik-calismalar.html">Dinamik Çalışmalar</a>
+            <a href="../../dinamik-calismalar/erkek/index.html">Dinamik SK Erkek</a>
+            <a href="../../dinamik-calismalar/kiz/index.html">Dinamik SK Kız</a>
+            <a href="../../sporlar.html">Sporlar</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title" style="color: var(--kz-rose);">Hızlı Linkler</h4>
+          <div class="footer-links">
+            <a href="../../index.html">Ana Sayfa</a>
+            <a href="../../orman.html">Hatıra Ormanı</a>
+            <a href="../../iletisim.html">İletişim</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title" style="color: var(--kz-rose);">Sosyal Medya</h4>
+          <div class="footer-social">
+            <a href="https://instagram.com/dinamikspor" target="_blank" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Dinamik Spor Kulübü. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const data = DinamikSK.DB.getData();
+
+      // Haberler
+      const haberler = data.kizlarHaberler || [];
+      const haberEl = document.getElementById('haber-listesi');
+
+      if (haberler.length === 0) {
+        haberEl.innerHTML = '<p style="text-align: center; color: rgba(255,255,255,0.4); grid-column: 1/-1; padding: 48px;">Henüz haber eklenmemiş.</p>';
+      } else {
+        haberEl.innerHTML = haberler.map((item, i) => `
+          <article class="kz-haber reveal d${(i % 3) + 1}">
+            ${item.gorsel ? `<img src="${item.gorsel}" alt="${item.baslik}" class="kz-haber-img">` : ''}
+            <div class="kz-haber-body">
+              <div class="kz-haber-date">${DinamikSK.Utils.formatDate(item.tarih)}</div>
+              <h3 class="kz-haber-title">${item.baslik}</h3>
+              <p class="kz-haber-desc">${item.kisaAciklama || ''}</p>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      // Etkinlikler
+      const etkinlikler = (data.faaliyetler || []).filter(f => f.gorunum).slice(0, 4);
+      const etkinlikEl = document.getElementById('etkinlik-listesi');
+
+      const icons = {
+        'Kamp': '<svg viewBox="0 0 24 24"><path d="M3 20L12 4l9 16"/><path d="M12 4v16"/></svg>',
+        'Atölye': '<svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6V2M7 12h10"/></svg>',
+        'Buluşma': '<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>',
+        'default': '<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>'
+      };
+
+      if (etkinlikler.length === 0) {
+        etkinlikEl.innerHTML = '<p style="text-align: center; color: rgba(255,255,255,0.4); grid-column: 1/-1;">Yaklaşan etkinlik yok.</p>';
+      } else {
+        etkinlikEl.innerHTML = etkinlikler.map((item, i) => {
+          const icon = icons[item.baslik] || icons['default'];
+          return `
+          <div class="kz-event reveal d${(i % 3) + 1}">
+            <div class="kz-event-icon">${icon}</div>
+            <h4>${item.baslik}</h4>
+            <p>${item.konum || ''}</p>
+            <span class="kz-event-date">${DinamikSK.Utils.formatDate(item.tarih)}</span>
+          </div>`;
+        }).join('');
+      }
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    });
+  </script>
+</body>
+</html>

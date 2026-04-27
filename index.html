@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>if('scrollRestoration'in history)history.scrollRestoration='manual';</script>
+  <title>Dinamik Spor Kulübü | İman. Disiplin. Spor.</title>
+  <meta name="description" content="Antalya merkezli, değerler odaklı spor kulübümüz. Bilek güreşi, dalgıçlık, kamp ve ENP faaliyetleriyle gençleri güçlü bireyler olarak yetiştiriyoruz.">
+  <meta name="keywords" content="spor kulübü, antalya, bilek güreşi, dalgıçlık, izcilik, ENP, gençlik">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dinamik Spor Kulübü | İman. Disiplin. Spor.">
+  <meta property="og:description" content="Antalya merkezli, değerler odaklı spor kulübümüz.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏋️</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsClub",
+    "name": "Dinamik Spor Kulübü",
+    "description": "Antalya merkezli değerler odaklı spor kulübü",
+    "url": "https://dinamikspor.org",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Antalya",
+      "addressCountry": "TR"
+    },
+    "sameAs": [
+      "https://instagram.com/dinamikspor"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <!-- Grid Background -->
+    <div class="loading-grid"></div>
+
+    <!-- Corner L-shaped Decorations -->
+    <div class="loading-corner loading-corner-tl"></div>
+    <div class="loading-corner loading-corner-tr"></div>
+    <div class="loading-corner loading-corner-bl"></div>
+    <div class="loading-corner loading-corner-br"></div>
+
+    <!-- Radial Glow -->
+    <div class="loading-glow" id="loading-glow"></div>
+
+    <!-- Custom Cursor -->
+    <div class="loading-cursor" id="loading-cursor">
+      <div class="loading-cursor-dot"></div>
+      <div class="loading-cursor-ring"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="loading-content">
+      <!-- Logo -->
+      <div class="loading-logo" id="loading-logo">
+        <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü">
+      </div>
+
+      <!-- Club Name -->
+      <div class="loading-text" id="loading-text">
+        <div class="loading-text-line loading-text-akdeniz">AKDENİZ</div>
+        <div class="loading-text-line loading-text-dinamik">DİNAMİK</div>
+        <div class="loading-text-line loading-text-spor">SPOR KULÜBÜ</div>
+      </div>
+
+      <!-- Loading Bar -->
+      <div class="loading-bar-container" id="loading-bar-container">
+        <div class="loading-bar-header">
+          <span>YÜKLENİYOR</span>
+          <span id="loading-percent">0%</span>
+        </div>
+        <div class="loading-bar">
+          <div class="loading-bar-fill" id="loading-bar-fill">
+            <div class="loading-bar-shine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo">
+        <span class="logo-text">Dinamik <span>SK</span></span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Ana Sayfa</a>
+        <a href="dinamik-calismalar.html" class="nav-link">Dinamik Çalışmalar</a>
+        <a href="sporlar.html" class="nav-link">Sporlar</a>
+        <a href="vefa.html" class="nav-link">Vefa</a>
+        <a href="orman.html" class="nav-link">Hatıra Ormanı</a>
+        <a href="duyurular.html" class="nav-link">Duyurular</a>
+        <a href="iletisim.html" class="nav-link">İletişim</a>
+        <a href="admin.html" class="nav-cta">Yönetim</a>
+      </nav>
+
+      <button class="mobile-toggle" aria-label="Menü">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-noise"></div>
+    <div class="hero-lines"></div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-overline">
+          <span class="overline-dot"></span>
+          <span class="overline-text">Akdeniz Dinamik Spor Kulübü — Antalya, 2010</span>
+        </div>
+
+        <h1 class="hero-h1">
+          <span style="color: #1a61ac;">KAZANIRSIN..!</span><br>
+          <span class="line-outline">SEN</span><br>
+          <span style="color: #f07f0b;">İSTERSEN...</span>
+        </h1>
+
+        <p class="hero-desc">İman, ahlak ve sporla yoğrulmuş 15 yıllık bir yolculuk. 500'den fazla gence dokunduk — bu yolda durmayacağız.</p>
+
+        <div class="hero-actions">
+          <a href="sporlar.html" class="btn btn-orange btn-lg">Branşlarımızı Keşfet</a>
+          <a href="hakkimizda" class="btn btn-outline btn-lg">Bizi Tanı</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hstat">
+            <div class="hstat-num">2010</div>
+            <div class="hstat-lbl">Kuruluş Yılı</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-num">500<sup>+</sup></div>
+            <div class="hstat-lbl">Yetişen Sporcu</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-num">15<sup>+</sup></div>
+            <div class="hstat-lbl">Yıllık Deneyim</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-logo-frame">
+          <div class="frame-ring1"></div>
+          <div class="frame-ring2"></div>
+          <div class="frame-ring3"></div>
+          <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo" class="hero-logo-img">
+
+          <!-- Konfigüre edilebilir Badge'ler -->
+          <div class="hero-badge badge-a" id="hero-badge-1">
+            <span class="badge-icon">🌟</span>
+            <div class="badge-lines">
+              <span class="badge-main" data-editable="badge1-title">Dinamik SK Kız</span>
+              <span class="badge-sub" data-editable="badge1-sub">Yeni Program</span>
+            </div>
+          </div>
+
+          <div class="hero-badge badge-b" id="hero-badge-2">
+            <span class="badge-icon">🎯</span>
+            <div class="badge-lines">
+              <span class="badge-main" data-editable="badge2-title">Hatıra Ormanı</span>
+              <span class="badge-sub" data-editable="badge2-sub">1000+ Fidan</span>
+            </div>
+          </div>
+
+          <div class="hero-badge badge-c" id="hero-badge-3">
+            <span class="badge-icon">🏆</span>
+            <div class="badge-lines">
+              <span class="badge-main" data-editable="badge3-title">Şampiyon</span>
+              <span class="badge-sub" data-editable="badge3-sub">Türkiye 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section - Altın Krem Tema -->
+  <section class="section" id="hakkimizda" style="background: var(--cream);">
+    <div class="container">
+      <div class="section-header animate-on-scroll" style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+        <div style="display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-sans); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">
+          <span style="width: 24px; height: 1px; background: var(--gold); opacity: 0.5;"></span>
+          Hakkımızda
+          <span style="width: 24px; height: 1px; background: var(--gold); opacity: 0.5;"></span>
+        </div>
+        <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); color: var(--yazi); margin-bottom: 16px; line-height: 1.2;">Nereden Geliyoruz?</h2>
+        <p style="font-size: 1rem; line-height: 1.8; color: var(--yazi-gri);">2010'da bir vizyonla yola çıktık: bedeni güçlendirmek, ruhu beslemek, gençliği <em style="color: var(--gold);">değerleriyle donandırmak.</em> Antalya'nın öncü kulübü olmak tesadüf değil — yılların adanmışlığının ürünü.</p>
+      </div>
+
+      <div class="grid grid-3" style="gap: 24px;">
+        <div class="card-gold animate-on-scroll stagger-1">
+          <div class="card-gold-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="card-gold-title">İman & Karakter</h3>
+          <p class="card-gold-text">Sporu bir araç olarak görüyoruz. Asıl hedefimiz imanlı, ahlâklı ve güçlü bireyler yetiştirmek — tüm faaliyetlerimiz bu temele dayanır.</p>
+          <span class="card-gold-tag">İman</span>
+        </div>
+
+        <div class="card-gold animate-on-scroll stagger-2">
+          <div class="card-gold-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 20L12 4l9 16"/><path d="M12 4v16"/></svg>
+          </div>
+          <h3 class="card-gold-title">Sahada Büyüyoruz</h3>
+          <p class="card-gold-text">Kamp, atölye ve açık hava faaliyetleriyle gençler sadece öğrenmekle kalmıyor — dönüşüyor. Teori burada sahada hayat buluyor.</p>
+          <span class="card-gold-tag">Pratik</span>
+        </div>
+
+        <div class="card-gold animate-on-scroll stagger-3">
+          <div class="card-gold-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </div>
+          <h3 class="card-gold-title">Öncü Branşlar</h3>
+          <p class="card-gold-text">Dalgıçlık ve bilek güreşinde Antalya'nın öncüsüyüz. CMAS sertifikasyonu ve TABS federasyonu bağlantısıyla en yüksek standartlarda eğitim.</p>
+          <span class="card-gold-tag">Spor</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision - Altın Krem Tema -->
+  <section class="section mv-section" style="background: var(--cream-dark);">
+    <div class="container">
+      <div class="mv-wrapper animate-on-scroll">
+        <!-- Section Header -->
+        <div class="mv-header">
+          <div class="section-tag-dark">Misyon & Vizyon</div>
+          <h2 class="mv-title">İman. Disiplin. Spor.</h2>
+          <p class="mv-subtitle">2010'dan beri gençliği güçlü değerlerle yetiştiren kulübümüz.</p>
+        </div>
+
+        <!-- Cards -->
+        <div class="mv-cards">
+          <div class="mv-card animate-on-scroll stagger-1">
+            <div class="mv-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="mv-card-label">Misyonumuz</div>
+            <h3 class="mv-card-title">Gençleri güçlü bireyler olarak yetiştirmek</h3>
+            <p class="mv-card-text">Gençleri; <em>imanlı, ahlâklı, disiplinli ve güçlü</em> bireyler olarak yetiştirirken, bu süreci spor ve saha faaliyetleriyle pekiştiriyoruz.</p>
+          </div>
+
+          <div class="mv-divider">
+            <div class="mv-divider-line"></div>
+            <div class="mv-divider-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <div class="mv-divider-line"></div>
+          </div>
+
+          <div class="mv-card animate-on-scroll stagger-2">
+            <div class="mv-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                <path d="M2 12h20"/>
+              </svg>
+            </div>
+            <div class="mv-card-label">Vizyonumuz</div>
+            <h3 class="mv-card-title">Öncü bir kulüp olmak</h3>
+            <p class="mv-card-text">Yetiştirdiği gençlerle örnek gösterilen, sahadaki gücü ve değerleriyle fark oluşturan, inanç ile disiplini bir araya getiren <em>öncü bir kulüp</em> olmak.</p>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="mv-stats">
+          <div class="mv-stat animate-on-scroll stagger-1">
+            <div class="mv-stat-num">2010</div>
+            <div class="mv-stat-label">Kuruluş Yılı</div>
+          </div>
+          <div class="mv-stat-divider"></div>
+          <div class="mv-stat animate-on-scroll stagger-2">
+            <div class="mv-stat-num">14<sup>+</sup></div>
+            <div class="mv-stat-label">Yıllık Tecrübe</div>
+          </div>
+          <div class="mv-stat-divider"></div>
+          <div class="mv-stat animate-on-scroll stagger-3">
+            <div class="mv-stat-num">500<sup>+</sup></div>
+            <div class="mv-stat-label">Aktif Üye</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modules Section -->
+  <section class="section modules-section" id="moduller">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-tag">Modüllerimiz</div>
+        <h2 class="section-title">Kulübümüzün Alanları</h2>
+        <p class="section-desc">Her biri farklı bir değeri temsil eden altı temel alan.</p>
+      </div>
+
+      <div class="modules-grid">
+        <a href="dinamik-calismalar.html" class="module-card-v2 animate-on-scroll stagger-1">
+          <div class="module-num">01</div>
+          <div class="module-content">
+            <div class="module-icon-v2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88"/>
+              </svg>
+            </div>
+            <h3>Dinamik Çalışmalar</h3>
+            <p>Sonsuzluğa giden yolun koruyucuları — Erkek &amp; Kız çalışma kollarımız.</p>
+          </div>
+          <div class="module-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="sporlar.html" class="module-card-v2 animate-on-scroll stagger-2">
+          <div class="module-num">02</div>
+          <div class="module-content">
+            <div class="module-icon-v2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                <path d="M2 12h20"/>
+              </svg>
+            </div>
+            <h3>Sporlar</h3>
+            <p>Bilek güreşi ve dalgıçlık branşlarında profesyonel eğitim.</p>
+          </div>
+          <div class="module-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="vefa.html" class="module-card-v2 animate-on-scroll stagger-3">
+          <div class="module-num">03</div>
+          <div class="module-content">
+            <div class="module-icon-v2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <h3>Vefa Köşesi</h3>
+            <p>Kulübümüze emeği geçen değerli isimler.</p>
+          </div>
+          <div class="module-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="dinamik-calismalar/kiz/index.html" class="module-card-v2 animate-on-scroll stagger-4">
+          <div class="module-num">04</div>
+          <div class="module-content">
+            <div class="module-icon-v2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3>Dinamik SK Kız</h3>
+            <p>Güçlü, zarif, kararlı — kız sporcularımıza özel çalışma kolu.</p>
+          </div>
+          <div class="module-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="orman.html" class="module-card-v2 animate-on-scroll stagger-5">
+          <div class="module-num">05</div>
+          <div class="module-content">
+            <div class="module-icon-v2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22v-7"/>
+                <path d="M9 22v-4"/>
+                <path d="M15 22v-4"/>
+                <path d="M6 9l6-6 6 6"/>
+                <path d="M6 15l6 6 6-6"/>
+                <path d="M12 6v3"/>
+              </svg>
+            </div>
+            <h3>Hatıra Ormanı</h3>
+            <p>Geleceği yeşertiyoruz. Bağış yapın, fidan dikin.</p>
+          </div>
+          <div class="module-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="duyurular.html" class="module-card-v2 animate-on-scroll stagger-6">
+          <div class="module-num">06</div>
+          <div class="module-content">
+            <div class="module-icon-v2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/>
+              </svg>
+            </div>
+            <h3>Duyurular</h3>
+            <p>Güncel haberler ve yaklaşan etkinlikler.</p>
+          </div>
+          <div class="module-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HABER MERKEZİ HERO ===== -->
+  <div class="hm-hero">
+    <!-- Arka plan katmanları -->
+    <div class="hm-hero__bg"></div>
+    <div class="hm-hero__grid-overlay"></div>
+    <div class="hm-hero__glow hm-hero__glow--l"></div>
+    <div class="hm-hero__glow hm-hero__glow--r"></div>
+
+    <!-- Ticker şeridi -->
+    <div class="hm-ticker" id="hm-ticker-wrap">
+      <div class="hm-ticker__label">SON DAKİKA</div>
+      <div class="hm-ticker__track">
+        <div class="hm-ticker__inner" id="hm-ticker-inner">
+          <!-- JS ile doldurulacak -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero içerik -->
+    <div class="container hm-hero__body">
+      <div class="hm-hero__sol">
+        <div class="hm-hero__eyebrow">
+          <span class="hm-dot"></span>
+          Canlı Akış — Tüm Bölümler
+        </div>
+        <h2 class="hm-hero__baslik">
+          Kulüpten<br><em>haberler.</em>
+        </h2>
+        <p class="hm-hero__desc">
+          Dalgıçlık, Kızlar, ENP ve Bilek Güreşi'nden tüm gelişmeler — etkinlikler, videolar ve duyurular tek akışta.
+        </p>
+        <a href="duyurular.html" class="hm-hero__cta">
+          Tüm Duyurular
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="hm-hero__sag">
+        <div class="hm-hero__bolumler">
+          <a href="sporlar/dalgiclik/index.html" class="hm-hero__bolum" style="--bc:#1a61ac">
+            <span class="hm-hero__bolum-ikon">🤿</span>
+            <span>Dalgıçlık</span>
+          </a>
+          <a href="dinamik-calismalar/kiz/index.html" class="hm-hero__bolum" style="--bc:#be185d">
+            <span class="hm-hero__bolum-ikon">♀</span>
+            <span>Dinamik SK Kız</span>
+          </a>
+          <a href="dinamik-calismalar.html" class="hm-hero__bolum" style="--bc:#d4a017">
+            <span class="hm-hero__bolum-ikon">🧭</span>
+            <span>Dinamik Çalışmalar</span>
+          </a>
+          <a href="sporlar/bilek-guresi/index.html" class="hm-hero__bolum" style="--bc:#f07f0b">
+            <span class="hm-hero__bolum-ikon">💪</span>
+            <span>Bilek Güreşi</span>
+          </a>
+        </div>
+        <div class="hm-hero__istatistik" id="hm-istatistik">
+          <div class="hm-hero__istat">
+            <span class="hm-hero__istat-sayi" id="hm-istat-toplam">0</span>
+            <span class="hm-hero__istat-lbl">Paylaşım</span>
+          </div>
+          <div class="hm-hero__istat-ayrac"></div>
+          <div class="hm-hero__istat">
+            <span class="hm-hero__istat-sayi" id="hm-istat-etkinlik">0</span>
+            <span class="hm-hero__istat-lbl">Etkinlik</span>
+          </div>
+          <div class="hm-hero__istat-ayrac"></div>
+          <div class="hm-hero__istat">
+            <span class="hm-hero__istat-sayi" id="hm-istat-video">0</span>
+            <span class="hm-hero__istat-lbl">Video</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HABER MERKEZİ FEED ===== -->
+  <section class="haber-merkezi" id="haberler">
+    <div class="container">
+
+      <!-- Bölüm filtreleri -->
+      <div class="hm-filtreler animate-on-scroll" id="hm-filtreler">
+        <button class="hm-filtre hm-filtre--aktif" data-bolum="tumu">Tümü</button>
+        <button class="hm-filtre" data-bolum="dalgiclik" style="--fc:#1a61ac">🤿 Dalgıçlık</button>
+        <button class="hm-filtre" data-bolum="kizlar" style="--fc:#be185d">♀ Kızlar</button>
+        <button class="hm-filtre" data-bolum="enp" style="--fc:#16a34a">★ ENP</button>
+        <button class="hm-filtre" data-bolum="bilek-guresi" style="--fc:#f07f0b">💪 Bilek Güreşi</button>
+        <button class="hm-filtre" data-bolum="genel" style="--fc:#6b7280">📢 Genel</button>
+      </div>
+
+      <!-- Feed grid -->
+      <div class="hm-grid animate-on-scroll" id="haber-feed">
+        <!-- JS ile doldurulacak -->
+      </div>
+
+      <!-- Boş durum -->
+      <div id="haber-bos" style="display:none;text-align:center;padding:80px 0;" class="animate-on-scroll">
+        <div style="font-size:2.5rem;margin-bottom:16px;">📭</div>
+        <p style="color:var(--text-muted);font-size:1rem;">Henüz içerik eklenmemiş.</p>
+        <p style="color:var(--text-muted);font-size:0.85rem;margin-top:4px;">Admin panelinden duyuru, etkinlik veya video ekleyin.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section">
+    <div class="container">
+      <div class="stats-grid animate-on-scroll">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-count="14">0</div>
+          <div class="stat-label">Yıllık Deneyim</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-count="500">0</div>
+          <div class="stat-label">Aktif Üye</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22v-7"/>
+              <path d="M6 9l6-6 6 6"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-count="523">0</div>
+          <div class="stat-label">Dikilen Fidan</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-count="4">0</div>
+          <div class="stat-label">Aktif Proje</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="card animate-on-scroll" style="background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-elevated) 100%); border-color: var(--primary); text-align: center; padding: 64px;">
+        <h2 style="margin-bottom: 16px;">Kulübümüze Katıl</h2>
+        <p style="max-width: 600px; margin: 0 auto 32px; font-size: 1.1rem;">İman, disiplin ve sporu bir araya getiren ailemizin bir parçası olmak için bizimle iletişime geçin.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="iletisim.html" class="btn btn-primary btn-lg">İletişime Geç</a>
+          <a href="tel:+902421234567" class="btn btn-secondary btn-lg">+90 242 123 45 67</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height: 40px;">
+            <span class="logo-text">Dinamik <span>SK</span></span>
+          </a>
+          <p style="margin-top: 16px;">İman. Disiplin. Spor. 2010'dan beri Antalya'da gençleri güçlü bireyler olarak yetiştiriyoruz.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Hızlı Linkler</h4>
+          <div class="footer-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="dinamik-calismalar.html">Dinamik Çalışmalar</a>
+            <a href="sporlar.html">Sporlar</a>
+            <a href="vefa.html">Vefa Köşesi</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Modüller</h4>
+          <div class="footer-links">
+            <a href="dinamik-calismalar/erkek/index.html">Dinamik SK Erkek</a>
+            <a href="dinamik-calismalar/kiz/index.html">Dinamik SK Kız</a>
+            <a href="orman.html">Hatıra Ormanı</a>
+            <a href="duyurular.html">Duyurular</a>
+            <a href="iletisim.html">İletişim</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Sosyal Medya</h4>
+          <div class="footer-social">
+            <a href="https://instagram.com/dinamikspor" target="_blank" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Dinamik Spor Kulübü. Tüm hakları saklıdır.</p>
+        <p>Antalya, Türkiye</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="modal-backdrop" style="z-index: 2000;">
+    <button class="lightbox-close" style="position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.5); border: none; color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 10;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" style="max-width: 90vw; max-height: 90vh; object-fit: contain;">
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const data = DinamikSK.DB.getData();
+
+      /* ---------- Hero Badge'leri ---------- */
+      (data.heroBadges || []).forEach(badge => {
+        const el = document.getElementById('hero-' + badge.id);
+        if (!el) return;
+        if (badge.visible) {
+          el.style.display = 'flex';
+          el.querySelector('.badge-main').textContent = badge.title;
+          el.querySelector('.badge-sub').textContent  = badge.sub;
+          el.querySelector('.badge-icon').textContent = badge.icon;
+        } else {
+          el.style.display = 'none';
+        }
+      });
+
+      /* ---------- Haber Feed ---------- */
+      const BOLUM = {
+        dalgiclik:    { ad: 'Dalgıçlık',    renk: '#1a61ac', link: 'sporlar/dalgiclik/index.html' },
+        kizlar:       { ad: 'Kızlar',        renk: '#be185d', link: 'kizlar.html' },
+        enp:          { ad: 'ENP',           renk: '#16a34a', link: 'enp.html' },
+        'bilek-guresi':{ ad: 'Bilek Güreşi', renk: '#f07f0b', link: 'sporlar/bilek-guresi/index.html' },
+        genel:        { ad: 'Duyuru',        renk: '#6b7280', link: 'duyurular.html' }
+      };
+
+      function buildFeed() {
+        const items = [];
+
+        /* Duyurular */
+        (data.duyurular || []).filter(d => d.gorunum !== false).forEach(d => {
+          items.push({
+            tip: 'duyuru', bolum: 'genel',
+            baslik: d.baslik, ozet: d.icerik,
+            tarih: d.tarih, link: 'duyurular.html',
+            oncelik: d.oncelik
+          });
+        });
+
+        /* Etkinlikler */
+        (data.etkinlikler || []).filter(e => e.gorunum !== false).forEach(e => {
+          const b = BOLUM[e.bolum] || BOLUM.genel;
+          items.push({
+            tip: 'etkinlik', bolum: e.bolum || 'genel',
+            baslik: e.baslik, ozet: e.aciklama,
+            tarih: e.tarih, link: b.link,
+            konum: e.konum, saat: e.saat
+          });
+        });
+
+        /* Faaliyetler */
+        (data.faaliyetler || []).filter(f => f.gorunum !== false).forEach(f => {
+          items.push({
+            tip: 'faaliyet', bolum: 'genel',
+            baslik: f.baslik, ozet: f.kisaAciklama || f.icerik,
+            tarih: f.tarih, link: 'sporlar.html'
+          });
+        });
+
+        /* Videolar */
+        (data.videolar || []).filter(v => v.oneCikar).forEach(v => {
+          items.push({
+            tip: 'video', bolum: 'dalgiclik',
+            baslik: v.baslik, ozet: v.aciklama,
+            tarih: null, link: 'sporlar/dalgiclik/index.html',
+            videoId: v.videoId
+          });
+        });
+
+        return items.sort((a, b) => {
+          if (!a.tarih && !b.tarih) return 0;
+          if (!a.tarih) return 1;
+          if (!b.tarih) return -1;
+          return new Date(b.tarih) - new Date(a.tarih);
+        });
+      }
+
+      const okSVG = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+
+      const TIP_LABEL = { duyuru: '📢 Duyuru', etkinlik: '📅 Etkinlik', faaliyet: '⚡ Faaliyet', video: '▶ Video' };
+      const TIP_CLASS = { duyuru: 'hm-tip-duyuru', etkinlik: 'hm-tip-etkinlik', faaliyet: 'hm-tip-faaliyet', video: 'hm-tip-video' };
+
+      function kartHTML(item, featured) {
+        const b = BOLUM[item.bolum] || BOLUM.genel;
+        const tarihStr = item.tarih ? new Date(item.tarih).toLocaleDateString('tr-TR', { day:'numeric', month:'long', year:'numeric' }) : '';
+        const thumb = item.videoId
+          ? `<div class="hm-kart__thumb">
+               <img src="https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg" alt="${item.baslik}" loading="lazy">
+               <div class="hm-kart__play"><svg width="40" height="40" viewBox="0 0 24 24" fill="white" opacity=".9"><circle cx="12" cy="12" r="10" fill="rgba(0,0,0,.5)"/><polygon points="10 8 16 12 10 16 10 8" fill="white"/></svg></div>
+             </div>` : '';
+
+        return `<a href="${item.link}" class="hm-kart${featured ? ' hm-kart--featured' : ''}" style="--krenk:${b.renk}">
+          ${thumb}
+          <div class="hm-kart__body">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <span class="hm-kart__kaynak ${TIP_CLASS[item.tip]}">${TIP_LABEL[item.tip]}</span>
+              <span class="hm-kart__kaynak" style="background:${b.renk}22;color:${b.renk};">${b.ad}</span>
+            </div>
+            ${tarihStr ? `<div class="hm-kart__tarih">${tarihStr}${item.konum ? ' · ' + item.konum : ''}</div>` : ''}
+            <div class="hm-kart__baslik">${item.baslik}</div>
+            ${item.ozet ? `<div class="hm-kart__ozet">${item.ozet}</div>` : ''}
+            <div class="hm-kart__devam">Devamını gör ${okSVG}</div>
+          </div>
+        </a>`;
+      }
+
+      let tumFeed = [];
+      let aktifBolum = 'tumu';
+
+      function renderFeed(bolum) {
+        const feed    = document.getElementById('haber-feed');
+        const bosEl   = document.getElementById('haber-bos');
+        const filtered = bolum === 'tumu' ? tumFeed : tumFeed.filter(i => i.bolum === bolum);
+        const gorunen  = filtered.slice(0, 7);
+
+        if (!gorunen.length) {
+          feed.innerHTML = ''; feed.style.display = 'none';
+          bosEl.style.display = '';
+          return;
+        }
+
+        bosEl.style.display = 'none'; feed.style.display = 'grid';
+        feed.innerHTML = gorunen.map((item, i) => kartHTML(item, i === 0)).join('');
+      }
+
+      tumFeed = buildFeed();
+      renderFeed('tumu');
+
+      /* ---------- Hero istatistikler ---------- */
+      const istatToplam   = document.getElementById('hm-istat-toplam');
+      const istatEtkinlik = document.getElementById('hm-istat-etkinlik');
+      const istatVideo    = document.getElementById('hm-istat-video');
+      if (istatToplam)   istatToplam.textContent   = tumFeed.length;
+      if (istatEtkinlik) istatEtkinlik.textContent = tumFeed.filter(i => i.tip === 'etkinlik').length;
+      if (istatVideo)    istatVideo.textContent    = tumFeed.filter(i => i.tip === 'video').length;
+
+      /* ---------- Ticker ---------- */
+      const tickerInner = document.getElementById('hm-ticker-inner');
+      if (tickerInner && tumFeed.length) {
+        const tickerItems = tumFeed.slice(0, 12);
+        const html = tickerItems.map(item => {
+          const b = BOLUM[item.bolum] || BOLUM.genel;
+          return `<a href="${item.link}" class="hm-ticker__item">
+            <span class="hm-ticker__item-dot" style="background:${b.renk};"></span>
+            <strong style="color:${b.renk};font-size:0.7rem;">${b.ad}</strong>
+            ${item.baslik}
+          </a>`;
+        }).join('');
+        // İki kez tekrar et (sonsuz döngü için)
+        tickerInner.innerHTML = html + html;
+      }
+
+      /* Filtre butonları */
+      document.querySelectorAll('.hm-filtre').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.hm-filtre').forEach(b => b.classList.remove('hm-filtre--aktif'));
+          btn.classList.add('hm-filtre--aktif');
+          aktifBolum = btn.dataset.bolum;
+          renderFeed(aktifBolum);
+        });
+      });
+
+      new ScrollAnimations();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinamik Çalışmalar | Sonsuzluğa Giden Yolun Koruyucuları</title>
+  <meta name="description" content="Dinamik Çalışmalar — iman, disiplin ve karakter ekseninde gençleri sonsuzluğa hazırlayan yolculuk. Dinamik SK Erkek ve Dinamik SK Kız çalışmalarımızın kalbi.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dinamikspor.com/dinamik-calismalar.html">
+  <meta property="og:title" content="Dinamik Çalışmalar | Sonsuzluğa Giden Yolun Koruyucuları">
+  <meta property="og:description" content="İman. Disiplin. Karakter. Bir neslin inşası.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Dinamik Çalışmalar","description":"İman, disiplin ve karakter ekseninde gençleri sonsuzluğa hazırlayan yolculuk.","url":"https://dinamikspor.com/dinamik-calismalar.html","publisher":{"@type":"SportsOrganization","name":"Dinamik Spor Kulübü"}}
+  </script>
+
+  <style>
+    /* ============================================================
+       DİNAMİK ÇALIŞMALAR — Safir & Altın Tema
+       ============================================================ */
+    :root {
+      --dc-ink:        #050912;
+      --dc-bg:         #0a1227;
+      --dc-bg-soft:    #111c3a;
+      --dc-deep:       #061232;
+      --dc-paper:      #f4ecdf;
+      --dc-paper-mid:  #cfc3a8;
+
+      --dc-sapphire:   #1a3a8a;
+      --dc-sapphire-l: #3a5fc7;
+      --dc-sapphire-d: #0c1e4d;
+
+      --dc-gold:       #d4a017;
+      --dc-gold-l:     #f3c447;
+      --dc-gold-d:     #a07810;
+
+      --dc-rose:       #e8809e;   /* kız aksanı */
+      --dc-emerald:    #16a34a;   /* erkek aksanı */
+
+      --dc-muted:      rgba(244,236,223,.55);
+      --dc-muted-2:    rgba(244,236,223,.32);
+      --dc-line:       rgba(212,160,23,.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background: var(--dc-ink);
+      color: var(--dc-paper);
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+    }
+
+    /* ============================================================
+       HEADER OVERRIDE
+       ============================================================ */
+    .header {
+      background: rgba(5,9,18,.75) !important;
+      border-bottom: 1px solid rgba(244,236,223,.06) !important;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .header .nav-link { color: rgba(244,236,223,.7) !important; }
+    .header .nav-link:hover { color: var(--dc-paper) !important; }
+    .header .nav-link.active { color: var(--dc-gold-l) !important; }
+    .header .logo-text { color: var(--dc-paper) !important; }
+    .header .logo-text span { color: var(--dc-gold-l) !important; }
+    .header .nav-cta {
+      background: var(--dc-gold) !important;
+      color: var(--dc-deep) !important;
+    }
+
+    /* ============================================================
+       HERO — Sinematik, asaletli, sonsuzluk teması
+       ============================================================ */
+    .dc-hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      padding: 140px 24px 100px;
+    }
+
+    .dc-hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1532634726-8b9fb99825c1?w=1920&q=85&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center 40%;
+      filter: brightness(0.32) saturate(1.05) contrast(1.1);
+      transform: scale(1.04);
+      animation: dcZoom 24s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes dcZoom {
+      0%   { transform: scale(1.04) translateY(0); }
+      100% { transform: scale(1.14) translateY(-12px); }
+    }
+
+    .dc-hero__overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(5,9,18,.92) 0%, rgba(12,30,77,.55) 45%, rgba(5,9,18,.95) 100%),
+        radial-gradient(ellipse at 18% 25%, rgba(212,160,23,.15) 0%, transparent 55%),
+        radial-gradient(ellipse at 82% 75%, rgba(58,95,199,.18) 0%, transparent 60%);
+      z-index: 1;
+    }
+
+    .dc-hero__grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(212,160,23,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,160,23,.05) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+      z-index: 1;
+    }
+
+    .dc-hero__noise {
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+      opacity: 0.12;
+      z-index: 2;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+    }
+
+    .dc-hero__fade {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 30%;
+      background: linear-gradient(to top, var(--dc-ink), transparent);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .dc-hero__inner {
+      position: relative;
+      z-index: 4;
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .dc-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--dc-gold-l);
+      margin-bottom: 32px;
+    }
+    .dc-hero__eyebrow::before {
+      content: '';
+      width: 56px; height: 1px;
+      background: linear-gradient(to right, transparent, var(--dc-gold));
+    }
+    .dc-hero__eyebrow svg {
+      width: 14px; height: 14px;
+      stroke: var(--dc-gold-l);
+      fill: none;
+      stroke-width: 1.8;
+    }
+
+    .dc-hero__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3.2rem, 10vw, 8.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--dc-paper);
+      margin: 0 0 32px;
+      max-width: 1100px;
+      text-shadow: 0 8px 60px rgba(0,0,0,.55);
+    }
+    .dc-hero__title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--dc-gold-l);
+      display: inline-block;
+      position: relative;
+    }
+    .dc-hero__title em::after {
+      content: '';
+      position: absolute;
+      bottom: 0.08em; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(to right, transparent, var(--dc-gold), transparent);
+      opacity: 0.65;
+    }
+
+    .dc-hero__lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+      line-height: 1.6;
+      color: rgba(244,236,223,.78);
+      max-width: 720px;
+      margin: 0 0 48px;
+    }
+    .dc-hero__lead strong {
+      font-style: normal;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      color: var(--dc-gold-l);
+    }
+
+    .dc-hero__actions {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .dc-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 36px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .dc-btn--gold {
+      background: linear-gradient(135deg, var(--dc-gold), var(--dc-gold-l));
+      color: var(--dc-deep);
+      box-shadow: 0 12px 36px rgba(212,160,23,.28);
+    }
+    .dc-btn--gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 48px rgba(212,160,23,.42);
+    }
+    .dc-btn--ghost {
+      background: transparent;
+      color: var(--dc-paper);
+      border-color: rgba(244,236,223,.28);
+    }
+    .dc-btn--ghost:hover {
+      border-color: var(--dc-gold-l);
+      color: var(--dc-gold-l);
+    }
+
+    /* Hero alt şerit — istatistikler */
+    .dc-hero__strip {
+      position: absolute;
+      bottom: 48px; left: 0; right: 0;
+      z-index: 4;
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+      padding: 0 24px;
+    }
+    .dc-hero__stat {
+      text-align: center;
+      color: rgba(244,236,223,.7);
+    }
+    .dc-hero__stat b {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 2.4rem;
+      color: var(--dc-gold-l);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .dc-hero__stat span {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* Hero scroll cue */
+    .dc-hero__cue {
+      position: absolute;
+      bottom: 16px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, transparent, var(--dc-gold-l));
+      animation: dcCue 2.4s ease-in-out infinite;
+    }
+    @keyframes dcCue {
+      0%, 100% { opacity: 0.2; transform: translateX(-50%) scaleY(0.6); }
+      50% { opacity: 1; transform: translateX(-50%) scaleY(1); }
+    }
+
+    /* ============================================================
+       MANIFESTO ŞERİDİ
+       ============================================================ */
+    .dc-manifesto {
+      background: var(--dc-bg-soft);
+      padding: 64px 24px;
+      border-top: 1px solid var(--dc-line);
+      border-bottom: 1px solid var(--dc-line);
+      overflow: hidden;
+      position: relative;
+    }
+    .dc-manifesto::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(212,160,23,.08) 0%, transparent 70%);
+    }
+    .dc-manifesto-track {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .dc-manifesto-word {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: rgba(244,236,223,.95);
+    }
+    .dc-manifesto-word--accent {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--dc-gold-l);
+      text-transform: none;
+    }
+    .dc-manifesto-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--dc-gold);
+      box-shadow: 0 0 18px rgba(212,160,23,.6);
+    }
+
+    /* ============================================================
+       SECTION TEMEL
+       ============================================================ */
+    .dc-section {
+      padding: 120px 0;
+      background: var(--dc-bg);
+      position: relative;
+    }
+    .dc-section--alt {
+      background: linear-gradient(180deg, var(--dc-bg) 0%, var(--dc-deep) 100%);
+    }
+    .dc-section__container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .dc-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--dc-gold-l);
+      margin-bottom: 20px;
+    }
+    .dc-eyebrow::before {
+      content: '';
+      width: 36px; height: 1px;
+      background: var(--dc-gold);
+    }
+
+    .dc-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--dc-paper);
+      margin: 0 0 24px;
+    }
+    .dc-title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--dc-gold-l);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .dc-lead {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: rgba(244,236,223,.7);
+      max-width: 640px;
+    }
+
+    /* ============================================================
+       HAKKIMIZDA — İki kolon
+       ============================================================ */
+    .dc-about {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .dc-about__text p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: rgba(244,236,223,.72);
+      margin: 0 0 18px;
+    }
+    .dc-about__text p strong {
+      color: var(--dc-gold-l);
+      font-weight: 600;
+    }
+    .dc-about__visual {
+      position: relative;
+      aspect-ratio: 4/5;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,.5);
+    }
+    .dc-about__visual img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .dc-about__visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 50%, rgba(12,30,77,.4) 100%);
+    }
+    .dc-about__badge {
+      position: absolute;
+      bottom: 32px; left: 32px;
+      background: var(--dc-gold);
+      color: var(--dc-deep);
+      padding: 16px 24px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      z-index: 2;
+      box-shadow: 0 12px 28px rgba(212,160,23,.35);
+    }
+
+    /* ============================================================
+       DEĞERLER — 3 sütun
+       ============================================================ */
+    .dc-values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 56px;
+    }
+    .dc-value {
+      background: rgba(244,236,223,.025);
+      border: 1px solid var(--dc-line);
+      padding: 44px 32px;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    .dc-value::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 60px;
+      background: linear-gradient(to bottom, var(--dc-gold), transparent);
+      transition: height 0.5s ease;
+    }
+    .dc-value:hover {
+      background: rgba(212,160,23,.05);
+      border-color: rgba(212,160,23,.4);
+      transform: translateY(-6px);
+    }
+    .dc-value:hover::before { height: 100%; }
+
+    .dc-value__num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 2.6rem;
+      color: var(--dc-gold);
+      opacity: 0.55;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+    .dc-value__icon {
+      width: 56px; height: 56px;
+      border: 1px solid var(--dc-line);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      background: rgba(212,160,23,.06);
+    }
+    .dc-value__icon svg {
+      width: 26px; height: 26px;
+      stroke: var(--dc-gold-l);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .dc-value h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--dc-paper);
+      margin: 0 0 14px;
+    }
+    .dc-value p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: rgba(244,236,223,.6);
+      margin: 0;
+    }
+
+    /* ============================================================
+       İKİ DÜNYA — Erkek & Kız Kartları
+       ============================================================ */
+    .dc-paths {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 64px;
+    }
+    .dc-path {
+      position: relative;
+      aspect-ratio: 4/5;
+      border-radius: 4px;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+      isolation: isolate;
+      cursor: pointer;
+    }
+    .dc-path__img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.9s ease;
+      z-index: 0;
+    }
+    .dc-path:hover .dc-path__img {
+      transform: scale(1.06);
+    }
+    .dc-path__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5,9,18,.95) 0%, rgba(5,9,18,.4) 50%, rgba(5,9,18,.15) 100%);
+      z-index: 1;
+      transition: opacity 0.4s ease;
+    }
+    .dc-path__tint {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      mix-blend-mode: multiply;
+      opacity: 0.5;
+      transition: opacity 0.4s ease;
+    }
+    .dc-path:hover .dc-path__tint {
+      opacity: 0.25;
+    }
+    .dc-path--erkek .dc-path__img {
+      background-image: url('https://images.unsplash.com/photo-1553531889-65a01a6cb6c4?w=1200&q=85&auto=format&fit=crop');
+    }
+    .dc-path--erkek .dc-path__tint {
+      background: linear-gradient(135deg, rgba(15,26,15,.6), rgba(22,163,74,.45));
+    }
+    .dc-path--kiz .dc-path__img {
+      background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=85&auto=format&fit=crop');
+    }
+    .dc-path--kiz .dc-path__tint {
+      background: linear-gradient(135deg, rgba(20,6,15,.6), rgba(232,128,158,.45));
+    }
+    .dc-path__content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 48px 44px;
+      color: var(--dc-paper);
+    }
+    .dc-path__mark {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--dc-paper);
+      opacity: 0.7;
+      margin-bottom: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .dc-path--erkek .dc-path__mark { color: #e3f0e3; }
+    .dc-path--kiz .dc-path__mark { color: #ffe1ec; }
+    .dc-path__mark::before {
+      content: '';
+      width: 28px; height: 1px;
+      background: currentColor;
+      opacity: 0.6;
+    }
+
+    .dc-path__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+      color: var(--dc-paper);
+    }
+    .dc-path__title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .dc-path--erkek .dc-path__title em { color: #86efac; }
+    .dc-path--kiz .dc-path__title em { color: var(--dc-rose); }
+
+    .dc-path__desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(244,236,223,.78);
+      max-width: 420px;
+      margin: 0 0 28px;
+    }
+    .dc-path__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--dc-paper);
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(244,236,223,.45);
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+    .dc-path:hover .dc-path__cta {
+      gap: 18px;
+      border-bottom-color: var(--dc-paper);
+    }
+    .dc-path__cta svg {
+      width: 16px; height: 16px;
+      transition: transform 0.3s ease;
+    }
+    .dc-path:hover .dc-path__cta svg {
+      transform: translateX(4px);
+    }
+
+    /* ============================================================
+       FAALİYETLER ŞERİDİ
+       ============================================================ */
+    .dc-activities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .dc-activity {
+      background: rgba(244,236,223,.025);
+      border: 1px solid var(--dc-line);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .dc-activity:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212,160,23,.4);
+    }
+    .dc-activity__img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .dc-activity__body {
+      padding: 22px 24px 26px;
+    }
+    .dc-activity__body h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--dc-paper);
+      margin: 0 0 8px;
+    }
+    .dc-activity__body p {
+      font-size: 0.88rem;
+      color: rgba(244,236,223,.55);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       QUOTE
+       ============================================================ */
+    .dc-quote {
+      background: linear-gradient(135deg, var(--dc-bg-soft) 0%, var(--dc-deep) 100%);
+      border: 1px solid var(--dc-line);
+      border-radius: 8px;
+      padding: 96px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .dc-quote::before {
+      content: '"';
+      position: absolute;
+      top: -40px; left: 48px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16rem;
+      color: var(--dc-gold);
+      opacity: 0.12;
+      line-height: 1;
+    }
+    .dc-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      line-height: 1.55;
+      color: var(--dc-paper);
+      max-width: 880px;
+      margin: 0 auto 28px;
+    }
+    .dc-quote-author {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--dc-gold-l);
+    }
+
+    /* ============================================================
+       CTA STRIP
+       ============================================================ */
+    .dc-cta {
+      background:
+        linear-gradient(135deg, rgba(212,160,23,.08), rgba(26,58,138,.08)),
+        var(--dc-bg-soft);
+      border: 1px solid var(--dc-gold);
+      border-radius: 8px;
+      padding: 64px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .dc-cta h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      color: var(--dc-paper);
+      margin: 0 0 8px;
+    }
+    .dc-cta h3 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      color: var(--dc-gold-l);
+    }
+    .dc-cta p {
+      font-size: 0.95rem;
+      color: rgba(244,236,223,.65);
+      margin: 0;
+      max-width: 540px;
+    }
+
+    /* ============================================================
+       REVEAL
+       ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.d1 { transition-delay: 0.12s; }
+    .reveal.d2 { transition-delay: 0.24s; }
+    .reveal.d3 { transition-delay: 0.36s; }
+    .reveal.d4 { transition-delay: 0.48s; }
+
+    /* ============================================================
+       FOOTER OVERRIDE
+       ============================================================ */
+    .footer.dc-footer {
+      background: var(--dc-ink);
+      border-top: 1px solid var(--dc-line);
+    }
+    .dc-footer .footer-title { color: var(--dc-gold-l); }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1024px) {
+      .dc-about { grid-template-columns: 1fr; gap: 56px; }
+      .dc-paths { grid-template-columns: 1fr; }
+      .dc-hero__strip { display: none; }
+    }
+    @media (max-width: 768px) {
+      .dc-hero { padding: 120px 20px 80px; }
+      .dc-hero__title { font-size: clamp(2.6rem, 11vw, 4.5rem); }
+      .dc-hero__lead { font-size: 1.05rem; }
+      .dc-section { padding: 80px 0; }
+      .dc-quote { padding: 64px 32px; }
+      .dc-cta { padding: 40px 28px; flex-direction: column; align-items: flex-start; text-align: left; }
+      .dc-path__content { padding: 32px 28px; }
+      .dc-manifesto-track { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo">
+        <span class="logo-text">Dinamik <span>SK</span></span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Ana Sayfa</a>
+        <a href="dinamik-calismalar.html" class="nav-link active">Dinamik Çalışmalar</a>
+        <a href="sporlar.html" class="nav-link">Sporlar</a>
+        <a href="vefa.html" class="nav-link">Vefa</a>
+        <a href="orman.html" class="nav-link">Hatıra Ormanı</a>
+        <a href="duyurular.html" class="nav-link">Duyurular</a>
+        <a href="iletisim.html" class="nav-link">İletişim</a>
+        <a href="admin.html" class="nav-cta">Yönetim</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="dc-hero">
+    <div class="dc-hero__bg"></div>
+    <div class="dc-hero__overlay"></div>
+    <div class="dc-hero__grid"></div>
+    <div class="dc-hero__noise"></div>
+    <div class="dc-hero__fade"></div>
+
+    <div class="dc-hero__inner">
+      <div class="dc-hero__eyebrow">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88"/></svg>
+        Dinamik Çalışmalar
+      </div>
+
+      <h1 class="dc-hero__title">
+        Sonsuzluğa<br>
+        Giden Yolun<br>
+        <em>Koruyucuları.</em>
+      </h1>
+
+      <p class="dc-hero__lead">
+        Yıllar boyunca izcilik mirasından devraldığımız <strong>disiplin, kardeşlik ve mücadele ruhunu</strong> bugün daha ileriye taşıyoruz. Dinamik Çalışmalar; gençleri sadece bugüne değil, daha büyük bir istikamete hazırlayan; iman, karakter ve sahanın birlikte yoğrulduğu bir yolculuktur.
+      </p>
+
+      <div class="dc-hero__actions">
+        <a href="#yollar" class="dc-btn dc-btn--gold">
+          İki Yolu Keşfet
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#felsefe" class="dc-btn dc-btn--ghost">Felsefemiz</a>
+      </div>
+    </div>
+
+    <div class="dc-hero__strip">
+      <div class="dc-hero__stat"><b>15+</b><span>Yıllık Miras</span></div>
+      <div class="dc-hero__stat"><b>2</b><span>Çalışma Kolu</span></div>
+      <div class="dc-hero__stat"><b>300+</b><span>Genç Sporcu</span></div>
+      <div class="dc-hero__stat"><b>∞</b><span>İstikamet</span></div>
+    </div>
+
+    <div class="dc-hero__cue"></div>
+  </section>
+
+  <!-- ===================== MANIFESTO ŞERİDİ ===================== -->
+  <section class="dc-manifesto">
+    <div class="dc-manifesto-track">
+      <span class="dc-manifesto-word">İman</span>
+      <span class="dc-manifesto-dot"></span>
+      <span class="dc-manifesto-word dc-manifesto-word--accent">Disiplin</span>
+      <span class="dc-manifesto-dot"></span>
+      <span class="dc-manifesto-word">Karakter</span>
+    </div>
+  </section>
+
+  <!-- ===================== HAKKIMIZDA / FELSEFE ===================== -->
+  <section class="dc-section" id="felsefe">
+    <div class="dc-section__container">
+      <div class="dc-about">
+        <div class="dc-about__text reveal">
+          <div class="dc-eyebrow">Felsefemiz</div>
+          <h2 class="dc-title">Bir <em>Nesil</em><br>İnşası.</h2>
+          <p>Dinamik Çalışmalar, salt bir antrenman programı değil — <strong>bir nesil inşa etme sözüdür.</strong> İzcilik geleneğinden devraldığımız "ahde vefa"yı, sahanın teri ve kampın ateşiyle harmanlayan bir yolculuktur.</p>
+          <p>Burada güç, yalnız bilekte değil <strong>iradede</strong> aranır. Disiplin, dayatılan bir kural değil; gönüllüce kuşanılan bir <strong>edeptir.</strong> Karakter ise konuşmayla değil, zorluk anında alınan <strong>tavırla</strong> belli olur.</p>
+          <p>Gençleri sadece bugünün galibi değil, <strong>yarının emanet taşıyıcıları</strong> olarak yetiştiriyoruz. Çünkü bizim derdimiz madalya değil — istikamettir. Adı bu yüzden konuldu: <em>Dinamik Çalışmalar.</em></p>
+        </div>
+        <div class="dc-about__visual reveal d1">
+          <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=900&q=85&auto=format&fit=crop" alt="Dinamik Çalışmalar Eğitim">
+          <div class="dc-about__badge">2010'dan beri</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEĞERLER ===================== -->
+  <section class="dc-section dc-section--alt">
+    <div class="dc-section__container">
+      <div class="reveal" style="text-align: center; max-width: 720px; margin: 0 auto;">
+        <div class="dc-eyebrow" style="justify-content: center;">Temel Değerler</div>
+        <h2 class="dc-title" style="margin-bottom: 18px;">Üç Sütun, <em>Bir Duruş.</em></h2>
+        <p class="dc-lead" style="margin: 0 auto;">Çalışmalarımızın iskeletini kuran üç temel ilke. Her antrenman, her kamp, her karşılaşma — bu üçünün üzerine inşa edilir.</p>
+      </div>
+
+      <div class="dc-values">
+        <div class="dc-value reveal d1">
+          <div class="dc-value__num">01.</div>
+          <div class="dc-value__icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>İman</h3>
+          <p>Her şeyin merkezinde inanç. Manevi dünyası güçlü olan bir gencin ayağı kayar ama yolu kaybolmaz. Önce kalbi yetiştiririz; gerisi gelir.</p>
+        </div>
+
+        <div class="dc-value reveal d2">
+          <div class="dc-value__num">02.</div>
+          <div class="dc-value__icon">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>Disiplin</h3>
+          <p>İzcilikten devraldığımız bu miras; saatinde, sözünde ve sahasında olmaktır. Disiplin bir kural değil — özgürlüğün ön koşuludur.</p>
+        </div>
+
+        <div class="dc-value reveal d3">
+          <div class="dc-value__num">03.</div>
+          <div class="dc-value__icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          </div>
+          <h3>Karakter</h3>
+          <p>Bedeni güçlü, iradesi sağlam, sözü dürüst bir nesil. Salt fizik değil; karakterli ve şuurlu bir duruş — Dinamik Çalışmalar'ın asıl ürünüdür.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== İKİ YOL: ERKEK & KIZ ===================== -->
+  <section class="dc-section" id="yollar">
+    <div class="dc-section__container">
+      <div class="reveal" style="text-align: center; max-width: 720px; margin: 0 auto;">
+        <div class="dc-eyebrow" style="justify-content: center;">Çalışma Kollarımız</div>
+        <h2 class="dc-title" style="margin-bottom: 18px;">İki Yol, <em>Aynı İstikamet.</em></h2>
+        <p class="dc-lead" style="margin: 0 auto;">Aynı değerlerle, ayrı zarafetlerle yetişen iki kardeş topluluk. Her biri kendi diliyle aynı sözü kuruyor: <em>"İman. Disiplin. Karakter."</em></p>
+      </div>
+
+      <div class="dc-paths">
+        <a href="dinamik-calismalar/erkek/index.html" class="dc-path dc-path--erkek reveal d1">
+          <div class="dc-path__img"></div>
+          <div class="dc-path__tint"></div>
+          <div class="dc-path__overlay"></div>
+          <div class="dc-path__content">
+            <div class="dc-path__mark">Dinamik SK Erkek</div>
+            <h3 class="dc-path__title">Yürek <em>İrade</em><br>Kardeşlik.</h3>
+            <p class="dc-path__desc">Sahanın terinden, kampın ateşine; bilek güreşinden gece nöbetine — bir gencin adam olma yolculuğu.</p>
+            <span class="dc-path__cta">
+              Erkek Çalışmalarına Git
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="dinamik-calismalar/kiz/index.html" class="dc-path dc-path--kiz reveal d2">
+          <div class="dc-path__img"></div>
+          <div class="dc-path__tint"></div>
+          <div class="dc-path__overlay"></div>
+          <div class="dc-path__content">
+            <div class="dc-path__mark">Dinamik SK Kız</div>
+            <h3 class="dc-path__title">Güçlü <em>Zarif</em><br>Kararlı.</h3>
+            <p class="dc-path__desc">Sahada yürek, hayatta karakter. Spor yoluyla özgüven kazanan; kardeşlik, edep ve cesaretle büyüyen genç kadınların evi.</p>
+            <span class="dc-path__cta">
+              Kız Çalışmalarına Git
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAALİYETLER ===================== -->
+  <section class="dc-section dc-section--alt">
+    <div class="dc-section__container">
+      <div class="reveal" style="max-width: 720px; margin-bottom: 24px;">
+        <div class="dc-eyebrow">Faaliyetler</div>
+        <h2 class="dc-title">Sahayı <em>İnşa Eden</em><br>Anlayış.</h2>
+        <p class="dc-lead">Antrenman dört duvar arasında bitmez. Dinamik Çalışmalar, hayatın içinde olur — kampta, atölyede, ormanda, gönüllerde.</p>
+      </div>
+
+      <div class="dc-activities">
+        <div class="dc-activity reveal d1">
+          <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=85&auto=format&fit=crop" alt="Kamp" class="dc-activity__img">
+          <div class="dc-activity__body">
+            <h4>Kamp</h4>
+            <p>Doğanın içinde, gökyüzünün altında — birlik ruhunun pekiştiği geceler.</p>
+          </div>
+        </div>
+        <div class="dc-activity reveal d2">
+          <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&q=85&auto=format&fit=crop" alt="Atölye" class="dc-activity__img">
+          <div class="dc-activity__body">
+            <h4>Atölye</h4>
+            <p>El emeği, göz nuru. Hem zanaatı hem sabrı öğreten çalışmalar.</p>
+          </div>
+        </div>
+        <div class="dc-activity reveal d3">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=85&auto=format&fit=crop" alt="Buluşmalar" class="dc-activity__img">
+          <div class="dc-activity__body">
+            <h4>Buluşmalar</h4>
+            <p>Kardeşliğin masada, sözde, sohbette pekiştiği gençlik buluşmaları.</p>
+          </div>
+        </div>
+        <div class="dc-activity reveal d4">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=85&auto=format&fit=crop" alt="Fidan" class="dc-activity__img">
+          <div class="dc-activity__body">
+            <h4>Fidan Dikimi</h4>
+            <p>Bugün diktiğimiz fidan, yarın bir gencin gölgesi. Geleceği yeşertmek.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== QUOTE ===================== -->
+  <section class="dc-section">
+    <div class="dc-section__container">
+      <div class="dc-quote reveal">
+        <p>"Bir genci yetiştirmek; <em>bir asrı kurmaktır.</em> Bizim derdimiz bugünün galibi değil, yarına emanet bırakacak adamı yetiştirmektir."</p>
+        <div class="dc-quote-author">— Dinamik Çalışmalar Manifestosu</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="dc-section dc-section--alt">
+    <div class="dc-section__container">
+      <div class="dc-cta reveal">
+        <div>
+          <h3>Bu Yolun <em>Yolcusu</em> Ol.</h3>
+          <p>Yaşın, sporun ya da geçmişin ne olursa olsun — istikametin doğruysa burada yer var. İlk adımı bugün at.</p>
+        </div>
+        <a href="iletisim.html" class="dc-btn dc-btn--gold">
+          İletişime Geç
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer dc-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height: 40px;">
+            <span class="logo-text">Dinamik <span style="color: var(--dc-gold-l);">SK</span></span>
+          </a>
+          <p style="margin-top: 16px;">İman. Disiplin. Spor. 2010'dan beri Antalya'da gençleri güçlü bireyler olarak yetiştiriyoruz.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Çalışmalarımız</h4>
+          <div class="footer-links">
+            <a href="dinamik-calismalar.html">Dinamik Çalışmalar</a>
+            <a href="dinamik-calismalar/erkek/index.html">Dinamik SK Erkek</a>
+            <a href="dinamik-calismalar/kiz/index.html">Dinamik SK Kız</a>
+            <a href="sporlar.html">Sporlar</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Hızlı Linkler</h4>
+          <div class="footer-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="vefa.html">Vefa</a>
+            <a href="orman.html">Hatıra Ormanı</a>
+            <a href="iletisim.html">İletişim</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Sosyal Medya</h4>
+          <div class="footer-social">
+            <a href="https://instagram.com/dinamikspor" target="_blank" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Dinamik Spor Kulübü. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    });
+  </script>
+</body>
+</html>

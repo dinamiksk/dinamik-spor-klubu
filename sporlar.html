@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sporlarımız | Akdeniz Dinamik Spor Kulübü</title>
+  <meta name="description" content="Derinde nefes, masada güç. Dinamik Spor Kulübü'nde dalgıçlık ve bilek güreşi branşlarında Antalya'nın öncü spor ailesi.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dinamikspor.com/sporlar.html">
+  <meta property="og:title" content="Sporlarımız | Akdeniz Dinamik Spor Kulübü">
+  <meta property="og:description" content="Derinde nefes, masada güç. İki ayrı disiplin, tek bir ruh.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SportsOrganization","name":"Dinamik Spor Kulübü","url":"https://dinamikspor.com","sport":["Bilek Güreşi","Dalgıçlık"],"address":{"@type":"PostalAddress","addressLocality":"Antalya","addressCountry":"TR"}}
+  </script>
+
+  <style>
+    /* ============================================
+       KÖKL TEMA — İKİ DÜNYA
+       ============================================ */
+    :root {
+      --sp-ink:      #060a13;
+      --sp-bg:       #0a1221;
+      --sp-bg-soft:  #101a2e;
+      --sp-paper:    #f4ecdf;
+      --sp-paper-mid:#e2d6c0;
+      --sp-cream:    #faf6ee;
+
+      --sp-blue:     #1a61ac;
+      --sp-blue-deep:#0a3466;
+      --sp-blue-glow:#5aa3e8;
+
+      --sp-orange:   #f07f0b;
+      --sp-orange-d: #c65c00;
+      --sp-amber:    #f5b94a;
+
+      --sp-gold:     #c9a351;
+      --sp-muted:    rgba(244,236,223,.52);
+      --sp-muted-2:  rgba(244,236,223,.32);
+    }
+
+    body {
+      background: var(--sp-ink);
+      color: var(--sp-paper);
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* ============================================
+       HEADER — koyu arka plan için uyumlu
+       ============================================ */
+    .header {
+      background: rgba(6,10,19,.78) !important;
+      border-bottom: 1px solid rgba(244,236,223,.08) !important;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .header .nav-link { color: rgba(244,236,223,.7) !important; }
+    .header .nav-link:hover { color: var(--sp-paper) !important; }
+    .header .nav-link.active { color: var(--sp-amber) !important; }
+    .header .logo-text { color: var(--sp-paper) !important; }
+    .header .logo-text span { color: var(--sp-amber) !important; }
+
+    /* ============================================
+       HERO — İKİ DÜNYA SİNEMATİK
+       ============================================ */
+    .sp-hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      background: var(--sp-ink);
+      isolation: isolate;
+    }
+
+    /* İki panel arka plan */
+    .sp-hero__panes {
+      position: absolute; inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      z-index: 0;
+    }
+
+    .sp-hero__pane {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sp-hero__pane-img {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 12s ease-out;
+      animation: heroZoom 18s ease-out infinite alternate;
+    }
+
+    @keyframes heroZoom {
+      0%   { transform: scale(1.02); }
+      100% { transform: scale(1.14); }
+    }
+
+    .sp-hero__pane--blue .sp-hero__pane-img {
+      background-image: url('https://images.unsplash.com/photo-1559683068-afd3611d0619?w=1800&q=85&auto=format&fit=crop');
+    }
+
+    .sp-hero__pane--orange .sp-hero__pane-img {
+      background-image: url('https://images.pexels.com/photos/11241435/pexels-photo-11241435.jpeg?auto=compress&cs=tinysrgb&w=1800');
+      animation-delay: -9s;
+    }
+
+    /* Panel tonlama overlay */
+    .sp-hero__pane::before {
+      content: '';
+      position: absolute; inset: 0;
+      z-index: 1;
+    }
+
+    .sp-hero__pane--blue::before {
+      background:
+        linear-gradient(180deg, rgba(6,10,19,.25) 0%, rgba(6,10,19,.55) 55%, rgba(6,10,19,.88) 100%),
+        radial-gradient(ellipse at 50% 40%, rgba(10,52,102,.35), transparent 70%),
+        linear-gradient(135deg, rgba(26,97,172,.25), rgba(6,10,19,.4));
+    }
+
+    .sp-hero__pane--orange::before {
+      background:
+        linear-gradient(180deg, rgba(6,10,19,.25) 0%, rgba(6,10,19,.55) 55%, rgba(6,10,19,.88) 100%),
+        radial-gradient(ellipse at 50% 40%, rgba(240,127,11,.22), transparent 70%),
+        linear-gradient(225deg, rgba(240,127,11,.18), rgba(6,10,19,.35));
+    }
+
+    /* Orta bölücü çizgi */
+    .sp-hero__divider {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(244,236,223,.55) 18%, rgba(244,236,223,.55) 82%, transparent);
+      z-index: 3;
+    }
+    .sp-hero__divider::before,
+    .sp-hero__divider::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--sp-paper);
+      box-shadow: 0 0 0 4px rgba(244,236,223,.12);
+    }
+    .sp-hero__divider::before { top: 14%; }
+    .sp-hero__divider::after  { bottom: 14%; }
+
+    /* Grain/noise overlay */
+    .sp-hero__grain {
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.42'/></svg>");
+      mix-blend-mode: overlay;
+      opacity: .3;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    /* Vignette */
+    .sp-hero__vignette {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, transparent 30%, rgba(6,10,19,.55) 100%);
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    /* İçerik katmanı */
+    .sp-hero__content {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: calc(var(--header-height) + 80px) 24px 140px;
+      text-align: center;
+    }
+
+    .sp-hero__mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 9px 20px;
+      border: 1px solid rgba(244,236,223,.22);
+      border-radius: 40px;
+      background: rgba(6,10,19,.5);
+      backdrop-filter: blur(10px);
+      margin-bottom: 36px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(244,236,223,.78);
+    }
+
+    .sp-hero__mark-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--sp-amber);
+      box-shadow: 0 0 14px var(--sp-amber);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(1.3); }
+    }
+
+    .sp-hero__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3.4rem, 10vw, 9.2rem);
+      line-height: 0.92;
+      letter-spacing: -0.015em;
+      text-transform: uppercase;
+      color: var(--sp-paper);
+      max-width: 1100px;
+      margin: 0 auto;
+      text-shadow: 0 4px 40px rgba(0,0,0,.5);
+    }
+
+    .sp-hero__title-line {
+      display: block;
+    }
+
+    .sp-hero__title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .sp-hero__title em.blue   { color: var(--sp-blue-glow); }
+    .sp-hero__title em.orange { color: var(--sp-amber); }
+
+    .sp-hero__title .dash {
+      display: inline-block;
+      width: 64px; height: 5px;
+      background: var(--sp-paper);
+      vertical-align: middle;
+      margin: 0 18px;
+      opacity: .55;
+    }
+
+    .sp-hero__lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      color: rgba(244,236,223,.75);
+      margin-top: 28px;
+      max-width: 680px;
+      line-height: 1.5;
+    }
+
+    .sp-hero__footer {
+      position: absolute;
+      bottom: 48px; left: 0; right: 0;
+      z-index: 10;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+    }
+
+    .sp-hero__side {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(244,236,223,.6);
+    }
+
+    .sp-hero__side-label {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--sp-paper);
+      margin-top: 4px;
+    }
+
+    .sp-hero__side--left  { text-align: left; }
+    .sp-hero__side--right { text-align: right; }
+
+    .sp-hero__side--left  .sp-hero__side-label { color: var(--sp-blue-glow); }
+    .sp-hero__side--right .sp-hero__side-label { color: var(--sp-amber); }
+
+    .sp-hero__scroll {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .sp-hero__scroll-label {
+      font-size: 0.62rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: rgba(244,236,223,.4);
+    }
+    .sp-hero__scroll-bar {
+      width: 1px; height: 44px;
+      background: rgba(244,236,223,.14);
+      position: relative; overflow: hidden;
+    }
+    .sp-hero__scroll-bar::after {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: var(--sp-paper);
+      animation: scrollDrop 2.4s ease-in-out infinite;
+    }
+    @keyframes scrollDrop {
+      0%   { transform: translateY(-100%); }
+      100% { transform: translateY(200%); }
+    }
+
+    /* ============================================
+       MANIFESTO — BEYAZ BAYRAK
+       ============================================ */
+    .sp-manifesto {
+      background: var(--sp-paper);
+      color: var(--sp-ink);
+      padding: 140px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sp-manifesto::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 1px; height: 88px;
+      background: linear-gradient(180deg, transparent, var(--sp-ink));
+      opacity: .4;
+    }
+
+    .sp-manifesto__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .sp-manifesto__kicker {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--sp-orange);
+      margin-bottom: 28px;
+    }
+
+    .sp-manifesto__quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.9rem, 4vw, 3.4rem);
+      line-height: 1.28;
+      color: var(--sp-ink);
+      max-width: 1000px;
+      margin: 0 auto 20px;
+      letter-spacing: -0.005em;
+    }
+
+    .sp-manifesto__quote strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--sp-blue-deep);
+    }
+
+    .sp-manifesto__rule {
+      width: 44px; height: 3px;
+      background: var(--sp-orange);
+      margin: 42px auto 70px;
+    }
+
+    .sp-manifesto__pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 72px;
+      max-width: 1080px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .sp-pillar {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .sp-pillar::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 6px;
+      width: 3px; height: 48px;
+      background: var(--sp-ink);
+    }
+
+    .sp-pillar:nth-child(1)::before { background: var(--sp-blue); }
+    .sp-pillar:nth-child(2)::before { background: var(--sp-ink); }
+    .sp-pillar:nth-child(3)::before { background: var(--sp-orange); }
+
+    .sp-pillar__no {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(15,31,61,.5);
+      margin-bottom: 6px;
+    }
+
+    .sp-pillar__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--sp-ink);
+      margin-bottom: 14px;
+    }
+
+    .sp-pillar__desc {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(15,31,61,.72);
+    }
+
+    /* ============================================
+       ŞAMPİYON KARTLARI — FİLM POSTERİ
+       ============================================ */
+    .sp-branches {
+      background: var(--sp-ink);
+      padding: 140px 24px;
+      position: relative;
+    }
+
+    .sp-branches__head {
+      max-width: 1280px;
+      margin: 0 auto 72px;
+      text-align: center;
+    }
+
+    .sp-branches__eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--sp-amber);
+      margin-bottom: 18px;
+    }
+
+    .sp-branches__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.015em;
+      color: var(--sp-paper);
+      margin-bottom: 18px;
+    }
+
+    .sp-branches__title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      color: var(--sp-amber);
+      letter-spacing: 0;
+    }
+
+    .sp-branches__sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: rgba(244,236,223,.7);
+    }
+
+    .sp-branches__grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .sp-poster {
+      position: relative;
+      min-height: 660px;
+      border-radius: 4px;
+      overflow: hidden;
+      text-decoration: none;
+      isolation: isolate;
+      transition: transform .6s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .sp-poster:hover { transform: translateY(-10px); }
+
+    .sp-poster__img {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 1.4s cubic-bezier(.2,.8,.2,1);
+      z-index: 0;
+    }
+
+    .sp-poster:hover .sp-poster__img { transform: scale(1.08); }
+
+    .sp-poster--dalg .sp-poster__img {
+      background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&q=85&auto=format&fit=crop');
+    }
+
+    .sp-poster--bilek .sp-poster__img {
+      background-image: url('https://images.pexels.com/photos/14762133/pexels-photo-14762133.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    }
+
+    .sp-poster::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(6,10,19,.2) 0%, rgba(6,10,19,.55) 50%, rgba(6,10,19,.95) 100%);
+      z-index: 1;
+    }
+
+    .sp-poster--dalg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(10,52,102,.4) 100%);
+      mix-blend-mode: multiply;
+      z-index: 1;
+    }
+
+    .sp-poster--bilek::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(240,127,11,.18) 100%);
+      mix-blend-mode: screen;
+      z-index: 1;
+    }
+
+    .sp-poster__inner {
+      position: relative;
+      z-index: 2;
+      padding: 48px 44px;
+      height: 100%;
+      min-height: 660px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sp-poster__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .sp-poster__no {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.15rem;
+      color: rgba(244,236,223,.6);
+    }
+
+    .sp-poster__bar {
+      width: 56px; height: 4px;
+      border-radius: 2px;
+    }
+    .sp-poster--dalg  .sp-poster__bar { background: var(--sp-blue-glow); }
+    .sp-poster--bilek .sp-poster__bar { background: var(--sp-amber); }
+
+    .sp-poster__bottom { }
+
+    .sp-poster__label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .sp-poster--dalg  .sp-poster__label { color: var(--sp-blue-glow); }
+    .sp-poster--bilek .sp-poster__label { color: var(--sp-amber); }
+
+    .sp-poster__name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 5vw, 4.6rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.015em;
+      color: var(--sp-paper);
+      margin-bottom: 14px;
+    }
+
+    .sp-poster__tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: rgba(244,236,223,.82);
+      margin-bottom: 32px;
+      max-width: 420px;
+      line-height: 1.4;
+    }
+
+    .sp-poster__meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      padding: 24px 0;
+      border-top: 1px solid rgba(244,236,223,.2);
+      border-bottom: 1px solid rgba(244,236,223,.2);
+      margin-bottom: 28px;
+    }
+
+    .sp-poster__meta-item {
+      padding: 0 14px;
+      border-right: 1px solid rgba(244,236,223,.14);
+    }
+    .sp-poster__meta-item:first-child { padding-left: 0; }
+    .sp-poster__meta-item:last-child  { padding-right: 0; border-right: none; }
+
+    .sp-poster__meta-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--sp-paper);
+      margin-bottom: 4px;
+    }
+
+    .sp-poster__meta-lbl {
+      font-size: 0.64rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(244,236,223,.55);
+    }
+
+    .sp-poster__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--sp-paper);
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(244,236,223,.3);
+      align-self: flex-start;
+      transition: color .2s, border-color .2s, gap .2s;
+    }
+    .sp-poster:hover .sp-poster__cta { gap: 14px; }
+    .sp-poster--dalg:hover  .sp-poster__cta { color: var(--sp-blue-glow); border-color: var(--sp-blue-glow); }
+    .sp-poster--bilek:hover .sp-poster__cta { color: var(--sp-amber); border-color: var(--sp-amber); }
+
+    /* Köşe etiket */
+    .sp-poster__corner {
+      position: absolute;
+      top: 44px; right: 44px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(244,236,223,.1);
+      border: 1px solid rgba(244,236,223,.22);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 3;
+      transition: background .25s, border-color .25s;
+    }
+    .sp-poster:hover .sp-poster__corner {
+      background: rgba(244,236,223,.22);
+      border-color: var(--sp-paper);
+    }
+
+    /* ============================================
+       IMPACT ŞERİDİ
+       ============================================ */
+    .sp-impact {
+      background: linear-gradient(180deg, var(--sp-ink), var(--sp-bg));
+      padding: 110px 24px;
+      border-top: 1px solid rgba(244,236,223,.06);
+      border-bottom: 1px solid rgba(244,236,223,.06);
+      text-align: center;
+    }
+
+    .sp-impact__kicker {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--sp-amber);
+      margin-bottom: 14px;
+    }
+
+    .sp-impact__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--sp-paper);
+      margin-bottom: 64px;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.4;
+    }
+
+    .sp-impact__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sp-impact__cell {
+      padding: 0 32px;
+      border-right: 1px solid rgba(244,236,223,.08);
+      position: relative;
+    }
+    .sp-impact__cell:last-child { border-right: none; }
+
+    .sp-impact__num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3.2rem, 6vw, 5rem);
+      line-height: 0.9;
+      color: var(--sp-paper);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .sp-impact__num em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--sp-amber);
+      font-size: 0.6em;
+      margin-left: 2px;
+    }
+
+    .sp-impact__lbl {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(244,236,223,.55);
+    }
+
+    /* ============================================
+       İZ — TANIKLIK
+       ============================================ */
+    .sp-testimony {
+      background: var(--sp-bg);
+      padding: 140px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sp-testimony::before {
+      content: '"';
+      position: absolute;
+      top: -40px; left: 6%;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18rem, 30vw, 28rem);
+      font-weight: 500;
+      line-height: 1;
+      color: var(--sp-amber);
+      opacity: .12;
+      pointer-events: none;
+    }
+
+    .sp-testimony__inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .sp-testimony__quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.8rem, 4vw, 3.1rem);
+      line-height: 1.35;
+      color: var(--sp-paper);
+      margin-bottom: 42px;
+      letter-spacing: -0.005em;
+    }
+
+    .sp-testimony__quote strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      color: var(--sp-amber);
+      text-transform: uppercase;
+    }
+
+    .sp-testimony__rule {
+      width: 48px; height: 1px;
+      background: rgba(244,236,223,.4);
+      margin: 0 auto 22px;
+    }
+
+    .sp-testimony__author {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--sp-paper);
+      margin-bottom: 4px;
+    }
+
+    .sp-testimony__role {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(244,236,223,.55);
+    }
+
+    /* ============================================
+       SEÇİM — CTA SON
+       ============================================ */
+    .sp-choose {
+      background: var(--sp-ink);
+      padding: 140px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sp-choose__head {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      text-align: center;
+    }
+
+    .sp-choose__kicker {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--sp-amber);
+      margin-bottom: 18px;
+    }
+
+    .sp-choose__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.015em;
+      color: var(--sp-paper);
+      margin-bottom: 20px;
+    }
+
+    .sp-choose__title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      color: var(--sp-amber);
+    }
+
+    .sp-choose__sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: rgba(244,236,223,.7);
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .sp-choose__grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .sp-choose__card {
+      position: relative;
+      padding: 52px 44px;
+      border: 1px solid rgba(244,236,223,.12);
+      border-radius: 6px;
+      text-decoration: none;
+      overflow: hidden;
+      transition: border-color .3s, transform .3s;
+      background: rgba(10,18,33,.4);
+    }
+
+    .sp-choose__card::before {
+      content: '';
+      position: absolute; inset: 0;
+      opacity: 0;
+      transition: opacity .4s;
+      z-index: 0;
+    }
+
+    .sp-choose__card--dalg::before {
+      background: linear-gradient(135deg, rgba(10,52,102,.55), rgba(26,97,172,.2));
+    }
+
+    .sp-choose__card--bilek::before {
+      background: linear-gradient(135deg, rgba(240,127,11,.35), rgba(198,92,0,.15));
+    }
+
+    .sp-choose__card:hover::before { opacity: 1; }
+    .sp-choose__card:hover {
+      transform: translateY(-6px);
+    }
+    .sp-choose__card--dalg:hover  { border-color: var(--sp-blue-glow); }
+    .sp-choose__card--bilek:hover { border-color: var(--sp-amber); }
+
+    .sp-choose__card-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .sp-choose__card-no {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(244,236,223,.55);
+      margin-bottom: 12px;
+    }
+
+    .sp-choose__card-ad {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 3rem;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--sp-paper);
+      margin-bottom: 14px;
+    }
+
+    .sp-choose__card-motto {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: rgba(244,236,223,.72);
+      margin-bottom: 44px;
+      line-height: 1.4;
+    }
+
+    .sp-choose__card-go {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--sp-paper);
+      padding: 14px 0;
+      transition: gap .2s, color .2s;
+    }
+    .sp-choose__card:hover .sp-choose__card-go { gap: 18px; }
+    .sp-choose__card--dalg:hover  .sp-choose__card-go { color: var(--sp-blue-glow); }
+    .sp-choose__card--bilek:hover .sp-choose__card-go { color: var(--sp-amber); }
+
+    .sp-choose__foot {
+      text-align: center;
+      margin-top: 72px;
+    }
+
+    .sp-choose__foot-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(244,236,223,.6);
+      margin-bottom: 24px;
+    }
+
+    .sp-choose__contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border: 1px solid rgba(244,236,223,.25);
+      border-radius: 40px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      color: var(--sp-paper);
+      text-decoration: none;
+      transition: background .25s, border-color .25s;
+    }
+    .sp-choose__contact:hover {
+      background: rgba(244,236,223,.08);
+      border-color: var(--sp-paper);
+    }
+
+    /* ============================================
+       REVEAL
+       ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .9s ease, transform .9s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .rd1 { transition-delay: .12s; }
+    .rd2 { transition-delay: .24s; }
+    .rd3 { transition-delay: .36s; }
+    .rd4 { transition-delay: .48s; }
+
+    /* ============================================
+       FOOTER TEMA
+       ============================================ */
+    .footer { background: var(--sp-ink); }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 1024px) {
+      .sp-manifesto__pillars { grid-template-columns: 1fr; gap: 40px; }
+      .sp-impact__grid { grid-template-columns: repeat(2, 1fr); gap: 40px 0; }
+      .sp-impact__cell:nth-child(2) { border-right: none; }
+    }
+
+    @media (max-width: 768px) {
+      .sp-hero__panes { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+      .sp-hero__divider {
+        top: 50%; left: 0; right: 0; bottom: auto;
+        width: 100%; height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(244,236,223,.55) 18%, rgba(244,236,223,.55) 82%, transparent);
+      }
+      .sp-hero__divider::before { top: 50%; left: 14%; transform: translate(-50%, -50%); }
+      .sp-hero__divider::after  { top: 50%; right: 14%; left: auto; bottom: auto; transform: translate(50%, -50%); }
+      .sp-hero__title .dash { width: 32px; margin: 0 8px; }
+      .sp-hero__footer { flex-direction: column; align-items: center; text-align: center; gap: 32px; bottom: 28px; }
+      .sp-hero__side--left, .sp-hero__side--right { text-align: center; }
+      .sp-branches, .sp-manifesto, .sp-impact, .sp-testimony, .sp-choose { padding: 80px 20px; }
+      .sp-branches__grid { grid-template-columns: 1fr; gap: 24px; }
+      .sp-poster__inner { padding: 36px 28px; }
+      .sp-poster__corner { top: 28px; right: 28px; }
+      .sp-impact__grid { grid-template-columns: 1fr; gap: 32px 0; }
+      .sp-impact__cell { border-right: none; border-bottom: 1px solid rgba(244,236,223,.08); padding: 0 0 32px; }
+      .sp-impact__cell:last-child { border-bottom: none; padding-bottom: 0; }
+      .sp-choose__grid { grid-template-columns: 1fr; }
+      .sp-choose__card { padding: 36px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo">
+        <span class="logo-text">Dinamik <span>SK</span></span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Ana Sayfa</a>
+        <a href="dinamik-calismalar.html" class="nav-link">Dinamik Çalışmalar</a>
+        <a href="sporlar.html" class="nav-link active">Sporlar</a>
+        <a href="vefa.html" class="nav-link">Vefa</a>
+        <a href="orman.html" class="nav-link">Hatıra Ormanı</a>
+        <a href="duyurular.html" class="nav-link">Duyurular</a>
+        <a href="iletisim.html" class="nav-link">İletişim</a>
+        <a href="admin.html" class="nav-cta">Yönetim</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO — İKİ DÜNYA ===== -->
+  <section class="sp-hero">
+    <div class="sp-hero__panes" aria-hidden="true">
+      <div class="sp-hero__pane sp-hero__pane--blue">
+        <div class="sp-hero__pane-img"></div>
+      </div>
+      <div class="sp-hero__pane sp-hero__pane--orange">
+        <div class="sp-hero__pane-img"></div>
+      </div>
+    </div>
+
+    <div class="sp-hero__divider" aria-hidden="true"></div>
+    <div class="sp-hero__grain" aria-hidden="true"></div>
+    <div class="sp-hero__vignette" aria-hidden="true"></div>
+
+    <div class="sp-hero__content">
+      <span class="sp-hero__mark">
+        <span class="sp-hero__mark-dot"></span>
+        İki Disiplin &middot; Tek Ruh
+      </span>
+
+      <h1 class="sp-hero__title">
+        <span class="sp-hero__title-line">Derinde <em class="blue">nefes.</em></span>
+        <span class="sp-hero__title-line">Masada <em class="orange">güç.</em></span>
+      </h1>
+
+      <p class="sp-hero__lead">
+        Akdeniz'in derinliğinde bir dalgıç sessizce iner. Bir başkası, masa başında nefesini tutar. Aynı kulüp. Aynı disiplin. İki ayrı dünyada tek bir ruhu yaşatıyoruz.
+      </p>
+    </div>
+
+    <div class="sp-hero__footer" aria-hidden="true">
+      <div class="sp-hero__side sp-hero__side--left">
+        01 &mdash; Su altı
+        <span class="sp-hero__side-label">Dalgıçlık</span>
+      </div>
+
+      <div class="sp-hero__scroll">
+        <span class="sp-hero__scroll-label">Keşfet</span>
+        <div class="sp-hero__scroll-bar"></div>
+      </div>
+
+      <div class="sp-hero__side sp-hero__side--right">
+        02 &mdash; Masa üstü
+        <span class="sp-hero__side-label">Bilek Güreşi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MANIFESTO ===== -->
+  <section class="sp-manifesto">
+    <div class="sp-manifesto__inner">
+      <p class="sp-manifesto__kicker reveal">Manifestomuz</p>
+
+      <p class="sp-manifesto__quote reveal rd1">
+        Burada sporun <strong>kurallarını</strong> öğretmiyoruz — sporun <em>ruhunu</em> aşılıyoruz.
+      </p>
+
+      <div class="sp-manifesto__rule reveal rd2"></div>
+
+      <div class="sp-manifesto__pillars">
+        <div class="sp-pillar reveal rd1">
+          <div class="sp-pillar__no">01 / Disiplin</div>
+          <h3 class="sp-pillar__title">Önce karakter, sonra teknik.</h3>
+          <p class="sp-pillar__desc">Suya inmek cesaret ister, masaya oturmak onur. Her antrenman; ilk önce karakter, sonra teknik üzerine kurulur.</p>
+        </div>
+        <div class="sp-pillar reveal rd2">
+          <div class="sp-pillar__no">02 / Aidiyet</div>
+          <h3 class="sp-pillar__title">Kulüp değil, aile.</h3>
+          <p class="sp-pillar__desc">Biz madalya saymıyoruz; karakter yetiştiriyoruz. Kulübümüzde bir sporcu bir daha asla yalnız değildir.</p>
+        </div>
+        <div class="sp-pillar reveal rd3">
+          <div class="sp-pillar__no">03 / Miras</div>
+          <h3 class="sp-pillar__title">Bir ustadan bir öğrenciye.</h3>
+          <p class="sp-pillar__desc">15 yıllık tecrübe boşa gitmiyor. Öğreten sporcu, öğrenenden daha çok öğreniyor. Miras burada yaşıyor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ŞAMPİYON KARTLARI ===== -->
+  <section class="sp-branches">
+    <div class="sp-branches__head">
+      <p class="sp-branches__eyebrow reveal">Branşlarımız</p>
+      <h2 class="sp-branches__title reveal rd1">İki farklı dünya <em>— bir hikâye</em></h2>
+      <p class="sp-branches__sub reveal rd2">Biri sessizliği, diğeri kıvılcımı anlatır. Her ikisinin de öğrencisi aynı çatı altında yetişir.</p>
+    </div>
+
+    <div class="sp-branches__grid">
+
+      <a href="sporlar/dalgiclik/index.html" class="sp-poster sp-poster--dalg reveal rd1">
+        <div class="sp-poster__img"></div>
+        <div class="sp-poster__corner" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7" stroke="rgba(244,236,223,.9)"/></svg>
+        </div>
+        <div class="sp-poster__inner">
+          <div class="sp-poster__top">
+            <span class="sp-poster__no">No. 01</span>
+            <div class="sp-poster__bar"></div>
+          </div>
+
+          <div class="sp-poster__bottom">
+            <div class="sp-poster__label">Su Altı &middot; CMAS</div>
+            <h3 class="sp-poster__name">Dalgıçlık</h3>
+            <p class="sp-poster__tagline">Derinlerde sessizlik vardır. Dalgıçlık bize o sessizliği dinlemeyi öğretir.</p>
+            <div class="sp-poster__meta">
+              <div class="sp-poster__meta-item">
+                <div class="sp-poster__meta-num">300<em>+</em></div>
+                <div class="sp-poster__meta-lbl">Sertifika</div>
+              </div>
+              <div class="sp-poster__meta-item">
+                <div class="sp-poster__meta-num">6<em>y</em></div>
+                <div class="sp-poster__meta-lbl">Deneyim</div>
+              </div>
+              <div class="sp-poster__meta-item">
+                <div class="sp-poster__meta-num">8<em>+</em></div>
+                <div class="sp-poster__meta-lbl">Dalış Noktası</div>
+              </div>
+            </div>
+            <span class="sp-poster__cta">
+              Dalışa Hazırlan
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="sporlar/bilek-guresi/index.html" class="sp-poster sp-poster--bilek reveal rd2">
+        <div class="sp-poster__img"></div>
+        <div class="sp-poster__corner" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7" stroke="rgba(244,236,223,.9)"/></svg>
+        </div>
+        <div class="sp-poster__inner">
+          <div class="sp-poster__top">
+            <span class="sp-poster__no">No. 02</span>
+            <div class="sp-poster__bar"></div>
+          </div>
+
+          <div class="sp-poster__bottom">
+            <div class="sp-poster__label">Masa Üstü &middot; TABS</div>
+            <h3 class="sp-poster__name">Bilek Güreşi</h3>
+            <p class="sp-poster__tagline">Masada kaybetmek bir şey değildir; kendi gücüne ihanet etmek ayıptır.</p>
+            <div class="sp-poster__meta">
+              <div class="sp-poster__meta-item">
+                <div class="sp-poster__meta-num">200<em>+</em></div>
+                <div class="sp-poster__meta-lbl">Sporcu</div>
+              </div>
+              <div class="sp-poster__meta-item">
+                <div class="sp-poster__meta-num">10<em>y</em></div>
+                <div class="sp-poster__meta-lbl">Deneyim</div>
+              </div>
+              <div class="sp-poster__meta-item">
+                <div class="sp-poster__meta-num">15<em>+</em></div>
+                <div class="sp-poster__meta-lbl">Turnuva</div>
+              </div>
+            </div>
+            <span class="sp-poster__cta">
+              Masaya Otur
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== IMPACT ===== -->
+  <section class="sp-impact">
+    <p class="sp-impact__kicker reveal">Kulübümüzün İzleri</p>
+    <h2 class="sp-impact__title reveal rd1">Sayılar bir hikâye anlatmaz — ama bir <em>iz</em> bırakır.</h2>
+
+    <div class="sp-impact__grid">
+      <div class="sp-impact__cell reveal rd1">
+        <div class="sp-impact__num">500<em>+</em></div>
+        <div class="sp-impact__lbl">Aktif Sporcu</div>
+      </div>
+      <div class="sp-impact__cell reveal rd2">
+        <div class="sp-impact__num">87</div>
+        <div class="sp-impact__lbl">Madalya</div>
+      </div>
+      <div class="sp-impact__cell reveal rd3">
+        <div class="sp-impact__num">15<em>y</em></div>
+        <div class="sp-impact__lbl">Kulüp Tecrübesi</div>
+      </div>
+      <div class="sp-impact__cell reveal rd4">
+        <div class="sp-impact__num">9</div>
+        <div class="sp-impact__lbl">Antrenör Kadrosu</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TANIKLIK ===== -->
+  <section class="sp-testimony">
+    <div class="sp-testimony__inner">
+      <p class="sp-testimony__quote reveal">
+        Çocuğumu Dinamik'e <strong>sporcu</strong> olsun diye verdim. Bir insan olarak geri aldım.
+      </p>
+      <div class="sp-testimony__rule reveal rd1"></div>
+      <div class="sp-testimony__author reveal rd1">Mustafa Ö.</div>
+      <div class="sp-testimony__role reveal rd1">Bir veli &middot; Antalya</div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇİM — CTA ===== -->
+  <section class="sp-choose">
+    <div class="sp-choose__head">
+      <p class="sp-choose__kicker reveal">Yolun Başlangıcı</p>
+      <h2 class="sp-choose__title reveal rd1">Hangi yol <em>seni çağırıyor?</em></h2>
+      <p class="sp-choose__sub reveal rd2">İki kapı var. İkisinden birine geçtiğinde, artık aynı kişi değilsin.</p>
+    </div>
+
+    <div class="sp-choose__grid">
+      <a href="sporlar/dalgiclik/index.html" class="sp-choose__card sp-choose__card--dalg reveal rd1">
+        <div class="sp-choose__card-inner">
+          <div class="sp-choose__card-no">No. 01 &middot; Su Altı</div>
+          <h3 class="sp-choose__card-ad">Dalgıçlık</h3>
+          <p class="sp-choose__card-motto">Sessiz olanı dinlemek için.</p>
+          <span class="sp-choose__card-go">
+            Dalış Sayfasına Git
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="sporlar/bilek-guresi/index.html" class="sp-choose__card sp-choose__card--bilek reveal rd2">
+        <div class="sp-choose__card-inner">
+          <div class="sp-choose__card-no">No. 02 &middot; Masa Üstü</div>
+          <h3 class="sp-choose__card-ad">Bilek Güreşi</h3>
+          <p class="sp-choose__card-motto">Kıvılcımın peşinden gitmek için.</p>
+          <span class="sp-choose__card-go">
+            Masa Sayfasına Git
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="sp-choose__foot">
+      <p class="sp-choose__foot-text reveal">Hangi yolun senin olduğundan emin değil misin?</p>
+      <a href="iletisim.html" class="sp-choose__contact reveal rd1">
+        Bize Sor
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height:40px;">
+            <span class="logo-text">Dinamik <span>SK</span></span>
+          </a>
+          <p style="margin-top:16px;color:rgba(255,255,255,.3);font-size:.9rem;line-height:1.6;">
+            İman. Disiplin. Spor.<br>2010'dan beri Antalya'da.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-title">Sporlar</h4>
+          <div class="footer-links">
+            <a href="sporlar/bilek-guresi/index.html">Bilek Güreşi</a>
+            <a href="sporlar/dalgiclik/index.html">Dalgıçlık</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Hızlı Linkler</h4>
+          <div class="footer-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="dinamik-calismalar.html">Dinamik Çalışmalar</a>
+            <a href="vefa.html">Vefa Köşesi</a>
+            <a href="iletisim.html">İletişim</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Takip Et</h4>
+          <div class="footer-social">
+            <a href="https://www.youtube.com/@scuba.team.antalya" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+            </a>
+            <a href="https://instagram.com/dinamikspor" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Akdeniz Dinamik Spor Kulübü. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2324 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilek Güreşi | Akdeniz Dinamik Spor Kulübü</title>
+  <meta name="description" content="Beş saniye. Bir masa. Bir seçim. Antalya'da TABS federasyonuna kayıtlı bilek güreşi kulübü. Sağ el, sol el, her ağırlıkta profesyonel antrenman.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dinamikspor.com/sporlar/bilek-guresi/">
+  <meta property="og:title" content="Bilek Güreşi | Akdeniz Dinamik Spor Kulübü">
+  <meta property="og:description" content="Beş saniye. Bir masa. Bir seçim. Antalya'nın öncü bilek güreşi kulübü.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Bilek Güreşi — Akdeniz Dinamik Spor Kulübü",
+    "description": "TABS federasyonuna kayıtlı Antalya bilek güreşi kulübü.",
+    "url": "https://dinamikspor.com/sporlar/bilek-guresi/",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://dinamikspor.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Sporlar", "item": "https://dinamikspor.com/sporlar.html" },
+        { "@type": "ListItem", "position": 3, "name": "Bilek Güreşi" }
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    /* =============================================
+       BİLEK GÜREŞİ — 5 SANİYE RİTÜELİ
+       ============================================= */
+    :root {
+      --bg-ink:     #080503;
+      --bg-0:       #0f0805;
+      --bg-1:       #18100a;
+      --bg-2:       #241810;
+      --bg-3:       #2f1e12;
+
+      --ember:      #f5a623;
+      --ember-glow: #ffc26b;
+      --ember-deep: #b45309;
+      --blood:      #7b1d1d;
+      --blood-deep: #4a1111;
+      --copper:     #c66a22;
+
+      --cream:      #faf6ee;
+      --paper:      #f2e8d2;
+      --paper-mid:  rgba(242,232,210,.72);
+      --paper-soft: rgba(242,232,210,.48);
+      --paper-faint:rgba(242,232,210,.22);
+      --line:       rgba(242,232,210,.1);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-ink);
+      color: var(--paper);
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ---------------------------------------------
+       HEADER
+       --------------------------------------------- */
+    .header {
+      background: rgba(8,5,3,.78) !important;
+      border-bottom: 1px solid rgba(242,232,210,.06) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .header .nav-link { color: rgba(242,232,210,.72) !important; }
+    .header .nav-link:hover { color: var(--paper) !important; }
+    .header .nav-link.active { color: var(--ember) !important; }
+    .header .logo-text { color: var(--paper) !important; }
+    .header .logo-text span { color: var(--ember) !important; }
+
+    /* ---------------------------------------------
+       ASKİ — KIVILCIM PARÇACIKLARI
+       --------------------------------------------- */
+    .bg-embers {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .bg-ember {
+      position: absolute;
+      bottom: -20px;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--ember);
+      box-shadow: 0 0 6px var(--ember-glow), 0 0 14px rgba(245,166,35,.4);
+      animation: ember-rise linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes ember-rise {
+      0%   { transform: translateY(0) translateX(0); opacity: 0; }
+      12%  { opacity: .95; }
+      100% { transform: translateY(-110vh) translateX(40px); opacity: 0; }
+    }
+
+    .bg-ember:nth-child(1)  { left: 6%;  width: 2px; height: 2px; animation-duration: 14s; animation-delay: 0s; }
+    .bg-ember:nth-child(2)  { left: 14%; width: 3px; height: 3px; animation-duration: 18s; animation-delay: 4s; }
+    .bg-ember:nth-child(3)  { left: 22%; width: 2px; height: 2px; animation-duration: 12s; animation-delay: 2s; }
+    .bg-ember:nth-child(4)  { left: 34%; width: 4px; height: 4px; animation-duration: 22s; animation-delay: 7s; }
+    .bg-ember:nth-child(5)  { left: 46%; width: 2px; height: 2px; animation-duration: 15s; animation-delay: 3s; }
+    .bg-ember:nth-child(6)  { left: 58%; width: 3px; height: 3px; animation-duration: 20s; animation-delay: 9s; }
+    .bg-ember:nth-child(7)  { left: 68%; width: 2px; height: 2px; animation-duration: 11s; animation-delay: 1s; }
+    .bg-ember:nth-child(8)  { left: 78%; width: 3px; height: 3px; animation-duration: 17s; animation-delay: 6s; }
+    .bg-ember:nth-child(9)  { left: 85%; width: 4px; height: 4px; animation-duration: 24s; animation-delay: 8s; }
+    .bg-ember:nth-child(10) { left: 93%; width: 2px; height: 2px; animation-duration: 13s; animation-delay: 5s; }
+    .bg-ember:nth-child(11) { left: 40%; width: 2px; height: 2px; animation-duration: 16s; animation-delay: 10s; }
+    .bg-ember:nth-child(12) { left: 72%; width: 3px; height: 3px; animation-duration: 19s; animation-delay: 11s; }
+
+    /* ---------------------------------------------
+       HERO — MASA ÖNCESİ
+       --------------------------------------------- */
+    .bg-hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      isolation: isolate;
+      background: var(--bg-ink);
+    }
+
+    .bg-hero__img {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.pexels.com/photos/14762133/pexels-photo-14762133.jpeg?auto=compress&cs=tinysrgb&w=2000');
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(.3) contrast(1.1) saturate(.9);
+      animation: hero-breathe 16s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes hero-breathe {
+      0%   { transform: scale(1.02); }
+      100% { transform: scale(1.12); }
+    }
+
+    /* Sıcak renk tonlaması + karanlık vignette */
+    .bg-hero__tone {
+      position: absolute; inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(8,5,3,.55) 0%, rgba(8,5,3,.35) 40%, rgba(8,5,3,.9) 100%),
+        radial-gradient(ellipse at 30% 45%, rgba(245,166,35,.22), transparent 60%),
+        radial-gradient(ellipse at 75% 55%, rgba(123,29,29,.3), transparent 65%),
+        linear-gradient(135deg, rgba(180,83,9,.2), rgba(8,5,3,.35));
+    }
+
+    /* Sıcak hava dalgalanması */
+    .bg-hero__heat {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+      mix-blend-mode: overlay;
+      opacity: .32;
+    }
+
+    /* Vignette */
+    .bg-hero__vignette {
+      position: absolute; inset: 0;
+      z-index: 3;
+      background: radial-gradient(ellipse at center, transparent 38%, rgba(8,5,3,.72) 100%);
+      pointer-events: none;
+    }
+
+    /* Çapraz gerilim çizgileri */
+    .bg-hero__tension {
+      position: absolute; inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      background:
+        linear-gradient(118deg, transparent 48%, rgba(245,166,35,.08) 50%, transparent 52%),
+        linear-gradient(118deg, transparent 62%, rgba(245,166,35,.05) 64%, transparent 66%);
+      opacity: .5;
+    }
+
+    .bg-hero__back {
+      position: absolute;
+      top: calc(var(--header-height) + 30px);
+      left: 40px;
+      z-index: 15;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--paper-soft);
+      text-decoration: none;
+      transition: color .2s, gap .2s;
+    }
+    .bg-hero__back:hover { color: var(--paper); gap: 14px; }
+    .bg-hero__back svg { transition: transform .2s; }
+    .bg-hero__back:hover svg { transform: translateX(-4px); }
+
+    .bg-hero__content {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: calc(var(--header-height) + 60px) 40px 160px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .bg-hero__label {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 9px 20px;
+      border: 1px solid rgba(245,166,35,.32);
+      border-radius: 40px;
+      background: rgba(15,8,5,.5);
+      backdrop-filter: blur(10px);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--paper);
+      margin-bottom: 38px;
+      align-self: flex-start;
+    }
+
+    .bg-hero__label-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--ember-glow);
+      box-shadow: 0 0 14px var(--ember-glow);
+      animation: ember-pulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes ember-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 14px var(--ember-glow); }
+      50%      { opacity: .65; transform: scale(1.3); box-shadow: 0 0 22px var(--ember); }
+    }
+
+    .bg-hero__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3.4rem, 11vw, 11.5rem);
+      line-height: 0.84;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--paper);
+      margin: 0;
+      max-width: 1180px;
+      text-shadow: 0 4px 50px rgba(0,0,0,.7);
+    }
+
+    .bg-hero__title-line { display: block; }
+
+    .bg-hero__title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--ember);
+    }
+
+    .bg-hero__title .dot {
+      color: var(--ember);
+      display: inline-block;
+      transform: translateY(-0.15em);
+      margin-left: -0.05em;
+    }
+
+    .bg-hero__lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+      line-height: 1.5;
+      color: var(--paper-mid);
+      max-width: 640px;
+      margin: 34px 0 44px;
+    }
+
+    .bg-hero__cta-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .bg-hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--ember);
+      color: var(--bg-0);
+      padding: 16px 34px;
+      border-radius: 40px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background .25s, transform .25s, box-shadow .25s;
+      box-shadow: 0 6px 30px rgba(245,166,35,.25);
+    }
+    .bg-hero__cta:hover {
+      background: var(--ember-glow);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 44px rgba(245,166,35,.45);
+    }
+    .bg-hero__cta svg { transition: transform .25s; }
+    .bg-hero__cta:hover svg { transform: translateX(4px); }
+
+    .bg-hero__ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 28px;
+      border: 1px solid rgba(242,232,210,.32);
+      border-radius: 40px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      color: var(--paper);
+      text-decoration: none;
+      transition: background .25s, border-color .25s;
+    }
+    .bg-hero__ghost:hover {
+      background: rgba(242,232,210,.08);
+      border-color: var(--paper);
+    }
+
+    /* Hero alt bilgi ve ok */
+    .bg-hero__foot {
+      position: absolute;
+      z-index: 10;
+      left: 40px;
+      bottom: 44px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--paper-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .bg-hero__foot em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--ember);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .bg-hero__descend {
+      position: absolute;
+      z-index: 10;
+      right: 40px;
+      bottom: 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      pointer-events: none;
+    }
+    .bg-hero__descend-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--paper-soft);
+    }
+    .bg-hero__descend-arrow {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(180deg, transparent, var(--paper));
+      position: relative;
+    }
+    .bg-hero__descend-arrow::after {
+      content: '';
+      position: absolute;
+      left: -3px; bottom: 0;
+      width: 7px; height: 7px;
+      border-right: 1px solid var(--paper);
+      border-bottom: 1px solid var(--paper);
+      transform: rotate(45deg);
+    }
+
+    /* ---------------------------------------------
+       BÖLÜM ORTAK
+       --------------------------------------------- */
+    .bg-zone {
+      position: relative;
+      padding: 140px 32px;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .bg-zone__tag {
+      position: absolute;
+      top: 42px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      z-index: 3;
+    }
+    .bg-zone__tag::before,
+    .bg-zone__tag::after {
+      content: '';
+      width: 36px; height: 1px;
+      background: rgba(245,166,35,.3);
+    }
+    .bg-zone__tag em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--ember);
+      font-size: 0.95rem;
+    }
+
+    .bg-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 26px;
+    }
+    .bg-eyebrow::before {
+      content: '';
+      width: 36px; height: 2px;
+      background: var(--ember);
+      display: block;
+    }
+
+    .bg-h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5.6vw, 5rem);
+      line-height: 0.94;
+      letter-spacing: -0.018em;
+      text-transform: uppercase;
+      color: var(--paper);
+      margin: 0 0 28px;
+    }
+    .bg-h2 em {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      color: var(--ember);
+      letter-spacing: 0;
+      margin-top: 6px;
+    }
+
+    .bg-prose {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.02rem;
+      color: var(--paper-mid);
+      line-height: 1.8;
+      max-width: 620px;
+    }
+    .bg-prose p { margin: 0 0 18px; }
+    .bg-prose p:last-child { margin: 0; }
+    .bg-prose strong {
+      color: var(--paper);
+      font-weight: 600;
+    }
+
+    /* ---------------------------------------------
+       5 SANİYE RİTÜELİ
+       --------------------------------------------- */
+    .bg-ritual {
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(245,166,35,.12) 0%, transparent 55%),
+        linear-gradient(180deg, var(--bg-ink) 0%, var(--bg-1) 100%);
+      padding: 140px 32px 130px;
+      text-align: center;
+      border-top: 1px solid rgba(245,166,35,.12);
+      position: relative;
+    }
+
+    .bg-ritual__inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bg-ritual__kicker {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 30px;
+    }
+
+    .bg-ritual__quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(2rem, 4.6vw, 4rem);
+      line-height: 1.25;
+      max-width: 1000px;
+      margin: 0 auto 70px;
+      color: var(--paper);
+      letter-spacing: -0.005em;
+    }
+
+    .bg-ritual__quote strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--ember);
+    }
+
+    /* Countdown görseli */
+    .bg-countdown {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .bg-countdown::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--ember), transparent);
+      opacity: .35;
+      z-index: 0;
+    }
+
+    .bg-count {
+      position: relative;
+      z-index: 2;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(242,232,210,.18);
+      background: rgba(15,8,5,.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      transition: all .4s;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    .bg-count__num {
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1;
+      color: var(--paper);
+      letter-spacing: -0.02em;
+    }
+
+    .bg-count__lbl {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--paper-soft);
+    }
+
+    .bg-count--go {
+      background: var(--ember);
+      border-color: var(--ember-glow);
+      box-shadow: 0 0 40px rgba(245,166,35,.4);
+    }
+    .bg-count--go .bg-count__num { color: var(--bg-0); }
+    .bg-count--go .bg-count__lbl { color: rgba(8,5,3,.7); }
+
+    /* ---------------------------------------------
+       STAT ŞERİDİ
+       --------------------------------------------- */
+    .bg-stats {
+      background: var(--bg-0);
+      padding: 88px 32px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .bg-stats__grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .bg-stat {
+      padding: 0 36px;
+      border-right: 1px solid var(--line);
+      text-align: center;
+      position: relative;
+    }
+    .bg-stat:last-child { border-right: none; }
+
+    .bg-stat__num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 5.2vw, 4.8rem);
+      line-height: 0.9;
+      color: var(--paper);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .bg-stat__num em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--ember);
+      font-size: 0.6em;
+      margin-left: 2px;
+    }
+    .bg-stat__lbl {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--paper-soft);
+    }
+
+    /* ---------------------------------------------
+       CINEMATIC BREAK — MASA'DA
+       --------------------------------------------- */
+    .bg-cinema {
+      position: relative;
+      min-height: 92vh;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .bg-cinema__img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 35%;
+      background-repeat: no-repeat;
+      filter: grayscale(.5) contrast(1.15) brightness(.75) saturate(.8);
+      transform: scale(1.04);
+      transition: transform 18s ease-out;
+      z-index: 0;
+    }
+
+    .bg-cinema.visible .bg-cinema__img {
+      transform: scale(1.14);
+    }
+
+    .bg-cinema__tone {
+      position: absolute; inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(8,5,3,.75) 0%, rgba(8,5,3,.45) 45%, rgba(8,5,3,.95) 100%),
+        radial-gradient(ellipse at 35% 60%, rgba(245,166,35,.22), transparent 60%),
+        radial-gradient(ellipse at 70% 40%, rgba(123,29,29,.28), transparent 65%);
+    }
+
+    .bg-cinema__grid {
+      position: absolute; inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background-image:
+        linear-gradient(to right, rgba(242,232,210,.04) 1px, transparent 1px);
+      background-size: 92px 100%;
+      mix-blend-mode: overlay;
+    }
+
+    .bg-cinema__content {
+      position: relative;
+      z-index: 5;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 180px 48px 160px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .bg-cinema__label {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: var(--ember);
+      align-self: end;
+      padding-bottom: 8px;
+      position: relative;
+    }
+
+    .bg-cinema__label::after {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 56px;
+      background: linear-gradient(to bottom, var(--ember), transparent);
+    }
+
+    .bg-cinema__body {
+      max-width: 820px;
+    }
+
+    .bg-cinema__chap {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--paper-soft);
+      margin-bottom: 28px;
+    }
+
+    .bg-cinema__chap::before {
+      content: '';
+      width: 48px;
+      height: 1px;
+      background: var(--ember);
+    }
+
+    .bg-cinema__quote {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.6rem, 6vw, 5.4rem);
+      line-height: 1.02;
+      text-transform: uppercase;
+      letter-spacing: -0.015em;
+      color: var(--paper);
+      margin: 0 0 36px;
+    }
+
+    .bg-cinema__quote em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ember-glow);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .bg-cinema__attr {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+    }
+
+    .bg-cinema__attr-dot {
+      width: 6px; height: 6px;
+      background: var(--ember);
+      border-radius: 50%;
+    }
+
+    .bg-cinema__corner {
+      position: absolute;
+      z-index: 4;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+      pointer-events: none;
+    }
+
+    .bg-cinema__corner--tl { top: 32px; left: 48px; }
+    .bg-cinema__corner--br { bottom: 32px; right: 48px; }
+
+    /* Kare çerçeve — film konsepti */
+    .bg-cinema__frame {
+      position: absolute;
+      inset: 24px;
+      z-index: 3;
+      border: 1px solid rgba(242,232,210,.1);
+      pointer-events: none;
+    }
+
+    .bg-cinema__frame::before,
+    .bg-cinema__frame::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--ember);
+    }
+
+    .bg-cinema__frame::before {
+      top: -1px; left: -1px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .bg-cinema__frame::after {
+      bottom: -1px; right: -1px;
+      border-left: none;
+      border-top: none;
+    }
+
+    /* ---------------------------------------------
+       SPORUN ÖZÜ
+       --------------------------------------------- */
+    .bg-essence {
+      background: linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 100%);
+    }
+
+    .bg-essence__grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 100px;
+      align-items: start;
+      padding-top: 32px;
+    }
+
+    .bg-essence__pull {
+      margin-top: 48px;
+      padding: 28px 34px;
+      border-left: 3px solid var(--ember);
+      background: rgba(245,166,35,.06);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.32rem;
+      line-height: 1.5;
+      color: var(--paper);
+      max-width: 620px;
+    }
+
+    /* Dosya kartı (pasaport) */
+    .bg-card {
+      position: sticky;
+      top: 120px;
+      background: rgba(15,8,5,.6);
+      border: 1px solid rgba(245,166,35,.16);
+      border-top: 2px solid var(--ember);
+      border-radius: 6px;
+      padding: 40px 36px;
+      backdrop-filter: blur(10px);
+    }
+
+    .bg-card__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 30px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(242,232,210,.14);
+    }
+
+    .bg-card__label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--ember);
+    }
+
+    .bg-card__seal {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--paper-soft);
+    }
+
+    .bg-card__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px dashed rgba(242,232,210,.12);
+    }
+    .bg-card__row:last-child { border-bottom: none; }
+
+    .bg-card__key {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--paper-soft);
+    }
+
+    .bg-card__val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--paper);
+      letter-spacing: .02em;
+    }
+
+    /* ---------------------------------------------
+       İKİ EL — SAĞ / SOL
+       --------------------------------------------- */
+    .bg-hands {
+      background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    }
+
+    .bg-hands__head {
+      max-width: 1280px;
+      margin: 0 auto 72px;
+      text-align: center;
+    }
+
+    .bg-hands__grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .bg-hand {
+      position: relative;
+      padding: 80px 60px 68px;
+      background: var(--bg-0);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background .3s, transform .3s;
+    }
+
+    .bg-hand::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: .24;
+      filter: grayscale(1) contrast(1.2) brightness(.55);
+      z-index: 0;
+      transition: opacity .4s ease, transform .8s ease;
+    }
+
+    .bg-hand::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8,5,3,.55) 0%, rgba(8,5,3,.88) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .bg-hand:hover {
+      background: rgba(245,166,35,.06);
+      transform: translateY(-4px);
+    }
+
+    .bg-hand:hover::before {
+      opacity: .34;
+      transform: scale(1.04);
+    }
+
+    .bg-hand--right {
+      border-right: none;
+    }
+
+    .bg-hand--right::before {
+      background-image: url('https://images.pexels.com/photos/7322494/pexels-photo-7322494.jpeg?auto=compress&cs=tinysrgb&w=1200');
+    }
+
+    .bg-hand--left  {
+      border-left: none;
+    }
+
+    .bg-hand--left::before {
+      background-image: url('https://images.pexels.com/photos/11030582/pexels-photo-11030582.jpeg?auto=compress&cs=tinysrgb&w=1200');
+    }
+
+    /* Dev R / L harfi arkaplan */
+    .bg-hand__ghost {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(16rem, 30vw, 28rem);
+      line-height: 0.8;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(245,166,35,.2);
+      user-select: none;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .bg-hand__top {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 60px;
+    }
+
+    .bg-hand__no {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--paper-soft);
+    }
+
+    .bg-hand__bar {
+      width: 56px; height: 4px;
+      background: var(--ember);
+    }
+
+    .bg-hand__body {
+      position: relative;
+      z-index: 3;
+    }
+
+    .bg-hand__label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 16px;
+    }
+
+    .bg-hand__name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.015em;
+      color: var(--paper);
+      margin-bottom: 22px;
+    }
+
+    .bg-hand__text {
+      font-size: 0.96rem;
+      line-height: 1.75;
+      color: var(--paper-mid);
+      max-width: 440px;
+    }
+
+    /* ---------------------------------------------
+       AĞIRLIK MERDİVENİ
+       --------------------------------------------- */
+    .bg-weights {
+      background: var(--bg-2);
+      padding: 110px 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    .bg-weights__head {
+      max-width: 1280px;
+      margin: 0 auto 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .bg-weights__intro {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .bg-weights__note {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--paper-soft);
+      max-width: 340px;
+      line-height: 1.55;
+    }
+
+    .bg-weights__ladder {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 2px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .bg-weight {
+      padding: 38px 18px 28px;
+      background: var(--bg-0);
+      text-align: center;
+      position: relative;
+      transition: background .3s, transform .3s;
+      cursor: default;
+    }
+    .bg-weight:hover {
+      background: rgba(245,166,35,.12);
+      transform: translateY(-4px);
+    }
+    .bg-weight::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--ember);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s;
+    }
+    .bg-weight:hover::before { transform: scaleX(1); }
+
+    .bg-weight__no {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.78rem;
+      color: var(--paper-faint);
+      margin-bottom: 12px;
+    }
+
+    .bg-weight__kg {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.45rem;
+      line-height: 1;
+      letter-spacing: -0.005em;
+      color: var(--paper);
+    }
+
+    .bg-weight__sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--paper-faint);
+      margin-top: 6px;
+    }
+
+    .bg-weight--heavy .bg-weight__kg { color: var(--ember); }
+    .bg-weight--open { background: rgba(123,29,29,.15); }
+    .bg-weight--open .bg-weight__kg { color: var(--ember-glow); }
+
+    /* ---------------------------------------------
+       ANTRENMAN 4 AŞAMA
+       --------------------------------------------- */
+    .bg-train {
+      background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg-1) 100%);
+    }
+
+    .bg-train__head {
+      max-width: 1280px;
+      margin: 0 auto 72px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .bg-train__steps {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .bg-train__steps::before {
+      content: '';
+      position: absolute;
+      left: 68px;
+      top: 40px;
+      bottom: 40px;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--ember) 12%, var(--ember) 88%, transparent);
+      opacity: .35;
+    }
+
+    .bg-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 36px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--line);
+      transition: padding .3s;
+    }
+    .bg-step:last-child { border-bottom: none; }
+    .bg-step:hover { padding-left: 10px; }
+
+    .bg-step__badge {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      border: 1px solid rgba(245,166,35,.3);
+      background: rgba(15,8,5,.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 2.6rem;
+      line-height: 1;
+      color: var(--ember);
+      position: relative;
+      z-index: 2;
+      transition: background .3s, border-color .3s, transform .3s;
+    }
+    .bg-step:hover .bg-step__badge {
+      background: var(--ember);
+      border-color: var(--ember);
+      color: var(--bg-0);
+      transform: scale(1.05);
+    }
+
+    .bg-step__body {
+      padding-top: 18px;
+    }
+
+    .bg-step__name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: -0.012em;
+      color: var(--paper);
+      margin-bottom: 10px;
+    }
+
+    .bg-step__name em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      color: var(--ember);
+      letter-spacing: 0;
+      margin-left: 8px;
+    }
+
+    .bg-step__text {
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--paper-mid);
+      max-width: 620px;
+    }
+
+    /* ---------------------------------------------
+       ONUR KODU
+       --------------------------------------------- */
+    .bg-honor {
+      background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-ink) 100%);
+      position: relative;
+    }
+
+    .bg-honor::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(245,166,35,.1), transparent 60%);
+      pointer-events: none;
+    }
+
+    .bg-honor__head {
+      max-width: 1280px;
+      margin: 0 auto 56px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bg-honor__code {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bg-honor__rule {
+      position: relative;
+      padding: 40px 36px;
+      background: rgba(15,8,5,.55);
+      border: 1px solid rgba(242,232,210,.08);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color .3s, background .3s, transform .3s;
+    }
+    .bg-honor__rule:hover {
+      border-color: rgba(245,166,35,.35);
+      background: rgba(36,24,16,.7);
+      transform: translateY(-4px);
+    }
+    .bg-honor__rule::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--ember);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform .4s;
+    }
+    .bg-honor__rule:hover::before { transform: scaleY(1); }
+
+    .bg-honor__no {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 2.6rem;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--ember);
+      margin-bottom: 22px;
+    }
+
+    .bg-honor__rule-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      letter-spacing: -0.005em;
+      color: var(--paper);
+      margin-bottom: 14px;
+    }
+
+    .bg-honor__text {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--paper-mid);
+      margin: 0;
+    }
+
+    /* ---------------------------------------------
+       VELİ SESİ
+       --------------------------------------------- */
+    .bg-voice {
+      background: var(--bg-ink);
+      padding: 140px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-voice::before {
+      content: '"';
+      position: absolute;
+      top: -40px;
+      left: 5%;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(16rem, 30vw, 30rem);
+      line-height: 1;
+      color: var(--ember);
+      opacity: .1;
+      pointer-events: none;
+    }
+
+    .bg-voice__inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bg-voice__quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.85rem, 4vw, 3.2rem);
+      line-height: 1.35;
+      color: var(--paper);
+      margin-bottom: 42px;
+      letter-spacing: -0.005em;
+    }
+
+    .bg-voice__quote strong {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--ember);
+    }
+
+    .bg-voice__rule {
+      width: 48px; height: 1px;
+      background: var(--paper-soft);
+      margin: 0 auto 22px;
+    }
+
+    .bg-voice__author {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--paper);
+      margin-bottom: 4px;
+    }
+
+    .bg-voice__role {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--paper-soft);
+    }
+
+    /* ---------------------------------------------
+       KATILIM
+       --------------------------------------------- */
+    .bg-join {
+      background: linear-gradient(180deg, var(--bg-ink) 0%, var(--bg-1) 100%);
+    }
+
+    .bg-join__head {
+      max-width: 1280px;
+      margin: 0 auto 56px;
+    }
+
+    .bg-join__grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .bg-join__card {
+      padding: 36px 30px 30px;
+      background: rgba(15,8,5,.5);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .3s, background .3s, transform .3s;
+    }
+    .bg-join__card:hover {
+      border-color: rgba(245,166,35,.4);
+      background: rgba(36,24,16,.55);
+      transform: translateY(-4px);
+    }
+
+    .bg-join__icon {
+      width: 40px; height: 40px;
+      border-radius: 6px;
+      background: rgba(245,166,35,.14);
+      border: 1px solid rgba(245,166,35,.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ember);
+      margin-bottom: 22px;
+    }
+
+    .bg-join__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      color: var(--paper);
+      margin-bottom: 10px;
+    }
+
+    .bg-join__text {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--paper-mid);
+      margin: 0;
+    }
+
+    /* ---------------------------------------------
+       CTA — MASAYA OTUR
+       --------------------------------------------- */
+    .bg-cta {
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(245,166,35,.25), transparent 65%),
+        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-ink) 100%);
+      padding: 180px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .bg-cta::before {
+      content: '';
+      position: absolute;
+      bottom: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--ember), var(--ember-deep) 45%, transparent 70%);
+      opacity: .25;
+      filter: blur(30px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bg-cta__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bg-cta__kicker {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 26px;
+    }
+
+    .bg-cta__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--paper);
+      margin-bottom: 22px;
+    }
+
+    .bg-cta__title em {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      text-transform: none;
+      color: var(--ember);
+      letter-spacing: 0;
+      margin-top: 6px;
+    }
+
+    .bg-cta__sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--paper-mid);
+      margin-bottom: 52px;
+      line-height: 1.5;
+    }
+
+    .bg-cta__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--ember);
+      color: var(--bg-0);
+      padding: 20px 44px;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background .25s, transform .25s, box-shadow .25s;
+      box-shadow: 0 8px 40px rgba(245,166,35,.4);
+    }
+    .bg-cta__btn:hover {
+      background: var(--ember-glow);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 60px rgba(245,166,35,.6);
+    }
+    .bg-cta__btn svg { transition: transform .25s; }
+    .bg-cta__btn:hover svg { transform: translateX(4px); }
+
+    /* ---------------------------------------------
+       REVEAL
+       --------------------------------------------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .9s ease, transform .9s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .rd1 { transition-delay: .12s; }
+    .rd2 { transition-delay: .24s; }
+    .rd3 { transition-delay: .36s; }
+    .rd4 { transition-delay: .48s; }
+    .rd5 { transition-delay: .60s; }
+    .rd6 { transition-delay: .72s; }
+
+    .footer { background: var(--bg-ink); }
+    .footer-title { color: var(--paper) !important; }
+    .footer-bottom { color: var(--paper-soft) !important; }
+
+    /* ---------------------------------------------
+       RESPONSIVE
+       --------------------------------------------- */
+    @media (max-width: 1024px) {
+      .bg-essence__grid { grid-template-columns: 1fr; gap: 56px; }
+      .bg-card { position: static; }
+      .bg-stats__grid { grid-template-columns: repeat(2, 1fr); gap: 48px 0; }
+      .bg-stat { border-right: none; padding: 0; }
+      .bg-hands__grid { grid-template-columns: 1fr; }
+      .bg-hand--right, .bg-hand--left { border: 1px solid var(--line); }
+      .bg-weights__ladder { grid-template-columns: repeat(3, 1fr); }
+      .bg-train__head { grid-template-columns: 1fr; gap: 30px; }
+      .bg-countdown { grid-template-columns: repeat(3, 1fr); }
+      .bg-honor__code { grid-template-columns: 1fr; }
+      .bg-join__grid { grid-template-columns: repeat(2, 1fr); }
+      .bg-cinema__content { grid-template-columns: 1fr; gap: 40px; padding: 140px 32px 120px; }
+      .bg-cinema__label { writing-mode: horizontal-tb; transform: none; align-self: start; padding-bottom: 0; }
+      .bg-cinema__label::after { display: none; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .bg-zone,
+      .bg-ritual,
+      .bg-stats,
+      .bg-weights,
+      .bg-voice,
+      .bg-cta { padding: 90px 20px; }
+      .bg-hero__back { top: calc(var(--header-height) + 20px); left: 20px; }
+      .bg-hero__content { padding: calc(var(--header-height) + 40px) 20px 140px; }
+      .bg-hero__foot, .bg-hero__descend { left: 20px; right: 20px; bottom: 28px; }
+      .bg-hero__descend { align-items: flex-end; }
+      .bg-countdown { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .bg-hand { padding: 60px 32px 52px; min-height: 380px; }
+      .bg-weights__ladder { grid-template-columns: repeat(2, 1fr); }
+      .bg-step { grid-template-columns: 64px 1fr; gap: 20px; padding: 32px 0; }
+      .bg-step__badge { width: 56px; height: 56px; font-size: 1.5rem; }
+      .bg-train__steps::before { left: 40px; }
+      .bg-join__grid { grid-template-columns: 1fr; }
+      .bg-cta { padding: 120px 20px; }
+      .bg-cinema { min-height: 78vh; }
+      .bg-cinema__corner--tl { top: 20px; left: 20px; font-size: 0.58rem; }
+      .bg-cinema__corner--br { bottom: 20px; right: 20px; font-size: 0.58rem; }
+      .bg-cinema__frame { inset: 14px; }
+      .bg-cinema__content { padding: 120px 20px 100px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sabit kıvılcım arka planı -->
+  <div class="bg-embers" aria-hidden="true">
+    <span class="bg-ember"></span>
+    <span class="bg-ember"></span>
+    <span class="bg-ember"></span>
+    <span class="bg-ember"></span>
+    <span class="bg-ember"></span>
+    <span class="bg-ember"></span>
+    <span class="bg-ember"></span>
+    <span class="bg-ember"></span>
+    <span class="bg-ember"></span>
+    <span class="bg-ember"></span>
+    <span class="bg-ember"></span>
+    <span class="bg-ember"></span>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo">
+        <img src="../../assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo">
+        <span class="logo-text">Dinamik <span>SK</span></span>
+      </a>
+      <nav class="nav">
+        <a href="../../index.html" class="nav-link">Ana Sayfa</a>
+        <a href="../../dinamik-calismalar.html" class="nav-link">Dinamik Çalışmalar</a>
+        <a href="../../sporlar.html" class="nav-link active">Sporlar</a>
+        <a href="../../vefa.html" class="nav-link">Vefa</a>
+        <a href="../../orman.html" class="nav-link">Hatıra Ormanı</a>
+        <a href="../../duyurular.html" class="nav-link">Duyurular</a>
+        <a href="../../iletisim.html" class="nav-link">İletişim</a>
+        <a href="../../admin.html" class="nav-cta">Yönetim</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO — MASA ÖNCESİ ===== -->
+  <section class="bg-hero">
+    <div class="bg-hero__img" aria-hidden="true"></div>
+    <div class="bg-hero__tone" aria-hidden="true"></div>
+    <div class="bg-hero__heat" aria-hidden="true"></div>
+    <div class="bg-hero__tension" aria-hidden="true"></div>
+    <div class="bg-hero__vignette" aria-hidden="true"></div>
+
+    <a href="../../sporlar.html" class="bg-hero__back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Sporlar
+    </a>
+
+    <div class="bg-hero__content">
+      <span class="bg-hero__label">
+        <span class="bg-hero__label-dot"></span>
+        Kuvvet Branşı &middot; TABS
+      </span>
+
+      <h1 class="bg-hero__title">
+        <span class="bg-hero__title-line">Beş saniye<span class="dot">.</span></span>
+        <span class="bg-hero__title-line">Bir masa<span class="dot">.</span></span>
+        <span class="bg-hero__title-line"><em>Bir seçim<span class="dot">.</span></em></span>
+      </h1>
+
+      <p class="bg-hero__lead">
+        Masa küçüktür. Dünyası değil. Ellerin kilitlenir, göz göze bakışır, hakem sesini keser — ve beş saniye içinde kim olduğun ortaya çıkar. Biz on yıldır Antalya'da o beş saniyeye hazırlıyoruz.
+      </p>
+
+      <div class="bg-hero__cta-row">
+        <a href="../../iletisim.html" class="bg-hero__cta">
+          Masaya Otur
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#antrenman" class="bg-hero__ghost">
+          Antrenman Sürecini Gör
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-hero__foot" aria-hidden="true">
+      Antalya &middot; 2010
+      <em>Masa &mdash; Hazır</em>
+    </div>
+
+    <div class="bg-hero__descend" aria-hidden="true">
+      <span class="bg-hero__descend-label">Aşağı</span>
+      <span class="bg-hero__descend-arrow"></span>
+    </div>
+  </section>
+
+  <!-- ===== 5 SANİYE RİTÜELİ ===== -->
+  <section class="bg-ritual">
+    <div class="bg-ritual__inner">
+      <p class="bg-ritual__kicker reveal">&mdash; Masa Ritüeli</p>
+
+      <p class="bg-ritual__quote reveal rd1">
+        Hakem <strong>"Ready"</strong> der. Göz göze bakarsın. Hakem <strong>"Set"</strong> der. Bilek kilitlenir. <em>Ve sonra</em> &mdash; <strong>GO<span style="color:var(--ember)">.</span></strong>
+      </p>
+
+      <div class="bg-countdown" aria-hidden="true">
+        <div class="bg-count reveal">
+          <div class="bg-count__num">5</div>
+          <div class="bg-count__lbl">Giriş</div>
+        </div>
+        <div class="bg-count reveal rd1">
+          <div class="bg-count__num">4</div>
+          <div class="bg-count__lbl">Bakış</div>
+        </div>
+        <div class="bg-count reveal rd2">
+          <div class="bg-count__num">3</div>
+          <div class="bg-count__lbl">Grip</div>
+        </div>
+        <div class="bg-count reveal rd3">
+          <div class="bg-count__num">2</div>
+          <div class="bg-count__lbl">Nefes</div>
+        </div>
+        <div class="bg-count reveal rd4">
+          <div class="bg-count__num">1</div>
+          <div class="bg-count__lbl">Kilit</div>
+        </div>
+        <div class="bg-count bg-count--go reveal rd5">
+          <div class="bg-count__num">GO</div>
+          <div class="bg-count__lbl">Patlama</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STAT ŞERİDİ ===== -->
+  <section class="bg-stats">
+    <div class="bg-stats__grid">
+      <div class="bg-stat reveal">
+        <div class="bg-stat__num">10<em>y</em></div>
+        <div class="bg-stat__lbl">Yıl Tecrübe</div>
+      </div>
+      <div class="bg-stat reveal rd1">
+        <div class="bg-stat__num">200<em>+</em></div>
+        <div class="bg-stat__lbl">Yetişen Sporcu</div>
+      </div>
+      <div class="bg-stat reveal rd2">
+        <div class="bg-stat__num">15<em>+</em></div>
+        <div class="bg-stat__lbl">Turnuva</div>
+      </div>
+      <div class="bg-stat reveal rd3">
+        <div class="bg-stat__num">3</div>
+        <div class="bg-stat__lbl">Uzman Eğitmen</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CINEMATIC BREAK — MASADA ===== -->
+  <section class="bg-cinema reveal" aria-hidden="false">
+    <div class="bg-cinema__img" style="background-image: url('https://images.pexels.com/photos/11241435/pexels-photo-11241435.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2000');"></div>
+    <div class="bg-cinema__tone"></div>
+    <div class="bg-cinema__grid"></div>
+    <div class="bg-cinema__frame"></div>
+
+    <span class="bg-cinema__corner bg-cinema__corner--tl">Akdeniz &middot; Antalya</span>
+    <span class="bg-cinema__corner bg-cinema__corner--br">TABS &middot; Kayıtlı Kulüp</span>
+
+    <div class="bg-cinema__content">
+      <div class="bg-cinema__label">Masa — Hazır</div>
+      <div class="bg-cinema__body">
+        <p class="bg-cinema__chap">Bölüm &mdash; 0</p>
+        <blockquote class="bg-cinema__quote">
+          Masada kazanan,<br>
+          <em>ter dökerken yalnız kalabilendir.</em>
+        </blockquote>
+        <p class="bg-cinema__attr">
+          <span class="bg-cinema__attr-dot"></span>
+          Antrenman &middot; 14 Yıldır
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPORUN ÖZÜ ===== -->
+  <section class="bg-zone bg-essence">
+    <div class="bg-zone__tag" aria-hidden="true">
+      <em>I.</em>
+      <span>Sporun Özü</span>
+    </div>
+
+    <div class="bg-essence__grid">
+      <div>
+        <span class="bg-eyebrow reveal">Görünenden Daha Derin</span>
+        <h2 class="bg-h2 reveal rd1">
+          Masada
+          <em>kuvvet değil, zihin konuşur.</em>
+        </h2>
+
+        <div class="bg-prose reveal rd2">
+          <p>
+            Bilek güreşi ilk bakışta yalnızca fiziksel kuvvetin belirleyici olduğu sanılan bir spordur. Oysa deneyimli bir sporcu için masa başı; <strong>tekniğin stratejiyle</strong>, nefes kontrolünün anlık reflekslerle buluştuğu bir sahadır.
+          </p>
+          <p>
+            Sağ el ve sol el — iki ayrı disiplin. Ağırlık kategorileri sayesinde her vücut yapısından sporcu kendi sınıfında hakça mücadele eder. Kulübümüz, <strong>Türkiye Bilek Güreşi Federasyonu'na (TABS)</strong> kayıtlı olarak resmi turnuvalara katılım sağlar.
+          </p>
+          <p>
+            2010'dan bu yana Antalya'nın öncü konumunda; altyapı geliştirme, antrenman sistemi ve turnuva katılımı açısından şehrin en aktif bilek güreşi merkezlerinden biriyiz.
+          </p>
+        </div>
+
+        <div class="bg-essence__pull reveal rd3">
+          &ldquo;Bilek güreşi kabaran değil, <em>saklanan</em> güçtür. Masada patlamak için önce yıllarca susmayı öğrenirsin.&rdquo;
+        </div>
+      </div>
+
+      <div>
+        <div class="bg-card reveal rd1">
+          <div class="bg-card__head">
+            <span class="bg-card__label">Masa Künyesi</span>
+            <span class="bg-card__seal">est. 2010</span>
+          </div>
+          <div class="bg-card__row">
+            <span class="bg-card__key">Federasyon</span>
+            <span class="bg-card__val">TABS</span>
+          </div>
+          <div class="bg-card__row">
+            <span class="bg-card__key">Disiplinler</span>
+            <span class="bg-card__val">Sağ El / Sol El</span>
+          </div>
+          <div class="bg-card__row">
+            <span class="bg-card__key">Yaş Grubu</span>
+            <span class="bg-card__val">14 yaş ve üzeri</span>
+          </div>
+          <div class="bg-card__row">
+            <span class="bg-card__key">Antrenman</span>
+            <span class="bg-card__val">Haftada 3 gün</span>
+          </div>
+          <div class="bg-card__row">
+            <span class="bg-card__key">Süre</span>
+            <span class="bg-card__val">90 dakika / seans</span>
+          </div>
+          <div class="bg-card__row">
+            <span class="bg-card__key">Ekipman</span>
+            <span class="bg-card__val">Kulüp sağlar</span>
+          </div>
+          <div class="bg-card__row">
+            <span class="bg-card__key">Deneyim</span>
+            <span class="bg-card__val">Gerekmez</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== İKİ EL ===== -->
+  <section class="bg-zone bg-hands">
+    <div class="bg-zone__tag" aria-hidden="true">
+      <em>II.</em>
+      <span>İki El</span>
+    </div>
+
+    <div class="bg-hands__head">
+      <span class="bg-eyebrow reveal" style="justify-content:center;">Disiplinler</span>
+      <h2 class="bg-h2 reveal rd1" style="max-width:720px;margin:0 auto 20px;">
+        İki disiplin,
+        <em>tek masa.</em>
+      </h2>
+      <p class="bg-prose reveal rd2" style="max-width:640px;margin:0 auto;">
+        Sağ el klasikleşmiş güçtür; sol el gizli silahtır. Çoğu sporcu sağla başlar, solu keşfettiğinde gerçekten iki elli bir dövüşçü olur.
+      </p>
+    </div>
+
+    <div class="bg-hands__grid">
+
+      <div class="bg-hand bg-hand--right reveal">
+        <div class="bg-hand__ghost" aria-hidden="true">R</div>
+        <div class="bg-hand__top">
+          <span class="bg-hand__no">No. I</span>
+          <div class="bg-hand__bar"></div>
+        </div>
+        <div class="bg-hand__body">
+          <div class="bg-hand__label">Right Hand &middot; Klasik</div>
+          <h3 class="bg-hand__name">Sağ El</h3>
+          <p class="bg-hand__text">
+            Klasik ve en yaygın rekabet disiplini. Sağ el hakimiyeti ve omuz stabilitesi belirleyici faktörlerin başında gelir. Çoğu ulusal ve uluslararası turnuvanın temel kategorisidir.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-hand bg-hand--left reveal rd1">
+        <div class="bg-hand__ghost" aria-hidden="true">L</div>
+        <div class="bg-hand__top">
+          <span class="bg-hand__no">No. II</span>
+          <div class="bg-hand__bar"></div>
+        </div>
+        <div class="bg-hand__body">
+          <div class="bg-hand__label">Left Hand &middot; Gizli Silah</div>
+          <h3 class="bg-hand__name">Sol El</h3>
+          <p class="bg-hand__text">
+            Dominant olmayan tarafın güçlendirildiği bu disiplin, vücudun simetrik kuvvet gelişimine önemli katkı sağlar. Çift el antrenmanı yapan sporcular genel performansta belirgin ilerleme kaydeder.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== AĞIRLIK MERDİVENİ ===== -->
+  <section class="bg-weights">
+    <div class="bg-weights__head">
+      <div class="bg-weights__intro">
+        <span class="bg-eyebrow reveal">Ağırlık Sınıfları</span>
+        <h2 class="bg-h2 reveal rd1">
+          Her vücut
+          <em>kendi masasını bulur.</em>
+        </h2>
+      </div>
+      <p class="bg-weights__note reveal rd2">
+        TABS sınıflandırması, küçük veya büyük — her sporcunun kendi kategorisinde mücadele etmesini sağlar.
+      </p>
+    </div>
+
+    <div class="bg-weights__ladder">
+      <div class="bg-weight reveal">
+        <div class="bg-weight__no">I</div>
+        <div class="bg-weight__kg">−60 kg</div>
+        <div class="bg-weight__sub">Hız</div>
+      </div>
+      <div class="bg-weight reveal rd1">
+        <div class="bg-weight__no">II</div>
+        <div class="bg-weight__kg">−65 kg</div>
+        <div class="bg-weight__sub">Hız</div>
+      </div>
+      <div class="bg-weight reveal rd1">
+        <div class="bg-weight__no">III</div>
+        <div class="bg-weight__kg">−70 kg</div>
+        <div class="bg-weight__sub">Denge</div>
+      </div>
+      <div class="bg-weight reveal rd2">
+        <div class="bg-weight__no">IV</div>
+        <div class="bg-weight__kg">−75 kg</div>
+        <div class="bg-weight__sub">Denge</div>
+      </div>
+      <div class="bg-weight reveal rd2">
+        <div class="bg-weight__no">V</div>
+        <div class="bg-weight__kg">−80 kg</div>
+        <div class="bg-weight__sub">Denge</div>
+      </div>
+      <div class="bg-weight bg-weight--heavy reveal rd3">
+        <div class="bg-weight__no">VI</div>
+        <div class="bg-weight__kg">−90 kg</div>
+        <div class="bg-weight__sub">Güç</div>
+      </div>
+      <div class="bg-weight bg-weight--heavy reveal rd3">
+        <div class="bg-weight__no">VII</div>
+        <div class="bg-weight__kg">−100 kg</div>
+        <div class="bg-weight__sub">Güç</div>
+      </div>
+      <div class="bg-weight bg-weight--heavy reveal rd4">
+        <div class="bg-weight__no">VIII</div>
+        <div class="bg-weight__kg">+100 kg</div>
+        <div class="bg-weight__sub">Ağır Siklet</div>
+      </div>
+      <div class="bg-weight bg-weight--open reveal rd4">
+        <div class="bg-weight__no">IX</div>
+        <div class="bg-weight__kg">Açık</div>
+        <div class="bg-weight__sub">Tüm Sınıf</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ANTRENMAN ===== -->
+  <section class="bg-zone bg-train" id="antrenman">
+    <div class="bg-zone__tag" aria-hidden="true">
+      <em>III.</em>
+      <span>Antrenman Süreci</span>
+    </div>
+
+    <div class="bg-train__head">
+      <div>
+        <span class="bg-eyebrow reveal">Sistematik Yol</span>
+        <h2 class="bg-h2 reveal rd1">
+          Dört aşama,
+          <em>bir sporcu.</em>
+        </h2>
+      </div>
+      <p class="bg-prose reveal rd2">
+        Bilek güreşinde başarı kaba kuvvetten değil, <strong>doğru kaslanma örüntüsü</strong> ve teknik hakimiyetten gelir. Antrenman programımız bu temel üzerine kurulur — hiç kimse ikinci aşamaya hazır olmadan geçmez.
+      </p>
+    </div>
+
+    <div class="bg-train__steps">
+      <div class="bg-step reveal">
+        <div class="bg-step__badge">01</div>
+        <div class="bg-step__body">
+          <h3 class="bg-step__name">Kuvvet Temeli <em>&mdash; 6 hafta</em></h3>
+          <p class="bg-step__text">Bilek, önkol, parmak ve omuz kaslarını hedef alan izole egzersizlerle temel altyapı. Sporcular kendi vücut ağırlıklarıyla başlar — masada henüz oturmaz.</p>
+        </div>
+      </div>
+
+      <div class="bg-step reveal rd1">
+        <div class="bg-step__badge">02</div>
+        <div class="bg-step__body">
+          <h3 class="bg-step__name">Teknik Çalışma <em>&mdash; sürekli</em></h3>
+          <p class="bg-step__text">Hook, toproll ve press — üç temel teknik. Her tekniğin kendi giriş dinamiği, kaslanma örüntüsü ve karşı hamlesi vardır. Masada uygulamalı öğretilir.</p>
+        </div>
+      </div>
+
+      <div class="bg-step reveal rd2">
+        <div class="bg-step__badge">03</div>
+        <div class="bg-step__body">
+          <h3 class="bg-step__name">Sparring &amp; Analiz <em>&mdash; haftalık</em></h3>
+          <p class="bg-step__text">Antrenman ortağıyla yapılan kontrollü sparring seansları video analiziyle desteklenir. Teknik hatalar gerçek maçtan önce, masada düzeltilir.</p>
+        </div>
+      </div>
+
+      <div class="bg-step reveal rd3">
+        <div class="bg-step__badge">04</div>
+        <div class="bg-step__body">
+          <h3 class="bg-step__name">Turnuva Hazırlığı <em>&mdash; seçili</em></h3>
+          <p class="bg-step__text">Hazır görülen sporcular yerel ve bölgesel turnuvalara katılım için belirlenmiş protokolle hazırlanır. Ağırlık yönetimi ve zihinsel hazırlık da bu aşamada yer alır.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ONUR KODU ===== -->
+  <section class="bg-zone bg-honor">
+    <div class="bg-zone__tag" aria-hidden="true">
+      <em>IV.</em>
+      <span>Onur Kodu</span>
+    </div>
+
+    <div class="bg-honor__head">
+      <span class="bg-eyebrow reveal" style="justify-content:center;">Masa Yasaları</span>
+      <h2 class="bg-h2 reveal rd1" style="max-width:820px;margin:0 auto 20px;">
+        Masaya
+        <em>saygıyla oturulur.</em>
+      </h2>
+      <p class="bg-prose reveal rd2" style="max-width:640px;margin:0 auto;">
+        Rakip yenilmez — ona saygı duyulur. Masa küçük, ama taşıdığı şey büyüktür.
+      </p>
+    </div>
+
+    <div class="bg-honor__code">
+      <div class="bg-honor__rule reveal">
+        <div class="bg-honor__no">I.</div>
+        <h3 class="bg-honor__rule-name">Rakibine bak, gözlerinden kaçma.</h3>
+        <p class="bg-honor__text">Bilek güreşi önce göz temasıyla başlar. Yere bakan masaya oturmaz — masaya oturan karşısındakini görür.</p>
+      </div>
+
+      <div class="bg-honor__rule reveal rd1">
+        <div class="bg-honor__no">II.</div>
+        <h3 class="bg-honor__rule-name">Kaybetmekten korkma. Gücünü saklamaktan kork.</h3>
+        <p class="bg-honor__text">Her antrenman tam kapasitedir. Yarım yapan yarım kalır. Patlarken patlamazsan, patlamayı hiç öğrenemezsin.</p>
+      </div>
+
+      <div class="bg-honor__rule reveal rd2">
+        <div class="bg-honor__no">III.</div>
+        <h3 class="bg-honor__rule-name">Teknik kuvvetten önce gelir.</h3>
+        <p class="bg-honor__text">Yüz kiloluk bir adamı teknik olmayan yetmiş kiloluk bir adam masaya yapıştırır. Kuvvet biter, teknik kalır.</p>
+      </div>
+
+      <div class="bg-honor__rule reveal rd3">
+        <div class="bg-honor__no">IV.</div>
+        <h3 class="bg-honor__rule-name">Madalyayı kazanmadan önce, saygıyı kazan.</h3>
+        <p class="bg-honor__text">Masa şampiyonu değil, salonun geri kalanı karakterini belirler. Önce kardeş, sonra rakip, sonra bazen arkadaş.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VELİ SESİ ===== -->
+  <section class="bg-voice">
+    <div class="bg-voice__inner">
+      <p class="bg-voice__quote reveal">
+        Oğlum salona <strong>kuvvetini</strong> göstermek için gelmişti. Bir yıl sonra <em>kendini</em> tanımış olarak döndü.
+      </p>
+      <div class="bg-voice__rule reveal rd1"></div>
+      <div class="bg-voice__author reveal rd1">Hasan K.</div>
+      <div class="bg-voice__role reveal rd1">Bir veli &middot; Antalya</div>
+    </div>
+  </section>
+
+  <!-- ===== KATILIM ===== -->
+  <section class="bg-zone bg-join">
+    <div class="bg-zone__tag" aria-hidden="true">
+      <em>V.</em>
+      <span>Katılım</span>
+    </div>
+
+    <div class="bg-join__head">
+      <span class="bg-eyebrow reveal">Kimler Katılabilir</span>
+      <h2 class="bg-h2 reveal rd1" style="max-width:720px;">
+        Başlamak için
+        <em>tek bir şey gerekli.</em>
+      </h2>
+      <p class="bg-prose reveal rd2">
+        Önceki spor deneyimi zorunlu değildir. Doğru motivasyon ve düzenli antrenman, her sporcunun gelişmesi için yeterlidir.
+      </p>
+    </div>
+
+    <div class="bg-join__grid">
+      <div class="bg-join__card reveal">
+        <div class="bg-join__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <h3 class="bg-join__title">Yaş</h3>
+        <p class="bg-join__text">14 yaş ve üzeri herkes katılabilir. 18 yaş altı için veli onayı gereklidir.</p>
+      </div>
+
+      <div class="bg-join__card reveal rd1">
+        <div class="bg-join__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3 class="bg-join__title">Sağlık</h3>
+        <p class="bg-join__text">Bilek, dirsek veya omuz ekleminde aktif şikâyet bulunmamalı. Geçmiş sakatlığı olanlar antrenöre bilgi vermelidir.</p>
+      </div>
+
+      <div class="bg-join__card reveal rd2">
+        <div class="bg-join__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <h3 class="bg-join__title">Deneyim</h3>
+        <p class="bg-join__text">Hiçbir önceki spor deneyimi gerekmez. Başlangıç seviyesine özel antrenman programı uygulanır.</p>
+      </div>
+
+      <div class="bg-join__card reveal rd3">
+        <div class="bg-join__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <h3 class="bg-join__title">Ekipman</h3>
+        <p class="bg-join__text">Özel ekipman gerekmez. Rahat spor kıyafeti yeterli. Antrenman masası ve aparatlar kulüp tarafından sağlanır.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA — MASAYA OTUR ===== -->
+  <section class="bg-cta">
+    <div class="bg-cta__inner">
+      <p class="bg-cta__kicker reveal">&mdash; Masa Hazır</p>
+      <h2 class="bg-cta__title reveal rd1">
+        Sıra
+        <em>sende.</em>
+      </h2>
+      <p class="bg-cta__sub reveal rd2">
+        Deneme antrenmanına katılmak veya soru sormak için iletişime geç. Beş saniyeden fazla sürmez — söz veriyoruz.
+      </p>
+      <a href="../../iletisim.html" class="bg-cta__btn reveal rd3">
+        Masaya Otur
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../../index.html" class="logo">
+            <img src="../../assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height: 40px;">
+            <span class="logo-text">Dinamik <span>SK</span></span>
+          </a>
+          <p style="margin-top: 16px; color: rgba(242,232,210,.4); font-size: 0.9rem; line-height: 1.6;">İman. Disiplin. Spor.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Branşlar</h4>
+          <div class="footer-links">
+            <a href="../bilek-guresi/index.html">Bilek Güreşi</a>
+            <a href="../dalgiclik/index.html">Dalgıçlık</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Hızlı Linkler</h4>
+          <div class="footer-links">
+            <a href="../../index.html">Ana Sayfa</a>
+            <a href="../../sporlar.html">Tüm Sporlar</a>
+            <a href="../../iletisim.html">İletişim</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Akdeniz Dinamik Spor Kulübü. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const href = a.getAttribute('href');
+          if (href === '#') return;
+          const t = document.querySelector(href);
+          if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

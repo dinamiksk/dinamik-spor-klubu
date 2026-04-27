@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yönetim Paneli | Dinamik Spor Kulübü</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏋️</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo">
+        <span class="logo-text">Dinamik <span>SK</span></span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Siteye Dön</a>
+        <a href="admin.html" class="nav-link active">Yönetim</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Admin Layout -->
+  <div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <nav class="admin-nav">
+        <a href="#" class="admin-nav-item active" data-section="dashboard">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+          </svg>
+          Dashboard
+        </a>
+        <a href="#" class="admin-nav-item" data-section="duyurular">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/>
+          </svg>
+          Duyurular
+        </a>
+        <a href="#" class="admin-nav-item" data-section="sporlar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+          </svg>
+          Sporlar
+        </a>
+        <a href="#" class="admin-nav-item" data-section="faaliyetler">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+          </svg>
+          Faaliyetler
+        </a>
+        <a href="#" class="admin-nav-item" data-section="projeler">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          ENP Projeleri
+        </a>
+        <a href="#" class="admin-nav-item" data-section="vefa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+          </svg>
+          Vefa Köşesi
+        </a>
+        <a href="#" class="admin-nav-item" data-section="kizlar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          Kızlar
+        </a>
+        <a href="#" class="admin-nav-item" data-section="galeri">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          Galeri
+        </a>
+        <a href="#" class="admin-nav-item" data-section="videolar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+          </svg>
+          Videolar
+        </a>
+        <a href="#" class="admin-nav-item" data-section="etkinlikler">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Etkinlikler
+        </a>
+        <a href="#" class="admin-nav-item" data-section="ayarlar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+          Ayarlar
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+
+      <!-- Dashboard Section -->
+      <section id="section-dashboard" class="admin-section active">
+        <div class="admin-header">
+          <h2>Dashboard</h2>
+        </div>
+
+        <div class="admin-stats">
+          <div class="stat-card">
+            <div class="stat-label">Duyuru Sayısı</div>
+            <div class="stat-value" data-stat="duyurular">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Spor Dalı</div>
+            <div class="stat-value" data-stat="sporlar">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Faaliyet</div>
+            <div class="stat-value" data-stat="faaliyetler">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Proje</div>
+            <div class="stat-value" data-stat="projeler">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Toplam Fidan</div>
+            <div class="stat-value" data-stat="fidan">0</div>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 24px;">
+          <h3 style="margin-bottom: 16px;">Hoş Geldiniz</h3>
+          <p>Bu panel üzerinden sitenizin tüm içeriklerini yönetebilirsiniz. Sol menüden ilgili bölüme geçiş yapabilirsiniz.</p>
+          <p style="margin-top: 8px; color: var(--text-muted); font-size: 0.9rem;">Tüm değişiklikler tarayıcınızın localStorage'ında saklanır.</p>
+        </div>
+      </section>
+
+      <!-- Duyurular Section -->
+      <section id="section-duyurular" class="admin-section">
+        <div class="admin-header">
+          <h2>Duyurular</h2>
+          <button class="btn btn-primary add-btn" data-modal="modal-duyuru">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Yeni Ekle
+          </button>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Başlık</th>
+              <th>Tarih</th>
+              <th>Öncelik</th>
+              <th>Durum</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Sporlar Section -->
+      <section id="section-sporlar" class="admin-section">
+        <div class="admin-header">
+          <h2>Spor Dalları</h2>
+          <button class="btn btn-primary add-btn" data-modal="modal-spor">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Yeni Ekle
+          </button>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Başlık</th>
+              <th>Zorluk</th>
+              <th>Ekipman</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Faaliyetler Section -->
+      <section id="section-faaliyetler" class="admin-section">
+        <div class="admin-header">
+          <h2>Faaliyetler</h2>
+          <button class="btn btn-primary add-btn" data-modal="modal-faaliyet">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Yeni Ekle
+          </button>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Başlık</th>
+              <th>Tarih</th>
+              <th>Konum</th>
+              <th>Durum</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Projeler Section -->
+      <section id="section-projeler" class="admin-section">
+        <div class="admin-header">
+          <h2>ENP Projeleri</h2>
+          <button class="btn btn-primary add-btn" data-modal="modal-proje">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Yeni Ekle
+          </button>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Başlık</th>
+              <th>Alt Başlık</th>
+              <th>Durum</th>
+              <th>İlerleme</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Vefa Section -->
+      <section id="section-vefa" class="admin-section">
+        <div class="admin-header">
+          <h2>Vefa Köşesi</h2>
+          <button class="btn btn-primary add-btn" data-modal="modal-vefa">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Yeni Ekle
+          </button>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>İsim</th>
+              <th>Rol</th>
+              <th>Dönem</th>
+              <th>Tür</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Kızlar Section -->
+      <section id="section-kizlar" class="admin-section">
+        <div class="admin-header">
+          <h2>Kızlar - Haberler</h2>
+          <button class="btn btn-primary add-btn" data-modal="modal-kizlar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Yeni Ekle
+          </button>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Başlık</th>
+              <th>Tarih</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Galeri Section -->
+      <section id="section-galeri" class="admin-section">
+        <div class="admin-header">
+          <h2>Dalış Galerisi</h2>
+          <button class="btn btn-primary add-btn" data-modal="modal-galeri">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Fotoğraf Ekle
+          </button>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;" id="galeri-kategori-filtre">
+          <button class="btn btn-secondary aktif-filtre" data-kategori="tumu" style="font-size:0.82rem;padding:6px 14px;">Tümü</button>
+          <button class="btn btn-secondary" data-kategori="kesif" style="font-size:0.82rem;padding:6px 14px;">Keşif</button>
+          <button class="btn btn-secondary" data-kategori="reklam" style="font-size:0.82rem;padding:6px 14px;">Reklam</button>
+          <button class="btn btn-secondary" data-kategori="egitim" style="font-size:0.82rem;padding:6px 14px;">Eğitim</button>
+          <button class="btn btn-secondary" data-kategori="sisad" style="font-size:0.82rem;padding:6px 14px;">SİSAD</button>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Önizleme</th>
+              <th>Başlık</th>
+              <th>Kategori</th>
+              <th>Sıra</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody id="galeri-tbody">
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Videolar Section -->
+      <section id="section-videolar" class="admin-section">
+        <div class="admin-header">
+          <h2>YouTube Videoları</h2>
+          <button class="btn btn-primary add-btn" data-modal="modal-video">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Video Ekle
+          </button>
+        </div>
+
+        <div class="card" style="padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:240px;">
+            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0 0 4px;">YouTube API ile otomatik çek</p>
+            <p style="font-size:0.75rem;color:var(--text-muted);margin:0;">API Key'i Ayarlar bölümüne girdikten sonra kullanılabilir.</p>
+          </div>
+          <button class="btn btn-primary" id="yt-cek-btn" style="white-space:nowrap;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;vertical-align:-2px;">
+              <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+            </svg>
+            Kanaldan Videoları Çek
+          </button>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Başlık</th>
+              <th>Video ID</th>
+              <th>Kategori</th>
+              <th>Öne Çıkar</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody id="video-tbody">
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Etkinlikler Section -->
+      <section id="section-etkinlikler" class="admin-section">
+        <div class="admin-header">
+          <h2>Yaklaşan Etkinlikler</h2>
+          <button class="btn btn-primary add-btn" data-modal="modal-etkinlik">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Etkinlik Ekle
+          </button>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Başlık</th>
+              <th>Tarih</th>
+              <th>Konum</th>
+              <th>Tür</th>
+              <th>Durum</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody id="etkinlik-tbody">
+            <!-- JS ile doldurulacak -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Ayarlar Section -->
+      <section id="section-ayarlar" class="admin-section">
+        <div class="admin-header">
+          <h2>Site Ayarları</h2>
+        </div>
+
+        <div class="grid grid-2" style="gap: 32px;">
+          <div class="card" style="padding: 24px;">
+            <h3 style="margin-bottom: 24px;">Genel Ayarlar</h3>
+            <form class="admin-form" data-form-type="ayarlar">
+              <div class="form-group">
+                <label class="form-label">Kulüp Adı</label>
+                <input type="text" name="kulupAdi" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Slogan</label>
+                <input type="text" name="slogan" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Telefon</label>
+                <input type="tel" name="telefon" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label">E-posta</label>
+                <input type="email" name="eposta" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Adres</label>
+                <input type="text" name="adres" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Instagram URL</label>
+                <input type="url" name="instagram" class="form-input">
+              </div>
+              <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+          </div>
+
+          <div class="card" style="padding: 24px;">
+            <h3 style="margin-bottom: 24px;">Bağış İstatistikleri</h3>
+            <form class="admin-form" data-form-type="bagis">
+              <div class="form-group">
+                <label class="form-label">Toplam Fidan</label>
+                <input type="number" name="toplamFidan" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Toplam Bağışçı</label>
+                <input type="number" name="toplamKisi" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Hedef Fidan</label>
+                <input type="number" name="hedef" class="form-input">
+              </div>
+              <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+          </div>
+
+          <div class="card" style="padding: 24px;">
+            <h3 style="margin-bottom: 24px;">YouTube Entegrasyonu</h3>
+            <form class="admin-form" data-form-type="youtube">
+              <div class="form-group">
+                <label class="form-label">YouTube API Key</label>
+                <input type="text" name="ytApiKey" class="form-input" placeholder="AIzaSy...">
+                <p style="font-size:0.72rem;color:var(--text-muted);margin-top:4px;">console.cloud.google.com → YouTube Data API v3 → Credentials</p>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Kanal Handle</label>
+                <input type="text" name="ytKanal" class="form-input" placeholder="@scuba.team.antalya" value="@scuba.team.antalya">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Otomatik Çekilecek Video Sayısı</label>
+                <input type="number" name="ytVideoSayisi" class="form-input" value="9" min="1" max="50">
+              </div>
+              <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+          </div>
+
+          <div class="card" style="padding: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <div>
+                <h3 style="margin-bottom: 4px;">Hero Badge Ayarları</h3>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Ana sayfa hero bölümünde logo etrafında gösterilen badge'ler.</p>
+              </div>
+              <button type="button" class="btn btn-primary" id="add-badge-btn" style="padding: 8px 16px; font-size: 0.8rem;">
+                + Badge Ekle
+              </button>
+            </div>
+
+            <div id="hero-badge-list" style="display: flex; flex-direction: column; gap: 12px;">
+              <!-- Badge'ler JS ile doldurulacak -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Modal: Duyuru -->
+  <div class="modal-backdrop" id="modal-duyuru">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Duyuru Ekle/Düzenle</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="admin-form" data-form-type="duyuru">
+          <input type="hidden" name="id">
+          <div class="form-group">
+            <label class="form-label">Başlık *</label>
+            <input type="text" name="baslik" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">İçerik *</label>
+            <textarea name="icerik" class="form-textarea" required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tarih *</label>
+            <input type="date" name="tarih" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Öncelik</label>
+            <select name="oncelik" class="form-select">
+              <option value="high">Yüksek</option>
+              <option value="medium">Normal</option>
+              <option value="low">Düşük</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-checkbox">
+              <input type="checkbox" name="gorunum" checked>
+              Yayında olsun
+            </label>
+          </div>
+          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary modal-close">İptal</button>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Spor -->
+  <div class="modal-backdrop" id="modal-spor">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Spor Dalı Ekle/Düzenle</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="admin-form" data-form-type="spor">
+          <input type="hidden" name="id">
+          <input type="hidden" name="mevcut-gorsel">
+          <div class="form-group">
+            <label class="form-label">Başlık *</label>
+            <input type="text" name="baslik" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Alt Başlık</label>
+            <input type="text" name="altBaslik" class="form-input" placeholder="Kısa tanım...">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Açıklama *</label>
+            <textarea name="aciklama" class="form-textarea" required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Zorluk</label>
+            <select name="zorluk" class="form-select">
+              <option value="Düşük">Düşük</option>
+              <option value="Orta">Orta</option>
+              <option value="Orta-Yüksek">Orta-Yüksek</option>
+              <option value="Yüksek">Yüksek</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Ekipman Gerekiyor mu?</label>
+            <input type="text" name="ekipman" class="form-input" placeholder="Gerekli ekipmanlar...">
+          </div>
+          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary modal-close">İptal</button>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Faaliyet -->
+  <div class="modal-backdrop" id="modal-faaliyet">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Faaliyet Ekle/Düzenle</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="admin-form" data-form-type="faaliyet">
+          <input type="hidden" name="id">
+          <input type="hidden" name="mevcut-gorsel">
+          <div class="form-group">
+            <label class="form-label">Başlık *</label>
+            <input type="text" name="baslik" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kısa Açıklama</label>
+            <input type="text" name="kisaAciklama" class="form-input" placeholder="Liste görünümü için...">
+          </div>
+          <div class="form-group">
+            <label class="form-label">İçerik *</label>
+            <textarea name="icerik" class="form-textarea" required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tarih *</label>
+            <input type="date" name="tarih" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Konum *</label>
+            <input type="text" name="konum" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-checkbox">
+              <input type="checkbox" name="gorunum" checked>
+              Yayında olsun
+            </label>
+          </div>
+          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary modal-close">İptal</button>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Proje -->
+  <div class="modal-backdrop" id="modal-proje">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Proje Ekle/Düzenle</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="admin-form" data-form-type="proje">
+          <input type="hidden" name="id">
+          <input type="hidden" name="mevcut-gorsel">
+          <div class="form-group">
+            <label class="form-label">Başlık *</label>
+            <input type="text" name="baslik" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Alt Başlık</label>
+            <input type="text" name="altBaslik" class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Açıklama *</label>
+            <textarea name="aciklama" class="form-textarea" required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Durum</label>
+            <select name="durum" class="form-select">
+              <option value="plan">Plan</option>
+              <option value="devam">Devam Ediyor</option>
+              <option value="tamamlandi">Tamamlandı</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">İlerleme (%)</label>
+            <input type="number" name="ilerleme" class="form-input" min="0" max="100" value="0">
+          </div>
+          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary modal-close">İptal</button>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Vefa -->
+  <div class="modal-backdrop" id="modal-vefa">
+    <div class="modal" style="max-width:600px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Vefa Kaydı Ekle / Düzenle</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="admin-form" data-form-type="vefa" enctype="multipart/form-data">
+          <input type="hidden" name="id">
+          <!-- Kaydedilmiş fotoğraf (base64 veya URL) — JS tarafından doldurulur -->
+          <input type="hidden" name="mevcut-foto" id="vefa-mevcut-foto">
+
+          <div class="form-group">
+            <label class="form-label">İsim *</label>
+            <input type="text" name="isim" class="form-input" required placeholder="Ad Soyad">
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="form-group">
+              <label class="form-label">Rol *</label>
+              <input type="text" name="rol" class="form-input" required placeholder="Örn: Başkan, Eğitmen">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Dönem</label>
+              <input type="text" name="donem" class="form-input" placeholder="Örn: 2018 – 2022">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Açıklama</label>
+            <textarea name="aciklama" class="form-textarea" rows="3" placeholder="Katkıları, görevleri, bir anısı..."></textarea>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 120px;gap:16px;">
+            <div class="form-group">
+              <label class="form-label">Tür</label>
+              <select name="tur" class="form-select">
+                <option value="mevcut">Mevcut Başkan</option>
+                <option value="gecmis">Geçmiş Başkan</option>
+                <option value="vefa">Vefa Üyesi</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Sıra</label>
+              <input type="number" name="oncelik" class="form-input" value="0" min="0">
+            </div>
+          </div>
+
+          <!-- FOTOĞRAF BÖLÜMÜ -->
+          <div class="form-group">
+            <label class="form-label">Fotoğraf</label>
+
+            <!-- Mevcut fotoğraf önizleme -->
+            <div id="vefa-foto-preview" style="display:none;margin-bottom:12px;">
+              <img id="vefa-foto-img" src="" alt="Fotoğraf önizleme"
+                style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:1px solid rgba(201,162,39,0.25);display:block;">
+              <button type="button" id="vefa-foto-sil"
+                style="margin-top:8px;background:rgba(239,68,68,0.1);border:none;color:#ef4444;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:0.75rem;">
+                Fotoğrafı Kaldır
+              </button>
+            </div>
+
+            <!-- Fotoğraf seçenekleri: Tab sistemi -->
+            <div id="vefa-foto-tabs" style="display:flex;gap:0;margin-bottom:12px;border:1px solid rgba(255,255,255,0.08);border-radius:6px;overflow:hidden;">
+              <button type="button" class="vefa-tab active" data-tab="upload"
+                style="flex:1;padding:8px;font-size:0.75rem;border:none;cursor:pointer;background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.6);transition:all .2s;">
+                Dosya Yükle
+              </button>
+              <button type="button" class="vefa-tab" data-tab="url"
+                style="flex:1;padding:8px;font-size:0.75rem;border:none;cursor:pointer;background:transparent;color:rgba(255,255,255,0.3);border-left:1px solid rgba(255,255,255,0.08);transition:all .2s;">
+                URL ile Ekle
+              </button>
+            </div>
+
+            <div id="vefa-tab-upload">
+              <input type="file" id="vefa-foto-file" accept="image/*"
+                style="display:none;">
+              <button type="button" id="vefa-foto-sec"
+                style="width:100%;padding:10px;background:rgba(255,255,255,0.03);border:1px dashed rgba(255,255,255,0.12);border-radius:6px;color:rgba(255,255,255,0.4);cursor:pointer;font-size:0.82rem;text-align:center;">
+                + Fotoğraf Seç (JPG, PNG, WebP)
+              </button>
+              <p style="margin-top:6px;font-size:0.72rem;color:rgba(255,255,255,0.2);">
+                Tüm boyutlar desteklenir. Görsel otomatik olarak optimize edilir.
+              </p>
+            </div>
+
+            <div id="vefa-tab-url" style="display:none;">
+              <input type="url" id="vefa-foto-url" class="form-input"
+                placeholder="https://... (fotoğraf bağlantısı)">
+              <button type="button" id="vefa-url-ekle"
+                style="margin-top:8px;padding:8px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:rgba(255,255,255,0.5);cursor:pointer;font-size:0.78rem;">
+                Önizle
+              </button>
+            </div>
+          </div>
+
+          <div class="modal-footer" style="padding:0;border:none;margin-top:24px;">
+            <button type="button" class="btn btn-secondary modal-close">İptal</button>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Kızlar Haber -->
+  <div class="modal-backdrop" id="modal-kizlar">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Haber Ekle/Düzenle</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="admin-form" data-form-type="kizlar">
+          <input type="hidden" name="id">
+          <input type="hidden" name="mevcut-gorsel">
+          <div class="form-group">
+            <label class="form-label">Başlık *</label>
+            <input type="text" name="baslik" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kısa Açıklama</label>
+            <textarea name="kisaAciklama" class="form-textarea"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tarih *</label>
+            <input type="date" name="tarih" class="form-input" required>
+          </div>
+          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary modal-close">İptal</button>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Galeri Fotoğraf -->
+  <div class="modal-backdrop" id="modal-galeri">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Fotoğraf Ekle/Düzenle</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="admin-form" data-form-type="galeri">
+          <input type="hidden" name="id">
+          <div class="form-group">
+            <label class="form-label">Fotoğraf URL *</label>
+            <input type="url" name="url" class="form-input" required placeholder="https://... veya ../../assets/images/...">
+            <p style="font-size:0.72rem;color:var(--text-muted);margin-top:4px;">Fotoğrafı assets/images/ klasörüne koy, sonra yolunu yaz.</p>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Başlık</label>
+            <input type="text" name="baslik" class="form-input" placeholder="Fotoğraf başlığı">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Açıklama</label>
+            <input type="text" name="aciklama" class="form-input" placeholder="Kısa açıklama (opsiyonel)">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kategori *</label>
+            <select name="kategori" class="form-select" required>
+              <option value="kesif">Keşif</option>
+              <option value="reklam">Reklam</option>
+              <option value="egitim">Eğitim</option>
+              <option value="sisad">SİSAD</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Geniş Görünüm (2 kolon kaplasın)</label>
+            <label class="form-checkbox">
+              <input type="checkbox" name="genis">
+              Evet, geniş göster
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Sıra</label>
+            <input type="number" name="sira" class="form-input" value="0" min="0">
+          </div>
+          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary modal-close">İptal</button>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Video -->
+  <div class="modal-backdrop" id="modal-video">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Video Ekle/Düzenle</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="admin-form" data-form-type="video">
+          <input type="hidden" name="id">
+          <div class="form-group">
+            <label class="form-label">YouTube URL veya Video ID *</label>
+            <input type="text" name="videoId" class="form-input" required placeholder="https://youtube.com/watch?v=... veya sadece ID">
+            <p style="font-size:0.72rem;color:var(--text-muted);margin-top:4px;">YouTube linkini yapıştır, ID otomatik ayıklanır.</p>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Başlık *</label>
+            <input type="text" name="baslik" class="form-input" required placeholder="Video başlığı">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Açıklama</label>
+            <textarea name="aciklama" class="form-textarea" rows="2" placeholder="Kısa açıklama"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kategori</label>
+            <select name="kategori" class="form-select">
+              <option value="genel">Genel</option>
+              <option value="reklam">Reklam Filmi</option>
+              <option value="egitim">Eğitim</option>
+              <option value="keşif">Keşif</option>
+              <option value="sisad">SİSAD</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-checkbox">
+              <input type="checkbox" name="oneCikar" checked>
+              Sayfada öne çıkar
+            </label>
+          </div>
+          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary modal-close">İptal</button>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Etkinlik -->
+  <div class="modal-backdrop" id="modal-etkinlik">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Etkinlik Ekle/Düzenle</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="admin-form" data-form-type="etkinlik">
+          <input type="hidden" name="id">
+          <div class="form-group">
+            <label class="form-label">Başlık *</label>
+            <input type="text" name="baslik" class="form-input" required placeholder="Etkinlik adı">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Açıklama</label>
+            <textarea name="aciklama" class="form-textarea" rows="3" placeholder="Etkinlik detayları..."></textarea>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="form-group">
+              <label class="form-label">Tarih *</label>
+              <input type="date" name="tarih" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Saat</label>
+              <input type="time" name="saat" class="form-input">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Konum</label>
+            <input type="text" name="konum" class="form-input" placeholder="Örn: Kaş, Antalya">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Bölüm (Hangi sayfada görünsün?)</label>
+            <select name="bolum" class="form-select">
+              <option value="genel">Genel (Ana Sayfa)</option>
+              <option value="dalgiclik">Dalgıçlık</option>
+              <option value="kizlar">Kızlar</option>
+              <option value="bilek-guresi">Bilek Güreşi</option>
+              <option value="enp">ENP</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tür</label>
+            <select name="tur" class="form-select">
+              <option value="dalis">Dalış</option>
+              <option value="egitim">Eğitim</option>
+              <option value="sisad">SİSAD Operasyonu</option>
+              <option value="sosyal">Sosyal Etkinlik</option>
+              <option value="yarisma">Yarışma</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kontenjan</label>
+            <input type="number" name="kontenjan" class="form-input" placeholder="0 = sınırsız" min="0" value="0">
+          </div>
+          <div class="form-group">
+            <label class="form-checkbox">
+              <input type="checkbox" name="gorunum" checked>
+              Yayında göster
+            </label>
+          </div>
+          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary modal-close">İptal</button>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

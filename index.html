@@ -146,7 +146,7 @@
 
         <div class="hero-actions">
           <a href="sporlar.html" class="btn btn-orange btn-lg">Branşlarımızı Keşfet</a>
-          <a href="hakkimizda" class="btn btn-outline btn-lg">Bizi Tanı</a>
+          <a href="dinamik-calismalar.html" class="btn btn-outline btn-lg">Dinamik Çalışmalar Nedir?</a>
         </div>
 
         <div class="hero-stats">
@@ -478,31 +478,31 @@
           Kulüpten<br><em>haberler.</em>
         </h2>
         <p class="hm-hero__desc">
-          Dalgıçlık, Kızlar, ENP ve Bilek Güreşi'nden tüm gelişmeler — etkinlikler, videolar ve duyurular tek akışta.
+          Bilek Güreşi, Dalgıçlık ve Dinamik Çalışmalar bölümlerimizin son duyuru, etkinlik, haber ve videoları — hepsi tek akışta.
         </p>
         <a href="duyurular.html" class="hm-hero__cta">
-          Tüm Duyurular
+          Tüm İçerikleri Gör
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
 
       <div class="hm-hero__sag">
         <div class="hm-hero__bolumler">
+          <a href="sporlar/bilek-guresi/index.html" class="hm-hero__bolum" style="--bc:#f07f0b">
+            <span class="hm-hero__bolum-ikon">💪</span>
+            <span>Bilek Güreşi</span>
+          </a>
           <a href="sporlar/dalgiclik/index.html" class="hm-hero__bolum" style="--bc:#1a61ac">
             <span class="hm-hero__bolum-ikon">🤿</span>
             <span>Dalgıçlık</span>
           </a>
+          <a href="dinamik-calismalar/erkek/index.html" class="hm-hero__bolum" style="--bc:#16a34a">
+            <span class="hm-hero__bolum-ikon">♂</span>
+            <span>Dinamik Erkek</span>
+          </a>
           <a href="dinamik-calismalar/kiz/index.html" class="hm-hero__bolum" style="--bc:#be185d">
             <span class="hm-hero__bolum-ikon">♀</span>
-            <span>Dinamik SK Kız</span>
-          </a>
-          <a href="dinamik-calismalar.html" class="hm-hero__bolum" style="--bc:#d4a017">
-            <span class="hm-hero__bolum-ikon">🧭</span>
-            <span>Dinamik Çalışmalar</span>
-          </a>
-          <a href="sporlar/bilek-guresi/index.html" class="hm-hero__bolum" style="--bc:#f07f0b">
-            <span class="hm-hero__bolum-ikon">💪</span>
-            <span>Bilek Güreşi</span>
+            <span>Dinamik Kız</span>
           </a>
         </div>
         <div class="hm-hero__istatistik" id="hm-istatistik">
@@ -532,10 +532,10 @@
       <!-- Bölüm filtreleri -->
       <div class="hm-filtreler animate-on-scroll" id="hm-filtreler">
         <button class="hm-filtre hm-filtre--aktif" data-bolum="tumu">Tümü</button>
-        <button class="hm-filtre" data-bolum="dalgiclik" style="--fc:#1a61ac">🤿 Dalgıçlık</button>
-        <button class="hm-filtre" data-bolum="kizlar" style="--fc:#be185d">♀ Kızlar</button>
-        <button class="hm-filtre" data-bolum="enp" style="--fc:#16a34a">★ ENP</button>
         <button class="hm-filtre" data-bolum="bilek-guresi" style="--fc:#f07f0b">💪 Bilek Güreşi</button>
+        <button class="hm-filtre" data-bolum="dalgiclik" style="--fc:#1a61ac">🤿 Dalgıçlık</button>
+        <button class="hm-filtre" data-bolum="erkek" style="--fc:#16a34a">♂ Erkek</button>
+        <button class="hm-filtre" data-bolum="kiz" style="--fc:#be185d">♀ Kız</button>
         <button class="hm-filtre" data-bolum="genel" style="--fc:#6b7280">📢 Genel</button>
       </div>
 
@@ -686,10 +686,37 @@
     <img id="lightbox-img" src="" alt="" style="max-width: 90vw; max-height: 90vh; object-fit: contain;">
   </div>
 
+  <script type="module" src="firebase-init.js"></script>
   <script src="main.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const data = DinamikSK.DB.getData();
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Firestore icerik koleksiyonundan veri çek (admin → ana sayfa otomatik akış)
+      const data = await (async () => {
+        const out = { duyurular: [], etkinlikler: [], faaliyetler: [], videolar: [] };
+        try {
+          if (window.firebaseReady) await window.firebaseReady;
+          if (window.FB?.ready) {
+            const { db, collection, getDocs } = window.FB;
+            const snap = await getDocs(collection(db, "icerik"));
+            const items = snap.docs.map(d => ({ id: d.id, ...d.data() })).filter(i => i.yayinda !== false);
+            items.forEach(i => {
+              const ortak = {
+                id: i.id, baslik: i.baslik, kisaMetin: i.kisaMetin, icerik: i.tamMetin || i.kisaMetin,
+                tarih: i.tarih, gorsel: i.gorsel, kategori: i.kategori, oneCikar: i.oneCikar
+              };
+              if (i.tip === 'duyuru' || i.tip === 'haber') {
+                out.duyurular.push({ ...ortak, oncelik: 'medium', gorunum: true });
+              } else if (i.tip === 'etkinlik') {
+                out.etkinlikler.push({ ...ortak, aciklama: i.kisaMetin, konum: i.konum, saat: i.saat, bolum: i.kategori, gorunum: true });
+              } else if (i.tip === 'video') {
+                out.videolar.push({ ...ortak, aciklama: i.kisaMetin, videoId: i.videoId, oneCikar: i.oneCikar });
+              }
+            });
+            console.log(`📡 Anasayfa: ${items.length} içerik yüklendi`);
+          }
+        } catch (e) { console.error("Firestore hatası:", e); }
+        return out;
+      })();
 
       /* ---------- Hero Badge'leri ---------- */
       (data.heroBadges || []).forEach(badge => {
@@ -707,32 +734,35 @@
 
       /* ---------- Haber Feed ---------- */
       const BOLUM = {
-        dalgiclik:    { ad: 'Dalgıçlık',    renk: '#1a61ac', link: 'sporlar/dalgiclik/index.html' },
-        kizlar:       { ad: 'Kızlar',        renk: '#be185d', link: 'kizlar.html' },
-        enp:          { ad: 'ENP',           renk: '#16a34a', link: 'enp.html' },
         'bilek-guresi':{ ad: 'Bilek Güreşi', renk: '#f07f0b', link: 'sporlar/bilek-guresi/index.html' },
-        genel:        { ad: 'Duyuru',        renk: '#6b7280', link: 'duyurular.html' }
+        dalgiclik:    { ad: 'Dalgıçlık',    renk: '#1a61ac', link: 'sporlar/dalgiclik/index.html' },
+        erkek:        { ad: 'Dinamik Erkek', renk: '#16a34a', link: 'dinamik-calismalar/erkek/index.html' },
+        kiz:          { ad: 'Dinamik Kız',   renk: '#be185d', link: 'dinamik-calismalar/kiz/index.html' },
+        genel:        { ad: 'Genel',         renk: '#6b7280', link: 'duyurular.html' }
       };
 
       function buildFeed() {
         const items = [];
 
-        /* Duyurular */
+        /* Duyurular / Haberler */
         (data.duyurular || []).filter(d => d.gorunum !== false).forEach(d => {
+          const kat = d.kategori || 'genel';
+          const b = BOLUM[kat] || BOLUM.genel;
           items.push({
-            tip: 'duyuru', bolum: 'genel',
-            baslik: d.baslik, ozet: d.icerik,
-            tarih: d.tarih, link: 'duyurular.html',
+            id: d.id, tip: 'duyuru', bolum: kat,
+            baslik: d.baslik, ozet: d.kisaMetin || d.icerik,
+            tarih: d.tarih, link: kat === 'genel' ? 'duyurular.html' : b.link,
             oncelik: d.oncelik
           });
         });
 
         /* Etkinlikler */
         (data.etkinlikler || []).filter(e => e.gorunum !== false).forEach(e => {
-          const b = BOLUM[e.bolum] || BOLUM.genel;
+          const kat = e.bolum || e.kategori || 'genel';
+          const b = BOLUM[kat] || BOLUM.genel;
           items.push({
-            tip: 'etkinlik', bolum: e.bolum || 'genel',
-            baslik: e.baslik, ozet: e.aciklama,
+            id: e.id, tip: 'etkinlik', bolum: kat,
+            baslik: e.baslik, ozet: e.kisaMetin || e.aciklama,
             tarih: e.tarih, link: b.link,
             konum: e.konum, saat: e.saat
           });
@@ -740,19 +770,23 @@
 
         /* Faaliyetler */
         (data.faaliyetler || []).filter(f => f.gorunum !== false).forEach(f => {
+          const kat = f.kategori || 'genel';
+          const b = BOLUM[kat] || BOLUM.genel;
           items.push({
-            tip: 'faaliyet', bolum: 'genel',
-            baslik: f.baslik, ozet: f.kisaAciklama || f.icerik,
-            tarih: f.tarih, link: 'sporlar.html'
+            id: f.id, tip: 'faaliyet', bolum: kat,
+            baslik: f.baslik, ozet: f.kisaMetin || f.kisaAciklama || f.icerik,
+            tarih: f.tarih, link: b.link
           });
         });
 
         /* Videolar */
         (data.videolar || []).filter(v => v.oneCikar).forEach(v => {
+          const kat = v.kategori || 'dalgiclik';
+          const b = BOLUM[kat] || BOLUM.dalgiclik;
           items.push({
-            tip: 'video', bolum: 'dalgiclik',
-            baslik: v.baslik, ozet: v.aciklama,
-            tarih: null, link: 'sporlar/dalgiclik/index.html',
+            id: v.id, tip: 'video', bolum: kat,
+            baslik: v.baslik, ozet: v.kisaMetin || v.aciklama,
+            tarih: v.tarih, link: b.link,
             videoId: v.videoId
           });
         });

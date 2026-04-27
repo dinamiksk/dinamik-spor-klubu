@@ -57,6 +57,10 @@
       --paper-soft: rgba(242,232,210,.48);
       --paper-faint:rgba(242,232,210,.22);
       --line:       rgba(242,232,210,.1);
+
+      --ff-serif:   'Cormorant Garamond', Georgia, serif;
+      --ff-cond:    'Barlow Condensed', sans-serif;
+      --ff-sans:    'DM Sans', sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -1706,6 +1710,434 @@
       .bg-cinema__frame { inset: 14px; }
       .bg-cinema__content { padding: 120px 20px 100px; }
     }
+
+    /* ═══════════════════════════════════════════════
+       HABER MERKEZİ — Yaklaşan / Öne Çıkan / Son / Geçmiş
+    ═══════════════════════════════════════════════ */
+    .bg-news {
+      position: relative;
+      background:
+        radial-gradient(ellipse at top, rgba(245,166,35,.06) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-ink) 0%, var(--bg-0) 100%);
+      padding: 120px 24px 80px;
+      overflow: hidden;
+      border-top: 1px solid rgba(245,166,35,.12);
+    }
+    .bg-news::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--ember) 50%, transparent);
+      opacity: .4;
+    }
+    .bg-news__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Hero başlık alanı */
+    .bg-news__hero {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 80px;
+      position: relative;
+    }
+    .bg-news__pulse {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--ff-cond);
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ember);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .bg-news__pulse-dot {
+      width: 8px; height: 8px;
+      background: var(--ember);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--ember-glow);
+      animation: news-pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes news-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .55; transform: scale(.78); }
+    }
+    .bg-news__title {
+      font-family: var(--ff-serif);
+      font-weight: 500;
+      font-size: clamp(2.6rem, 5.8vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: -.03em;
+      color: var(--paper);
+      margin: 0 0 18px;
+    }
+    .bg-news__title em {
+      font-style: italic;
+      color: var(--ember);
+      font-weight: 400;
+    }
+    .bg-news__lead {
+      font-family: var(--ff-cond);
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--paper-mid);
+      max-width: 540px;
+      margin: 0 auto 36px;
+    }
+    .bg-news__stats {
+      display: inline-flex;
+      gap: 0;
+      padding: 14px 8px;
+      background: rgba(15,8,5,.6);
+      border: 1px solid rgba(245,166,35,.14);
+      border-radius: 4px;
+      backdrop-filter: blur(8px);
+    }
+    .bg-news__stat {
+      padding: 0 28px;
+      text-align: center;
+      position: relative;
+    }
+    .bg-news__stat + .bg-news__stat::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 18%; bottom: 18%;
+      width: 1px;
+      background: rgba(242,232,210,.12);
+    }
+    .bg-news__stat-num {
+      display: block;
+      font-family: var(--ff-serif);
+      font-size: 1.95rem;
+      line-height: 1;
+      color: var(--ember);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .bg-news__stat-lbl {
+      display: block;
+      font-family: var(--ff-cond);
+      font-size: 0.65rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--paper-soft);
+      font-weight: 600;
+    }
+
+    /* Bölüm başlıkları */
+    .bg-news__block { margin-bottom: 72px; }
+    .bg-news__block:last-child { margin-bottom: 0; }
+    .bg-news__block-head {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 32px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .bg-news__block-icon {
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+    .bg-news__block-title {
+      flex: 1;
+      font-family: var(--ff-serif);
+      font-weight: 500;
+      font-size: clamp(1.4rem, 2.6vw, 2rem);
+      letter-spacing: -.01em;
+      color: var(--paper);
+      margin: 0;
+    }
+    .bg-news__block-title em { font-style: italic; color: var(--ember); }
+    .bg-news__more {
+      font-family: var(--ff-cond);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ember);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap .2s, color .2s;
+    }
+    .bg-news__more:hover { gap: 14px; color: var(--ember-glow); }
+
+    /* Yaklaşan etkinlik kartları (sıcak ton) */
+    .bg-news__upcoming { display: grid; gap: 16px; }
+    .bg-upcoming-card {
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      gap: 28px;
+      align-items: center;
+      padding: 22px 26px;
+      background:
+        linear-gradient(135deg, rgba(245,166,35,.05) 0%, rgba(15,8,5,.6) 100%);
+      border: 1px solid rgba(245,166,35,.18);
+      border-left: 3px solid var(--ember);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all .3s ease;
+    }
+    .bg-upcoming-card:hover {
+      transform: translateX(4px);
+      border-left-width: 6px;
+      background:
+        linear-gradient(135deg, rgba(245,166,35,.1) 0%, rgba(36,24,16,.7) 100%);
+    }
+    .bg-upcoming-card__date {
+      text-align: center;
+      padding: 10px 0;
+      border: 1px solid rgba(245,166,35,.3);
+      border-radius: 3px;
+    }
+    .bg-upcoming-card__day {
+      display: block;
+      font-family: var(--ff-serif);
+      font-size: 1.85rem;
+      line-height: 1;
+      color: var(--ember);
+      font-weight: 500;
+    }
+    .bg-upcoming-card__month {
+      display: block;
+      margin-top: 4px;
+      font-family: var(--ff-cond);
+      font-size: 0.62rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--paper-mid);
+      font-weight: 700;
+    }
+    .bg-upcoming-card__body { min-width: 0; }
+    .bg-upcoming-card__tag {
+      display: inline-block;
+      font-family: var(--ff-cond);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ember);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .bg-upcoming-card__title {
+      font-family: var(--ff-serif);
+      font-weight: 500;
+      font-size: 1.3rem;
+      line-height: 1.25;
+      color: var(--paper);
+      margin: 0 0 8px;
+    }
+    .bg-upcoming-card__meta {
+      display: flex;
+      gap: 16px;
+      font-family: var(--ff-cond);
+      font-size: 0.78rem;
+      color: var(--paper-soft);
+    }
+    .bg-upcoming-card__meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .bg-upcoming-card__arrow { color: var(--ember); flex-shrink: 0; }
+
+    /* Öne çıkan grid (1 büyük + 2 küçük) */
+    .bg-news__featured {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+    .bg-news__featured-side { display: flex; flex-direction: column; gap: 20px; }
+    .bg-feat-card {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 4px;
+      text-decoration: none;
+      background: var(--bg-1);
+      border: 1px solid var(--line);
+      transition: border-color .3s, transform .3s;
+    }
+    .bg-feat-card:hover {
+      border-color: rgba(245,166,35,.4);
+      transform: translateY(-3px);
+    }
+    .bg-feat-card__img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      display: block;
+      filter: brightness(.78) contrast(1.05);
+      transition: filter .3s, transform .6s;
+    }
+    .bg-feat-card:hover .bg-feat-card__img {
+      filter: brightness(.9);
+      transform: scale(1.04);
+    }
+    .bg-feat-card--big .bg-feat-card__img { aspect-ratio: 16/11; }
+    .bg-feat-card__no-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background:
+        linear-gradient(135deg, rgba(245,166,35,.08), rgba(123,29,29,.18));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      opacity: .35;
+    }
+    .bg-feat-card__body {
+      padding: 22px 24px 24px;
+    }
+    .bg-feat-card--big .bg-feat-card__body { padding: 28px 30px 30px; }
+    .bg-feat-card__star {
+      position: absolute;
+      top: 12px; left: 12px;
+      padding: 5px 10px;
+      background: rgba(245,166,35,.92);
+      color: var(--bg-ink);
+      font-family: var(--ff-cond);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-radius: 2px;
+    }
+    .bg-feat-card__tag {
+      display: inline-block;
+      font-family: var(--ff-cond);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ember);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .bg-feat-card__title {
+      font-family: var(--ff-serif);
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 1.2;
+      color: var(--paper);
+      margin: 0 0 10px;
+    }
+    .bg-feat-card--big .bg-feat-card__title { font-size: 1.85rem; }
+    .bg-feat-card__excerpt {
+      font-family: var(--ff-sans);
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--paper-mid);
+      margin: 0 0 12px;
+    }
+    .bg-feat-card__date {
+      font-family: var(--ff-cond);
+      font-size: 0.75rem;
+      color: var(--paper-soft);
+      letter-spacing: 0.05em;
+    }
+
+    /* Son gelişmeler grid */
+    .bg-news__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .bg-news-card {
+      display: block;
+      padding: 20px 22px;
+      background: var(--bg-1);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      text-decoration: none;
+      transition: border-color .3s, transform .3s;
+    }
+    .bg-news-card:hover {
+      border-color: rgba(245,166,35,.3);
+      transform: translateY(-2px);
+    }
+    .bg-news-card__row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .bg-news-card__type {
+      font-family: var(--ff-cond);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ember);
+      font-weight: 700;
+    }
+    .bg-news-card__sep { color: var(--paper-faint); }
+    .bg-news-card__date {
+      font-family: var(--ff-cond);
+      font-size: 0.7rem;
+      color: var(--paper-soft);
+    }
+    .bg-news-card__title {
+      font-family: var(--ff-serif);
+      font-weight: 500;
+      font-size: 1.05rem;
+      line-height: 1.3;
+      color: var(--paper);
+      margin: 0 0 8px;
+    }
+    .bg-news-card__excerpt {
+      font-family: var(--ff-sans);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--paper-soft);
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Geçmiş etkinlikler — sönük ton */
+    .bg-news__archive {
+      opacity: .68;
+      transition: opacity .3s;
+    }
+    .bg-news__archive:hover { opacity: 1; }
+    .bg-news__archive .bg-news-card {
+      background: rgba(15,8,5,.4);
+    }
+    .bg-news__archive .bg-news-card__type { color: var(--paper-soft); }
+
+    /* Boş durum */
+    .bg-news__empty {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--paper-soft);
+      font-family: var(--ff-cond);
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+    }
+    .bg-news__empty em {
+      font-family: var(--ff-serif);
+      font-style: italic;
+      color: var(--ember);
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .bg-news { padding: 80px 18px 60px; }
+      .bg-news__hero { margin-bottom: 56px; }
+      .bg-news__featured { grid-template-columns: 1fr; }
+      .bg-news__list { grid-template-columns: 1fr; }
+      .bg-upcoming-card { grid-template-columns: 80px 1fr; gap: 18px; padding: 16px 18px; }
+      .bg-upcoming-card__arrow { display: none; }
+      .bg-news__stat { padding: 0 18px; }
+      .bg-news__stat-num { font-size: 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -2248,6 +2680,83 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════
+       HABER MERKEZİ — Bilek Güreşi
+       ═══════════════════════════════════════════════ -->
+  <section class="bg-news" id="news">
+    <div class="bg-news__inner">
+
+      <!-- Hero başlık -->
+      <header class="bg-news__hero reveal">
+        <div class="bg-news__pulse">
+          <span class="bg-news__pulse-dot"></span>
+          <span>Sahadan Canlı</span>
+        </div>
+        <h2 class="bg-news__title">
+          Masadan <em>haberler.</em>
+        </h2>
+        <p class="bg-news__lead">
+          Turnuvalar, antrenmanlar, başarılar — masaya oturan her kolun hikayesi burada başlıyor.
+        </p>
+        <div class="bg-news__stats">
+          <div class="bg-news__stat">
+            <span class="bg-news__stat-num" data-stat="upcoming">0</span>
+            <span class="bg-news__stat-lbl">Yaklaşan</span>
+          </div>
+          <div class="bg-news__stat">
+            <span class="bg-news__stat-num" data-stat="featured">0</span>
+            <span class="bg-news__stat-lbl">Öne Çıkan</span>
+          </div>
+          <div class="bg-news__stat">
+            <span class="bg-news__stat-num" data-stat="total">0</span>
+            <span class="bg-news__stat-lbl">Toplam</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- 1. YAKLAŞAN ETKİNLİKLER -->
+      <div class="bg-news__block reveal" id="news-upcoming" style="display:none">
+        <div class="bg-news__block-head">
+          <span class="bg-news__block-icon">📅</span>
+          <h3 class="bg-news__block-title">Yaklaşan <em>Etkinlikler</em></h3>
+        </div>
+        <div class="bg-news__upcoming" data-list="upcoming"></div>
+      </div>
+
+      <!-- 2. ÖNE ÇIKANLAR -->
+      <div class="bg-news__block reveal" id="news-featured" style="display:none">
+        <div class="bg-news__block-head">
+          <span class="bg-news__block-icon">⭐</span>
+          <h3 class="bg-news__block-title">Öne <em>Çıkanlar</em></h3>
+        </div>
+        <div class="bg-news__featured" data-list="featured"></div>
+      </div>
+
+      <!-- 3. SON GELİŞMELER -->
+      <div class="bg-news__block reveal" id="news-latest">
+        <div class="bg-news__block-head">
+          <span class="bg-news__block-icon">📰</span>
+          <h3 class="bg-news__block-title">Son <em>Gelişmeler</em></h3>
+          <a href="../../duyurular.html?bolum=bilek-guresi" class="bg-news__more">
+            Tümü
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="bg-news__list" data-list="latest"></div>
+      </div>
+
+      <!-- 4. GEÇMİŞ ETKİNLİKLER -->
+      <div class="bg-news__block bg-news__archive reveal" id="news-past" style="display:none">
+        <div class="bg-news__block-head">
+          <span class="bg-news__block-icon">🗓</span>
+          <h3 class="bg-news__block-title">Geçmiş <em>Etkinlikler</em></h3>
+        </div>
+        <div class="bg-news__list" data-list="past"></div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ===== CTA — MASAYA OTUR ===== -->
   <section class="bg-cta">
     <div class="bg-cta__inner">
@@ -2300,6 +2809,7 @@
     </div>
   </footer>
 
+  <script type="module" src="../../firebase-init.js"></script>
   <script src="../../main.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -2318,6 +2828,158 @@
           if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
         });
       });
+
+      /* ═══════════════════════════════════════════════
+         HABER MERKEZİ — Firestore'dan içerik çek
+         ═══════════════════════════════════════════════ */
+      (async () => {
+        const KATEGORI = 'bilek-guresi';
+        const escapeHtml = (s='') => String(s)
+          .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')
+          .replaceAll('"','&quot;').replaceAll("'",'&#39;');
+        const TIP_AD = { duyuru:'Duyuru', etkinlik:'Etkinlik', haber:'Haber', video:'Video' };
+        const AY_KISA = ['OCA','ŞUB','MAR','NİS','MAY','HAZ','TEM','AĞU','EYL','EKİ','KAS','ARA'];
+        const formatTarih = (iso) => {
+          if (!iso) return '';
+          const d = new Date(iso);
+          return d.toLocaleDateString('tr-TR', { day:'numeric', month:'long', year:'numeric' });
+        };
+
+        try {
+          if (window.firebaseReady) await window.firebaseReady;
+          if (!window.FB?.ready) { console.log('Firebase yok, atlanıyor'); return; }
+
+          const { db, collection, getDocs } = window.FB;
+          const snap = await getDocs(collection(db, 'icerik'));
+          const items = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+            .filter(i => i.kategori === KATEGORI && i.yayinda !== false)
+            .sort((a,b) => (b.tarih || '').localeCompare(a.tarih || ''));
+
+          const today = new Date().toISOString().slice(0,10);
+
+          const upcoming = items.filter(i => i.tip === 'etkinlik' && (i.tarih || '') >= today)
+            .sort((a,b) => (a.tarih || '').localeCompare(b.tarih || ''));
+          const past = items.filter(i => i.tip === 'etkinlik' && (i.tarih || '') < today).slice(0, 4);
+          const featured = items.filter(i => i.oneCikar === true && i.tip !== 'etkinlik').slice(0, 3);
+          const featuredIds = new Set(featured.map(i => i.id));
+          const upcomingIds = new Set(upcoming.map(i => i.id));
+          const latest = items.filter(i =>
+            !featuredIds.has(i.id) && !upcomingIds.has(i.id) && i.tip !== 'etkinlik'
+          ).slice(0, 6);
+
+          // İstatistikler
+          const setStat = (k, v) => { const el = document.querySelector(`[data-stat="${k}"]`); if (el) el.textContent = v; };
+          setStat('upcoming', upcoming.length);
+          setStat('featured', featured.length);
+          setStat('total', items.length);
+
+          // 1. YAKLAŞAN
+          if (upcoming.length) {
+            document.getElementById('news-upcoming').style.display = '';
+            const el = document.querySelector('[data-list="upcoming"]');
+            el.innerHTML = upcoming.map(i => {
+              const d = new Date(i.tarih);
+              const day = d.getDate();
+              const month = AY_KISA[d.getMonth()];
+              return `
+                <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="bg-upcoming-card">
+                  <div class="bg-upcoming-card__date">
+                    <span class="bg-upcoming-card__day">${day}</span>
+                    <span class="bg-upcoming-card__month">${month}</span>
+                  </div>
+                  <div class="bg-upcoming-card__body">
+                    <span class="bg-upcoming-card__tag">${TIP_AD[i.tip] || ''}</span>
+                    <h4 class="bg-upcoming-card__title">${escapeHtml(i.baslik)}</h4>
+                    <div class="bg-upcoming-card__meta">
+                      ${i.saat ? `<span>🕒 ${escapeHtml(i.saat)}</span>` : ''}
+                      ${i.konum ? `<span>📍 ${escapeHtml(i.konum)}</span>` : ''}
+                    </div>
+                  </div>
+                  <svg class="bg-upcoming-card__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+                </a>
+              `;
+            }).join('');
+          }
+
+          // 2. ÖNE ÇIKANLAR (1 büyük + 2 küçük)
+          if (featured.length) {
+            document.getElementById('news-featured').style.display = '';
+            const el = document.querySelector('[data-list="featured"]');
+            const big = featured[0];
+            const sides = featured.slice(1, 3);
+
+            const card = (i, kind) => {
+              const isBig = kind === 'big';
+              const img = i.gorsel
+                ? `<img class="bg-feat-card__img" src="${escapeHtml(i.gorsel)}" alt="" loading="lazy">`
+                : `<div class="bg-feat-card__no-img">⭐</div>`;
+              return `
+                <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="bg-feat-card${isBig ? ' bg-feat-card--big' : ''}">
+                  ${img}
+                  <span class="bg-feat-card__star">★ Öne Çıkan</span>
+                  <div class="bg-feat-card__body">
+                    <span class="bg-feat-card__tag">${TIP_AD[i.tip] || ''}</span>
+                    <h4 class="bg-feat-card__title">${escapeHtml(i.baslik)}</h4>
+                    ${i.kisaMetin ? `<p class="bg-feat-card__excerpt">${escapeHtml(i.kisaMetin)}</p>` : ''}
+                    <span class="bg-feat-card__date">${formatTarih(i.tarih)}</span>
+                  </div>
+                </a>
+              `;
+            };
+
+            el.innerHTML = `
+              ${card(big, 'big')}
+              <div class="bg-news__featured-side">
+                ${sides.map(i => card(i, 'side')).join('')}
+              </div>
+            `;
+          }
+
+          // 3. SON GELİŞMELER
+          const latestEl = document.querySelector('[data-list="latest"]');
+          if (latest.length) {
+            latestEl.innerHTML = latest.map(i => `
+              <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="bg-news-card">
+                <div class="bg-news-card__row">
+                  <span class="bg-news-card__type">${TIP_AD[i.tip] || ''}</span>
+                  <span class="bg-news-card__sep">·</span>
+                  <span class="bg-news-card__date">${formatTarih(i.tarih)}</span>
+                </div>
+                <h4 class="bg-news-card__title">${escapeHtml(i.baslik)}</h4>
+                ${i.kisaMetin ? `<p class="bg-news-card__excerpt">${escapeHtml(i.kisaMetin)}</p>` : ''}
+              </a>
+            `).join('');
+          } else {
+            latestEl.innerHTML = `
+              <div class="bg-news__empty" style="grid-column:1/-1">
+                <em>Henüz haber yok.</em>
+                İlk haber yayında — admin panelinden ekleyebilirsin.
+              </div>
+            `;
+          }
+
+          // 4. GEÇMİŞ ETKİNLİKLER
+          if (past.length) {
+            document.getElementById('news-past').style.display = '';
+            const el = document.querySelector('[data-list="past"]');
+            el.innerHTML = past.map(i => `
+              <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="bg-news-card">
+                <div class="bg-news-card__row">
+                  <span class="bg-news-card__type">Etkinlik</span>
+                  <span class="bg-news-card__sep">·</span>
+                  <span class="bg-news-card__date">${formatTarih(i.tarih)}</span>
+                </div>
+                <h4 class="bg-news-card__title">${escapeHtml(i.baslik)}</h4>
+                ${i.konum ? `<p class="bg-news-card__excerpt">📍 ${escapeHtml(i.konum)}</p>` : ''}
+              </a>
+            `).join('');
+          }
+
+          console.log(`📡 Bilek Güreşi: ${items.length} içerik (${upcoming.length} yaklaşan, ${featured.length} öne çıkan, ${past.length} geçmiş)`);
+        } catch (err) {
+          console.error('Haber Merkezi hatası:', err);
+        }
+      })();
     });
   </script>
 </body>

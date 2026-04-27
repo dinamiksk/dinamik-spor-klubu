@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bülten — Duyurular & Haberler | Akdeniz Dinamik Spor Kulübü</title>
-  <meta name="description" content="Akdeniz Dinamik Spor Kulübü bülteni. Dalgıçlık, Bilek Güreşi, ENP ve Kızlar bölümünden son duyurular, etkinlikler, videolar ve kulüp haberleri bir arada.">
+  <meta name="description" content="Akdeniz Dinamik Spor Kulübü bülteni. Bilek Güreşi, Dalgıçlık ve Dinamik Çalışmalar (Erkek/Kız) bölümlerimizden son duyurular, etkinlikler, videolar ve kulüp haberleri bir arada.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dinamikspor.com/duyurular.html">
   <meta property="og:title" content="Bülten — Duyurular & Haberler | Akdeniz Dinamik Spor Kulübü">
@@ -1072,7 +1072,7 @@
       <div class="bl-rule"></div>
 
       <p class="bl-desc">
-        Dalgıçlık'tan Bilek Güreşi'ne, ENP'den Kızlar bölümüne &mdash;
+        Bilek Güreşi'nden Dalgıçlık'a, Dinamik Erkek'ten Dinamik Kız'a &mdash;
         tüm branşlarımızdan son gelişmeler, etkinlik takvimleri ve videolar
         huzurla süzülebileceğiniz tek bir akışta.
       </p>
@@ -1116,10 +1116,10 @@
       <button class="bl-chip" data-filtre="etkinlik">Etkinlikler</button>
       <button class="bl-chip" data-filtre="video">Videolar</button>
       <button class="bl-chip" data-filtre="faaliyet">Faaliyetler</button>
-      <button class="bl-chip" data-filtre="dalgiclik">Dalgıçlık</button>
-      <button class="bl-chip" data-filtre="kizlar">Kızlar</button>
-      <button class="bl-chip" data-filtre="enp">ENP</button>
       <button class="bl-chip" data-filtre="bilek-guresi">Bilek Güreşi</button>
+      <button class="bl-chip" data-filtre="dalgiclik">Dalgıçlık</button>
+      <button class="bl-chip" data-filtre="erkek">Dinamik Erkek</button>
+      <button class="bl-chip" data-filtre="kiz">Dinamik Kız</button>
     </div>
   </nav>
 
@@ -1466,17 +1466,9 @@
 
     /* ── Seed örnek veri (veri yoksa) ──────── */
     function seedDemo() {
-      const today = new Date();
-      const d = (offset) => { const x = new Date(today); x.setDate(x.getDate() + offset); return x.toISOString().slice(0,10); };
-      return [
-        { tip:'duyuru', bolum:'genel', baslik:'Yeni Sezon Açılışı', ozet:'Akdeniz\'in ilk ışığıyla yeni sezonu açıyoruz. Tüm branşlarımız haftalık programlarla sahada, masada ve denizde.', tarih: d(-2) },
-        { tip:'etkinlik', bolum:'dalgiclik', baslik:'Dalış Kampı — Kemer', ozet:'Hafta sonu iki günlük açık su dalış kampı. Katılım için iletişim sayfasından kayıt olabilirsiniz.', tarih: d(7), konum:'Kemer / Antalya', saat:'08:00' },
-        { tip:'etkinlik', bolum:'bilek-guresi', baslik:'İl Şampiyonası Seçmeleri', ozet:'Bilek Güreşi İl Şampiyonası seçme müsabakaları kulüp salonumuzda yapılacaktır.', tarih: d(14), konum:'Kulüp Salonu' },
-        { tip:'video', bolum:'dalgiclik', baslik:'Kıyıdan Derinliğe — Antrenman Notları', ozet:'Antrenman günlerimizden görüntüler.', videoId:'dQw4w9WgXcQ' },
-        { tip:'faaliyet', bolum:'genel', baslik:'Hatıra Ormanı Fidan Dikimi', ozet:'Her yeni üyemiz için bir fidan. Geçen hafta düzenlediğimiz dikim etkinliği.', tarih: d(-10), konum:'Antalya' },
-        { tip:'duyuru', bolum:'genel', baslik:'Kızlar Bölümü Kayıtları Açıldı', ozet:'Kızlar bölümümüzün bahar dönemi kayıtları başladı. Deneme antrenmanı için başvurabilirsiniz.', tarih: d(-5) },
-        { tip:'etkinlik', bolum:'enp', baslik:'Aylık Gece Yürüyüşü', ozet:'ENP ekibi ile aylık gece yürüyüşü buluşmamız. Detaylar iletişim üzerinden.', tarih: d(21), konum:'Antalya' },
-      ];
+      // Firestore'da hiç içerik yoksa gösterilecek örnek veri.
+      // Admin panelinden gerçek içerik girildiğinde bu hiç görünmez.
+      return [];
     }
 
     /* ── Render ───────────────────────────── */

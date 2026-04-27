@@ -1,1017 +1,815 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yönetim Paneli | Dinamik Spor Kulübü</title>
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏋️</text></svg>">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Yönetim · Dinamik Spor Kulübü</title>
+<link rel="icon" href="assets/images/dinamik-logo.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-2: #111111;
+    --bg-3: #161616;
+    --bg-4: #1d1d1d;
+    --border: #262626;
+    --border-2: #333333;
+    --text: #f5f5f5;
+    --text-2: #a8a8a8;
+    --text-3: #6b6b6b;
+    --accent: #c9a227;
+    --accent-2: #dbb74a;
+    --primary: #1a61ac;
+    --primary-2: #2a7ad4;
+    --danger: #ef4444;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --shadow: 0 8px 30px rgba(0,0,0,0.4);
+    --tr: 200ms cubic-bezier(.4,0,.2,1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  input, textarea, select { font-family: inherit; font-size: inherit; }
+
+  /* ========================================
+     LAYOUT
+  ======================================== */
+  .layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 100vh;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    background: var(--bg-2);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+  .brand {
+    padding: 24px 20px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand img { width: 32px; height: 32px; }
+  .brand-text {
+    font-family: 'Instrument Serif', serif;
+    font-size: 20px;
+    color: var(--text);
+    line-height: 1;
+  }
+  .brand-text small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-top: 4px;
+  }
+
+  .nav { padding: 12px 8px; flex: 1; }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    color: var(--text-2);
+    transition: all var(--tr);
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav-item:hover { background: var(--bg-3); color: var(--text); }
+  .nav-item.active { background: var(--accent); color: var(--bg); font-weight: 600; }
+  .nav-item.active:hover { background: var(--accent-2); }
+  .nav-item svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+  .nav-footer {
+    padding: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--text-3);
+    font-size: 12px;
+  }
+  .nav-footer a {
+    color: var(--text-2);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color var(--tr);
+  }
+  .nav-footer a:hover { color: var(--accent); }
+
+  /* MAIN */
+  .main {
+    padding: 32px 40px;
+    max-width: 1400px;
+    width: 100%;
+  }
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+    gap: 24px;
+  }
+  .page-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px;
+    line-height: 1;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .page-desc { color: var(--text-2); font-size: 14px; }
+
+  /* SECTIONS */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* DASHBOARD STATS */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .stat-card {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: all var(--tr);
+  }
+  .stat-card:hover { border-color: var(--border-2); }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 8px;
+  }
+  .stat-value {
+    font-family: 'Instrument Serif', serif;
+    font-size: 36px;
+    color: var(--text);
+    line-height: 1;
+  }
+  .stat-sub { font-size: 12px; color: var(--text-2); margin-top: 6px; }
+
+  /* TOOLBAR */
+  .toolbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 14px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .filter-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip {
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--bg-3);
+    color: var(--text-2);
+    font-size: 12px;
+    font-weight: 500;
+    transition: all var(--tr);
+    border: 1px solid transparent;
+  }
+  .chip:hover { background: var(--bg-4); color: var(--text); }
+  .chip.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+  .toolbar select, .toolbar input {
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    transition: border var(--tr);
+  }
+  .toolbar select:focus, .toolbar input:focus { outline: none; border-color: var(--accent); }
+  .toolbar .spacer { flex: 1; }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 600;
+    transition: all var(--tr);
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .btn-primary:hover { background: var(--accent-2); transform: translateY(-1px); }
+  .btn-ghost {
+    background: var(--bg-3);
+    color: var(--text-2);
+    border-color: var(--border);
+  }
+  .btn-ghost:hover { background: var(--bg-4); color: var(--text); border-color: var(--border-2); }
+  .btn-danger {
+    background: transparent;
+    color: var(--danger);
+    border-color: rgba(239,68,68,0.3);
+  }
+  .btn-danger:hover { background: rgba(239,68,68,0.1); border-color: var(--danger); }
+  .btn-icon { padding: 8px; }
+  .btn svg { width: 14px; height: 14px; }
+
+  /* CONTENT LIST */
+  .content-list {
+    display: grid;
+    gap: 12px;
+  }
+  .content-card {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 18px;
+    align-items: center;
+    transition: all var(--tr);
+  }
+  .content-card:hover { border-color: var(--border-2); }
+  .content-thumb {
+    width: 80px;
+    height: 60px;
+    background: var(--bg-4);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-3);
+    font-size: 24px;
+  }
+  .content-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .content-body h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .content-meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: var(--text-3);
+  }
+  .badge {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: var(--bg-3);
+    color: var(--text-2);
+    border: 1px solid var(--border);
+  }
+  .badge.tip-duyuru   { background: rgba(26,97,172,0.15); color: #6ba3e0; border-color: rgba(26,97,172,0.3); }
+  .badge.tip-etkinlik { background: rgba(201,162,39,0.15); color: var(--accent-2); border-color: rgba(201,162,39,0.3); }
+  .badge.tip-haber    { background: rgba(34,197,94,0.15); color: #4ade80; border-color: rgba(34,197,94,0.3); }
+  .badge.tip-video    { background: rgba(239,68,68,0.15); color: #f87171; border-color: rgba(239,68,68,0.3); }
+  .badge.kat   { background: var(--bg-4); color: var(--text-2); }
+  .badge.live  { background: rgba(34,197,94,0.15); color: #4ade80; border-color: rgba(34,197,94,0.3); }
+  .badge.draft { background: rgba(245,158,11,0.15); color: #fbbf24; border-color: rgba(245,158,11,0.3); }
+  .badge.featured { background: rgba(201,162,39,0.2); color: var(--accent-2); border-color: var(--accent); }
+
+  .content-actions { display: flex; gap: 8px; }
+
+  .empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--text-3);
+  }
+  .empty-state h3 { font-size: 18px; color: var(--text-2); margin-bottom: 8px; }
+  .empty-state p { font-size: 14px; }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    width: 100%;
+    max-width: 720px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow);
+  }
+  .modal-header {
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .modal-header h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    color: var(--text);
+  }
+  .modal-close {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-3);
+    color: var(--text-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--tr);
+  }
+  .modal-close:hover { background: var(--bg-4); color: var(--text); }
+  .modal-body { padding: 24px; }
+  .modal-footer {
+    padding: 18px 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+
+  /* FORMS */
+  .form-grid { display: grid; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-2);
+    letter-spacing: 0.02em;
+  }
+  .field input, .field select, .field textarea {
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    transition: border var(--tr);
+    font-size: 14px;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .field textarea { resize: vertical; min-height: 80px; line-height: 1.5; }
+  .field .hint { font-size: 11px; color: var(--text-3); }
+
+  .field-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+  }
+  .field-toggle label { display: flex; flex-direction: column; gap: 2px; cursor: pointer; }
+  .field-toggle .hint { font-size: 11px; color: var(--text-3); }
+  .toggle {
+    position: relative;
+    width: 40px;
+    height: 22px;
+    background: var(--bg-4);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background var(--tr);
+    flex-shrink: 0;
+  }
+  .toggle::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    background: var(--text-3);
+    border-radius: 50%;
+    transition: all var(--tr);
+  }
+  .toggle.on { background: var(--accent); }
+  .toggle.on::after { left: 21px; background: var(--bg); }
+
+  /* TOAST */
+  .toast-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .toast {
+    background: var(--bg-3);
+    border: 1px solid var(--border-2);
+    border-left: 3px solid var(--accent);
+    color: var(--text);
+    padding: 12px 18px;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow);
+    font-size: 13px;
+    min-width: 240px;
+    animation: slideIn 200ms ease-out;
+  }
+  .toast.success { border-left-color: var(--success); }
+  .toast.error { border-left-color: var(--danger); }
+  @keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { position: relative; height: auto; }
+    .main { padding: 20px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .form-row { grid-template-columns: 1fr; }
+    .content-card { grid-template-columns: 1fr; }
+    .content-thumb { width: 100%; height: 120px; }
+  }
+
+  /* PLACEHOLDER (yapım aşamasında bölümler) */
+  .placeholder {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--bg-2);
+    border: 1px dashed var(--border-2);
+    border-radius: var(--radius);
+    color: var(--text-3);
+  }
+  .placeholder h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    color: var(--text-2);
+    margin-bottom: 8px;
+  }
+
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    color: var(--text-3);
+  }
+  .spinner {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-2);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 700ms linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo">
-        <span class="logo-text">Dinamik <span>SK</span></span>
+<div class="layout">
+
+  <!-- ============== SIDEBAR ============== -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="assets/images/dinamik-logo.svg" alt="Dinamik">
+      <div class="brand-text">
+        Dinamik
+        <small>Yönetim Paneli</small>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item active" data-section="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Genel Bakış
+      </button>
+      <button class="nav-item" data-section="icerik">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+        İçerik
+      </button>
+      <button class="nav-item" data-section="vefa">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Vefa Köşesi
+      </button>
+      <button class="nav-item" data-section="orman">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6"/><path d="M12 22V8"/><path d="M5 12l7-7 7 7"/></svg>
+        Hatıra Ormanı
+      </button>
+      <button class="nav-item" data-section="ayarlar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Ayarlar
+      </button>
+    </nav>
+
+    <div class="nav-footer">
+      <a href="index.html" target="_blank">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Siteyi gör
       </a>
-      <nav class="nav">
-        <a href="index.html" class="nav-link">Siteye Dön</a>
-        <a href="admin.html" class="nav-link active">Yönetim</a>
-      </nav>
-      <button class="mobile-toggle" aria-label="Menü">
-        <span></span><span></span><span></span>
+    </div>
+  </aside>
+
+  <!-- ============== MAIN ============== -->
+  <main class="main">
+
+    <!-- DASHBOARD -->
+    <section class="section active" id="section-dashboard">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Genel Bakış</h1>
+          <p class="page-desc">Sitenin içerik özetinin anlık görünümü</p>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Toplam İçerik</div>
+          <div class="stat-value" id="stat-total">—</div>
+          <div class="stat-sub">Yayında ve taslak hepsi</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Yayındaki</div>
+          <div class="stat-value" id="stat-yayin">—</div>
+          <div class="stat-sub">Ziyaretçilerin gördüğü</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Bu Ay Eklenen</div>
+          <div class="stat-value" id="stat-ay">—</div>
+          <div class="stat-sub">Son 30 gün içinde</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Öne Çıkan</div>
+          <div class="stat-value" id="stat-feat">—</div>
+          <div class="stat-sub">Ana sayfada büyük gösterim</div>
+        </div>
+      </div>
+
+      <div class="page-header" style="margin-top: 32px;">
+        <div>
+          <h2 class="page-title" style="font-size: 24px;">Son Eklenen 5 İçerik</h2>
+        </div>
+      </div>
+      <div class="content-list" id="dashboard-recent">
+        <div class="loading"><div class="spinner"></div></div>
+      </div>
+    </section>
+
+    <!-- İÇERİK -->
+    <section class="section" id="section-icerik">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">İçerik</h1>
+          <p class="page-desc">Duyuru, etkinlik, haber ve videoları buradan yönet — her şey tek liste</p>
+        </div>
+        <button class="btn btn-primary" id="btn-yeni-icerik">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Yeni İçerik
+        </button>
+      </div>
+
+      <div class="toolbar">
+        <div class="filter-chips" id="tip-chips">
+          <button class="chip active" data-filter-tip="all">Tümü</button>
+          <button class="chip" data-filter-tip="duyuru">📢 Duyuru</button>
+          <button class="chip" data-filter-tip="etkinlik">📅 Etkinlik</button>
+          <button class="chip" data-filter-tip="haber">📰 Haber</button>
+          <button class="chip" data-filter-tip="video">▶ Video</button>
+        </div>
+        <div class="spacer"></div>
+        <select id="filter-kat">
+          <option value="all">Tüm sayfalar</option>
+          <option value="genel">Genel</option>
+          <option value="bilek-guresi">Bilek Güreşi</option>
+          <option value="dalgiclik">Dalgıçlık</option>
+          <option value="erkek">Dinamik Erkek</option>
+          <option value="kiz">Dinamik Kız</option>
+        </select>
+        <select id="filter-durum">
+          <option value="all">Tüm durumlar</option>
+          <option value="yayin">Yayında</option>
+          <option value="taslak">Taslak</option>
+        </select>
+      </div>
+
+      <div class="content-list" id="icerik-list">
+        <div class="loading"><div class="spinner"></div></div>
+      </div>
+    </section>
+
+    <!-- VEFA KÖŞESİ (placeholder) -->
+    <section class="section" id="section-vefa">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Vefa Köşesi</h1>
+          <p class="page-desc">Geçmiş başkanlar ve emeği geçenler</p>
+        </div>
+      </div>
+      <div class="placeholder">
+        <h3>Yapım Aşamasında</h3>
+        <p>Bu bölüm sonraki güncellemede aktif olacak.</p>
+      </div>
+    </section>
+
+    <!-- HATIRA ORMANI (placeholder) -->
+    <section class="section" id="section-orman">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Hatıra Ormanı</h1>
+          <p class="page-desc">Bağışlar ve dikim listesi</p>
+        </div>
+      </div>
+      <div class="placeholder">
+        <h3>Yapım Aşamasında</h3>
+        <p>Bu bölüm sonraki güncellemede aktif olacak.</p>
+      </div>
+    </section>
+
+    <!-- AYARLAR (placeholder) -->
+    <section class="section" id="section-ayarlar">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Ayarlar</h1>
+          <p class="page-desc">Kulüp bilgileri ve sosyal medya</p>
+        </div>
+      </div>
+      <div class="placeholder">
+        <h3>Yapım Aşamasında</h3>
+        <p>Bu bölüm sonraki güncellemede aktif olacak.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============== MODAL: İçerik Form ============== -->
+<div class="modal-overlay" id="modal-icerik">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modal-title">Yeni İçerik</h2>
+      <button class="modal-close" data-close>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
     </div>
-  </header>
-
-  <!-- Admin Layout -->
-  <div class="admin-layout">
-
-    <!-- Sidebar -->
-    <aside class="admin-sidebar">
-      <nav class="admin-nav">
-        <a href="#" class="admin-nav-item active" data-section="dashboard">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="7" height="7"/>
-            <rect x="14" y="3" width="7" height="7"/>
-            <rect x="14" y="14" width="7" height="7"/>
-            <rect x="3" y="14" width="7" height="7"/>
-          </svg>
-          Dashboard
-        </a>
-        <a href="#" class="admin-nav-item" data-section="duyurular">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/>
-          </svg>
-          Duyurular
-        </a>
-        <a href="#" class="admin-nav-item" data-section="sporlar">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
-          </svg>
-          Sporlar
-        </a>
-        <a href="#" class="admin-nav-item" data-section="faaliyetler">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-            <path d="M2 17l10 5 10-5"/>
-          </svg>
-          Faaliyetler
-        </a>
-        <a href="#" class="admin-nav-item" data-section="projeler">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-          ENP Projeleri
-        </a>
-        <a href="#" class="admin-nav-item" data-section="vefa">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-          </svg>
-          Vefa Köşesi
-        </a>
-        <a href="#" class="admin-nav-item" data-section="kizlar">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-          </svg>
-          Kızlar
-        </a>
-        <a href="#" class="admin-nav-item" data-section="galeri">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
-          Galeri
-        </a>
-        <a href="#" class="admin-nav-item" data-section="videolar">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
-          </svg>
-          Videolar
-        </a>
-        <a href="#" class="admin-nav-item" data-section="etkinlikler">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-            <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-          </svg>
-          Etkinlikler
-        </a>
-        <a href="#" class="admin-nav-item" data-section="ayarlar">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-          </svg>
-          Ayarlar
-        </a>
-      </nav>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="admin-main">
-
-      <!-- Dashboard Section -->
-      <section id="section-dashboard" class="admin-section active">
-        <div class="admin-header">
-          <h2>Dashboard</h2>
-        </div>
-
-        <div class="admin-stats">
-          <div class="stat-card">
-            <div class="stat-label">Duyuru Sayısı</div>
-            <div class="stat-value" data-stat="duyurular">0</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Spor Dalı</div>
-            <div class="stat-value" data-stat="sporlar">0</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Faaliyet</div>
-            <div class="stat-value" data-stat="faaliyetler">0</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Proje</div>
-            <div class="stat-value" data-stat="projeler">0</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-label">Toplam Fidan</div>
-            <div class="stat-value" data-stat="fidan">0</div>
-          </div>
-        </div>
-
-        <div class="card" style="padding: 24px;">
-          <h3 style="margin-bottom: 16px;">Hoş Geldiniz</h3>
-          <p>Bu panel üzerinden sitenizin tüm içeriklerini yönetebilirsiniz. Sol menüden ilgili bölüme geçiş yapabilirsiniz.</p>
-          <p style="margin-top: 8px; color: var(--text-muted); font-size: 0.9rem;">Tüm değişiklikler tarayıcınızın localStorage'ında saklanır.</p>
-        </div>
-      </section>
-
-      <!-- Duyurular Section -->
-      <section id="section-duyurular" class="admin-section">
-        <div class="admin-header">
-          <h2>Duyurular</h2>
-          <button class="btn btn-primary add-btn" data-modal="modal-duyuru">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            Yeni Ekle
-          </button>
-        </div>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Başlık</th>
-              <th>Tarih</th>
-              <th>Öncelik</th>
-              <th>Durum</th>
-              <th>İşlemler</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- JS ile doldurulacak -->
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Sporlar Section -->
-      <section id="section-sporlar" class="admin-section">
-        <div class="admin-header">
-          <h2>Spor Dalları</h2>
-          <button class="btn btn-primary add-btn" data-modal="modal-spor">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            Yeni Ekle
-          </button>
-        </div>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Başlık</th>
-              <th>Zorluk</th>
-              <th>Ekipman</th>
-              <th>İşlemler</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- JS ile doldurulacak -->
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Faaliyetler Section -->
-      <section id="section-faaliyetler" class="admin-section">
-        <div class="admin-header">
-          <h2>Faaliyetler</h2>
-          <button class="btn btn-primary add-btn" data-modal="modal-faaliyet">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            Yeni Ekle
-          </button>
-        </div>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Başlık</th>
-              <th>Tarih</th>
-              <th>Konum</th>
-              <th>Durum</th>
-              <th>İşlemler</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- JS ile doldurulacak -->
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Projeler Section -->
-      <section id="section-projeler" class="admin-section">
-        <div class="admin-header">
-          <h2>ENP Projeleri</h2>
-          <button class="btn btn-primary add-btn" data-modal="modal-proje">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            Yeni Ekle
-          </button>
-        </div>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Başlık</th>
-              <th>Alt Başlık</th>
-              <th>Durum</th>
-              <th>İlerleme</th>
-              <th>İşlemler</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- JS ile doldurulacak -->
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Vefa Section -->
-      <section id="section-vefa" class="admin-section">
-        <div class="admin-header">
-          <h2>Vefa Köşesi</h2>
-          <button class="btn btn-primary add-btn" data-modal="modal-vefa">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            Yeni Ekle
-          </button>
-        </div>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>İsim</th>
-              <th>Rol</th>
-              <th>Dönem</th>
-              <th>Tür</th>
-              <th>İşlemler</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- JS ile doldurulacak -->
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Kızlar Section -->
-      <section id="section-kizlar" class="admin-section">
-        <div class="admin-header">
-          <h2>Kızlar - Haberler</h2>
-          <button class="btn btn-primary add-btn" data-modal="modal-kizlar">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            Yeni Ekle
-          </button>
-        </div>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Başlık</th>
-              <th>Tarih</th>
-              <th>İşlemler</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- JS ile doldurulacak -->
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Galeri Section -->
-      <section id="section-galeri" class="admin-section">
-        <div class="admin-header">
-          <h2>Dalış Galerisi</h2>
-          <button class="btn btn-primary add-btn" data-modal="modal-galeri">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            Fotoğraf Ekle
-          </button>
-        </div>
-
-        <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;" id="galeri-kategori-filtre">
-          <button class="btn btn-secondary aktif-filtre" data-kategori="tumu" style="font-size:0.82rem;padding:6px 14px;">Tümü</button>
-          <button class="btn btn-secondary" data-kategori="kesif" style="font-size:0.82rem;padding:6px 14px;">Keşif</button>
-          <button class="btn btn-secondary" data-kategori="reklam" style="font-size:0.82rem;padding:6px 14px;">Reklam</button>
-          <button class="btn btn-secondary" data-kategori="egitim" style="font-size:0.82rem;padding:6px 14px;">Eğitim</button>
-          <button class="btn btn-secondary" data-kategori="sisad" style="font-size:0.82rem;padding:6px 14px;">SİSAD</button>
-        </div>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Önizleme</th>
-              <th>Başlık</th>
-              <th>Kategori</th>
-              <th>Sıra</th>
-              <th>İşlemler</th>
-            </tr>
-          </thead>
-          <tbody id="galeri-tbody">
-            <!-- JS ile doldurulacak -->
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Videolar Section -->
-      <section id="section-videolar" class="admin-section">
-        <div class="admin-header">
-          <h2>YouTube Videoları</h2>
-          <button class="btn btn-primary add-btn" data-modal="modal-video">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            Video Ekle
-          </button>
-        </div>
-
-        <div class="card" style="padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-          <div style="flex:1;min-width:240px;">
-            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0 0 4px;">YouTube API ile otomatik çek</p>
-            <p style="font-size:0.75rem;color:var(--text-muted);margin:0;">API Key'i Ayarlar bölümüne girdikten sonra kullanılabilir.</p>
-          </div>
-          <button class="btn btn-primary" id="yt-cek-btn" style="white-space:nowrap;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;vertical-align:-2px;">
-              <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
-            </svg>
-            Kanaldan Videoları Çek
-          </button>
-        </div>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Başlık</th>
-              <th>Video ID</th>
-              <th>Kategori</th>
-              <th>Öne Çıkar</th>
-              <th>İşlemler</th>
-            </tr>
-          </thead>
-          <tbody id="video-tbody">
-            <!-- JS ile doldurulacak -->
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Etkinlikler Section -->
-      <section id="section-etkinlikler" class="admin-section">
-        <div class="admin-header">
-          <h2>Yaklaşan Etkinlikler</h2>
-          <button class="btn btn-primary add-btn" data-modal="modal-etkinlik">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            Etkinlik Ekle
-          </button>
-        </div>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Başlık</th>
-              <th>Tarih</th>
-              <th>Konum</th>
-              <th>Tür</th>
-              <th>Durum</th>
-              <th>İşlemler</th>
-            </tr>
-          </thead>
-          <tbody id="etkinlik-tbody">
-            <!-- JS ile doldurulacak -->
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Ayarlar Section -->
-      <section id="section-ayarlar" class="admin-section">
-        <div class="admin-header">
-          <h2>Site Ayarları</h2>
-        </div>
-
-        <div class="grid grid-2" style="gap: 32px;">
-          <div class="card" style="padding: 24px;">
-            <h3 style="margin-bottom: 24px;">Genel Ayarlar</h3>
-            <form class="admin-form" data-form-type="ayarlar">
-              <div class="form-group">
-                <label class="form-label">Kulüp Adı</label>
-                <input type="text" name="kulupAdi" class="form-input">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Slogan</label>
-                <input type="text" name="slogan" class="form-input">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Telefon</label>
-                <input type="tel" name="telefon" class="form-input">
-              </div>
-              <div class="form-group">
-                <label class="form-label">E-posta</label>
-                <input type="email" name="eposta" class="form-input">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Adres</label>
-                <input type="text" name="adres" class="form-input">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Instagram URL</label>
-                <input type="url" name="instagram" class="form-input">
-              </div>
-              <button type="submit" class="btn btn-primary">Kaydet</button>
-            </form>
-          </div>
-
-          <div class="card" style="padding: 24px;">
-            <h3 style="margin-bottom: 24px;">Bağış İstatistikleri</h3>
-            <form class="admin-form" data-form-type="bagis">
-              <div class="form-group">
-                <label class="form-label">Toplam Fidan</label>
-                <input type="number" name="toplamFidan" class="form-input">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Toplam Bağışçı</label>
-                <input type="number" name="toplamKisi" class="form-input">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Hedef Fidan</label>
-                <input type="number" name="hedef" class="form-input">
-              </div>
-              <button type="submit" class="btn btn-primary">Kaydet</button>
-            </form>
-          </div>
-
-          <div class="card" style="padding: 24px;">
-            <h3 style="margin-bottom: 24px;">YouTube Entegrasyonu</h3>
-            <form class="admin-form" data-form-type="youtube">
-              <div class="form-group">
-                <label class="form-label">YouTube API Key</label>
-                <input type="text" name="ytApiKey" class="form-input" placeholder="AIzaSy...">
-                <p style="font-size:0.72rem;color:var(--text-muted);margin-top:4px;">console.cloud.google.com → YouTube Data API v3 → Credentials</p>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Kanal Handle</label>
-                <input type="text" name="ytKanal" class="form-input" placeholder="@scuba.team.antalya" value="@scuba.team.antalya">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Otomatik Çekilecek Video Sayısı</label>
-                <input type="number" name="ytVideoSayisi" class="form-input" value="9" min="1" max="50">
-              </div>
-              <button type="submit" class="btn btn-primary">Kaydet</button>
-            </form>
-          </div>
-
-          <div class="card" style="padding: 24px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-              <div>
-                <h3 style="margin-bottom: 4px;">Hero Badge Ayarları</h3>
-                <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Ana sayfa hero bölümünde logo etrafında gösterilen badge'ler.</p>
-              </div>
-              <button type="button" class="btn btn-primary" id="add-badge-btn" style="padding: 8px 16px; font-size: 0.8rem;">
-                + Badge Ekle
-              </button>
-            </div>
-
-            <div id="hero-badge-list" style="display: flex; flex-direction: column; gap: 12px;">
-              <!-- Badge'ler JS ile doldurulacak -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
-  </div>
-
-  <!-- Modal: Duyuru -->
-  <div class="modal-backdrop" id="modal-duyuru">
-    <div class="modal">
-      <div class="modal-header">
-        <h3 class="modal-title">Duyuru Ekle/Düzenle</h3>
-        <button class="modal-close">&times;</button>
-      </div>
+    <form id="form-icerik">
       <div class="modal-body">
-        <form class="admin-form" data-form-type="duyuru">
-          <input type="hidden" name="id">
-          <div class="form-group">
-            <label class="form-label">Başlık *</label>
-            <input type="text" name="baslik" class="form-input" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">İçerik *</label>
-            <textarea name="icerik" class="form-textarea" required></textarea>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Tarih *</label>
-            <input type="date" name="tarih" class="form-input" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Öncelik</label>
-            <select name="oncelik" class="form-select">
-              <option value="high">Yüksek</option>
-              <option value="medium">Normal</option>
-              <option value="low">Düşük</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-checkbox">
-              <input type="checkbox" name="gorunum" checked>
-              Yayında olsun
-            </label>
-          </div>
-          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
-            <button type="button" class="btn btn-secondary modal-close">İptal</button>
-            <button type="submit" class="btn btn-primary">Kaydet</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+        <input type="hidden" name="id">
 
-  <!-- Modal: Spor -->
-  <div class="modal-backdrop" id="modal-spor">
-    <div class="modal">
-      <div class="modal-header">
-        <h3 class="modal-title">Spor Dalı Ekle/Düzenle</h3>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form class="admin-form" data-form-type="spor">
-          <input type="hidden" name="id">
-          <input type="hidden" name="mevcut-gorsel">
-          <div class="form-group">
-            <label class="form-label">Başlık *</label>
-            <input type="text" name="baslik" class="form-input" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Alt Başlık</label>
-            <input type="text" name="altBaslik" class="form-input" placeholder="Kısa tanım...">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Açıklama *</label>
-            <textarea name="aciklama" class="form-textarea" required></textarea>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Zorluk</label>
-            <select name="zorluk" class="form-select">
-              <option value="Düşük">Düşük</option>
-              <option value="Orta">Orta</option>
-              <option value="Orta-Yüksek">Orta-Yüksek</option>
-              <option value="Yüksek">Yüksek</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Ekipman Gerekiyor mu?</label>
-            <input type="text" name="ekipman" class="form-input" placeholder="Gerekli ekipmanlar...">
-          </div>
-          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
-            <button type="button" class="btn btn-secondary modal-close">İptal</button>
-            <button type="submit" class="btn btn-primary">Kaydet</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal: Faaliyet -->
-  <div class="modal-backdrop" id="modal-faaliyet">
-    <div class="modal">
-      <div class="modal-header">
-        <h3 class="modal-title">Faaliyet Ekle/Düzenle</h3>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form class="admin-form" data-form-type="faaliyet">
-          <input type="hidden" name="id">
-          <input type="hidden" name="mevcut-gorsel">
-          <div class="form-group">
-            <label class="form-label">Başlık *</label>
-            <input type="text" name="baslik" class="form-input" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Kısa Açıklama</label>
-            <input type="text" name="kisaAciklama" class="form-input" placeholder="Liste görünümü için...">
-          </div>
-          <div class="form-group">
-            <label class="form-label">İçerik *</label>
-            <textarea name="icerik" class="form-textarea" required></textarea>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Tarih *</label>
-            <input type="date" name="tarih" class="form-input" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Konum *</label>
-            <input type="text" name="konum" class="form-input" required>
-          </div>
-          <div class="form-group">
-            <label class="form-checkbox">
-              <input type="checkbox" name="gorunum" checked>
-              Yayında olsun
-            </label>
-          </div>
-          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
-            <button type="button" class="btn btn-secondary modal-close">İptal</button>
-            <button type="submit" class="btn btn-primary">Kaydet</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal: Proje -->
-  <div class="modal-backdrop" id="modal-proje">
-    <div class="modal">
-      <div class="modal-header">
-        <h3 class="modal-title">Proje Ekle/Düzenle</h3>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form class="admin-form" data-form-type="proje">
-          <input type="hidden" name="id">
-          <input type="hidden" name="mevcut-gorsel">
-          <div class="form-group">
-            <label class="form-label">Başlık *</label>
-            <input type="text" name="baslik" class="form-input" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Alt Başlık</label>
-            <input type="text" name="altBaslik" class="form-input">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Açıklama *</label>
-            <textarea name="aciklama" class="form-textarea" required></textarea>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Durum</label>
-            <select name="durum" class="form-select">
-              <option value="plan">Plan</option>
-              <option value="devam">Devam Ediyor</option>
-              <option value="tamamlandi">Tamamlandı</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">İlerleme (%)</label>
-            <input type="number" name="ilerleme" class="form-input" min="0" max="100" value="0">
-          </div>
-          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
-            <button type="button" class="btn btn-secondary modal-close">İptal</button>
-            <button type="submit" class="btn btn-primary">Kaydet</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal: Vefa -->
-  <div class="modal-backdrop" id="modal-vefa">
-    <div class="modal" style="max-width:600px;">
-      <div class="modal-header">
-        <h3 class="modal-title">Vefa Kaydı Ekle / Düzenle</h3>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form class="admin-form" data-form-type="vefa" enctype="multipart/form-data">
-          <input type="hidden" name="id">
-          <!-- Kaydedilmiş fotoğraf (base64 veya URL) — JS tarafından doldurulur -->
-          <input type="hidden" name="mevcut-foto" id="vefa-mevcut-foto">
-
-          <div class="form-group">
-            <label class="form-label">İsim *</label>
-            <input type="text" name="isim" class="form-input" required placeholder="Ad Soyad">
-          </div>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-            <div class="form-group">
-              <label class="form-label">Rol *</label>
-              <input type="text" name="rol" class="form-input" required placeholder="Örn: Başkan, Eğitmen">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Dönem</label>
-              <input type="text" name="donem" class="form-input" placeholder="Örn: 2018 – 2022">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Açıklama</label>
-            <textarea name="aciklama" class="form-textarea" rows="3" placeholder="Katkıları, görevleri, bir anısı..."></textarea>
-          </div>
-
-          <div style="display:grid;grid-template-columns:1fr 120px;gap:16px;">
-            <div class="form-group">
-              <label class="form-label">Tür</label>
-              <select name="tur" class="form-select">
-                <option value="mevcut">Mevcut Başkan</option>
-                <option value="gecmis">Geçmiş Başkan</option>
-                <option value="vefa">Vefa Üyesi</option>
+        <div class="form-grid">
+          <div class="form-row">
+            <div class="field">
+              <label>Tip</label>
+              <select name="tip" required>
+                <option value="duyuru">📢 Duyuru</option>
+                <option value="etkinlik">📅 Etkinlik</option>
+                <option value="haber">📰 Haber</option>
+                <option value="video">▶ Video</option>
               </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Sıra</label>
-              <input type="number" name="oncelik" class="form-input" value="0" min="0">
-            </div>
-          </div>
-
-          <!-- FOTOĞRAF BÖLÜMÜ -->
-          <div class="form-group">
-            <label class="form-label">Fotoğraf</label>
-
-            <!-- Mevcut fotoğraf önizleme -->
-            <div id="vefa-foto-preview" style="display:none;margin-bottom:12px;">
-              <img id="vefa-foto-img" src="" alt="Fotoğraf önizleme"
-                style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:1px solid rgba(201,162,39,0.25);display:block;">
-              <button type="button" id="vefa-foto-sil"
-                style="margin-top:8px;background:rgba(239,68,68,0.1);border:none;color:#ef4444;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:0.75rem;">
-                Fotoğrafı Kaldır
-              </button>
+              <span class="hint">İçeriğin türü</span>
             </div>
 
-            <!-- Fotoğraf seçenekleri: Tab sistemi -->
-            <div id="vefa-foto-tabs" style="display:flex;gap:0;margin-bottom:12px;border:1px solid rgba(255,255,255,0.08);border-radius:6px;overflow:hidden;">
-              <button type="button" class="vefa-tab active" data-tab="upload"
-                style="flex:1;padding:8px;font-size:0.75rem;border:none;cursor:pointer;background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.6);transition:all .2s;">
-                Dosya Yükle
-              </button>
-              <button type="button" class="vefa-tab" data-tab="url"
-                style="flex:1;padding:8px;font-size:0.75rem;border:none;cursor:pointer;background:transparent;color:rgba(255,255,255,0.3);border-left:1px solid rgba(255,255,255,0.08);transition:all .2s;">
-                URL ile Ekle
-              </button>
-            </div>
-
-            <div id="vefa-tab-upload">
-              <input type="file" id="vefa-foto-file" accept="image/*"
-                style="display:none;">
-              <button type="button" id="vefa-foto-sec"
-                style="width:100%;padding:10px;background:rgba(255,255,255,0.03);border:1px dashed rgba(255,255,255,0.12);border-radius:6px;color:rgba(255,255,255,0.4);cursor:pointer;font-size:0.82rem;text-align:center;">
-                + Fotoğraf Seç (JPG, PNG, WebP)
-              </button>
-              <p style="margin-top:6px;font-size:0.72rem;color:rgba(255,255,255,0.2);">
-                Tüm boyutlar desteklenir. Görsel otomatik olarak optimize edilir.
-              </p>
-            </div>
-
-            <div id="vefa-tab-url" style="display:none;">
-              <input type="url" id="vefa-foto-url" class="form-input"
-                placeholder="https://... (fotoğraf bağlantısı)">
-              <button type="button" id="vefa-url-ekle"
-                style="margin-top:8px;padding:8px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:rgba(255,255,255,0.5);cursor:pointer;font-size:0.78rem;">
-                Önizle
-              </button>
+            <div class="field">
+              <label>Hangi sayfada görünsün</label>
+              <select name="kategori" required>
+                <option value="genel">Genel (sadece ana sayfa + duyurular)</option>
+                <option value="bilek-guresi">Bilek Güreşi</option>
+                <option value="dalgiclik">Dalgıçlık</option>
+                <option value="erkek">Dinamik Erkek</option>
+                <option value="kiz">Dinamik Kız</option>
+              </select>
+              <span class="hint">İçerik bu kategorinin sayfasında da görünecek</span>
             </div>
           </div>
 
-          <div class="modal-footer" style="padding:0;border:none;margin-top:24px;">
-            <button type="button" class="btn btn-secondary modal-close">İptal</button>
-            <button type="submit" class="btn btn-primary">Kaydet</button>
+          <div class="field">
+            <label>Başlık</label>
+            <input type="text" name="baslik" required placeholder="Bilek güreşinde 2 sporcudan büyük başarı">
           </div>
-        </form>
+
+          <div class="field">
+            <label>Kısa Açıklama</label>
+            <textarea name="kisaMetin" rows="2" maxlength="240" placeholder="Türkiye turnuvasında 2 altın madalya ile geldiler. (Karta düşecek özet)"></textarea>
+            <span class="hint">Maksimum 240 karakter — anasayfa ve liste kartlarında bu görünür</span>
+          </div>
+
+          <div class="field">
+            <label>Tam Metin</label>
+            <textarea name="tamMetin" rows="6" placeholder="Detaylı içerik. Devamını oku tıklandığında bu görünür."></textarea>
+            <span class="hint">İstersen boş bırak — kısa açıklamayla yetinilir</span>
+          </div>
+
+          <div class="field">
+            <label>Görsel URL'i (geçici)</label>
+            <input type="url" name="gorsel" placeholder="https://...">
+            <span class="hint">Şimdilik dış URL — sonraki güncellemede görsel yükleme eklenecek</span>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label>Tarih</label>
+              <input type="date" name="tarih" required>
+            </div>
+            <div class="field" data-show-when="etkinlik">
+              <label>Saat (etkinlik için)</label>
+              <input type="time" name="saat">
+            </div>
+          </div>
+
+          <div class="field" data-show-when="etkinlik">
+            <label>Konum (etkinlik için)</label>
+            <input type="text" name="konum" placeholder="Antalya Spor Salonu">
+          </div>
+
+          <div class="field" data-show-when="video">
+            <label>YouTube Video ID</label>
+            <input type="text" name="videoId" placeholder="dQw4w9WgXcQ">
+            <span class="hint">YouTube linkindeki ?v= sonrası kısım</span>
+          </div>
+
+          <div class="form-row">
+            <div class="field-toggle">
+              <label for="t-yayin">
+                <span style="font-weight: 600; color: var(--text);">Yayında</span>
+                <span class="hint">Kapalıysa ziyaretçi göremez (taslak)</span>
+              </label>
+              <button type="button" class="toggle on" data-toggle="yayinda" id="t-yayin"></button>
+            </div>
+            <div class="field-toggle">
+              <label for="t-feat">
+                <span style="font-weight: 600; color: var(--text);">Öne Çıkar</span>
+                <span class="hint">Anasayfada büyük kart olarak gösterilir</span>
+              </label>
+              <button type="button" class="toggle" data-toggle="oneCikar" id="t-feat"></button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost" data-close>İptal</button>
+        <button type="submit" class="btn btn-primary" id="form-submit-btn">Kaydet</button>
+      </div>
+    </form>
   </div>
+</div>
 
-  <!-- Modal: Kızlar Haber -->
-  <div class="modal-backdrop" id="modal-kizlar">
-    <div class="modal">
-      <div class="modal-header">
-        <h3 class="modal-title">Haber Ekle/Düzenle</h3>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form class="admin-form" data-form-type="kizlar">
-          <input type="hidden" name="id">
-          <input type="hidden" name="mevcut-gorsel">
-          <div class="form-group">
-            <label class="form-label">Başlık *</label>
-            <input type="text" name="baslik" class="form-input" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Kısa Açıklama</label>
-            <textarea name="kisaAciklama" class="form-textarea"></textarea>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Tarih *</label>
-            <input type="date" name="tarih" class="form-input" required>
-          </div>
-          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
-            <button type="button" class="btn btn-secondary modal-close">İptal</button>
-            <button type="submit" class="btn btn-primary">Kaydet</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+<!-- TOAST -->
+<div class="toast-container" id="toasts"></div>
 
-  <!-- Modal: Galeri Fotoğraf -->
-  <div class="modal-backdrop" id="modal-galeri">
-    <div class="modal">
-      <div class="modal-header">
-        <h3 class="modal-title">Fotoğraf Ekle/Düzenle</h3>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form class="admin-form" data-form-type="galeri">
-          <input type="hidden" name="id">
-          <div class="form-group">
-            <label class="form-label">Fotoğraf URL *</label>
-            <input type="url" name="url" class="form-input" required placeholder="https://... veya ../../assets/images/...">
-            <p style="font-size:0.72rem;color:var(--text-muted);margin-top:4px;">Fotoğrafı assets/images/ klasörüne koy, sonra yolunu yaz.</p>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Başlık</label>
-            <input type="text" name="baslik" class="form-input" placeholder="Fotoğraf başlığı">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Açıklama</label>
-            <input type="text" name="aciklama" class="form-input" placeholder="Kısa açıklama (opsiyonel)">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Kategori *</label>
-            <select name="kategori" class="form-select" required>
-              <option value="kesif">Keşif</option>
-              <option value="reklam">Reklam</option>
-              <option value="egitim">Eğitim</option>
-              <option value="sisad">SİSAD</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Geniş Görünüm (2 kolon kaplasın)</label>
-            <label class="form-checkbox">
-              <input type="checkbox" name="genis">
-              Evet, geniş göster
-            </label>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Sıra</label>
-            <input type="number" name="sira" class="form-input" value="0" min="0">
-          </div>
-          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
-            <button type="button" class="btn btn-secondary modal-close">İptal</button>
-            <button type="submit" class="btn btn-primary">Kaydet</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal: Video -->
-  <div class="modal-backdrop" id="modal-video">
-    <div class="modal">
-      <div class="modal-header">
-        <h3 class="modal-title">Video Ekle/Düzenle</h3>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form class="admin-form" data-form-type="video">
-          <input type="hidden" name="id">
-          <div class="form-group">
-            <label class="form-label">YouTube URL veya Video ID *</label>
-            <input type="text" name="videoId" class="form-input" required placeholder="https://youtube.com/watch?v=... veya sadece ID">
-            <p style="font-size:0.72rem;color:var(--text-muted);margin-top:4px;">YouTube linkini yapıştır, ID otomatik ayıklanır.</p>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Başlık *</label>
-            <input type="text" name="baslik" class="form-input" required placeholder="Video başlığı">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Açıklama</label>
-            <textarea name="aciklama" class="form-textarea" rows="2" placeholder="Kısa açıklama"></textarea>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Kategori</label>
-            <select name="kategori" class="form-select">
-              <option value="genel">Genel</option>
-              <option value="reklam">Reklam Filmi</option>
-              <option value="egitim">Eğitim</option>
-              <option value="keşif">Keşif</option>
-              <option value="sisad">SİSAD</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-checkbox">
-              <input type="checkbox" name="oneCikar" checked>
-              Sayfada öne çıkar
-            </label>
-          </div>
-          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
-            <button type="button" class="btn btn-secondary modal-close">İptal</button>
-            <button type="submit" class="btn btn-primary">Kaydet</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal: Etkinlik -->
-  <div class="modal-backdrop" id="modal-etkinlik">
-    <div class="modal">
-      <div class="modal-header">
-        <h3 class="modal-title">Etkinlik Ekle/Düzenle</h3>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form class="admin-form" data-form-type="etkinlik">
-          <input type="hidden" name="id">
-          <div class="form-group">
-            <label class="form-label">Başlık *</label>
-            <input type="text" name="baslik" class="form-input" required placeholder="Etkinlik adı">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Açıklama</label>
-            <textarea name="aciklama" class="form-textarea" rows="3" placeholder="Etkinlik detayları..."></textarea>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-            <div class="form-group">
-              <label class="form-label">Tarih *</label>
-              <input type="date" name="tarih" class="form-input" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Saat</label>
-              <input type="time" name="saat" class="form-input">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Konum</label>
-            <input type="text" name="konum" class="form-input" placeholder="Örn: Kaş, Antalya">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Bölüm (Hangi sayfada görünsün?)</label>
-            <select name="bolum" class="form-select">
-              <option value="genel">Genel (Ana Sayfa)</option>
-              <option value="dalgiclik">Dalgıçlık</option>
-              <option value="kizlar">Kızlar</option>
-              <option value="bilek-guresi">Bilek Güreşi</option>
-              <option value="enp">ENP</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Tür</label>
-            <select name="tur" class="form-select">
-              <option value="dalis">Dalış</option>
-              <option value="egitim">Eğitim</option>
-              <option value="sisad">SİSAD Operasyonu</option>
-              <option value="sosyal">Sosyal Etkinlik</option>
-              <option value="yarisma">Yarışma</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Kontenjan</label>
-            <input type="number" name="kontenjan" class="form-input" placeholder="0 = sınırsız" min="0" value="0">
-          </div>
-          <div class="form-group">
-            <label class="form-checkbox">
-              <input type="checkbox" name="gorunum" checked>
-              Yayında göster
-            </label>
-          </div>
-          <div class="modal-footer" style="padding: 0; border: none; margin-top: 24px;">
-            <button type="button" class="btn btn-secondary modal-close">İptal</button>
-            <button type="submit" class="btn btn-primary">Kaydet</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <script type="module" src="firebase-init.js"></script>
-  <script src="main.js"></script>
-  <script src="admin.js"></script>
+<script type="module" src="firebase-init.js"></script>
+<script src="admin.js"></script>
 </body>
 </html>

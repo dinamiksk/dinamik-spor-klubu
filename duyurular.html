@@ -1234,20 +1234,41 @@
 
     /* ── Veri ───────────────────────────────── */
     async function getDB() {
-      let db = {};
-      try { db = JSON.parse(localStorage.getItem('dinamikSK_data') || '{}'); } catch(e) { db = {}; }
+      const db = { duyurular: [], etkinlikler: [], faaliyetler: [], videolar: [] };
 
-      // Firestore'dan duyuruları çek (varsa) — herkes görsün diye
+      // Firestore "icerik" koleksiyonundan tüm yayındaki içeriği çek
       try {
         if (window.firebaseReady) await window.firebaseReady;
         if (window.FB?.ready) {
           const { db: fdb, collection, getDocs } = window.FB;
-          const snap = await getDocs(collection(fdb, "duyurular"));
-          const fsList = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-          const fsIds = new Set(fsList.map(d => d.id));
-          const lsRest = (db.duyurular || []).filter(d => !fsIds.has(d.id));
-          db.duyurular = [...fsList, ...lsRest];
-          console.log(`📡 Firestore'dan ${fsList.length} duyuru yüklendi`);
+          const snap = await getDocs(collection(fdb, "icerik"));
+          const items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+
+          // Sadece yayındakiler
+          const yayinda = items.filter(i => i.yayinda !== false);
+
+          // Tipe göre dağıt — buildFeed bu yapıya alışkın
+          yayinda.forEach(i => {
+            const ortak = {
+              id: i.id,
+              baslik: i.baslik,
+              icerik: i.tamMetin || i.kisaMetin,
+              kisaMetin: i.kisaMetin,
+              tarih: i.tarih,
+              gorsel: i.gorsel,
+              kategori: i.kategori,
+              oneCikar: i.oneCikar
+            };
+            if (i.tip === 'duyuru' || i.tip === 'haber') {
+              db.duyurular.push({ ...ortak, oncelik: 'medium', gorunum: true });
+            } else if (i.tip === 'etkinlik') {
+              db.etkinlikler.push({ ...ortak, aciklama: i.kisaMetin, konum: i.konum, saat: i.saat, bolum: i.kategori, gorunum: true });
+            } else if (i.tip === 'video') {
+              db.videolar.push({ ...ortak, aciklama: i.kisaMetin, videoId: i.videoId, oneCikar: i.oneCikar });
+            }
+          });
+
+          console.log(`📡 Firestore'dan ${yayinda.length} yayında içerik yüklendi`);
         }
       } catch (e) {
         console.error("Firestore okuma hatası:", e);
@@ -1257,10 +1278,10 @@
     }
 
     const BOLUM = {
-      dalgiclik:     { ad:'Dalgıçlık',    link:'sporlar/dalgiclik/index.html',     cls:'tg--dalgiclik' },
-      kizlar:        { ad:'Kızlar',        link:'kizlar.html',                       cls:'tg--kizlar' },
-      enp:           { ad:'ENP',           link:'enp.html',                          cls:'tg--enp' },
       'bilek-guresi':{ ad:'Bilek Güreşi',  link:'sporlar/bilek-guresi/index.html',   cls:'tg--bilek-guresi' },
+      dalgiclik:     { ad:'Dalgıçlık',    link:'sporlar/dalgiclik/index.html',     cls:'tg--dalgiclik' },
+      erkek:         { ad:'Erkek',         link:'dinamik-calismalar/erkek/index.html', cls:'tg--enp' },
+      kiz:           { ad:'Kız',           link:'dinamik-calismalar/kiz/index.html',   cls:'tg--kizlar' },
       genel:         { ad:'Genel',         link:'duyurular.html',                    cls:'tg--genel' }
     };
 
@@ -1275,19 +1296,19 @@
       const items = [];
 
       (db.duyurular || []).filter(d => d.gorunum !== false).forEach(d => {
-        items.push({ tip:'duyuru', bolum:'genel', baslik:d.baslik, ozet:d.icerik, tarih:d.tarih, oncelik:d.oncelik, gorsel: d.gorsel });
+        items.push({ id:d.id, tip:'duyuru', bolum: d.kategori || 'genel', baslik:d.baslik, ozet:d.kisaMetin || d.icerik, tarih:d.tarih, oncelik:d.oncelik, gorsel: d.gorsel });
       });
 
       (db.etkinlikler || []).filter(e => e.gorunum !== false).forEach(e => {
-        items.push({ tip:'etkinlik', bolum:e.bolum||'genel', baslik:e.baslik, ozet:e.aciklama, tarih:e.tarih, konum:e.konum, saat:e.saat, gorsel: e.gorsel });
+        items.push({ id:e.id, tip:'etkinlik', bolum: e.bolum || e.kategori || 'genel', baslik:e.baslik, ozet:e.aciklama, tarih:e.tarih, konum:e.konum, saat:e.saat, gorsel: e.gorsel });
       });
 
       (db.faaliyetler || []).filter(f => f.gorunum !== false).forEach(f => {
-        items.push({ tip:'faaliyet', bolum:'genel', baslik:f.baslik, ozet:f.kisaAciklama||f.icerik, tarih:f.tarih, konum:f.konum, gorsel: f.gorsel });
+        items.push({ id:f.id, tip:'faaliyet', bolum: f.kategori || 'genel', baslik:f.baslik, ozet:f.kisaAciklama||f.icerik, tarih:f.tarih, konum:f.konum, gorsel: f.gorsel });
       });
 
       (db.videolar || []).filter(v => v.oneCikar).forEach(v => {
-        items.push({ tip:'video', bolum:'dalgiclik', baslik:v.baslik, ozet:v.aciklama, tarih:null, videoId:v.videoId });
+        items.push({ id:v.id, tip:'video', bolum: v.kategori || 'dalgiclik', baslik:v.baslik, ozet:v.aciklama, tarih:v.tarih, videoId:v.videoId });
       });
 
       return items.sort((a, b) => {

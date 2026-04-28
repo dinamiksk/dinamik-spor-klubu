@@ -60,6 +60,10 @@
       --paper-mid:  rgba(244,236,223,.82);
       --paper-soft: rgba(244,236,223,.58);
       --paper-faint:rgba(244,236,223,.28);
+
+      --ff-serif:   'Cormorant Garamond', Georgia, serif;
+      --ff-cond:    'Barlow Condensed', sans-serif;
+      --ff-sans:    'DM Sans', sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -1435,6 +1439,260 @@
       .dg-depth-meter__track { height: 110px; }
       .dg-depth-meter__label { display: none; }
     }
+
+    /* ═══════════════════════════════════════════════
+       HABER MERKEZİ — Dalgıçlık (Mavi/Cyan)
+    ═══════════════════════════════════════════════ */
+    .dg-news {
+      position: relative;
+      background:
+        radial-gradient(ellipse at top, rgba(125,212,248,.07) 0%, transparent 55%),
+        linear-gradient(180deg, var(--d50) 0%, var(--d45) 100%);
+      padding: 120px 24px 80px;
+      overflow: hidden;
+      border-top: 1px solid rgba(125,212,248,.14);
+    }
+    .dg-news::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan-glow) 50%, transparent);
+      opacity: .45;
+    }
+    .dg-news__inner { max-width: 1200px; margin: 0 auto; position: relative; }
+
+    .dg-news__hero { text-align: center; max-width: 720px; margin: 0 auto 80px; }
+    .dg-news__pulse {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--ff-cond); font-size: 0.7rem; letter-spacing: 0.32em;
+      text-transform: uppercase; color: var(--cyan-glow); font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .dg-news__pulse-dot {
+      width: 8px; height: 8px; background: var(--cyan-glow); border-radius: 50%;
+      box-shadow: 0 0 12px var(--cyan-glow);
+      animation: dg-news-pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes dg-news-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .55; transform: scale(.78); }
+    }
+    .dg-news__title {
+      font-family: var(--ff-serif); font-weight: 500;
+      font-size: clamp(2.6rem, 5.8vw, 4.6rem); line-height: 1;
+      letter-spacing: -.03em; color: var(--paper); margin: 0 0 18px;
+    }
+    .dg-news__title em { font-style: italic; color: var(--cyan-glow); font-weight: 400; }
+    .dg-news__lead {
+      font-family: var(--ff-cond); font-size: 1.05rem; line-height: 1.65;
+      color: var(--paper-mid); max-width: 540px; margin: 0 auto 36px;
+    }
+    .dg-news__stats {
+      display: inline-flex; padding: 14px 8px;
+      background: rgba(1,6,16,.6);
+      border: 1px solid rgba(125,212,248,.16);
+      border-radius: 4px; backdrop-filter: blur(8px);
+    }
+    .dg-news__stat { padding: 0 28px; text-align: center; position: relative; }
+    .dg-news__stat + .dg-news__stat::before {
+      content: ''; position: absolute; left: 0; top: 18%; bottom: 18%;
+      width: 1px; background: rgba(244,236,223,.12);
+    }
+    .dg-news__stat-num {
+      display: block; font-family: var(--ff-serif); font-size: 1.95rem;
+      line-height: 1; color: var(--cyan-glow); font-weight: 500; margin-bottom: 6px;
+    }
+    .dg-news__stat-lbl {
+      display: block; font-family: var(--ff-cond); font-size: 0.65rem;
+      letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--paper-soft); font-weight: 600;
+    }
+
+    .dg-news__block { margin-bottom: 72px; }
+    .dg-news__block:last-child { margin-bottom: 0; }
+    .dg-news__block-head {
+      display: flex; align-items: baseline; gap: 16px;
+      margin-bottom: 32px; padding-bottom: 18px;
+      border-bottom: 1px solid rgba(244,236,223,.1);
+    }
+    .dg-news__block-icon { font-size: 1.2rem; line-height: 1; }
+    .dg-news__block-title {
+      flex: 1; font-family: var(--ff-serif); font-weight: 500;
+      font-size: clamp(1.4rem, 2.6vw, 2rem); letter-spacing: -.01em;
+      color: var(--paper); margin: 0;
+    }
+    .dg-news__block-title em { font-style: italic; color: var(--cyan-glow); }
+    .dg-news__more {
+      font-family: var(--ff-cond); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--cyan-glow); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: gap .2s, color .2s;
+    }
+    .dg-news__more:hover { gap: 14px; color: var(--gold); }
+
+    /* Yaklaşan etkinlik kartları */
+    .dg-news__upcoming { display: grid; gap: 16px; }
+    .dg-up-card {
+      display: grid; grid-template-columns: 110px 1fr auto; gap: 28px;
+      align-items: center; padding: 22px 26px;
+      background: linear-gradient(135deg, rgba(125,212,248,.05) 0%, rgba(1,6,16,.6) 100%);
+      border: 1px solid rgba(125,212,248,.18);
+      border-left: 3px solid var(--cyan-glow);
+      border-radius: 4px; text-decoration: none;
+      transition: all .3s ease;
+    }
+    .dg-up-card:hover {
+      transform: translateX(4px); border-left-width: 6px;
+      background: linear-gradient(135deg, rgba(125,212,248,.1) 0%, rgba(5,17,36,.7) 100%);
+    }
+    .dg-up-card__date {
+      text-align: center; padding: 10px 0;
+      border: 1px solid rgba(125,212,248,.3); border-radius: 3px;
+    }
+    .dg-up-card__day {
+      display: block; font-family: var(--ff-serif); font-size: 1.85rem;
+      line-height: 1; color: var(--cyan-glow); font-weight: 500;
+    }
+    .dg-up-card__month {
+      display: block; margin-top: 4px; font-family: var(--ff-cond);
+      font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--paper-mid); font-weight: 700;
+    }
+    .dg-up-card__body { min-width: 0; }
+    .dg-up-card__tag {
+      display: inline-block; font-family: var(--ff-cond);
+      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--cyan-glow); font-weight: 700; margin-bottom: 8px;
+    }
+    .dg-up-card__title {
+      font-family: var(--ff-serif); font-weight: 500;
+      font-size: 1.3rem; line-height: 1.25;
+      color: var(--paper); margin: 0 0 8px;
+    }
+    .dg-up-card__meta {
+      display: flex; gap: 16px; font-family: var(--ff-cond);
+      font-size: 0.78rem; color: var(--paper-soft);
+    }
+    .dg-up-card__meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .dg-up-card__arrow { color: var(--cyan-glow); flex-shrink: 0; }
+
+    /* Öne çıkan grid */
+    .dg-news__featured { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+    .dg-news__featured-side { display: flex; flex-direction: column; gap: 20px; }
+    .dg-feat-card {
+      position: relative; display: block; overflow: hidden;
+      border-radius: 4px; text-decoration: none;
+      background: var(--d40); border: 1px solid rgba(244,236,223,.08);
+      transition: border-color .3s, transform .3s;
+    }
+    .dg-feat-card:hover {
+      border-color: rgba(125,212,248,.4);
+      transform: translateY(-3px);
+    }
+    .dg-feat-card__img {
+      width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block;
+      filter: brightness(.78) contrast(1.05);
+      transition: filter .3s, transform .6s;
+    }
+    .dg-feat-card:hover .dg-feat-card__img {
+      filter: brightness(.95); transform: scale(1.04);
+    }
+    .dg-feat-card--big .dg-feat-card__img { aspect-ratio: 16/11; }
+    .dg-feat-card__no-img {
+      width: 100%; aspect-ratio: 16/10;
+      background: linear-gradient(135deg, rgba(125,212,248,.1), rgba(11,52,104,.3));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; opacity: .4;
+    }
+    .dg-feat-card__body { padding: 22px 24px 24px; }
+    .dg-feat-card--big .dg-feat-card__body { padding: 28px 30px 30px; }
+    .dg-feat-card__star {
+      position: absolute; top: 12px; left: 12px;
+      padding: 5px 10px; background: rgba(125,212,248,.92); color: var(--d50);
+      font-family: var(--ff-cond); font-size: 0.62rem; font-weight: 800;
+      letter-spacing: 0.2em; text-transform: uppercase; border-radius: 2px;
+    }
+    .dg-feat-card__tag {
+      display: inline-block; font-family: var(--ff-cond);
+      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--cyan-glow); font-weight: 700; margin-bottom: 10px;
+    }
+    .dg-feat-card__title {
+      font-family: var(--ff-serif); font-weight: 500;
+      font-size: 1.4rem; line-height: 1.2;
+      color: var(--paper); margin: 0 0 10px;
+    }
+    .dg-feat-card--big .dg-feat-card__title { font-size: 1.85rem; }
+    .dg-feat-card__excerpt {
+      font-family: var(--ff-sans); font-size: 0.92rem; line-height: 1.55;
+      color: var(--paper-mid); margin: 0 0 12px;
+    }
+    .dg-feat-card__date {
+      font-family: var(--ff-cond); font-size: 0.75rem;
+      color: var(--paper-soft); letter-spacing: 0.05em;
+    }
+
+    /* Son gelişmeler */
+    .dg-news__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .dg-news-card {
+      display: block; padding: 20px 22px;
+      background: var(--d40); border: 1px solid rgba(244,236,223,.08);
+      border-radius: 3px; text-decoration: none;
+      transition: border-color .3s, transform .3s;
+    }
+    .dg-news-card:hover {
+      border-color: rgba(125,212,248,.32);
+      transform: translateY(-2px);
+    }
+    .dg-news-card__row {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+    }
+    .dg-news-card__type {
+      font-family: var(--ff-cond); font-size: 0.6rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--cyan-glow); font-weight: 700;
+    }
+    .dg-news-card__sep { color: var(--paper-faint); }
+    .dg-news-card__date {
+      font-family: var(--ff-cond); font-size: 0.7rem; color: var(--paper-soft);
+    }
+    .dg-news-card__title {
+      font-family: var(--ff-serif); font-weight: 500;
+      font-size: 1.05rem; line-height: 1.3;
+      color: var(--paper); margin: 0 0 8px;
+    }
+    .dg-news-card__excerpt {
+      font-family: var(--ff-sans); font-size: 0.85rem; line-height: 1.5;
+      color: var(--paper-soft); margin: 0;
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .dg-news__archive { opacity: .68; transition: opacity .3s; }
+    .dg-news__archive:hover { opacity: 1; }
+    .dg-news__archive .dg-news-card { background: rgba(5,17,36,.4); }
+    .dg-news__archive .dg-news-card__type { color: var(--paper-soft); }
+    .dg-news__empty {
+      text-align: center; padding: 80px 20px;
+      color: var(--paper-soft); font-family: var(--ff-cond);
+      font-size: 0.9rem; letter-spacing: 0.06em;
+    }
+    .dg-news__empty em {
+      font-family: var(--ff-serif); font-style: italic;
+      color: var(--cyan-glow); font-size: 1.5rem;
+      display: block; margin-bottom: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .dg-news { padding: 80px 18px 60px; }
+      .dg-news__hero { margin-bottom: 56px; }
+      .dg-news__featured { grid-template-columns: 1fr; }
+      .dg-news__list { grid-template-columns: 1fr; }
+      .dg-up-card { grid-template-columns: 80px 1fr; gap: 18px; padding: 16px 18px; }
+      .dg-up-card__arrow { display: none; }
+      .dg-news__stat { padding: 0 18px; }
+      .dg-news__stat-num { font-size: 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -1919,17 +2177,72 @@
     </div>
   </section>
 
-  <!-- ===== ZONE 9 — ETKİNLİKLER (45m) ===== -->
-  <section class="dg-events" id="etkinlikler-section" style="display:none;">
-    <div style="max-width:1240px;margin:0 auto;">
-      <span class="dg-eyebrow reveal">Takvim</span>
-      <h2 class="dg-h2 reveal rd1">
-        Yaklaşan
-        <em>etkinlikler.</em>
-      </h2>
+  <!-- ═══════════════════════════════════════════════
+       HABER MERKEZİ — Dalgıçlık
+       ═══════════════════════════════════════════════ -->
+  <section class="dg-news" id="news">
+    <div class="dg-news__inner">
+      <header class="dg-news__hero reveal">
+        <div class="dg-news__pulse">
+          <span class="dg-news__pulse-dot"></span>
+          <span>Derinden Canlı</span>
+        </div>
+        <h2 class="dg-news__title">
+          Yüzeyden <em>haberler.</em>
+        </h2>
+        <p class="dg-news__lead">
+          Dalış kampları, sertifika programları, derinlik rekorları — Akdeniz'in maviliklerinden son hikayeler.
+        </p>
+        <div class="dg-news__stats">
+          <div class="dg-news__stat">
+            <span class="dg-news__stat-num" data-stat="upcoming">0</span>
+            <span class="dg-news__stat-lbl">Yaklaşan</span>
+          </div>
+          <div class="dg-news__stat">
+            <span class="dg-news__stat-num" data-stat="featured">0</span>
+            <span class="dg-news__stat-lbl">Öne Çıkan</span>
+          </div>
+          <div class="dg-news__stat">
+            <span class="dg-news__stat-num" data-stat="total">0</span>
+            <span class="dg-news__stat-lbl">Toplam</span>
+          </div>
+        </div>
+      </header>
 
-      <div id="etkinlik-grid" class="dg-events__grid reveal rd2">
-        <!-- JS ile doldurulacak -->
+      <div class="dg-news__block reveal" id="news-upcoming" style="display:none">
+        <div class="dg-news__block-head">
+          <span class="dg-news__block-icon">📅</span>
+          <h3 class="dg-news__block-title">Yaklaşan <em>Etkinlikler</em></h3>
+        </div>
+        <div class="dg-news__upcoming" data-list="upcoming"></div>
+      </div>
+
+      <div class="dg-news__block reveal" id="news-featured" style="display:none">
+        <div class="dg-news__block-head">
+          <span class="dg-news__block-icon">⭐</span>
+          <h3 class="dg-news__block-title">Öne <em>Çıkanlar</em></h3>
+        </div>
+        <div class="dg-news__featured" data-list="featured"></div>
+      </div>
+
+      <div class="dg-news__block reveal" id="news-latest">
+        <div class="dg-news__block-head">
+          <span class="dg-news__block-icon">📰</span>
+          <h3 class="dg-news__block-title">Son <em>Gelişmeler</em></h3>
+          <a href="../../duyurular.html?bolum=dalgiclik" class="dg-news__more">
+            Tümü
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="dg-news__list" data-list="latest"></div>
+      </div>
+
+      <div class="dg-news__block dg-news__archive reveal" id="news-past" style="display:none">
+        <div class="dg-news__block-head">
+          <span class="dg-news__block-icon">🗓</span>
+          <h3 class="dg-news__block-title">Geçmiş <em>Etkinlikler</em></h3>
+        </div>
+        <div class="dg-news__list" data-list="past"></div>
       </div>
     </div>
   </section>
@@ -2003,6 +2316,7 @@
     </div>
   </footer>
 
+  <script type="module" src="../../firebase-init.js"></script>
   <script src="../../main.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -2099,47 +2413,135 @@
 
       renderVideolar();
 
-      /* ---------- Etkinlikler ---------- */
-      function renderEtkinlikler() {
-        const section = document.getElementById('etkinlikler-section');
-        const grid    = document.getElementById('etkinlik-grid');
-        if (!section || !grid) return;
+      /* ---------- Haber Merkezi (Firestore) ---------- */
+      (async () => {
+        const KATEGORI = 'dalgiclik';
+        const escapeHtml = (s='') => String(s)
+          .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')
+          .replaceAll('"','&quot;').replaceAll("'",'&#39;');
+        const TIP_AD = { duyuru:'Duyuru', etkinlik:'Etkinlik', haber:'Haber', video:'Video' };
+        const AY_KISA = ['OCA','ŞUB','MAR','NİS','MAY','HAZ','TEM','AĞU','EYL','EKİ','KAS','ARA'];
+        const formatTarih = (iso) => {
+          if (!iso) return '';
+          return new Date(iso).toLocaleDateString('tr-TR', { day:'numeric', month:'long', year:'numeric' });
+        };
 
-        const db = getDB();
-        const bugun = new Date(); bugun.setHours(0,0,0,0);
-        const etkinlikler = (db.etkinlikler || [])
-          .filter(e => e.gorunum && new Date(e.tarih) >= bugun)
-          .sort((a,b) => new Date(a.tarih)-new Date(b.tarih));
+        try {
+          if (window.firebaseReady) await window.firebaseReady;
+          if (!window.FB?.ready) return;
+          const { db, collection, getDocs } = window.FB;
+          const snap = await getDocs(collection(db, 'icerik'));
+          const items = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+            .filter(i => i.kategori === KATEGORI && i.yayinda !== false)
+            .sort((a,b) => (b.tarih || '').localeCompare(a.tarih || ''));
 
-        if (!etkinlikler.length) { section.style.display = 'none'; return; }
-        section.style.display = '';
+          const today = new Date().toISOString().slice(0,10);
+          const upcoming = items.filter(i => i.tip === 'etkinlik' && (i.tarih || '') >= today)
+            .sort((a,b) => (a.tarih || '').localeCompare(b.tarih || ''));
+          const past = items.filter(i => i.tip === 'etkinlik' && (i.tarih || '') < today).slice(0, 4);
+          const featured = items.filter(i => i.oneCikar === true && i.tip !== 'etkinlik').slice(0, 3);
+          const fIds = new Set(featured.map(i => i.id));
+          const uIds = new Set(upcoming.map(i => i.id));
+          const latest = items.filter(i => !fIds.has(i.id) && !uIds.has(i.id) && i.tip !== 'etkinlik').slice(0, 6);
 
-        const turRenk = { dalis:'#7dd4f8', egitim:'#4fa8d8', sisad:'#ffb347', sosyal:'#22c55e', yarisma:'#a855f7' };
-        const turAd   = { dalis:'Dalış', egitim:'Eğitim', sisad:'SİSAD', sosyal:'Sosyal', yarisma:'Yarışma' };
+          const setStat = (k, v) => { const el = document.querySelector(`[data-stat="${k}"]`); if (el) el.textContent = v; };
+          setStat('upcoming', upcoming.length);
+          setStat('featured', featured.length);
+          setStat('total', items.length);
 
-        grid.innerHTML = etkinlikler.map(e => {
-          const d = new Date(e.tarih);
-          const gun = d.getDate().toString().padStart(2,'0');
-          const ay  = d.toLocaleString('tr-TR',{month:'short'}).toUpperCase();
-          const renk = turRenk[e.tur] || '#7dd4f8';
-          return `
-            <div style="background:rgba(5,17,36,.6);border-radius:6px;overflow:hidden;border:1px solid rgba(244,236,223,.12);display:flex;gap:0;">
-              <div style="background:${renk};min-width:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 8px;color:#03101f;">
-                <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;line-height:1;">${gun}</span>
-                <span style="font-size:0.7rem;font-weight:700;letter-spacing:.08em;margin-top:2px;">${ay}</span>
+          if (upcoming.length) {
+            document.getElementById('news-upcoming').style.display = '';
+            document.querySelector('[data-list="upcoming"]').innerHTML = upcoming.map(i => {
+              const d = new Date(i.tarih);
+              return `
+                <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="dg-up-card">
+                  <div class="dg-up-card__date">
+                    <span class="dg-up-card__day">${d.getDate()}</span>
+                    <span class="dg-up-card__month">${AY_KISA[d.getMonth()]}</span>
+                  </div>
+                  <div class="dg-up-card__body">
+                    <span class="dg-up-card__tag">${TIP_AD[i.tip] || ''}</span>
+                    <h4 class="dg-up-card__title">${escapeHtml(i.baslik)}</h4>
+                    <div class="dg-up-card__meta">
+                      ${i.saat ? `<span>🕒 ${escapeHtml(i.saat)}</span>` : ''}
+                      ${i.konum ? `<span>📍 ${escapeHtml(i.konum)}</span>` : ''}
+                    </div>
+                  </div>
+                  <svg class="dg-up-card__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+                </a>
+              `;
+            }).join('');
+          }
+
+          if (featured.length) {
+            document.getElementById('news-featured').style.display = '';
+            const big = featured[0];
+            const sides = featured.slice(1, 3);
+            const card = (i, kind) => {
+              const isBig = kind === 'big';
+              const img = i.gorsel
+                ? `<img class="dg-feat-card__img" src="${escapeHtml(i.gorsel)}" alt="" loading="lazy">`
+                : `<div class="dg-feat-card__no-img">⭐</div>`;
+              return `
+                <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="dg-feat-card${isBig ? ' dg-feat-card--big' : ''}">
+                  ${img}
+                  <span class="dg-feat-card__star">★ Öne Çıkan</span>
+                  <div class="dg-feat-card__body">
+                    <span class="dg-feat-card__tag">${TIP_AD[i.tip] || ''}</span>
+                    <h4 class="dg-feat-card__title">${escapeHtml(i.baslik)}</h4>
+                    ${i.kisaMetin ? `<p class="dg-feat-card__excerpt">${escapeHtml(i.kisaMetin)}</p>` : ''}
+                    <span class="dg-feat-card__date">${formatTarih(i.tarih)}</span>
+                  </div>
+                </a>
+              `;
+            };
+            document.querySelector('[data-list="featured"]').innerHTML = `
+              ${card(big, 'big')}
+              <div class="dg-news__featured-side">${sides.map(i => card(i, 'side')).join('')}</div>
+            `;
+          }
+
+          const latestEl = document.querySelector('[data-list="latest"]');
+          if (latest.length) {
+            latestEl.innerHTML = latest.map(i => `
+              <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="dg-news-card">
+                <div class="dg-news-card__row">
+                  <span class="dg-news-card__type">${TIP_AD[i.tip] || ''}</span>
+                  <span class="dg-news-card__sep">·</span>
+                  <span class="dg-news-card__date">${formatTarih(i.tarih)}</span>
+                </div>
+                <h4 class="dg-news-card__title">${escapeHtml(i.baslik)}</h4>
+                ${i.kisaMetin ? `<p class="dg-news-card__excerpt">${escapeHtml(i.kisaMetin)}</p>` : ''}
+              </a>
+            `).join('');
+          } else {
+            latestEl.innerHTML = `
+              <div class="dg-news__empty" style="grid-column:1/-1">
+                <em>Henüz haber yok.</em>
+                İlk haber yayında — admin panelinden ekleyebilirsin.
               </div>
-              <div style="padding:18px 22px;flex:1;">
-                <div style="font-size:0.68rem;font-weight:700;letter-spacing:.16em;color:${renk};text-transform:uppercase;margin-bottom:6px;">${turAd[e.tur]||e.tur}${e.saat?' · '+e.saat:''}</div>
-                <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;color:#f4ecdf;font-size:1.08rem;line-height:1.3;margin-bottom:4px;text-transform:uppercase;">${e.baslik}</div>
-                ${e.konum?`<div style="font-size:0.82rem;color:rgba(244,236,223,.6);">📍 ${e.konum}</div>`:''}
-                ${e.kontenjan?`<div style="font-size:0.78rem;color:rgba(244,236,223,.55);margin-top:4px;">Kontenjan: ${e.kontenjan}</div>`:''}
-              </div>
-            </div>
-          `;
-        }).join('');
-      }
+            `;
+          }
 
-      renderEtkinlikler();
+          if (past.length) {
+            document.getElementById('news-past').style.display = '';
+            document.querySelector('[data-list="past"]').innerHTML = past.map(i => `
+              <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="dg-news-card">
+                <div class="dg-news-card__row">
+                  <span class="dg-news-card__type">Etkinlik</span>
+                  <span class="dg-news-card__sep">·</span>
+                  <span class="dg-news-card__date">${formatTarih(i.tarih)}</span>
+                </div>
+                <h4 class="dg-news-card__title">${escapeHtml(i.baslik)}</h4>
+                ${i.konum ? `<p class="dg-news-card__excerpt">📍 ${escapeHtml(i.konum)}</p>` : ''}
+              </a>
+            `).join('');
+          }
+          console.log(`📡 Dalgıçlık: ${items.length} içerik`);
+        } catch (err) {
+          console.error('Haber Merkezi hatası:', err);
+        }
+      })();
 
       /* ---------- Scroll reveal ---------- */
       const observer = new IntersectionObserver((entries) => {

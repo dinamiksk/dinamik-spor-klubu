@@ -27,6 +27,10 @@
       --kz-rose-dark: #b74d6e;
       --kz-gold:      #d4a373;
       --kz-accent:    #ff7aa3;
+
+      --ff-serif:     'Cormorant Garamond', Georgia, serif;
+      --ff-cond:      'Barlow Condensed', sans-serif;
+      --ff-sans:      'DM Sans', sans-serif;
     }
 
     body { background: var(--kz-bg); color: #fff; margin: 0; }
@@ -503,6 +507,242 @@
       .kz-manifesto-track { gap: 24px; }
       .kz-section { padding: 72px 0; }
     }
+
+    /* ═══════════════════════════════════════════════
+       HABER MERKEZİ — Kız (Bordo/Rose)
+    ═══════════════════════════════════════════════ */
+    .kz-news {
+      position: relative;
+      background:
+        radial-gradient(ellipse at top, rgba(232,128,158,.06) 0%, transparent 55%),
+        linear-gradient(180deg, var(--kz-bg) 0%, var(--kz-deep) 100%);
+      padding: 120px 24px 80px; overflow: hidden;
+      border-top: 1px solid rgba(232,128,158,.18);
+    }
+    .kz-news::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--kz-rose) 50%, transparent);
+      opacity: .55;
+    }
+    .kz-news__inner { max-width: 1200px; margin: 0 auto; position: relative; }
+    .kz-news__hero { text-align: center; max-width: 720px; margin: 0 auto 80px; }
+    .kz-news__pulse {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--ff-cond); font-size: 0.7rem; letter-spacing: 0.32em;
+      text-transform: uppercase; color: var(--kz-rose); font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .kz-news__pulse-dot {
+      width: 8px; height: 8px; background: var(--kz-rose); border-radius: 50%;
+      box-shadow: 0 0 12px var(--kz-rose);
+      animation: kz-news-pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes kz-news-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .55; transform: scale(.78); }
+    }
+    .kz-news__title {
+      font-family: var(--ff-serif); font-weight: 500;
+      font-size: clamp(2.6rem, 5.8vw, 4.6rem); line-height: 1;
+      letter-spacing: -.03em; color: #fff; margin: 0 0 18px;
+    }
+    .kz-news__title em { font-style: italic; color: var(--kz-rose); font-weight: 400; }
+    .kz-news__lead {
+      font-family: var(--ff-cond); font-size: 1.05rem; line-height: 1.65;
+      color: rgba(255,255,255,.7); max-width: 540px; margin: 0 auto 36px;
+    }
+    .kz-news__stats {
+      display: inline-flex; padding: 14px 8px;
+      background: rgba(20,6,15,.65);
+      border: 1px solid var(--kz-border); border-radius: 4px;
+      backdrop-filter: blur(8px);
+    }
+    .kz-news__stat { padding: 0 28px; text-align: center; position: relative; }
+    .kz-news__stat + .kz-news__stat::before {
+      content: ''; position: absolute; left: 0; top: 18%; bottom: 18%;
+      width: 1px; background: rgba(255,255,255,.12);
+    }
+    .kz-news__stat-num {
+      display: block; font-family: var(--ff-serif); font-size: 1.95rem;
+      line-height: 1; color: var(--kz-rose); font-weight: 500; margin-bottom: 6px;
+    }
+    .kz-news__stat-lbl {
+      display: block; font-family: var(--ff-cond); font-size: 0.65rem;
+      letter-spacing: 0.24em; text-transform: uppercase;
+      color: rgba(255,255,255,.55); font-weight: 600;
+    }
+    .kz-news__block { margin-bottom: 72px; }
+    .kz-news__block:last-child { margin-bottom: 0; }
+    .kz-news__block-head {
+      display: flex; align-items: baseline; gap: 16px;
+      margin-bottom: 32px; padding-bottom: 18px;
+      border-bottom: 1px solid var(--kz-border);
+    }
+    .kz-news__block-icon { font-size: 1.2rem; line-height: 1; }
+    .kz-news__block-title {
+      flex: 1; font-family: var(--ff-serif); font-weight: 500;
+      font-size: clamp(1.4rem, 2.6vw, 2rem); letter-spacing: -.01em;
+      color: #fff; margin: 0;
+    }
+    .kz-news__block-title em { font-style: italic; color: var(--kz-rose); }
+    .kz-news__more {
+      font-family: var(--ff-cond); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--kz-rose); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: gap .2s, color .2s;
+    }
+    .kz-news__more:hover { gap: 14px; color: var(--kz-rose-lt); }
+    .kz-news__upcoming { display: grid; gap: 16px; }
+    .kz-up-card {
+      display: grid; grid-template-columns: 110px 1fr auto; gap: 28px;
+      align-items: center; padding: 22px 26px;
+      background: linear-gradient(135deg, rgba(232,128,158,.06) 0%, rgba(20,6,15,.6) 100%);
+      border: 1px solid var(--kz-border);
+      border-left: 3px solid var(--kz-rose);
+      border-radius: 4px; text-decoration: none; transition: all .3s ease;
+    }
+    .kz-up-card:hover {
+      transform: translateX(4px); border-left-width: 6px;
+      background: linear-gradient(135deg, rgba(232,128,158,.12) 0%, rgba(42,13,31,.7) 100%);
+    }
+    .kz-up-card__date {
+      text-align: center; padding: 10px 0;
+      border: 1px solid rgba(232,128,158,.3); border-radius: 3px;
+    }
+    .kz-up-card__day {
+      display: block; font-family: var(--ff-serif); font-size: 1.85rem;
+      line-height: 1; color: var(--kz-rose); font-weight: 500;
+    }
+    .kz-up-card__month {
+      display: block; margin-top: 4px; font-family: var(--ff-cond);
+      font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase;
+      color: rgba(255,255,255,.65); font-weight: 700;
+    }
+    .kz-up-card__body { min-width: 0; }
+    .kz-up-card__tag {
+      display: inline-block; font-family: var(--ff-cond);
+      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--kz-rose); font-weight: 700; margin-bottom: 8px;
+    }
+    .kz-up-card__title {
+      font-family: var(--ff-serif); font-weight: 500;
+      font-size: 1.3rem; line-height: 1.25; color: #fff; margin: 0 0 8px;
+    }
+    .kz-up-card__meta {
+      display: flex; gap: 16px; font-family: var(--ff-cond);
+      font-size: 0.78rem; color: rgba(255,255,255,.65);
+    }
+    .kz-up-card__meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .kz-up-card__arrow { color: var(--kz-rose); flex-shrink: 0; }
+    .kz-news__featured { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+    .kz-news__featured-side { display: flex; flex-direction: column; gap: 20px; }
+    .kz-feat-card {
+      position: relative; display: block; overflow: hidden;
+      border-radius: 4px; text-decoration: none;
+      background: var(--kz-surface); border: 1px solid var(--kz-border);
+      transition: border-color .3s, transform .3s;
+    }
+    .kz-feat-card:hover {
+      border-color: var(--kz-rose); transform: translateY(-3px);
+    }
+    .kz-feat-card__img {
+      width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block;
+      filter: brightness(.78) contrast(1.05);
+      transition: filter .3s, transform .6s;
+    }
+    .kz-feat-card:hover .kz-feat-card__img {
+      filter: brightness(.95); transform: scale(1.04);
+    }
+    .kz-feat-card--big .kz-feat-card__img { aspect-ratio: 16/11; }
+    .kz-feat-card__no-img {
+      width: 100%; aspect-ratio: 16/10;
+      background: linear-gradient(135deg, rgba(232,128,158,.1), rgba(212,163,115,.1));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; opacity: .4;
+    }
+    .kz-feat-card__body { padding: 22px 24px 24px; }
+    .kz-feat-card--big .kz-feat-card__body { padding: 28px 30px 30px; }
+    .kz-feat-card__star {
+      position: absolute; top: 12px; left: 12px;
+      padding: 5px 10px; background: var(--kz-rose); color: #14060f;
+      font-family: var(--ff-cond); font-size: 0.62rem; font-weight: 800;
+      letter-spacing: 0.2em; text-transform: uppercase; border-radius: 2px;
+    }
+    .kz-feat-card__tag {
+      display: inline-block; font-family: var(--ff-cond);
+      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--kz-rose); font-weight: 700; margin-bottom: 10px;
+    }
+    .kz-feat-card__title {
+      font-family: var(--ff-serif); font-weight: 500;
+      font-size: 1.4rem; line-height: 1.2;
+      color: #fff; margin: 0 0 10px;
+    }
+    .kz-feat-card--big .kz-feat-card__title { font-size: 1.85rem; }
+    .kz-feat-card__excerpt {
+      font-family: var(--ff-sans); font-size: 0.92rem; line-height: 1.55;
+      color: rgba(255,255,255,.7); margin: 0 0 12px;
+    }
+    .kz-feat-card__date {
+      font-family: var(--ff-cond); font-size: 0.75rem;
+      color: rgba(255,255,255,.55); letter-spacing: 0.05em;
+    }
+    .kz-news__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .kz-news-card {
+      display: block; padding: 20px 22px;
+      background: var(--kz-surface); border: 1px solid var(--kz-border);
+      border-radius: 3px; text-decoration: none;
+      transition: border-color .3s, transform .3s;
+    }
+    .kz-news-card:hover {
+      border-color: var(--kz-rose); transform: translateY(-2px);
+    }
+    .kz-news-card__row {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+    }
+    .kz-news-card__type {
+      font-family: var(--ff-cond); font-size: 0.6rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--kz-rose); font-weight: 700;
+    }
+    .kz-news-card__sep { color: var(--kz-border); }
+    .kz-news-card__date {
+      font-family: var(--ff-cond); font-size: 0.7rem; color: rgba(255,255,255,.55);
+    }
+    .kz-news-card__title {
+      font-family: var(--ff-serif); font-weight: 500;
+      font-size: 1.05rem; line-height: 1.3;
+      color: #fff; margin: 0 0 8px;
+    }
+    .kz-news-card__excerpt {
+      font-family: var(--ff-sans); font-size: 0.85rem; line-height: 1.5;
+      color: rgba(255,255,255,.55); margin: 0;
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .kz-news__archive { opacity: .68; transition: opacity .3s; }
+    .kz-news__archive:hover { opacity: 1; }
+    .kz-news__archive .kz-news-card { background: rgba(31,10,24,.55); }
+    .kz-news__empty {
+      text-align: center; padding: 80px 20px;
+      color: rgba(255,255,255,.55); font-family: var(--ff-cond);
+      font-size: 0.9rem; letter-spacing: 0.06em;
+    }
+    .kz-news__empty em {
+      font-family: var(--ff-serif); font-style: italic;
+      color: var(--kz-rose); font-size: 1.5rem;
+      display: block; margin-bottom: 8px;
+    }
+    @media (max-width: 900px) {
+      .kz-news { padding: 80px 18px 60px; }
+      .kz-news__hero { margin-bottom: 56px; }
+      .kz-news__featured { grid-template-columns: 1fr; }
+      .kz-news__list { grid-template-columns: 1fr; }
+      .kz-up-card { grid-template-columns: 80px 1fr; gap: 18px; padding: 16px 18px; }
+      .kz-up-card__arrow { display: none; }
+      .kz-news__stat { padding: 0 18px; }
+      .kz-news__stat-num { font-size: 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -675,6 +915,76 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════
+       HABER MERKEZİ — Kız
+       ═══════════════════════════════════════════════ -->
+  <section class="kz-news" id="news">
+    <div class="kz-news__inner">
+      <header class="kz-news__hero reveal">
+        <div class="kz-news__pulse">
+          <span class="kz-news__pulse-dot"></span>
+          <span>Kalbden Canlı</span>
+        </div>
+        <h2 class="kz-news__title">
+          Yoldaşlardan <em>haberler.</em>
+        </h2>
+        <p class="kz-news__lead">
+          Kardeşlik, kamp, başarı — Dinamik Kız bölümünden anlamlı anlar ve yeni hikayeler.
+        </p>
+        <div class="kz-news__stats">
+          <div class="kz-news__stat">
+            <span class="kz-news__stat-num" data-stat="upcoming">0</span>
+            <span class="kz-news__stat-lbl">Yaklaşan</span>
+          </div>
+          <div class="kz-news__stat">
+            <span class="kz-news__stat-num" data-stat="featured">0</span>
+            <span class="kz-news__stat-lbl">Öne Çıkan</span>
+          </div>
+          <div class="kz-news__stat">
+            <span class="kz-news__stat-num" data-stat="total">0</span>
+            <span class="kz-news__stat-lbl">Toplam</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="kz-news__block reveal" id="news-upcoming" style="display:none">
+        <div class="kz-news__block-head">
+          <span class="kz-news__block-icon">📅</span>
+          <h3 class="kz-news__block-title">Yaklaşan <em>Etkinlikler</em></h3>
+        </div>
+        <div class="kz-news__upcoming" data-list="upcoming"></div>
+      </div>
+
+      <div class="kz-news__block reveal" id="news-featured" style="display:none">
+        <div class="kz-news__block-head">
+          <span class="kz-news__block-icon">⭐</span>
+          <h3 class="kz-news__block-title">Öne <em>Çıkanlar</em></h3>
+        </div>
+        <div class="kz-news__featured" data-list="featured"></div>
+      </div>
+
+      <div class="kz-news__block reveal" id="news-latest">
+        <div class="kz-news__block-head">
+          <span class="kz-news__block-icon">📰</span>
+          <h3 class="kz-news__block-title">Son <em>Gelişmeler</em></h3>
+          <a href="../../duyurular.html?bolum=kiz" class="kz-news__more">
+            Tümü
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="kz-news__list" data-list="latest"></div>
+      </div>
+
+      <div class="kz-news__block kz-news__archive reveal" id="news-past" style="display:none">
+        <div class="kz-news__block-head">
+          <span class="kz-news__block-icon">🗓</span>
+          <h3 class="kz-news__block-title">Geçmiş <em>Etkinlikler</em></h3>
+        </div>
+        <div class="kz-news__list" data-list="past"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="kz-section kz-section-alt">
     <div class="container">
@@ -753,60 +1063,142 @@
     </div>
   </footer>
 
+  <script type="module" src="../../firebase-init.js"></script>
   <script src="../../main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const data = DinamikSK.DB.getData();
-
-      // Haberler
-      const haberler = data.kizlarHaberler || [];
-      const haberEl = document.getElementById('haber-listesi');
-
-      if (haberler.length === 0) {
-        haberEl.innerHTML = '<p style="text-align: center; color: rgba(255,255,255,0.4); grid-column: 1/-1; padding: 48px;">Henüz haber eklenmemiş.</p>';
-      } else {
-        haberEl.innerHTML = haberler.map((item, i) => `
-          <article class="kz-haber reveal d${(i % 3) + 1}">
-            ${item.gorsel ? `<img src="${item.gorsel}" alt="${item.baslik}" class="kz-haber-img">` : ''}
-            <div class="kz-haber-body">
-              <div class="kz-haber-date">${DinamikSK.Utils.formatDate(item.tarih)}</div>
-              <h3 class="kz-haber-title">${item.baslik}</h3>
-              <p class="kz-haber-desc">${item.kisaAciklama || ''}</p>
-            </div>
-          </article>
-        `).join('');
-      }
-
-      // Etkinlikler
-      const etkinlikler = (data.faaliyetler || []).filter(f => f.gorunum).slice(0, 4);
-      const etkinlikEl = document.getElementById('etkinlik-listesi');
-
-      const icons = {
-        'Kamp': '<svg viewBox="0 0 24 24"><path d="M3 20L12 4l9 16"/><path d="M12 4v16"/></svg>',
-        'Atölye': '<svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6V2M7 12h10"/></svg>',
-        'Buluşma': '<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>',
-        'default': '<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>'
-      };
-
-      if (etkinlikler.length === 0) {
-        etkinlikEl.innerHTML = '<p style="text-align: center; color: rgba(255,255,255,0.4); grid-column: 1/-1;">Yaklaşan etkinlik yok.</p>';
-      } else {
-        etkinlikEl.innerHTML = etkinlikler.map((item, i) => {
-          const icon = icons[item.baslik] || icons['default'];
-          return `
-          <div class="kz-event reveal d${(i % 3) + 1}">
-            <div class="kz-event-icon">${icon}</div>
-            <h4>${item.baslik}</h4>
-            <p>${item.konum || ''}</p>
-            <span class="kz-event-date">${DinamikSK.Utils.formatDate(item.tarih)}</span>
-          </div>`;
-        }).join('');
-      }
-
       const obs = new IntersectionObserver((entries) => {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
       }, { threshold: 0.1 });
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+      /* ---------- Haber Merkezi (Firestore) ---------- */
+      (async () => {
+        const KATEGORI = 'kiz';
+        const PRE = 'kz';
+        const escapeHtml = (s='') => String(s)
+          .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')
+          .replaceAll('"','&quot;').replaceAll("'",'&#39;');
+        const TIP_AD = { duyuru:'Duyuru', etkinlik:'Etkinlik', haber:'Haber', video:'Video' };
+        const AY_KISA = ['OCA','ŞUB','MAR','NİS','MAY','HAZ','TEM','AĞU','EYL','EKİ','KAS','ARA'];
+        const formatTarih = (iso) => iso ? new Date(iso).toLocaleDateString('tr-TR', { day:'numeric', month:'long', year:'numeric' }) : '';
+
+        try {
+          if (window.firebaseReady) await window.firebaseReady;
+          if (!window.FB?.ready) return;
+          const { db, collection, getDocs } = window.FB;
+          const snap = await getDocs(collection(db, 'icerik'));
+          const items = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+            .filter(i => i.kategori === KATEGORI && i.yayinda !== false)
+            .sort((a,b) => (b.tarih || '').localeCompare(a.tarih || ''));
+
+          const today = new Date().toISOString().slice(0,10);
+          const upcoming = items.filter(i => i.tip === 'etkinlik' && (i.tarih || '') >= today)
+            .sort((a,b) => (a.tarih || '').localeCompare(b.tarih || ''));
+          const past = items.filter(i => i.tip === 'etkinlik' && (i.tarih || '') < today).slice(0, 4);
+          const featured = items.filter(i => i.oneCikar === true && i.tip !== 'etkinlik').slice(0, 3);
+          const fIds = new Set(featured.map(i => i.id));
+          const uIds = new Set(upcoming.map(i => i.id));
+          const latest = items.filter(i => !fIds.has(i.id) && !uIds.has(i.id) && i.tip !== 'etkinlik').slice(0, 6);
+
+          const setStat = (k, v) => { const el = document.querySelector(`[data-stat="${k}"]`); if (el) el.textContent = v; };
+          setStat('upcoming', upcoming.length);
+          setStat('featured', featured.length);
+          setStat('total', items.length);
+
+          if (upcoming.length) {
+            document.getElementById('news-upcoming').style.display = '';
+            document.querySelector('[data-list="upcoming"]').innerHTML = upcoming.map(i => {
+              const d = new Date(i.tarih);
+              return `
+                <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="${PRE}-up-card">
+                  <div class="${PRE}-up-card__date">
+                    <span class="${PRE}-up-card__day">${d.getDate()}</span>
+                    <span class="${PRE}-up-card__month">${AY_KISA[d.getMonth()]}</span>
+                  </div>
+                  <div class="${PRE}-up-card__body">
+                    <span class="${PRE}-up-card__tag">${TIP_AD[i.tip] || ''}</span>
+                    <h4 class="${PRE}-up-card__title">${escapeHtml(i.baslik)}</h4>
+                    <div class="${PRE}-up-card__meta">
+                      ${i.saat ? `<span>🕒 ${escapeHtml(i.saat)}</span>` : ''}
+                      ${i.konum ? `<span>📍 ${escapeHtml(i.konum)}</span>` : ''}
+                    </div>
+                  </div>
+                  <svg class="${PRE}-up-card__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+                </a>
+              `;
+            }).join('');
+          }
+
+          if (featured.length) {
+            document.getElementById('news-featured').style.display = '';
+            const big = featured[0];
+            const sides = featured.slice(1, 3);
+            const card = (i, kind) => {
+              const isBig = kind === 'big';
+              const img = i.gorsel
+                ? `<img class="${PRE}-feat-card__img" src="${escapeHtml(i.gorsel)}" alt="" loading="lazy">`
+                : `<div class="${PRE}-feat-card__no-img">⭐</div>`;
+              return `
+                <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="${PRE}-feat-card${isBig ? ' '+PRE+'-feat-card--big' : ''}">
+                  ${img}
+                  <span class="${PRE}-feat-card__star">★ Öne Çıkan</span>
+                  <div class="${PRE}-feat-card__body">
+                    <span class="${PRE}-feat-card__tag">${TIP_AD[i.tip] || ''}</span>
+                    <h4 class="${PRE}-feat-card__title">${escapeHtml(i.baslik)}</h4>
+                    ${i.kisaMetin ? `<p class="${PRE}-feat-card__excerpt">${escapeHtml(i.kisaMetin)}</p>` : ''}
+                    <span class="${PRE}-feat-card__date">${formatTarih(i.tarih)}</span>
+                  </div>
+                </a>
+              `;
+            };
+            document.querySelector('[data-list="featured"]').innerHTML = `
+              ${card(big, 'big')}
+              <div class="${PRE}-news__featured-side">${sides.map(i => card(i, 'side')).join('')}</div>
+            `;
+          }
+
+          const latestEl = document.querySelector('[data-list="latest"]');
+          if (latest.length) {
+            latestEl.innerHTML = latest.map(i => `
+              <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="${PRE}-news-card">
+                <div class="${PRE}-news-card__row">
+                  <span class="${PRE}-news-card__type">${TIP_AD[i.tip] || ''}</span>
+                  <span class="${PRE}-news-card__sep">·</span>
+                  <span class="${PRE}-news-card__date">${formatTarih(i.tarih)}</span>
+                </div>
+                <h4 class="${PRE}-news-card__title">${escapeHtml(i.baslik)}</h4>
+                ${i.kisaMetin ? `<p class="${PRE}-news-card__excerpt">${escapeHtml(i.kisaMetin)}</p>` : ''}
+              </a>
+            `).join('');
+          } else {
+            latestEl.innerHTML = `
+              <div class="${PRE}-news__empty" style="grid-column:1/-1">
+                <em>Henüz haber yok.</em>
+                İlk haber yayında — admin panelinden ekleyebilirsin.
+              </div>
+            `;
+          }
+
+          if (past.length) {
+            document.getElementById('news-past').style.display = '';
+            document.querySelector('[data-list="past"]').innerHTML = past.map(i => `
+              <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="${PRE}-news-card">
+                <div class="${PRE}-news-card__row">
+                  <span class="${PRE}-news-card__type">Etkinlik</span>
+                  <span class="${PRE}-news-card__sep">·</span>
+                  <span class="${PRE}-news-card__date">${formatTarih(i.tarih)}</span>
+                </div>
+                <h4 class="${PRE}-news-card__title">${escapeHtml(i.baslik)}</h4>
+                ${i.konum ? `<p class="${PRE}-news-card__excerpt">📍 ${escapeHtml(i.konum)}</p>` : ''}
+              </a>
+            `).join('');
+          }
+          console.log(`📡 Kız: ${items.length} içerik`);
+        } catch (err) {
+          console.error('Haber Merkezi hatası:', err);
+        }
+      })();
     });
   </script>
 </body>

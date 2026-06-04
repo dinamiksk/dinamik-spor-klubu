@@ -2996,9 +2996,13 @@ const handleLogin = async (e) => {
   }
 };
 
+// Açık (kullanıcı kaynaklı) çıkışı, Firebase'in geçici null durumlarından ayırır.
+let isLoggingOut = false;
+
 const handleLogout = async () => {
   if (!confirm('Çıkış yapmak istediğine emin misin?')) return;
   try {
+    isLoggingOut = true;
     const { auth, signOut } = window.FB;
     await signOut(auth);
     // onAuthStateChanged tetiklenecek, login ekranına dönecek
@@ -5106,8 +5110,13 @@ const init = async () => {
       setupPanelListeners();
       await refresh();
     } else {
-      // Bir kez giriş yapıldıysa Firebase'in geçici null'larını yok say
-      if (!everLoggedIn) showAuthGate();
+      // Açık çıkış yapıldıysa VEYA henüz hiç giriş yapılmadıysa login ekranını göster.
+      // Aksi halde (giriş sonrası gelen geçici null'lar) yok say.
+      if (isLoggingOut || !everLoggedIn) {
+        isLoggingOut = false;
+        everLoggedIn = false;
+        showAuthGate();
+      }
     }
   });
 };

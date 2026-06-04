@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rota Gençlik Buluşmaları — İstikametini Çiz | Akdeniz Dinamik Spor Kulübü</title>
+  <meta name="description" content="2018'den beri Antalya Kaleiçi'nde, Karatay Medresesi'nde: gençlerin kendi hayat rotalarını çizdiği, her programda '+1 değer' kattığı bir gelişim ortamı. Seminerler, sohbetler, münazaralar ve geziler.">
+  <meta property="og:title" content="Rota Gençlik Buluşmaları — İstikametini Çiz">
+  <meta property="og:description" content="Kaleiçi'nin kalbinde manevi bir kale: Karatay Medresesi'nde gençlerin yol bulduğu buluşmalar. Her programda +1 değer.">
+  <meta property="og:image" content="https://dinamikspor.com/assets/images/rota-hero.webp">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://dinamikspor.com/dinamik-calismalar/rota/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/dinamik-logo.svg">
+  <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+
+  <style>
+    /* ═══════════════════════════════════════════
+       ROTA — Tema: Lacivert Gece + Pusula Yıldızı
+       (er-* değişken adları korunur; renkler navy)
+    ═══════════════════════════════════════════ */
+    :root {
+      --er-bg:       #0a1124;   /* lacivert gece */
+      --er-surface:  #111a35;   /* yüzey */
+      --er-deep:     #060a18;   /* en derin */
+      --er-card:     rgba(255,255,255,.04);
+      --er-border:   rgba(125,160,225,.18);
+      --er-border-s: rgba(125,160,225,.36);
+      --er-amber:    #6f9be6;   /* gök mavisi — ana aksan */
+      --er-amber-lt: #b3d0f5;   /* açık gök — vurgu */
+      --er-amber-dk: #1c3566;   /* derin lacivert */
+      --er-gold:     #d8b66c;   /* yıldız altını — çok az kullanılır */
+      --er-paper:    #eef3fc;
+      --er-muted:    rgba(238,243,252,.6);
+      --er-line:     rgba(125,160,225,.18);
+      --ff-serif: 'Cormorant Garamond', Georgia, serif;
+      --ff-cond:  'Barlow Condensed', sans-serif;
+      --ff-sans:  'Plus Jakarta Sans', sans-serif;
+    }
+    body { background: var(--er-bg); color: var(--er-paper); margin: 0; font-variant-numeric: lining-nums; }
+    .er-lightbox [hidden] { display: none !important; }
+
+    /* Header tema */
+    .header { background: rgba(6,10,24,.92) !important; backdrop-filter: blur(14px); border-bottom: 1px solid rgba(125,160,225,.1) !important; }
+    .header .nav-link { color: rgba(238,243,252,.7) !important; }
+    .header .nav-link:hover { color: var(--er-amber-lt) !important; }
+    .header .nav-link.active { color: var(--er-amber-lt) !important; }
+    .header .logo-text span { color: var(--er-amber-lt) !important; }
+    .header .nav-cta { background: var(--er-amber) !important; color: #061024 !important; }
+
+    /* ════════ HERO ════════ */
+    .er-hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; padding: 160px 24px 72px; overflow: hidden; isolation: isolate; }
+    .er-hero__bg { position: absolute; inset: 0; background-image: url('../../assets/images/rota-hero.webp'); background-size: cover; background-position: center 38%; z-index: -3; }
+    .er-hero__overlay { position: absolute; inset: 0; z-index: -2;
+      background:
+        linear-gradient(100deg, rgba(8,13,28,.96) 0%, rgba(8,13,28,.82) 38%, rgba(10,17,38,.55) 70%, rgba(10,17,38,.4) 100%),
+        linear-gradient(0deg, var(--er-bg) 2%, transparent 50%);
+    }
+    .er-hero__stars { position: absolute; inset: 0; z-index: -1; opacity: .5; pointer-events: none;
+      background-image:
+        radial-gradient(1.5px 1.5px at 18% 22%, rgba(255,255,255,.7), transparent),
+        radial-gradient(1.5px 1.5px at 72% 18%, rgba(179,208,245,.7), transparent),
+        radial-gradient(1px 1px at 40% 12%, rgba(255,255,255,.6), transparent),
+        radial-gradient(1.5px 1.5px at 88% 30%, rgba(255,255,255,.5), transparent),
+        radial-gradient(1px 1px at 60% 8%, rgba(216,182,108,.7), transparent);
+    }
+    .er-hero__compass { position: absolute; top: 8%; right: -60px; width: 460px; height: 460px; z-index: -1; opacity: .08; color: var(--er-amber-lt); filter: drop-shadow(0 0 26px rgba(179,208,245,.3)); animation: ro-spin 90s linear infinite; }
+    @keyframes ro-spin { to { transform: rotate(360deg); } }
+    .er-hero__inner { max-width: 1180px; margin: 0 auto; width: 100%; position: relative; }
+    .er-hero__inner > * { max-width: 760px; }
+    .er-hero__back { display: inline-flex; align-items: center; gap: 9px; font-family: var(--ff-cond); font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; color: var(--er-muted); text-decoration: none; margin-bottom: 28px; transition: gap .25s, color .25s; }
+    .er-hero__back:hover { gap: 14px; color: var(--er-amber-lt); }
+    .er-hero__back svg { width: 14px; height: 14px; }
+    .er-hero__logo { width: 86px; height: 86px; border-radius: 50%; box-shadow: 0 16px 50px rgba(0,0,0,.5), 0 0 0 1px rgba(179,208,245,.25); margin-bottom: 22px; display: block; }
+    .er-hero__mark { display: inline-flex; align-items: center; gap: 14px; font-family: var(--ff-cond); font-weight: 700; font-size: .9rem; letter-spacing: .26em; text-transform: uppercase; color: var(--er-amber); margin-bottom: 18px; }
+    .er-hero__mark::before { content: ''; width: 34px; height: 1px; background: var(--er-amber); }
+    .er-hero__title { font-family: var(--ff-serif); font-weight: 500; font-size: clamp(2.9rem, 7vw, 5.4rem); line-height: 1.02; letter-spacing: -.025em; color: var(--er-paper); margin: 0 0 22px; }
+    .er-hero__title em { font-style: italic; color: var(--er-amber-lt); }
+    .er-hero__lead { font-family: var(--ff-sans); font-size: clamp(1rem, 1.6vw, 1.18rem); line-height: 1.7; color: rgba(238,243,252,.82); max-width: 560px; margin: 0 0 38px; }
+    .er-hero__lead strong { color: var(--er-amber-lt); font-weight: 600; }
+    .er-hero__stats { display: inline-flex; flex-wrap: wrap; gap: 0; background: rgba(6,10,24,.55); border: 1px solid var(--er-border); border-radius: 3px; backdrop-filter: blur(8px); }
+    .er-hero__stat { padding: 16px 30px; position: relative; }
+    .er-hero__stat + .er-hero__stat::before { content: ''; position: absolute; left: 0; top: 22%; bottom: 22%; width: 1px; background: rgba(125,160,225,.2); }
+    .er-hero__stat-num { display: block; font-family: var(--ff-serif); font-size: 1.7rem; line-height: 1; color: var(--er-amber-lt); font-weight: 500; margin-bottom: 6px; }
+    .er-hero__stat-lbl { display: block; font-family: var(--ff-cond); font-size: .64rem; letter-spacing: .2em; text-transform: uppercase; color: var(--er-muted); font-weight: 600; }
+
+    /* ════════ GENEL SECTION ════════ */
+    .er-section { padding: clamp(72px, 10vw, 120px) 0; background: var(--er-bg); }
+    .er-section-alt { background: var(--er-surface); }
+    .er-eyebrow { display: inline-flex; align-items: center; gap: 14px; font-family: var(--ff-cond); font-weight: 700; font-size: .82rem; letter-spacing: .26em; text-transform: uppercase; color: var(--er-amber); margin-bottom: 20px; }
+    .er-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--er-amber); }
+    .er-h2 { font-family: var(--ff-serif); font-weight: 500; font-size: clamp(2.1rem, 4.6vw, 3.5rem); line-height: 1.08; letter-spacing: -.02em; color: var(--er-paper); margin: 0 0 22px; }
+    .er-h2 em { font-style: italic; color: var(--er-amber-lt); }
+
+    /* ════════ MANİFESTO ŞERİDİ ════════ */
+    .ro-manifesto { position: relative; background: var(--er-deep); padding: clamp(64px,9vw,104px) 24px; text-align: center; overflow: hidden; border-top: 1px solid var(--er-border); border-bottom: 1px solid var(--er-border); }
+    .ro-manifesto__star { color: var(--er-gold); width: 40px; height: 40px; margin: 0 auto 22px; opacity: .9; }
+    .ro-manifesto__text { font-family: var(--ff-serif); font-style: italic; font-weight: 400; font-size: clamp(1.6rem, 3.6vw, 2.8rem); line-height: 1.3; color: var(--er-paper); max-width: 880px; margin: 0 auto; letter-spacing: -.01em; }
+    .ro-manifesto__text b { font-style: normal; font-weight: 600; color: var(--er-amber-lt); }
+    .ro-manifesto__sub { font-family: var(--ff-cond); font-size: .82rem; letter-spacing: .24em; text-transform: uppercase; color: var(--er-amber); margin-top: 26px; }
+
+    /* ════════ HİKAYE ════════ */
+    .ro-story__inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
+    .ro-story__lead { font-family: var(--ff-serif); font-style: italic; font-size: clamp(1.25rem,2.2vw,1.6rem); line-height: 1.5; color: var(--er-amber-lt); margin: 0 0 26px; }
+    .ro-story__body p { font-family: var(--ff-sans); font-size: 1.02rem; line-height: 1.85; color: rgba(238,243,252,.78); margin: 0 0 20px; }
+    .ro-story__body p strong { color: var(--er-paper); font-weight: 600; }
+    .ro-story__body .ro-plus { color: var(--er-amber-lt); font-weight: 700; font-style: italic; }
+    .ro-story__media { position: sticky; top: 100px; display: grid; gap: 18px; }
+    .ro-story__media img { width: 100%; border-radius: 4px; display: block; border: 1px solid var(--er-border); filter: saturate(.92) brightness(.96); }
+    .ro-story__media .ro-story__cap { font-family: var(--ff-cond); font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--er-muted); margin-top: -6px; }
+
+    /* ════════ MİSYON & VİZYON ════════ */
+    .ro-mv { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+    .ro-mv__card { position: relative; padding: clamp(32px,4vw,48px); background: linear-gradient(160deg, rgba(125,160,225,.07) 0%, rgba(6,10,24,.4) 100%); border: 1px solid var(--er-border); border-top: 3px solid var(--er-amber); border-radius: 4px; overflow: hidden; }
+    .ro-mv__card::after { content: ''; position: absolute; top: -80px; right: -80px; width: 240px; height: 240px; background: radial-gradient(circle, rgba(111,155,230,.12) 0%, transparent 70%); pointer-events: none; }
+    .ro-mv__icon { width: 46px; height: 46px; color: var(--er-amber); margin-bottom: 20px; }
+    .ro-mv__label { font-family: var(--ff-cond); font-weight: 700; font-size: .8rem; letter-spacing: .28em; text-transform: uppercase; color: var(--er-amber); margin-bottom: 14px; }
+    .ro-mv__text { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(1.3rem,2.2vw,1.7rem); line-height: 1.4; color: var(--er-paper); margin: 0; }
+    .ro-mv__text b { color: var(--er-amber-lt); font-weight: 600; }
+
+    /* ════════ FAALİYETLER (chips) ════════ */
+    .ro-acts { max-width: 1180px; margin: 0 auto; }
+    .ro-acts__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 44px; }
+    .ro-act { display: flex; align-items: center; gap: 15px; padding: 20px 22px; background: var(--er-surface); border: 1px solid var(--er-border); border-radius: 3px; transition: border-color .3s, transform .3s; }
+    .ro-act:hover { border-color: var(--er-border-s); transform: translateY(-3px); }
+    .ro-act__dot { width: 30px; height: 30px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(111,155,230,.14); color: var(--er-amber-lt); }
+    .ro-act__dot svg { width: 16px; height: 16px; }
+    .ro-act__name { font-family: var(--ff-sans); font-weight: 500; font-size: .96rem; color: var(--er-paper); line-height: 1.3; }
+
+    /* ════════ EDİTÖRYEL: INTRO ════════ */
+    .ro-intro { padding: clamp(78px,12vw,150px) 24px clamp(8px,3vw,30px); text-align: center; background: var(--er-bg); }
+    .ro-intro__inner { max-width: 980px; margin: 0 auto; }
+    .ro-intro__text { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(1.7rem,3.8vw,3rem); line-height: 1.32; letter-spacing: -.01em; color: var(--er-paper); margin: 22px 0 0; }
+    .ro-intro__text b { font-weight: 600; color: var(--er-amber-lt); font-style: italic; }
+
+    /* ════════ EDİTÖRYEL: BÖLÜM SPLIT (zigzag) ════════ */
+    .ro-chapter { padding: clamp(54px,7vw,94px) 0; background: var(--er-bg); position: relative; }
+    .ro-chapter--alt { background: var(--er-surface); }
+    .ro-chapter__inner { max-width: 1180px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1.04fr 1fr; gap: clamp(36px,5vw,72px); align-items: center; }
+    .ro-chapter--rev .ro-chapter__text { order: 2; }
+    .ro-chapter__num { font-family: var(--ff-cond); font-weight: 700; font-size: clamp(2.6rem,5.5vw,4.2rem); line-height: 1; letter-spacing: .04em; color: var(--er-amber); opacity: .55; margin-bottom: 8px; font-variant-numeric: lining-nums tabular-nums; }
+    /* Tüm rakamlar net (Cormorant'ın eski-stil rakamları yerine hizalı rakam) */
+    .er-hero__stat-num, .ro-stat-line b, .er-news__stat-num, .er-up-card__day, .er-up-card__month { font-variant-numeric: lining-nums tabular-nums; }
+    .ro-chapter__title { font-family: var(--ff-serif); font-weight: 500; font-size: clamp(1.9rem,3.6vw,3rem); line-height: 1.1; letter-spacing: -.02em; color: var(--er-paper); margin: 0 0 20px; }
+    .ro-chapter__title em { font-style: italic; color: var(--er-amber-lt); }
+    .ro-chapter__body p { font-family: var(--ff-sans); font-size: 1.02rem; line-height: 1.85; color: rgba(238,243,252,.78); margin: 0 0 16px; }
+    .ro-chapter__body p:last-child { margin-bottom: 0; }
+    .ro-chapter__body p strong { color: var(--er-paper); font-weight: 600; }
+    .ro-chapter__media { position: relative; }
+    .ro-chapter__media img { width: 100%; border-radius: 5px; display: block; border: 1px solid var(--er-border); box-shadow: 0 34px 70px -34px rgba(0,0,0,.75); filter: saturate(.95); }
+    .ro-chapter__media::before { content: ''; position: absolute; inset: 0; border: 1px solid var(--er-amber); border-radius: 7px; opacity: .5; transform: translate(16px,16px); transition: opacity .5s, transform .5s; pointer-events: none; }
+    .ro-chapter:hover .ro-chapter__media::before { opacity: .75; transform: translate(20px,20px); }
+    .ro-chapter__media-tag { position: absolute; left: 16px; bottom: 16px; padding: 8px 14px; background: rgba(6,10,24,.82); border: 1px solid var(--er-border); border-radius: 2px; font-family: var(--ff-cond); font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--er-amber-lt); backdrop-filter: blur(6px); }
+    .ro-hl { display: inline-block; margin-top: 12px; padding: 11px 18px; background: rgba(111,155,230,.1); border-left: 2px solid var(--er-amber); font-family: var(--ff-cond); font-size: .96rem; letter-spacing: .04em; color: var(--er-amber-lt); }
+    .ro-stat-line { display: flex; align-items: baseline; gap: 14px; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--er-border); }
+    .ro-stat-line b { font-family: var(--ff-serif); font-size: clamp(1.8rem,3vw,2.4rem); color: var(--er-amber-lt); font-weight: 500; line-height: 1; }
+    .ro-stat-line span { font-family: var(--ff-cond); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--er-muted); }
+    .ro-values { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .ro-value { padding: 9px 18px; border: 1px solid var(--er-border); border-radius: 40px; font-family: var(--ff-cond); font-size: .84rem; letter-spacing: .14em; text-transform: uppercase; color: var(--er-amber-lt); background: rgba(111,155,230,.06); }
+
+    /* ════════ EDİTÖRYEL: FULL-BLEED BANT ════════ */
+    .ro-band { position: relative; padding: clamp(94px,15vw,190px) 24px; text-align: center; overflow: hidden; isolation: isolate; }
+    .ro-band__bg { position: absolute; inset: 0; z-index: -2; background-size: cover; background-position: center; }
+    .ro-band__bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,10,24,.88) 0%, rgba(6,10,24,.8) 100%); }
+    .ro-band__star { color: var(--er-gold); width: 38px; height: 38px; margin: 0 auto 22px; display: block; }
+    .ro-band__inner { position: relative; z-index: 1; max-width: 920px; margin: 0 auto; }
+    .ro-band__eyebrow { font-family: var(--ff-cond); font-weight: 700; font-size: .8rem; letter-spacing: .3em; text-transform: uppercase; color: var(--er-amber); margin: 0 0 22px; }
+    .ro-band__quote { font-family: var(--ff-serif); font-style: italic; font-weight: 400; font-size: clamp(1.65rem,3.7vw,2.9rem); line-height: 1.34; color: var(--er-paper); margin: 0; letter-spacing: -.01em; }
+    .ro-band__quote b { font-style: normal; color: var(--er-amber-lt); font-weight: 600; }
+    .ro-band__cite { margin-top: 26px; font-family: var(--ff-cond); font-size: .76rem; letter-spacing: .24em; text-transform: uppercase; color: var(--er-muted); }
+
+    /* ════════ HERO SCROLL CUE ════════ */
+    .er-hero__cue { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--er-muted); font-family: var(--ff-cond); font-size: .64rem; letter-spacing: .26em; text-transform: uppercase; z-index: 2; }
+    .er-hero__cue-line { width: 1px; height: 36px; background: linear-gradient(var(--er-amber), transparent); animation: ro-cue 2.2s ease-in-out infinite; }
+    @keyframes ro-cue { 0%,100% { opacity: .3; transform: scaleY(.5); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); transform-origin: top; } }
+
+    @media (max-width: 860px) {
+      .ro-chapter__inner { grid-template-columns: 1fr; gap: 30px; }
+      /* Mobilde tüm bölümlerde tutarlı: önce görsel, sonra metin */
+      .ro-chapter__media, .ro-chapter--rev .ro-chapter__media { order: 1; }
+      .ro-chapter__text, .ro-chapter--rev .ro-chapter__text { order: 2; }
+    }
+
+    /* ════════ MODERN / ÇARPICI YÜKSELTMELER ════════ */
+    /* Film greni — premium doku */
+    body::after {
+      content: ''; position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: .05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    /* Hero — ışıma + derinlik */
+    .er-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(circle at 80% 26%, rgba(111,155,230,.22), transparent 52%); }
+    .er-hero__compass { opacity: .26 !important; }
+    .er-hero__title { text-shadow: 0 6px 54px rgba(6,10,24,.7); }
+
+    /* Mihrap/kemer formlu bölüm görselleri */
+    .ro-chapter__media img { border-radius: clamp(68px,15vw,150px) clamp(68px,15vw,150px) 6px 6px !important; }
+    .ro-chapter__media::before { border-radius: clamp(68px,15vw,150px) clamp(68px,15vw,150px) 9px 9px; }
+    .ro-chapter__media::after { content: ''; position: absolute; left: 50%; top: -16px; transform: translateX(-50%); width: 11px; height: 11px; border-radius: 50%; background: var(--er-gold); box-shadow: 0 0 18px var(--er-gold), 0 0 4px var(--er-gold); }
+
+    /* Bölüm ışımaları */
+    .ro-chapter--alt { position: relative; overflow: hidden; }
+    .ro-chapter--alt::before { content: ''; position: absolute; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(111,155,230,.11), transparent 70%); top: -180px; left: -140px; pointer-events: none; }
+
+    /* Durağan değer şeridi (ticker DEĞİL) */
+    .ro-strip { background: var(--er-deep); border-top: 1px solid var(--er-border); border-bottom: 1px solid var(--er-border); padding: clamp(30px,5vw,52px) 24px; text-align: center; }
+    .ro-strip__inner { max-width: 1020px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 22px; }
+    .ro-strip__item { font-family: var(--ff-serif); font-style: italic; font-weight: 500; font-size: clamp(1.15rem,2.5vw,1.95rem); color: var(--er-paper); letter-spacing: .01em; }
+    .ro-strip__item--accent { color: var(--er-amber-lt); }
+    .ro-strip__sep { color: var(--er-gold); font-size: .85rem; transform: translateY(-2px); }
+    @media (prefers-reduced-motion: reduce) { .er-hero__compass { animation: none; } }
+
+    /* ════════ GALERİ ════════ */
+    .ro-gallery { max-width: 1220px; margin: 0 auto; }
+    .ro-gallery__grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; grid-auto-flow: dense; gap: 14px; margin-top: 48px; }
+    .ro-gallery__item { position: relative; overflow: hidden; border-radius: 3px; cursor: pointer; border: 1px solid var(--er-border); background: var(--er-surface); }
+    .ro-gallery__item img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(.86) saturate(.92); transition: filter .4s, transform .6s; }
+    .ro-gallery__item:hover img { filter: brightness(1.02) saturate(1); transform: scale(1.06); }
+    .ro-gallery__item::after { content: ''; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(179,208,245,0); transition: box-shadow .3s; pointer-events: none; }
+    .ro-gallery__item:hover::after { box-shadow: inset 0 0 0 2px rgba(179,208,245,.6); }
+    .ro-gallery__item--wide { grid-column: span 2; }
+    .ro-gallery__item--tall { grid-row: span 2; }
+    .ro-gallery__empty { grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--er-muted); font-family: var(--ff-cond); letter-spacing: .06em; }
+
+    /* ════════ LIGHTBOX ════════ */
+    .er-lightbox { position: fixed; inset: 0; z-index: 1100; display: none; align-items: center; justify-content: center; background: rgba(3,5,12,.97); backdrop-filter: blur(14px); padding: 40px 24px; }
+    .er-lightbox.is-open { display: flex; }
+    .er-lightbox__img { max-width: 100%; max-height: 100%; box-shadow: 0 30px 80px rgba(0,0,0,.7); animation: ro-pop .35s cubic-bezier(.16,1,.3,1); border-radius: 3px; }
+    @keyframes ro-pop { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: scale(1); } }
+    .er-lightbox__close, .er-lightbox__nav { position: absolute; top: 24px; right: 24px; width: 46px; height: 46px; border-radius: 50%; background: rgba(10,17,38,.75); border: 1px solid rgba(179,208,245,.2); color: var(--er-paper); font-size: 1.6rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .25s ease; }
+    .er-lightbox__close:hover { background: var(--er-amber); color: #061024; }
+    .er-lightbox__nav { top: 50%; transform: translateY(-50%); font-size: 1.3rem; }
+    .er-lightbox__nav--prev { left: 24px; right: auto; }
+    .er-lightbox__nav--next { right: 24px; }
+    .er-lightbox__nav:hover { background: var(--er-amber); color: #061024; }
+
+    /* ════════ HABER MERKEZİ ════════ */
+    .er-news { position: relative; background: radial-gradient(ellipse at top, rgba(111,155,230,.08) 0%, transparent 55%), linear-gradient(180deg, var(--er-bg) 0%, var(--er-deep) 100%); padding: 120px 24px 80px; overflow: hidden; border-top: 1px solid rgba(125,160,225,.14); }
+    .er-news::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--er-amber) 50%, transparent); opacity: .4; }
+    .er-news__inner { max-width: 1200px; margin: 0 auto; position: relative; }
+    .er-news__hero { text-align: center; max-width: 720px; margin: 0 auto 80px; }
+    .er-news__pulse { display: inline-flex; align-items: center; gap: 10px; font-family: var(--ff-cond); font-size: .7rem; letter-spacing: .32em; text-transform: uppercase; color: var(--er-amber); font-weight: 700; margin-bottom: 24px; }
+    .er-news__pulse-dot { width: 8px; height: 8px; background: var(--er-amber); border-radius: 50%; box-shadow: 0 0 12px var(--er-amber); animation: er-pulse 1.6s ease-in-out infinite; }
+    @keyframes er-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.55;transform:scale(.78)} }
+    .er-news__title { font-family: var(--ff-serif); font-weight: 500; font-size: clamp(2.6rem, 5.8vw, 4.6rem); line-height: 1; letter-spacing: -.03em; color: var(--er-paper); margin: 0 0 18px; }
+    .er-news__title em { font-style: italic; color: var(--er-amber); font-weight: 400; }
+    .er-news__lead { font-family: var(--ff-cond); font-size: 1.05rem; line-height: 1.65; color: var(--er-muted); max-width: 540px; margin: 0 auto 36px; }
+    .er-news__stats { display: inline-flex; padding: 14px 8px; background: rgba(6,10,24,.65); border: 1px solid var(--er-border); border-radius: 2px; backdrop-filter: blur(8px); }
+    .er-news__stat { padding: 0 28px; text-align: center; position: relative; }
+    .er-news__stat+.er-news__stat::before { content:''; position:absolute; left:0; top:18%; bottom:18%; width:1px; background:rgba(238,243,252,.1); }
+    .er-news__stat-num { display:block; font-family:var(--ff-serif); font-size:1.95rem; line-height:1; color:var(--er-amber); font-weight:500; margin-bottom:6px; }
+    .er-news__stat-lbl { display:block; font-family:var(--ff-cond); font-size:.65rem; letter-spacing:.24em; text-transform:uppercase; color:var(--er-muted); font-weight:600; }
+    .er-news__block { margin-bottom: 72px; }
+    .er-news__block:last-child { margin-bottom: 0; }
+    .er-news__block-head { display:flex; align-items:baseline; gap:16px; margin-bottom:32px; padding-bottom:18px; border-bottom:1px solid var(--er-border); }
+    .er-news__block-icon { font-size:1.2rem; line-height:1; }
+    .er-news__block-title { flex:1; font-family:var(--ff-serif); font-weight:500; font-size:clamp(1.4rem,2.6vw,2rem); letter-spacing:-.01em; color:var(--er-paper); margin:0; }
+    .er-news__block-title em { font-style:italic; color:var(--er-amber); }
+    .er-news__more { font-family:var(--ff-cond); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--er-amber); text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap .2s,color .2s; }
+    .er-news__more:hover { gap:14px; color:var(--er-amber-lt); }
+    .er-news__upcoming { display:grid; gap:16px; }
+    .er-up-card { display:grid; grid-template-columns:110px 1fr auto; gap:28px; align-items:center; padding:22px 26px; background:linear-gradient(135deg,rgba(111,155,230,.05) 0%,rgba(6,10,24,.6) 100%); border:1px solid var(--er-border); border-left:3px solid var(--er-amber); border-radius:2px; text-decoration:none; transition:all .3s ease; }
+    .er-up-card:hover { transform:translateX(4px); border-left-width:6px; background:linear-gradient(135deg,rgba(111,155,230,.1) 0%,rgba(17,26,53,.7) 100%); }
+    .er-up-card__date { text-align:center; padding:10px 0; border:1px solid rgba(125,160,225,.28); border-radius:2px; }
+    .er-up-card__day { display:block; font-family:var(--ff-serif); font-size:1.85rem; line-height:1; color:var(--er-amber); font-weight:500; }
+    .er-up-card__month { display:block; margin-top:4px; font-family:var(--ff-cond); font-size:.62rem; letter-spacing:.24em; text-transform:uppercase; color:var(--er-muted); font-weight:700; }
+    .er-up-card__body { min-width:0; }
+    .er-up-card__tag { display:inline-block; font-family:var(--ff-cond); font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:var(--er-amber); font-weight:700; margin-bottom:8px; }
+    .er-up-card__title { font-family:var(--ff-serif); font-weight:500; font-size:1.3rem; line-height:1.25; color:var(--er-paper); margin:0 0 8px; }
+    .er-up-card__meta { display:flex; gap:16px; font-family:var(--ff-cond); font-size:.78rem; color:var(--er-muted); }
+    .er-up-card__meta span { display:inline-flex; align-items:center; gap:6px; }
+    .er-up-card__arrow { color:var(--er-amber); flex-shrink:0; }
+    .er-news__featured { display:grid; grid-template-columns:2fr 1fr; gap:20px; }
+    .er-news__featured-side { display:flex; flex-direction:column; gap:20px; }
+    .er-feat-card { position:relative; display:block; overflow:hidden; border-radius:2px; text-decoration:none; background:var(--er-surface); border:1px solid var(--er-border); transition:border-color .3s,transform .3s; }
+    .er-feat-card:hover { border-color:var(--er-amber); transform:translateY(-3px); }
+    .er-feat-card__img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block; filter:brightness(.74) contrast(1.06) saturate(.9); transition:filter .3s,transform .6s; }
+    .er-feat-card:hover .er-feat-card__img { filter:brightness(.95) saturate(1); transform:scale(1.04); }
+    .er-feat-card--big .er-feat-card__img { aspect-ratio:16/11; }
+    .er-feat-card__no-img { width:100%; aspect-ratio:16/10; background:linear-gradient(135deg,rgba(111,155,230,.1),rgba(6,10,24,.8)); display:flex; align-items:center; justify-content:center; font-size:3rem; opacity:.4; }
+    .er-feat-card__body { padding:22px 24px 24px; }
+    .er-feat-card--big .er-feat-card__body { padding:28px 30px 30px; }
+    .er-feat-card__star { position:absolute; top:12px; left:12px; padding:5px 10px; background:var(--er-amber); color:#061024; font-family:var(--ff-cond); font-size:.62rem; font-weight:900; letter-spacing:.2em; text-transform:uppercase; border-radius:1px; }
+    .er-feat-card__tag { display:inline-block; font-family:var(--ff-cond); font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:var(--er-amber); font-weight:700; margin-bottom:10px; }
+    .er-feat-card__title { font-family:var(--ff-serif); font-weight:500; font-size:1.4rem; line-height:1.2; color:var(--er-paper); margin:0 0 10px; }
+    .er-feat-card--big .er-feat-card__title { font-size:1.85rem; }
+    .er-feat-card__excerpt { font-family:var(--ff-sans); font-size:.92rem; line-height:1.55; color:var(--er-muted); margin:0 0 12px; }
+    .er-feat-card__date { font-family:var(--ff-cond); font-size:.75rem; color:var(--er-muted); letter-spacing:.05em; }
+    .er-news__list { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .er-news-card { display:block; padding:0; overflow:hidden; background:var(--er-surface); border:1px solid var(--er-border); border-radius:2px; text-decoration:none; transition:border-color .3s,transform .3s; }
+    .er-news-card:hover { border-color:rgba(125,160,225,.45); transform:translateY(-2px); }
+    .er-news-card__img-wrap { aspect-ratio:16/9; overflow:hidden; }
+    .er-news-card__img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+    .er-news-card:hover .er-news-card__img { transform:scale(1.05); }
+    .er-news-card__no-img { aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,rgba(111,155,230,.1),rgba(6,10,24,.8)); opacity:.55; font-size:1.6rem; }
+    .er-news-card__body { padding:18px 22px 20px; }
+    .er-news-card__row { display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+    .er-news-card__type { font-family:var(--ff-cond); font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:var(--er-amber); font-weight:700; }
+    .er-news-card__sep { color:var(--er-border); }
+    .er-news-card__date { font-family:var(--ff-cond); font-size:.7rem; color:var(--er-muted); }
+    .er-news-card__title { font-family:var(--ff-serif); font-weight:500; font-size:1.05rem; line-height:1.3; color:var(--er-paper); margin:0 0 8px; }
+    .er-news-card__excerpt { font-family:var(--ff-sans); font-size:.85rem; line-height:1.5; color:var(--er-muted); margin:0; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .er-news__archive { opacity:.65; transition:opacity .3s; }
+    .er-news__archive:hover { opacity:1; }
+    .er-news__empty { text-align:center; padding:80px 20px; color:var(--er-muted); font-family:var(--ff-cond); font-size:.9rem; letter-spacing:.06em; }
+    .er-news__empty em { font-family:var(--ff-serif); font-style:italic; color:var(--er-amber); font-size:1.5rem; display:block; margin-bottom:8px; }
+
+    /* ════════ SON CTA ════════ */
+    .er-final-cta { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: center; padding: 64px 56px; background: linear-gradient(135deg, rgba(111,155,230,.07) 0%, rgba(6,10,24,.4) 100%); border: 1px solid var(--er-border); border-left: 3px solid var(--er-amber); border-radius: 3px; position: relative; overflow: hidden; }
+    .er-final-cta::before { content: ''; position: absolute; top: -100px; right: -100px; width: 380px; height: 380px; background: radial-gradient(circle, rgba(111,155,230,.14) 0%, transparent 70%); pointer-events: none; }
+    .er-final-cta__text { position: relative; z-index: 1; }
+    .er-final-cta__text p { font-family: var(--ff-sans); font-size: 1rem; line-height: 1.75; color: rgba(238,243,252,.7); max-width: 480px; margin: 0; }
+    .er-final-cta__action { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; position: relative; z-index: 1; }
+    .er-final-cta__action a { width: 100%; justify-content: center; }
+    .btn-amber-primary, .btn-amber-ghost { display:inline-flex; align-items:center; gap:10px; padding:16px 30px; border-radius:10px; font-family:var(--ff-sans); font-weight:600; font-size:.98rem; text-decoration:none; border:1px solid transparent; transition:all .3s ease; }
+    .btn-amber-primary { background: var(--er-amber); color: #061024; box-shadow: 0 10px 40px rgba(111,155,230,.28); }
+    .btn-amber-primary:hover { background: var(--er-amber-lt); transform: translateY(-2px); box-shadow: 0 16px 48px rgba(111,155,230,.42); }
+    .btn-amber-ghost { background: transparent; color: var(--er-paper); border-color: rgba(238,243,252,.22); }
+    .btn-amber-ghost:hover { border-color: var(--er-amber); color: var(--er-amber-lt); }
+
+    /* ════════ ANİMASYON & RESPONSIVE ════════ */
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s ease,transform .8s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity:1 !important; transform:none !important; transition:none !important; } }
+    .reveal.d1 { transition-delay:.12s; }
+    .reveal.d2 { transition-delay:.24s; }
+    .reveal.d3 { transition-delay:.36s; }
+
+    @media (max-width: 1024px) {
+      .ro-story__inner { grid-template-columns:1fr; gap:44px; }
+      .ro-story__media { position:static; max-width:560px; }
+      .ro-mv { grid-template-columns:1fr; }
+      .er-final-cta { grid-template-columns:1fr; padding:44px 30px; gap:36px; }
+      .er-final-cta__action a { width:auto; }
+      .ro-gallery__grid { grid-template-columns:repeat(3,1fr); grid-auto-rows:180px; }
+    }
+    @media (max-width: 768px) {
+      .er-hero { padding:128px 20px 56px; min-height:auto; }
+      .er-hero__compass { width:280px; right:-80px; }
+      .er-news { padding:80px 18px 60px; }
+      .er-news__hero { margin-bottom:56px; }
+      .er-news__featured { grid-template-columns:1fr; }
+      .er-news__list { grid-template-columns:1fr; }
+      .er-up-card { grid-template-columns:80px 1fr; gap:18px; padding:16px 18px; }
+      .er-up-card__arrow { display:none; }
+      .er-news__stat { padding:0 18px; }
+      .ro-gallery__grid { grid-template-columns:repeat(2,1fr); grid-auto-rows:150px; }
+      .ro-gallery__item--wide { grid-column:span 2; }
+      .ro-gallery__item--tall { grid-row:span 1; }
+    }
+    @media (max-width: 480px) {
+      .er-hero__stats { width:100%; }
+      .er-hero__stat { flex:1; padding:14px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo">
+        <img src="../../assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo">
+        <span class="logo-text">Dinamik <span>SK</span></span>
+      </a>
+      <nav class="nav">
+        <a href="../../index.html" class="nav-link">Ana Sayfa</a>
+        <a href="../../dinamik-calismalar.html" class="nav-link active">Dinamik Çalışmalar</a>
+        <a href="../../sporlar.html" class="nav-link">Sporlar</a>
+        <a href="../../vefa.html" class="nav-link">Vefa</a>
+        <a href="../../orman.html" class="nav-link">Hatıra Ormanı</a>
+        <a href="../../duyurular.html" class="nav-link">Duyurular</a>
+        <a href="../../arsiv.html" class="nav-link">Arşiv</a>
+        <a href="../../iletisim.html" class="nav-link">İletişim</a>
+        <a href="../../admin.html" class="nav-cta">Yönetim</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ════════════════════════ HERO ════════════════════════ -->
+  <section class="er-hero">
+    <div class="er-hero__bg" id="ro-hero-bg"></div>
+    <div class="er-hero__overlay"></div>
+    <div class="er-hero__stars"></div>
+    <svg class="er-hero__compass" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="0.8"/>
+      <circle cx="50" cy="50" r="34" stroke="currentColor" stroke-width="0.6"/>
+      <path d="M50 6 L56 44 L94 50 L56 56 L50 94 L44 56 L6 50 L44 44 Z" fill="currentColor" opacity="0.6"/>
+      <path d="M50 18 L53 47 L82 50 L53 53 L50 82 L47 53 L18 50 L47 47 Z" fill="currentColor"/>
+    </svg>
+
+    <div class="er-hero__inner">
+      <a href="../../dinamik-calismalar.html" class="er-hero__back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Dinamik Çalışmalar
+      </a>
+      <img class="er-hero__logo" id="ro-img-logo" src="../../assets/images/rota-logo.webp" alt="Rota Gençlik Buluşmaları logosu — pusula yıldızı">
+      <div class="er-hero__mark">Rota Gençlik Buluşmaları</div>
+      <h1 class="er-hero__title">Yolun var,<br><em>istikametin</em> netleşsin.</h1>
+      <p class="er-hero__lead">Kaleiçi'nin kalbinde, barların ve müzikli mekânların arasından geçilerek ulaşılan manevi bir kale: <strong>Karatay Medresesi</strong>. Burada her genç, kendi hayat rotasını bilinçle çizer; her programdan kendine <strong>"+1 değer"</strong> katarak çıkar.</p>
+      <div class="er-hero__stats">
+        <div class="er-hero__stat">
+          <span class="er-hero__stat-num">2018</span>
+          <span class="er-hero__stat-lbl">Bu yana</span>
+        </div>
+        <div class="er-hero__stat">
+          <span class="er-hero__stat-num">Kaleiçi</span>
+          <span class="er-hero__stat-lbl">Karatay Medresesi</span>
+        </div>
+        <div class="er-hero__stat">
+          <span class="er-hero__stat-num">+1</span>
+          <span class="er-hero__stat-lbl">Her Programda Değer</span>
+        </div>
+      </div>
+    </div>
+    <div class="er-hero__cue" aria-hidden="true"><span>Keşfet</span><span class="er-hero__cue-line"></span></div>
+  </section>
+
+  <!-- ════════════════════════ DEĞER ŞERİDİ (durağan) ════════════════════════ -->
+  <div class="ro-strip">
+    <div class="ro-strip__inner">
+      <span class="ro-strip__item">Seminer</span><span class="ro-strip__sep">✦</span>
+      <span class="ro-strip__item ro-strip__item--accent">Sohbet</span><span class="ro-strip__sep">✦</span>
+      <span class="ro-strip__item">Münazara</span><span class="ro-strip__sep">✦</span>
+      <span class="ro-strip__item ro-strip__item--accent">Kur'an Meali</span><span class="ro-strip__sep">✦</span>
+      <span class="ro-strip__item">Şehir Dışı Gezi</span><span class="ro-strip__sep">✦</span>
+      <span class="ro-strip__item ro-strip__item--accent">Kardeşlik</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════ INTRO STATEMENT ════════════════════════ -->
+  <section class="ro-intro">
+    <div class="ro-intro__inner reveal">
+      <div class="er-eyebrow" style="justify-content:center;">Rota'nın Hikâyesi</div>
+      <p class="ro-intro__text">Kaleiçi'nin hareketli atmosferinde, barların ve müzikli mekânların arasından geçilerek ulaşılan <b>manevi bir kale</b>. 2018'den bu yana gençler burada kendi yollarını buluyor.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ BÖLÜM 01 ════════════════════════ -->
+  <section class="ro-chapter" id="rota-nedir">
+    <div class="ro-chapter__inner">
+      <div class="ro-chapter__text reveal">
+        <div class="ro-chapter__num">01</div>
+        <div class="er-eyebrow">Kaleiçi'nde Bir Kale</div>
+        <h2 class="ro-chapter__title">Gürültünün içinden, <em>sükûnete.</em></h2>
+        <div class="ro-chapter__body">
+          <p><strong>2018 yılından bu yana</strong> Antalya Kaleiçi'nde faaliyet gösteren Rota Gençlik Buluşmaları, gençlerin hayat yolculuklarında doğru bir rota çizebilmelerine katkı sunmak amacıyla kurulmuş bir gençlik çalışmasıdır.</p>
+          <p>Barların ve müzikli mekânların arasından geçilerek ulaşılan manevi bir kale olan <strong>Karatay Medresesi</strong>'nde gerçekleştirdiğimiz buluşmalar; gençlere hem maddi hem de manevi anlamda yeni ufuklar kazandırmayı hedefler.</p>
+        </div>
+      </div>
+      <div class="ro-chapter__media reveal d1">
+        <img id="ro-img-meclis" src="../../assets/images/rota-meclis.webp" alt="Karatay Medresesi'nin ahşap zeminli salonunda halka kurulmuş gençlik meclisi">
+        <span class="ro-chapter__media-tag">Karatay Medresesi · Kaleiçi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ BANT: +1 DEĞER ════════════════════════ -->
+  <section class="ro-band">
+    <div class="ro-band__bg" id="ro-band-konusmaci" style="background-image:url('../../assets/images/rota-konusmaci.webp');"></div>
+    <div class="ro-band__inner reveal">
+      <svg class="ro-band__star" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M50 4 L57 43 L96 50 L57 57 L50 96 L43 57 L4 50 L43 43 Z"/></svg>
+      <p class="ro-band__eyebrow">Felsefemiz</p>
+      <p class="ro-band__quote">Her programın hedefi tek: katılımcının bulunduğu noktadan <b>bir adım ileriye</b> taşınması ve kendisine <b>"+1 değer"</b> katması.</p>
+      <p class="ro-band__cite">Samimiyet · Bilinç · Gelişim · Kardeşlik</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ BÖLÜM 02 ════════════════════════ -->
+  <section class="ro-chapter ro-chapter--alt ro-chapter--rev">
+    <div class="ro-chapter__inner">
+      <div class="ro-chapter__text reveal d1">
+        <div class="ro-chapter__num">02</div>
+        <div class="er-eyebrow">Neden "Rota"?</div>
+        <h2 class="ro-chapter__title">Kendi yolunu, <em>bilinçle çiz.</em></h2>
+        <div class="ro-chapter__body">
+          <p>"Rota" ismini seçmemizin temel sebebi, gençlerin <strong>kendi hayat rotalarını</strong> bilinçli bir şekilde çizebilmelerine yardımcı olmaktır.</p>
+          <p>Uzman isimlerin katıldığı seminerler, manevi sohbetler, Kur'an meali okumaları, münazaralar ve gezilerle her genç; bulunduğu noktadan bir adım öteye taşınır, dünya bakışında olumlu bir dönüşüm yaşar.</p>
+        </div>
+        <span class="ro-hl">Maddeden manaya, doğru bir istikamet.</span>
+      </div>
+      <div class="ro-chapter__media reveal">
+        <img id="ro-img-sohbet" src="../../assets/images/rota-sohbet.webp" alt="Bir mentörün gençlerle samimi sohbet ettiği an">
+        <span class="ro-chapter__media-tag">Sohbet · Rehberlik</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ FAALİYETLER ════════════════════════ -->
+  <section class="er-section" id="faaliyetler">
+    <div class="container ro-acts">
+      <div class="reveal" style="max-width:680px;">
+        <div class="er-eyebrow">Ne Yapıyoruz?</div>
+        <h2 class="er-h2">Bir programda <em>çok şey.</em></h2>
+        <p style="font-family:var(--ff-sans); font-size:1.02rem; line-height:1.75; color:rgba(238,243,252,.72); margin:0;">Uzman isimlerden manevi sohbetlere, münazaradan şehir dışı gezilerine; her buluşma, gence yeni bir ufuk açar.</p>
+      </div>
+      <div class="ro-acts__grid">
+        <div class="ro-act reveal"><span class="ro-act__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5a2 2 0 012-2h10l4 4v12a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M9 9h6M9 13h6"/></svg></span><span class="ro-act__name">Mesleki &amp; Kişisel Gelişim Seminerleri</span></div>
+        <div class="ro-act reveal d1"><span class="ro-act__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span><span class="ro-act__name">Manevi Değerler Üzerine Sohbetler</span></div>
+        <div class="ro-act reveal d2"><span class="ro-act__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></span><span class="ro-act__name">Kur'an Meali Okumaları</span></div>
+        <div class="ro-act reveal"><span class="ro-act__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"/></svg></span><span class="ro-act__name">Hadis Sohbetleri</span></div>
+        <div class="ro-act reveal d1"><span class="ro-act__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-1v3l-3-3H9a2 2 0 01-2-2"/><path d="M5 4h10a2 2 0 012 2v6a2 2 0 01-2 2H8l-3 3V6a2 2 0 012-2z"/></svg></span><span class="ro-act__name">Grup Münazaraları</span></div>
+        <div class="ro-act reveal d2"><span class="ro-act__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6M16 14c3 0 6 2 6 5"/></svg></span><span class="ro-act__name">Sosyal Aktiviteler</span></div>
+        <div class="ro-act reveal"><span class="ro-act__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></span><span class="ro-act__name">Şehir Dışı Gezileri</span></div>
+        <div class="ro-act reveal d1"><span class="ro-act__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></span><span class="ro-act__name">Ve "+1 Değer" Katan Daha Fazlası</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ BÖLÜM 03 ════════════════════════ -->
+  <section class="ro-chapter ro-chapter--alt">
+    <div class="ro-chapter__inner">
+      <div class="ro-chapter__text reveal">
+        <div class="ro-chapter__num">03</div>
+        <div class="er-eyebrow">Büyüyen Bir Yolculuk</div>
+        <h2 class="ro-chapter__title">Küçük bir sohbetten, <em>Türkiye'ye örnek.</em></h2>
+        <div class="ro-chapter__body">
+          <p>Rota Gençlik Buluşmaları, başlangıçta kendi içimizde gerçekleştirdiğimiz samimi sohbetler ve Kur'an meali okumalarıyla başlayan bir yolculuktu.</p>
+          <p>Bugün ise <strong>birçok uzmanı ve alanında yetkin kişiyi ağırlayan</strong>, Türkiye genelinde örnek gösterilen bir gençlik çalışmasına dönüştü.</p>
+        </div>
+        <div class="ro-stat-line"><b>2018 → Bugün</b><span>Bir avuç gençten, büyük bir kardeşliğe</span></div>
+      </div>
+      <div class="ro-chapter__media reveal d1">
+        <img id="ro-img-iftar" src="../../assets/images/rota-iftar.webp" alt="Geniş bir salonda uzun sofralarda toplu yemek yiyen kalabalık topluluk">
+        <span class="ro-chapter__media-tag">Topluca · Bir Sofra</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ BANT: GAYE ════════════════════════ -->
+  <section class="ro-band">
+    <div class="ro-band__bg" id="ro-band-gaye" style="background-image:url('../../assets/images/rota-gaye.webp');"></div>
+    <div class="ro-band__inner reveal">
+      <p class="ro-band__eyebrow">Asıl Gayemiz</p>
+      <p class="ro-band__quote">Çalışmalarımız boyunca asıl gayemizin <b>Allah'ın rızasını kazanmak</b> olduğunu hiçbir zaman unutmuyoruz. Her faaliyet; insanın <b>maddeye basarak manaya</b> ulaşma yolculuğunda ona rehberlik etme niyeti taşır.</p>
+      <p class="ro-band__cite">Rota Gençlik Buluşmaları</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ BÖLÜM 04 ════════════════════════ -->
+  <section class="ro-chapter ro-chapter--rev">
+    <div class="ro-chapter__inner">
+      <div class="ro-chapter__text reveal d1">
+        <div class="ro-chapter__num">04</div>
+        <div class="er-eyebrow">Bir Topluluk, Bir Kardeşlik</div>
+        <h2 class="ro-chapter__title">Yalnızca etkinlik değil, <em>bir aile.</em></h2>
+        <div class="ro-chapter__body">
+          <p>Genç ve dinamik yönetim ekibimiz, sahip olduğu enerjiyi ve heyecanı tüm çalışmalarımıza yansıtır. Rota; yalnızca bir etkinlik topluluğu değil, gençlerin <strong>kendilerini keşfettikleri</strong>, fikir ürettikleri ve hayata daha güçlü hazırlandıkları bir gelişim ortamıdır.</p>
+        </div>
+        <div class="ro-values">
+          <span class="ro-value">Samimiyet</span>
+          <span class="ro-value">Bilinç</span>
+          <span class="ro-value">Gelişim</span>
+          <span class="ro-value">Kardeşlik</span>
+        </div>
+      </div>
+      <div class="ro-chapter__media reveal">
+        <img id="ro-img-grup" src="../../assets/images/rota-grup.webp" alt="Ahşap tavanlı salonda gülümseyen, omuz omuza poz veren gençler topluluğu">
+        <span class="ro-chapter__media-tag">Kardeşlik · Birlikte</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ MİSYON & VİZYON ════════════════════════ -->
+  <section class="er-section er-section-alt" id="pusulamiz">
+    <div class="container" style="text-align:center; max-width:720px; margin:0 auto 56px;">
+      <div class="er-eyebrow" style="justify-content:center;">Pusulamız</div>
+      <h2 class="er-h2">Nereye <em>baktığımız</em> belli.</h2>
+    </div>
+    <div class="ro-mv">
+      <div class="ro-mv__card reveal">
+        <svg class="ro-mv__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.5 5.5L8 16l2.5-5.5L16 8z"/></svg>
+        <div class="ro-mv__label">Misyon</div>
+        <p class="ro-mv__text">Rota; hayatın her alanında <b>fikir sahibi olan</b>, daha bilinçli ve daha donanımlı bireyler yetiştirmek amacıyla yola çıkmıştır.</p>
+      </div>
+      <div class="ro-mv__card reveal d1">
+        <svg class="ro-mv__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        <div class="ro-mv__label">Vizyon</div>
+        <p class="ro-mv__text">Rota; hayatın akışında <b>kritik ve analitik</b> düşünce yapısına sahip, kendisine ve topluma faydalı, dünyayı amaç değil araç olarak gören <b>8 milyar insan</b> topluluğunu hedefler.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ GALERİ ════════════════════════ -->
+  <section class="er-section er-section-alt" id="galeri">
+    <div class="container ro-gallery">
+      <div class="reveal" style="text-align:center; max-width:680px; margin:0 auto;">
+        <div class="er-eyebrow" style="justify-content:center;">Karelerle Rota</div>
+        <h2 class="er-h2">Yoldan <em>anlar.</em></h2>
+      </div>
+      <div class="ro-gallery__grid" id="ro-gallery-grid"><!-- JS dolduruyor --></div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="er-lightbox" id="ro-lightbox" aria-hidden="true">
+    <button class="er-lightbox__close" type="button" data-lb-close aria-label="Kapat">×</button>
+    <button class="er-lightbox__nav er-lightbox__nav--prev" type="button" data-lb-prev aria-label="Önceki">‹</button>
+    <img class="er-lightbox__img" data-lb-img alt="">
+    <button class="er-lightbox__nav er-lightbox__nav--next" type="button" data-lb-next aria-label="Sonraki">›</button>
+  </div>
+
+  <!-- ════════════════════════ HABER MERKEZİ ════════════════════════ -->
+  <section class="er-news" id="news">
+    <div class="er-news__inner">
+      <header class="er-news__hero reveal">
+        <div class="er-news__pulse"><span class="er-news__pulse-dot"></span><span>Yoldan Canlı</span></div>
+        <h2 class="er-news__title">Rota'dan <em>haberler.</em></h2>
+        <p class="er-news__lead">Seminerler, sohbetler, geziler ve buluşmalar: Rota Gençlik Buluşmaları'ndan gelişmeler ve yaklaşan etkinlikler.</p>
+        <div class="er-news__stats">
+          <div class="er-news__stat"><span class="er-news__stat-num" data-stat="upcoming">0</span><span class="er-news__stat-lbl">Yaklaşan</span></div>
+          <div class="er-news__stat"><span class="er-news__stat-num" data-stat="featured">0</span><span class="er-news__stat-lbl">Öne Çıkan</span></div>
+          <div class="er-news__stat"><span class="er-news__stat-num" data-stat="total">0</span><span class="er-news__stat-lbl">Toplam</span></div>
+        </div>
+      </header>
+
+      <div class="er-news__block reveal" id="news-upcoming" style="display:none">
+        <div class="er-news__block-head"><span class="er-news__block-icon">📅</span><h3 class="er-news__block-title">Yaklaşan <em>Etkinlikler</em></h3></div>
+        <div class="er-news__upcoming" data-list="upcoming"></div>
+      </div>
+
+      <div class="er-news__block reveal" id="news-featured" style="display:none">
+        <div class="er-news__block-head"><span class="er-news__block-icon">⭐</span><h3 class="er-news__block-title">Öne <em>Çıkanlar</em></h3></div>
+        <div class="er-news__featured" data-list="featured"></div>
+      </div>
+
+      <div class="er-news__block reveal" id="news-latest">
+        <div class="er-news__block-head">
+          <span class="er-news__block-icon">📰</span>
+          <h3 class="er-news__block-title">Son <em>Gelişmeler</em></h3>
+          <a href="../../duyurular.html?bolum=rota" class="er-news__more">Tümü <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="er-news__list" data-list="latest"></div>
+      </div>
+
+      <div class="er-news__block er-news__archive reveal" id="news-past" style="display:none">
+        <div class="er-news__block-head"><span class="er-news__block-icon">🗓</span><h3 class="er-news__block-title">Geçmiş <em>Etkinlikler</em></h3></div>
+        <div class="er-news__list" data-list="past"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ INSTAGRAM ════════════════════════ -->
+  <style>
+    .ig-follow{position:relative;overflow:hidden;padding:clamp(72px,10vw,120px) 24px;}
+    .ig-follow__glow{position:absolute;pointer-events:none;border-radius:50%;filter:blur(20px);}
+    .ig-follow__inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:auto 1fr auto;gap:56px;align-items:center;position:relative;z-index:2;}
+    .ig-follow__icon{width:144px;height:144px;border-radius:36px;background:linear-gradient(45deg,#f09433 0%,#e6683c 20%,#dc2743 45%,#cc2366 70%,#bc1888 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 30px 70px rgba(220,39,67,.45),0 0 0 1px rgba(255,255,255,.08);flex-shrink:0;animation:ig-float 6s ease-in-out infinite;}
+    @keyframes ig-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .ig-follow__eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:13px;margin:0 0 14px;font-weight:600;}
+    .ig-follow__title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.2vw,3.4rem);color:#fff;margin:0;line-height:1.1;font-weight:500;}
+    .ig-follow__title em{font-style:italic;}
+    .ig-follow__lead{margin:18px 0 0;font-size:17px;line-height:1.55;max-width:540px;}
+    .ig-follow__btn{display:inline-flex;align-items:center;gap:12px;padding:20px 32px;border-radius:14px;background:#fff;color:#0a0a0a;text-decoration:none;font-weight:600;font-size:17px;box-shadow:0 20px 40px rgba(0,0,0,.25);transition:transform .3s ease,box-shadow .3s ease;flex-shrink:0;font-family:'Plus Jakarta Sans',sans-serif;}
+    .ig-follow__btn:hover{transform:translateY(-3px);box-shadow:0 26px 55px rgba(0,0,0,.32);}
+    @media(max-width:900px){.ig-follow__inner{grid-template-columns:1fr;text-align:center;gap:32px;}.ig-follow__icon{margin:0 auto;width:112px;height:112px;border-radius:28px;}.ig-follow__icon svg{width:52px!important;height:52px!important;}.ig-follow__btn{justify-self:center;}.ig-follow__lead{margin-left:auto;margin-right:auto;}}
+  </style>
+  <section class="ig-follow" style="background:linear-gradient(135deg,var(--er-surface) 0%,var(--er-deep) 100%);" aria-label="Instagram'da Takip Et">
+    <div class="ig-follow__glow" style="top:-100px;right:-100px;width:420px;height:420px;background:radial-gradient(circle,rgba(111,155,230,.22) 0%,transparent 70%);"></div>
+    <div class="ig-follow__glow" style="bottom:-140px;left:-140px;width:380px;height:380px;background:radial-gradient(circle,rgba(111,155,230,.14) 0%,transparent 70%);"></div>
+    <div class="ig-follow__inner">
+      <div class="ig-follow__icon" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </div>
+      <div class="ig-follow__content">
+        <p class="ig-follow__eyebrow" style="color:rgba(238,243,252,.65);">Instagram</p>
+        <h2 class="ig-follow__title">Yoldan kareler, <em style="color:var(--er-amber-lt);">buluşmalardan anlar.</em></h2>
+        <p class="ig-follow__lead" style="color:rgba(238,243,252,.72);">Seminerler, sohbetler ve geziler — Rota'nın her buluşmasını Instagram'da takip edin.</p>
+      </div>
+      <a href="https://www.instagram.com/rotaantalya/" target="_blank" rel="noopener" class="ig-follow__btn">
+        @rotaantalya
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ════════════════════════ SON CTA ════════════════════════ -->
+  <section class="er-section er-section-alt">
+    <div class="container">
+      <div class="er-final-cta reveal">
+        <div class="er-final-cta__text">
+          <div class="er-eyebrow">Sen de Yola Çık</div>
+          <h2 class="er-h2">Rotanı <em>birlikte çizelim.</em></h2>
+          <p>Kendine "+1 değer" katmak, doğru bir istikamet bulmak ve kardeşliğin sıcaklığını yaşamak için ilk adımı at. Karatay Medresesi'nde sana da yer var.</p>
+        </div>
+        <div class="er-final-cta__action">
+          <a href="../../iletisim.html" class="btn-amber-primary">İletişime Geç <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="https://www.instagram.com/rotaantalya/" target="_blank" rel="noopener" class="btn-amber-ghost">Instagram'da Takip Et</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="background:var(--er-deep);border-top:1px solid var(--er-border);">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../../index.html" class="logo">
+            <img src="../../assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height:40px;">
+            <span class="logo-text">Dinamik <span style="color:var(--er-amber-lt);">SK</span></span>
+          </a>
+          <p style="margin-top:16px;">İman. Disiplin. Spor. 2010'dan beri Antalya'da gençleri güçlü bireyler olarak yetiştiriyoruz.</p>
+        </div>
+        <div>
+          <h4 class="footer-title" style="color:var(--er-amber-lt);">Çalışmalarımız</h4>
+          <div class="footer-links">
+            <a href="../../dinamik-calismalar.html">Dinamik Çalışmalar</a>
+            <a href="../../dinamik-calismalar/erkek/index.html">Dinamik SK Erkek</a>
+            <a href="../../dinamik-calismalar/kiz/index.html">Dinamik SK Kız</a>
+            <a href="../../dinamik-calismalar/rota/index.html">Rota Gençlik Buluşmaları</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title" style="color:var(--er-amber-lt);">Hızlı Linkler</h4>
+          <div class="footer-links">
+            <a href="../../index.html">Ana Sayfa</a>
+            <a href="../../vefa.html">Vefa</a>
+            <a href="../../orman.html">Hatıra Ormanı</a>
+            <a href="../../arsiv.html">Arşiv</a>
+            <a href="../../iletisim.html">İletişim</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title" style="color:var(--er-amber-lt);">Sosyal Medya</h4>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/rotaantalya/" target="_blank" rel="noopener" aria-label="Rota Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Akdeniz Dinamik Spor Kulübü. Tüm hakları saklıdır.</p></div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Rota Gençlik Buluşmaları","description":"2018'den beri Antalya Kaleiçi'nde, Karatay Medresesi'nde gençlerin hayat rotalarını çizdiği gelişim ortamı.","url":"https://dinamikspor.com/dinamik-calismalar/rota/","isPartOf":{"@type":"WebSite","name":"Akdeniz Dinamik Spor Kulübü","url":"https://dinamikspor.com/"}}
+  </script>
+
+  <script type="module" src="../../firebase-init.js"></script>
+  <script src="../../main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    /* ══ Reveal (reduced-motion'da anında görünür) ══ */
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    } else {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    }
+
+    /* ══ GALERİ (Firestore sayfalar/rota.galeri → fallback yerel) ══ */
+    const SEED_GALERI = [
+      '../../assets/images/rota-kardeslik.webp',
+      '../../assets/images/rota-seminer.webp',
+      '../../assets/images/rota-grup.webp',
+      '../../assets/images/rota-halka.webp',
+      '../../assets/images/rota-sofra.webp',
+      '../../assets/images/rota-konusmaci.webp',
+      '../../assets/images/rota-muzik.webp',
+      '../../assets/images/rota-nesiller.webp',
+      '../../assets/images/rota-samimi.webp',
+      '../../assets/images/rota-hero.webp'
+    ];
+    const SPANS = ['ro-gallery__item--tall','','ro-gallery__item--wide','','','ro-gallery__item--tall','','ro-gallery__item--wide','',''];
+    const gridEl = document.getElementById('ro-gallery-grid');
+    let galleryUrls = SEED_GALERI.slice();
+
+    const cld = (url, t) => (window.cldUrl && /res\.cloudinary\.com/.test(url)) ? window.cldUrl(url, t) : url;
+    const renderGallery = (urls) => {
+      galleryUrls = (Array.isArray(urls) && urls.length) ? urls.filter(Boolean) : SEED_GALERI.slice();
+      if (!gridEl) return;
+      gridEl.innerHTML = galleryUrls.map((url, i) => `
+        <div class="ro-gallery__item ${SPANS[i % SPANS.length]}" data-lb-open="${i}">
+          <img src="${cld(url, 'w_700,h_700,c_fill,q_auto,f_auto')}" alt="Rota Gençlik Buluşmaları — kare ${i+1}" loading="lazy">
+        </div>`).join('');
+    };
+    renderGallery(SEED_GALERI);
+
+    /* ══ Lightbox ══ */
+    const lb = document.getElementById('ro-lightbox');
+    const lbImg = lb.querySelector('[data-lb-img]');
+    let lbIdx = 0;
+    const lbShow = (i) => {
+      lbIdx = (i + galleryUrls.length) % galleryUrls.length;
+      lbImg.src = cld(galleryUrls[lbIdx], 'w_1600,q_auto,f_auto');
+      lbImg.alt = `Rota — kare ${lbIdx+1}`;
+    };
+    const lbOpen = (i) => { lbShow(i); lb.classList.add('is-open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow = 'hidden'; };
+    const lbClose = () => { lb.classList.remove('is-open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; };
+    gridEl?.addEventListener('click', (e) => {
+      const it = e.target.closest('[data-lb-open]'); if (it) lbOpen(parseInt(it.dataset.lbOpen, 10) || 0);
+    });
+    lb.addEventListener('click', (e) => {
+      if (e.target.closest('[data-lb-close]') || e.target === lb) return lbClose();
+      if (e.target.closest('[data-lb-prev]')) return lbShow(lbIdx - 1);
+      if (e.target.closest('[data-lb-next]')) return lbShow(lbIdx + 1);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('is-open')) return;
+      if (e.key === 'Escape') lbClose();
+      if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
+      if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
+    });
+
+    /* ══ Sayfa Görselleri (Firestore sayfalar/rota) + admin canlı önizleme ══ */
+    const setImg = (id, url) => { if (!url) return; const el = document.getElementById(id); if (el) el.src = cld(url, 'w_1200,q_auto,f_auto'); };
+    const setBg  = (id, url) => { if (!url) return; const el = document.getElementById(id); if (el) el.style.backgroundImage = `url('${cld(url, 'w_1600,q_auto,f_auto')}')`; };
+    const applyRotaSayfa = (g) => {
+      if (!g) return;
+      if (g.hero_bg) { const el = document.getElementById('ro-hero-bg'); if (el) el.style.backgroundImage = `url('${g.hero_bg}')`; }
+      setImg('ro-img-logo',       g.logo);
+      setImg('ro-img-meclis',     g.img_meclis);
+      setBg ('ro-band-konusmaci', g.img_konusmaci);
+      setImg('ro-img-sohbet',     g.img_sohbet);
+      setImg('ro-img-iftar',      g.img_iftar);
+      setBg ('ro-band-gaye',      g.img_gaye);
+      setImg('ro-img-grup',       g.img_grup);
+      if (Array.isArray(g.galeri) && g.galeri.length) renderGallery(g.galeri);
+    };
+    const urlParams = new URLSearchParams(location.search);
+    if (urlParams.get('preview') === 'admin') {
+      window.addEventListener('message', (e) => {
+        const msg = e.data; if (!msg) return;
+        if (msg.type === 'rota-sayfa-preview') applyRotaSayfa(msg.data);
+      });
+      try { window.parent?.postMessage({ type: 'rota-sayfa-ready' }, '*'); } catch (_) {}
+    } else {
+      (async () => {
+        try {
+          if (window.firebaseReady) await window.firebaseReady;
+          if (!window.FB?.ready) return;
+          const { db, doc, getDoc } = window.FB;
+          const snap = await getDoc(doc(db, 'sayfalar', 'rota'));
+          if (snap.exists()) applyRotaSayfa(snap.data());
+        } catch (err) { console.warn('Rota sayfa görselleri yüklenemedi:', err); }
+      })();
+    }
+
+    /* ══ Haber Merkezi (Firestore icerik · kategori=rota) ══ */
+    (async () => {
+      const KATEGORI = 'rota';
+      const PRE = 'er';
+      const escH = (s='') => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+      const TIP_AD = { duyuru:'Duyuru', etkinlik:'Etkinlik', haber:'Haber', video:'Video' };
+      const AY_KISA = ['OCA','ŞUB','MAR','NİS','MAY','HAZ','TEM','AĞU','EYL','EKİ','KAS','ARA'];
+      const formatTarih = (iso) => iso ? new Date(iso).toLocaleDateString('tr-TR', { day:'numeric', month:'long', year:'numeric' }) : '';
+      try {
+        if (window.firebaseReady) await window.firebaseReady;
+        if (!window.FB?.ready) return;
+        const { db, collection, getDocs } = window.FB;
+        const snap = await getDocs(collection(db, 'icerik'));
+        const items = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+          .filter(i => i.kategori === KATEGORI && i.yayinda !== false && !(window.isArchived ? window.isArchived(i) : i.arsiv === true))
+          .sort((a,b) => (b.tarih || '').localeCompare(a.tarih || ''));
+
+        const today = new Date().toISOString().slice(0,10);
+        const upcoming = items.filter(i => i.tip === 'etkinlik' && (i.tarih || '') >= today).sort((a,b) => (a.tarih||'').localeCompare(b.tarih||''));
+        const past = items.filter(i => i.tip === 'etkinlik' && (i.tarih || '') < today).slice(0,4);
+        const featured = items.filter(i => i.oneCikar === true && i.tip !== 'etkinlik').slice(0,3);
+        const fIds = new Set(featured.map(i => i.id));
+        const uIds = new Set(upcoming.map(i => i.id));
+        const latest = items.filter(i => !fIds.has(i.id) && !uIds.has(i.id) && i.tip !== 'etkinlik').slice(0,6);
+
+        const setStat = (k,v) => { const el = document.querySelector(`[data-stat="${k}"]`); if(el) el.textContent=v; };
+        setStat('upcoming', upcoming.length);
+        setStat('featured', featured.length);
+        setStat('total', items.length);
+
+        if (upcoming.length) {
+          document.getElementById('news-upcoming').style.display = '';
+          document.querySelector('[data-list="upcoming"]').innerHTML = upcoming.map(i => {
+            const d = new Date(i.tarih);
+            return `<a href="../../duyuru.html?id=${encodeURIComponent(i.id)}" class="${PRE}-up-card">
+              <div class="${PRE}-up-card__date"><span class="${PRE}-up-card__day">${d.getDate()}</span><span class="${PRE}-up-card__month">${AY_KISA[d.getMonth()]}</span></div>
+              <div class="${PRE}-up-card__body"><span class="${PRE}-up-card__tag">${TIP_AD[i.tip]||''}</span><h4 class="${PRE}-up-card__title">${escH(i.baslik)}</h4>
+                <div class="${PRE}-up-card__meta">${i.saat ? `<span>🕒 ${escH(i.saat)}</span>` : ''}${i.konum ? `<span>📍 ${escH(i.konum)}</span>` : ''}</div></div>
+              <svg class="${PRE}-up-card__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>`;
+          }).join('');
+        }
+
+        if (featured.length) {
+          document.getElementById('news-featured').style.display = '';
+          const big = featured[0], sides = featured.slice(1,3);
+          const card = (i, kind) => {
+            const isBig = kind === 'big';
+            const img = i.gorsel
+              ? `<img class="${PRE}-feat-card__img" src="${escH(window.cldUrl ? window.cldUrl(i.gorsel, isBig?'w_900,h_500,c_fill,q_auto,f_auto':'w_500,h_350,c_fill,q_auto,f_auto') : i.gorsel)}" alt="" loading="lazy">`
+              : `<div class="${PRE}-feat-card__no-img">⭐</div>`;
+            return `<a href="../../duyuru.html?id=${encodeURIComponent(i.id)}" class="${PRE}-feat-card${isBig?' '+PRE+'-feat-card--big':''}">
+              ${img}<span class="${PRE}-feat-card__star">★ Öne Çıkan</span>
+              <div class="${PRE}-feat-card__body"><span class="${PRE}-feat-card__tag">${TIP_AD[i.tip]||''}</span><h4 class="${PRE}-feat-card__title">${escH(i.baslik)}</h4>
+                ${i.kisaMetin ? `<p class="${PRE}-feat-card__excerpt">${escH(i.kisaMetin)}</p>` : ''}<span class="${PRE}-feat-card__date">${formatTarih(i.tarih)}</span></div></a>`;
+          };
+          document.querySelector('[data-list="featured"]').innerHTML = `${card(big,'big')}<div class="${PRE}-news__featured-side">${sides.map(i=>card(i,'side')).join('')}</div>`;
+        }
+
+        const latestEl = document.querySelector('[data-list="latest"]');
+        if (latest.length) {
+          latestEl.innerHTML = latest.map(i => {
+            const img = i.gorsel
+              ? `<div class="${PRE}-news-card__img-wrap"><img class="${PRE}-news-card__img" src="${escH(window.cldUrl?window.cldUrl(i.gorsel,'w_600,h_340,c_fill,q_auto,f_auto'):i.gorsel)}" alt="" loading="lazy"></div>`
+              : `<div class="${PRE}-news-card__no-img">◆</div>`;
+            return `<a href="../../duyuru.html?id=${encodeURIComponent(i.id)}" class="${PRE}-news-card">${img}
+              <div class="${PRE}-news-card__body"><div class="${PRE}-news-card__row"><span class="${PRE}-news-card__type">${TIP_AD[i.tip]||''}</span><span class="${PRE}-news-card__sep">·</span><span class="${PRE}-news-card__date">${formatTarih(i.tarih)}</span></div>
+                <h4 class="${PRE}-news-card__title">${escH(i.baslik)}</h4>${i.kisaMetin ? `<p class="${PRE}-news-card__excerpt">${escH(i.kisaMetin)}</p>` : ''}</div></a>`;
+          }).join('');
+        } else {
+          latestEl.innerHTML = `<div class="${PRE}-news__empty" style="grid-column:1/-1"><em>Henüz haber yok.</em>İlk haber yayında — admin panelinden ekleyebilirsin.</div>`;
+        }
+
+        if (past.length) {
+          document.getElementById('news-past').style.display = '';
+          document.querySelector('[data-list="past"]').innerHTML = past.map(i => {
+            const img = i.gorsel
+              ? `<div class="${PRE}-news-card__img-wrap"><img class="${PRE}-news-card__img" src="${escH(window.cldUrl?window.cldUrl(i.gorsel,'w_600,h_340,c_fill,q_auto,f_auto'):i.gorsel)}" alt="" loading="lazy"></div>`
+              : `<div class="${PRE}-news-card__no-img">◆</div>`;
+            return `<a href="../../duyuru.html?id=${encodeURIComponent(i.id)}" class="${PRE}-news-card">${img}
+              <div class="${PRE}-news-card__body"><div class="${PRE}-news-card__row"><span class="${PRE}-news-card__type">Etkinlik</span><span class="${PRE}-news-card__sep">·</span><span class="${PRE}-news-card__date">${formatTarih(i.tarih)}</span></div>
+                <h4 class="${PRE}-news-card__title">${escH(i.baslik)}</h4>${i.konum ? `<p class="${PRE}-news-card__excerpt">📍 ${escH(i.konum)}</p>` : ''}</div></a>`;
+          }).join('');
+        }
+      } catch (err) { console.error('Haber Merkezi hatası:', err); }
+    })();
+  });
+  </script>
+  <script src="../../site-ayarlar.js?v=2" defer></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+rules_version = '2';
+
+// =====================================================================
+// Dinamik Spor Kulübü - Firestore Güvenlik Kuralları
+// =====================================================================
+// - icerik:        herkes okur, sadece giriş yapmış admin yazar/siler
+// - feed:          herkes okur, sadece auth yazar (Make.com için ileride
+//                  service account / custom token kullanılır)
+// - _test_baglanti: artık kapalı, eski test koleksiyonu
+// - diğer her şey: varsayılan REDDET
+//
+// Yayınlama: Firebase Console > Firestore > Rules sekmesi
+//   bu dosyanın içeriğini yapıştır > "Yayınla"
+// =====================================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // İçerik (duyuru / haber / etkinlik / video)
+    match /icerik/{docId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // Sosyal akış (Instagram + YouTube paylaşımları)
+    match /feed/{docId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // İletişim formu (sadece yazma — admin okur)
+    // Form gönderirken auth gerekmesin diye create herkese açık.
+    match /iletisim/{docId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
+
+    // Vefa Köşesi (mevcut başkan / yönetim kurulu / geçmiş başkanlar / vefa)
+    match /vefa/{docId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // Hatıra Ormanı — Bağış bildirimleri
+    // Form herkese açık, ama liste sadece admin okur (gizlilik).
+    // Sahte bildirimleri admin manuel doğrulayıp onaylar.
+    match /bagislar/{docId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
+
+    // Ayarlar — Hatıra Ormanı doc'u + toplam sayaç
+    // Public okur (sayaç + bilgilendirme metinleri için), admin yazar.
+    match /ayarlar/{docId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // Hatıra Ormanı — Çalışmalar / Anılar galerisi
+    // Public okur (kart listesi), admin CRUD.
+    match /orman_calismalar/{docId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // Kız Sayfası — Faaliyetler & Projeler
+    // Public okur (kart + modal), admin CRUD.
+    match /kiz_projeler/{docId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // Erkek Sayfası — Faaliyetler & Projeler
+    // Public okur (kart + modal), admin CRUD.
+    match /erkek_projeler/{docId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // Sayfa görselleri (sayfalar/kiz, sayfalar/erkek, …)
+    // Public okur (img URL'lerini çeker), admin yazar.
+    match /sayfalar/{docId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    // Eski/test koleksiyonları — kapalı
+    match /_test_baglanti/{docId} {
+      allow read, write: if false;
+    }
+    match /duyurular/{docId} {
+      allow read, write: if false;
+    }
+
+    // Diğer her şey: reddet
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

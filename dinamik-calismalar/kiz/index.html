@@ -3,544 +3,358 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dinamik SK Kız | Güçlü. Zarif. Kararlı.</title>
-  <meta name="description" content="Dinamik SK Kız — spor, kardeşlik ve özgüvenle büyüyen genç kızların topluluğu. Bilek güreşinden dalgıçlığa, her branşta kadınsı gücün merkezi.">
-  <meta property="og:title" content="Dinamik SK Kız — Güçlü. Zarif. Kararlı.">
-  <meta property="og:description" content="Kadınsı gücün spordaki adı.">
+  <title>Dinamik SK Kız — Genç Çevre Gönüllüleri | Akdeniz Dinamik Spor Kulübü</title>
+  <meta name="description" content="Akdeniz Dinamik Spor Kulübü Kız Bölümü: Kaşifler (7-11), Araştırmacılar (11-15) ve Maceracılar (15-18) ekipleriyle millî ve manevî değerlerle yetişen genç kız gönüllülerin topluluğu.">
+  <meta property="og:title" content="Dinamik SK Kız — Genç Çevre Gönüllüleri">
+  <meta property="og:description" content="Pusulamız vicdan, rehberimiz doğa. Akdeniz Dinamik Kız Bölümü'nde izini bırak.">
+  <meta property="og:image" content="https://dinamikspor.com/assets/images/kiz-hero.jpg">
   <link rel="canonical" href="https://dinamikspor.com/dinamik-calismalar/kiz/">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/dinamik-logo.svg">
+  <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
+
   <style>
-    /* Kızlar — Bordo + Rose Gold */
+    /* ═══ Tema: Bordo + Rose Gold ═══ */
     :root {
-      --kz-bg:        #14060f;
-      --kz-surface:   #1f0a18;
-      --kz-deep:      #2a0d1f;
-      --kz-card:      rgba(255,255,255,0.035);
-      --kz-border:    rgba(232,128,158,0.2);
+      --kz-bg:        #120410;
+      --kz-surface:   #22091a;
+      --kz-deep:      #2e0d22;
+      --kz-card:      rgba(255,255,255,0.04);
+      --kz-border:    rgba(232,128,158,0.18);
+      --kz-border-s:  rgba(232,128,158,0.32);
       --kz-rose:      #E8809E;
       --kz-rose-lt:   #f7a9c0;
       --kz-rose-dark: #b74d6e;
-      --kz-gold:      #d4a373;
-      --kz-accent:    #ff7aa3;
-
       --ff-serif:     'Cormorant Garamond', Georgia, serif;
       --ff-cond:      'Barlow Condensed', sans-serif;
-      --ff-sans:      'DM Sans', sans-serif;
+      --ff-sans:      'Plus Jakarta Sans', sans-serif;
     }
-
     body { background: var(--kz-bg); color: #fff; margin: 0; }
 
-    /* HEADER override */
     .header { background: rgba(20,6,15,.92) !important; backdrop-filter: blur(12px); }
     .header .nav-link { color: rgba(255,255,255,.7) !important; }
     .header .nav-link.active { color: var(--kz-rose) !important; }
     .header .logo-text span { color: var(--kz-rose) !important; }
     .header .nav-cta { background: var(--kz-rose) !important; color: #14060f !important; }
 
-    /* HERO */
+    /* ════════════════════════════════
+       HERO
+    ════════════════════════════════ */
     .kz-hero {
-      min-height: 100vh;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
+      min-height: 100vh; min-height: 100svh;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
       padding: 140px 24px 100px;
     }
     .kz-hero__bg {
       position: absolute; inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1920&q=85');
+      background-image: url('../../assets/images/kiz-hero.jpg');
       background-size: cover;
-      background-position: center 30%;
-      filter: brightness(0.4) saturate(1.2) contrast(1.1);
+      background-position: center 68%;
+      filter: brightness(0.38) saturate(1.2);
       z-index: 0;
     }
     .kz-hero__overlay {
       position: absolute; inset: 0;
       background:
-        linear-gradient(135deg, rgba(20,6,15,0.75) 0%, rgba(42,13,31,0.6) 50%, rgba(20,6,15,0.95) 100%),
-        radial-gradient(ellipse at 20% 30%, rgba(232,128,158,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 70%, rgba(255,122,163,0.1) 0%, transparent 60%);
+        linear-gradient(to top, rgba(20,6,15,1) 0%, rgba(20,6,15,.55) 45%, rgba(20,6,15,.15) 100%),
+        radial-gradient(ellipse at 25% 65%, rgba(232,128,158,.18) 0%, transparent 60%);
       z-index: 1;
     }
     .kz-hero__noise {
-      position: absolute; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
-      opacity: 0.15;
-      z-index: 2;
-      pointer-events: none;
+      position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+      opacity: .12;
     }
     .kz-hero__fade {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 30%;
+      position: absolute; bottom: 0; left: 0; right: 0; height: 25%;
       background: linear-gradient(to top, var(--kz-bg), transparent);
-      z-index: 2;
-      pointer-events: none;
+      z-index: 2; pointer-events: none;
     }
     .kz-hero__inner {
       position: relative; z-index: 3;
-      max-width: 1200px; width: 100%;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 80px;
-      align-items: center;
+      max-width: 1200px; width: 100%; margin: 0 auto;
+      display: grid; grid-template-columns: 1.15fr 1fr;
+      gap: 80px; align-items: center;
     }
-
     .kz-hero__back {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--kz-rose);
-      text-decoration: none;
-      margin-bottom: 24px;
-      transition: gap 0.3s ease;
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--ff-sans); font-size: .72rem; font-weight: 600;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--kz-rose); text-decoration: none;
+      margin-bottom: 24px; transition: gap .3s;
     }
     .kz-hero__back:hover { gap: 14px; }
     .kz-hero__back svg { width: 14px; height: 14px; }
-
     .kz-hero__mark {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--kz-rose);
-      margin-bottom: 28px;
+      display: inline-flex; align-items: center; gap: 12px;
+      font-family: var(--ff-sans); font-size: .72rem; font-weight: 600;
+      letter-spacing: .25em; text-transform: uppercase;
+      color: var(--kz-rose); margin-bottom: 28px;
     }
     .kz-hero__mark::before { content: ''; width: 40px; height: 1px; background: var(--kz-rose); }
-
     .kz-hero__title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(3.5rem, 9vw, 7rem);
-      font-weight: 900;
-      line-height: 0.92;
-      text-transform: uppercase;
-      letter-spacing: -0.015em;
-      color: #fff;
-      margin: 0 0 28px;
-      text-shadow: 0 4px 40px rgba(0,0,0,0.4);
+      font-family: var(--ff-cond);
+      font-size: clamp(3rem, 7.5vw, 6rem);
+      font-weight: 900; line-height: .93;
+      text-transform: uppercase; letter-spacing: -.01em;
+      color: #fff; margin: 0 0 28px;
+      text-shadow: 0 4px 40px rgba(0,0,0,.4);
     }
     .kz-hero__title em {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 600;
-      color: var(--kz-rose);
-      text-transform: none;
-      letter-spacing: 0;
-      display: block;
-      font-size: 0.95em;
+      font-family: var(--ff-serif); font-style: italic;
+      font-weight: 600; color: var(--kz-rose);
+      text-transform: none; letter-spacing: 0;
+      display: block; font-size: .9em;
     }
-
     .kz-hero__lead {
-      font-size: 1.15rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.82);
-      max-width: 480px;
-      margin: 0 0 40px;
-      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem; line-height: 1.75;
+      color: rgba(255,255,255,.82); max-width: 480px;
+      margin: 0 0 40px; font-family: var(--ff-sans);
     }
     .kz-hero__lead strong { color: var(--kz-rose-lt); font-weight: 600; }
-
     .kz-hero__cta { display: flex; gap: 16px; flex-wrap: wrap; }
 
     .btn-rose-primary, .btn-rose-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 32px;
-      border-radius: 2px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: 1px solid transparent;
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 32px; border-radius: 2px;
+      font-family: var(--ff-sans); font-weight: 600;
+      font-size: .8rem; letter-spacing: .14em;
+      text-transform: uppercase; text-decoration: none;
+      transition: all .3s ease; border: 1px solid transparent;
     }
-    .btn-rose-primary {
-      background: var(--kz-rose);
-      color: #1a0812;
-      box-shadow: 0 8px 32px rgba(232,128,158,0.25);
-    }
-    .btn-rose-primary:hover { background: var(--kz-rose-lt); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(232,128,158,0.4); }
-    .btn-rose-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.25); }
+    .btn-rose-primary { background: var(--kz-rose); color: #1a0812; box-shadow: 0 8px 32px rgba(232,128,158,.25); }
+    .btn-rose-primary:hover { background: var(--kz-rose-lt); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(232,128,158,.4); }
+    .btn-rose-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.25); }
     .btn-rose-ghost:hover { border-color: var(--kz-rose); color: var(--kz-rose); }
 
-    .kz-hero__showcase { position: relative; aspect-ratio: 3/4; }
-    .kz-hero__card {
-      position: absolute; border-radius: 4px; overflow: hidden;
-      background: var(--kz-deep);
-      border: 1px solid var(--kz-border);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    /* Hero: Ekip kartları (sağ kolon) */
+    .kz-hero__teams { display: flex; flex-direction: column; gap: 14px; }
+    .kz-hero__team {
+      display: flex; align-items: center; gap: 22px;
+      padding: 20px 26px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--kz-border); border-radius: 4px;
+      text-decoration: none; backdrop-filter: blur(10px);
+      transition: all .3s ease;
     }
-    .kz-hero__card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .kz-hero__card--1 { width: 70%; height: 70%; top: 0; right: 0; transform: rotate(2deg); }
-    .kz-hero__card--2 { width: 50%; height: 55%; bottom: 0; left: 0; transform: rotate(-4deg); }
-    .kz-hero__stat {
-      position: absolute; bottom: 10%; right: 8%;
-      background: var(--kz-rose);
-      color: #14060f;
-      padding: 18px 24px;
-      border-radius: 2px;
-      box-shadow: 0 15px 40px rgba(232,128,158,0.35);
-      z-index: 2;
+    .kz-hero__team:hover { background: rgba(232,128,158,.1); border-color: rgba(232,128,158,.45); transform: translateX(6px); }
+    .kz-hero__team-age {
+      font-family: var(--ff-serif); font-style: italic;
+      font-size: 1.6rem; color: var(--kz-rose);
+      font-weight: 500; line-height: 1; flex-shrink: 0; min-width: 72px;
     }
-    .kz-hero__stat b {
-      display: block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
-      font-size: 2.5rem;
-      line-height: 1;
+    .kz-hero__team-body { flex: 1; }
+    .kz-hero__team-name {
+      font-family: var(--ff-cond); font-weight: 900;
+      font-size: 1.4rem; text-transform: uppercase;
+      color: #fff; margin: 0 0 3px;
     }
-    .kz-hero__stat span {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+    .kz-hero__team-sub {
+      font-family: var(--ff-sans); font-size: .78rem;
+      color: rgba(255,255,255,.5); margin: 0;
     }
+    .kz-hero__team-arrow { color: var(--kz-rose); flex-shrink: 0; opacity: .7; transition: opacity .3s; }
+    .kz-hero__team:hover .kz-hero__team-arrow { opacity: 1; }
 
-    /* MANIFESTO */
+    /* ════════════════════════════════
+       MANİFESTO ŞERİDİ
+    ════════════════════════════════ */
     .kz-manifesto {
-      background: var(--kz-deep);
-      padding: 80px 24px;
+      background: var(--kz-deep); padding: 60px 24px;
       border-top: 1px solid var(--kz-border);
       border-bottom: 1px solid var(--kz-border);
-      overflow: hidden;
     }
     .kz-manifesto-track {
-      display: flex; justify-content: center; gap: 48px;
-      flex-wrap: wrap; align-items: center;
+      display: flex; justify-content: center;
+      gap: 40px; flex-wrap: wrap; align-items: center;
+      max-width: 900px; margin: 0 auto;
     }
-    .kz-manifesto-word {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      color: rgba(255,255,255,0.95);
+    .kz-mword {
+      font-family: var(--ff-cond); font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      text-transform: uppercase; letter-spacing: .02em;
+      color: rgba(255,255,255,.95);
     }
-    .kz-manifesto-word:nth-child(2) {
-      color: var(--kz-rose);
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 600;
-      text-transform: none;
+    .kz-mword--em {
+      font-family: var(--ff-serif); font-style: italic;
+      font-weight: 600; color: var(--kz-rose); text-transform: none;
     }
-    .kz-manifesto-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--kz-rose); }
+    .kz-mdot { width: 8px; height: 8px; border-radius: 50%; background: var(--kz-rose); }
 
-    /* SECTIONS */
+    /* ════════════════════════════════
+       ORTAK BÖLÜM STİLLERİ
+    ════════════════════════════════ */
     .kz-section { padding: 100px 0; background: var(--kz-bg); }
     .kz-section-alt { background: var(--kz-surface); }
-
     .kz-eyebrow {
       display: inline-flex; align-items: center; gap: 12px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.7rem; font-weight: 600;
-      letter-spacing: 0.25em; text-transform: uppercase;
+      font-family: var(--ff-sans); font-size: .7rem; font-weight: 600;
+      letter-spacing: .25em; text-transform: uppercase;
       color: var(--kz-rose); margin-bottom: 20px;
     }
     .kz-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--kz-rose); }
-
     .kz-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      text-transform: uppercase;
-      letter-spacing: -0.01em;
-      line-height: 1; color: #fff;
-      margin: 0 0 20px;
+      font-family: var(--ff-cond); font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      text-transform: uppercase; letter-spacing: -.01em;
+      line-height: 1; color: #fff; margin: 0 0 20px;
     }
     .kz-title em {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-weight: 600;
-      color: var(--kz-rose);
+      font-family: var(--ff-serif); font-style: italic;
+      font-weight: 600; color: var(--kz-rose);
       text-transform: none; letter-spacing: 0;
     }
 
-    .kz-lead {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1rem; line-height: 1.8;
-      color: rgba(255,255,255,0.65);
-      max-width: 560px;
+    /* ════════════════════════════════
+       GENEL TANITIM
+    ════════════════════════════════ */
+    .kz-giris { padding: 110px 0 100px; background: var(--kz-bg); }
+    .kz-giris__inner {
+      display: grid; grid-template-columns: 1.05fr 1fr;
+      gap: 72px; align-items: start;
     }
-
-    /* HAKKIMIZDA */
-    .kz-about { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .kz-about-img { position: relative; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; }
-    .kz-about-img img { width: 100%; height: 100%; object-fit: cover; }
-    .kz-about-img::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(20,6,15,0.4), transparent 50%);
+    .kz-giris__text p {
+      font-family: var(--ff-sans); font-size: 1.02rem; line-height: 1.9;
+      color: rgba(255,255,255,.74); margin: 0 0 18px;
     }
-    .kz-about-badge {
-      position: absolute; bottom: 24px; left: 24px;
-      background: rgba(232,128,158,0.95);
-      color: #14060f;
-      padding: 14px 20px;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700; font-size: 0.75rem;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      z-index: 2; border-radius: 2px;
+    .kz-giris__text p strong { color: var(--kz-rose-lt); font-weight: 600; }
+    .kz-giris__text .kz-giris__closing {
+      font-family: var(--ff-serif); font-style: italic;
+      font-size: 1.32rem; color: rgba(255,255,255,.92);
+      line-height: 1.55; margin-top: 32px !important;
+      padding: 4px 0 4px 22px;
+      border-left: 2px solid var(--kz-rose);
     }
-    .kz-about-text p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1rem; line-height: 1.85;
-      color: rgba(255,255,255,0.72);
-      margin: 0 0 18px;
+    .kz-giris__images {
+      display: flex; flex-direction: column; gap: 16px;
+      position: sticky; top: 100px;
     }
-    .kz-about-text p strong { color: var(--kz-rose-lt); font-weight: 600; }
-
-    /* DEĞERLER */
-    .kz-values {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px; margin-top: 64px;
-    }
-    .kz-value {
-      background: var(--kz-card); border: 1px solid var(--kz-border);
-      padding: 40px 32px; border-radius: 4px;
-      position: relative; transition: all 0.4s ease; overflow: hidden;
-    }
-    .kz-value::before {
-      content: ''; position: absolute; top: 0; left: 0;
-      width: 3px; height: 60px;
-      background: linear-gradient(to bottom, var(--kz-rose), transparent);
-      transition: height 0.4s ease;
-    }
-    .kz-value:hover {
-      background: rgba(232,128,158,0.06);
-      border-color: rgba(232,128,158,0.4);
-      transform: translateY(-6px);
-    }
-    .kz-value:hover::before { height: 100%; }
-
-    .kz-value-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-size: 2.5rem;
-      color: var(--kz-rose); opacity: 0.5;
-      line-height: 1; margin-bottom: 20px;
-    }
-    .kz-value h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900; font-size: 1.8rem;
-      text-transform: uppercase; letter-spacing: 0.01em;
-      color: #fff; margin: 0 0 14px;
-    }
-    .kz-value p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.92rem; line-height: 1.75;
-      color: rgba(255,255,255,0.6); margin: 0;
-    }
-
-    /* HABERLER */
-    .kz-haber-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px; margin-top: 48px;
-    }
-    .kz-haber {
-      background: var(--kz-card); border: 1px solid var(--kz-border);
+    .kz-giris__img {
       border-radius: 4px; overflow: hidden;
-      transition: all 0.3s ease;
-    }
-    .kz-haber:hover { transform: translateY(-4px); border-color: rgba(232,128,158,0.4); }
-    .kz-haber-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
-    .kz-haber-body { padding: 24px; }
-    .kz-haber-date {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.7rem; font-weight: 600;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--kz-rose); margin-bottom: 10px;
-    }
-    .kz-haber-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800; font-size: 1.3rem;
-      text-transform: uppercase;
-      color: #fff; margin: 0 0 10px;
-      line-height: 1.15;
-    }
-    .kz-haber-desc {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem; line-height: 1.65;
-      color: rgba(255,255,255,0.55);
-      margin: 0;
-    }
-
-    /* ETKİNLİKLER */
-    .kz-events {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px; margin-top: 48px;
-    }
-    .kz-event {
-      background: var(--kz-card); border: 1px solid var(--kz-border);
-      padding: 32px 24px; text-align: center;
-      border-radius: 4px; transition: all 0.3s ease;
-    }
-    .kz-event:hover { background: rgba(232,128,158,0.06); transform: translateY(-4px); }
-    .kz-event-icon {
-      width: 56px; height: 56px;
       border: 1px solid var(--kz-border);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 18px;
-      background: rgba(232,128,158,0.08);
-    }
-    .kz-event-icon svg { width: 24px; height: 24px; stroke: var(--kz-rose); fill: none; stroke-width: 1.5; }
-    .kz-event h4 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800; font-size: 1.2rem;
-      text-transform: uppercase;
-      color: #fff; margin: 0 0 8px;
-    }
-    .kz-event p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.55);
-      margin: 0 0 8px;
-    }
-    .kz-event-date {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.75rem;
-      color: var(--kz-rose);
-      font-weight: 600;
-      letter-spacing: 0.1em;
-    }
-
-    /* QUOTE */
-    .kz-quote {
-      background: linear-gradient(135deg, var(--kz-surface) 0%, var(--kz-deep) 100%);
-      border: 1px solid var(--kz-border);
-      border-radius: 8px;
-      padding: 80px 48px;
-      text-align: center;
+      box-shadow: 0 24px 56px rgba(0,0,0,.45);
       position: relative;
-      overflow: hidden;
     }
-    .kz-quote::before {
-      content: '"';
-      position: absolute; top: -30px; left: 40px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 14rem;
-      color: var(--kz-rose);
-      opacity: 0.15;
-      line-height: 1;
+    .kz-giris__img--fire { aspect-ratio: 4/3; }
+    .kz-giris__img--sea  { aspect-ratio: 16/10; }
+    .kz-giris__img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: brightness(1.05) contrast(1.06) saturate(1.05);
+      transition: transform .6s ease;
     }
-    .kz-quote p {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-weight: 400;
-      font-size: clamp(1.4rem, 3vw, 2.2rem);
-      color: #fff;
-      max-width: 800px;
-      margin: 0 auto 24px;
-      line-height: 1.5;
-    }
-    .kz-quote-author {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--kz-rose);
-      font-weight: 600;
+    .kz-giris__img--sea img  { object-position: center 72%; }
+    .kz-giris__img--fire img { object-position: center 80%; filter: brightness(1.15) contrast(1.1) saturate(1.1); }
+    .kz-giris__img:hover img { transform: scale(1.04); }
+    .kz-giris__img-caption {
+      position: absolute; left: 16px; bottom: 14px;
+      font-family: var(--ff-cond); font-size: .68rem;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: rgba(255,255,255,.92); font-weight: 700;
+      padding: 6px 12px; background: rgba(20,4,16,.6);
+      backdrop-filter: blur(8px); border-radius: 2px;
+      border: 1px solid rgba(232,128,158,.25);
     }
 
-    /* CTA */
-    .kz-cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-    .kz-cta-card {
-      background: var(--kz-card); border: 1px solid var(--kz-border);
-      border-radius: 4px; padding: 48px 40px;
-      transition: all 0.3s ease;
-      position: relative; overflow: hidden;
-    }
-    .kz-cta-card::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 2px; background: var(--kz-rose);
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-    .kz-cta-card:hover { background: rgba(232,128,158,0.06); }
-    .kz-cta-card:hover::after { transform: scaleX(1); }
-    .kz-cta-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900; font-size: 1.8rem;
-      text-transform: uppercase;
-      color: #fff; margin: 0 0 14px;
-    }
-    .kz-cta-card p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem; line-height: 1.7;
-      color: rgba(255,255,255,0.6); margin: 0 0 24px;
+    /* ════════════════════════════════
+       EKİP DETAY BÖLÜMLERİ
+    ════════════════════════════════ */
+    .kz-team { padding: 110px 0; }
+    /* Bg alternasyonu — id bazlı (nth-of-type tüm section'ları sayar, hatalı) */
+    #kasifler        { background: var(--kz-bg); border-top: 1px solid var(--kz-border); }
+    #arastirmacilar  { background: var(--kz-surface); }
+    #maceracilar     { background: var(--kz-bg); }
+
+    .kz-team__inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 88px; align-items: center;
     }
 
-    /* FOOTER */
-    .kz-footer { background: var(--kz-bg); border-top: 1px solid var(--kz-border); }
-
-    /* REVEAL */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal.d1 { transition-delay: 0.12s; }
-    .reveal.d2 { transition-delay: 0.24s; }
-    .reveal.d3 { transition-delay: 0.36s; }
-
-    @media (max-width: 1024px) {
-      .kz-hero__inner { grid-template-columns: 1fr; gap: 60px; }
-      .kz-hero__showcase { max-width: 400px; margin: 0 auto; }
-      .kz-about { grid-template-columns: 1fr; gap: 48px; }
+    .kz-team__badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 7px 16px;
+      background: rgba(232,128,158,.1);
+      border: 1px solid var(--kz-border); border-radius: 100px;
+      font-family: var(--ff-sans); font-size: .7rem; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--kz-rose); margin-bottom: 24px;
     }
-    @media (max-width: 768px) {
-      .kz-hero { padding: 120px 20px 80px; }
-      .kz-hero__title { font-size: clamp(2.8rem, 11vw, 4rem); }
-      .kz-cta-grid { grid-template-columns: 1fr; }
-      .kz-manifesto-track { gap: 24px; }
-      .kz-section { padding: 72px 0; }
-    }
+    .kz-team__badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--kz-rose); }
 
-    /* ═══════════════════════════════════════════════
-       HABER MERKEZİ — Kız (Bordo/Rose)
-    ═══════════════════════════════════════════════ */
+    .kz-team__text p {
+      font-family: var(--ff-sans); font-size: .97rem; line-height: 1.88;
+      color: rgba(255,255,255,.7); margin: 0 0 16px;
+    }
+    .kz-team__text p:last-child { margin-bottom: 0; }
+    .kz-team__text p strong { color: var(--kz-rose-lt); font-weight: 600; }
+
+    /* Görsel container'lar */
+    .kz-team__visuals { position: relative; }
+
+    .kz-img {
+      border-radius: 4px; overflow: hidden;
+      border: 1px solid var(--kz-border);
+      box-shadow: 0 24px 60px rgba(0,0,0,.45);
+    }
+    .kz-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: brightness(1.05) contrast(1.08) saturate(1.05);
+      transition: transform .65s ease;
+    }
+    .kz-img:hover img { transform: scale(1.04); }
+
+    /* Tek büyük görsel */
+    .kz-img--tall { aspect-ratio: 3/4; }
+
+    /* İki dikey görsel yan yana */
+    .kz-img-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .kz-img-duo .kz-img { aspect-ratio: 2/3; }
+
+    /* Üst-alt stacked düzen */
+    .kz-img-stack { display: flex; flex-direction: column; gap: 12px; }
+    .kz-img-stack .kz-img--main { aspect-ratio: 4/5; }
+    .kz-img-stack .kz-img--sub  { aspect-ratio: 16/7; }
+
+    /* Geniş letterbox (grup fotoğrafı için) */
+    .kz-img--lbox img { object-position: center 54%; }
+
+    /* WhatsApp/video kenar çubuklarını gizle */
+    .kz-img--bars img { object-position: center center; }
+
+    /* Gece karanlığı üstünden kırpma (ateş fotoğrafı) */
+    .kz-img--night img { object-position: center 80%; }
+
+    /* ════════════════════════════════
+       HABER MERKEZİ
+    ════════════════════════════════ */
     .kz-news {
       position: relative;
-      background:
-        radial-gradient(ellipse at top, rgba(232,128,158,.06) 0%, transparent 55%),
-        linear-gradient(180deg, var(--kz-bg) 0%, var(--kz-deep) 100%);
+      background: radial-gradient(ellipse at top, rgba(232,128,158,.06) 0%, transparent 55%),
+                  linear-gradient(180deg, var(--kz-bg) 0%, var(--kz-deep) 100%);
       padding: 120px 24px 80px; overflow: hidden;
       border-top: 1px solid rgba(232,128,158,.18);
     }
     .kz-news::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--kz-rose) 50%, transparent);
-      opacity: .55;
+      background: linear-gradient(90deg, transparent, var(--kz-rose) 50%, transparent); opacity: .55;
     }
     .kz-news__inner { max-width: 1200px; margin: 0 auto; position: relative; }
     .kz-news__hero { text-align: center; max-width: 720px; margin: 0 auto 80px; }
     .kz-news__pulse {
       display: inline-flex; align-items: center; gap: 10px;
-      font-family: var(--ff-cond); font-size: 0.7rem; letter-spacing: 0.32em;
-      text-transform: uppercase; color: var(--kz-rose); font-weight: 700;
-      margin-bottom: 24px;
+      font-family: var(--ff-cond); font-size: .7rem; letter-spacing: .32em;
+      text-transform: uppercase; color: var(--kz-rose); font-weight: 700; margin-bottom: 24px;
     }
     .kz-news__pulse-dot {
       width: 8px; height: 8px; background: var(--kz-rose); border-radius: 50%;
       box-shadow: 0 0 12px var(--kz-rose);
-      animation: kz-news-pulse 1.6s ease-in-out infinite;
+      animation: kz-pulse 1.6s ease-in-out infinite;
     }
-    @keyframes kz-news-pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: .55; transform: scale(.78); }
-    }
+    @keyframes kz-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.55;transform:scale(.78)} }
     .kz-news__title {
       font-family: var(--ff-serif); font-weight: 500;
       font-size: clamp(2.6rem, 5.8vw, 4.6rem); line-height: 1;
@@ -553,195 +367,495 @@
     }
     .kz-news__stats {
       display: inline-flex; padding: 14px 8px;
-      background: rgba(20,6,15,.65);
-      border: 1px solid var(--kz-border); border-radius: 4px;
-      backdrop-filter: blur(8px);
+      background: rgba(20,6,15,.65); border: 1px solid var(--kz-border);
+      border-radius: 4px; backdrop-filter: blur(8px);
     }
     .kz-news__stat { padding: 0 28px; text-align: center; position: relative; }
-    .kz-news__stat + .kz-news__stat::before {
-      content: ''; position: absolute; left: 0; top: 18%; bottom: 18%;
-      width: 1px; background: rgba(255,255,255,.12);
-    }
-    .kz-news__stat-num {
-      display: block; font-family: var(--ff-serif); font-size: 1.95rem;
-      line-height: 1; color: var(--kz-rose); font-weight: 500; margin-bottom: 6px;
-    }
-    .kz-news__stat-lbl {
-      display: block; font-family: var(--ff-cond); font-size: 0.65rem;
-      letter-spacing: 0.24em; text-transform: uppercase;
-      color: rgba(255,255,255,.55); font-weight: 600;
-    }
+    .kz-news__stat+.kz-news__stat::before { content:''; position:absolute; left:0; top:18%; bottom:18%; width:1px; background:rgba(255,255,255,.12); }
+    .kz-news__stat-num { display:block; font-family:var(--ff-serif); font-size:1.95rem; line-height:1; color:var(--kz-rose); font-weight:500; margin-bottom:6px; }
+    .kz-news__stat-lbl { display:block; font-family:var(--ff-cond); font-size:.65rem; letter-spacing:.24em; text-transform:uppercase; color:rgba(255,255,255,.55); font-weight:600; }
     .kz-news__block { margin-bottom: 72px; }
     .kz-news__block:last-child { margin-bottom: 0; }
-    .kz-news__block-head {
-      display: flex; align-items: baseline; gap: 16px;
-      margin-bottom: 32px; padding-bottom: 18px;
-      border-bottom: 1px solid var(--kz-border);
-    }
-    .kz-news__block-icon { font-size: 1.2rem; line-height: 1; }
-    .kz-news__block-title {
-      flex: 1; font-family: var(--ff-serif); font-weight: 500;
-      font-size: clamp(1.4rem, 2.6vw, 2rem); letter-spacing: -.01em;
-      color: #fff; margin: 0;
-    }
-    .kz-news__block-title em { font-style: italic; color: var(--kz-rose); }
-    .kz-news__more {
-      font-family: var(--ff-cond); font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--kz-rose); text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px;
-      transition: gap .2s, color .2s;
-    }
-    .kz-news__more:hover { gap: 14px; color: var(--kz-rose-lt); }
-    .kz-news__upcoming { display: grid; gap: 16px; }
-    .kz-up-card {
-      display: grid; grid-template-columns: 110px 1fr auto; gap: 28px;
-      align-items: center; padding: 22px 26px;
-      background: linear-gradient(135deg, rgba(232,128,158,.06) 0%, rgba(20,6,15,.6) 100%);
+    .kz-news__block-head { display:flex; align-items:baseline; gap:16px; margin-bottom:32px; padding-bottom:18px; border-bottom:1px solid var(--kz-border); }
+    .kz-news__block-icon { font-size:1.2rem; line-height:1; }
+    .kz-news__block-title { flex:1; font-family:var(--ff-serif); font-weight:500; font-size:clamp(1.4rem,2.6vw,2rem); letter-spacing:-.01em; color:#fff; margin:0; }
+    .kz-news__block-title em { font-style:italic; color:var(--kz-rose); }
+    .kz-news__more { font-family:var(--ff-cond); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--kz-rose); text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:gap .2s,color .2s; }
+    .kz-news__more:hover { gap:14px; color:var(--kz-rose-lt); }
+    .kz-news__upcoming { display:grid; gap:16px; }
+    .kz-up-card { display:grid; grid-template-columns:110px 1fr auto; gap:28px; align-items:center; padding:22px 26px; background:linear-gradient(135deg,rgba(232,128,158,.06) 0%,rgba(20,6,15,.6) 100%); border:1px solid var(--kz-border); border-left:3px solid var(--kz-rose); border-radius:4px; text-decoration:none; transition:all .3s ease; }
+    .kz-up-card:hover { transform:translateX(4px); border-left-width:6px; background:linear-gradient(135deg,rgba(232,128,158,.12) 0%,rgba(42,13,31,.7) 100%); }
+    .kz-up-card__date { text-align:center; padding:10px 0; border:1px solid rgba(232,128,158,.3); border-radius:3px; }
+    .kz-up-card__day { display:block; font-family:var(--ff-serif); font-size:1.85rem; line-height:1; color:var(--kz-rose); font-weight:500; }
+    .kz-up-card__month { display:block; margin-top:4px; font-family:var(--ff-cond); font-size:.62rem; letter-spacing:.24em; text-transform:uppercase; color:rgba(255,255,255,.65); font-weight:700; }
+    .kz-up-card__body { min-width:0; }
+    .kz-up-card__tag { display:inline-block; font-family:var(--ff-cond); font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:var(--kz-rose); font-weight:700; margin-bottom:8px; }
+    .kz-up-card__title { font-family:var(--ff-serif); font-weight:500; font-size:1.3rem; line-height:1.25; color:#fff; margin:0 0 8px; }
+    .kz-up-card__meta { display:flex; gap:16px; font-family:var(--ff-cond); font-size:.78rem; color:rgba(255,255,255,.65); }
+    .kz-up-card__meta span { display:inline-flex; align-items:center; gap:6px; }
+    .kz-up-card__arrow { color:var(--kz-rose); flex-shrink:0; }
+    .kz-news__featured { display:grid; grid-template-columns:2fr 1fr; gap:20px; }
+    .kz-news__featured-side { display:flex; flex-direction:column; gap:20px; }
+    .kz-feat-card { position:relative; display:block; overflow:hidden; border-radius:4px; text-decoration:none; background:var(--kz-surface); border:1px solid var(--kz-border); transition:border-color .3s,transform .3s; }
+    .kz-feat-card:hover { border-color:var(--kz-rose); transform:translateY(-3px); }
+    .kz-feat-card__img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block; filter:brightness(.78) contrast(1.05); transition:filter .3s,transform .6s; }
+    .kz-feat-card:hover .kz-feat-card__img { filter:brightness(.95); transform:scale(1.04); }
+    .kz-feat-card--big .kz-feat-card__img { aspect-ratio:16/11; }
+    .kz-feat-card__no-img { width:100%; aspect-ratio:16/10; background:linear-gradient(135deg,rgba(232,128,158,.1),rgba(212,163,115,.1)); display:flex; align-items:center; justify-content:center; font-size:3rem; opacity:.4; }
+    .kz-feat-card__body { padding:22px 24px 24px; }
+    .kz-feat-card--big .kz-feat-card__body { padding:28px 30px 30px; }
+    .kz-feat-card__star { position:absolute; top:12px; left:12px; padding:5px 10px; background:var(--kz-rose); color:#14060f; font-family:var(--ff-cond); font-size:.62rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase; border-radius:2px; }
+    .kz-feat-card__tag { display:inline-block; font-family:var(--ff-cond); font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:var(--kz-rose); font-weight:700; margin-bottom:10px; }
+    .kz-feat-card__title { font-family:var(--ff-serif); font-weight:500; font-size:1.4rem; line-height:1.2; color:#fff; margin:0 0 10px; }
+    .kz-feat-card--big .kz-feat-card__title { font-size:1.85rem; }
+    .kz-feat-card__excerpt { font-family:var(--ff-sans); font-size:.92rem; line-height:1.55; color:rgba(255,255,255,.7); margin:0 0 12px; }
+    .kz-feat-card__date { font-family:var(--ff-cond); font-size:.75rem; color:rgba(255,255,255,.55); letter-spacing:.05em; }
+    .kz-news__list { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .kz-news-card { display:block; padding:0; overflow:hidden; background:var(--kz-surface); border:1px solid var(--kz-border); border-radius:3px; text-decoration:none; transition:border-color .3s,transform .3s; }
+    .kz-news-card:hover { border-color:var(--kz-rose); transform:translateY(-2px); }
+    .kz-news-card__img-wrap { aspect-ratio:16/9; overflow:hidden; background:linear-gradient(135deg,rgba(0,0,0,.4),rgba(0,0,0,.2)); }
+    .kz-news-card__img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+    .kz-news-card:hover .kz-news-card__img { transform:scale(1.05); }
+    .kz-news-card__no-img { aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,rgba(0,0,0,.55),rgba(0,0,0,.2)),#5a2438; opacity:.55; font-size:1.6rem; color:rgba(255,255,255,.4); }
+    .kz-news-card__body { padding:18px 22px 20px; }
+    .kz-news-card__row { display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+    .kz-news-card__type { font-family:var(--ff-cond); font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:var(--kz-rose); font-weight:700; }
+    .kz-news-card__sep { color:var(--kz-border); }
+    .kz-news-card__date { font-family:var(--ff-cond); font-size:.7rem; color:rgba(255,255,255,.55); }
+    .kz-news-card__title { font-family:var(--ff-serif); font-weight:500; font-size:1.05rem; line-height:1.3; color:#fff; margin:0 0 8px; }
+    .kz-news-card__excerpt { font-family:var(--ff-sans); font-size:.85rem; line-height:1.5; color:rgba(255,255,255,.55); margin:0; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .kz-news__archive { opacity:.68; transition:opacity .3s; }
+    .kz-news__archive:hover { opacity:1; }
+    .kz-news__archive .kz-news-card { background:rgba(31,10,24,.55); }
+    .kz-news__empty { text-align:center; padding:80px 20px; color:rgba(255,255,255,.55); font-family:var(--ff-cond); font-size:.9rem; letter-spacing:.06em; }
+    .kz-news__empty em { font-family:var(--ff-serif); font-style:italic; color:var(--kz-rose); font-size:1.5rem; display:block; margin-bottom:8px; }
+
+    /* ════════════════════════════════
+       SON CTA
+    ════════════════════════════════ */
+    .kz-final-cta {
+      display: grid; grid-template-columns: 1.4fr 1fr;
+      gap: 64px; align-items: center;
+      padding: 64px 56px;
+      background: linear-gradient(135deg, rgba(232,128,158,.07) 0%, rgba(20,4,16,.4) 100%);
       border: 1px solid var(--kz-border);
       border-left: 3px solid var(--kz-rose);
-      border-radius: 4px; text-decoration: none; transition: all .3s ease;
+      border-radius: 6px;
+      position: relative; overflow: hidden;
     }
-    .kz-up-card:hover {
-      transform: translateX(4px); border-left-width: 6px;
-      background: linear-gradient(135deg, rgba(232,128,158,.12) 0%, rgba(42,13,31,.7) 100%);
+    .kz-final-cta::before {
+      content: ''; position: absolute;
+      top: -100px; right: -100px; width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(232,128,158,.14) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .kz-up-card__date {
-      text-align: center; padding: 10px 0;
-      border: 1px solid rgba(232,128,158,.3); border-radius: 3px;
+    .kz-final-cta__text { position: relative; z-index: 1; }
+    .kz-final-cta__text .kz-title { margin-bottom: 18px; }
+    .kz-final-cta__text p {
+      font-family: var(--ff-sans); font-size: 1rem; line-height: 1.75;
+      color: rgba(255,255,255,.7); max-width: 480px; margin: 0;
     }
-    .kz-up-card__day {
-      display: block; font-family: var(--ff-serif); font-size: 1.85rem;
-      line-height: 1; color: var(--kz-rose); font-weight: 500;
+    .kz-final-cta__action {
+      display: flex; flex-direction: column; gap: 14px;
+      align-items: flex-start; position: relative; z-index: 1;
     }
-    .kz-up-card__month {
-      display: block; margin-top: 4px; font-family: var(--ff-cond);
-      font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase;
-      color: rgba(255,255,255,.65); font-weight: 700;
+    .kz-final-cta__action a { width: 100%; justify-content: center; }
+    @media (max-width: 900px) {
+      .kz-final-cta { grid-template-columns: 1fr; padding: 48px 32px; gap: 40px; }
+      .kz-final-cta__action a { width: auto; }
     }
-    .kz-up-card__body { min-width: 0; }
-    .kz-up-card__tag {
-      display: inline-block; font-family: var(--ff-cond);
-      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--kz-rose); font-weight: 700; margin-bottom: 8px;
+
+    .kz-footer { background:var(--kz-bg); border-top:1px solid var(--kz-border); }
+
+    /* ════════════════════════════════
+       ANİMASYON
+    ════════════════════════════════ */
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s ease,transform .8s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal.d1 { transition-delay:.12s; }
+    .reveal.d2 { transition-delay:.24s; }
+    .reveal.d3 { transition-delay:.36s; }
+
+    /* ════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .kz-hero__inner { grid-template-columns:1fr; gap:48px; }
+      .kz-hero__teams { flex-direction:row; flex-wrap:wrap; gap:12px; }
+      .kz-hero__team { flex:1; min-width:180px; }
+      .kz-giris__inner { grid-template-columns:1fr; gap:48px; }
+      .kz-giris__images { position:static; max-width:600px; }
+      .kz-team__inner { grid-template-columns:1fr; gap:48px; }
     }
-    .kz-up-card__title {
-      font-family: var(--ff-serif); font-weight: 500;
-      font-size: 1.3rem; line-height: 1.25; color: #fff; margin: 0 0 8px;
-    }
-    .kz-up-card__meta {
-      display: flex; gap: 16px; font-family: var(--ff-cond);
-      font-size: 0.78rem; color: rgba(255,255,255,.65);
-    }
-    .kz-up-card__meta span { display: inline-flex; align-items: center; gap: 6px; }
-    .kz-up-card__arrow { color: var(--kz-rose); flex-shrink: 0; }
-    .kz-news__featured { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
-    .kz-news__featured-side { display: flex; flex-direction: column; gap: 20px; }
-    .kz-feat-card {
-      position: relative; display: block; overflow: hidden;
-      border-radius: 4px; text-decoration: none;
-      background: var(--kz-surface); border: 1px solid var(--kz-border);
-      transition: border-color .3s, transform .3s;
-    }
-    .kz-feat-card:hover {
-      border-color: var(--kz-rose); transform: translateY(-3px);
-    }
-    .kz-feat-card__img {
-      width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block;
-      filter: brightness(.78) contrast(1.05);
-      transition: filter .3s, transform .6s;
-    }
-    .kz-feat-card:hover .kz-feat-card__img {
-      filter: brightness(.95); transform: scale(1.04);
-    }
-    .kz-feat-card--big .kz-feat-card__img { aspect-ratio: 16/11; }
-    .kz-feat-card__no-img {
-      width: 100%; aspect-ratio: 16/10;
-      background: linear-gradient(135deg, rgba(232,128,158,.1), rgba(212,163,115,.1));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 3rem; opacity: .4;
-    }
-    .kz-feat-card__body { padding: 22px 24px 24px; }
-    .kz-feat-card--big .kz-feat-card__body { padding: 28px 30px 30px; }
-    .kz-feat-card__star {
-      position: absolute; top: 12px; left: 12px;
-      padding: 5px 10px; background: var(--kz-rose); color: #14060f;
-      font-family: var(--ff-cond); font-size: 0.62rem; font-weight: 800;
-      letter-spacing: 0.2em; text-transform: uppercase; border-radius: 2px;
-    }
-    .kz-feat-card__tag {
-      display: inline-block; font-family: var(--ff-cond);
-      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--kz-rose); font-weight: 700; margin-bottom: 10px;
-    }
-    .kz-feat-card__title {
-      font-family: var(--ff-serif); font-weight: 500;
-      font-size: 1.4rem; line-height: 1.2;
-      color: #fff; margin: 0 0 10px;
-    }
-    .kz-feat-card--big .kz-feat-card__title { font-size: 1.85rem; }
-    .kz-feat-card__excerpt {
-      font-family: var(--ff-sans); font-size: 0.92rem; line-height: 1.55;
-      color: rgba(255,255,255,.7); margin: 0 0 12px;
-    }
-    .kz-feat-card__date {
-      font-family: var(--ff-cond); font-size: 0.75rem;
-      color: rgba(255,255,255,.55); letter-spacing: 0.05em;
-    }
-    .kz-news__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .kz-news-card {
-      display: block; padding: 20px 22px;
-      background: var(--kz-surface); border: 1px solid var(--kz-border);
-      border-radius: 3px; text-decoration: none;
-      transition: border-color .3s, transform .3s;
-    }
-    .kz-news-card:hover {
-      border-color: var(--kz-rose); transform: translateY(-2px);
-    }
-    .kz-news-card__row {
-      display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
-    }
-    .kz-news-card__type {
-      font-family: var(--ff-cond); font-size: 0.6rem; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--kz-rose); font-weight: 700;
-    }
-    .kz-news-card__sep { color: var(--kz-border); }
-    .kz-news-card__date {
-      font-family: var(--ff-cond); font-size: 0.7rem; color: rgba(255,255,255,.55);
-    }
-    .kz-news-card__title {
-      font-family: var(--ff-serif); font-weight: 500;
-      font-size: 1.05rem; line-height: 1.3;
-      color: #fff; margin: 0 0 8px;
-    }
-    .kz-news-card__excerpt {
-      font-family: var(--ff-sans); font-size: 0.85rem; line-height: 1.5;
-      color: rgba(255,255,255,.55); margin: 0;
-      display: -webkit-box; -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical; overflow: hidden;
-    }
-    .kz-news__archive { opacity: .68; transition: opacity .3s; }
-    .kz-news__archive:hover { opacity: 1; }
-    .kz-news__archive .kz-news-card { background: rgba(31,10,24,.55); }
-    .kz-news__empty {
-      text-align: center; padding: 80px 20px;
-      color: rgba(255,255,255,.55); font-family: var(--ff-cond);
-      font-size: 0.9rem; letter-spacing: 0.06em;
-    }
-    .kz-news__empty em {
-      font-family: var(--ff-serif); font-style: italic;
-      color: var(--kz-rose); font-size: 1.5rem;
-      display: block; margin-bottom: 8px;
+    @media (max-width: 768px) {
+      .kz-hero { padding:120px 20px 60px; }
+      .kz-hero__title { font-size:clamp(2.8rem,11vw,4rem); }
+      .kz-hero__teams { flex-direction:column; }
+      .kz-cta-grid { grid-template-columns:1fr; }
+      .kz-section { padding:72px 0; }
+      .kz-team { padding:72px 0; }
+      .kz-giris { padding:80px 0 72px; }
+      .kz-img-duo { grid-template-columns:1fr; }
     }
     @media (max-width: 900px) {
-      .kz-news { padding: 80px 18px 60px; }
-      .kz-news__hero { margin-bottom: 56px; }
-      .kz-news__featured { grid-template-columns: 1fr; }
-      .kz-news__list { grid-template-columns: 1fr; }
-      .kz-up-card { grid-template-columns: 80px 1fr; gap: 18px; padding: 16px 18px; }
-      .kz-up-card__arrow { display: none; }
-      .kz-news__stat { padding: 0 18px; }
-      .kz-news__stat-num { font-size: 1.5rem; }
+      .kz-news { padding:80px 18px 60px; }
+      .kz-news__hero { margin-bottom:56px; }
+      .kz-news__featured { grid-template-columns:1fr; }
+      .kz-news__list { grid-template-columns:1fr; }
+      .kz-up-card { grid-template-columns:80px 1fr; gap:18px; padding:16px 18px; }
+      .kz-up-card__arrow { display:none; }
+      .kz-news__stat { padding:0 18px; }
+      .kz-news__stat-num { font-size:1.5rem; }
+    }
+
+    /* ════════════════════════════════
+       FAALİYETLER & PROJELER
+    ════════════════════════════════ */
+    .kz-projects {
+      padding: 110px 0 130px;
+      background: var(--kz-surface);
+      position: relative;
+      overflow: hidden;
+    }
+    .kz-projects::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(232,128,158,.08) 0%, transparent 45%),
+        radial-gradient(circle at 88% 82%, rgba(232,128,158,.06) 0%, transparent 50%);
+    }
+    .kz-projects > .container { position: relative; z-index: 1; }
+    .kz-projects__head { max-width: 760px; margin: 0 0 72px; }
+    .kz-projects__lead {
+      font-family: var(--ff-sans); font-size: 1.08rem; line-height: 1.75;
+      color: rgba(255,255,255,.74); margin: 24px 0 0;
+    }
+
+    .kz-projects__group { margin-bottom: 90px; }
+    .kz-projects__group:last-child { margin-bottom: 0; }
+    .kz-projects__group-head { margin-bottom: 44px; max-width: 720px; }
+    .kz-projects__group-tag {
+      display: inline-block;
+      font-family: var(--ff-sans); font-size: .68rem; font-weight: 700;
+      letter-spacing: .28em; text-transform: uppercase;
+      color: var(--kz-rose);
+      padding: 8px 16px; border: 1px solid var(--kz-border-s);
+      border-radius: 2px; margin-bottom: 22px;
+    }
+    .kz-projects__group-title {
+      font-family: var(--ff-cond); font-size: clamp(2rem, 3.8vw, 2.9rem);
+      font-weight: 900; text-transform: uppercase;
+      line-height: 1; color: #fff; margin: 0 0 14px;
+      letter-spacing: -.005em;
+    }
+    .kz-projects__group-title em {
+      font-family: var(--ff-serif); font-style: italic; font-weight: 500;
+      text-transform: none; color: var(--kz-rose); letter-spacing: 0;
+    }
+    .kz-projects__group-sub {
+      font-family: var(--ff-sans); font-size: 1rem; line-height: 1.65;
+      color: rgba(255,255,255,.6); margin: 0;
+    }
+
+    .kz-projects__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    /* Card */
+    .kz-pcard {
+      position: relative; overflow: hidden;
+      background: var(--kz-deep);
+      border: 1px solid var(--kz-border);
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 0; margin: 0;
+      text-align: left;
+      width: 100%; display: block;
+      color: #fff;
+      font-family: inherit;
+      aspect-ratio: 4 / 5;
+      transition: transform .5s cubic-bezier(.16,1,.3,1), border-color .4s ease, box-shadow .5s ease;
+    }
+    .kz-pcard:hover {
+      transform: translateY(-8px);
+      border-color: rgba(232,128,158,.5);
+      box-shadow: 0 28px 70px -20px rgba(232,128,158,.22);
+    }
+    .kz-pcard:focus-visible {
+      outline: 2px solid var(--kz-rose);
+      outline-offset: 3px;
+    }
+
+    .kz-pcard__hero {
+      position: absolute; inset: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(232,128,158,.16) 0%, transparent 55%),
+        radial-gradient(circle at 78% 80%, rgba(232,128,158,.09) 0%, transparent 60%),
+        linear-gradient(180deg, #2e0d22 0%, #160714 100%);
+    }
+    .kz-pcard__hero img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .9s cubic-bezier(.16,1,.3,1);
+    }
+    .kz-pcard:hover .kz-pcard__hero img { transform: scale(1.07); }
+
+    .kz-pcard__hero-empty {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .kz-pcard__hero-empty span {
+      font-family: var(--ff-serif); font-style: italic;
+      font-size: 8rem; font-weight: 500;
+      color: rgba(232,128,158,.18);
+      line-height: 1;
+      letter-spacing: -.02em;
+    }
+
+    .kz-pcard__fade {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top,
+        rgba(20,6,15,.96) 0%,
+        rgba(20,6,15,.78) 30%,
+        rgba(20,6,15,.18) 65%,
+        transparent 100%);
+      pointer-events: none;
+    }
+    .kz-pcard__no {
+      position: absolute; top: 20px; left: 24px;
+      font-family: var(--ff-serif); font-style: italic;
+      font-size: 1.35rem; color: var(--kz-rose);
+      letter-spacing: .04em; z-index: 2;
+      display: inline-flex; align-items: center; gap: 12px;
+    }
+    .kz-pcard__no::before {
+      content: ''; width: 28px; height: 1px; background: var(--kz-rose); display: inline-block;
+    }
+    .kz-pcard__body {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 24px 26px 26px;
+      z-index: 2;
+    }
+    .kz-pcard__title {
+      font-family: var(--ff-cond); font-weight: 900;
+      font-size: 1.6rem; text-transform: uppercase;
+      color: #fff; margin: 0 0 12px; line-height: 1.05;
+      letter-spacing: -.005em;
+    }
+    .kz-pcard__teaser {
+      font-family: var(--ff-sans); font-size: .9rem;
+      line-height: 1.55; color: rgba(255,255,255,.72);
+      margin: 0 0 18px;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .kz-pcard__read {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--ff-sans); font-size: .7rem; font-weight: 700;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--kz-rose);
+    }
+    .kz-pcard__read svg { width: 14px; height: 14px; transition: transform .35s; }
+    .kz-pcard:hover .kz-pcard__read svg { transform: translateX(5px); }
+
+    /* Soon block */
+    .kz-projects__soon {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; padding: 88px 40px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(232,128,158,.06) 0%, transparent 60%),
+        linear-gradient(180deg, var(--kz-deep) 0%, var(--kz-surface) 100%);
+      border: 1px dashed var(--kz-border-s);
+      border-radius: 4px;
+    }
+    .kz-projects__soon-icon {
+      width: 68px; height: 68px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--kz-border-s); border-radius: 50%;
+      color: var(--kz-rose); margin-bottom: 26px;
+      background: rgba(232,128,158,.05);
+    }
+    .kz-projects__soon-icon svg { width: 28px; height: 28px; }
+    .kz-projects__soon h4 {
+      font-family: var(--ff-cond); font-weight: 900;
+      font-size: 1.7rem; text-transform: uppercase;
+      color: #fff; margin: 0 0 12px; letter-spacing: .02em;
+    }
+    .kz-projects__soon p {
+      font-family: var(--ff-sans); font-size: .98rem; line-height: 1.65;
+      color: rgba(255,255,255,.62); max-width: 480px; margin: 0;
+    }
+
+    /* ════════════════════════════════
+       PROJE MODAL
+    ════════════════════════════════ */
+    .kz-modal {
+      position: fixed; inset: 0; z-index: 999;
+      display: none;
+      align-items: flex-start; justify-content: center;
+      padding: 60px 20px;
+      overflow-y: auto;
+    }
+    .kz-modal.is-open { display: flex; }
+    .kz-modal__backdrop {
+      position: fixed; inset: 0;
+      background: rgba(8,2,6,.86);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      animation: kz-modal-fade .25s ease;
+    }
+    @keyframes kz-modal-fade { from { opacity: 0; } to { opacity: 1; } }
+    .kz-modal__card {
+      position: relative;
+      max-width: 820px; width: 100%;
+      background: var(--kz-surface);
+      border: 1px solid var(--kz-border-s);
+      border-radius: 6px;
+      box-shadow: 0 40px 100px rgba(0,0,0,.6);
+      animation: kz-modal-pop .4s cubic-bezier(.16,1,.3,1);
+      margin: auto;
+      overflow: hidden;
+    }
+    @keyframes kz-modal-pop {
+      from { opacity: 0; transform: translateY(20px) scale(.96); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .kz-modal__close {
+      position: absolute; top: 18px; right: 18px; z-index: 3;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(20,6,15,.7); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.18);
+      color: #fff; font-size: 1.7rem; line-height: 1;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background .25s, transform .35s, color .25s;
+      padding: 0;
+    }
+    .kz-modal__close:hover { background: var(--kz-rose); color: #14060f; transform: rotate(90deg); }
+    .kz-modal__hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 120px;
+      background:
+        radial-gradient(circle at 25% 30%, rgba(232,128,158,.18) 0%, transparent 55%),
+        radial-gradient(circle at 75% 80%, rgba(232,128,158,.10) 0%, transparent 60%),
+        linear-gradient(180deg, #2e0d22 0%, #14060f 100%);
+    }
+    .kz-modal__hero img { width: 100%; height: auto; max-height: 80vh; object-fit: contain; display: block; }
+    .kz-modal__hero-empty {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-serif); font-style: italic; font-size: 9rem;
+      color: rgba(232,128,158,.16); line-height: 1;
+    }
+    .kz-modal__hero-fade {
+      position: absolute; left: 0; right: 0; bottom: 0; height: 55%;
+      background: linear-gradient(to top, var(--kz-surface) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .kz-modal__body { padding: 32px 48px 52px; }
+    .kz-modal__no {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-family: var(--ff-sans); font-size: .7rem; font-weight: 700;
+      letter-spacing: .28em; text-transform: uppercase;
+      color: var(--kz-rose); margin-bottom: 14px;
+    }
+    .kz-modal__no::before {
+      content: ''; width: 36px; height: 1px; background: var(--kz-rose);
+    }
+    .kz-modal__title {
+      font-family: var(--ff-cond); font-weight: 900;
+      font-size: clamp(2rem, 4.2vw, 2.9rem); text-transform: uppercase;
+      color: #fff; margin: 0 0 30px; line-height: 1.04;
+      letter-spacing: -.005em;
+    }
+    .kz-modal__content {
+      color: rgba(255,255,255,.84);
+      font-family: var(--ff-sans);
+      font-size: 1.04rem; line-height: 1.82;
+    }
+    .kz-modal__content p { margin: 0 0 20px; }
+    .kz-modal__content p:last-child { margin-bottom: 0; }
+    .kz-modal__content strong { color: var(--kz-rose-lt); font-weight: 600; }
+    .kz-modal__content blockquote {
+      margin: 0 0 28px; padding: 6px 0 6px 24px;
+      border-left: 2px solid var(--kz-rose);
+      font-family: var(--ff-serif); font-style: italic;
+      font-size: 1.22rem; line-height: 1.6;
+      color: rgba(247,169,192,.96);
+    }
+    .kz-modal__content blockquote p { margin: 0; }
+    /* ── Video playlist ── */
+    .kz-modal__vp { margin-top: 36px; }
+    .kz-modal__vp-label {
+      font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--kz-rose); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+    }
+    .kz-modal__vp-label svg { flex-shrink: 0; }
+    .kz-modal__vp-main {
+      border-radius: 12px; overflow: hidden;
+      aspect-ratio: 16/9; background: #0a0a0a;
+      position: relative;
+    }
+    .kz-modal__vp-main video { width: 100%; height: 100%; display: block; object-fit: contain; }
+    .kz-modal__vp-poster {
+      position: absolute; inset: 0; cursor: pointer;
+      background: #000 center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity .2s;
+    }
+    .kz-modal__vp-poster.hidden { opacity: 0; pointer-events: none; }
+    .kz-modal__vp-play {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(0,0,0,.55); backdrop-filter: blur(6px);
+      border: 2px solid rgba(255,255,255,.7);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; transition: transform .15s, background .15s;
+    }
+    .kz-modal__vp-poster:hover .kz-modal__vp-play { transform: scale(1.1); background: rgba(0,0,0,.75); }
+    .kz-modal__vp-strip {
+      display: flex; gap: 8px; margin-top: 10px; overflow-x: auto;
+      scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.15) transparent;
+      padding-bottom: 4px;
+    }
+    .kz-modal__vp-thumb {
+      flex-shrink: 0; width: 120px; height: 68px;
+      border-radius: 7px; overflow: hidden; cursor: pointer;
+      border: 2px solid transparent; background: #111 center/cover no-repeat;
+      transition: border-color .15s, opacity .15s;
+      position: relative;
+    }
+    .kz-modal__vp-thumb.active { border-color: var(--kz-rose); }
+    .kz-modal__vp-thumb:not(.active) { opacity: .65; }
+    .kz-modal__vp-thumb:hover:not(.active) { opacity: .9; }
+    .kz-modal__vp-tnum {
+      position: absolute; bottom: 4px; right: 6px;
+      font-size: 10px; font-weight: 700; color: #fff;
+      text-shadow: 0 1px 3px rgba(0,0,0,.8);
+    }
+    .kz-modal__video { margin-top: 36px; border-radius: 10px; overflow: hidden; aspect-ratio: 16/9; background: #000; }
+    .kz-modal__video video { width: 100%; height: 100%; display: block; }
+    .kz-modal__video-label { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--kz-rose); margin-bottom: 10px; display: block; }
+
+    body.kz-modal-open { overflow: hidden; }
+
+    @media (max-width: 1024px) {
+      .kz-projects__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .kz-projects { padding: 80px 0 90px; }
+      .kz-projects__group { margin-bottom: 64px; }
+      .kz-projects__head { margin-bottom: 56px; }
+      .kz-projects__group-head { margin-bottom: 32px; }
+      .kz-projects__soon { padding: 60px 28px; }
+      .kz-modal { padding: 24px 14px; }
+      .kz-modal__body { padding: 28px 26px 38px; }
+      .kz-modal__hero-empty { font-size: 5.5rem; }
+      .kz-modal__hero { aspect-ratio: unset; }
+    }
+    @media (max-width: 560px) {
+      .kz-projects__grid { grid-template-columns: 1fr; }
+      .kz-pcard { aspect-ratio: 5 / 6; }
+      .kz-pcard__hero-empty span { font-size: 7rem; }
     }
   </style>
 </head>
@@ -760,6 +874,7 @@
         <a href="../../vefa.html" class="nav-link">Vefa</a>
         <a href="../../orman.html" class="nav-link">Hatıra Ormanı</a>
         <a href="../../duyurular.html" class="nav-link">Duyurular</a>
+        <a href="../../arsiv.html" class="nav-link">Arşiv</a>
         <a href="../../iletisim.html" class="nav-link">İletişim</a>
         <a href="../../admin.html" class="nav-cta">Yönetim</a>
       </nav>
@@ -769,29 +884,31 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ════════════════════════════════
+       HERO
+  ════════════════════════════════ -->
   <section class="kz-hero">
-    <div class="kz-hero__bg"></div>
+    <div class="kz-hero__bg" id="kz-hero-bg"></div>
     <div class="kz-hero__overlay"></div>
     <div class="kz-hero__noise"></div>
     <div class="kz-hero__fade"></div>
 
     <div class="kz-hero__inner">
+      <!-- Sol: Metin -->
       <div>
         <a href="../../dinamik-calismalar.html" class="kz-hero__back">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
           Dinamik Çalışmalar
         </a>
-        <div class="kz-hero__mark">Dinamik SK Kız</div>
+        <div class="kz-hero__mark">Genç Çevre Gönüllüleri · Kız Bölümü</div>
 
         <h1 class="kz-hero__title">
-          Güçlü.<br>
-          <em>Zarif.</em><br>
-          Kararlı.
+          Pusulamız Vicdan,<br>
+          <em>Rehberimiz Doğa.</em>
         </h1>
 
         <p class="kz-hero__lead">
-          Sahada <strong>yürek</strong>, hayatta <strong>karakter.</strong> Dinamik SK Kız, spor yoluyla özgüven kazanan — kardeşlik, disiplin ve inançla büyüyen genç kadınların evi.
+          Akdeniz Dinamik Kız Bölümü; <strong>7'den 18'e</strong> kız gönüllülerimizle doğada karakter inşa eden, millî ve manevî değerlerle yürüyen bir topluluk.
         </p>
 
         <div class="kz-hero__cta">
@@ -799,125 +916,266 @@
             Aramıza Katıl
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#hikaye" class="btn-rose-ghost">Hikayemizi Keşfet</a>
+          <a href="#giris" class="btn-rose-ghost">Hikayemizi Keşfet</a>
         </div>
       </div>
 
-      <div class="kz-hero__showcase">
-        <div class="kz-hero__card kz-hero__card--1">
-          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=800&q=85" alt="Kız sporcu">
-        </div>
-        <div class="kz-hero__card kz-hero__card--2">
-          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=85" alt="Kız sporcular">
-        </div>
-        <div class="kz-hero__stat">
-          <b>120+</b>
-          <span>Kız Sporcu</span>
-        </div>
+      <!-- Sağ: Ekip kartları -->
+      <div class="kz-hero__teams">
+        <a href="#kasifler" class="kz-hero__team">
+          <span class="kz-hero__team-age">7–11</span>
+          <div class="kz-hero__team-body">
+            <p class="kz-hero__team-name">Kaşifler</p>
+            <p class="kz-hero__team-sub">Merak, keşif ve aidiyet duygusu</p>
+          </div>
+          <svg class="kz-hero__team-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#arastirmacilar" class="kz-hero__team">
+          <span class="kz-hero__team-age">11–15</span>
+          <div class="kz-hero__team-body">
+            <p class="kz-hero__team-name">Araştırmacılar</p>
+            <p class="kz-hero__team-sub">Doğa, dayanışma ve sorumluluk</p>
+          </div>
+          <svg class="kz-hero__team-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#maceracilar" class="kz-hero__team">
+          <span class="kz-hero__team-age">15–18</span>
+          <div class="kz-hero__team-body">
+            <p class="kz-hero__team-name">Maceracılar</p>
+            <p class="kz-hero__team-sub">Vizyon, liderlik ve maneviyat</p>
+          </div>
+          <svg class="kz-hero__team-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- MANIFESTO -->
+  <!-- ════════════════════════════════
+       MANİFESTO ŞERİDİ
+  ════════════════════════════════ -->
   <section class="kz-manifesto">
     <div class="kz-manifesto-track">
-      <span class="kz-manifesto-word">Güç</span>
-      <span class="kz-manifesto-dot"></span>
-      <span class="kz-manifesto-word">Zarafet</span>
-      <span class="kz-manifesto-dot"></span>
-      <span class="kz-manifesto-word">Kardeşlik</span>
+      <span class="kz-mword">İnanç</span>
+      <span class="kz-mdot"></span>
+      <span class="kz-mword kz-mword--em">Kardeşlik</span>
+      <span class="kz-mdot"></span>
+      <span class="kz-mword">Karakter</span>
     </div>
   </section>
 
-  <!-- HAKKIMIZDA -->
-  <section class="kz-section" id="hikaye">
+  <!-- ════════════════════════════════
+       GENEL TANITIM
+  ════════════════════════════════ -->
+  <section class="kz-giris" id="giris">
     <div class="container">
-      <div class="kz-about">
-        <div class="kz-about-img reveal">
-          <img src="https://images.unsplash.com/photo-1518310383802-640c2de933d2?w=900&q=85" alt="Kız Sporcular">
-          <div class="kz-about-badge">2018'den beri</div>
-        </div>
-        <div class="kz-about-text reveal d1">
-          <div class="kz-eyebrow">Hikayemiz</div>
-          <h2 class="kz-title">Bir Kızın<br><em>Cesareti</em><br>Her Şeydir.</h2>
-          <p>Dinamik SK Kız, sadece bir spor topluluğu değil — <strong>kardeşçe yetişen bir ablalık.</strong> Bilek güreşi minderinde ter döken, dalgıçlıkta nefesini tutan, kampta ateş etrafında ayetler okuyan kız kardeşlerin ortak yuvası.</p>
-          <p>Burada güç <strong>fiziksel değil, önce ruhsaldır.</strong> Zarafet; nezaket ve metanetle yoğrulmuş bir duruştur. Kardeşlik ise verilmez, emekle kazanılır.</p>
-          <p>2018'den beri Antalya'nın kız sporcularına ilham olan, <strong>güçlü bir kadınsı geleneğin</strong> devamıyız.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="kz-giris__inner">
 
-  <!-- DEĞERLER -->
-  <section class="kz-section kz-section-alt">
-    <div class="container">
-      <div class="reveal" style="max-width: 600px;">
-        <div class="kz-eyebrow">Değerlerimiz</div>
-        <h2 class="kz-title">Nasıl <em>Yetişiyoruz?</em></h2>
-        <p class="kz-lead">Üç temel ilke üzerine kurulu — her antrenman, her kamp, her karşılaşma bu değerlerin inşasıdır.</p>
-      </div>
+        <!-- Sol: Metin -->
+        <div class="kz-giris__text reveal">
+          <div class="kz-eyebrow">Biz Kimiz</div>
+          <h2 class="kz-title">Genç Çevre <em>Gönüllüleri</em></h2>
 
-      <div class="kz-values">
-        <div class="kz-value reveal d1">
-          <div class="kz-value-num">01.</div>
-          <h3>Özgüven</h3>
-          <p>Sahada kazanılan her galibiyet, hayatta karşılaşılan her zorluğa hazırlık. Kendine inanan kadın — dünyaya meydan okur.</p>
+          <p>Kendini bulmak için her zaman uzaklara gitmen gerekmez; bazen doğaya bir adım atman yeter. İşte biz, o adımı atan gençleriz. Şehrin gürültüsünde kaybolmak yerine yönünü doğaya çeviren, yüreğini iyiliğe adayan <strong>dinamik bir gençlik</strong>…</p>
+
+          <p>Genç Çevre Gönüllüleri olarak, karakter inşa eden bir yolun yolcularıyız. Sadece dağları aşmıyor; attığımız her adımda <strong>irademizi ve kimliğimizi</strong> güçlendiriyoruz. Millî ve manevî değerlerle yürüyen bir gençlik için yola çıkıyoruz.</p>
+
+          <p>Akdeniz Dinamik Spor Kulübü'nün köklü ruhunu Genç Çevre Gönüllüleri olarak bugüne taşıyor; <strong>aynı inançla, aynı adanmışlıkla</strong> geleceğe ilerliyoruz.</p>
+
+          <p class="kz-giris__closing">Yaktığımız her kamp ateşi; köklerimize olan bağlılığın, kardeşliğin ve ortak inancın etrafında toplanmaktır. Sen de bu ateşin etrafında yerini al… <strong>İzini bırak.</strong></p>
         </div>
 
-        <div class="kz-value reveal d2">
-          <div class="kz-value-num">02.</div>
-          <h3>Kardeşlik</h3>
-          <p>Rekabet değil, birlikte yükselmek. Her kız kardeşimiz, bir diğerinin destekçisi, sırdaşı ve ilham kaynağıdır.</p>
+        <!-- Sağ: Görseller -->
+        <div class="kz-giris__images reveal d1">
+          <div class="kz-giris__img kz-giris__img--fire">
+            <img id="kiz-biz1-img" src="../../assets/images/kiz-biz-kimiz-1.webp" alt="Akdeniz Dinamik Kız ekibi kamp ateşi etrafında" loading="lazy">
+            <span class="kz-giris__img-caption">Ateşin Etrafında</span>
+          </div>
+          <div class="kz-giris__img kz-giris__img--sea">
+            <img id="kiz-biz2-img" src="../../assets/images/kiz-hero.jpg" alt="Akdeniz kıyısında Dinamik Kız gönüllüleri" loading="lazy">
+            <span class="kz-giris__img-caption">Akdeniz Sahili</span>
+          </div>
         </div>
 
-        <div class="kz-value reveal d3">
-          <div class="kz-value-num">03.</div>
-          <h3>Karakter</h3>
-          <p>Fiziksel güç geçicidir; karakterli bir duruş ömürlük. İnanç, ahlak ve cesaret — en büyük mirasımız.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       KAŞİFLER — 7–11 Yaş
+  ════════════════════════════════ -->
+  <section class="kz-team" id="kasifler">
+    <div class="container">
+      <div class="kz-team__inner">
+
+        <!-- Sol: Metin -->
+        <div class="kz-team__text reveal">
+          <span class="kz-team__badge">
+            <span class="kz-team__badge-dot"></span>
+            Ekip · 7 – 11 Yaş
+          </span>
+          <h2 class="kz-title">Kaşifler <em>Kız</em><br>Ekibi.</h2>
+
+          <p>7–11 yaş kız ekibimiz; hayat boyu taşıyacakları alışkanlıkların temelini attıkları, merakın ve aidiyet duygusunun en güçlü olduğu bir dönemdedir.</p>
+
+          <p>Akdeniz Dinamik Spor Kulübü olarak hedefimiz; sadece fiziksel hareketlilik sağlamak değil, enerjilerini doğru yönlendirebilecekleri, <strong>özgüven kazanacakları ve İslami değerlere uygun bir çevrede yetişmeye ihtiyaçları olduğunun bilincini</strong> onlara aktarmaktır.</p>
+
+          <p>Kaşifler Kız Ekibi ile klasik kalıpları bir kenara bırakıyor; aylık düzenli aralıklarla gerçekleştirdiğimiz özel faaliyet buluşmalarında bir araya geliyoruz. Bu buluşmalarda ekibimize; <strong>doğal yaşamda kullanabilecekleri pratik bilgiler</strong> öğretirken, doğru bir insan ve vakarlı bir Müslüman olmanın güzelliğini anlatıyoruz.</p>
+
+          <p>Attığımız her adımı, yaptığımız her etkinliği bizleri İslam'ın zarafetine yaklaştıran birer vesile olarak görüyoruz. Tüm minik kaşiflerimizi bu gönül halkasına davet ediyoruz.</p>
+        </div>
+
+        <!-- Sağ: Görsel -->
+        <div class="kz-team__visuals reveal d1">
+          <div class="kz-img kz-img--tall kz-img--bars">
+            <img id="kiz-kasifler-img" src="../../assets/images/kiz-kasifler.jpg" alt="Kaşifler kız ekibi etkinlik buluşması" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       ARAŞTIRMACILAR — 11–15 Yaş
+  ════════════════════════════════ -->
+  <section class="kz-team" id="arastirmacilar">
+    <div class="container">
+      <div class="kz-team__inner">
+
+        <!-- Sol: Görseller (HTML'de önce → sol kolon) -->
+        <div class="kz-team__visuals reveal">
+          <div class="kz-img-duo">
+            <div class="kz-img kz-img--bars">
+              <img id="kiz-arstr1-img" src="../../assets/images/kiz-arastirmacilar-1.jpg" alt="Araştırmacılar ekibi doğa yürüyüşü" loading="lazy">
+            </div>
+            <div class="kz-img kz-img--bars">
+              <img id="kiz-arstr2-img" src="../../assets/images/kiz-arastirmacilar-2.jpg" alt="Araştırmacılar ekibi kamp kurma" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Sağ: Metin -->
+        <div class="kz-team__text reveal d1">
+          <span class="kz-team__badge">
+            <span class="kz-team__badge-dot"></span>
+            Ekip · 11 – 15 Yaş
+          </span>
+          <h2 class="kz-title">Araştırmacılar <em>Ekibi.</em></h2>
+
+          <p>Araştırmacılar; 11–15 yaş aralığındaki gönüllü çevreci kız çocuklarından oluşan, doğayı seven, öğrenmeye açık ve birlikte gelişmeyi hedefleyen özel bir topluluktur.</p>
+
+          <p>Bu ekipte yer alan çocuklarımız; fiziksel, ruhsal ve manevî yönlerini güçlendirecek etkinliklerle hem kendilerini keşfeder hem de <strong>yaşadıkları dünyaya karşı bilinçli bireyler</strong> olarak yetişirler.</p>
+
+          <p>Yıl boyunca düzenlenen kamplar, doğa yürüyüşleri, sosyal sorumluluk faaliyetleri, atölyeler ve manevî gelişim buluşmaları sayesinde çocuklarımız hem eğlenir hem de öğrenirler. Yapılan her faaliyet; <strong>özgüven geliştirmeyi, birlikte hareket etmeyi ve güçlü bir ahlaki duruş oluşturmayı</strong> destekleyecek şekilde planlanır.</p>
+
+          <p>Doğayı koruyan, değerlerine sahip çıkan ve geleceğe umutla yürüyen güçlü nesiller yetiştirmek için birlikte çalışıyoruz.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       MACERACILAR — 15–18 Yaş
+  ════════════════════════════════ -->
+  <section class="kz-team" id="maceracilar">
+    <div class="container">
+      <div class="kz-team__inner">
+
+        <!-- Sol: Metin -->
+        <div class="kz-team__text reveal">
+          <span class="kz-team__badge">
+            <span class="kz-team__badge-dot"></span>
+            Ekip · 15 – 18 Yaş
+          </span>
+          <h2 class="kz-title">Maceracılar <em>Kız</em><br>Ekibi.</h2>
+
+          <p>Geleceğimizin mimarı olan 15–18 yaş aralığındaki gençlerimizin bu kıymetli yolculuğunda onlara eşlik ediyor; hem doyasıya eğlenebilecekleri hem de <strong>maneviyatla beslenecekleri güvenli bir alan</strong> oluşturuyoruz.</p>
+
+          <p>Temel gayemiz; doğanın sunduğu zenginlikleri değerlerimizle harmanlayarak, gençlerimize kendi arkadaş gruplarıyla katılabilecekleri nitelikli programlar sunmaktır. Onları yalnızca vakit geçirecekleri sıradan etkinliklere değil; <strong>içlerindeki cevheri parlatıp ufuklarını genişletecekleri</strong> ilham verici tecrübelere davet ediyoruz.</p>
+
+          <p>Kurduğumuz samimi ve güvene dayalı bağ sayesinde, huzuru, özgüveni ve güzel ahlakı kuşanan Maceracılar ekibimiz; kazandıkları bu yüksek motivasyonla eğitim hayatlarında da pozitif yönde ilerliyorlar.</p>
+
+        </div>
+
+        <!-- Sağ: Görseller -->
+        <div class="kz-team__visuals reveal d1">
+          <div class="kz-img-stack">
+            <div class="kz-img kz-img--main kz-img--bars">
+              <img id="kiz-macer-main-img" src="../../assets/images/kiz-maceracilar-2.jpg" alt="Maceracılar kız ekibi Seyyah Antalya etkinliği" loading="lazy">
+            </div>
+            <div class="kz-img kz-img--sub kz-img--lbox">
+              <img id="kiz-macer-sub-img" src="../../assets/images/kiz-maceracilar-1.jpg" alt="Maceracılar kız ekibi grup fotoğrafı" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       FAALİYETLER & PROJELER
+  ════════════════════════════════ -->
+  <section class="kz-projects" id="projeler">
+    <div class="container">
+      <header class="kz-projects__head reveal">
+        <div class="kz-eyebrow">Faaliyetler & Projeler</div>
+        <h2 class="kz-title">Hikâyelerimiz, <em>yolculuklarımız.</em></h2>
+        <p class="kz-projects__lead">Akdeniz Dinamik Spor Kulübü olarak çıktığımız bu yolda, attığımız her adımı bir hikâye, yaşadığımız her anı kalplerimize ilmek ilmek nakşettiğimiz kıymetli birer emanet olarak görüyoruz.</p>
+      </header>
+
+      <!-- MERKEZ -->
+      <div class="kz-projects__group reveal">
+        <div class="kz-projects__group-head">
+          <span class="kz-projects__group-tag">Merkez</span>
+          <h3 class="kz-projects__group-title">Merkez <em>Projeleri</em></h3>
+          <p class="kz-projects__group-sub">Kulüp bünyesinde tüm gönüllülerimizi bir araya getiren, ortak ruhumuzun şekillendiği merkezî projelerimiz.</p>
+        </div>
+        <div class="kz-projects__grid" id="kz-projeler-merkez"></div>
+      </div>
+
+      <!-- YEREL -->
+      <div class="kz-projects__group reveal">
+        <div class="kz-projects__group-head">
+          <span class="kz-projects__group-tag">Yerel</span>
+          <h3 class="kz-projects__group-title">Dinamik <em>Çalışmaları</em></h3>
+          <p class="kz-projects__group-sub">Akdeniz Dinamik Kız Bölümü'nün yerel düzeyde sürdürdüğü çalışmalar ve özel faaliyetler.</p>
+        </div>
+        <div class="kz-projects__grid" id="kz-projeler-yerel"></div>
+        <div class="kz-projects__soon" id="kz-projeler-yerel-soon">
+          <div class="kz-projects__soon-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h4>Yakında</h4>
+          <p>Yerel faaliyet ve projelerimiz hazırlanıyor. Çok yakında burada, ekiplerimizle birlikte yaşadığımız hikâyelerle olacağız.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HABERLER -->
-  <section class="kz-section">
-    <div class="container">
-      <div class="reveal" style="max-width: 600px; margin-bottom: 48px;">
-        <div class="kz-eyebrow">Haberler</div>
-        <h2 class="kz-title">Dinamik Kız'dan <em>Haberler</em></h2>
-        <p class="kz-lead">Başarılar, duyurular ve kardeşlik hikayeleri.</p>
+  <!-- ════════════════════════════════
+       PROJE MODAL
+  ════════════════════════════════ -->
+  <div class="kz-modal" id="kz-projeler-modal" aria-hidden="true">
+    <div class="kz-modal__backdrop" data-modal-close></div>
+    <article class="kz-modal__card" role="dialog" aria-modal="true" aria-labelledby="kz-modal-title">
+      <button class="kz-modal__close" type="button" data-modal-close aria-label="Kapat">×</button>
+      <div class="kz-modal__hero" data-modal-hero></div>
+      <div class="kz-modal__body">
+        <span class="kz-modal__no" data-modal-no></span>
+        <h2 class="kz-modal__title" id="kz-modal-title" data-modal-title></h2>
+        <div class="kz-modal__content" data-modal-content></div>
       </div>
+    </article>
+  </div>
 
-      <div id="haber-listesi" class="kz-haber-grid"></div>
-    </div>
-  </section>
-
-  <!-- ETKİNLİKLER -->
-  <section class="kz-section kz-section-alt">
-    <div class="container">
-      <div class="reveal" style="max-width: 600px; margin-bottom: 48px;">
-        <div class="kz-eyebrow">Takvim</div>
-        <h2 class="kz-title">Yaklaşan <em>Etkinlikler</em></h2>
-        <p class="kz-lead">Bir sonraki buluşma, kampın veya atölyenin ne zaman?</p>
-      </div>
-
-      <div id="etkinlik-listesi" class="kz-events"></div>
-    </div>
-  </section>
-
-  <!-- QUOTE -->
-  <section class="kz-section">
-    <div class="container">
-      <div class="kz-quote reveal">
-        <p>"Güçlü olmak, bir tercih değil — <em>bir sorumluluktur.</em> Çünkü senin cesaretin, bir başka genç kızın hayalidir."</p>
-        <div class="kz-quote-author">— Dinamik SK Kız</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
+  <!-- ════════════════════════════════
        HABER MERKEZİ — Kız
-       ═══════════════════════════════════════════════ -->
+  ════════════════════════════════ -->
   <section class="kz-news" id="news">
     <div class="kz-news__inner">
       <header class="kz-news__hero reveal">
@@ -925,12 +1183,8 @@
           <span class="kz-news__pulse-dot"></span>
           <span>Kalbden Canlı</span>
         </div>
-        <h2 class="kz-news__title">
-          Yoldaşlardan <em>haberler.</em>
-        </h2>
-        <p class="kz-news__lead">
-          Kardeşlik, kamp, başarı — Dinamik Kız bölümünden anlamlı anlar ve yeni hikayeler.
-        </p>
+        <h2 class="kz-news__title">Yoldaşlardan <em>haberler.</em></h2>
+        <p class="kz-news__lead">Kardeşlik, kamp, başarı: Dinamik Kız bölümünden anlamlı anlar ve yeni hikayeler.</p>
         <div class="kz-news__stats">
           <div class="kz-news__stat">
             <span class="kz-news__stat-num" data-stat="upcoming">0</span>
@@ -985,34 +1239,63 @@
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ════════════════════════════════
+       INSTAGRAM FOLLOW
+  ════════════════════════════════ -->
+  <style>
+    .ig-follow{position:relative;overflow:hidden;padding:clamp(72px,10vw,120px) 24px;}
+    .ig-follow__glow{position:absolute;pointer-events:none;border-radius:50%;filter:blur(20px);}
+    .ig-follow__inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:auto 1fr auto;gap:56px;align-items:center;position:relative;z-index:2;}
+    .ig-follow__icon{width:144px;height:144px;border-radius:36px;background:linear-gradient(45deg,#f09433 0%,#e6683c 20%,#dc2743 45%,#cc2366 70%,#bc1888 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 30px 70px rgba(220,39,67,.45),0 0 0 1px rgba(255,255,255,.08);flex-shrink:0;animation:ig-float 6s ease-in-out infinite;}
+    @keyframes ig-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .ig-follow__eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:13px;margin:0 0 14px;font-weight:600;}
+    .ig-follow__title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.2vw,3.4rem);color:#fff;margin:0;line-height:1.1;font-weight:500;}
+    .ig-follow__title em{font-style:italic;}
+    .ig-follow__lead{margin:18px 0 0;font-size:17px;line-height:1.55;max-width:540px;}
+    .ig-follow__btn{display:inline-flex;align-items:center;gap:12px;padding:20px 32px;border-radius:14px;background:#fff;color:#0a0a0a;text-decoration:none;font-weight:600;font-size:17px;box-shadow:0 20px 40px rgba(0,0,0,.25);transition:transform .3s ease,box-shadow .3s ease;flex-shrink:0;font-family:'Plus Jakarta Sans',sans-serif;}
+    .ig-follow__btn:hover{transform:translateY(-3px);box-shadow:0 26px 55px rgba(0,0,0,.32);}
+    @media(max-width:900px){.ig-follow__inner{grid-template-columns:1fr;text-align:center;gap:32px;}.ig-follow__icon{margin:0 auto;width:112px;height:112px;border-radius:28px;}.ig-follow__icon svg{width:52px!important;height:52px!important;}.ig-follow__btn{justify-self:center;}.ig-follow__lead{margin-left:auto;margin-right:auto;}}
+  </style>
+  <section class="ig-follow" style="background:linear-gradient(135deg,var(--kz-bg) 0%,var(--kz-deep) 100%);" aria-label="Instagram'da Takip Et">
+    <div class="ig-follow__glow" style="top:-100px;right:-100px;width:420px;height:420px;background:radial-gradient(circle,rgba(232,128,158,.28) 0%,transparent 70%);"></div>
+    <div class="ig-follow__glow" style="bottom:-140px;left:-140px;width:380px;height:380px;background:radial-gradient(circle,rgba(232,128,158,.22) 0%,transparent 70%);"></div>
+    <div class="ig-follow__inner">
+      <div class="ig-follow__icon" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </div>
+      <div class="ig-follow__content">
+        <p class="ig-follow__eyebrow" style="color:rgba(245,245,245,.7);">Instagram</p>
+        <h2 class="ig-follow__title">Anlık paylaşımlar, <em style="color:var(--kz-rose);">günlük kareler.</em></h2>
+        <p class="ig-follow__lead" style="color:rgba(245,245,245,.72);">Kamp, sohbet halkası, fidan dikimi: kız bölümümüzün anlarını kaçırmamak için Instagram'da bizi takip edin.</p>
+      </div>
+      <a href="https://instagram.com/dinamiksk.kiz" target="_blank" rel="noopener" class="ig-follow__btn">
+        @dinamiksk.kiz
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SON CTA — Ekibe Katıl
+  ════════════════════════════════ -->
   <section class="kz-section kz-section-alt">
     <div class="container">
-      <div class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto 56px;">
-        <div class="kz-eyebrow" style="justify-content: center;">Seni Bekliyoruz</div>
-        <h2 class="kz-title">Bu Aile <em>Seninle</em> Tamam.</h2>
-      </div>
-
-      <div class="kz-cta-grid">
-        <div class="kz-cta-card reveal d1">
-          <h3>Instagram'da Takip Et</h3>
-          <p>Kamp anları, antrenmanlardan kareler ve kız kardeşlerimizin hikayeleri — hepsi akışta.</p>
-          <a href="https://instagram.com/dinamikspor" target="_blank" class="btn-rose-primary">
-            @dinamikspor
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-            </svg>
-          </a>
+      <div class="kz-final-cta reveal">
+        <div class="kz-final-cta__text">
+          <div class="kz-eyebrow">Seni Bekliyoruz</div>
+          <h2 class="kz-title">Bu Aile <em>Seninle</em><br>Tamam.</h2>
+          <p>7–18 yaş arası her kız için bir yer var. Üç ekibimizden hangisi sana yakınsa, ilk buluşman bizden, izini bırakmak senden.</p>
         </div>
-
-        <div class="kz-cta-card reveal d2">
-          <h3>Üye Ol</h3>
-          <p>Yaşın ne olursa olsun, eğer yürek varsa yer var. Ücretsiz deneme antrenmanı için bize ulaş.</p>
-          <a href="../../iletisim.html" class="btn-rose-ghost">
+        <div class="kz-final-cta__action">
+          <a href="../../iletisim.html" class="btn-rose-primary">
             Başvuru Yap
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+          <a href="#kasifler" class="btn-rose-ghost">Ekipleri Gör</a>
         </div>
       </div>
     </div>
@@ -1023,13 +1306,13 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../../index.html" class="logo">
-            <img src="../../assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height: 40px;">
-            <span class="logo-text">Dinamik <span style="color: var(--kz-rose);">SK</span></span>
+            <img src="../../assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height:40px;">
+            <span class="logo-text">Dinamik <span style="color:var(--kz-rose);">SK</span></span>
           </a>
-          <p style="margin-top: 16px;">İman. Disiplin. Spor. 2010'dan beri Antalya'da gençleri güçlü bireyler olarak yetiştiriyoruz.</p>
+          <p style="margin-top:16px;">İman. Disiplin. Spor. 2010'dan beri Antalya'da gençleri güçlü bireyler olarak yetiştiriyoruz.</p>
         </div>
         <div>
-          <h4 class="footer-title" style="color: var(--kz-rose);">Çalışmalarımız</h4>
+          <h4 class="footer-title" style="color:var(--kz-rose);">Çalışmalarımız</h4>
           <div class="footer-links">
             <a href="../../dinamik-calismalar.html">Dinamik Çalışmalar</a>
             <a href="../../dinamik-calismalar/erkek/index.html">Dinamik SK Erkek</a>
@@ -1038,17 +1321,18 @@
           </div>
         </div>
         <div>
-          <h4 class="footer-title" style="color: var(--kz-rose);">Hızlı Linkler</h4>
+          <h4 class="footer-title" style="color:var(--kz-rose);">Hızlı Linkler</h4>
           <div class="footer-links">
             <a href="../../index.html">Ana Sayfa</a>
             <a href="../../orman.html">Hatıra Ormanı</a>
+            <a href="../../arsiv.html">Arşiv</a>
             <a href="../../iletisim.html">İletişim</a>
           </div>
         </div>
         <div>
-          <h4 class="footer-title" style="color: var(--kz-rose);">Sosyal Medya</h4>
+          <h4 class="footer-title" style="color:var(--kz-rose);">Sosyal Medya</h4>
           <div class="footer-social">
-            <a href="https://instagram.com/dinamikspor" target="_blank" aria-label="Instagram">
+            <a href="https://instagram.com/dinamiksk" target="_blank" aria-label="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -1072,134 +1356,419 @@
       }, { threshold: 0.1 });
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-      /* ---------- Haber Merkezi (Firestore) ---------- */
+      /* ── Faaliyetler & Projeler ── */
+      (() => {
+        const FALLBACK_PROJELER = [
+          {
+            id: 'ilk-namazim',
+            no: '01',
+            baslik: 'İlk Namazım',
+            teaser: 'Evlatlarımıza namaz şuurunu aşılıyor, namazı hayatlarının ilk sırasına yazdırıyoruz. Saflar omuz omuza, gönüller bir saftır.',
+            gorsel: '',
+            bolumler: [
+              { tip: 'p', text: '**Amacımız;** geleceğin varisi olan pek kıymetli evlatlarımıza namaz şuurunu aşılamak, namazı çok sevdirmek ve onu vazgeçilmezleri olarak hayatlarının ilk sırasına yazdırmaktır.' },
+              { tip: 'p', text: 'Kulüp bünyesinde yaptığımız her faaliyette ilk gelecek projemiz bu olup, amacımız biri bin yapıp omuz omuza saf tutmaktır. **"İlk Namazım"**, evlatlarımızın gönüllerinde her daim **"gözbebeği namazım"** olarak kalacaktır.' }
+            ]
+          },
+          {
+            id: 'her-gun-bir-iyilik',
+            no: '02',
+            baslik: 'Her Gün Bir İyilik Yap',
+            teaser: 'Birler bir araya gelince çoğalır, iyilik biri bin yapar. Sıcak bir tebessüm, uzanan bir el; her günü iyilikle nakşetmek.',
+            gorsel: '',
+            bolumler: [
+              { tip: 'p', text: 'Bir, yalnız başına sadece "1"den ibarettir. Ancak birler bir araya gelince bizleri, sizleri ve onları oluşturur. İyilik konusu ise yalnızca bir kez yapılsa orada sayı "bir" kalmaz; bu sayının matematiksel hesabı yapılamaz. **İyilik, her güne bir sayı ile eklenince sayılar avuca sığmaz, katlanarak büyür.**' },
+              { tip: 'p', text: '**"Her Güne Bir İyilik"** adıyla çıktığımız bu yolda amacımız; sayının sadece matematikten ibaret olmadığını, yapılan iyiliklerin biri bin yapacağını öğretmektir. Onlara sıcacık bir tebessümün, uzanan bir yardım elinin, çevreye nadide bir bakışın sadece "bir iyilik" adı altında tasnif edilemeyeceğini, bu iyiliğin binlere bedel olduğunu aşılamayı amaçladık. Ve bu kıymetli yolu, onlara ömür boyu taşıyacakları bir **"hayati yol"** olarak armağan ettik.' }
+            ]
+          },
+          {
+            id: 'hilali-gordum',
+            no: '03',
+            baslik: "Hilal'i Gördüm",
+            teaser: "Ramazan'ın nazenin ışığı altında; namaz, teravih, salavat ve hadisleri yüreklere ilmek ilmek nakşettik.",
+            gorsel: '',
+            bolumler: [
+              { tip: 'intro', text: "Bakın Hilal'i gördüm, nasıl da nazlı nazlı bakıyor… Gökyüzünün nazenin ışığı. Kimdir o, hangi zamanın timsali bu güzellik? Onun adı Ramazan…" },
+              { tip: 'p', text: "Ramazan ayını evlatlarımıza tam da böyle aksettirdik. Yüreklerinde kıpır kıpır, masumane bir eğlence; hem ibadet hem ziyafet misali… Ama en çok da büyük bir sevgiyle; namazı, teravihi, Kur'an-ı Kerim okumalarını, salavatları ve hadisleri, kısacası **ibadetin özünü benliklerine kimlik edinecekleri her şeyi** bu yolda nazende kalplere ilmek ilmek nakşettik." }
+            ]
+          },
+          {
+            id: 'liderim-itikaftayim',
+            no: '04',
+            baslik: 'Liderim İtikaftayım',
+            teaser: "Yol O'na, yoldaş O'na. Hayatın her anını bir itikaf teslimiyetiyle yaşamak; gözlerin içine yazılan ışık.",
+            gorsel: '',
+            bolumler: [
+              { tip: 'intro', text: "Sessiz olun, itikaftayım. Kapattım gözlerimi; ağzımı kenetledim bir yudum su ile. Dilimi de susturdum, gönlümü bağladım Rahman'a…" },
+              { tip: 'p', text: "Evlatlarımızla birlikte girdiğimiz bu itikaf programında onlara öğrettiğimiz yegâne şey şudur: **Yol O'na, Yoldaş O'na…** İbadetlerin hassasiyeti sadece itikaf zamanıyla sınırlı değildir. Hayatın her anını bir itikaf teslimiyetiyle yaşamalarını, kapattıkları gözlerinin içine bir ışık olarak yazdırdık. Tüm hayati itikaflar artık onlara emanet…" }
+            ]
+          },
+          {
+            id: 'seyyah',
+            no: '05',
+            baslik: 'Seyyah',
+            teaser: 'Şehirleri, sokakları, gönülleri adım adım gezdik. Hatıra defterimize attığımız her imza, köklü bir kardeşlik.',
+            gorsel: '',
+            bolumler: [
+              { tip: 'intro', text: 'Bir şehir, bir sokak, bir cadde, bazen de küçük bir kuytuda kalmış; sıcacık, buram buram kokusunu içimize çektiğimiz gönül fırınımız… "Benim adım Seyyah" diyerek çıktık yola.' },
+              { tip: 'p', text: "Gönül fırınımız diye bahsettiğimiz satırlarda, o fırına sıcak gönüller eklemeye niyet ettik. Adımız Seyyah; gezdik, döndük, durduk ve nihayet bir gönüle konduk. Kulübümüz vesilesiyle Kayseri'de bulunan ve gönül fırıncılığı yaptığımız dostlarımızla bir şehri, bir sokağı, bir caddeyi adım adım gezdik; anılara sıcaklıklar ekledik. **Hatıra defterimize yazdığımız her bir seyyahlığın sonuna, hep güzel biten ve daima güzel bitecek olan köklü bir kardeşlik ile imzamızı attık.**" }
+            ]
+          },
+          {
+            id: 'yeryuzu-yildizlari',
+            no: '06',
+            baslik: 'Yeryüzü Yıldızları',
+            teaser: 'Ashab gibi inci taneleri, yeryüzünde pırıl pırıl yıldızlar. Maneviyatın enginlere ulaştığı bir yolculuk.',
+            gorsel: '',
+            bolumler: [
+              { tip: 'intro', text: 'Gökyüzünden yeryüzüne serilmiş, pırıl pırıl parlayan inci taneleri gibisiniz. Ashab gibisiniz…' },
+              { tip: 'p', text: 'Gençlerimize işte böyle seslendik. Onları birer inci tanesi olarak gördük, ashabın ruhunu yüreklerine kondurduk. **Maneviyatın enginlere ulaştığı, benlikten öteye geçip ruhumuzun en derinlerinde hissettiğimiz ilahi rahmeti gönlümüze nakşettik** ve her birimiz yeryüzünde dolaşan birer yıldız olduk. Gençlerimize şükranlarımızı sunuyor ve biz de onların her birine gökyüzünden bir yıldız ithaf ediyoruz.' }
+            ]
+          }
+        ];
+
+        const esc = (s='') => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+        const bold = (s='') => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+        const cld = (url, t) => (window.cldUrl ? window.cldUrl(url, t) : url);
+
+        const urlParams = new URLSearchParams(location.search);
+        const PREVIEW_MODE = urlParams.get('preview') === 'admin';
+
+        // Aktif proje listesi (state)
+        let projeler = [];
+
+        const sortByCategory = (list) => {
+          // merkez önce, yerel sonra; her grupta sıra numarasına göre
+          const norm = (p) => ({ kategori: p.kategori || 'merkez', sira: Number.isFinite(p.sira) ? p.sira : 99 });
+          return [...list].sort((a, b) => {
+            const na = norm(a), nb = norm(b);
+            if (na.kategori !== nb.kategori) return na.kategori === 'merkez' ? -1 : 1;
+            return na.sira - nb.sira;
+          });
+        };
+
+        const cardHTML = (p) => {
+          const hero = p.gorsel
+            ? `<img src="${esc(cld(p.gorsel, 'w_700,h_900,c_fill,q_auto,f_auto'))}" alt="${esc(p.baslik)} görseli" loading="lazy">`
+            : `<div class="kz-pcard__hero-empty"><span>${esc(p.no)}</span></div>`;
+          return `
+            <button class="kz-pcard" type="button" data-proje-id="${esc(p.id)}" aria-label="${esc(p.baslik)} projesini aç">
+              <div class="kz-pcard__hero">${hero}</div>
+              <div class="kz-pcard__fade"></div>
+              <span class="kz-pcard__no">${esc(p.no)}</span>
+              <div class="kz-pcard__body">
+                <h4 class="kz-pcard__title">${esc(p.baslik)}</h4>
+                <p class="kz-pcard__teaser">${esc(p.teaser)}</p>
+                <span class="kz-pcard__read">
+                  Hikâyeyi Oku
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span>
+              </div>
+            </button>
+          `;
+        };
+
+        const renderProjeler = (list) => {
+          projeler = sortByCategory((list || []).filter(p => p && (PREVIEW_MODE || p.yayinda !== false)));
+
+          // Merkez kart grid
+          const grid = document.getElementById('kz-projeler-merkez');
+          if (grid) {
+            const merkez = projeler.filter(p => (p.kategori || 'merkez') === 'merkez');
+            grid.innerHTML = merkez.length
+              ? merkez.map(cardHTML).join('')
+              : `<div class="kz-projects__soon" style="grid-column:1/-1;"><h4>Yakında</h4><p>Merkez projeleri hazırlanıyor.</p></div>`;
+          }
+
+          // Yerel kart grid (varsa)
+          const yerelGrid = document.getElementById('kz-projeler-yerel');
+          if (yerelGrid) {
+            const yerel = projeler.filter(p => p.kategori === 'yerel');
+            yerelGrid.innerHTML = yerel.map(cardHTML).join('');
+            const yerelSoon = document.getElementById('kz-projeler-yerel-soon');
+            if (yerelSoon) yerelSoon.style.display = yerel.length ? 'none' : '';
+          }
+        };
+
+        // ── Modal ──
+        const modal = document.getElementById('kz-projeler-modal');
+        const heroEl = modal?.querySelector('[data-modal-hero]');
+        const noEl = modal?.querySelector('[data-modal-no]');
+        const titleEl = modal?.querySelector('[data-modal-title]');
+        const contentEl = modal?.querySelector('[data-modal-content]');
+        let lastFocus = null;
+
+        const open = (id) => {
+          const p = projeler.find(x => x.id === id);
+          if (!p || !modal) return;
+          lastFocus = document.activeElement;
+          heroEl.innerHTML = p.gorsel
+            ? `<img src="${esc(cld(p.gorsel, 'w_1400,c_limit,q_auto,f_auto'))}" alt="${esc(p.baslik)} görseli"><div class="kz-modal__hero-fade"></div>`
+            : `<div class="kz-modal__hero-empty">${esc(p.no)}</div><div class="kz-modal__hero-fade"></div>`;
+          noEl.textContent = `Proje · ${p.no || ''}`.trim();
+          titleEl.textContent = p.baslik || '';
+          contentEl.innerHTML = (p.bolumler || []).map(b => {
+            if (b.tip === 'intro') return `<blockquote><p>${bold(b.text)}</p></blockquote>`;
+            return `<p>${bold(b.text)}</p>`;
+          }).join('') + (() => {
+          const vids = p.videolar?.length ? p.videolar : (p.videoUrl ? [p.videoUrl] : []);
+          if (!vids.length) return '';
+          const poster0 = window.cldVideoPoster ? window.cldVideoPoster(vids[0]) : '';
+          const thumbs = vids.map((url, vi) => {
+            const pt = window.cldVideoPoster ? window.cldVideoPoster(url, 'w_240,h_135,c_fill,q_auto,f_jpg') : '';
+            return `<div class="kz-modal__vp-thumb${vi===0?' active':''}" data-vp-idx="${vi}" style="${pt?`background-image:url('${pt}')`:'background:#111'}" title="Video ${vi+1}"><span class="kz-modal__vp-tnum">${vi+1}</span></div>`;
+          }).join('');
+          const strip = vids.length > 1 ? `<div class="kz-modal__vp-strip">${thumbs}</div>` : '';
+          return `<div class="kz-modal__vp">
+            <div class="kz-modal__vp-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>Video${vids.length>1?' ('+vids.length+')':''}</div>
+            <div class="kz-modal__vp-main" id="kz-vp-main">
+              <video id="kz-vp-video" controls playsinline preload="none" src="${esc(vids[0])}" style="width:100%;height:100%;display:block;object-fit:contain;"></video>
+              <div class="kz-modal__vp-poster" id="kz-vp-poster" style="${poster0?`background-image:url('${poster0}')`:''}" data-vp-urls='${JSON.stringify(vids)}'>
+                <div class="kz-modal__vp-play"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+              </div>
+            </div>
+            ${strip}
+          </div>`;
+        })();
+          modal.classList.add('is-open');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('kz-modal-open');
+          modal.querySelector('.kz-modal__close')?.focus({ preventScroll: true });
+          modal.scrollTop = 0;
+        };
+
+        const close = () => {
+          modal?.classList.remove('is-open');
+          modal?.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('kz-modal-open');
+          lastFocus?.focus?.({ preventScroll: true });
+        };
+
+        const vpSwitchToKz = (idx) => {
+          const video = document.getElementById('kz-vp-video');
+          const poster = document.getElementById('kz-vp-poster');
+          const thumbs = document.querySelectorAll('.kz-modal__vp-thumb');
+          if (!video || !poster) return;
+          const urls = JSON.parse(poster.dataset.vpUrls || '[]');
+          if (!urls[idx]) return;
+          video.src = urls[idx];
+          const pt = window.cldVideoPoster ? window.cldVideoPoster(urls[idx]) : '';
+          poster.style.backgroundImage = pt ? `url('${pt}')` : '';
+          poster.classList.remove('hidden');
+          video.pause(); video.currentTime = 0;
+          thumbs.forEach((t, i) => t.classList.toggle('active', i === idx));
+        };
+
+        document.addEventListener('click', (e) => {
+          const card = e.target.closest('[data-proje-id]');
+          if (card) { open(card.dataset.projeId); return; }
+          if (e.target.closest('[data-modal-close]')) { close(); return; }
+          const poster = e.target.closest('#kz-vp-poster');
+          if (poster) {
+            poster.classList.add('hidden');
+            const video = document.getElementById('kz-vp-video');
+            if (video) video.play();
+            return;
+          }
+          const thumb = e.target.closest('.kz-modal__vp-thumb');
+          if (thumb && thumb.dataset.vpIdx !== undefined) {
+            vpSwitchToKz(parseInt(thumb.dataset.vpIdx, 10));
+            return;
+          }
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && modal?.classList.contains('is-open')) close();
+        });
+
+        // ── Veri yükleme ──
+        // Preview mode: postMessage ile veri bekle
+        // Normal mode: Firestore'dan çek, yoksa fallback
+        if (PREVIEW_MODE) {
+          renderProjeler(FALLBACK_PROJELER);
+
+          const applyKizSayfaData = (g) => {
+            if (!g) return;
+            if ('hero_bg' in g) {
+              const bgEl = document.getElementById('kz-hero-bg');
+              if (bgEl) bgEl.style.backgroundImage = g.hero_bg ? `url('${g.hero_bg}')` : '';
+            }
+            const si = (id, url) => { if (!url) return; const el = document.getElementById(id); if (el) el.src = url; };
+            si('kiz-biz1-img',       g.biz_kimiz_1);
+            si('kiz-biz2-img',       g.biz_kimiz_2);
+            si('kiz-kasifler-img',   g.kasifler_1);
+            si('kiz-arstr1-img',     g.arastirmacilar_1);
+            si('kiz-arstr2-img',     g.arastirmacilar_2);
+            si('kiz-macer-main-img', g.maceracilar_main);
+            si('kiz-macer-sub-img',  g.maceracilar_sub);
+          };
+
+          let lastFocusedId = null;
+          const focusCard = (id) => {
+            if (!id) return;
+            const card = document.querySelector(`[data-proje-id="${CSS.escape(id)}"]`);
+            if (!card) return;
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // scroll bitince modali aç
+            setTimeout(() => { try { open(id); } catch (_) {} }, 380);
+          };
+
+          window.addEventListener('message', (e) => {
+            const msg = e.data;
+            if (!msg) return;
+            if (msg.type === 'kiz-projeler-preview') {
+              renderProjeler(Array.isArray(msg.projeler) ? msg.projeler : []);
+              const fid = msg.focusId || null;
+              if (fid && fid !== lastFocusedId) {
+                lastFocusedId = fid;
+                // DOM güncellenmesi için microtask + frame bekle
+                requestAnimationFrame(() => requestAnimationFrame(() => focusCard(fid)));
+              } else if (!fid) {
+                lastFocusedId = null;
+              }
+            }
+            if (msg.type === 'kiz-sayfa-preview') applyKizSayfaData(msg.data);
+          });
+
+          // Admin'e hazır olduğumuzu bildir
+          const sayfaModu = urlParams.get('sayfa') === '1';
+          try { window.parent?.postMessage({ type: sayfaModu ? 'kiz-sayfa-ready' : 'kiz-preview-ready' }, '*'); } catch (_) {}
+        } else {
+          (async () => {
+            try {
+              if (window.firebaseReady) await window.firebaseReady;
+              if (!window.FB?.ready) { renderProjeler(FALLBACK_PROJELER); return; }
+              const { db, collection, getDocs } = window.FB;
+              const snap = await getDocs(collection(db, 'kiz_projeler'));
+              const items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+              renderProjeler(items.length ? items : FALLBACK_PROJELER);
+            } catch (err) {
+              console.warn('Projeler Firestore yüklenemedi, fallback kullanılıyor:', err);
+              renderProjeler(FALLBACK_PROJELER);
+            }
+          })();
+        }
+      })();
+
+      /* ── Sayfa Görselleri (Firestore sayfalar/kiz) ── */
+      (async () => {
+        try {
+          if (window.firebaseReady) await window.firebaseReady;
+          if (!window.FB?.ready) return;
+          const { db, doc, getDoc } = window.FB;
+          const snap = await getDoc(doc(db, 'sayfalar', 'kiz'));
+          if (!snap.exists()) return;
+          const g = snap.data();
+          if (g.hero_bg) {
+            const bgEl = document.getElementById('kz-hero-bg');
+            if (bgEl) bgEl.style.backgroundImage = `url('${g.hero_bg}')`;
+          }
+          const setImg = (id, url) => {
+            if (!url) return;
+            const el = document.getElementById(id);
+            if (el) el.src = url;
+          };
+          setImg('kiz-biz1-img',       g.biz_kimiz_1);
+          setImg('kiz-biz2-img',       g.biz_kimiz_2);
+          setImg('kiz-kasifler-img',   g.kasifler_1);
+          setImg('kiz-arstr1-img',     g.arastirmacilar_1);
+          setImg('kiz-arstr2-img',     g.arastirmacilar_2);
+          setImg('kiz-macer-main-img', g.maceracilar_main);
+          setImg('kiz-macer-sub-img',  g.maceracilar_sub);
+        } catch (err) {
+          console.warn('Sayfa görselleri yüklenemedi:', err);
+        }
+      })();
+
+      /* ── Haber Merkezi (Firestore) ── */
       (async () => {
         const KATEGORI = 'kiz';
         const PRE = 'kz';
-        const escapeHtml = (s='') => String(s)
-          .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')
-          .replaceAll('"','&quot;').replaceAll("'",'&#39;');
+        const esc = (s='') => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
         const TIP_AD = { duyuru:'Duyuru', etkinlik:'Etkinlik', haber:'Haber', video:'Video' };
         const AY_KISA = ['OCA','ŞUB','MAR','NİS','MAY','HAZ','TEM','AĞU','EYL','EKİ','KAS','ARA'];
-        const formatTarih = (iso) => iso ? new Date(iso).toLocaleDateString('tr-TR', { day:'numeric', month:'long', year:'numeric' }) : '';
+        const fmtTarih = (iso) => iso ? new Date(iso).toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'}) : '';
 
         try {
           if (window.firebaseReady) await window.firebaseReady;
           if (!window.FB?.ready) return;
           const { db, collection, getDocs } = window.FB;
           const snap = await getDocs(collection(db, 'icerik'));
-          const items = snap.docs.map(d => ({ id: d.id, ...d.data() }))
-            .filter(i => i.kategori === KATEGORI && i.yayinda !== false)
-            .sort((a,b) => (b.tarih || '').localeCompare(a.tarih || ''));
+          const items = snap.docs.map(d => ({ id:d.id, ...d.data() }))
+            .filter(i => i.kategori === KATEGORI && i.yayinda !== false && !(window.isArchived ? window.isArchived(i) : i.arsiv === true))
+            .sort((a,b) => (b.tarih||'').localeCompare(a.tarih||''));
 
           const today = new Date().toISOString().slice(0,10);
-          const upcoming = items.filter(i => i.tip === 'etkinlik' && (i.tarih || '') >= today)
-            .sort((a,b) => (a.tarih || '').localeCompare(b.tarih || ''));
-          const past = items.filter(i => i.tip === 'etkinlik' && (i.tarih || '') < today).slice(0, 4);
-          const featured = items.filter(i => i.oneCikar === true && i.tip !== 'etkinlik').slice(0, 3);
-          const fIds = new Set(featured.map(i => i.id));
-          const uIds = new Set(upcoming.map(i => i.id));
-          const latest = items.filter(i => !fIds.has(i.id) && !uIds.has(i.id) && i.tip !== 'etkinlik').slice(0, 6);
+          const upcoming = items.filter(i => i.tip==='etkinlik' && (i.tarih||'')>=today).sort((a,b)=>(a.tarih||'').localeCompare(b.tarih||''));
+          const past     = items.filter(i => i.tip==='etkinlik' && (i.tarih||'')<today).slice(0,4);
+          const featured = items.filter(i => i.oneCikar===true && i.tip!=='etkinlik').slice(0,3);
+          const fIds = new Set(featured.map(i=>i.id));
+          const uIds = new Set(upcoming.map(i=>i.id));
+          const latest = items.filter(i=>!fIds.has(i.id)&&!uIds.has(i.id)&&i.tip!=='etkinlik').slice(0,6);
 
-          const setStat = (k, v) => { const el = document.querySelector(`[data-stat="${k}"]`); if (el) el.textContent = v; };
+          const setStat = (k,v) => { const el=document.querySelector(`[data-stat="${k}"]`); if(el) el.textContent=v; };
           setStat('upcoming', upcoming.length);
           setStat('featured', featured.length);
           setStat('total', items.length);
 
           if (upcoming.length) {
-            document.getElementById('news-upcoming').style.display = '';
+            document.getElementById('news-upcoming').style.display='';
             document.querySelector('[data-list="upcoming"]').innerHTML = upcoming.map(i => {
               const d = new Date(i.tarih);
-              return `
-                <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="${PRE}-up-card">
-                  <div class="${PRE}-up-card__date">
-                    <span class="${PRE}-up-card__day">${d.getDate()}</span>
-                    <span class="${PRE}-up-card__month">${AY_KISA[d.getMonth()]}</span>
-                  </div>
-                  <div class="${PRE}-up-card__body">
-                    <span class="${PRE}-up-card__tag">${TIP_AD[i.tip] || ''}</span>
-                    <h4 class="${PRE}-up-card__title">${escapeHtml(i.baslik)}</h4>
-                    <div class="${PRE}-up-card__meta">
-                      ${i.saat ? `<span>🕒 ${escapeHtml(i.saat)}</span>` : ''}
-                      ${i.konum ? `<span>📍 ${escapeHtml(i.konum)}</span>` : ''}
-                    </div>
-                  </div>
-                  <svg class="${PRE}-up-card__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
-                </a>
-              `;
+              return `<a href="../../duyuru.html?id=${encodeURIComponent(i.id)}" class="${PRE}-up-card">
+                <div class="${PRE}-up-card__date"><span class="${PRE}-up-card__day">${d.getDate()}</span><span class="${PRE}-up-card__month">${AY_KISA[d.getMonth()]}</span></div>
+                <div class="${PRE}-up-card__body">
+                  <span class="${PRE}-up-card__tag">${TIP_AD[i.tip]||''}</span>
+                  <h4 class="${PRE}-up-card__title">${esc(i.baslik)}</h4>
+                  <div class="${PRE}-up-card__meta">${i.saat?`<span>🕒 ${esc(i.saat)}</span>`:''} ${i.konum?`<span>📍 ${esc(i.konum)}</span>`:''}</div>
+                </div>
+                <svg class="${PRE}-up-card__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+              </a>`;
             }).join('');
           }
 
           if (featured.length) {
-            document.getElementById('news-featured').style.display = '';
-            const big = featured[0];
-            const sides = featured.slice(1, 3);
-            const card = (i, kind) => {
-              const isBig = kind === 'big';
-              const img = i.gorsel
-                ? `<img class="${PRE}-feat-card__img" src="${escapeHtml(i.gorsel)}" alt="" loading="lazy">`
-                : `<div class="${PRE}-feat-card__no-img">⭐</div>`;
-              return `
-                <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="${PRE}-feat-card${isBig ? ' '+PRE+'-feat-card--big' : ''}">
-                  ${img}
-                  <span class="${PRE}-feat-card__star">★ Öne Çıkan</span>
-                  <div class="${PRE}-feat-card__body">
-                    <span class="${PRE}-feat-card__tag">${TIP_AD[i.tip] || ''}</span>
-                    <h4 class="${PRE}-feat-card__title">${escapeHtml(i.baslik)}</h4>
-                    ${i.kisaMetin ? `<p class="${PRE}-feat-card__excerpt">${escapeHtml(i.kisaMetin)}</p>` : ''}
-                    <span class="${PRE}-feat-card__date">${formatTarih(i.tarih)}</span>
-                  </div>
-                </a>
-              `;
+            document.getElementById('news-featured').style.display='';
+            const big=featured[0], sides=featured.slice(1,3);
+            const card=(i,kind)=>{
+              const isBig=kind==='big';
+              const img=i.gorsel?`<img class="${PRE}-feat-card__img" src="${esc(window.cldUrl?window.cldUrl(i.gorsel,isBig?'w_900,h_500,c_fill,q_auto,f_auto':'w_500,h_350,c_fill,q_auto,f_auto'):i.gorsel)}" alt="" loading="lazy">`:
+                `<div class="${PRE}-feat-card__no-img">⭐</div>`;
+              return `<a href="../../duyuru.html?id=${encodeURIComponent(i.id)}" class="${PRE}-feat-card${isBig?' '+PRE+'-feat-card--big':''}">
+                ${img}<span class="${PRE}-feat-card__star">★ Öne Çıkan</span>
+                <div class="${PRE}-feat-card__body">
+                  <span class="${PRE}-feat-card__tag">${TIP_AD[i.tip]||''}</span>
+                  <h4 class="${PRE}-feat-card__title">${esc(i.baslik)}</h4>
+                  ${i.kisaMetin?`<p class="${PRE}-feat-card__excerpt">${esc(i.kisaMetin)}</p>`:''}
+                  <span class="${PRE}-feat-card__date">${fmtTarih(i.tarih)}</span>
+                </div></a>`;
             };
-            document.querySelector('[data-list="featured"]').innerHTML = `
-              ${card(big, 'big')}
-              <div class="${PRE}-news__featured-side">${sides.map(i => card(i, 'side')).join('')}</div>
-            `;
+            document.querySelector('[data-list="featured"]').innerHTML=`${card(big,'big')}<div class="${PRE}-news__featured-side">${sides.map(i=>card(i,'side')).join('')}</div>`;
           }
 
-          const latestEl = document.querySelector('[data-list="latest"]');
+          const latestEl=document.querySelector('[data-list="latest"]');
           if (latest.length) {
-            latestEl.innerHTML = latest.map(i => `
-              <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="${PRE}-news-card">
-                <div class="${PRE}-news-card__row">
-                  <span class="${PRE}-news-card__type">${TIP_AD[i.tip] || ''}</span>
-                  <span class="${PRE}-news-card__sep">·</span>
-                  <span class="${PRE}-news-card__date">${formatTarih(i.tarih)}</span>
-                </div>
-                <h4 class="${PRE}-news-card__title">${escapeHtml(i.baslik)}</h4>
-                ${i.kisaMetin ? `<p class="${PRE}-news-card__excerpt">${escapeHtml(i.kisaMetin)}</p>` : ''}
-              </a>
-            `).join('');
+            latestEl.innerHTML=latest.map(i=>{
+              const img=i.gorsel?`<div class="${PRE}-news-card__img-wrap"><img class="${PRE}-news-card__img" src="${esc(window.cldUrl?window.cldUrl(i.gorsel,'w_600,h_340,c_fill,q_auto,f_auto'):i.gorsel)}" alt="" loading="lazy"></div>`:`<div class="${PRE}-news-card__no-img">◆</div>`;
+              return `<a href="../../duyuru.html?id=${encodeURIComponent(i.id)}" class="${PRE}-news-card">${img}<div class="${PRE}-news-card__body"><div class="${PRE}-news-card__row"><span class="${PRE}-news-card__type">${TIP_AD[i.tip]||''}</span><span class="${PRE}-news-card__sep">·</span><span class="${PRE}-news-card__date">${fmtTarih(i.tarih)}</span></div><h4 class="${PRE}-news-card__title">${esc(i.baslik)}</h4>${i.kisaMetin?`<p class="${PRE}-news-card__excerpt">${esc(i.kisaMetin)}</p>`:''}</div></a>`;
+            }).join('');
           } else {
-            latestEl.innerHTML = `
-              <div class="${PRE}-news__empty" style="grid-column:1/-1">
-                <em>Henüz haber yok.</em>
-                İlk haber yayında — admin panelinden ekleyebilirsin.
-              </div>
-            `;
+            latestEl.innerHTML=`<div class="${PRE}-news__empty" style="grid-column:1/-1"><em>Henüz haber yok.</em>İlk haber yayında — admin panelinden ekleyebilirsin.</div>`;
           }
 
           if (past.length) {
-            document.getElementById('news-past').style.display = '';
-            document.querySelector('[data-list="past"]').innerHTML = past.map(i => `
-              <a href="../../duyurular.html?bolum=${KATEGORI}#${i.id}" class="${PRE}-news-card">
-                <div class="${PRE}-news-card__row">
-                  <span class="${PRE}-news-card__type">Etkinlik</span>
-                  <span class="${PRE}-news-card__sep">·</span>
-                  <span class="${PRE}-news-card__date">${formatTarih(i.tarih)}</span>
-                </div>
-                <h4 class="${PRE}-news-card__title">${escapeHtml(i.baslik)}</h4>
-                ${i.konum ? `<p class="${PRE}-news-card__excerpt">📍 ${escapeHtml(i.konum)}</p>` : ''}
-              </a>
-            `).join('');
+            document.getElementById('news-past').style.display='';
+            document.querySelector('[data-list="past"]').innerHTML=past.map(i=>{
+              const img=i.gorsel?`<div class="${PRE}-news-card__img-wrap"><img class="${PRE}-news-card__img" src="${esc(window.cldUrl?window.cldUrl(i.gorsel,'w_600,h_340,c_fill,q_auto,f_auto'):i.gorsel)}" alt="" loading="lazy"></div>`:`<div class="${PRE}-news-card__no-img">◆</div>`;
+              return `<a href="../../duyuru.html?id=${encodeURIComponent(i.id)}" class="${PRE}-news-card">${img}<div class="${PRE}-news-card__body"><div class="${PRE}-news-card__row"><span class="${PRE}-news-card__type">Etkinlik</span><span class="${PRE}-news-card__sep">·</span><span class="${PRE}-news-card__date">${fmtTarih(i.tarih)}</span></div><h4 class="${PRE}-news-card__title">${esc(i.baslik)}</h4>${i.konum?`<p class="${PRE}-news-card__excerpt">📍 ${esc(i.konum)}</p>`:''}</div></a>`;
+            }).join('');
           }
-          console.log(`📡 Kız: ${items.length} içerik`);
-        } catch (err) {
+        } catch(err) {
           console.error('Haber Merkezi hatası:', err);
         }
       })();
     });
   </script>
+
+  <script src="../../site-ayarlar.js?v=2" defer></script>
 </body>
 </html>

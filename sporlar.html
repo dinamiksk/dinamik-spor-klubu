@@ -4,19 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sporlarımız | Akdeniz Dinamik Spor Kulübü</title>
-  <meta name="description" content="Derinde nefes, masada güç. Akdeniz Dinamik Spor Kulübü'nde dalgıçlık ve bilek güreşi branşlarında Antalya'nın öncü spor ailesi.">
+  <meta name="description" content="Derinde nefes, masada güç. Akdeniz Dinamik Spor Kulübü'nde scuba diving (tüplü dalış) ve bilek güreşi branşlarında Antalya'nın öncü spor ailesi.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dinamikspor.com/sporlar.html">
   <meta property="og:title" content="Sporlarımız | Akdeniz Dinamik Spor Kulübü">
   <meta property="og:description" content="Derinde nefes, masada güç. İki ayrı disiplin, tek bir ruh.">
   <meta property="og:type" content="website">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="Akdeniz Dinamik Spor Kulübü">
+  <meta property="og:url" content="https://dinamikspor.com/sporlar.html">
+  <meta property="og:image" content="https://dinamikspor.com/assets/images/dalgiclik-takim.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dinamikspor.com/assets/images/dalgiclik-takim.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/dinamik-logo.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"SportsOrganization","name":"Dinamik Spor Kulübü","url":"https://dinamikspor.com","sport":["Bilek Güreşi","Dalgıçlık"],"address":{"@type":"PostalAddress","addressLocality":"Antalya","addressCountry":"TR"}}
+  {"@context":"https://schema.org","@type":"SportsOrganization","name":"Akdeniz Dinamik Spor Kulübü","url":"https://dinamikspor.com","sport":["Bilek Güreşi","Scuba Diving"],"address":{"@type":"PostalAddress","addressLocality":"Antalya","addressCountry":"TR"}}
   </script>
 
   <style>
@@ -47,7 +54,7 @@
     body {
       background: var(--sp-ink);
       color: var(--sp-paper);
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     /* ============================================
@@ -71,6 +78,7 @@
     .sp-hero {
       position: relative;
       min-height: 100vh;
+      min-height: 100svh;
       overflow: hidden;
       background: var(--sp-ink);
       isolation: isolate;
@@ -103,7 +111,8 @@
     }
 
     .sp-hero__pane--blue .sp-hero__pane-img {
-      background-image: url('https://images.unsplash.com/photo-1559683068-afd3611d0619?w=1800&q=85&auto=format&fit=crop');
+      background-image: url('assets/images/dalgiclik-derin-nefes.jpg');
+      background-position: 30% 88%;
     }
 
     .sp-hero__pane--orange .sp-hero__pane-img {
@@ -120,9 +129,14 @@
 
     .sp-hero__pane--blue::before {
       background:
-        linear-gradient(180deg, rgba(6,10,19,.25) 0%, rgba(6,10,19,.55) 55%, rgba(6,10,19,.88) 100%),
-        radial-gradient(ellipse at 50% 40%, rgba(10,52,102,.35), transparent 70%),
-        linear-gradient(135deg, rgba(26,97,172,.25), rgba(6,10,19,.4));
+        linear-gradient(180deg,
+          rgba(6,10,19,.18) 0%,
+          rgba(6,10,19,.45) 38%,
+          rgba(6,10,19,.62) 50%,
+          rgba(6,10,19,.45) 62%,
+          rgba(6,10,19,.32) 100%),
+        radial-gradient(ellipse at 50% 50%, rgba(6,10,19,.35), transparent 60%),
+        linear-gradient(135deg, rgba(26,97,172,.15), rgba(6,10,19,.25));
     }
 
     .sp-hero__pane--orange::before {
@@ -178,6 +192,7 @@
       position: relative;
       z-index: 10;
       min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -196,7 +211,7 @@
       background: rgba(6,10,19,.5);
       backdrop-filter: blur(10px);
       margin-bottom: 36px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: .22em;
@@ -275,7 +290,7 @@
     }
 
     .sp-hero__side {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: .2em;
@@ -358,7 +373,7 @@
     }
 
     .sp-manifesto__kicker {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.68rem;
       font-weight: 700;
       letter-spacing: .3em;
@@ -420,7 +435,7 @@
     .sp-pillar:nth-child(3)::before { background: var(--sp-orange); }
 
     .sp-pillar__no {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: .18em;
@@ -461,7 +476,7 @@
     }
 
     .sp-branches__eyebrow {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: .28em;
@@ -528,7 +543,8 @@
     .sp-poster:hover .sp-poster__img { transform: scale(1.08); }
 
     .sp-poster--dalg .sp-poster__img {
-      background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&q=85&auto=format&fit=crop');
+      background-image: url('assets/images/dalgiclik-coklu.jpg');
+      background-position: center 35%;
     }
 
     .sp-poster--bilek .sp-poster__img {
@@ -594,7 +610,7 @@
     .sp-poster__bottom { }
 
     .sp-poster__label {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: .22em;
@@ -614,6 +630,20 @@
       color: var(--sp-paper);
       margin-bottom: 14px;
     }
+
+    .sp-poster__name-sub {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 0.36em;
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: none;
+      color: rgba(244,236,223,.66);
+      margin-top: 8px;
+    }
+    .sp-poster--dalg .sp-poster__name-sub { color: var(--sp-blue-glow); opacity: .82; }
 
     .sp-poster__tagline {
       font-family: 'Cormorant Garamond', serif;
@@ -659,11 +689,27 @@
       color: rgba(244,236,223,.55);
     }
 
+    .sp-poster__meta-sub {
+      margin-top: 4px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.78rem;
+      letter-spacing: .02em;
+      color: var(--sp-blue-glow);
+      opacity: .78;
+    }
+
+    .sp-poster__meta-num--inf {
+      font-size: 2.6rem;
+      line-height: .9;
+      color: var(--sp-blue-glow);
+    }
+
     .sp-poster__cta {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: .15em;
@@ -707,7 +753,7 @@
     }
 
     .sp-impact__kicker {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: .28em;
@@ -764,7 +810,7 @@
     }
 
     .sp-impact__lbl {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: .18em;
@@ -829,7 +875,7 @@
     }
 
     .sp-testimony__author {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--sp-paper);
@@ -860,7 +906,7 @@
     }
 
     .sp-choose__kicker {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: .28em;
@@ -964,6 +1010,20 @@
       margin-bottom: 14px;
     }
 
+    .sp-choose__card-ad-sub {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 0.42em;
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: none;
+      color: rgba(244,236,223,.6);
+      margin-top: 8px;
+    }
+    .sp-choose__card--dalg .sp-choose__card-ad-sub { color: var(--sp-blue-glow); opacity: .85; }
+
     .sp-choose__card-motto {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
@@ -977,7 +1037,7 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: .16em;
@@ -1010,7 +1070,7 @@
       padding: 14px 28px;
       border: 1px solid rgba(244,236,223,.25);
       border-radius: 40px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.82rem;
       font-weight: 600;
       letter-spacing: .1em;
@@ -1090,6 +1150,7 @@
         <a href="vefa.html" class="nav-link">Vefa</a>
         <a href="orman.html" class="nav-link">Hatıra Ormanı</a>
         <a href="duyurular.html" class="nav-link">Duyurular</a>
+        <a href="arsiv.html" class="nav-link">Arşiv</a>
         <a href="iletisim.html" class="nav-link">İletişim</a>
         <a href="admin.html" class="nav-cta">Yönetim</a>
       </nav>
@@ -1133,7 +1194,7 @@
     <div class="sp-hero__footer" aria-hidden="true">
       <div class="sp-hero__side sp-hero__side--left">
         01 &mdash; Su altı
-        <span class="sp-hero__side-label">Dalgıçlık</span>
+        <span class="sp-hero__side-label">Scuba Diving</span>
       </div>
 
       <div class="sp-hero__scroll">
@@ -1154,7 +1215,7 @@
       <p class="sp-manifesto__kicker reveal">Manifestomuz</p>
 
       <p class="sp-manifesto__quote reveal rd1">
-        Burada sporun <strong>kurallarını</strong> öğretmiyoruz — sporun <em>ruhunu</em> aşılıyoruz.
+        Burada sporun <strong>kurallarını</strong> öğretmiyoruz, sporun <em>ruhunu</em> aşılıyoruz.
       </p>
 
       <div class="sp-manifesto__rule reveal rd2"></div>
@@ -1173,7 +1234,7 @@
         <div class="sp-pillar reveal rd3">
           <div class="sp-pillar__no">03 / Miras</div>
           <h3 class="sp-pillar__title">Bir ustadan bir öğrenciye.</h3>
-          <p class="sp-pillar__desc">15 yıllık tecrübe boşa gitmiyor. Öğreten sporcu, öğrenenden daha çok öğreniyor. Miras burada yaşıyor.</p>
+          <p class="sp-pillar__desc">16 yıllık tecrübe boşa gitmiyor. Öğreten sporcu, öğrenenden daha çok öğreniyor. Miras burada yaşıyor.</p>
         </div>
       </div>
     </div>
@@ -1202,19 +1263,20 @@
 
           <div class="sp-poster__bottom">
             <div class="sp-poster__label">Su Altı &middot; CMAS</div>
-            <h3 class="sp-poster__name">Dalgıçlık</h3>
-            <p class="sp-poster__tagline">Derinlerde sessizlik vardır. Dalgıçlık bize o sessizliği dinlemeyi öğretir.</p>
+            <h3 class="sp-poster__name">Scuba Diving<span class="sp-poster__name-sub">Tüplü Dalış</span></h3>
+            <p class="sp-poster__tagline">Derinlerde sessizlik vardır. Tüplü dalış bize o sessizliği dinlemeyi öğretir.</p>
             <div class="sp-poster__meta">
               <div class="sp-poster__meta-item">
                 <div class="sp-poster__meta-num">300<em>+</em></div>
                 <div class="sp-poster__meta-lbl">Sertifika</div>
               </div>
               <div class="sp-poster__meta-item">
-                <div class="sp-poster__meta-num">6<em>y</em></div>
+                <div class="sp-poster__meta-num">7<em>+y</em></div>
                 <div class="sp-poster__meta-lbl">Deneyim</div>
+                <div class="sp-poster__meta-sub">since 2019</div>
               </div>
               <div class="sp-poster__meta-item">
-                <div class="sp-poster__meta-num">8<em>+</em></div>
+                <div class="sp-poster__meta-num sp-poster__meta-num--inf" aria-label="Sınırsız">∞</div>
                 <div class="sp-poster__meta-lbl">Dalış Noktası</div>
               </div>
             </div>
@@ -1269,7 +1331,7 @@
   <!-- ===== IMPACT ===== -->
   <section class="sp-impact">
     <p class="sp-impact__kicker reveal">Kulübümüzün İzleri</p>
-    <h2 class="sp-impact__title reveal rd1">Sayılar bir hikâye anlatmaz — ama bir <em>iz</em> bırakır.</h2>
+    <h2 class="sp-impact__title reveal rd1">Sayılar bir hikâye anlatmaz, ama bir <em>iz</em> bırakır.</h2>
 
     <div class="sp-impact__grid">
       <div class="sp-impact__cell reveal rd1">
@@ -1281,7 +1343,7 @@
         <div class="sp-impact__lbl">Madalya</div>
       </div>
       <div class="sp-impact__cell reveal rd3">
-        <div class="sp-impact__num">15<em>y</em></div>
+        <div class="sp-impact__num">16<em>y</em></div>
         <div class="sp-impact__lbl">Kulüp Tecrübesi</div>
       </div>
       <div class="sp-impact__cell reveal rd4">
@@ -1315,7 +1377,7 @@
       <a href="sporlar/dalgiclik/index.html" class="sp-choose__card sp-choose__card--dalg reveal rd1">
         <div class="sp-choose__card-inner">
           <div class="sp-choose__card-no">No. 01 &middot; Su Altı</div>
-          <h3 class="sp-choose__card-ad">Dalgıçlık</h3>
+          <h3 class="sp-choose__card-ad">Scuba Diving<span class="sp-choose__card-ad-sub">Tüplü Dalış</span></h3>
           <p class="sp-choose__card-motto">Sessiz olanı dinlemek için.</p>
           <span class="sp-choose__card-go">
             Dalış Sayfasına Git
@@ -1362,7 +1424,7 @@
           <h4 class="footer-title">Sporlar</h4>
           <div class="footer-links">
             <a href="sporlar/bilek-guresi/index.html">Bilek Güreşi</a>
-            <a href="sporlar/dalgiclik/index.html">Dalgıçlık</a>
+            <a href="sporlar/dalgiclik/index.html">Scuba Diving — Tüplü Dalış</a>
           </div>
         </div>
         <div>
@@ -1371,6 +1433,7 @@
             <a href="index.html">Ana Sayfa</a>
             <a href="dinamik-calismalar.html">Dinamik Çalışmalar</a>
             <a href="vefa.html">Vefa Köşesi</a>
+            <a href="arsiv.html">Arşiv</a>
             <a href="iletisim.html">İletişim</a>
           </div>
         </div>
@@ -1380,7 +1443,7 @@
             <a href="https://www.youtube.com/@scuba.team.antalya" target="_blank" rel="noopener" aria-label="YouTube">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
             </a>
-            <a href="https://instagram.com/dinamikspor" target="_blank" rel="noopener" aria-label="Instagram">
+            <a href="https://instagram.com/dinamiksk" target="_blank" rel="noopener" aria-label="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -1412,5 +1475,6 @@
       });
     });
   </script>
+  <script src="site-ayarlar.js?v=2" defer></script>
 </body>
 </html>

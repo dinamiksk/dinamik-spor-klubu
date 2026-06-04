@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>Yönetim · Dinamik Spor Kulübü</title>
+<title>Yönetim · Akdeniz Dinamik Spor Kulübü</title>
 <link rel="icon" href="assets/images/dinamik-logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -38,7 +39,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; }
   body {
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     background: var(--bg);
     color: var(--text);
     -webkit-font-smoothing: antialiased;
@@ -77,14 +78,14 @@
   }
   .brand img { width: 32px; height: 32px; }
   .brand-text {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 20px;
     color: var(--text);
     line-height: 1;
   }
   .brand-text small {
     display: block;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 10px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -140,7 +141,7 @@
     gap: 24px;
   }
   .page-title {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 32px;
     line-height: 1;
     color: var(--text);
@@ -175,7 +176,7 @@
     margin-bottom: 8px;
   }
   .stat-value {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 36px;
     color: var(--text);
     line-height: 1;
@@ -358,7 +359,7 @@
     align-items: center;
   }
   .modal-header h2 {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 22px;
     color: var(--text);
   }
@@ -494,7 +495,7 @@
     color: var(--text-3);
   }
   .placeholder h3 {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 22px;
     color: var(--text-2);
     margin-bottom: 8px;
@@ -516,11 +517,1562 @@
     animation: spin 700ms linear infinite;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ========================================
+     LOGIN GATE
+  ======================================== */
+  #auth-gate {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+  }
+  #auth-gate.hidden { display: none; }
+  /* Oturum çözülene kadar giriş formu yerine spinner — login ekranı parlamasın */
+  .auth-loading { display: none; flex-direction: column; align-items: center; gap: 16px; color: var(--muted, #9aa0a6); font-size: 0.95rem; }
+  .auth-loading__spinner { width: 38px; height: 38px; border: 3px solid rgba(255,255,255,.14); border-top-color: var(--accent, #1a61ac); border-radius: 50%; animation: authspin 0.8s linear infinite; }
+  @keyframes authspin { to { transform: rotate(360deg); } }
+  #auth-gate.checking .auth-card { display: none; }
+  #auth-gate.checking .auth-loading { display: flex; }
+  .auth-card {
+    width: 100%;
+    max-width: 380px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 36px 32px;
+    box-shadow: var(--shadow);
+  }
+  .auth-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .auth-brand img { width: 36px; height: 36px; }
+  .auth-brand-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    line-height: 1;
+  }
+  .auth-brand-sub {
+    font-size: 11px;
+    color: var(--text-3);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .auth-card h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+  .auth-card p.muted {
+    color: var(--text-2);
+    font-size: 13px;
+    margin-bottom: 22px;
+  }
+  .auth-card label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-2);
+    margin-bottom: 6px;
+    margin-top: 14px;
+  }
+  .auth-card input {
+    width: 100%;
+    background: var(--bg-3);
+    border: 1px solid var(--border-2);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    padding: 11px 13px;
+    outline: none;
+    transition: border-color var(--tr);
+  }
+  .auth-card input:focus { border-color: var(--accent); }
+  .auth-error {
+    display: none;
+    background: rgba(239,68,68,0.1);
+    border: 1px solid rgba(239,68,68,0.3);
+    color: #fca5a5;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    margin-top: 14px;
+  }
+  .auth-error.show { display: block; }
+  .auth-submit {
+    width: 100%;
+    margin-top: 20px;
+    background: var(--accent);
+    color: #1a1208;
+    padding: 12px 18px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: background var(--tr);
+  }
+  .auth-submit:hover { background: var(--accent-2); }
+  .auth-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  /* Logout butonu sidebar alt */
+  .sidebar-bottom {
+    margin-top: auto;
+    padding: 16px 14px;
+    border-top: 1px solid var(--border);
+  }
+  .user-info {
+    font-size: 12px;
+    color: var(--text-3);
+    margin-bottom: 8px;
+    word-break: break-all;
+  }
+  .btn-logout {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--border-2);
+    color: var(--text-2);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    transition: all var(--tr);
+  }
+  .btn-logout:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+  }
+
+  /* ===== Mesajlar ===== */
+  .nav-badge {
+    margin-left: auto;
+    background: var(--danger);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .nav-item.active .nav-badge { background: var(--bg); color: var(--danger); }
+
+  .msg-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .msg-card {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    transition: border-color var(--tr);
+  }
+  .msg-card:hover { border-color: var(--border-2); }
+  .msg-card.unread {
+    border-left: 3px solid var(--accent);
+    background: linear-gradient(90deg, rgba(255,255,255,.02), var(--bg-2) 60%);
+  }
+
+  .msg-card__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .msg-card__name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .msg-card__date {
+    font-size: 12px;
+    color: var(--text-2);
+  }
+
+  .msg-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: var(--text-2);
+  }
+  .msg-card__meta a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .msg-card__meta a:hover { text-decoration: underline; }
+
+  .msg-card__konu {
+    display: inline-block;
+    background: var(--bg-3);
+    color: var(--text-2);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+
+  .msg-card__body {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.65;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: 14px;
+  }
+
+  .msg-card__actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .badge-msg-unread {
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+  .badge-msg-read {
+    background: var(--bg-3);
+    color: var(--text-2);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+
+  /* ===== Upload widget ===== */
+  .uw {
+    position: relative;
+    border: 2px dashed var(--border-2);
+    border-radius: var(--radius);
+    background: var(--bg-2);
+    transition: border-color var(--tr), background var(--tr);
+    overflow: hidden;
+  }
+  .uw.is-dragover {
+    border-color: var(--accent);
+    background: rgba(255,255,255,.03);
+  }
+  .uw.is-busy { pointer-events: none; }
+
+  .uw-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 32px 20px;
+    cursor: pointer;
+    color: var(--text-2);
+  }
+  .uw-empty svg { color: var(--text-2); opacity: .7; }
+  .uw-empty strong { color: var(--text); font-size: 14px; font-weight: 600; }
+  .uw-empty small { font-size: 12px; color: var(--text-2); }
+  .uw-empty:hover { color: var(--text); }
+  .uw-empty:hover svg { opacity: 1; color: var(--accent); }
+
+  .uw-preview {
+    position: relative;
+    background: #000;
+  }
+  .uw-preview img {
+    display: block;
+    width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+    background: #000;
+  }
+  .uw-preview video {
+    display: block;
+    width: 100%;
+    max-height: 320px;
+    background: #000;
+  }
+  .uw-progress {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .uw-progress-bar {
+    width: 60%;
+    height: 6px;
+    background: rgba(255,255,255,.15);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .uw-progress-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width .2s ease;
+  }
+  .uw-actions {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 6px;
+  }
+
+  .btn-tiny {
+    background: rgba(0,0,0,.7);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.2);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background var(--tr);
+  }
+  .btn-tiny:hover { background: rgba(0,0,0,.9); }
+  .btn-tiny-danger:hover {
+    background: var(--danger);
+    border-color: var(--danger);
+  }
+
+  .uw-error {
+    padding: 10px 14px;
+    background: rgba(239,68,68,.1);
+    border-top: 1px solid rgba(239,68,68,.3);
+    color: #fca5a5;
+    font-size: 13px;
+  }
+  /* Çoklu video widget */
+  .mvw-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+  .mvw-item { background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .mvw-item video { width: 100%; max-height: 200px; display: block; background: #000; }
+  .mvw-item-bar { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; gap: 8px; }
+  .mvw-item-label { font-size: 12px; color: var(--text-2); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .mvw-progress-wrap { padding: 6px 12px 8px; }
+  .mvw-add-row { display: flex; align-items: center; gap: 10px; }
+  .mvw-drag-handle { cursor: grab; color: var(--text-3); font-size: 16px; line-height: 1; flex-shrink: 0; user-select: none; }
+  .mvw-drag-handle:active { cursor: grabbing; }
+
+  .uw-fallback {
+    margin-top: 10px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  .uw-fallback summary {
+    padding: 10px 14px;
+    cursor: pointer;
+    color: var(--text-2);
+    font-size: 13px;
+    user-select: none;
+    list-style: none;
+  }
+  .uw-fallback summary::-webkit-details-marker { display: none; }
+  .uw-fallback summary::before {
+    content: '▸';
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform var(--tr);
+  }
+  .uw-fallback[open] summary::before { transform: rotate(90deg); }
+  .uw-fallback summary:hover { color: var(--text); }
+  .uw-fallback input {
+    width: calc(100% - 28px);
+    margin: 0 14px 14px;
+  }
+
+  /* ===== Galeri widget ===== */
+  .gw {
+    border: 2px dashed var(--border-2);
+    border-radius: var(--radius);
+    background: var(--bg-2);
+    padding: 16px;
+    transition: border-color var(--tr), background var(--tr);
+  }
+  .gw.is-dragover {
+    border-color: var(--accent);
+    background: rgba(255,255,255,.03);
+  }
+  .gw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .gw-grid:empty { display: none; }
+  .gw-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: #000;
+    border: 1px solid var(--border);
+  }
+  .gw-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .gw-item.is-uploading::after {
+    content: attr(data-percent) '%';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .gw-item-remove {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(0,0,0,.75);
+    border: 1px solid rgba(255,255,255,.2);
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--tr);
+  }
+  .gw-item-remove:hover { background: var(--danger); border-color: var(--danger); }
+  .gw-item-error {
+    position: absolute;
+    inset: 0;
+    background: rgba(239,68,68,.85);
+    color: #fff;
+    font-size: 11px;
+    padding: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gw-add {
+    width: 100%;
+  }
+
+  /* ===== VEFA — alt sekmeler & kart ===== */
+  .sub-tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 4px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .sub-tab {
+    padding: 11px 16px;
+    border-radius: var(--radius-sm);
+    color: var(--text-2);
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--tr);
+    flex: 1 1 auto;
+    justify-content: center;
+    min-width: 130px;
+  }
+  .sub-tab:hover { background: var(--bg-3); color: var(--text); }
+  .sub-tab.active { background: var(--accent); color: var(--bg); }
+  .sub-tab-icon { font-size: 16px; line-height: 1; }
+  .sub-tab-count {
+    background: rgba(0,0,0,0.18);
+    color: inherit;
+    padding: 1px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 22px;
+    text-align: center;
+  }
+  .sub-tab:not(.active) .sub-tab-count { background: var(--bg-4); color: var(--text-3); }
+  .sub-tab.active .sub-tab-count { background: rgba(0,0,0,0.28); color: var(--bg); }
+
+  .sub-tabs.compact {
+    margin-top: -8px;
+    padding: 3px;
+  }
+  .sub-tabs.compact .sub-tab {
+    padding: 8px 12px;
+    font-size: 12px;
+    min-width: 120px;
+  }
+
+  .vefa-card {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 18px;
+    align-items: center;
+    transition: all var(--tr);
+  }
+  .vefa-card:hover { border-color: var(--accent); }
+  .vefa-card-thumb {
+    width: 90px;
+    height: 110px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-4);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 28px;
+  }
+  .vefa-card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .vefa-card-body h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .vefa-card-body .pozisyon {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--accent-2);
+    margin-bottom: 4px;
+  }
+  .vefa-card-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 12px;
+    color: var(--text-3);
+    margin-top: 6px;
+  }
+  .vefa-card-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .badge.tip-baskan { background: rgba(201,162,39,0.18); color: var(--accent-2); border-color: var(--accent); }
+  .badge.tip-yonetim { background: rgba(26,97,172,0.15); color: #6ba3e0; border-color: rgba(26,97,172,0.3); }
+  .badge.tip-gecmis { background: rgba(120,113,108,0.18); color: #d6d3d1; border-color: rgba(120,113,108,0.4); }
+
+  @media (max-width: 900px) {
+    .vefa-card { grid-template-columns: 80px 1fr; }
+    .vefa-card-actions { grid-column: 1 / -1; justify-content: flex-start; }
+    .sub-tab { min-width: 110px; padding: 9px 12px; font-size: 12px; }
+  }
+
+  /* ============================================================
+     BAĞIŞ YÖNETİMİ — admin
+     ============================================================ */
+  .bagis-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .bagis-summary-card {
+    padding: 18px 20px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .bagis-summary-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .bagis-summary-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .bagis-summary-sub {
+    font-size: 12px;
+    color: var(--text-3);
+  }
+
+  .bagis-toolbar { margin-top: 8px; }
+  .bagis-search-input {
+    padding: 8px 12px;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 13px;
+    min-width: 240px;
+  }
+  .bagis-search-input:focus { outline: none; border-color: var(--accent); }
+
+  /* Bağış kartı */
+  .bagis-card {
+    display: grid;
+    grid-template-columns: 92px 1fr auto;
+    gap: 18px;
+    padding: 16px 18px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    align-items: start;
+  }
+  .bagis-card-thumb {
+    width: 92px;
+    height: 92px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bagis-card-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .bagis-card-thumb-placeholder {
+    color: var(--text-3);
+    font-size: 24px;
+  }
+  .bagis-card-thumb::after {
+    content: '🔍';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-size: 20px;
+  }
+  .bagis-card-thumb:hover::after { opacity: 1; }
+
+  .bagis-card-body { min-width: 0; }
+  .bagis-card-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .bagis-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    font-size: 13px;
+    color: var(--text-2);
+    margin-bottom: 8px;
+  }
+  .bagis-card-meta strong { color: var(--text); font-weight: 600; }
+  .bagis-card-meta .meta-item { display: inline-flex; align-items: center; gap: 6px; }
+  .bagis-card-meta svg { width: 13px; height: 13px; opacity: 0.7; }
+  .bagis-card-niyet {
+    margin-top: 6px;
+    padding: 8px 12px;
+    background: var(--bg-3);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    font-size: 13px;
+    color: var(--text-2);
+    font-style: italic;
+    line-height: 1.55;
+  }
+  .bagis-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .bagis-card-actions .btn { white-space: nowrap; }
+
+  .bagis-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border: 1px solid;
+  }
+  .bagis-badge.kanal-akced { background: rgba(34,139,84,0.12); color: #5fb87a; border-color: rgba(34,139,84,0.32); }
+  .bagis-badge.kanal-iban  { background: rgba(56,108,176,0.12); color: #6ba3e0; border-color: rgba(56,108,176,0.32); }
+  .bagis-badge.fidan       { background: rgba(200,168,75,0.14); color: #d4b157; border-color: rgba(200,168,75,0.4); }
+  .bagis-badge.kumbara     { background: rgba(176,108,56,0.14); color: #d49a6a; border-color: rgba(176,108,56,0.36); }
+  .bagis-badge.bekleyen    { background: rgba(245,200,80,0.12); color: #e6c25a; border-color: rgba(245,200,80,0.36); }
+  .bagis-badge.onayli      { background: rgba(78,178,108,0.14); color: #6ed18a; border-color: rgba(78,178,108,0.4); }
+  .bagis-badge.reddedilen  { background: rgba(220,90,90,0.12); color: #e88080; border-color: rgba(220,90,90,0.36); }
+
+  .btn-success {
+    background: rgba(78,178,108,0.15);
+    border: 1px solid rgba(78,178,108,0.45);
+    color: #6ed18a;
+  }
+  .btn-success:hover { background: rgba(78,178,108,0.28); }
+  .btn-warn {
+    background: rgba(245,200,80,0.12);
+    border: 1px solid rgba(245,200,80,0.36);
+    color: #e6c25a;
+  }
+  .btn-warn:hover { background: rgba(245,200,80,0.22); }
+
+  /* Settings panel */
+  .bagis-settings {
+    margin-top: 12px;
+  }
+  .bagis-settings-form { display: flex; flex-direction: column; gap: 16px; }
+  .bagis-settings-card {
+    padding: 22px 24px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .bagis-settings-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .bagis-settings-desc {
+    font-size: 13px;
+    color: var(--text-3);
+    margin-bottom: 16px;
+    line-height: 1.55;
+  }
+  .bagis-settings-desc code {
+    background: var(--bg-3);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: var(--accent);
+  }
+  .bagis-settings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 18px;
+  }
+  .bagis-settings-grid.one { grid-template-columns: 1fr; }
+  .bagis-settings-grid label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-2);
+    margin-bottom: 6px;
+  }
+  .bagis-settings-grid .required { color: #ff8080; }
+  .bagis-settings-grid input,
+  .bagis-settings-grid textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+  }
+  .bagis-settings-grid input:focus,
+  .bagis-settings-grid textarea:focus { outline: none; border-color: var(--accent); }
+  .bagis-settings-grid small {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: var(--text-3);
+    line-height: 1.5;
+  }
+  .bagis-settings-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 4px;
+  }
+  .ayar-status {
+    font-size: 13px;
+    color: var(--text-3);
+  }
+  .ayar-status.success { color: #6ed18a; }
+  .ayar-status.error { color: #e88080; }
+
+  @media (max-width: 900px) {
+    .bagis-summary { grid-template-columns: 1fr 1fr; }
+    .bagis-card { grid-template-columns: 72px 1fr; }
+    .bagis-card-thumb { width: 72px; height: 72px; }
+    .bagis-card-actions { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; }
+    .bagis-settings-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== ÇALIŞMALAR / ANILAR — galeri yönetimi ===== */
+  .calismalar-toolbar { gap: 12px; align-items: center; }
+  .calismalar-hint {
+    color: var(--text-3);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .calisma-card {
+    display: grid;
+    grid-template-columns: 132px 1fr auto;
+    gap: 18px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .calisma-card-thumb {
+    position: relative;
+    width: 132px;
+    height: 88px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+  }
+  .calisma-card-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .calisma-card-thumb-empty {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-3);
+    font-size: 22px;
+    background:
+      repeating-linear-gradient(45deg, var(--bg-3) 0 8px, var(--bg-4) 8px 9px);
+  }
+  .calisma-card-thumb-video {
+    position: absolute;
+    bottom: 6px; right: 6px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .calisma-card-thumb-video svg { width: 10px; height: 10px; }
+  .calisma-card-body { min-width: 0; }
+  .calisma-card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+  .calisma-card-tarih {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(127,144,248,0.08);
+    padding: 3px 8px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
+  .calisma-card-meta {
+    color: var(--text-2);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .calisma-card-badges {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .calisma-card-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--bg-3);
+    color: var(--text-2);
+    border: 1px solid var(--border);
+    letter-spacing: 0.04em;
+  }
+  .calisma-card-badge.on { background: rgba(78,178,108,0.12); color: #6ed18a; border-color: rgba(78,178,108,0.36); }
+  .calisma-card-badge.off { background: rgba(220,90,90,0.1); color: #e08080; border-color: rgba(220,90,90,0.3); }
+  .calisma-card-badge.wide { background: rgba(127,144,248,0.12); color: #9aa8ff; border-color: rgba(127,144,248,0.32); }
+  .calisma-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .calisma-card-actions .btn { white-space: nowrap; }
+
+  /* Çalışmalar — çoklu galeri widget (cgw) */
+  .cgw {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cgw-drop {
+    border: 2px dashed var(--border-2);
+    border-radius: 10px;
+    background: var(--bg-3);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    color: var(--text-2);
+    font-size: 13px;
+    transition: all 0.15s ease;
+  }
+  .cgw-drop:hover, .cgw-drop.is-dragover {
+    border-color: var(--accent);
+    background: var(--bg-4);
+    color: var(--text);
+  }
+  .cgw-drop svg { flex-shrink: 0; color: var(--accent); }
+  .cgw-drop span { font-weight: 600; color: var(--text); }
+  .cgw-drop small { color: var(--text-3); font-size: 11px; display: block; margin-top: 2px; }
+  .cgw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+  }
+  .cgw-item {
+    position: relative;
+    aspect-ratio: 4/3;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+  }
+  .cgw-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .cgw-item.is-uploading img { opacity: 0.5; }
+  .cgw-item-remove {
+    position: absolute;
+    top: 4px; right: 4px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 2;
+  }
+  .cgw-item:hover .cgw-item-remove { opacity: 1; }
+  .cgw-item-progress {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .cgw-item-error {
+    position: absolute;
+    inset: 0;
+    background: rgba(200,60,60,0.85);
+    color: #fff;
+    font-size: 10px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .cgw-drag-handle {
+    position: absolute;
+    bottom: 4px; left: 4px;
+    width: 20px; height: 20px;
+    background: rgba(0,0,0,0.65);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 11px;
+    cursor: grab;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  .cgw-item:hover .cgw-drag-handle { opacity: 1; }
+
+  /* Video upload widget — uw kalıbına benzer ama daha geniş */
+  .vw {
+    border: 2px dashed var(--border-2);
+    border-radius: 10px;
+    background: var(--bg-3);
+    transition: all 0.15s ease;
+    overflow: hidden;
+  }
+  .vw.is-dragover { border-color: var(--accent); background: rgba(127,144,248,0.05); }
+  .vw-empty {
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--text-2);
+    text-align: center;
+  }
+  .vw-empty:hover { color: var(--text); background: var(--bg-4); }
+  .vw-empty svg { color: var(--accent); }
+  .vw-empty strong { font-size: 14px; color: var(--text); }
+  .vw-empty small { font-size: 12px; color: var(--text-3); line-height: 1.5; }
+  .vw-preview {
+    position: relative;
+    background: #000;
+  }
+  .vw-preview video {
+    width: 100%;
+    max-height: 280px;
+    display: block;
+  }
+  .vw-progress {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    gap: 8px;
+  }
+  .vw-progress-bar {
+    width: 60%;
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .vw-progress-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.2s ease;
+  }
+  .vw-actions {
+    display: flex;
+    gap: 6px;
+    padding: 8px;
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
+  }
+  .vw-error {
+    padding: 12px 16px;
+    color: #e08080;
+    font-size: 13px;
+    background: rgba(220,90,90,0.08);
+  }
+
+  @media (max-width: 900px) {
+    .calisma-card {
+      grid-template-columns: 100px 1fr;
+    }
+    .calisma-card-thumb { width: 100px; height: 70px; }
+    .calisma-card-actions {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  /* ============================================================
+     KIZ SAYFASI — Proje yönetimi
+     ============================================================ */
+  .kiz-toolbar {
+    display: flex; gap: 10px; align-items: center;
+    margin-bottom: 18px; flex-wrap: wrap;
+  }
+
+  .kiz-card {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    display: grid;
+    grid-template-columns: 86px 1fr auto;
+    gap: 18px;
+    align-items: center;
+    transition: all var(--tr);
+  }
+  .kiz-card:hover { border-color: var(--accent); }
+  .kiz-card-thumb {
+    width: 86px; height: 108px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(180deg, #2e0d22 0%, #160714 100%);
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .kiz-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .kiz-card-thumb-no {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-weight: 500;
+    font-size: 30px;
+    color: rgba(232,128,158,.55);
+  }
+  .kiz-card-body h3 {
+    font-size: 16px; font-weight: 600;
+    color: var(--text); margin-bottom: 6px; line-height: 1.3;
+  }
+  .kiz-card-body .teaser {
+    font-size: 13px; color: var(--text-2);
+    line-height: 1.55; margin-bottom: 8px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .kiz-card-meta {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    font-size: 12px; color: var(--text-3);
+    align-items: center;
+  }
+  .kiz-card-actions {
+    display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end;
+  }
+  .badge.kiz-merkez { background: rgba(232,128,158,.18); color: #f5a8c1; border-color: rgba(232,128,158,.32); }
+  .badge.kiz-yerel  { background: rgba(26,97,172,.15);  color: #6ba3e0; border-color: rgba(26,97,172,.3); }
+  .badge.er-merkez  { background: rgba(201,163,81,.18);  color: #e4c06b; border-color: rgba(201,163,81,.32); }
+  .badge.er-yerel   { background: rgba(26,97,172,.15);   color: #6ba3e0; border-color: rgba(26,97,172,.3); }
+
+  /* ============================================================
+     ERKEK SAYFASI — Proje yönetimi
+     ============================================================ */
+  .erkek-toolbar {
+    display: flex; gap: 10px; align-items: center;
+    margin-bottom: 18px; flex-wrap: wrap;
+  }
+  .erkek-card {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    display: grid;
+    grid-template-columns: 86px 1fr auto;
+    gap: 18px;
+    align-items: center;
+    transition: all var(--tr);
+  }
+  .erkek-card:hover { border-color: #c9a351; }
+  .erkek-card-thumb {
+    width: 86px; height: 108px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(180deg, #1e1608 0%, #0c0a04 100%);
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .erkek-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .erkek-card-thumb-no {
+    font-family: 'Barlow Condensed', 'Cormorant Garamond', serif;
+    font-weight: 900;
+    font-size: 30px;
+    color: rgba(201,163,81,.55);
+    letter-spacing: .04em;
+  }
+  .erkek-card-body h3 {
+    font-size: 16px; font-weight: 600;
+    color: var(--text); margin-bottom: 6px; line-height: 1.3;
+  }
+  .erkek-card-body .teaser {
+    font-size: 13px; color: var(--text-2);
+    line-height: 1.55; margin-bottom: 8px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .erkek-card-meta {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    font-size: 12px; color: var(--text-3);
+    align-items: center;
+  }
+  .erkek-card-actions {
+    display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end;
+  }
+  /* Sayfa görselleri paneli */
+  .erkek-gorsel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .erkek-gslot {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 18px 14px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .erkek-gslot__label {
+    display: flex; align-items: baseline; gap: 10px;
+    flex-wrap: wrap;
+  }
+  .erkek-gslot__label > span:nth-child(2) {
+    font-size: 14px; font-weight: 600; color: var(--text);
+  }
+  .erkek-gslot__label small {
+    width: 100%; font-size: 12px; color: var(--text-3);
+    line-height: 1.4; margin-top: 2px;
+  }
+  .erkek-gslot__num {
+    flex-shrink: 0;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(201,163,81,.18);
+    border: 1px solid rgba(201,163,81,.3);
+    color: #e4c06b;
+    font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .erkek-gorsel-actions {
+    display: flex; align-items: center; gap: 16px;
+    padding-top: 8px;
+  }
+  @media (max-width: 900px) {
+    .erkek-card { grid-template-columns: 76px 1fr; }
+    .erkek-card-thumb { width: 76px; height: 96px; }
+    .erkek-card-actions { grid-column: 1/-1; justify-content: flex-start; }
+  }
+
+
+  /* Sayfa görselleri paneli */
+  .kiz-gorsel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .kiz-gslot {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 18px 14px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .kiz-gslot__label {
+    display: flex; align-items: baseline; gap: 10px;
+    flex-wrap: wrap;
+  }
+  .kiz-gslot__label > span:nth-child(2) {
+    font-size: 14px; font-weight: 600; color: var(--text);
+  }
+  .kiz-gslot__label small {
+    width: 100%; font-size: 12px; color: var(--text-3);
+    line-height: 1.4; margin-top: 2px;
+  }
+  .kiz-gslot__num {
+    flex-shrink: 0;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(232,128,158,.18);
+    border: 1px solid rgba(232,128,158,.3);
+    color: #f5a8c1;
+    font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .kiz-gorsel-actions {
+    display: flex; align-items: center; gap: 16px;
+    padding-top: 8px;
+  }
+  .status-msg {
+    font-size: 13px;
+    transition: opacity .3s;
+  }
+  .status-msg.ok  { color: #4ade80; }
+  .status-msg.err { color: var(--danger); }
+
+  @media (max-width: 900px) {
+    .kiz-card { grid-template-columns: 76px 1fr; }
+    .kiz-card-thumb { width: 76px; height: 96px; }
+    .kiz-card-actions { grid-column: 1/-1; justify-content: flex-start; }
+  }
+
+  /* Modal split (form + preview iframe) */
+  .modal-split-wrap {
+    max-width: 1340px !important;
+    width: calc(100vw - 32px);
+    height: calc(100vh - 48px);
+    max-height: calc(100vh - 48px);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .modal-split-wrap .modal-header { flex-shrink: 0; }
+  .modal-split {
+    display: grid;
+    grid-template-columns: minmax(420px, 1fr) minmax(380px, 1.15fr);
+    flex: 1; min-height: 0;
+  }
+  .modal-split-form {
+    display: flex; flex-direction: column; min-height: 0;
+    border-right: 1px solid var(--border);
+  }
+  .modal-split-form .modal-body { flex: 1; overflow-y: auto; }
+  .modal-split-form .modal-footer { flex-shrink: 0; }
+  .modal-split-preview {
+    display: flex; flex-direction: column; min-height: 0;
+    background: #080808;
+  }
+  .preview-head {
+    padding: 10px 16px;
+    background: var(--bg-2);
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--text-2);
+    flex-wrap: wrap; gap: 8px;
+  }
+  .preview-title { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--text); }
+  .preview-title svg { color: var(--accent); }
+  .preview-actions { display: flex; align-items: center; gap: 8px; }
+  .preview-status { font-size: 11px; color: var(--text-3); }
+  .preview-status.is-ready { color: #4ade80; }
+  .preview-status.is-error { color: var(--danger); }
+  #kiz-preview-iframe,
+  #erkek-preview-iframe,
+  #vefa-preview-iframe {
+    flex: 1; width: 100%; border: 0; background: #080808;
+    display: block;
+  }
+
+  /* Bölüm editörü (intro/p) */
+  .kiz-bolum {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+  .kiz-bolum-head {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 8px; font-size: 12px;
+  }
+  .kiz-bolum-type {
+    padding: 3px 10px; border-radius: 999px;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase;
+  }
+  .kiz-bolum-type.intro {
+    background: rgba(232,128,158,.18); color: #f5a8c1; border: 1px solid rgba(232,128,158,.32);
+  }
+  .kiz-bolum-type.p {
+    background: rgba(255,255,255,.06); color: var(--text-2); border: 1px solid var(--border);
+  }
+  .kiz-bolum-actions { margin-left: auto; display: flex; gap: 6px; }
+  .kiz-bolum-actions button {
+    padding: 3px 8px; font-size: 11px;
+    background: var(--bg-3); border: 1px solid var(--border);
+    border-radius: 4px; color: var(--text-2); cursor: pointer;
+  }
+  .kiz-bolum-actions button:hover { background: var(--bg-4); color: var(--text); }
+  .kiz-bolum-actions button.danger:hover { background: rgba(239,68,68,.15); color: var(--danger); border-color: rgba(239,68,68,.3); }
+  .kiz-bolum textarea {
+    width: 100%; resize: vertical; min-height: 84px;
+    font-family: ui-monospace, monospace; font-size: 13px;
+    line-height: 1.6;
+  }
+  .kiz-bolum-add-row { display: flex; gap: 8px; }
+
+  @media (max-width: 1100px) {
+    .modal-split { grid-template-columns: 1fr; }
+    .modal-split-preview { min-height: 420px; }
+    .modal-split-form { border-right: 0; border-bottom: 1px solid var(--border); }
+  }
+
+  /* ── Sayfa Görselleri Sekmesi — Split önizleme ── */
+  .sayfa-panel-split {
+    display: grid;
+    grid-template-columns: minmax(380px, 1fr) minmax(380px, 1.3fr);
+    gap: 0;
+    height: calc(100vh - 220px);
+    min-height: 520px;
+  }
+  .sayfa-panel-form {
+    overflow-y: auto;
+    padding-right: 28px;
+    border-right: 1px solid var(--border);
+  }
+  .sayfa-panel-preview {
+    display: flex; flex-direction: column; min-height: 0;
+    background: #080808;
+  }
+  #kiz-sayfa-preview-iframe,
+  #erkek-sayfa-preview-iframe,
+  #rota-sayfa-preview-iframe,
+  #dalgic-sayfa-preview-iframe,
+  #bilek-sayfa-preview-iframe {
+    flex: 1; width: 100%; border: 0; background: #080808;
+    display: block;
+  }
+
+  /* ── Bilek Güreşi sayfa yöneticisi ── */
+  .bilek-group-title {
+    font-size: 13px; font-weight: 700; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--accent);
+    margin: 34px 0 16px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .bilek-group-title:first-of-type { margin-top: 8px; }
+  .bilek-fields { display: flex; flex-direction: column; gap: 16px; }
+  .bilek-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .bilek-row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .bilek-stat-row { display: grid; grid-template-columns: 90px 90px 1fr; gap: 12px; align-items: end; }
+  @media (max-width: 720px) {
+    .bilek-row2, .bilek-row3 { grid-template-columns: 1fr; }
+    .bilek-stat-row { grid-template-columns: 1fr 1fr; }
+    .bilek-stat-row .bilek-stat-lbl { grid-column: 1 / -1; }
+  }
+
+  /* ── Dalgıçlık galeri yöneticisi ── */
+  .dgl-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 20px; }
+  .dgl-list { display: flex; flex-direction: column; gap: 12px; }
+  .dgl-card {
+    display: grid;
+    grid-template-columns: 96px 1fr auto;
+    gap: 14px;
+    align-items: center;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+  }
+  .dgl-card.is-uploading { opacity: .7; }
+  .dgl-thumb {
+    width: 96px; height: 96px; border-radius: 8px; overflow: hidden;
+    background: var(--bg-3); display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .dgl-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .dgl-thumb .dgl-percent {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,.55); color: #fff; font-size: 13px; font-weight: 600;
+  }
+  .dgl-fields { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .dgl-fields input[type="text"],
+  .dgl-fields select,
+  .dgl-fields input[type="number"] {
+    width: 100%; padding: 8px 10px; font-size: 13px;
+    background: var(--bg-3); border: 1px solid var(--border); border-radius: 6px; color: var(--text);
+  }
+  .dgl-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .dgl-row select { flex: 1; min-width: 110px; }
+  .dgl-row input[type="number"] { width: 78px; flex: none; }
+  .dgl-genis { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-2); cursor: pointer; white-space: nowrap; }
+  .dgl-actions { display: flex; flex-direction: column; gap: 6px; }
+  .dgl-err { color: var(--danger); font-size: 12px; }
+  .dgl-empty {
+    text-align: center; padding: 40px 16px; color: var(--text-2);
+    border: 1px dashed var(--border); border-radius: 10px;
+  }
+  @media (max-width: 1100px) {
+    .sayfa-panel-split { grid-template-columns: 1fr; height: auto; }
+    .sayfa-panel-form { padding-right: 0; border-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 0; }
+    .sayfa-panel-preview { min-height: 480px; }
+  }
 </style>
 </head>
 <body>
 
-<div class="layout">
+<!-- LOGIN GATE -->
+<div id="auth-gate" class="checking hidden">
+  <div class="auth-loading">
+    <div class="auth-loading__spinner"></div>
+    <span>Oturum kontrol ediliyor…</span>
+  </div>
+  <div class="auth-card">
+    <div class="auth-brand">
+      <img src="assets/images/dinamik-logo.svg" alt="">
+      <div>
+        <div class="auth-brand-text">Dinamik</div>
+        <div class="auth-brand-sub">Yönetim Paneli</div>
+      </div>
+    </div>
+    <h1>Giriş Yap</h1>
+    <p class="muted">Yönetim paneline erişmek için giriş yapın.</p>
+    <form id="auth-form" autocomplete="on">
+      <label for="auth-email">E-posta</label>
+      <input id="auth-email" name="email" type="email" required autocomplete="username" placeholder="admin@dinamik.com">
+      <label for="auth-password">Parola</label>
+      <input id="auth-password" name="password" type="password" required autocomplete="current-password" placeholder="••••••••">
+      <div class="auth-error" id="auth-error"></div>
+      <button type="submit" class="auth-submit" id="auth-submit">Giriş Yap</button>
+    </form>
+  </div>
+</div>
+
+<div class="layout" style="display:none">
 
   <!-- ============== SIDEBAR ============== -->
   <aside class="sidebar">
@@ -541,6 +2093,11 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
         İçerik
       </button>
+      <button class="nav-item" data-section="mesajlar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span>Mesajlar</span>
+        <span class="nav-badge" id="nav-msg-badge" hidden>0</span>
+      </button>
       <button class="nav-item" data-section="vefa">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         Vefa Köşesi
@@ -548,6 +2105,26 @@
       <button class="nav-item" data-section="orman">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6"/><path d="M12 22V8"/><path d="M5 12l7-7 7 7"/></svg>
         Hatıra Ormanı
+      </button>
+      <button class="nav-item" data-section="kiz">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C8 17 4 13.5 4 9.5A4.5 4.5 0 0 1 12 6.5 4.5 4.5 0 0 1 20 9.5c0 4-4 7.5-8 11.5z"/></svg>
+        Kız Sayfası
+      </button>
+      <button class="nav-item" data-section="erkek">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Erkek Sayfası
+      </button>
+      <button class="nav-item" data-section="rota">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        Rota Sayfası
+      </button>
+      <button class="nav-item" data-section="dalgiclik">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-4 10-4 10 4 10 4"/><path d="M2 17s3-4 10-4 10 4 10 4"/><circle cx="12" cy="5" r="2"/></svg>
+        Dalgıçlık
+      </button>
+      <button class="nav-item" data-section="bilek">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h4l2-3 2 6 2-3h2"/><rect x="3" y="7" width="18" height="10" rx="2"/></svg>
+        Bilek Güreşi
       </button>
       <button class="nav-item" data-section="ayarlar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
@@ -560,6 +2137,11 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         Siteyi gör
       </a>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="user-info" id="user-email">—</div>
+      <button class="btn-logout" id="btn-logout">Çıkış Yap</button>
     </div>
   </aside>
 
@@ -640,8 +2222,9 @@
         </select>
         <select id="filter-durum">
           <option value="all">Tüm durumlar</option>
-          <option value="yayin">Yayında</option>
+          <option value="yayin">Yayında (aktif)</option>
           <option value="taslak">Taslak</option>
+          <option value="arsiv">Arşivde</option>
         </select>
       </div>
 
@@ -650,32 +2233,1619 @@
       </div>
     </section>
 
-    <!-- VEFA KÖŞESİ (placeholder) -->
+    <!-- MESAJLAR -->
+    <section class="section" id="section-mesajlar">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Mesajlar</h1>
+          <p class="page-desc">İletişim formundan gelen mesajlar — okundu işaretle veya sil</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="filter-chips" id="msg-chips">
+          <button class="chip active" data-filter-msg="all">Tümü</button>
+          <button class="chip" data-filter-msg="okunmamis">Okunmamış</button>
+          <button class="chip" data-filter-msg="okunmus">Okunmuş</button>
+        </div>
+      </div>
+
+      <div class="msg-list" id="msg-list">
+        <div class="loading"><div class="spinner"></div></div>
+      </div>
+    </section>
+
+    <!-- VEFA KÖŞESİ -->
     <section class="section" id="section-vefa">
       <div class="page-header">
         <div>
           <h1 class="page-title">Vefa Köşesi</h1>
-          <p class="page-desc">Geçmiş başkanlar ve emeği geçenler</p>
+          <p class="page-desc">Mevcut başkan, yönetim kurulu, geçmiş başkanlar ve paydaş kulüp/dernekler — hepsini buradan yönet</p>
+        </div>
+        <button class="btn btn-primary" id="btn-yeni-vefa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span id="btn-yeni-vefa-label">Yeni Ekle</span>
+        </button>
+      </div>
+
+      <div class="sub-tabs" id="vefa-tabs">
+        <button class="sub-tab active" data-vefa-tab="baskan">
+          <span class="sub-tab-icon">👑</span>
+          Mevcut Başkan
+          <span class="sub-tab-count" id="vefa-count-baskan">0</span>
+        </button>
+        <button class="sub-tab" data-vefa-tab="yonetim">
+          <span class="sub-tab-icon">🏛️</span>
+          Yönetim Kurulu
+          <span class="sub-tab-count" id="vefa-count-yonetim">0</span>
+        </button>
+        <button class="sub-tab" data-vefa-tab="gecmis-baskan">
+          <span class="sub-tab-icon">📜</span>
+          Geçmiş Başkanlar
+          <span class="sub-tab-count" id="vefa-count-gecmis-baskan">0</span>
+        </button>
+      </div>
+
+      <!-- Yönetim Kurulu Model Ayarı — sadece yonetim sekmesinde gösterilir -->
+      <div id="yonetim-model-panel" style="display:none; margin-bottom: 28px;">
+        <div class="settings-card" style="background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px;">
+          <h3 style="font-size: 0.95rem; font-weight: 600; margin: 0 0 6px; color: var(--text);">Görünüm Modeli</h3>
+          <p style="font-size: 0.82rem; color: var(--text-3); margin: 0 0 20px;">Yönetim kurulunun sayfada nasıl görüneceğini seçin. Değişiklik anında kaydedilir.</p>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
+            <label class="model-opt" id="model-opt-A" style="display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border:2px solid var(--border);border-radius:10px;cursor:pointer;flex:1;min-width:180px;">
+              <input type="radio" name="yonetimModel" value="A" style="margin-top:3px;accent-color:var(--accent);">
+              <div>
+                <strong style="font-size:0.9rem;display:block;margin-bottom:3px;">Model A — Kart Grid</strong>
+                <span style="font-size:0.78rem;color:var(--text-3);">Fotoğraf, isim, pozisyon, biyografi kartları</span>
+              </div>
+            </label>
+            <label class="model-opt" id="model-opt-B" style="display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border:2px solid var(--border);border-radius:10px;cursor:pointer;flex:1;min-width:180px;">
+              <input type="radio" name="yonetimModel" value="B" style="margin-top:3px;accent-color:var(--accent);">
+              <div>
+                <strong style="font-size:0.9rem;display:block;margin-bottom:3px;">Model B — Sade Liste</strong>
+                <span style="font-size:0.78rem;color:var(--text-3);">Toplu fotoğraf + isim listesi</span>
+              </div>
+            </label>
+            <label class="model-opt" id="model-opt-AB" style="display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border:2px solid var(--border);border-radius:10px;cursor:pointer;flex:1;min-width:180px;">
+              <input type="radio" name="yonetimModel" value="AB" style="margin-top:3px;accent-color:var(--accent);">
+              <div>
+                <strong style="font-size:0.9rem;display:block;margin-bottom:3px;">Her İkisi</strong>
+                <span style="font-size:0.78rem;color:var(--text-3);">A ve B aynı anda gösterilir</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Model B: toplu fotoğraf -->
+          <div id="yonetim-grup-foto-field" style="display:none;">
+            <label style="font-size:0.84rem;font-weight:600;display:block;margin-bottom:8px;">Toplu Fotoğraf <span style="font-weight:400;color:var(--text-3)">(Model B için)</span></label>
+            <div class="uw" id="uw-yonetim-grup" data-uw="yonetim-grup">
+              <input type="file" hidden id="uw-yonetim-grup-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Toplu fotoğraf ekle</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <input type="url" name="gorsel" id="uw-yonetim-grup-url" placeholder="https://..." style="display:none;">
+            <span class="hint">Ekip toplu fotoğrafı — Model B gösterimi için kullanılır</span>
+          </div>
+
+          <!-- Kaydet butonu -->
+          <div style="display:flex; align-items:center; gap:16px; margin-top:20px; padding-top:20px; border-top:1px solid var(--border);">
+            <button type="button" class="btn btn-primary" id="btn-yonetim-model-kaydet">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Kaydet
+            </button>
+            <span class="hint" id="yonetim-model-kaydet-status" style="color:var(--text-3);font-size:0.8rem;"></span>
+          </div>
         </div>
       </div>
-      <div class="placeholder">
-        <h3>Yapım Aşamasında</h3>
-        <p>Bu bölüm sonraki güncellemede aktif olacak.</p>
+
+      <!-- Yönetim Kurulu canlı önizleme -->
+      <div id="yonetim-preview-wrap" style="display:none; margin-bottom:28px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+          <span style="font-size:0.8rem;font-weight:600;color:var(--text-2);">Canlı Önizleme</span>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <span class="preview-status" id="yonetim-preview-status">Yükleniyor…</span>
+            <button type="button" class="btn-tiny" id="yonetim-preview-reload" title="Yenile">↻ Yenile</button>
+          </div>
+        </div>
+        <iframe id="yonetim-preview-iframe" src="" loading="lazy" title="Yönetim Kurulu önizleme"
+          style="width:100%;height:520px;border:1px solid var(--border);border-radius:8px;background:var(--bg-2);"></iframe>
+      </div>
+
+      <div class="content-list" id="vefa-list">
+        <div class="loading"><div class="spinner"></div></div>
       </div>
     </section>
 
-    <!-- HATIRA ORMANI (placeholder) -->
+    <!-- HATIRA ORMANI — Bağış Yönetimi -->
     <section class="section" id="section-orman">
       <div class="page-header">
         <div>
-          <h1 class="page-title">Hatıra Ormanı</h1>
-          <p class="page-desc">Bağışlar ve dikim listesi</p>
+          <h1 class="page-title">Hatıra Ormanı · Bağış Yönetimi</h1>
+          <p class="page-desc">Bağış bildirimlerini doğrula, onayla, reddet — ayar/metinleri buradan yönet</p>
         </div>
       </div>
-      <div class="placeholder">
-        <h3>Yapım Aşamasında</h3>
-        <p>Bu bölüm sonraki güncellemede aktif olacak.</p>
+
+      <!-- Üst kartlar: anlık özet -->
+      <div class="bagis-summary">
+        <div class="bagis-summary-card">
+          <div class="bagis-summary-label">Bekleyen Bildirim</div>
+          <div class="bagis-summary-value" id="bagis-stat-bekleyen">—</div>
+          <div class="bagis-summary-sub">Doğrulama bekliyor</div>
+        </div>
+        <div class="bagis-summary-card">
+          <div class="bagis-summary-label">Onaylı Bağış</div>
+          <div class="bagis-summary-value" id="bagis-stat-onayli">—</div>
+          <div class="bagis-summary-sub">Liste'ye işlendi</div>
+        </div>
+        <div class="bagis-summary-card">
+          <div class="bagis-summary-label">Toplam Fidan (canlı)</div>
+          <div class="bagis-summary-value" id="bagis-stat-fidan">—</div>
+          <div class="bagis-summary-sub">Public sayaçtaki sayı</div>
+        </div>
+        <div class="bagis-summary-card">
+          <div class="bagis-summary-label">Toplam TL Tutar</div>
+          <div class="bagis-summary-value" id="bagis-stat-tutar">—</div>
+          <div class="bagis-summary-sub">Onaylı bağış toplamı</div>
+        </div>
       </div>
+
+      <div class="sub-tabs" id="bagis-tabs">
+        <button class="sub-tab active" data-bagis-tab="bekleyen">
+          <span class="sub-tab-icon">⏳</span>
+          Bekleyen
+          <span class="sub-tab-count" id="bagis-count-bekleyen">0</span>
+        </button>
+        <button class="sub-tab" data-bagis-tab="onayli">
+          <span class="sub-tab-icon">✓</span>
+          Onaylı
+          <span class="sub-tab-count" id="bagis-count-onayli">0</span>
+        </button>
+        <button class="sub-tab" data-bagis-tab="reddedilen">
+          <span class="sub-tab-icon">✕</span>
+          Reddedilen
+          <span class="sub-tab-count" id="bagis-count-reddedilen">0</span>
+        </button>
+        <button class="sub-tab" data-bagis-tab="calismalar">
+          <span class="sub-tab-icon">🌳</span>
+          Çalışmalar / Anılar
+          <span class="sub-tab-count" id="bagis-count-calismalar">0</span>
+        </button>
+        <button class="sub-tab" data-bagis-tab="ayarlar">
+          <span class="sub-tab-icon">⚙️</span>
+          Ayarlar & Metinler
+        </button>
+      </div>
+
+      <!-- Filtre toolbar (liste sekmelerinde) -->
+      <div class="toolbar bagis-toolbar" id="bagis-toolbar">
+        <div class="filter-chips" id="bagis-kanal-chips">
+          <button class="chip active" data-bagis-kanal="all">Tümü</button>
+          <button class="chip" data-bagis-kanal="akced">AKÇED</button>
+          <button class="chip" data-bagis-kanal="iban">IBAN</button>
+        </div>
+        <div class="spacer"></div>
+        <input type="search" id="bagis-search" placeholder="Ad, telefon, ref no ara..." class="bagis-search-input">
+      </div>
+
+      <div class="content-list" id="bagis-list"></div>
+
+      <!-- Ayarlar paneli (alt sekme) -->
+      <div class="bagis-settings" id="bagis-settings" hidden>
+        <form id="bagis-settings-form" class="bagis-settings-form">
+
+          <div class="bagis-settings-card">
+            <h3 class="bagis-settings-title">Sayısal Ayarlar</h3>
+            <p class="bagis-settings-desc">Public sayfadaki tüm sayılar bu alanlardan okunur.</p>
+            <div class="bagis-settings-grid">
+              <div>
+                <label>1 Fidan = ? TL <span class="required">*</span></label>
+                <input type="number" name="fidanFiyati" id="ayar-fidanFiyati" min="1" required>
+                <small>Bu fiyat altında bağışlar "kumbara/masraf" olarak işlenir.</small>
+              </div>
+              <div>
+                <label>Hedef Fidan Sayısı</label>
+                <input type="number" name="hedef" id="ayar-hedef" min="1">
+                <small>Hero progress bar bu hedefi gösterir.</small>
+              </div>
+              <div>
+                <label>Baseline Fidan (geçmişten)</label>
+                <input type="number" name="baselineFidan" id="ayar-baselineFidan" min="0">
+                <small>Site açılmadan önceki kayıtlı fidan sayısı.</small>
+              </div>
+              <div>
+                <label>Baseline Bağışçı (geçmişten)</label>
+                <input type="number" name="baselineKisi" id="ayar-baselineKisi" min="0">
+                <small>Site açılmadan önceki bağışçı sayısı.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="bagis-settings-card">
+            <h3 class="bagis-settings-title">IBAN Bilgisi</h3>
+            <div class="bagis-settings-grid">
+              <div style="grid-column: 1 / -1;">
+                <label>Banka IBAN'ı</label>
+                <input type="text" name="ibanNo" id="ayar-ibanNo" placeholder="TR00 0000 0000 0000 0000 0000 00">
+                <small>Public sayfada görünür IBAN.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="bagis-settings-card">
+            <h3 class="bagis-settings-title">Bilgilendirme Metinleri</h3>
+            <p class="bagis-settings-desc"><code>{fiyat}</code> yazarsanız, fidan fiyatı oraya otomatik yerleşir.</p>
+            <div class="bagis-settings-grid one">
+              <div>
+                <label>Masraf/Kumbara Açıklaması ({fiyat} TL altı)</label>
+                <textarea name="masrafKullanim" id="ayar-masrafKullanim" rows="3"></textarea>
+              </div>
+              <div>
+                <label>Genel Kullanım Açıklaması</label>
+                <textarea name="genelKullanim" id="ayar-genelKullanim" rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="bagis-settings-actions">
+            <button type="submit" class="btn btn-primary" id="ayar-kaydet">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Ayarları Kaydet
+            </button>
+            <span id="ayar-status" class="ayar-status"></span>
+          </div>
+        </form>
+      </div>
+
+      <!-- ÇALIŞMALAR / ANILAR — galeri yönetimi -->
+      <div class="calismalar-wrap" id="calismalar-wrap" hidden>
+        <div class="toolbar calismalar-toolbar">
+          <button type="button" class="btn btn-primary" id="btn-calisma-yeni">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Yeni Çalışma
+          </button>
+          <span class="calismalar-hint">
+            "Toprakla Buluşan Anılar" galerisindeki kartlar — küçük sıralama numarası önce gösterilir.
+          </span>
+        </div>
+        <div class="content-list" id="calismalar-list">
+          <div class="loading"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KIZ SAYFASI — Projeler -->
+    <section class="section" id="section-kiz">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Kız Sayfası</h1>
+          <p class="page-desc">Faaliyetler & Projeler — kartlar buradan eklenir, düzenlenir, sıralanır</p>
+        </div>
+        <button class="btn btn-primary" id="btn-yeni-kiz-proje">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span id="btn-yeni-kiz-proje-label">Yeni Proje</span>
+        </button>
+      </div>
+
+      <div class="sub-tabs" id="kiz-tabs">
+        <button class="sub-tab active" data-kiz-tab="merkez">
+          <span class="sub-tab-icon">⭐</span>
+          Merkez Projeleri
+          <span class="sub-tab-count" id="kiz-count-merkez">0</span>
+        </button>
+        <button class="sub-tab" data-kiz-tab="yerel">
+          <span class="sub-tab-icon">📍</span>
+          Yerel · Dinamik Çalışmaları
+          <span class="sub-tab-count" id="kiz-count-yerel">0</span>
+        </button>
+        <button class="sub-tab" data-kiz-tab="gorsel">
+          <span class="sub-tab-icon">🖼</span>
+          Sayfa Görselleri
+        </button>
+      </div>
+
+      <div class="kiz-toolbar">
+        <a class="btn btn-ghost btn-tiny" href="dinamik-calismalar/kiz/index.html" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Yayındaki sayfayı aç
+        </a>
+        <button type="button" class="btn btn-ghost btn-tiny" id="btn-kiz-seed" hidden>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          Mevcut 6 projeyi içe aktar
+        </button>
+      </div>
+
+      <div class="content-list" id="kiz-list">
+        <div class="loading"><div class="spinner"></div></div>
+      </div>
+
+      <!-- SAYFA GÖRSELLERİ PANELİ -->
+      <div id="kiz-sayfa-panel" style="display:none">
+        <div class="sayfa-panel-split">
+        <div class="sayfa-panel-form">
+        <p class="page-desc" style="margin:0 0 28px;color:rgba(255,255,255,.55);">
+          Aşağıdaki görselleri değiştirerek sayfanın fotoğraflarını güncelleyin. Her görseli yükledikten sonra <strong>Kaydet</strong>'e basın.
+        </p>
+        <div class="kiz-gorsel-grid" id="kiz-gorsel-grid">
+
+          <!-- 1. Hero Arka Plan -->
+          <div class="kiz-gslot">
+            <div class="kiz-gslot__label">
+              <span class="kiz-gslot__num">1</span>
+              <span>Hero Arka Plan</span>
+              <small>Sayfanın en üstündeki tam ekran arka plan fotoğrafı</small>
+            </div>
+            <div class="uw" id="uw-kiz-g-hero" data-uw="kiz-g-hero">
+              <input type="file" hidden id="uw-kiz-g-hero-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-kiz-g-hero-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 2. Biz Kimiz — Üst (ateş) -->
+          <div class="kiz-gslot">
+            <div class="kiz-gslot__label">
+              <span class="kiz-gslot__num">2</span>
+              <span>Biz Kimiz — Üst Görsel</span>
+              <small>Genel tanıtım bölümündeki kamp ateşi fotoğrafı (4:3)</small>
+            </div>
+            <div class="uw" id="uw-kiz-g-biz1" data-uw="kiz-g-biz1">
+              <input type="file" hidden id="uw-kiz-g-biz1-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-kiz-g-biz1-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 3. Biz Kimiz — Alt (deniz) -->
+          <div class="kiz-gslot">
+            <div class="kiz-gslot__label">
+              <span class="kiz-gslot__num">3</span>
+              <span>Biz Kimiz — Alt Görsel</span>
+              <small>Genel tanıtım bölümündeki deniz/Akdeniz fotoğrafı (16:10)</small>
+            </div>
+            <div class="uw" id="uw-kiz-g-biz2" data-uw="kiz-g-biz2">
+              <input type="file" hidden id="uw-kiz-g-biz2-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-kiz-g-biz2-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 4. Kaşifler -->
+          <div class="kiz-gslot">
+            <div class="kiz-gslot__label">
+              <span class="kiz-gslot__num">4</span>
+              <span>Kaşifler Ekibi</span>
+              <small>7–11 yaş bölümündeki tek dikey fotoğraf (3:4)</small>
+            </div>
+            <div class="uw" id="uw-kiz-g-kasif" data-uw="kiz-g-kasif">
+              <input type="file" hidden id="uw-kiz-g-kasif-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-kiz-g-kasif-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 5. Araştırmacılar Sol -->
+          <div class="kiz-gslot">
+            <div class="kiz-gslot__label">
+              <span class="kiz-gslot__num">5</span>
+              <span>Araştırmacılar — Sol</span>
+              <small>11–15 yaş bölümündeki sol dikey fotoğraf (2:3)</small>
+            </div>
+            <div class="uw" id="uw-kiz-g-arstr1" data-uw="kiz-g-arstr1">
+              <input type="file" hidden id="uw-kiz-g-arstr1-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-kiz-g-arstr1-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 6. Araştırmacılar Sağ -->
+          <div class="kiz-gslot">
+            <div class="kiz-gslot__label">
+              <span class="kiz-gslot__num">6</span>
+              <span>Araştırmacılar — Sağ</span>
+              <small>11–15 yaş bölümündeki sağ dikey fotoğraf (2:3)</small>
+            </div>
+            <div class="uw" id="uw-kiz-g-arstr2" data-uw="kiz-g-arstr2">
+              <input type="file" hidden id="uw-kiz-g-arstr2-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-kiz-g-arstr2-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 7. Maceracılar Büyük (üst) -->
+          <div class="kiz-gslot">
+            <div class="kiz-gslot__label">
+              <span class="kiz-gslot__num">7</span>
+              <span>Maceracılar — Büyük</span>
+              <small>15–18 yaş bölümündeki üstteki büyük dikey fotoğraf (4:5)</small>
+            </div>
+            <div class="uw" id="uw-kiz-g-macer1" data-uw="kiz-g-macer1">
+              <input type="file" hidden id="uw-kiz-g-macer1-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-kiz-g-macer1-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 8. Maceracılar Geniş (alt) -->
+          <div class="kiz-gslot">
+            <div class="kiz-gslot__label">
+              <span class="kiz-gslot__num">8</span>
+              <span>Maceracılar — Geniş</span>
+              <small>15–18 yaş bölümündeki alttaki geniş grup fotoğrafı (16:7)</small>
+            </div>
+            <div class="uw" id="uw-kiz-g-macer2" data-uw="kiz-g-macer2">
+              <input type="file" hidden id="uw-kiz-g-macer2-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-kiz-g-macer2-url" placeholder="https://...">
+            </details>
+          </div>
+
+        </div><!-- /kiz-gorsel-grid -->
+
+        <div class="kiz-gorsel-actions">
+          <button class="btn btn-primary" id="btn-kiz-sayfa-kaydet" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Görselleri Kaydet
+          </button>
+          <span id="kiz-sayfa-status" class="status-msg"></span>
+        </div>
+        </div><!-- /sayfa-panel-form -->
+
+        <!-- Canlı Önizleme -->
+        <div class="sayfa-panel-preview">
+          <div class="preview-head">
+            <span class="preview-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+              Canlı Önizleme
+            </span>
+            <div class="preview-actions">
+              <span class="preview-status" id="kiz-sayfa-preview-status">Yükleniyor…</span>
+              <button type="button" class="btn-tiny" id="kiz-sayfa-preview-reload" title="Yenile">↻</button>
+            </div>
+          </div>
+          <iframe id="kiz-sayfa-preview-iframe" loading="lazy" title="Kız sayfası görsel önizleme"></iframe>
+        </div><!-- /sayfa-panel-preview -->
+        </div><!-- /sayfa-panel-split -->
+      </div><!-- /kiz-sayfa-panel -->
+
+    </section>
+
+    <!-- ERKEK SAYFASI — Projeler -->
+    <section class="section" id="section-erkek">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Erkek Sayfası</h1>
+          <p class="page-desc">Faaliyetler & Projeler — kartlar buradan eklenir, düzenlenir, sıralanır</p>
+        </div>
+        <button class="btn btn-primary" id="btn-yeni-erkek-proje">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span id="btn-yeni-erkek-proje-label">Yeni Proje</span>
+        </button>
+      </div>
+
+      <div class="sub-tabs" id="erkek-tabs">
+        <button class="sub-tab active" data-erkek-tab="merkez">
+          <span class="sub-tab-icon">⭐</span>
+          Merkez Projeleri
+          <span class="sub-tab-count" id="erkek-count-merkez">0</span>
+        </button>
+        <button class="sub-tab" data-erkek-tab="yerel">
+          <span class="sub-tab-icon">📍</span>
+          Yerel · Dinamik Çalışmaları
+          <span class="sub-tab-count" id="erkek-count-yerel">0</span>
+        </button>
+        <button class="sub-tab" data-erkek-tab="gorsel">
+          <span class="sub-tab-icon">🖼</span>
+          Sayfa Görselleri
+        </button>
+      </div>
+
+      <div class="erkek-toolbar">
+        <a class="btn btn-ghost btn-tiny" href="dinamik-calismalar/erkek/index.html" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Yayındaki sayfayı aç
+        </a>
+        <button type="button" class="btn btn-ghost btn-tiny" id="btn-erkek-seed" hidden>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+          Tüm projeleri sıfırla & yeniden yaz (6 merkez + Rota)
+        </button>
+      </div>
+
+      <div class="content-list" id="erkek-list">
+        <div class="loading"><div class="spinner"></div></div>
+      </div>
+
+      <!-- SAYFA GÖRSELLERİ PANELİ -->
+      <div id="erkek-sayfa-panel" style="display:none">
+        <div class="sayfa-panel-split">
+        <div class="sayfa-panel-form">
+        <p class="page-desc" style="margin:0 0 28px;color:rgba(255,255,255,.55);">
+          Aşağıdaki görselleri değiştirerek sayfanın fotoğraflarını güncelleyin. Her görseli yükledikten sonra <strong>Kaydet</strong>'e basın.
+        </p>
+        <div class="erkek-gorsel-grid" id="erkek-gorsel-grid">
+
+          <!-- 1. Hero Arka Plan -->
+          <div class="erkek-gslot">
+            <div class="erkek-gslot__label">
+              <span class="erkek-gslot__num">1</span>
+              <span>Hero Arka Plan</span>
+              <small>Sayfanın en üstündeki tam ekran arka plan fotoğrafı</small>
+            </div>
+            <div class="uw" id="uw-er-g-hero" data-uw="er-g-hero">
+              <input type="file" hidden id="uw-er-g-hero-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-er-g-hero-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 2. Biz Kimiz — Üst -->
+          <div class="erkek-gslot">
+            <div class="erkek-gslot__label">
+              <span class="erkek-gslot__num">2</span>
+              <span>Biz Kimiz — Üst Görsel</span>
+              <small>Genel tanıtım bölümündeki üst fotoğraf (4:3)</small>
+            </div>
+            <div class="uw" id="uw-er-g-biz1" data-uw="er-g-biz1">
+              <input type="file" hidden id="uw-er-g-biz1-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-er-g-biz1-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 3. Biz Kimiz — Alt -->
+          <div class="erkek-gslot">
+            <div class="erkek-gslot__label">
+              <span class="erkek-gslot__num">3</span>
+              <span>Biz Kimiz — Alt Görsel</span>
+              <small>Genel tanıtım bölümündeki alt geniş fotoğraf (16:10)</small>
+            </div>
+            <div class="uw" id="uw-er-g-biz2" data-uw="er-g-biz2">
+              <input type="file" hidden id="uw-er-g-biz2-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-er-g-biz2-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 4. Fidanlar -->
+          <div class="erkek-gslot">
+            <div class="erkek-gslot__label">
+              <span class="erkek-gslot__num">4</span>
+              <span>Fidanlar Ekibi</span>
+              <small>7–11 yaş bölümündeki dikey fotoğraf (3:4)</small>
+            </div>
+            <div class="uw" id="uw-er-g-fidan" data-uw="er-g-fidan">
+              <input type="file" hidden id="uw-er-g-fidan-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-er-g-fidan-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 5. Yiğitler Sol -->
+          <div class="erkek-gslot">
+            <div class="erkek-gslot__label">
+              <span class="erkek-gslot__num">5</span>
+              <span>Yiğitler — Sol</span>
+              <small>11–15 yaş bölümündeki sol dikey fotoğraf (2:3)</small>
+            </div>
+            <div class="uw" id="uw-er-g-yigit1" data-uw="er-g-yigit1">
+              <input type="file" hidden id="uw-er-g-yigit1-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-er-g-yigit1-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 6. Yiğitler Sağ -->
+          <div class="erkek-gslot">
+            <div class="erkek-gslot__label">
+              <span class="erkek-gslot__num">6</span>
+              <span>Yiğitler — Sağ</span>
+              <small>11–15 yaş bölümündeki sağ dikey fotoğraf (2:3)</small>
+            </div>
+            <div class="uw" id="uw-er-g-yigit2" data-uw="er-g-yigit2">
+              <input type="file" hidden id="uw-er-g-yigit2-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-er-g-yigit2-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 7. Neferler Büyük -->
+          <div class="erkek-gslot">
+            <div class="erkek-gslot__label">
+              <span class="erkek-gslot__num">7</span>
+              <span>Neferler — Büyük</span>
+              <small>15–18 yaş bölümündeki büyük dikey fotoğraf (4:5)</small>
+            </div>
+            <div class="uw" id="uw-er-g-nefer1" data-uw="er-g-nefer1">
+              <input type="file" hidden id="uw-er-g-nefer1-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-er-g-nefer1-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 8. Neferler Geniş -->
+          <div class="erkek-gslot">
+            <div class="erkek-gslot__label">
+              <span class="erkek-gslot__num">8</span>
+              <span>Neferler — Geniş</span>
+              <small>15–18 yaş bölümündeki geniş grup fotoğrafı (16:7)</small>
+            </div>
+            <div class="uw" id="uw-er-g-nefer2" data-uw="er-g-nefer2">
+              <input type="file" hidden id="uw-er-g-nefer2-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-er-g-nefer2-url" placeholder="https://...">
+            </details>
+          </div>
+
+        </div><!-- /erkek-gorsel-grid -->
+
+        <div class="erkek-gorsel-actions">
+          <button class="btn btn-primary" id="btn-erkek-sayfa-kaydet" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Görselleri Kaydet
+          </button>
+          <span id="erkek-sayfa-status" class="status-msg"></span>
+        </div>
+        </div><!-- /sayfa-panel-form -->
+
+        <!-- Canlı Önizleme -->
+        <div class="sayfa-panel-preview">
+          <div class="preview-head">
+            <span class="preview-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+              Canlı Önizleme
+            </span>
+            <div class="preview-actions">
+              <span class="preview-status" id="erkek-sayfa-preview-status">Yükleniyor…</span>
+              <button type="button" class="btn-tiny" id="erkek-sayfa-preview-reload" title="Yenile">↻</button>
+            </div>
+          </div>
+          <iframe id="erkek-sayfa-preview-iframe" loading="lazy" title="Erkek sayfası görsel önizleme"></iframe>
+        </div><!-- /sayfa-panel-preview -->
+        </div><!-- /sayfa-panel-split -->
+      </div><!-- /erkek-sayfa-panel -->
+
+    </section>
+
+    <!-- ROTA — Gençlik Buluşmaları sayfa görselleri -->
+    <section class="section" id="section-rota">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Rota Sayfası</h1>
+          <p class="page-desc">Hero arka planı ve galeri fotoğraflarını buradan yönet — değişiklikler sağdaki önizlemede anında görünür</p>
+        </div>
+        <a class="btn btn-ghost btn-tiny" href="dinamik-calismalar/rota/index.html" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Yayındaki sayfayı aç
+        </a>
+      </div>
+
+      <div class="sayfa-panel-split">
+        <div class="sayfa-panel-form">
+          <p class="page-desc" style="margin:0 0 24px;color:rgba(255,255,255,.55);">
+            Görselleri değiştirdikçe sağdaki önizleme anında güncellenir. Bittiğinde <strong>Kaydet</strong>'e basın.
+          </p>
+
+          <!-- 1) Hero Arka Plan -->
+          <h3 class="bilek-group-title" style="margin-top:0;">🖼 Hero Arka Plan</h3>
+          <p class="page-desc" style="margin:0 0 14px;color:rgba(255,255,255,.5);font-size:13px;">
+            Sayfanın en üstündeki tam ekran arka plan fotoğrafı (yatay, taş/medrese atmosferi iyi durur).
+          </p>
+          <div class="erkek-gslot" style="max-width:420px;">
+            <div class="uw" id="uw-rota-hero" data-uw="rota-hero">
+              <input type="file" hidden id="uw-rota-hero-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+              <input type="url" id="uw-rota-hero-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <!-- 2) Bölüm Görselleri -->
+          <h3 class="bilek-group-title" style="margin-top:34px;">🖼 Bölüm Görselleri</h3>
+          <p class="page-desc" style="margin:0 0 14px;color:rgba(255,255,255,.5);font-size:13px;">
+            Sayfanın bölümlerinde (hikâye kareleri ve tam genişlik bantlar) kullanılan sabit fotoğraflar. Boş bırakırsan yerleşik görsel kullanılır.
+          </p>
+          <div class="erkek-gorsel-grid">
+
+            <!-- 1. Hero Amblem -->
+            <div class="erkek-gslot">
+              <div class="erkek-gslot__label">
+                <span class="erkek-gslot__num">1</span>
+                <span>Hero Amblem (Logo)</span>
+                <small>Hero'daki pusula yıldızı amblemi — şeffaf PNG/WebP önerilir</small>
+              </div>
+              <div class="uw" id="uw-rota-logo" data-uw="rota-logo">
+                <input type="file" hidden id="uw-rota-logo-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>JPG, PNG, WebP — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+                <input type="url" id="uw-rota-logo-url" placeholder="https://...">
+              </details>
+            </div>
+
+            <!-- 2. Bölüm 01 — Meclis -->
+            <div class="erkek-gslot">
+              <div class="erkek-gslot__label">
+                <span class="erkek-gslot__num">2</span>
+                <span>Bölüm 01 — Meclis</span>
+                <small>"Kaleiçi'nde Bir Kale" bölümündeki dikey kare (kemerli)</small>
+              </div>
+              <div class="uw" id="uw-rota-meclis" data-uw="rota-meclis">
+                <input type="file" hidden id="uw-rota-meclis-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>JPG, PNG, WebP — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+                <input type="url" id="uw-rota-meclis-url" placeholder="https://...">
+              </details>
+            </div>
+
+            <!-- 3. +1 Değer Bandı -->
+            <div class="erkek-gslot">
+              <div class="erkek-gslot__label">
+                <span class="erkek-gslot__num">3</span>
+                <span>+1 Değer Bandı</span>
+                <small>Tam genişlik arka plan (yatay, geniş kompozisyon iyi durur)</small>
+              </div>
+              <div class="uw" id="uw-rota-konusmaci" data-uw="rota-konusmaci">
+                <input type="file" hidden id="uw-rota-konusmaci-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>JPG, PNG, WebP — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+                <input type="url" id="uw-rota-konusmaci-url" placeholder="https://...">
+              </details>
+            </div>
+
+            <!-- 4. Bölüm 02 — Sohbet -->
+            <div class="erkek-gslot">
+              <div class="erkek-gslot__label">
+                <span class="erkek-gslot__num">4</span>
+                <span>Bölüm 02 — Sohbet</span>
+                <small>"Neden Rota" bölümündeki dikey kare (kemerli)</small>
+              </div>
+              <div class="uw" id="uw-rota-sohbet" data-uw="rota-sohbet">
+                <input type="file" hidden id="uw-rota-sohbet-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>JPG, PNG, WebP — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+                <input type="url" id="uw-rota-sohbet-url" placeholder="https://...">
+              </details>
+            </div>
+
+            <!-- 5. Bölüm 03 — Sofra -->
+            <div class="erkek-gslot">
+              <div class="erkek-gslot__label">
+                <span class="erkek-gslot__num">5</span>
+                <span>Bölüm 03 — Sofra</span>
+                <small>"2018→Bugün" büyüme bölümündeki dikey kare</small>
+              </div>
+              <div class="uw" id="uw-rota-iftar" data-uw="rota-iftar">
+                <input type="file" hidden id="uw-rota-iftar-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>JPG, PNG, WebP — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+                <input type="url" id="uw-rota-iftar-url" placeholder="https://...">
+              </details>
+            </div>
+
+            <!-- 6. Asıl Gayemiz Bandı -->
+            <div class="erkek-gslot">
+              <div class="erkek-gslot__label">
+                <span class="erkek-gslot__num">6</span>
+                <span>Asıl Gayemiz Bandı</span>
+                <small>Tam genişlik arka plan — kuşbakışı kare kompozisyon iyi durur</small>
+              </div>
+              <div class="uw" id="uw-rota-gaye" data-uw="rota-gaye">
+                <input type="file" hidden id="uw-rota-gaye-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>JPG, PNG, WebP — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+                <input type="url" id="uw-rota-gaye-url" placeholder="https://...">
+              </details>
+            </div>
+
+            <!-- 7. Bölüm 04 — Kardeşlik -->
+            <div class="erkek-gslot">
+              <div class="erkek-gslot__label">
+                <span class="erkek-gslot__num">7</span>
+                <span>Bölüm 04 — Kardeşlik</span>
+                <small>"Kardeşlik" bölümündeki dikey kare (kemerli)</small>
+              </div>
+              <div class="uw" id="uw-rota-grup" data-uw="rota-grup">
+                <input type="file" hidden id="uw-rota-grup-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>JPG, PNG, WebP — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+                <input type="url" id="uw-rota-grup-url" placeholder="https://...">
+              </details>
+            </div>
+
+          </div><!-- /erkek-gorsel-grid -->
+
+          <!-- 3) Galeri -->
+          <h3 class="bilek-group-title" style="margin-top:34px;">📷 Galeri Fotoğrafları</h3>
+          <p class="page-desc" style="margin:0 0 14px;color:rgba(255,255,255,.5);font-size:13px;">
+            Sayfanın "Galeri" mozaiğinde ve lightbox'ında gösterilir. Sırayı yüklediğin sırayla belirler; en az 6 kare önerilir. Boş bırakırsan yerleşik fotoğraflar kullanılır.
+          </p>
+          <div class="cgw" id="cgw-rota">
+            <input type="file" hidden id="cgw-rota-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple>
+            <div class="cgw-drop" id="cgw-rota-drop">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span>Tıkla veya birden fazla fotoğrafı sürükle</span>
+              <small>JPG / PNG / WebP / HEIC — her biri max 10 MB</small>
+            </div>
+            <div class="cgw-grid" id="cgw-rota-grid"></div>
+          </div>
+          <input type="hidden" id="cgw-rota-json" value="[]">
+
+          <div class="erkek-gorsel-actions" style="margin-top:24px;">
+            <button class="btn btn-primary" id="btn-rota-sayfa-kaydet" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Görselleri Kaydet
+            </button>
+            <span id="rota-sayfa-status" class="status-msg"></span>
+          </div>
+        </div><!-- /sayfa-panel-form -->
+
+        <div class="sayfa-panel-preview">
+          <div class="preview-head">
+            <span class="preview-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+              Canlı Önizleme
+            </span>
+            <div class="preview-actions">
+              <span class="preview-status" id="rota-preview-status">Yükleniyor…</span>
+              <button type="button" class="btn-tiny" id="rota-preview-reload" title="Yenile">↻</button>
+            </div>
+          </div>
+          <iframe id="rota-sayfa-preview-iframe" loading="lazy" title="Rota sayfası görsel önizleme"></iframe>
+        </div><!-- /sayfa-panel-preview -->
+      </div><!-- /sayfa-panel-split -->
+    </section>
+
+    <!-- DALGIÇLIK — Akdeniz'den Kareler galerisi -->
+    <section class="section" id="section-dalgiclik">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Dalgıçlık</h1>
+          <p class="page-desc">"Akdeniz'den Kareler" galerisi — fotoğrafları buradan ekle, kategorile ve sırala</p>
+        </div>
+        <a class="btn btn-ghost btn-tiny" href="sporlar/dalgiclik/index.html" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Yayındaki sayfayı aç
+        </a>
+      </div>
+
+      <div class="sayfa-panel-split">
+        <div class="sayfa-panel-form">
+          <p class="page-desc" style="margin:0 0 20px;color:rgba(255,255,255,.55);">
+            Fotoğrafları yükledikten sonra her birine başlık, kategori ve sıra verebilirsin. Bittiğinde <strong>Kaydet</strong>'e bas.
+          </p>
+
+          <div class="dgl-toolbar">
+            <button class="btn btn-primary" id="btn-dalgic-ekle" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Fotoğraf Ekle
+            </button>
+            <input type="file" id="dalgic-file-input" hidden multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+          </div>
+
+          <div class="dgl-list" id="dalgic-list">
+            <div class="dgl-empty">Henüz fotoğraf yok. "Fotoğraf Ekle" ile başla.</div>
+          </div>
+
+          <div class="erkek-gorsel-actions" style="margin-top:24px;">
+            <button class="btn btn-primary" id="btn-dalgic-kaydet" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Galeriyi Kaydet
+            </button>
+            <span id="dalgic-status" class="status-msg"></span>
+          </div>
+        </div><!-- /sayfa-panel-form -->
+
+        <div class="sayfa-panel-preview">
+          <div class="preview-head">
+            <span class="preview-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+              Canlı Önizleme
+            </span>
+            <div class="preview-actions">
+              <span class="preview-status" id="dalgic-preview-status">Yükleniyor…</span>
+              <button type="button" class="btn-tiny" id="dalgic-preview-reload" title="Yenile">↻</button>
+            </div>
+          </div>
+          <iframe id="dalgic-sayfa-preview-iframe" loading="lazy" title="Dalgıçlık galeri önizleme"></iframe>
+        </div><!-- /sayfa-panel-preview -->
+      </div><!-- /sayfa-panel-split -->
+    </section>
+
+    <!-- ============== BİLEK GÜREŞİ — Sayfa yönetimi ============== -->
+    <section class="section" id="section-bilek">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Bilek Güreşi</h1>
+          <p class="page-desc">Sayfanın fotoğraflarını, hero metnini, istatistikleri ve veli sözünü buradan yönet</p>
+        </div>
+        <a class="btn btn-ghost btn-tiny" href="sporlar/bilek-guresi/index.html" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Yayındaki sayfayı aç
+        </a>
+      </div>
+
+      <div class="sayfa-panel-split">
+        <div class="sayfa-panel-form">
+          <p class="page-desc" style="margin:0 0 24px;color:rgba(255,255,255,.55);">
+            Değişiklikleri yaptıkça sağdaki önizleme anında güncellenir. Bittiğinde <strong>Kaydet</strong>'e basın.
+          </p>
+
+          <!-- ░░ FOTOĞRAFLAR ░░ -->
+          <h3 class="bilek-group-title">📷 Fotoğraflar</h3>
+          <div class="kiz-gorsel-grid" id="bilek-gorsel-grid">
+
+            <!-- 1. Hero Arka Plan -->
+            <div class="kiz-gslot">
+              <div class="kiz-gslot__label">
+                <span class="kiz-gslot__num">1</span>
+                <span>Hero Arka Plan</span>
+                <small>Sayfanın en üstündeki tam ekran arka plan fotoğrafı</small>
+              </div>
+              <div class="uw" id="uw-bg-g-hero" data-uw="bg-g-hero">
+                <input type="file" hidden id="uw-bg-g-hero-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>JPG, PNG, WebP — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+                <input type="url" id="uw-bg-g-hero-url" placeholder="https://...">
+              </details>
+            </div>
+
+            <!-- 2. Sinematik Geçiş -->
+            <div class="kiz-gslot">
+              <div class="kiz-gslot__label">
+                <span class="kiz-gslot__num">2</span>
+                <span>Sinematik Geçiş — "Masada"</span>
+                <small>Bölümler arasındaki tam genişlik sinematik fotoğraf (yatay)</small>
+              </div>
+              <div class="uw" id="uw-bg-g-cinema" data-uw="bg-g-cinema">
+                <input type="file" hidden id="uw-bg-g-cinema-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>JPG, PNG, WebP — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+                <input type="url" id="uw-bg-g-cinema-url" placeholder="https://...">
+              </details>
+            </div>
+
+            <!-- 3. Sağ El -->
+            <div class="kiz-gslot">
+              <div class="kiz-gslot__label">
+                <span class="kiz-gslot__num">3</span>
+                <span>İki El — Sağ El</span>
+                <small>"İki El" bölümündeki sol karttaki fotoğraf (dikey)</small>
+              </div>
+              <div class="uw" id="uw-bg-g-hand-r" data-uw="bg-g-hand-r">
+                <input type="file" hidden id="uw-bg-g-hand-r-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>JPG, PNG, WebP — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+                <input type="url" id="uw-bg-g-hand-r-url" placeholder="https://...">
+              </details>
+            </div>
+
+            <!-- 4. Sol El -->
+            <div class="kiz-gslot">
+              <div class="kiz-gslot__label">
+                <span class="kiz-gslot__num">4</span>
+                <span>İki El — Sol El</span>
+                <small>"İki El" bölümündeki sağ karttaki fotoğraf (dikey)</small>
+              </div>
+              <div class="uw" id="uw-bg-g-hand-l" data-uw="bg-g-hand-l">
+                <input type="file" hidden id="uw-bg-g-hand-l-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>JPG, PNG, WebP — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback"><summary>veya URL yapıştır</summary>
+                <input type="url" id="uw-bg-g-hand-l-url" placeholder="https://...">
+              </details>
+            </div>
+
+          </div><!-- /kiz-gorsel-grid -->
+
+          <!-- ░░ HERO METNİ ░░ -->
+          <h3 class="bilek-group-title">✍️ Hero Metni</h3>
+          <div class="bilek-fields">
+            <div class="field">
+              <label>Üst Etiket</label>
+              <input type="text" data-bilek-field="hero_label" placeholder="Kuvvet Branşı · TABS">
+            </div>
+            <div class="bilek-row3">
+              <div class="field">
+                <label>Başlık — 1. satır</label>
+                <input type="text" data-bilek-field="hero_title_1" placeholder="Beş saniye">
+              </div>
+              <div class="field">
+                <label>Başlık — 2. satır</label>
+                <input type="text" data-bilek-field="hero_title_2" placeholder="Bir masa">
+              </div>
+              <div class="field">
+                <label>Başlık — 3. satır <small>(italik)</small></label>
+                <input type="text" data-bilek-field="hero_title_3" placeholder="Bir seçim">
+              </div>
+            </div>
+            <div class="field">
+              <label>Lead Paragraf</label>
+              <textarea data-bilek-field="hero_lead" rows="3" placeholder="Hero altındaki giriş metni"></textarea>
+            </div>
+            <div class="bilek-row2">
+              <div class="field">
+                <label>Ana Buton Metni</label>
+                <input type="text" data-bilek-field="hero_cta_primary" placeholder="Masaya Otur">
+              </div>
+              <div class="field">
+                <label>İkincil Buton Metni</label>
+                <input type="text" data-bilek-field="hero_cta_ghost" placeholder="Antrenman Sürecini Gör">
+              </div>
+            </div>
+          </div>
+
+          <!-- ░░ İSTATİSTİKLER ░░ -->
+          <h3 class="bilek-group-title">📊 İstatistikler</h3>
+          <div class="bilek-fields">
+            <div class="bilek-stat-row">
+              <div class="field"><label>1 · Sayı</label><input type="text" data-bilek-field="stat1_num" placeholder="10"></div>
+              <div class="field"><label>Son Ek</label><input type="text" data-bilek-field="stat1_suffix" placeholder="y"></div>
+              <div class="field bilek-stat-lbl"><label>Etiket</label><input type="text" data-bilek-field="stat1_label" placeholder="Yıl Tecrübe"></div>
+            </div>
+            <div class="bilek-stat-row">
+              <div class="field"><label>2 · Sayı</label><input type="text" data-bilek-field="stat2_num" placeholder="200"></div>
+              <div class="field"><label>Son Ek</label><input type="text" data-bilek-field="stat2_suffix" placeholder="+"></div>
+              <div class="field bilek-stat-lbl"><label>Etiket</label><input type="text" data-bilek-field="stat2_label" placeholder="Yetişen Sporcu"></div>
+            </div>
+            <div class="bilek-stat-row">
+              <div class="field"><label>3 · Sayı</label><input type="text" data-bilek-field="stat3_num" placeholder="15"></div>
+              <div class="field"><label>Son Ek</label><input type="text" data-bilek-field="stat3_suffix" placeholder="+"></div>
+              <div class="field bilek-stat-lbl"><label>Etiket</label><input type="text" data-bilek-field="stat3_label" placeholder="Turnuva"></div>
+            </div>
+            <div class="bilek-stat-row">
+              <div class="field"><label>4 · Sayı</label><input type="text" data-bilek-field="stat4_num" placeholder="3"></div>
+              <div class="field"><label>Son Ek</label><input type="text" data-bilek-field="stat4_suffix" placeholder=""></div>
+              <div class="field bilek-stat-lbl"><label>Etiket</label><input type="text" data-bilek-field="stat4_label" placeholder="Uzman Eğitmen"></div>
+            </div>
+          </div>
+
+          <!-- ░░ VELİ SÖZÜ ░░ -->
+          <h3 class="bilek-group-title">💬 Veli Sözü</h3>
+          <div class="bilek-fields">
+            <div class="field">
+              <label>Alıntı</label>
+              <textarea data-bilek-field="veli_quote" rows="3" placeholder="Veli yorumu / alıntı metni"></textarea>
+            </div>
+            <div class="bilek-row2">
+              <div class="field">
+                <label>İsim</label>
+                <input type="text" data-bilek-field="veli_author" placeholder="Hasan K.">
+              </div>
+              <div class="field">
+                <label>Rol</label>
+                <input type="text" data-bilek-field="veli_role" placeholder="Bir veli · Antalya">
+              </div>
+            </div>
+          </div>
+
+          <div class="erkek-gorsel-actions" style="margin-top:28px;">
+            <button class="btn btn-primary" id="btn-bilek-kaydet" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Kaydet
+            </button>
+            <span id="bilek-status" class="status-msg"></span>
+          </div>
+        </div><!-- /sayfa-panel-form -->
+
+        <div class="sayfa-panel-preview">
+          <div class="preview-head">
+            <span class="preview-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+              Canlı Önizleme
+            </span>
+            <div class="preview-actions">
+              <span class="preview-status" id="bilek-preview-status">Yükleniyor…</span>
+              <button type="button" class="btn-tiny" id="bilek-preview-reload" title="Yenile">↻</button>
+            </div>
+          </div>
+          <iframe id="bilek-sayfa-preview-iframe" loading="lazy" title="Bilek Güreşi sayfa önizleme"></iframe>
+        </div><!-- /sayfa-panel-preview -->
+      </div><!-- /sayfa-panel-split -->
     </section>
 
     <!-- AYARLAR (placeholder) -->
@@ -686,10 +3856,99 @@
           <p class="page-desc">Kulüp bilgileri ve sosyal medya</p>
         </div>
       </div>
-      <div class="placeholder">
-        <h3>Yapım Aşamasında</h3>
-        <p>Bu bölüm sonraki güncellemede aktif olacak.</p>
-      </div>
+      <form id="form-ayarlar-site" class="bagis-settings">
+
+        <div class="bagis-settings-card">
+          <h3 class="bagis-settings-title">Kulüp Bilgileri</h3>
+          <div class="bagis-settings-grid one">
+            <div>
+              <label>Marka Adı</label>
+              <input type="text" id="ayar-site-marka" placeholder="Akdeniz Dinamik Spor Kulübü">
+              <small>Footer ve başlıklarda görünen resmi ad.</small>
+            </div>
+            <div>
+              <label>Slogan / Tanıtım Cümlesi</label>
+              <textarea id="ayar-site-slogan" rows="2" placeholder="İman. Disiplin. Spor. 2010'dan beri Antalya'da..."></textarea>
+              <small>Footer'da markanın altında görünen kısa cümle.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="bagis-settings-card">
+          <h3 class="bagis-settings-title">İletişim</h3>
+          <div class="bagis-settings-grid">
+            <div>
+              <label>Telefon</label>
+              <input type="text" id="ayar-site-telefon" placeholder="+90 539 729 32 32">
+              <small>Tüm <code>tel:</code> ve WhatsApp linklerini günceller.</small>
+            </div>
+            <div>
+              <label>E-posta</label>
+              <input type="email" id="ayar-site-eposta" placeholder="akdenizdinamiksk@gmail.com">
+              <small>Tüm <code>mailto:</code> linklerini günceller.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="bagis-settings-card">
+          <h3 class="bagis-settings-title">Sosyal Medya</h3>
+          <div class="bagis-settings-grid">
+            <div>
+              <label>Instagram — Ana (@dinamiksk)</label>
+              <input type="text" id="ayar-site-ig" placeholder="https://instagram.com/dinamiksk">
+            </div>
+            <div>
+              <label>Instagram — Kız (@dinamiksk.kiz)</label>
+              <input type="text" id="ayar-site-ig-kiz" placeholder="https://instagram.com/dinamiksk.kiz">
+            </div>
+            <div>
+              <label>Instagram — Bilek Güreşi</label>
+              <input type="text" id="ayar-site-ig-bilek" placeholder="https://instagram.com/antalyabilekguresi">
+            </div>
+            <div>
+              <label>Instagram — Rota (@rotaantalya)</label>
+              <input type="text" id="ayar-site-ig-rota" placeholder="https://instagram.com/rotaantalya">
+            </div>
+            <div>
+              <label>YouTube</label>
+              <input type="text" id="ayar-site-youtube" placeholder="https://www.youtube.com/@scuba.team.antalya">
+            </div>
+          </div>
+        </div>
+
+        <div class="bagis-settings-actions">
+          <button type="submit" class="btn btn-primary" id="btn-ayar-site-kaydet">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Ayarları Kaydet
+          </button>
+          <span id="ayar-site-status" class="status-msg"></span>
+        </div>
+      </form>
+
+      <form id="form-sifre" class="bagis-settings" style="margin-top:8px;">
+        <div class="bagis-settings-card">
+          <h3 class="bagis-settings-title">🔑 Şifre Değiştir</h3>
+          <p class="bagis-settings-desc">Giriş yaptığın hesabın şifresini değiştir. Değişiklik anında geçerli olur.</p>
+          <div class="bagis-settings-grid one">
+            <div>
+              <label>Mevcut Şifre</label>
+              <input type="password" id="ayar-sifre-mevcut" autocomplete="current-password" placeholder="••••••••">
+            </div>
+            <div>
+              <label>Yeni Şifre</label>
+              <input type="password" id="ayar-sifre-yeni" autocomplete="new-password" placeholder="En az 6 karakter">
+            </div>
+            <div>
+              <label>Yeni Şifre (Tekrar)</label>
+              <input type="password" id="ayar-sifre-yeni2" autocomplete="new-password" placeholder="Yeni şifreyi tekrar yaz">
+            </div>
+          </div>
+          <div class="bagis-settings-actions">
+            <button type="submit" class="btn btn-primary" id="btn-ayar-sifre">Şifreyi Değiştir</button>
+            <span id="ayar-sifre-status" class="status-msg"></span>
+          </div>
+        </div>
+      </form>
     </section>
 
   </main>
@@ -729,6 +3988,7 @@
                 <option value="dalgiclik">Dalgıçlık</option>
                 <option value="erkek">Dinamik Erkek</option>
                 <option value="kiz">Dinamik Kız</option>
+                <option value="rota">Rota Gençlik Buluşmaları</option>
               </select>
               <span class="hint">İçerik bu kategorinin sayfasında da görünecek</span>
             </div>
@@ -752,9 +4012,49 @@
           </div>
 
           <div class="field">
-            <label>Görsel URL'i (geçici)</label>
-            <input type="url" name="gorsel" placeholder="https://...">
-            <span class="hint">Şimdilik dış URL — sonraki güncellemede görsel yükleme eklenecek</span>
+            <label>Kapak Görseli</label>
+            <div class="uw" id="uw-kapak" data-uw="kapak">
+              <input type="file" hidden id="uw-kapak-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+
+              <div class="uw-empty" data-uw-empty>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>JPG, PNG, WebP, HEIC — max 10 MB</small>
+              </div>
+
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+
+            <details class="uw-fallback">
+              <summary>veya URL yapıştır (IG / YouTube thumbnail için)</summary>
+              <input type="url" name="gorsel" id="uw-kapak-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <div class="field">
+            <label>Galeri <span class="hint" style="font-weight:400;font-size:12px;">— birden fazla görsel (opsiyonel)</span></label>
+            <div class="gw" id="gw">
+              <input type="file" hidden id="gw-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple>
+              <div class="gw-grid" id="gw-grid"></div>
+              <button type="button" class="btn btn-ghost gw-add" id="gw-add">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Görsele Ekle
+              </button>
+            </div>
+            <input type="hidden" name="gorseller" id="gw-json" value="[]">
+            <span class="hint">Eski etkinliklerin albümü için — site detay sayfasında lightbox açılır</span>
           </div>
 
           <div class="form-row">
@@ -794,6 +4094,13 @@
               </label>
               <button type="button" class="toggle" data-toggle="oneCikar" id="t-feat"></button>
             </div>
+            <div class="field-toggle">
+              <label for="t-arsiv">
+                <span style="font-weight: 600; color: var(--text);">Arşivle</span>
+                <span class="hint">Açıksa ana sayfadan kaldırılır, arşivde görünür. 1 yıldan eski içerik otomatik arşivlenir.</span>
+              </label>
+              <button type="button" class="toggle" data-toggle="arsiv" id="t-arsiv"></button>
+            </div>
           </div>
         </div>
       </div>
@@ -806,10 +4113,590 @@
   </div>
 </div>
 
+<!-- ============== MODAL: Vefa Form (split: form + canlı önizleme) ============== -->
+<div class="modal-overlay" id="modal-vefa">
+  <div class="modal modal-split-wrap">
+    <div class="modal-header">
+      <h2 id="modal-vefa-title">Yeni Kayıt</h2>
+      <button class="modal-close" data-vefa-close>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="modal-split">
+      <!-- SOL: FORM -->
+      <form id="form-vefa" class="modal-split-form">
+        <div class="modal-body">
+          <input type="hidden" name="id">
+          <input type="hidden" name="tip" id="vefa-form-tip">
+
+          <div class="form-grid">
+            <div class="form-row">
+              <div class="field">
+                <label id="vefa-isim-label">İsim Soyisim *</label>
+                <input type="text" name="isim" required placeholder="Mehmet Yılmaz">
+              </div>
+              <div class="field">
+                <label id="vefa-pozisyon-label">Pozisyon / Rol</label>
+                <input type="text" name="pozisyon" id="vefa-pozisyon-input" placeholder="Başkan · Sayman · Üye…">
+                <span class="hint" id="vefa-pozisyon-hint">Yönetim kurulunda zorunlu</span>
+              </div>
+            </div>
+
+            <div class="field" id="vefa-donem-field">
+              <label>Görev Dönemi (opsiyonel)</label>
+              <input type="text" name="donem" placeholder="2020 – 2025  ·  2024 – Halen">
+            </div>
+
+            <div class="field">
+              <label id="vefa-biyografi-label">Biyografi / Açıklama (opsiyonel)</label>
+              <textarea name="biyografi" rows="4" placeholder="Kulübe katkıları, görev hikâyeleri, kısa biyografi…"></textarea>
+              <span class="hint" id="vefa-biyografi-hint">Boş bırakılabilir — sadece isim ve fotoğraf da yeterli</span>
+            </div>
+
+
+            <div class="field">
+              <label id="vefa-gorsel-label">Fotoğraf</label>
+              <div class="uw" id="uw-vefa" data-uw="vefa">
+                <input type="file" hidden id="uw-vefa-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>JPG, PNG, WebP, HEIC — max 10 MB</small>
+                </div>
+
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+
+              <details class="uw-fallback">
+                <summary>veya URL yapıştır</summary>
+                <input type="url" name="gorsel" id="uw-vefa-url" placeholder="https://...">
+              </details>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label>Sıralama Önceliği</label>
+                <input type="number" name="oncelik" value="10" min="0" max="999" step="1">
+                <span class="hint">Küçük sayı önce gösterilir — 1 en üstte, 99 en altta</span>
+              </div>
+              <div class="field-toggle">
+                <label>
+                  <span style="font-weight:600;color:var(--text);">Yayında</span>
+                  <span class="hint">Kapalıysa sitede görünmez</span>
+                </label>
+                <button type="button" class="toggle on" data-toggle="vefaYayinda" id="t-vefa-yayin"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" data-vefa-close>İptal</button>
+          <button type="submit" class="btn btn-primary" id="form-vefa-submit-btn">Kaydet</button>
+        </div>
+      </form>
+
+      <!-- SAĞ: CANLI ÖNİZLEME -->
+      <aside class="modal-split-preview">
+        <div class="preview-head">
+          <span class="preview-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+            Canlı Önizleme
+          </span>
+          <div class="preview-actions">
+            <span class="preview-status" id="vefa-preview-status">Yükleniyor…</span>
+            <button type="button" class="btn-tiny" id="vefa-preview-jump" title="İlgili bölüme kaydır">↓ Bölüme git</button>
+            <button type="button" class="btn-tiny" id="vefa-preview-reload" title="Yenile">↻</button>
+          </div>
+        </div>
+        <iframe id="vefa-preview-iframe" loading="lazy" title="Vefa sayfası önizleme"></iframe>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- ============== MODAL: Çalışma / Anı ============== -->
+<div class="modal-overlay" id="modal-calisma">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modal-calisma-title">Yeni Çalışma</h2>
+      <button class="modal-close" data-calisma-close>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <form id="form-calisma">
+      <div class="modal-body">
+        <input type="hidden" name="id">
+
+        <div class="form-grid">
+          <div class="field">
+            <label>Başlık *</label>
+            <input type="text" name="baslik" required maxlength="120" placeholder="Sporcularımızın elleriyle dikilen ilk 12 fidan">
+            <span class="hint">Galeride büyük puntoyla görünecek başlık (kısa ve yalın olsun)</span>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label>Tarih Etiketi</label>
+              <input type="text" name="tarih" maxlength="60" placeholder="Geleneksel Dikim · 2025">
+              <span class="hint">Kart sol üstte rozet olarak görünür</span>
+            </div>
+            <div class="field">
+              <label>Meta / Detay</label>
+              <input type="text" name="meta" maxlength="120" placeholder="85 katılımcı · 240 fidan">
+              <span class="hint">Başlığın altında küçük metin (kişi sayısı, fidan sayısı vb.)</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Kapak Görseli *</label>
+            <div class="uw" id="uw-calisma" data-uw="calisma">
+              <input type="file" hidden id="uw-calisma-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+              <div class="uw-empty" data-uw-empty>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Tıkla veya sürükle bırak</strong>
+                <small>Yatay foto tercih edilir — JPG, PNG, WebP, HEIC — max 10 MB</small>
+              </div>
+              <div class="uw-preview" data-uw-preview hidden>
+                <img data-uw-img alt="">
+                <div class="uw-progress" data-uw-progress hidden>
+                  <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                  <span data-uw-percent>0%</span>
+                </div>
+                <div class="uw-actions" data-uw-actions>
+                  <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="uw-error" data-uw-error hidden></div>
+            </div>
+            <details class="uw-fallback">
+              <summary>veya URL yapıştır</summary>
+              <input type="url" name="kapak" id="uw-calisma-url" placeholder="https://...">
+            </details>
+          </div>
+
+          <div class="field">
+            <label>Ek Fotoğraflar <span style="font-weight:400;color:var(--text-3)">(opsiyonel — birden fazla seç veya sürükle)</span></label>
+            <div class="cgw" id="cgw-calisma">
+              <input type="file" hidden id="cgw-calisma-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple>
+              <div class="cgw-drop" id="cgw-calisma-drop">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Tıkla veya birden fazla fotoğrafı sürükle</span>
+                <small>JPG / PNG / WebP / HEIC — her biri max 10 MB</small>
+              </div>
+              <div class="cgw-grid" id="cgw-calisma-grid"></div>
+            </div>
+            <input type="hidden" name="galeri" id="cgw-calisma-json" value="[]">
+            <span class="hint">Kapak dışındaki ek kareler — lightbox'ta slayt olarak gösterilir</span>
+          </div>
+
+          <div class="field">
+            <label>Video (opsiyonel)</label>
+            <div class="vw" id="vw-calisma">
+              <input type="file" hidden id="vw-calisma-input" accept="video/mp4,video/quicktime,video/webm,video/x-m4v">
+              <div class="vw-empty" data-vw-empty>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                <strong>Video ekle (opsiyonel)</strong>
+                <small>MP4 / MOV / WebM — <b>max 60 MB</b> · 30-60 saniye önerilir<br>Bandwidth dostu olması için kısa tutun</small>
+              </div>
+              <div class="vw-preview" data-vw-preview hidden>
+                <video data-vw-video controls preload="metadata" muted></video>
+                <div class="vw-progress" data-vw-progress hidden>
+                  <div class="vw-progress-bar"><div class="vw-progress-fill" data-vw-fill></div></div>
+                  <span data-vw-percent>0%</span>
+                </div>
+                <div class="vw-actions" data-vw-actions>
+                  <button type="button" class="btn-tiny" data-vw-replace>Değiştir</button>
+                  <button type="button" class="btn-tiny btn-tiny-danger" data-vw-remove>Kaldır</button>
+                </div>
+              </div>
+              <div class="vw-error" data-vw-error hidden></div>
+            </div>
+            <input type="hidden" name="video">
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label>Kart Boyutu</label>
+              <select name="boyut">
+                <option value="normal">Normal (1 sütun)</option>
+                <option value="wide">Geniş (2 sütun)</option>
+              </select>
+              <span class="hint">"Geniş" galeride yan yana 2 sütunluk yer kaplar</span>
+            </div>
+            <div class="field">
+              <label>Sıralama Önceliği</label>
+              <input type="number" name="oncelik" value="10" min="0" max="999" step="1">
+              <span class="hint">Küçük sayı önce — 1 en üstte</span>
+            </div>
+          </div>
+
+          <div class="field-toggle">
+            <label>
+              <span style="font-weight:600;color:var(--text);">Yayında</span>
+              <span class="hint">Kapalıysa galeride görünmez (taslak)</span>
+            </label>
+            <button type="button" class="toggle on" data-toggle="calismaYayinda" id="t-calisma-yayin"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost" data-calisma-close>İptal</button>
+        <button type="submit" class="btn btn-primary" id="form-calisma-submit-btn">Yayınla</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- BAĞIŞ — Dekont/Sertifika Önizleme Modalı -->
+<div class="modal-overlay" id="modal-bagis-dekont">
+  <div class="modal" style="max-width: 720px;">
+    <div class="modal-header">
+      <h2 id="bagis-dekont-baslik">Dekont / Sertifika</h2>
+      <button type="button" class="btn-close" data-bagis-dekont-close>×</button>
+    </div>
+    <div class="modal-body" style="display: flex; align-items: center; justify-content: center; padding: 24px; min-height: 320px; background: var(--bg);">
+      <img id="bagis-dekont-img" alt="" style="max-width: 100%; max-height: 70vh; border-radius: 6px; object-fit: contain;">
+    </div>
+    <div class="modal-footer">
+      <a id="bagis-dekont-aboslute" href="#" target="_blank" rel="noopener" class="btn btn-ghost">Yeni Sekmede Aç</a>
+      <button type="button" class="btn btn-ghost" data-bagis-dekont-close>Kapat</button>
+    </div>
+  </div>
+</div>
+
+<!-- BAĞIŞ — Reddet Sebebi Modalı -->
+<div class="modal-overlay" id="modal-bagis-red">
+  <div class="modal" style="max-width: 480px;">
+    <form id="bagis-red-form">
+      <div class="modal-header">
+        <h2>Bağışı Reddet</h2>
+        <button type="button" class="btn-close" data-bagis-red-close>×</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 14px; color: var(--text-2); line-height: 1.6; margin-bottom: 16px;">
+          <strong id="bagis-red-isim">—</strong> isimli bağışçının bildirimi reddedilecek.
+          Sayaca işlenmez. Aşağıya kısa bir sebep yazın (kayıt için).
+        </p>
+        <div class="field">
+          <label>Red Sebebi *</label>
+          <textarea name="redSebebi" rows="3" required placeholder="Dekont okunmuyor, miktar uyuşmuyor, çift bildirim..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost" data-bagis-red-close>İptal</button>
+        <button type="submit" class="btn btn-danger">Reddet</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- KIZ PROJE — Düzenleme Modalı (split: form + canlı önizleme) -->
+<div class="modal-overlay" id="modal-kiz-proje">
+  <div class="modal modal-split-wrap">
+    <div class="modal-header">
+      <h2 id="modal-kiz-title">Yeni Proje</h2>
+      <button class="modal-close" data-kiz-close>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="modal-split">
+      <!-- SOL: FORM -->
+      <form id="form-kiz-proje" class="modal-split-form">
+        <div class="modal-body">
+          <input type="hidden" name="id">
+
+          <div class="form-grid">
+            <div class="form-row">
+              <div class="field">
+                <label>Kategori *</label>
+                <select name="kategori" id="kiz-form-kategori">
+                  <option value="merkez">Merkez Projesi</option>
+                  <option value="yerel">Yerel · Dinamik Çalışmaları</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Kart No</label>
+                <input type="text" name="no" maxlength="4" placeholder="01">
+                <span class="hint">Kart üstündeki numara (01, 02…)</span>
+              </div>
+              <div class="field">
+                <label>Sıra *</label>
+                <input type="number" name="sira" value="10" min="0" max="999" required>
+                <span class="hint">Küçük önce</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Başlık *</label>
+              <input type="text" name="baslik" required placeholder="İlk Namazım">
+            </div>
+
+            <div class="field">
+              <label>Teaser (kart kısa metni) *</label>
+              <textarea name="teaser" rows="2" required placeholder="Karta gösterilecek 1-2 cümlelik özet"></textarea>
+              <span class="hint">Karta 3 satıra kadar görünür</span>
+            </div>
+
+            <div class="field">
+              <label>Kart Görseli</label>
+              <div class="uw" id="uw-kiz-proje" data-uw="kiz-proje">
+                <input type="file" hidden id="uw-kiz-proje-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>4:5 dikey kompozisyon önerilir — JPG/PNG/WebP/HEIC — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback">
+                <summary>veya URL yapıştır</summary>
+                <input type="url" name="gorsel" id="uw-kiz-proje-url" placeholder="https://...">
+              </details>
+              <span class="hint">Boş bırakırsan kart numarayla zarif bir placeholder gösterir</span>
+            </div>
+
+            <div class="field">
+              <label>Hikâye Bölümleri</label>
+              <div id="kiz-bolumler-list"></div>
+              <div class="kiz-bolum-add-row">
+                <button type="button" class="btn-tiny" data-bolum-add="p">+ Paragraf</button>
+                <button type="button" class="btn-tiny" data-bolum-add="intro">+ İntro (italik)</button>
+              </div>
+              <span class="hint" style="display:block;margin-top:8px;line-height:1.6;">
+                <strong>İntro:</strong> italik blockquote, edebi giriş için ·
+                <strong>Paragraf:</strong> normal metin · <br>
+                Metinde <code>**kalın**</code> yazarsan rose renginde vurgulanır.
+              </span>
+            </div>
+
+            <div class="field">
+              <label>Videolar (opsiyonel)</label>
+              <div id="mvw-kiz-list" class="mvw-list"></div>
+              <div class="mvw-add-row">
+                <input type="file" hidden id="mvw-kiz-input" accept="video/mp4,video/quicktime,video/webm">
+                <button type="button" class="btn-tiny" id="mvw-kiz-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Video Ekle
+                </button>
+                <span class="hint" style="margin:0">MP4 / MOV / WebM</span>
+              </div>
+              <div id="mvw-kiz-error" class="uw-error" hidden></div>
+            </div>
+
+            <div class="field-toggle">
+              <label>
+                <span style="font-weight:600;color:var(--text);">Yayında</span>
+                <span class="hint">Kapalıysa kart sitede görünmez</span>
+              </label>
+              <button type="button" class="toggle on" data-toggle="kizYayinda" id="t-kiz-yayin"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="btn-kiz-proje-sil" style="margin-right:auto;display:none;">Sil</button>
+          <button type="button" class="btn btn-ghost" data-kiz-close>İptal</button>
+          <button type="submit" class="btn btn-primary" id="form-kiz-submit-btn">Kaydet</button>
+        </div>
+      </form>
+
+      <!-- SAĞ: CANLI ÖNİZLEME -->
+      <aside class="modal-split-preview">
+        <div class="preview-head">
+          <span class="preview-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+            Canlı Önizleme
+          </span>
+          <div class="preview-actions">
+            <span class="preview-status" id="kiz-preview-status">Yükleniyor…</span>
+            <button type="button" class="btn-tiny" id="kiz-preview-jump" title="Projeler bölümüne kaydır">
+              ↓ Projelere git
+            </button>
+            <button type="button" class="btn-tiny" id="kiz-preview-reload" title="Yenile">↻</button>
+          </div>
+        </div>
+        <iframe id="kiz-preview-iframe" loading="lazy" title="Kız sayfası önizleme"></iframe>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- ERKEK PROJE — Düzenleme Modalı (split: form + canlı önizleme) -->
+<div class="modal-overlay" id="modal-erkek-proje">
+  <div class="modal modal-split-wrap">
+    <div class="modal-header">
+      <h2 id="modal-erkek-title">Yeni Proje</h2>
+      <button class="modal-close" data-erkek-close>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="modal-split">
+      <!-- SOL: FORM -->
+      <form id="form-erkek-proje" class="modal-split-form">
+        <div class="modal-body">
+          <input type="hidden" name="id">
+
+          <div class="form-grid">
+            <div class="form-row">
+              <div class="field">
+                <label>Kategori *</label>
+                <select name="kategori" id="erkek-form-kategori">
+                  <option value="merkez">Merkez Projesi</option>
+                  <option value="yerel">Yerel · Dinamik Çalışmaları</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Kart No</label>
+                <input type="text" name="no" maxlength="4" placeholder="01">
+                <span class="hint">Kart üstündeki numara (01, 02…)</span>
+              </div>
+              <div class="field">
+                <label>Sıra *</label>
+                <input type="number" name="sira" value="10" min="0" max="999" required>
+                <span class="hint">Küçük önce</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Başlık *</label>
+              <input type="text" name="baslik" required placeholder="İlk Namazım">
+            </div>
+
+            <div class="field">
+              <label>Teaser (kart kısa metni) *</label>
+              <textarea name="teaser" rows="2" required placeholder="Karta gösterilecek 1-2 cümlelik özet"></textarea>
+              <span class="hint">Karta 3 satıra kadar görünür</span>
+            </div>
+
+            <div class="field">
+              <label>Kart Görseli</label>
+              <div class="uw" id="uw-erkek-proje" data-uw="erkek-proje">
+                <input type="file" hidden id="uw-erkek-proje-input" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                <div class="uw-empty" data-uw-empty>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong>Tıkla veya sürükle bırak</strong>
+                  <small>4:5 dikey kompozisyon önerilir — JPG/PNG/WebP/HEIC — max 10 MB</small>
+                </div>
+                <div class="uw-preview" data-uw-preview hidden>
+                  <img data-uw-img alt="">
+                  <div class="uw-progress" data-uw-progress hidden>
+                    <div class="uw-progress-bar"><div class="uw-progress-fill" data-uw-fill></div></div>
+                    <span data-uw-percent>0%</span>
+                  </div>
+                  <div class="uw-actions" data-uw-actions>
+                    <button type="button" class="btn-tiny" data-uw-replace>Değiştir</button>
+                    <button type="button" class="btn-tiny btn-tiny-danger" data-uw-remove>Kaldır</button>
+                  </div>
+                </div>
+                <div class="uw-error" data-uw-error hidden></div>
+              </div>
+              <details class="uw-fallback">
+                <summary>veya URL yapıştır</summary>
+                <input type="url" name="gorsel" id="uw-erkek-proje-url" placeholder="https://...">
+              </details>
+              <span class="hint">Boş bırakırsan kart numarayla zarif bir placeholder gösterir</span>
+            </div>
+
+            <div class="field">
+              <label>Hikâye Bölümleri</label>
+              <div id="erkek-bolumler-list"></div>
+              <div class="erkek-bolum-add-row">
+                <button type="button" class="btn-tiny" data-erkek-bolum-add="p">+ Paragraf</button>
+                <button type="button" class="btn-tiny" data-erkek-bolum-add="intro">+ İntro (italik)</button>
+              </div>
+              <span class="hint" style="display:block;margin-top:8px;line-height:1.6;">
+                <strong>İntro:</strong> italik blockquote, edebi giriş için ·
+                <strong>Paragraf:</strong> normal metin · <br>
+                Metinde <code>**kalın**</code> yazarsan amber renginde vurgulanır.
+              </span>
+            </div>
+
+            <div class="field">
+              <label>Videolar (opsiyonel)</label>
+              <div id="mvw-erkek-list" class="mvw-list"></div>
+              <div class="mvw-add-row">
+                <input type="file" hidden id="mvw-erkek-input" accept="video/mp4,video/quicktime,video/webm">
+                <button type="button" class="btn-tiny" id="mvw-erkek-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Video Ekle
+                </button>
+                <span class="hint" style="margin:0">MP4 / MOV / WebM</span>
+              </div>
+              <div id="mvw-erkek-error" class="uw-error" hidden></div>
+            </div>
+
+            <div class="field-toggle">
+              <label>
+                <span style="font-weight:600;color:var(--text);">Yayında</span>
+                <span class="hint">Kapalıysa kart sitede görünmez</span>
+              </label>
+              <button type="button" class="toggle on" data-toggle="erkekYayinda" id="t-erkek-yayin"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="btn-erkek-proje-sil" style="margin-right:auto;display:none;">Sil</button>
+          <button type="button" class="btn btn-ghost" data-erkek-close>İptal</button>
+          <button type="submit" class="btn btn-primary" id="form-erkek-submit-btn">Kaydet</button>
+        </div>
+      </form>
+
+      <!-- SAĞ: CANLI ÖNİZLEME -->
+      <aside class="modal-split-preview">
+        <div class="preview-head">
+          <span class="preview-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+            Canlı Önizleme
+          </span>
+          <div class="preview-actions">
+            <span class="preview-status" id="erkek-preview-status">Yükleniyor…</span>
+            <button type="button" class="btn-tiny" id="erkek-preview-jump" title="Projeler bölümüne kaydır">
+              ↓ Projelere git
+            </button>
+            <button type="button" class="btn-tiny" id="erkek-preview-reload" title="Yenile">↻</button>
+          </div>
+        </div>
+        <iframe id="erkek-preview-iframe" loading="lazy" title="Erkek sayfası önizleme"></iframe>
+      </aside>
+    </div>
+  </div>
+</div>
+
 <!-- TOAST -->
 <div class="toast-container" id="toasts"></div>
 
-<script type="module" src="firebase-init.js"></script>
-<script src="admin.js"></script>
+<script type="module" src="firebase-init.js?v=20260604-cloud"></script>
+<script src="admin.js?v=20260603b"></script>
 </body>
 </html>

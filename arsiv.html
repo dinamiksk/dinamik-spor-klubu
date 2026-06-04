@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arşiv — Geçmiş Duyurular ve Etkinlikler | Akdeniz Dinamik Spor Kulübü</title>
+  <meta name="description" content="Akdeniz Dinamik Spor Kulübü'nün geçmiş duyuruları, haberleri, etkinlikleri ve videoları. Yıla göre düzenli arşiv.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dinamikspor.com/arsiv.html">
+  <meta property="og:title" content="Arşiv — Akdeniz Dinamik Spor Kulübü">
+  <meta property="og:description" content="Geçmişten bugüne tüm duyuru, haber, etkinlik ve videolar bir arada.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dinamikspor.com/arsiv.html">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="Akdeniz Dinamik Spor Kulübü">
+  <meta property="og:image" content="https://dinamikspor.com/assets/images/dalgiclik-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dinamikspor.com/assets/images/dalgiclik-hero.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/dinamik-logo.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    :root {
+      --ink:       #08131e;
+      --bg-0:      #0b1a2a;
+      --bg-1:      #0f2034;
+      --bg-2:      #132a42;
+      --bg-3:      #1b3a58;
+      --dawn:      #e8b775;
+      --dawn-glow: #f4cf98;
+      --dawn-deep: #a5702a;
+      --sea:       #5c91b4;
+      --sea-mid:   #88b3cf;
+      --cream:     #f4ecda;
+      --paper:     #efe5cf;
+      --paper-mid: rgba(239,229,207,.72);
+      --paper-soft:rgba(239,229,207,.5);
+      --paper-fnt: rgba(239,229,207,.28);
+      --line:      rgba(239,229,207,.11);
+      --line-warm: rgba(232,183,117,.22);
+    }
+
+    html, body { background: var(--ink); color: var(--paper); }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* HEADER — duyurular.html ile aynı */
+    .header {
+      background: rgba(8,19,30,.72) !important;
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+      border-bottom: 1px solid var(--line) !important;
+    }
+    .header .nav-link { color: var(--paper-mid) !important; }
+    .header .nav-link:hover, .header .nav-link.active { color: var(--dawn) !important; }
+    .header .logo-text { color: var(--cream) !important; }
+    .header .logo-text span { color: var(--dawn) !important; }
+    .header .nav-cta {
+      background: var(--dawn) !important; color: var(--ink) !important;
+      border-color: var(--dawn) !important;
+    }
+    .header .nav-cta:hover { background: var(--dawn-glow) !important; }
+
+    /* HERO */
+    .ar-hero {
+      position: relative;
+      padding: calc(var(--header-height) + 60px) 0 80px;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(232,183,117,.08), transparent 50%),
+        radial-gradient(circle at 82% 78%, rgba(92,145,180,.08), transparent 55%),
+        var(--bg-0);
+      border-bottom: 1px solid var(--line);
+    }
+    .ar-hero__inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 32px;
+      text-align: center;
+    }
+    .ar-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      color: var(--dawn);
+      font-size: .78rem; letter-spacing: .42em; text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .ar-eyebrow__line {
+      width: 38px; height: 1px; background: var(--dawn); opacity: .55;
+    }
+    .ar-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: clamp(3.4rem, 9vw, 7rem);
+      line-height: .98;
+      letter-spacing: -.02em;
+      color: var(--cream);
+      margin: 0 0 24px;
+    }
+    .ar-title em {
+      color: var(--dawn);
+      font-style: italic;
+    }
+    .ar-desc {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--paper-mid);
+      font-size: 1.08rem;
+      line-height: 1.78;
+    }
+    .ar-stats {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .ar-stat__lbl {
+      font-size: .72rem; letter-spacing: .28em; text-transform: uppercase;
+      color: var(--paper-fnt);
+      margin-bottom: 8px;
+    }
+    .ar-stat__val {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 2.4rem;
+      color: var(--dawn);
+    }
+
+    /* FİLTRE */
+    .ar-filter {
+      position: sticky;
+      top: var(--header-height);
+      z-index: 20;
+      background: rgba(8,19,30,.86);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .ar-filter__inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 32px;
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+    }
+    .ar-filter__mark {
+      color: var(--paper-fnt);
+      font-size: .72rem; letter-spacing: .28em; text-transform: uppercase;
+      margin-right: 8px;
+    }
+    .ar-chip {
+      background: transparent;
+      border: 1px solid var(--line-warm);
+      color: var(--paper-mid);
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+    .ar-chip:hover { color: var(--dawn); border-color: var(--dawn); }
+    .ar-chip--aktif {
+      background: var(--dawn);
+      color: var(--ink) !important;
+      border-color: var(--dawn);
+      font-weight: 600;
+    }
+
+    /* AKIŞ */
+    .ar-stream {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 80px 32px 120px;
+    }
+
+    .ar-empty {
+      text-align: center;
+      padding: 100px 20px;
+      color: var(--paper-soft);
+    }
+    .ar-empty__ikon {
+      font-size: 4rem;
+      color: var(--dawn);
+      opacity: .55;
+      margin-bottom: 20px;
+    }
+    .ar-empty__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 2rem;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .ar-year {
+      margin-top: 72px;
+    }
+    .ar-year:first-child { margin-top: 0; }
+    .ar-year__head {
+      display: flex; align-items: baseline; gap: 22px;
+      margin-bottom: 12px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line-warm);
+    }
+    .ar-year__num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      color: var(--dawn);
+      line-height: 1;
+    }
+    .ar-year__count {
+      color: var(--paper-fnt);
+      font-size: .8rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    .ar-year__toggle {
+      margin-left: auto;
+      background: transparent;
+      border: 1px solid var(--line-warm);
+      color: var(--paper-mid);
+      padding: 8px 16px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+    .ar-year__toggle:hover {
+      color: var(--dawn);
+      border-color: var(--dawn);
+    }
+
+    /* AY GRUBU — yıl içindeki kıvrılan accordion */
+    .ar-month {
+      border-bottom: 1px solid var(--line);
+      transition: border-color .3s;
+    }
+    .ar-month:last-child { border-bottom: none; }
+
+    .ar-month__head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 26px 4px 26px 0;
+      background: transparent;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      transition: padding .3s;
+    }
+    .ar-month__head:hover {
+      padding-left: 8px;
+    }
+    .ar-month__head:hover .ar-month__title { color: var(--dawn); }
+
+    .ar-month__caret {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dawn);
+      transition: transform .35s ease;
+      flex-shrink: 0;
+    }
+    .ar-month.is-open .ar-month__caret {
+      transform: rotate(90deg);
+    }
+
+    .ar-month__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.6rem;
+      color: var(--cream);
+      letter-spacing: -.01em;
+      transition: color .25s;
+      flex-shrink: 0;
+    }
+
+    .ar-month__line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--line) 0%, transparent 100%);
+      min-width: 24px;
+    }
+
+    .ar-month__count {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--paper-fnt);
+      flex-shrink: 0;
+    }
+    .ar-month__count strong {
+      color: var(--dawn);
+      font-weight: 700;
+    }
+
+    .ar-month__body {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height .55s cubic-bezier(.4,0,.2,1), opacity .35s ease, padding .4s;
+    }
+    .ar-month.is-open .ar-month__body {
+      max-height: 12000px;
+      opacity: 1;
+      padding-bottom: 36px;
+    }
+
+    .ar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    /* "Yılda hiç tarihli ay yok" durumu — fallback */
+    .ar-month--undated .ar-month__title {
+      color: var(--paper-mid);
+      font-size: 1.3rem;
+    }
+
+    .ar-card {
+      background: var(--bg-1);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: .3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+    .ar-card:hover {
+      border-color: var(--line-warm);
+      transform: translateY(-3px);
+      box-shadow: 0 22px 44px -20px rgba(0,0,0,.45);
+    }
+    .ar-card__top {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background: var(--bg-2);
+      overflow: hidden;
+    }
+    .ar-card__img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .ar-card__top--icon {
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 4rem;
+      color: var(--dawn);
+      opacity: .55;
+    }
+    .ar-card__stamp {
+      position: absolute;
+      top: 12px; left: 12px;
+      background: rgba(8,19,30,.78);
+      backdrop-filter: blur(8px);
+      color: var(--cream);
+      padding: 5px 11px;
+      font-size: .68rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      border: 1px solid var(--line-warm);
+    }
+    .ar-card__body {
+      padding: 22px 22px 24px;
+      flex: 1;
+      display: flex; flex-direction: column;
+    }
+    .ar-card__meta {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      color: var(--paper-fnt);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .ar-card__meta .sep {
+      width: 3px; height: 3px; background: var(--paper-fnt); border-radius: 50%;
+    }
+    .ar-card__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.45rem;
+      line-height: 1.25;
+      color: var(--cream);
+      margin: 0 0 12px;
+    }
+    .ar-card__lead {
+      color: var(--paper-mid);
+      font-size: .92rem;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .ar-card__arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--dawn);
+      font-size: .82rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: auto;
+    }
+
+    /* FOOTER notu sade */
+    .ar-foot-note {
+      max-width: 1180px;
+      margin: 60px auto 0;
+      padding: 0 32px;
+      text-align: center;
+      color: var(--paper-fnt);
+      font-size: .85rem;
+      font-style: italic;
+    }
+    .ar-foot-note a { color: var(--dawn); text-decoration: none; }
+    .ar-foot-note a:hover { color: var(--dawn-glow); }
+
+    @media (max-width: 768px) {
+      .ar-hero { padding: calc(var(--header-height) + 30px) 0 56px; }
+      .ar-stats { gap: 28px; margin-top: 36px; }
+      .ar-stream { padding: 56px 20px 80px; }
+      .ar-filter__inner { padding: 14px 20px; }
+      .ar-filter__mark { display: none; }
+      .ar-grid { grid-template-columns: 1fr; gap: 18px; }
+      .ar-year__head { gap: 14px; flex-wrap: wrap; }
+      .ar-year__toggle { margin-left: 0; padding: 6px 12px; font-size: .68rem; }
+      .ar-month__head { padding: 20px 0; gap: 12px; }
+      .ar-month__title { font-size: 1.3rem; }
+      .ar-month__count { font-size: .65rem; letter-spacing: .16em; }
+      .ar-month__line { min-width: 12px; }
+      .ar-month.is-open .ar-month__body { padding-bottom: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo">
+        <span class="logo-text">Dinamik <span>SK</span></span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Ana Sayfa</a>
+        <a href="dinamik-calismalar.html" class="nav-link">Dinamik Çalışmalar</a>
+        <a href="sporlar.html" class="nav-link">Sporlar</a>
+        <a href="vefa.html" class="nav-link">Vefa</a>
+        <a href="orman.html" class="nav-link">Hatıra Ormanı</a>
+        <a href="duyurular.html" class="nav-link">Duyurular</a>
+        <a href="arsiv.html" class="nav-link active">Arşiv</a>
+        <a href="iletisim.html" class="nav-link">İletişim</a>
+        <a href="admin.html" class="nav-cta">Yönetim</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="ar-hero">
+    <div class="ar-hero__inner">
+      <div class="ar-eyebrow">
+        <span class="ar-eyebrow__line"></span>
+        Geçmişten Bu Güne
+        <span class="ar-eyebrow__line"></span>
+      </div>
+      <h1 class="ar-title"><em>Arşiv</em></h1>
+      <p class="ar-desc">
+        Kulübümüzün geçmiş duyuruları, haberleri, etkinlikleri ve videoları.
+        Yıllara göre düzenli; geçmişimizin izini buradan sürebilirsiniz.
+      </p>
+      <div class="ar-stats">
+        <div class="ar-stat">
+          <div class="ar-stat__lbl">Toplam Kayıt</div>
+          <div class="ar-stat__val" id="ar-total">0</div>
+        </div>
+        <div class="ar-stat">
+          <div class="ar-stat__lbl">En Eski Yıl</div>
+          <div class="ar-stat__val" id="ar-oldest">—</div>
+        </div>
+        <div class="ar-stat">
+          <div class="ar-stat__lbl">Bölüm</div>
+          <div class="ar-stat__val" id="ar-bolum">5</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FİLTRE -->
+  <nav class="ar-filter" aria-label="Arşiv filtreleri">
+    <div class="ar-filter__inner">
+      <span class="ar-filter__mark">Bölüm &mdash;</span>
+      <button class="ar-chip ar-chip--aktif" data-filtre="tumu">Tümü</button>
+      <button class="ar-chip" data-filtre="genel">Genel</button>
+      <button class="ar-chip" data-filtre="bilek-guresi">Bilek Güreşi</button>
+      <button class="ar-chip" data-filtre="dalgiclik">Dalgıçlık</button>
+      <button class="ar-chip" data-filtre="erkek">Dinamik Erkek</button>
+      <button class="ar-chip" data-filtre="kiz">Dinamik Kız</button>
+    </div>
+  </nav>
+
+  <!-- AKIŞ -->
+  <section class="ar-stream">
+    <div id="ar-icerik">
+      <!-- JS ile doldurulacak -->
+    </div>
+    <p class="ar-foot-note">
+      Bir kayıt yanlışlıkla mı arşive düştü? <a href="iletisim.html">Bize bildirin</a>.
+    </p>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height:40px;">
+            <span class="logo-text">Dinamik <span>SK</span></span>
+          </a>
+          <p style="margin-top:16px;color:rgba(244,236,218,.42);font-size:.9rem;line-height:1.7;">
+            İman. Disiplin. Spor.<br>2010'dan beri Antalya'da.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-title">Branşlar</h4>
+          <div class="footer-links">
+            <a href="sporlar/bilek-guresi/index.html">Bilek Güreşi</a>
+            <a href="sporlar/dalgiclik/index.html">Dalgıçlık</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Hızlı Linkler</h4>
+          <div class="footer-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="dinamik-calismalar.html">Dinamik Çalışmalar</a>
+            <a href="duyurular.html">Duyurular</a>
+            <a href="arsiv.html">Arşiv</a>
+            <a href="vefa.html">Vefa Köşesi</a>
+            <a href="iletisim.html">İletişim</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Takip Et</h4>
+          <div class="footer-social">
+            <a href="https://www.youtube.com/@scuba.team.antalya" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+            </a>
+            <a href="https://instagram.com/dinamiksk" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Akdeniz Dinamik Spor Kulübü. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="firebase-init.js"></script>
+  <script src="main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', async () => {
+
+    const BOLUM = {
+      'bilek-guresi': 'Bilek Güreşi',
+      'dalgiclik':    'Dalgıçlık',
+      'erkek':        'Dinamik Erkek',
+      'kiz':          'Dinamik Kız',
+      'genel':        'Genel'
+    };
+
+    const TIP = {
+      duyuru:   'Duyuru',
+      haber:    'Haber',
+      etkinlik: 'Etkinlik',
+      faaliyet: 'Faaliyet',
+      video:    'Video'
+    };
+
+    function formatTarih(tarih) {
+      if (!tarih) return '';
+      return new Date(tarih).toLocaleDateString('tr-TR', { day:'numeric', month:'long', year:'numeric' });
+    }
+
+    const AY_AD = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+
+    function getYil(item) {
+      if (!item.tarih) return null;
+      const d = new Date(item.tarih);
+      if (isNaN(d.getTime())) return null;
+      return d.getFullYear();
+    }
+
+    function getAy(item) {
+      if (!item.tarih) return null;
+      const d = new Date(item.tarih);
+      if (isNaN(d.getTime())) return null;
+      return d.getMonth(); // 0–11
+    }
+
+    async function getArsiv() {
+      try {
+        if (window.firebaseReady) await window.firebaseReady;
+        if (!window.FB?.ready) return [];
+
+        const { db, collection, getDocs } = window.FB;
+        const snap = await getDocs(collection(db, 'icerik'));
+        const items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+
+        // Yayında olmayanları (silinmemiş ama yayinda=false) yine de göster mi?
+        // Kararı: yayinda !== false şartı ARANIR (silinmeye yakın çöp gizlensin),
+        // sadece arşivde olanları (manuel veya 365 gün) listele.
+        return items
+          .filter(i => i.yayinda !== false)
+          .filter(i => window.isArchived ? window.isArchived(i) : i.arsiv === true)
+          .sort((a,b) => (b.tarih || '').localeCompare(a.tarih || ''));
+      } catch (e) {
+        console.error('Arşiv okuma hatası:', e);
+        return [];
+      }
+    }
+
+    function kartHTML(item) {
+      const bolumAd = BOLUM[item.kategori] || BOLUM.genel;
+      const tipAd = TIP[item.tip] || TIP.duyuru;
+
+      let top;
+      if (item.tip === 'video' && item.videoId) {
+        top = `
+          <div class="ar-card__top">
+            <img class="ar-card__img" src="https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg" alt="${item.baslik}" loading="lazy">
+            <div class="ar-card__stamp">${tipAd}</div>
+          </div>`;
+      } else if (item.gorsel) {
+        const src = window.cldUrl ? window.cldUrl(item.gorsel, 'w_500,h_320,c_fill,q_auto,f_auto') : item.gorsel;
+        top = `
+          <div class="ar-card__top">
+            <img class="ar-card__img" src="${src}" alt="${item.baslik}" loading="lazy">
+            <div class="ar-card__stamp">${tipAd}</div>
+          </div>`;
+      } else {
+        top = `
+          <div class="ar-card__top ar-card__top--icon">
+            <span>◇</span>
+            <div class="ar-card__stamp">${tipAd}</div>
+          </div>`;
+      }
+
+      const ozet = item.kisaMetin || '';
+      return `<a href="duyuru.html?id=${encodeURIComponent(item.id)}" class="ar-card" aria-label="${item.baslik}">
+        ${top}
+        <div class="ar-card__body">
+          <div class="ar-card__meta">
+            <span>${bolumAd}</span>
+            ${item.tarih ? `<span class="sep"></span><span>${formatTarih(item.tarih)}</span>` : ''}
+          </div>
+          <h3 class="ar-card__title">${item.baslik || '(Başlıksız)'}</h3>
+          ${ozet ? `<p class="ar-card__lead">${ozet}</p>` : ''}
+          <span class="ar-card__arrow">
+            Oku
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </div>
+      </a>`;
+    }
+
+    let tumArsiv = [];
+
+    function render(filtre) {
+      const container = document.getElementById('ar-icerik');
+      const items = filtre === 'tumu'
+        ? tumArsiv
+        : tumArsiv.filter(i => (i.kategori || 'genel') === filtre);
+
+      if (!items.length) {
+        container.innerHTML = `
+          <div class="ar-empty">
+            <div class="ar-empty__ikon">◇</div>
+            <div class="ar-empty__title">Bu Bölümde Arşiv Yok</div>
+            <p>Henüz arşivlenmiş içerik bulunmuyor. Diğer bölümlere göz atabilirsiniz.</p>
+          </div>`;
+        return;
+      }
+
+      // Yıla göre grupla
+      const yilGrup = {};
+      items.forEach(i => {
+        const y = getYil(i) ?? 'Tarihsiz';
+        (yilGrup[y] = yilGrup[y] || []).push(i);
+      });
+
+      // Yıl anahtarlarını yeniden→eski sırala (Tarihsiz en sona)
+      const yillar = Object.keys(yilGrup).sort((a,b) => {
+        if (a === 'Tarihsiz') return 1;
+        if (b === 'Tarihsiz') return -1;
+        return Number(b) - Number(a);
+      });
+
+      // Her render'da yeniden hesaplanır — filtre değişince doğru ay açık gelsin
+      let defaultAcikKey = null;
+      const enYeniYil = yillar.find(y => y !== 'Tarihsiz');
+      if (enYeniYil) {
+        const tarihliler = yilGrup[enYeniYil].map(getAy).filter(a => a !== null);
+        if (tarihliler.length) {
+          defaultAcikKey = `${enYeniYil}-${Math.max(...tarihliler)}`;
+        } else {
+          // Sadece tarihsiz var → tarihsiz grubu açık olsun
+          defaultAcikKey = `${enYeniYil}-tarihsiz`;
+        }
+      }
+
+      container.innerHTML = yillar.map(y => {
+        // Yıl içinde aya göre grupla
+        const ayGrup = {};
+        yilGrup[y].forEach(i => {
+          const a = getAy(i);
+          const key = a !== null ? a : 'tarihsiz';
+          (ayGrup[key] = ayGrup[key] || []).push(i);
+        });
+
+        // Aylar yeniden→eski (Tarihsiz en sona)
+        const ayKeys = Object.keys(ayGrup).sort((a,b) => {
+          if (a === 'tarihsiz') return 1;
+          if (b === 'tarihsiz') return -1;
+          return Number(b) - Number(a);
+        });
+
+        const aylarHTML = ayKeys.map(ak => {
+          const liste = ayGrup[ak];
+          const tarihsiz = ak === 'tarihsiz';
+          const ayAdi = tarihsiz ? 'Tarihi belirsiz' : AY_AD[Number(ak)];
+          const compositeKey = `${y}-${ak}`;
+          const acik = compositeKey === defaultAcikKey;
+
+          return `
+            <div class="ar-month${acik ? ' is-open' : ''}${tarihsiz ? ' ar-month--undated' : ''}" data-month-key="${compositeKey}">
+              <button class="ar-month__head" type="button" aria-expanded="${acik}">
+                <span class="ar-month__caret">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                    <path d="M9 6l6 6-6 6"/>
+                  </svg>
+                </span>
+                <span class="ar-month__title">${ayAdi}</span>
+                <span class="ar-month__line"></span>
+                <span class="ar-month__count"><strong>${liste.length}</strong> kayıt</span>
+              </button>
+              <div class="ar-month__body">
+                <div class="ar-grid">
+                  ${liste.map(kartHTML).join('')}
+                </div>
+              </div>
+            </div>`;
+        }).join('');
+
+        return `
+          <div class="ar-year" data-year="${y}">
+            <div class="ar-year__head">
+              <div class="ar-year__num">${y}</div>
+              <div class="ar-year__count">${yilGrup[y].length} kayıt</div>
+              <button class="ar-year__toggle" type="button" data-action="toggle-all">Tümünü Aç</button>
+            </div>
+            ${aylarHTML}
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Ay accordion + yıl-içi tümünü aç/kapat — event delegation
+    function bindAccordion() {
+      const container = document.getElementById('ar-icerik');
+      container.addEventListener('click', (e) => {
+        // Yıl seviyesinde "Tümünü Aç/Kapat"
+        const yilToggle = e.target.closest('[data-action="toggle-all"]');
+        if (yilToggle) {
+          const yil = yilToggle.closest('.ar-year');
+          const aylar = yil.querySelectorAll('.ar-month');
+          const hepsiAcik = Array.from(aylar).every(m => m.classList.contains('is-open'));
+          aylar.forEach(m => {
+            m.classList.toggle('is-open', !hepsiAcik);
+            const head = m.querySelector('.ar-month__head');
+            if (head) head.setAttribute('aria-expanded', String(!hepsiAcik));
+          });
+          yilToggle.textContent = hepsiAcik ? 'Tümünü Aç' : 'Tümünü Kapat';
+          return;
+        }
+
+        // Ay başlığı tıklaması
+        const head = e.target.closest('.ar-month__head');
+        if (!head) return;
+        const month = head.parentElement;
+        const acildi = month.classList.toggle('is-open');
+        head.setAttribute('aria-expanded', String(acildi));
+
+        // Yıl-toggle butonunu da senkronla
+        const yil = month.closest('.ar-year');
+        const yilToggleBtn = yil?.querySelector('[data-action="toggle-all"]');
+        if (yilToggleBtn) {
+          const aylar = yil.querySelectorAll('.ar-month');
+          const hepsiAcik = Array.from(aylar).every(m => m.classList.contains('is-open'));
+          yilToggleBtn.textContent = hepsiAcik ? 'Tümünü Kapat' : 'Tümünü Aç';
+        }
+      });
+    }
+
+    // Init
+    tumArsiv = await getArsiv();
+
+    document.getElementById('ar-total').textContent = tumArsiv.length;
+    const yillar = tumArsiv.map(getYil).filter(y => y !== null);
+    document.getElementById('ar-oldest').textContent = yillar.length ? Math.min(...yillar) : '—';
+
+    bindAccordion();
+    render('tumu');
+
+    // Filter
+    document.querySelectorAll('.ar-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.ar-chip').forEach(b => b.classList.remove('ar-chip--aktif'));
+        btn.classList.add('ar-chip--aktif');
+        render(btn.dataset.filtre);
+
+        const stream = document.querySelector('.ar-stream');
+        if (stream) {
+          const top = stream.getBoundingClientRect().top + window.pageYOffset - 140;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  });
+  </script>
+  <script src="site-ayarlar.js?v=2" defer></script>
+</body>
+</html>

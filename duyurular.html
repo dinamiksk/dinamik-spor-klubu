@@ -12,10 +12,15 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dinamikspor.com/duyurular.html">
   <meta property="og:locale" content="tr_TR">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
+  <meta property="og:site_name" content="Akdeniz Dinamik Spor Kulübü">
+  <meta property="og:image" content="https://dinamikspor.com/assets/images/dalgiclik-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dinamikspor.com/assets/images/dalgiclik-hero.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/dinamik-logo.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <script type="application/ld+json">
@@ -65,7 +70,7 @@
 
     html, body { background: var(--ink); color: var(--paper); }
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -96,6 +101,7 @@
     .bl-hero {
       position: relative;
       min-height: 100vh;
+      min-height: 100svh;
       padding: calc(var(--header-height) + 32px) 0 80px;
       overflow: hidden;
       isolation: isolate;
@@ -379,7 +385,7 @@
       border-radius: 999px;
       border: 1px solid var(--line);
       background: transparent;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: .82rem; font-weight: 500;
       color: var(--paper-mid);
       cursor: pointer;
@@ -483,13 +489,16 @@
       min-height: 440px;
       overflow: hidden;
     }
-    .bl-featured__img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
+    /* smart-img tabanlı featured medya — img-wrap'i mutlak doldurur */
+    .bl-featured__img.smart-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: auto;
       transition: transform 1.2s ease;
     }
-    .bl-featured:hover .bl-featured__img { transform: scale(1.04); }
+    .bl-featured:hover .bl-featured__img.smart-img { transform: scale(1.04); }
 
     .bl-featured__img-tone {
       position: absolute; inset: 0;
@@ -634,17 +643,15 @@
 
     .bl-card__top {
       position: relative;
-      aspect-ratio: 16/10;
       overflow: hidden;
       background: var(--bg-2);
     }
-    .bl-card__img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
+    /* smart-img tabanlı küçük kart medyası */
+    .bl-card__img.smart-img {
+      aspect-ratio: 16/10;
       transition: transform .8s ease;
     }
-    .bl-card:hover .bl-card__img { transform: scale(1.06); }
+    .bl-card:hover .bl-card__img.smart-img { transform: scale(1.06); }
 
     .bl-card__top--icon {
       display: flex; align-items: center; justify-content: center;
@@ -763,6 +770,13 @@
       overflow: hidden;
       flex: 1;
     }
+    .bl-inline-link {
+      color: #7990f8;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      word-break: break-all;
+    }
+    .bl-inline-link:hover { color: #a8b8ff; }
 
     .bl-card__foot {
       margin-top: 10px;
@@ -792,6 +806,7 @@
        KATEGORİ RENK ANAHTARLARI
        ─────────────────────────────────────── */
     .tg--duyuru   { background: rgba(232,183,117,.15); color: var(--dawn); border:1px solid rgba(232,183,117,.3); }
+    .tg--haber    { background: rgba(96,165,250,.13);  color: #93c5fd; border:1px solid rgba(96,165,250,.32); }
     .tg--etkinlik { background: rgba(127,181,138,.15); color: var(--leaf); border:1px solid rgba(127,181,138,.3); }
     .tg--faaliyet { background: rgba(158,124,194,.15); color: var(--violet); border:1px solid rgba(158,124,194,.3); }
     .tg--video    { background: rgba(201,119,102,.15); color: var(--rose); border:1px solid rgba(201,119,102,.3); }
@@ -800,6 +815,7 @@
     .tg--kizlar       { background: rgba(201,119,102,.15); color: var(--rose); border:1px solid rgba(201,119,102,.3); }
     .tg--enp          { background: rgba(127,181,138,.15); color: var(--leaf); border:1px solid rgba(127,181,138,.3); }
     .tg--bilek-guresi { background: rgba(232,183,117,.15); color: var(--dawn); border:1px solid rgba(232,183,117,.3); }
+    .tg--rota         { background: rgba(111,155,230,.15); color: #9bb8f0; border:1px solid rgba(111,155,230,.32); }
     .tg--genel        { background: rgba(239,229,207,.08); color: var(--paper-mid); border:1px solid var(--line); }
 
     /* ──────────────────────────────────────────
@@ -849,6 +865,177 @@
       font-size: 1rem;
       color: var(--dawn);
       letter-spacing: .08em;
+    }
+
+    /* ──────────────────────────────────────────
+       DAHA FAZLA YÜKLE — sayfa sınırlı uzasın
+       ─────────────────────────────────────── */
+    .bl-loadmore-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      padding: 56px 0 12px;
+    }
+
+    .bl-loadmore {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid var(--line-warm);
+      padding: 18px 40px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background .3s, color .3s, border-color .3s, transform .25s, box-shadow .3s;
+    }
+    .bl-loadmore::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px;
+      width: 14px; height: 14px;
+      border-top: 2px solid var(--dawn);
+      border-left: 2px solid var(--dawn);
+      opacity: .55;
+      transition: opacity .3s, width .3s, height .3s;
+    }
+    .bl-loadmore::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; right: -1px;
+      width: 14px; height: 14px;
+      border-bottom: 2px solid var(--dawn);
+      border-right: 2px solid var(--dawn);
+      opacity: .55;
+      transition: opacity .3s, width .3s, height .3s;
+    }
+    .bl-loadmore:hover {
+      background: rgba(232,183,117,.08);
+      border-color: var(--dawn);
+      color: var(--dawn);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px -22px rgba(232,183,117,.5);
+    }
+    .bl-loadmore:hover::before,
+    .bl-loadmore:hover::after { opacity: 1; width: 18px; height: 18px; }
+    .bl-loadmore:active { transform: translateY(0); }
+
+    .bl-loadmore__count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      padding: 2px 8px;
+      background: rgba(232,183,117,.14);
+      border: 1px solid var(--line-warm);
+      color: var(--dawn);
+      font-size: .78rem;
+      letter-spacing: .12em;
+      font-weight: 800;
+    }
+    .bl-loadmore__caret {
+      width: 14px; height: 14px;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: transform .3s ease;
+    }
+    .bl-loadmore:hover .bl-loadmore__caret { transform: translateY(3px); }
+
+    .bl-loadmore__hint {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .98rem;
+      color: var(--paper-soft);
+      letter-spacing: .02em;
+    }
+    .bl-loadmore__hint a {
+      color: var(--dawn);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(232,183,117,.4);
+      padding-bottom: 1px;
+      transition: color .25s, border-color .25s;
+    }
+    .bl-loadmore__hint a:hover {
+      color: var(--dawn-glow);
+      border-color: var(--dawn-glow);
+    }
+
+    /* Arşive geçiş — son durakta hattı değiştirir */
+    .bl-archive-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 44px;
+      background: linear-gradient(135deg, rgba(232,183,117,.16) 0%, rgba(232,183,117,.04) 100%);
+      border: 1px solid var(--line-warm);
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .92rem;
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background .3s, border-color .3s, transform .25s, box-shadow .3s, color .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .bl-archive-cta::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(244,236,218,.08) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform .8s ease;
+    }
+    .bl-archive-cta:hover {
+      background: linear-gradient(135deg, rgba(232,183,117,.24) 0%, rgba(232,183,117,.08) 100%);
+      border-color: var(--dawn);
+      color: var(--dawn);
+      transform: translateY(-2px);
+      box-shadow: 0 22px 48px -24px rgba(232,183,117,.55);
+    }
+    .bl-archive-cta:hover::after { transform: translateX(100%); }
+
+    .bl-archive-cta__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      border: 1px solid var(--dawn);
+      color: var(--dawn);
+      transition: transform .3s, background .3s;
+    }
+    .bl-archive-cta:hover .bl-archive-cta__icon {
+      background: var(--dawn);
+      color: var(--ink);
+      transform: translateX(4px);
+    }
+    .bl-archive-cta__sub {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: .03em;
+      text-transform: none;
+      font-size: .92rem;
+      color: var(--paper-mid);
+      margin-top: 4px;
+    }
+
+    /* Yeni yüklenen kartlar için fade-in animasyonu */
+    @keyframes bl-cardin {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .bl-card.is-fresh {
+      animation: bl-cardin .65s ease both;
     }
 
     /* ──────────────────────────────────────────
@@ -1008,6 +1195,12 @@
       .bl-outro { padding: 84px 0 96px; }
       .bl-outro__actions { flex-direction: column; width: 100%; }
       .bl-btn { width: 100%; justify-content: center; }
+
+      .bl-loadmore-wrap { padding: 40px 0 8px; gap: 14px; }
+      .bl-loadmore { padding: 16px 26px; letter-spacing: .2em; font-size: .78rem; gap: 10px; width: 100%; justify-content: center; }
+      .bl-loadmore__hint { font-size: .9rem; text-align: center; padding: 0 18px; }
+      .bl-archive-cta { padding: 18px 22px; font-size: .8rem; letter-spacing: .2em; gap: 12px; width: 100%; justify-content: center; flex-wrap: wrap; }
+      .bl-archive-cta__sub { font-size: .85rem; flex-basis: 100%; text-align: center; margin-top: 2px; }
     }
   </style>
 </head>
@@ -1026,6 +1219,7 @@
         <a href="vefa.html" class="nav-link">Vefa</a>
         <a href="orman.html" class="nav-link">Hatıra Ormanı</a>
         <a href="duyurular.html" class="nav-link active">Duyurular</a>
+        <a href="arsiv.html" class="nav-link">Arşiv</a>
         <a href="iletisim.html" class="nav-link">İletişim</a>
         <a href="admin.html" class="nav-cta">Yönetim</a>
       </nav>
@@ -1072,7 +1266,7 @@
       <div class="bl-rule"></div>
 
       <p class="bl-desc">
-        Bilek Güreşi'nden Dalgıçlık'a, Dinamik Erkek'ten Dinamik Kız'a &mdash;
+        Bilek Güreşi'nden Dalgıçlık'a, Dinamik Erkek'ten Dinamik Kız'a;
         tüm branşlarımızdan son gelişmeler, etkinlik takvimleri ve videolar
         huzurla süzülebileceğiniz tek bir akışta.
       </p>
@@ -1113,13 +1307,14 @@
         <span class="bl-chip__dot"></span> Tümü
       </button>
       <button class="bl-chip" data-filtre="duyuru">Duyurular</button>
+      <button class="bl-chip" data-filtre="haber">Haberler</button>
       <button class="bl-chip" data-filtre="etkinlik">Etkinlikler</button>
       <button class="bl-chip" data-filtre="video">Videolar</button>
-      <button class="bl-chip" data-filtre="faaliyet">Faaliyetler</button>
       <button class="bl-chip" data-filtre="bilek-guresi">Bilek Güreşi</button>
       <button class="bl-chip" data-filtre="dalgiclik">Dalgıçlık</button>
       <button class="bl-chip" data-filtre="erkek">Dinamik Erkek</button>
       <button class="bl-chip" data-filtre="kiz">Dinamik Kız</button>
+      <button class="bl-chip" data-filtre="rota">Rota</button>
     </div>
   </nav>
 
@@ -1158,7 +1353,7 @@
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
         </a>
-        <a href="https://instagram.com/dinamikspor" target="_blank" rel="noopener" class="bl-btn bl-btn--ghost">
+        <a href="https://instagram.com/dinamiksk" target="_blank" rel="noopener" class="bl-btn bl-btn--ghost">
           Instagram'da Takip Et
         </a>
       </div>
@@ -1190,6 +1385,7 @@
             <a href="index.html">Ana Sayfa</a>
             <a href="dinamik-calismalar.html">Dinamik Çalışmalar</a>
             <a href="vefa.html">Vefa Köşesi</a>
+            <a href="arsiv.html">Arşiv</a>
             <a href="iletisim.html">İletişim</a>
           </div>
         </div>
@@ -1199,7 +1395,7 @@
             <a href="https://www.youtube.com/@scuba.team.antalya" target="_blank" rel="noopener" aria-label="YouTube">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
             </a>
-            <a href="https://instagram.com/dinamikspor" target="_blank" rel="noopener" aria-label="Instagram">
+            <a href="https://instagram.com/dinamiksk" target="_blank" rel="noopener" aria-label="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
           </div>
@@ -1244,13 +1440,14 @@
           const snap = await getDocs(collection(fdb, "icerik"));
           const items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
 
-          // Sadece yayındakiler
-          const yayinda = items.filter(i => i.yayinda !== false);
+          // Sadece yayındakiler ve arşivde olmayanlar
+          const yayinda = items.filter(i => i.yayinda !== false && !(window.isArchived ? window.isArchived(i) : i.arsiv === true));
 
           // Tipe göre dağıt — buildFeed bu yapıya alışkın
           yayinda.forEach(i => {
             const ortak = {
               id: i.id,
+              tip: i.tip,
               baslik: i.baslik,
               icerik: i.tamMetin || i.kisaMetin,
               kisaMetin: i.kisaMetin,
@@ -1282,11 +1479,13 @@
       dalgiclik:     { ad:'Dalgıçlık',    link:'sporlar/dalgiclik/index.html',     cls:'tg--dalgiclik' },
       erkek:         { ad:'Erkek',         link:'dinamik-calismalar/erkek/index.html', cls:'tg--enp' },
       kiz:           { ad:'Kız',           link:'dinamik-calismalar/kiz/index.html',   cls:'tg--kizlar' },
+      rota:          { ad:'Rota',          link:'dinamik-calismalar/rota/index.html',  cls:'tg--rota' },
       genel:         { ad:'Genel',         link:'duyurular.html',                    cls:'tg--genel' }
     };
 
     const TIP = {
       duyuru:   { ad:'Duyuru',    ikon:'📢', glyph:'✱', cls:'tg--duyuru' },
+      haber:    { ad:'Haber',     ikon:'📰', glyph:'❉', cls:'tg--haber' },
       etkinlik: { ad:'Etkinlik',  ikon:'📅', glyph:'✦', cls:'tg--etkinlik' },
       faaliyet: { ad:'Faaliyet',  ikon:'⚡', glyph:'❖', cls:'tg--faaliyet' },
       video:    { ad:'Video',     ikon:'▶',  glyph:'▶', cls:'tg--video' }
@@ -1296,7 +1495,7 @@
       const items = [];
 
       (db.duyurular || []).filter(d => d.gorunum !== false).forEach(d => {
-        items.push({ id:d.id, tip:'duyuru', bolum: d.kategori || 'genel', baslik:d.baslik, ozet:d.kisaMetin || d.icerik, tarih:d.tarih, oncelik:d.oncelik, gorsel: d.gorsel });
+        items.push({ id:d.id, tip: d.tip || 'duyuru', bolum: d.kategori || 'genel', baslik:d.baslik, ozet:d.kisaMetin || d.icerik, tarih:d.tarih, oncelik:d.oncelik, gorsel: d.gorsel });
       });
 
       (db.etkinlikler || []).filter(e => e.gorunum !== false).forEach(e => {
@@ -1337,18 +1536,41 @@
       return parts.join('');
     }
 
+    /* Firestore'dan gelen metni HTML'e basmadan önce kaçışla (XSS + özel karakter güvenliği) */
+    function escapeHTML(s) {
+      if (s == null) return '';
+      return String(s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    /* URL'leri tıklanabilir <a> etiketine çevirir */
+    function linkify(text) {
+      if (!text) return '';
+      const urlRegex = /(https?:\/\/[^\s<>"]+)/g;
+      return text.replace(urlRegex, url => {
+        const display = url.length > 55 ? url.slice(0, 52) + '…' : url;
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="bl-inline-link">${display}</a>`;
+      });
+    }
+
     /* ── Featured kart ─────────────────────── */
     function featuredHTML(item) {
       const b = BOLUM[item.bolum] || BOLUM.genel;
       const t = TIP[item.tip] || TIP.duyuru;
 
+      const safeAlt = (item.baslik || '').replace(/"/g, '&quot;');
       let imgWrap;
       if (item.videoId) {
+        const fg = `https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`;
+        const bg = `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
         imgWrap = `
           <div class="bl-featured__img-wrap">
-            <img class="bl-featured__img" src="https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg"
-                 onerror="this.src='https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg'"
-                 alt="${item.baslik}">
+            <div class="smart-img bl-featured__img" style="aspect-ratio:16/10; --smart-img-bg:url('${bg}');">
+              <img class="smart-img__fg" src="${fg}"
+                   onerror="this.src='https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg'"
+                   alt="${safeAlt}" loading="lazy" decoding="async">
+            </div>
             <div class="bl-featured__img-tone"></div>
             <div class="bl-featured__stamp">Video</div>
             <div class="bl-featured__yt">
@@ -1358,9 +1580,12 @@
             </div>
           </div>`;
       } else if (item.gorsel) {
+        const smart = window.smartImg(item.gorsel, item.baslik || '', {
+          ratio: '16/10', foregroundW: 1400, backgroundW: 400, klass: 'bl-featured__img', eager: true
+        });
         imgWrap = `
           <div class="bl-featured__img-wrap">
-            <img class="bl-featured__img" src="${item.gorsel}" alt="${item.baslik}">
+            ${smart}
             <div class="bl-featured__img-tone"></div>
             <div class="bl-featured__stamp">Öne Çıkan</div>
           </div>`;
@@ -1372,16 +1597,16 @@
           </div>`;
       }
 
-      return `<a href="${b.link}" class="bl-featured reveal" aria-label="${item.baslik}">
+      return `<a href="duyuru.html?id=${encodeURIComponent(item.id)}" class="bl-featured reveal" aria-label="${escapeHTML(item.baslik)}">
         ${imgWrap}
         <div class="bl-featured__body">
           <div class="bl-featured__meta">
             ${etiketHTML(item)}
             ${item.tarih ? `<span class="sep"></span><span>${formatTarih(item.tarih)}</span>` : ''}
-            ${item.konum ? `<span class="sep"></span><span>${item.konum}</span>` : ''}
+            ${item.konum ? `<span class="sep"></span><span>${escapeHTML(item.konum)}</span>` : ''}
           </div>
-          <h2 class="bl-featured__title">${item.baslik}</h2>
-          ${item.ozet ? `<p class="bl-featured__lead">${item.ozet}</p>` : ''}
+          <h2 class="bl-featured__title">${escapeHTML(item.baslik)}</h2>
+          ${item.ozet ? `<p class="bl-featured__lead">${linkify(escapeHTML(item.ozet))}</p>` : ''}
           <span class="bl-featured__cta">
             Devamını Oku
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -1398,11 +1623,16 @@
       const t = TIP[item.tip] || TIP.duyuru;
       const delay = ['', 'rd1', 'rd2'][idx % 3];
 
+      const safeAlt = (item.baslik || '').replace(/"/g, '&quot;');
       let top;
       if (item.videoId) {
+        const fg = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`;
+        const bg = `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
         top = `
           <div class="bl-card__top">
-            <img class="bl-card__img" src="https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg" alt="${item.baslik}">
+            <div class="smart-img bl-card__img" style="aspect-ratio:16/10; --smart-img-bg:url('${bg}');">
+              <img class="smart-img__fg" src="${fg}" alt="${safeAlt}" loading="lazy" decoding="async">
+            </div>
             <div class="bl-card__yt-overlay">
               <div class="bl-card__yt-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="#08131e"><polygon points="8 5 19 12 8 19 8 5"/></svg>
@@ -1411,9 +1641,12 @@
             <div class="bl-card__stamp ${t.cls}">${t.ad}</div>
           </div>`;
       } else if (item.gorsel) {
+        const smart = window.smartImg(item.gorsel, item.baslik || '', {
+          ratio: '16/10', foregroundW: 700, backgroundW: 300, klass: 'bl-card__img'
+        });
         top = `
           <div class="bl-card__top">
-            <img class="bl-card__img" src="${item.gorsel}" alt="${item.baslik}">
+            ${smart}
             <div class="bl-card__stamp ${t.cls}">${t.ad}</div>
             ${item.tip === 'etkinlik' && item.tarih ? `
               <div class="bl-card__datechip">
@@ -1434,23 +1667,23 @@
           </div>`;
       }
 
-      return `<a href="${b.link}" class="bl-card reveal ${delay}" aria-label="${item.baslik}">
+      return `<a href="duyuru.html?id=${encodeURIComponent(item.id)}" class="bl-card reveal ${delay}" aria-label="${escapeHTML(item.baslik)}">
         ${top}
         <div class="bl-card__body">
           <div class="bl-card__meta">
             <span>${b.ad}</span>
             ${item.tarih ? `<span class="sep"></span><span>${formatTarih(item.tarih)}</span>` : ''}
-            ${item.saat ? `<span class="sep"></span><span>${item.saat}</span>` : ''}
+            ${item.saat ? `<span class="sep"></span><span>${escapeHTML(item.saat)}</span>` : ''}
           </div>
-          <h3 class="bl-card__title">${item.baslik}</h3>
-          ${item.ozet ? `<p class="bl-card__lead">${item.ozet}</p>` : ''}
+          <h3 class="bl-card__title">${escapeHTML(item.baslik)}</h3>
+          ${item.ozet ? `<p class="bl-card__lead">${linkify(escapeHTML(item.ozet))}</p>` : ''}
           <div class="bl-card__foot">
             ${item.konum
               ? `<span class="bl-card__place">
                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
                    </svg>
-                   ${item.konum}
+                   ${escapeHTML(item.konum)}
                  </span>`
               : '<span></span>'}
             <span class="bl-card__arrow">
@@ -1473,13 +1706,27 @@
 
     /* ── Render ───────────────────────────── */
     let tumFeed = [];
+    let aktifFiltre = 'tumu';
+    const BATCH = 9;          // her load-more aşamasında eklenecek kart sayısı
+    const MAX_KARTLAR = 27;   // featured hariç max 27 kart, sonra arşive yönlendir
+    let goruluyor = BATCH;    // şu an akışta görünen kart sayısı
 
-    function render(filtre) {
-      const container = document.getElementById('bl-icerik');
-      let items = filtre === 'tumu' ? tumFeed
-        : ['duyuru','etkinlik','video','faaliyet'].includes(filtre)
+    function getFiltrelenmis(filtre) {
+      return filtre === 'tumu' ? tumFeed
+        : ['duyuru','haber','etkinlik','video','faaliyet'].includes(filtre)
           ? tumFeed.filter(i => i.tip === filtre)
           : tumFeed.filter(i => i.bolum === filtre);
+    }
+
+    function render(filtre) {
+      aktifFiltre = filtre;
+      goruluyor = BATCH;
+      paint({ fresh: false });
+    }
+
+    function paint({ fresh } = { fresh: false }) {
+      const container = document.getElementById('bl-icerik');
+      const items = getFiltrelenmis(aktifFiltre);
 
       if (!items.length) {
         container.innerHTML = `
@@ -1494,17 +1741,21 @@
 
       const featured = items[0];
       const rest = items.slice(1);
+      const sinir = Math.min(goruluyor, MAX_KARTLAR, rest.length);
+      const visible = rest.slice(0, sinir);
+      const kalanRest = rest.length - sinir;
+      const sinirAsildi = goruluyor >= MAX_KARTLAR && kalanRest > 0;
 
       let html = `
         <div class="bl-section-head reveal">
-          <span class="bl-section-head__num">01 —</span>
+          <span class="bl-section-head__num">01</span>
           <h2 class="bl-section-head__title">Öne Çıkan</h2>
           <span class="bl-section-head__italic">en taze</span>
         </div>
         ${featuredHTML(featured)}
       `;
 
-      if (rest.length) {
+      if (visible.length) {
         html += `
           <div class="bl-divider reveal">
             <span class="bl-divider__line"></span>
@@ -1512,16 +1763,82 @@
             <span class="bl-divider__line"></span>
           </div>
           <div class="bl-section-head reveal">
-            <span class="bl-section-head__num">02 —</span>
+            <span class="bl-section-head__num">02</span>
             <h2 class="bl-section-head__title">Akış</h2>
             <span class="bl-section-head__italic">son günlerden</span>
           </div>
-          <div class="bl-grid">${rest.map((item,i) => kartHTML(item,i)).join('')}</div>
+          <div class="bl-grid" id="bl-grid">${visible.map((item,i) => kartHTML(item,i)).join('')}</div>
         `;
       }
 
+      // Daha Fazla Yükle / Arşivi Gör mantığı
+      if (kalanRest > 0) {
+        html += '<div class="bl-loadmore-wrap reveal">';
+
+        if (sinirAsildi) {
+          // Sınıra ulaşıldı — arşive yönlendir
+          html += `
+            <a href="arsiv.html" class="bl-archive-cta">
+              <span>Tüm Arşivi Gör</span>
+              <span class="bl-archive-cta__icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M5 12h14M13 5l7 7-7 7"/>
+                </svg>
+              </span>
+              <span class="bl-archive-cta__sub">${kalanRest} içerik daha &middot; yıllara göre düzenli</span>
+            </a>`;
+        } else {
+          // Henüz daha çekilebilecek kart var
+          const nextBatch = Math.min(BATCH, kalanRest, MAX_KARTLAR - goruluyor);
+          html += `
+            <button type="button" class="bl-loadmore" id="bl-loadmore">
+              <span>Daha Fazla Yükle</span>
+              <span class="bl-loadmore__count">+${nextBatch}</span>
+              <span class="bl-loadmore__caret">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </span>
+            </button>
+            <p class="bl-loadmore__hint">
+              ${kalanRest} içerik daha bekliyor,
+              <a href="arsiv.html">arşive doğrudan geçmek için</a>.
+            </p>`;
+        }
+
+        html += '</div>';
+      }
+
       container.innerHTML = html;
+
+      // Yeni yüklenen kartları işaretle (animasyon için)
+      if (fresh) {
+        const kartlar = container.querySelectorAll('#bl-grid .bl-card');
+        const baslangic = goruluyor - BATCH;
+        kartlar.forEach((el, i) => {
+          if (i >= baslangic) {
+            // Reveal sınıfını çıkar (zaten visible olsun), is-fresh ile içeri uçur
+            el.classList.remove('reveal');
+            el.classList.add('visible', 'is-fresh');
+          } else {
+            el.classList.add('visible');
+          }
+        });
+      }
+
       kickReveal(container);
+      bindLoadMore();
+    }
+
+    function bindLoadMore() {
+      const btn = document.getElementById('bl-loadmore');
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        const items = getFiltrelenmis(aktifFiltre);
+        const restToplam = Math.max(0, items.length - 1);
+        goruluyor = Math.min(goruluyor + BATCH, MAX_KARTLAR, restToplam);
+        paint({ fresh: true });
+      }, { once: true });
     }
 
     function kickReveal(scope) {
@@ -1579,5 +1896,6 @@
     });
   });
   </script>
+  <script src="site-ayarlar.js?v=2" defer></script>
 </body>
 </html>

@@ -10,15 +10,22 @@
   <meta property="og:title" content="Dinamik Çalışmalar | Sonsuzluğa Giden Yolun Koruyucuları">
   <meta property="og:description" content="İman. Disiplin. Karakter. Bir neslin inşası.">
   <meta property="og:type" content="website">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="Akdeniz Dinamik Spor Kulübü">
+  <meta property="og:url" content="https://dinamikspor.com/dinamik-calismalar.html">
+  <meta property="og:image" content="https://dinamikspor.com/assets/images/dalgiclik-takim.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dinamikspor.com/assets/images/dalgiclik-takim.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/dinamik-logo.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"Dinamik Çalışmalar","description":"İman, disiplin ve karakter ekseninde gençleri sonsuzluğa hazırlayan yolculuk.","url":"https://dinamikspor.com/dinamik-calismalar.html","publisher":{"@type":"SportsOrganization","name":"Dinamik Spor Kulübü"}}
+  {"@context":"https://schema.org","@type":"WebPage","name":"Dinamik Çalışmalar","description":"İman, disiplin ve karakter ekseninde gençleri sonsuzluğa hazırlayan yolculuk.","url":"https://dinamikspor.com/dinamik-calismalar.html","publisher":{"@type":"SportsOrganization","name":"Akdeniz Dinamik Spor Kulübü"}}
   </script>
 
   <style>
@@ -54,7 +61,7 @@
     body {
       background: var(--dc-ink);
       color: var(--dc-paper);
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
     }
 
@@ -83,47 +90,32 @@
     .dc-hero {
       position: relative;
       min-height: 100vh;
+      min-height: 100svh;
       overflow: hidden;
       isolation: isolate;
       display: flex;
-      align-items: center;
-      padding: 140px 24px 100px;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 24px 88px;
     }
 
-    .dc-hero__bg {
+    .dc-hero__scene {
       position: absolute; inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1532634726-8b9fb99825c1?w=1920&q=85&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center 40%;
-      filter: brightness(0.32) saturate(1.05) contrast(1.1);
-      transform: scale(1.04);
-      animation: dcZoom 24s ease-in-out infinite alternate;
+      width: 100%; height: 100%;
       z-index: 0;
+      display: block;
     }
 
-    @keyframes dcZoom {
-      0%   { transform: scale(1.04) translateY(0); }
-      100% { transform: scale(1.14) translateY(-12px); }
-    }
-
+    /* Yazı okunabilirliği için yumuşak alt gradyan — sahneyi bozmaz */
     .dc-hero__overlay {
       position: absolute; inset: 0;
-      background:
-        linear-gradient(135deg, rgba(5,9,18,.92) 0%, rgba(12,30,77,.55) 45%, rgba(5,9,18,.95) 100%),
-        radial-gradient(ellipse at 18% 25%, rgba(212,160,23,.15) 0%, transparent 55%),
-        radial-gradient(ellipse at 82% 75%, rgba(58,95,199,.18) 0%, transparent 60%);
+      background: linear-gradient(180deg,
+        rgba(2,4,10,0) 0%,
+        rgba(2,4,10,.15) 45%,
+        rgba(2,4,10,.65) 78%,
+        rgba(2,4,10,.95) 100%);
       z-index: 1;
-    }
-
-    .dc-hero__grid {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(212,160,23,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(212,160,23,.05) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-      z-index: 1;
+      pointer-events: none;
     }
 
     .dc-hero__noise {
@@ -138,8 +130,9 @@
     .dc-hero__fade {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 30%;
-      background: linear-gradient(to top, var(--dc-ink), transparent);
+      height: 38%;
+      background:
+        linear-gradient(to top, var(--dc-ink) 0%, rgba(8,20,14,.85) 35%, transparent 100%);
       z-index: 3;
       pointer-events: none;
     }
@@ -156,7 +149,7 @@
       display: inline-flex;
       align-items: center;
       gap: 14px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.32em;
@@ -218,7 +211,7 @@
     }
     .dc-hero__lead strong {
       font-style: normal;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 600;
       color: var(--dc-gold-l);
     }
@@ -235,7 +228,7 @@
       align-items: center;
       gap: 12px;
       padding: 18px 36px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 600;
       font-size: 0.82rem;
       letter-spacing: 0.16em;
@@ -267,14 +260,17 @@
 
     /* Hero alt şerit — istatistikler */
     .dc-hero__strip {
-      position: absolute;
-      bottom: 48px; left: 0; right: 0;
+      position: relative;
       z-index: 4;
+      width: 100%;
+      max-width: 1240px;
+      margin: clamp(56px, 8vh, 110px) auto 0;
       display: flex;
-      justify-content: center;
-      gap: 64px;
+      justify-content: flex-start;
+      gap: clamp(40px, 5vw, 80px);
       flex-wrap: wrap;
-      padding: 0 24px;
+      padding: 28px 0 0;
+      border-top: 1px solid var(--dc-line);
     }
     .dc-hero__stat {
       text-align: center;
@@ -379,7 +375,7 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.28em;
@@ -413,7 +409,7 @@
     }
 
     .dc-lead {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 1.05rem;
       line-height: 1.85;
       color: rgba(244,236,223,.7);
@@ -455,7 +451,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, transparent 50%, rgba(12,30,77,.4) 100%);
+      background: linear-gradient(to bottom, transparent 55%, rgba(5,9,18,.55) 100%);
     }
     .dc-about__badge {
       position: absolute;
@@ -463,7 +459,7 @@
       background: var(--dc-gold);
       color: var(--dc-deep);
       padding: 16px 24px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
       font-size: 0.72rem;
       letter-spacing: 0.2em;
@@ -479,72 +475,107 @@
     .dc-values {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-      margin-top: 56px;
+      gap: 28px;
+      margin-top: 64px;
     }
     .dc-value {
-      background: rgba(244,236,223,.025);
+      background:
+        linear-gradient(160deg, rgba(26,58,138,.16) 0%, rgba(6,18,50,.5) 55%, rgba(5,9,18,.6) 100%);
       border: 1px solid var(--dc-line);
-      padding: 44px 32px;
-      border-radius: 4px;
+      padding: 48px 36px 44px;
+      border-radius: 10px;
       position: relative;
       overflow: hidden;
-      transition: all 0.4s ease;
+      transition: transform .45s cubic-bezier(.2,.7,.3,1), border-color .45s ease, box-shadow .45s ease;
+      box-shadow: 0 24px 50px rgba(0,0,0,.35);
     }
+    /* dev watermark numara */
+    .dc-value__num {
+      position: absolute;
+      top: 6px; right: 18px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 8.5rem;
+      line-height: 1;
+      color: var(--dc-gold);
+      opacity: 0.08;
+      letter-spacing: -0.04em;
+      pointer-events: none;
+      transition: opacity .45s ease, transform .45s ease;
+    }
+    /* sol üst altın aksan */
     .dc-value::before {
       content: '';
       position: absolute;
       top: 0; left: 0;
-      width: 3px; height: 60px;
-      background: linear-gradient(to bottom, var(--dc-gold), transparent);
+      width: 3px; height: 64px;
+      background: linear-gradient(to bottom, var(--dc-gold-l), transparent);
       transition: height 0.5s ease;
     }
+    /* hover'da beliren ışıma */
+    .dc-value::after {
+      content: '';
+      position: absolute;
+      top: -40%; left: -20%;
+      width: 80%; height: 80%;
+      background: radial-gradient(circle, rgba(212,160,23,.18) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity .5s ease;
+      pointer-events: none;
+    }
     .dc-value:hover {
-      background: rgba(212,160,23,.05);
-      border-color: rgba(212,160,23,.4);
-      transform: translateY(-6px);
+      transform: translateY(-8px);
+      border-color: rgba(212,160,23,.5);
+      box-shadow: 0 32px 70px rgba(0,0,0,.5), 0 0 0 1px rgba(212,160,23,.18) inset;
     }
     .dc-value:hover::before { height: 100%; }
+    .dc-value:hover::after { opacity: 1; }
+    .dc-value:hover .dc-value__num { opacity: 0.16; transform: translateY(4px); }
 
-    .dc-value__num {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 400;
-      font-size: 2.6rem;
-      color: var(--dc-gold);
-      opacity: 0.55;
-      line-height: 1;
-      margin-bottom: 22px;
-    }
     .dc-value__icon {
-      width: 56px; height: 56px;
-      border: 1px solid var(--dc-line);
-      border-radius: 50%;
+      position: relative;
+      z-index: 2;
+      width: 66px; height: 66px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 22px;
-      background: rgba(212,160,23,.06);
+      margin-bottom: 28px;
+      background: linear-gradient(145deg, rgba(243,196,71,.22), rgba(212,160,23,.06));
+      border: 1px solid rgba(243,196,71,.35);
+      box-shadow: 0 10px 24px rgba(212,160,23,.18), inset 0 1px 0 rgba(255,255,255,.12);
     }
     .dc-value__icon svg {
-      width: 26px; height: 26px;
+      width: 30px; height: 30px;
       stroke: var(--dc-gold-l);
       fill: none;
-      stroke-width: 1.5;
+      stroke-width: 1.6;
     }
     .dc-value h3 {
+      position: relative;
+      z-index: 2;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800;
-      font-size: 1.7rem;
+      font-size: 1.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       color: var(--dc-paper);
       margin: 0 0 14px;
     }
+    .dc-value h3::after {
+      content: '';
+      display: block;
+      width: 38px; height: 2px;
+      margin-top: 12px;
+      background: linear-gradient(to right, var(--dc-gold), transparent);
+    }
     .dc-value p {
-      font-size: 0.95rem;
-      line-height: 1.75;
-      color: rgba(244,236,223,.6);
+      position: relative;
+      z-index: 2;
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: rgba(244,236,223,.66);
       margin: 0;
     }
 
@@ -553,8 +584,8 @@
        ============================================================ */
     .dc-paths {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
       margin-top: 64px;
     }
     .dc-path {
@@ -597,17 +628,36 @@
       opacity: 0.25;
     }
     .dc-path--erkek .dc-path__img {
-      background-image: url('https://images.unsplash.com/photo-1553531889-65a01a6cb6c4?w=1200&q=85&auto=format&fit=crop');
+      background-image: url('assets/images/erkek-cami-avlusu.jpg');
+      background-position: center 30%;
     }
     .dc-path--erkek .dc-path__tint {
       background: linear-gradient(135deg, rgba(15,26,15,.6), rgba(22,163,74,.45));
     }
     .dc-path--kiz .dc-path__img {
-      background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=85&auto=format&fit=crop');
+      background-image: url('assets/images/kiz-hero.jpg');
+      background-position: center 68%;
     }
     .dc-path--kiz .dc-path__tint {
-      background: linear-gradient(135deg, rgba(20,6,15,.6), rgba(232,128,158,.45));
+      background: linear-gradient(135deg, rgba(20,6,15,.55), rgba(232,128,158,.4));
     }
+    .dc-path--rota .dc-path__img {
+      background-image: url('assets/images/rota-hero.webp');
+      background-position: center 40%;
+    }
+    .dc-path--rota .dc-path__tint {
+      background: linear-gradient(135deg, rgba(8,13,28,.62), rgba(111,155,230,.42));
+    }
+    .dc-path__logo {
+      position: absolute;
+      top: 22px; right: 22px;
+      width: 62px; height: 62px;
+      border-radius: 50%;
+      z-index: 3;
+      box-shadow: 0 8px 26px rgba(0,0,0,.45), 0 0 0 1px rgba(179,208,245,.3);
+      transition: transform .5s cubic-bezier(.16,1,.3,1);
+    }
+    .dc-path:hover .dc-path__logo { transform: scale(1.06) rotate(-4deg); }
     .dc-path__content {
       position: absolute;
       inset: 0;
@@ -619,7 +669,7 @@
       color: var(--dc-paper);
     }
     .dc-path__mark {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.26em;
@@ -633,6 +683,7 @@
     }
     .dc-path--erkek .dc-path__mark { color: #e3f0e3; }
     .dc-path--kiz .dc-path__mark { color: #ffe1ec; }
+    .dc-path--rota .dc-path__mark { color: #dbe8fb; }
     .dc-path__mark::before {
       content: '';
       width: 28px; height: 1px;
@@ -659,9 +710,10 @@
     }
     .dc-path--erkek .dc-path__title em { color: #86efac; }
     .dc-path--kiz .dc-path__title em { color: var(--dc-rose); }
+    .dc-path--rota .dc-path__title em { color: #b3d0f5; }
 
     .dc-path__desc {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 1rem;
       line-height: 1.7;
       color: rgba(244,236,223,.78);
@@ -672,7 +724,7 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.18em;
@@ -773,7 +825,7 @@
       margin: 0 auto 28px;
     }
     .dc-quote-author {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.28em;
@@ -848,10 +900,11 @@
        ============================================================ */
     @media (max-width: 1024px) {
       .dc-about { grid-template-columns: 1fr; gap: 56px; }
-      .dc-paths { grid-template-columns: 1fr; }
+      .dc-paths { grid-template-columns: 1fr 1fr; }
       .dc-hero__strip { display: none; }
     }
     @media (max-width: 768px) {
+      .dc-paths { grid-template-columns: 1fr; }
       .dc-hero { padding: 120px 20px 80px; }
       .dc-hero__title { font-size: clamp(2.6rem, 11vw, 4.5rem); }
       .dc-hero__lead { font-size: 1.05rem; }
@@ -879,6 +932,7 @@
         <a href="vefa.html" class="nav-link">Vefa</a>
         <a href="orman.html" class="nav-link">Hatıra Ormanı</a>
         <a href="duyurular.html" class="nav-link">Duyurular</a>
+        <a href="arsiv.html" class="nav-link">Arşiv</a>
         <a href="iletisim.html" class="nav-link">İletişim</a>
         <a href="admin.html" class="nav-cta">Yönetim</a>
       </nav>
@@ -890,9 +944,128 @@
 
   <!-- ===================== HERO ===================== -->
   <section class="dc-hero">
-    <div class="dc-hero__bg"></div>
-    <div class="dc-hero__overlay"></div>
-    <div class="dc-hero__grid"></div>
+    <svg class="dc-hero__scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="dcSky" cx="50%" cy="70%" r="95%">
+          <stop offset="0%"  stop-color="#1b2247"/>
+          <stop offset="35%" stop-color="#0b1028"/>
+          <stop offset="75%" stop-color="#04060f"/>
+          <stop offset="100%" stop-color="#010206"/>
+        </radialGradient>
+        <radialGradient id="dcHorizon" cx="50%" cy="63%" r="34%">
+          <stop offset="0%"  stop-color="#f3d27a" stop-opacity="0.55"/>
+          <stop offset="30%" stop-color="#d4a017" stop-opacity="0.25"/>
+          <stop offset="65%" stop-color="#8a5a14" stop-opacity="0.08"/>
+          <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="dcMW" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#fff" stop-opacity="0"/>
+          <stop offset="30%"  stop-color="#b8c6ff" stop-opacity="0.14"/>
+          <stop offset="48%"  stop-color="#f0d8aa" stop-opacity="0.22"/>
+          <stop offset="58%"  stop-color="#ffe8c2" stop-opacity="0.26"/>
+          <stop offset="72%"  stop-color="#9bb0ff" stop-opacity="0.16"/>
+          <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="dcMWcore" cx="55%" cy="38%" r="22%">
+          <stop offset="0%"  stop-color="#ffe6b8" stop-opacity="0.55"/>
+          <stop offset="45%" stop-color="#c89a55" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="dcBlur" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="38"/>
+        </filter>
+        <filter id="dcBlurSoft" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="12"/>
+        </filter>
+        <radialGradient id="dcStar" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
+          <stop offset="50%" stop-color="#fff" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Gece gökyüzü -->
+      <rect width="1600" height="900" fill="url(#dcSky)"/>
+
+      <!-- Samanyolu bandı (çapraz, blurred) -->
+      <g filter="url(#dcBlur)" opacity="0.9">
+        <ellipse cx="800" cy="380" rx="1100" ry="130" transform="rotate(-16 800 380)" fill="url(#dcMW)"/>
+      </g>
+      <!-- Samanyolu çekirdeği -->
+      <g filter="url(#dcBlurSoft)">
+        <ellipse cx="880" cy="345" rx="220" ry="70" transform="rotate(-16 880 345)" fill="url(#dcMWcore)"/>
+      </g>
+
+      <!-- Yıldız alanı: küçük yıldızlar -->
+      <g fill="#fff">
+        <circle cx="40"   cy="120" r="0.8" opacity="0.7"/>
+        <circle cx="95"   cy="60"  r="1.1" opacity="0.85"/>
+        <circle cx="180"  cy="200" r="0.7" opacity="0.5"/>
+        <circle cx="240"  cy="90"  r="1.3" opacity="0.95"/>
+        <circle cx="310"  cy="170" r="0.6" opacity="0.55"/>
+        <circle cx="370"  cy="40"  r="0.9" opacity="0.7"/>
+        <circle cx="430"  cy="220" r="1.0" opacity="0.8"/>
+        <circle cx="500"  cy="110" r="0.7" opacity="0.6"/>
+        <circle cx="560"  cy="280" r="1.2" opacity="0.9"/>
+        <circle cx="630"  cy="60"  r="0.6" opacity="0.5"/>
+        <circle cx="700"  cy="160" r="0.9" opacity="0.7"/>
+        <circle cx="770"  cy="240" r="1.4" opacity="1"/>
+        <circle cx="850"  cy="80"  r="0.8" opacity="0.65"/>
+        <circle cx="920"  cy="200" r="1.0" opacity="0.8"/>
+        <circle cx="990"  cy="50"  r="0.7" opacity="0.55"/>
+        <circle cx="1060" cy="170" r="1.3" opacity="0.95"/>
+        <circle cx="1130" cy="100" r="0.6" opacity="0.5"/>
+        <circle cx="1200" cy="260" r="1.1" opacity="0.85"/>
+        <circle cx="1270" cy="40"  r="0.9" opacity="0.7"/>
+        <circle cx="1340" cy="190" r="0.7" opacity="0.6"/>
+        <circle cx="1410" cy="80"  r="1.2" opacity="0.9"/>
+        <circle cx="1480" cy="220" r="0.8" opacity="0.7"/>
+        <circle cx="1550" cy="130" r="1.0" opacity="0.8"/>
+        <circle cx="60"   cy="320" r="0.7" opacity="0.55"/>
+        <circle cx="140"  cy="380" r="1.1" opacity="0.85"/>
+        <circle cx="220"  cy="450" r="0.6" opacity="0.5"/>
+        <circle cx="290"  cy="340" r="0.9" opacity="0.7"/>
+        <circle cx="360"  cy="420" r="0.7" opacity="0.6"/>
+        <circle cx="440"  cy="380" r="1.0" opacity="0.8"/>
+        <circle cx="520"  cy="460" r="0.8" opacity="0.65"/>
+        <circle cx="610"  cy="350" r="1.3" opacity="0.95"/>
+        <circle cx="690"  cy="430" r="0.6" opacity="0.5"/>
+        <circle cx="780"  cy="380" r="0.9" opacity="0.7"/>
+        <circle cx="870"  cy="460" r="1.1" opacity="0.85"/>
+        <circle cx="950"  cy="340" r="0.7" opacity="0.6"/>
+        <circle cx="1040" cy="410" r="1.0" opacity="0.8"/>
+        <circle cx="1120" cy="470" r="0.8" opacity="0.65"/>
+        <circle cx="1210" cy="360" r="1.2" opacity="0.9"/>
+        <circle cx="1300" cy="440" r="0.6" opacity="0.5"/>
+        <circle cx="1380" cy="380" r="0.9" opacity="0.7"/>
+        <circle cx="1460" cy="450" r="1.0" opacity="0.8"/>
+        <circle cx="1540" cy="370" r="0.7" opacity="0.6"/>
+      </g>
+
+      <!-- Parlak yıldızlar (halolu) -->
+      <g>
+        <circle cx="240"  cy="90"  r="6" fill="url(#dcStar)"/>
+        <circle cx="770"  cy="240" r="7" fill="url(#dcStar)"/>
+        <circle cx="1060" cy="170" r="6" fill="url(#dcStar)"/>
+        <circle cx="610"  cy="350" r="6" fill="url(#dcStar)"/>
+        <circle cx="1210" cy="360" r="6" fill="url(#dcStar)"/>
+        <circle cx="430"  cy="220" r="5" fill="url(#dcStar)"/>
+      </g>
+
+      <!-- Uzak ufuk altın aydınlığı (kaçış noktası) -->
+      <ellipse cx="800" cy="600" rx="650" ry="120" fill="url(#dcHorizon)"/>
+
+      <!-- Uzak dağ sırası (soluk, atmosferik) -->
+      <path d="M 0 640 L 80 600 L 180 615 L 290 575 L 410 600 L 540 555 L 680 595 L 820 545 L 960 585 L 1090 555 L 1220 590 L 1340 565 L 1460 595 L 1600 575 L 1600 700 L 0 700 Z"
+            fill="#0c1428" opacity="0.7"/>
+
+      <!-- Yakın dağ koruyucuları (silüet) -->
+      <path d="M 0 900 L 0 720 L 90 680 L 180 700 L 270 640 L 360 685 L 450 615 L 560 670 L 680 580 L 780 625 L 880 555 L 1000 620 L 1110 590 L 1220 645 L 1340 605 L 1450 665 L 1540 625 L 1600 680 L 1600 900 Z"
+            fill="#02040a"/>
+
+      <!-- Ufuk hairline ışığı -->
+      <line x1="80" y1="638" x2="1520" y2="638" stroke="#e8be50" stroke-width="0.8" opacity="0.35"/>
+    </svg>
     <div class="dc-hero__noise"></div>
     <div class="dc-hero__fade"></div>
 
@@ -922,7 +1095,7 @@
     </div>
 
     <div class="dc-hero__strip">
-      <div class="dc-hero__stat"><b>15+</b><span>Yıllık Miras</span></div>
+      <div class="dc-hero__stat"><b>16+</b><span>Yıllık Miras</span></div>
       <div class="dc-hero__stat"><b>2</b><span>Çalışma Kolu</span></div>
       <div class="dc-hero__stat"><b>300+</b><span>Genç Sporcu</span></div>
       <div class="dc-hero__stat"><b>∞</b><span>İstikamet</span></div>
@@ -949,12 +1122,12 @@
         <div class="dc-about__text reveal">
           <div class="dc-eyebrow">Felsefemiz</div>
           <h2 class="dc-title">Bir <em>Nesil</em><br>İnşası.</h2>
-          <p>Dinamik Çalışmalar, salt bir antrenman programı değil — <strong>bir nesil inşa etme sözüdür.</strong> İzcilik geleneğinden devraldığımız "ahde vefa"yı, sahanın teri ve kampın ateşiyle harmanlayan bir yolculuktur.</p>
+          <p>Dinamik Çalışmalar, salt bir antrenman programı değil; <strong>bir nesil inşa etme sözüdür.</strong> İzcilik geleneğinden devraldığımız "ahde vefa"yı, sahanın teri ve kampın ateşiyle harmanlayan bir yolculuktur.</p>
           <p>Burada güç, yalnız bilekte değil <strong>iradede</strong> aranır. Disiplin, dayatılan bir kural değil; gönüllüce kuşanılan bir <strong>edeptir.</strong> Karakter ise konuşmayla değil, zorluk anında alınan <strong>tavırla</strong> belli olur.</p>
-          <p>Gençleri sadece bugünün galibi değil, <strong>yarının emanet taşıyıcıları</strong> olarak yetiştiriyoruz. Çünkü bizim derdimiz madalya değil — istikamettir. Adı bu yüzden konuldu: <em>Dinamik Çalışmalar.</em></p>
+          <p>Gençleri sadece bugünün galibi değil, <strong>yarının emanet taşıyıcıları</strong> olarak yetiştiriyoruz. Çünkü bizim derdimiz madalya değil, istikamettir. Adı bu yüzden konuldu: <em>Dinamik Çalışmalar.</em></p>
         </div>
         <div class="dc-about__visual reveal d1">
-          <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=900&q=85&auto=format&fit=crop" alt="Dinamik Çalışmalar Eğitim">
+          <img src="assets/images/nesil-insasi-sahil.png" alt="Yıldızlı gökyüzü altında sahilde toplanan gençler — Bir neslin inşası" style="object-position: center 38%;">
           <div class="dc-about__badge">2010'dan beri</div>
         </div>
       </div>
@@ -967,12 +1140,12 @@
       <div class="reveal" style="text-align: center; max-width: 720px; margin: 0 auto;">
         <div class="dc-eyebrow" style="justify-content: center;">Temel Değerler</div>
         <h2 class="dc-title" style="margin-bottom: 18px;">Üç Sütun, <em>Bir Duruş.</em></h2>
-        <p class="dc-lead" style="margin: 0 auto;">Çalışmalarımızın iskeletini kuran üç temel ilke. Her antrenman, her kamp, her karşılaşma — bu üçünün üzerine inşa edilir.</p>
+        <p class="dc-lead" style="margin: 0 auto;">Çalışmalarımızın iskeletini kuran üç temel ilke. Her antrenman, her kamp, her karşılaşma; bu üçünün üzerine inşa edilir.</p>
       </div>
 
       <div class="dc-values">
         <div class="dc-value reveal d1">
-          <div class="dc-value__num">01.</div>
+          <div class="dc-value__num">01</div>
           <div class="dc-value__icon">
             <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
@@ -981,21 +1154,21 @@
         </div>
 
         <div class="dc-value reveal d2">
-          <div class="dc-value__num">02.</div>
+          <div class="dc-value__num">02</div>
           <div class="dc-value__icon">
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <h3>Disiplin</h3>
-          <p>İzcilikten devraldığımız bu miras; saatinde, sözünde ve sahasında olmaktır. Disiplin bir kural değil — özgürlüğün ön koşuludur.</p>
+          <p>İzcilikten devraldığımız bu miras; saatinde, sözünde ve sahasında olmaktır. Disiplin bir kural değil, özgürlüğün ön koşuludur.</p>
         </div>
 
         <div class="dc-value reveal d3">
-          <div class="dc-value__num">03.</div>
+          <div class="dc-value__num">03</div>
           <div class="dc-value__icon">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
           </div>
           <h3>Karakter</h3>
-          <p>Bedeni güçlü, iradesi sağlam, sözü dürüst bir nesil. Salt fizik değil; karakterli ve şuurlu bir duruş — Dinamik Çalışmalar'ın asıl ürünüdür.</p>
+          <p>Bedeni güçlü, iradesi sağlam, sözü dürüst bir nesil. Salt fizik değil; karakterli ve şuurlu bir duruş, Dinamik Çalışmalar'ın asıl ürünüdür.</p>
         </div>
       </div>
     </div>
@@ -1006,8 +1179,8 @@
     <div class="dc-section__container">
       <div class="reveal" style="text-align: center; max-width: 720px; margin: 0 auto;">
         <div class="dc-eyebrow" style="justify-content: center;">Çalışma Kollarımız</div>
-        <h2 class="dc-title" style="margin-bottom: 18px;">İki Yol, <em>Aynı İstikamet.</em></h2>
-        <p class="dc-lead" style="margin: 0 auto;">Aynı değerlerle, ayrı zarafetlerle yetişen iki kardeş topluluk. Her biri kendi diliyle aynı sözü kuruyor: <em>"İman. Disiplin. Karakter."</em></p>
+        <h2 class="dc-title" style="margin-bottom: 18px;">Yollar Çoğalır, <em>İstikamet Birdir.</em></h2>
+        <p class="dc-lead" style="margin: 0 auto;">Aynı değerlerle, ayrı zarafetlerle yürüyen üç kardeş topluluk. Her biri kendi diliyle aynı sözü kuruyor: <em>"İman. Disiplin. Karakter."</em></p>
       </div>
 
       <div class="dc-paths">
@@ -1018,7 +1191,7 @@
           <div class="dc-path__content">
             <div class="dc-path__mark">Dinamik SK Erkek</div>
             <h3 class="dc-path__title">Yürek <em>İrade</em><br>Kardeşlik.</h3>
-            <p class="dc-path__desc">Sahanın terinden, kampın ateşine; bilek güreşinden gece nöbetine — bir gencin adam olma yolculuğu.</p>
+            <p class="dc-path__desc">Sahanın terinden, kampın ateşine; bilek güreşinden gece nöbetine: bir gencin adam olma yolculuğu.</p>
             <span class="dc-path__cta">
               Erkek Çalışmalarına Git
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1031,11 +1204,27 @@
           <div class="dc-path__tint"></div>
           <div class="dc-path__overlay"></div>
           <div class="dc-path__content">
-            <div class="dc-path__mark">Dinamik SK Kız</div>
-            <h3 class="dc-path__title">Güçlü <em>Zarif</em><br>Kararlı.</h3>
-            <p class="dc-path__desc">Sahada yürek, hayatta karakter. Spor yoluyla özgüven kazanan; kardeşlik, edep ve cesaretle büyüyen genç kadınların evi.</p>
+            <div class="dc-path__mark">Dinamik SK Kız · Genç Çevre Gönüllüleri</div>
+            <h3 class="dc-path__title">İnanç <em>Kardeşlik</em><br>Karakter.</h3>
+            <p class="dc-path__desc">Pusulamız vicdan, rehberimiz doğa. Kaşifler'den Maceracılar'a, 7'den 18'e doğada karakter inşa eden kız gönüllülerimizin evi.</p>
             <span class="dc-path__cta">
               Kız Çalışmalarına Git
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="dinamik-calismalar/rota/index.html" class="dc-path dc-path--rota reveal d3">
+          <div class="dc-path__img"></div>
+          <div class="dc-path__tint"></div>
+          <div class="dc-path__overlay"></div>
+          <img class="dc-path__logo" src="assets/images/rota-logo.webp" alt="Rota Gençlik Buluşmaları logosu — pusula yıldızı" loading="lazy">
+          <div class="dc-path__content">
+            <div class="dc-path__mark">Rota Gençlik Buluşmaları</div>
+            <h3 class="dc-path__title">İstikamet <em>Pusula</em><br>Yolculuk.</h3>
+            <p class="dc-path__desc">Kaleiçi'nin kalbinde, Karatay Medresesi'nde: gençlerin kendi hayat rotasını çizdiği, her programda "+1 değer" kattığı bir gelişim ortamı.</p>
+            <span class="dc-path__cta">
+              Rota'ya Git
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
@@ -1050,33 +1239,33 @@
       <div class="reveal" style="max-width: 720px; margin-bottom: 24px;">
         <div class="dc-eyebrow">Faaliyetler</div>
         <h2 class="dc-title">Sahayı <em>İnşa Eden</em><br>Anlayış.</h2>
-        <p class="dc-lead">Antrenman dört duvar arasında bitmez. Dinamik Çalışmalar, hayatın içinde olur — kampta, atölyede, ormanda, gönüllerde.</p>
+        <p class="dc-lead">Antrenman dört duvar arasında bitmez. Dinamik Çalışmalar, hayatın içinde olur: kampta, atölyede, ormanda, gönüllerde.</p>
       </div>
 
       <div class="dc-activities">
         <div class="dc-activity reveal d1">
-          <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=85&auto=format&fit=crop" alt="Kamp" class="dc-activity__img">
+          <img src="assets/images/kamp-cadir-orman.webp" alt="Gece çam ormanında kamp ateşi etrafında kurulu çadırlar" class="dc-activity__img" loading="lazy">
           <div class="dc-activity__body">
             <h4>Kamp</h4>
-            <p>Doğanın içinde, gökyüzünün altında — birlik ruhunun pekiştiği geceler.</p>
+            <p>Doğanın içinde, gökyüzünün altında; birlik ruhunun pekiştiği geceler.</p>
           </div>
         </div>
         <div class="dc-activity reveal d2">
-          <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&q=85&auto=format&fit=crop" alt="Atölye" class="dc-activity__img">
+          <img src="assets/images/dc-atolye.webp" alt="Atölye" class="dc-activity__img">
           <div class="dc-activity__body">
             <h4>Atölye</h4>
             <p>El emeği, göz nuru. Hem zanaatı hem sabrı öğreten çalışmalar.</p>
           </div>
         </div>
         <div class="dc-activity reveal d3">
-          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=85&auto=format&fit=crop" alt="Buluşmalar" class="dc-activity__img">
+          <img src="assets/images/dc-bulusmalar.webp" alt="Buluşmalar" class="dc-activity__img">
           <div class="dc-activity__body">
             <h4>Buluşmalar</h4>
             <p>Kardeşliğin masada, sözde, sohbette pekiştiği gençlik buluşmaları.</p>
           </div>
         </div>
         <div class="dc-activity reveal d4">
-          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=85&auto=format&fit=crop" alt="Fidan" class="dc-activity__img">
+          <img src="assets/images/dc-fidan.webp" alt="Fidan" class="dc-activity__img">
           <div class="dc-activity__body">
             <h4>Fidan Dikimi</h4>
             <p>Bugün diktiğimiz fidan, yarın bir gencin gölgesi. Geleceği yeşertmek.</p>
@@ -1091,7 +1280,7 @@
     <div class="dc-section__container">
       <div class="dc-quote reveal">
         <p>"Bir genci yetiştirmek; <em>bir asrı kurmaktır.</em> Bizim derdimiz bugünün galibi değil, yarına emanet bırakacak adamı yetiştirmektir."</p>
-        <div class="dc-quote-author">— Dinamik Çalışmalar Manifestosu</div>
+        <div class="dc-quote-author">Dinamik Çalışmalar Manifestosu</div>
       </div>
     </div>
   </section>
@@ -1102,7 +1291,7 @@
       <div class="dc-cta reveal">
         <div>
           <h3>Bu Yolun <em>Yolcusu</em> Ol.</h3>
-          <p>Yaşın, sporun ya da geçmişin ne olursa olsun — istikametin doğruysa burada yer var. İlk adımı bugün at.</p>
+          <p>Yaşın, sporun ya da geçmişin ne olursa olsun, istikametin doğruysa burada yer var. İlk adımı bugün at.</p>
         </div>
         <a href="iletisim.html" class="dc-btn dc-btn--gold">
           İletişime Geç
@@ -1129,6 +1318,7 @@
             <a href="dinamik-calismalar.html">Dinamik Çalışmalar</a>
             <a href="dinamik-calismalar/erkek/index.html">Dinamik SK Erkek</a>
             <a href="dinamik-calismalar/kiz/index.html">Dinamik SK Kız</a>
+            <a href="dinamik-calismalar/rota/index.html">Rota Gençlik Buluşmaları</a>
             <a href="sporlar.html">Sporlar</a>
           </div>
         </div>
@@ -1138,13 +1328,14 @@
             <a href="index.html">Ana Sayfa</a>
             <a href="vefa.html">Vefa</a>
             <a href="orman.html">Hatıra Ormanı</a>
+            <a href="arsiv.html">Arşiv</a>
             <a href="iletisim.html">İletişim</a>
           </div>
         </div>
         <div>
           <h4 class="footer-title">Sosyal Medya</h4>
           <div class="footer-social">
-            <a href="https://instagram.com/dinamikspor" target="_blank" aria-label="Instagram">
+            <a href="https://instagram.com/dinamiksk" target="_blank" aria-label="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -1173,5 +1364,6 @@
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     });
   </script>
+  <script src="site-ayarlar.js?v=2" defer></script>
 </body>
 </html>

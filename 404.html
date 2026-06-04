@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sayfa Bulunamadı (404) | Akdeniz Dinamik Spor Kulübü</title>
+  <meta name="description" content="Aradığınız sayfa bulunamadı. Ana sayfaya dönerek devam edebilirsiniz.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="assets/images/dinamik-logo.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .nf {
+      min-height: 100vh; min-height: 100svh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 40px 24px; position: relative; overflow: hidden;
+      background:
+        radial-gradient(ellipse 90% 70% at 60% 35%, rgba(26,97,172,0.20) 0%, transparent 65%),
+        linear-gradient(160deg, #020c18 0%, #071e3d 45%, #040e1c 100%);
+    }
+    .nf__lines {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(26,97,172,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,97,172,0.07) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+    }
+    .nf__inner { position: relative; z-index: 2; max-width: 600px; }
+    .nf__logo img { height: 88px; width: auto; margin: 0 auto 28px;
+      filter: drop-shadow(0 0 30px rgba(26,97,172,0.6)); }
+    .nf__code {
+      font-family: 'Anton', sans-serif; font-size: clamp(5rem, 18vw, 10rem);
+      line-height: 0.9; color: #fff; letter-spacing: 2px; margin-bottom: 8px;
+    }
+    .nf__code span { color: var(--accent); }
+    .nf__title {
+      font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600;
+      font-size: clamp(1.6rem, 4vw, 2.4rem); color: #fff; margin-bottom: 16px;
+    }
+    .nf__text { color: rgba(255,255,255,0.6); font-size: 1.05rem; line-height: 1.7; margin-bottom: 36px; }
+    .nf__actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <main class="nf">
+    <div class="nf__lines" aria-hidden="true"></div>
+    <div class="nf__inner">
+      <div class="nf__logo">
+        <img src="assets/images/dinamik-logo.svg" alt="Akdeniz Dinamik Spor Kulübü Logo">
+      </div>
+      <div class="nf__code">4<span>0</span>4</div>
+      <h1 class="nf__title">Bu yolun sonu görünmüyor.</h1>
+      <p class="nf__text">Aradığınız sayfa taşınmış, adı değişmiş ya da hiç var olmamış olabilir. Sizi sahaya geri götürelim.</p>
+      <div class="nf__actions">
+        <a href="index.html" class="btn btn-orange btn-lg">Ana Sayfaya Dön</a>
+        <a href="iletisim.html" class="btn btn-outline btn-lg">İletişime Geç</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

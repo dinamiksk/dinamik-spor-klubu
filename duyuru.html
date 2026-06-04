@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="dt-title">Duyuru — Akdeniz Dinamik Spor Kulübü</title>
+  <meta name="description" id="dt-desc" content="Akdeniz Dinamik Spor Kulübü duyuru, etkinlik ve haber detayı.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" id="dt-canonical" href="https://dinamikspor.com/duyuru.html">
+  <meta property="og:title" id="dt-og-title" content="Duyuru — Akdeniz Dinamik Spor Kulübü">
+  <meta property="og:description" id="dt-og-desc" content="Akdeniz Dinamik Spor Kulübü duyuru, etkinlik ve haber detayı.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:image" id="dt-og-image" content="">
+  <link rel="icon" type="image/svg+xml" href="assets/images/dinamik-logo.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    :root {
+      --ink:       #08131e;
+      --bg-0:      #0b1a2a;
+      --bg-1:      #0f2034;
+      --bg-2:      #132a42;
+      --bg-3:      #1b3a58;
+
+      --dawn:      #e8b775;
+      --dawn-glow: #f4cf98;
+      --dawn-deep: #a5702a;
+
+      --sea:       #5c91b4;
+      --mist:      #b9d2e0;
+
+      --cream:     #f4ecda;
+      --paper:     #efe5cf;
+      --paper-mid: rgba(239,229,207,.72);
+      --paper-soft:rgba(239,229,207,.5);
+      --paper-fnt: rgba(239,229,207,.28);
+
+      --line:      rgba(239,229,207,.11);
+      --line-warm: rgba(232,183,117,.22);
+    }
+
+    html, body { background: var(--ink); color: var(--paper); }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Header (duyurular.html ile aynı) */
+    .header {
+      background: rgba(8,19,30,.72) !important;
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+      border-bottom: 1px solid var(--line) !important;
+    }
+    .header .nav-link { color: var(--paper-mid) !important; }
+    .header .nav-link:hover, .header .nav-link.active { color: var(--dawn) !important; }
+    .header .logo-text { color: var(--cream) !important; }
+    .header .logo-text span { color: var(--dawn) !important; }
+    .header .nav-cta {
+      background: var(--dawn) !important; color: var(--ink) !important;
+      border-color: var(--dawn) !important;
+    }
+    .header .nav-cta:hover { background: var(--dawn-glow) !important; }
+
+    /* ── Hero ─────────────────────────────── */
+    .dt-hero {
+      position: relative;
+      min-height: 60vh;
+      padding: calc(var(--header-height) + 48px) 0 64px;
+      overflow: hidden;
+      isolation: isolate;
+      background: var(--bg-0);
+    }
+    .dt-hero__bg {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(.45) saturate(.95);
+      z-index: -3;
+    }
+    .dt-hero__tone {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 70% 30%, rgba(232,183,117,.18), transparent 60%),
+        linear-gradient(180deg, rgba(8,19,30,.4) 0%, rgba(8,19,30,.85) 75%, var(--ink) 100%);
+      z-index: -2;
+    }
+    .dt-hero__inner {
+      position: relative; z-index: 1;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Geri dön linki */
+    .dt-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .8rem; font-weight: 600;
+      letter-spacing: .25em; text-transform: uppercase;
+      color: var(--paper-mid);
+      text-decoration: none;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      transition: all .25s ease;
+      margin-bottom: 28px;
+    }
+    .dt-back:hover {
+      color: var(--dawn);
+      border-color: var(--dawn);
+      transform: translateX(-3px);
+    }
+
+    /* Etiketler */
+    .dt-tags {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+    .dt-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid;
+    }
+    .dt-tag--tip       { background: rgba(232,183,117,.15); color: var(--dawn); border-color: rgba(232,183,117,.3); }
+    .dt-tag--bilek-guresi { background: rgba(240,127,11,.15); color: #f9a957; border-color: rgba(240,127,11,.35); }
+    .dt-tag--dalgiclik { background: rgba(26,97,172,.18); color: #6fa7da; border-color: rgba(26,97,172,.4); }
+    .dt-tag--erkek     { background: rgba(22,163,74,.15); color: #5fc782; border-color: rgba(22,163,74,.35); }
+    .dt-tag--kiz       { background: rgba(190,24,93,.15); color: #e0689e; border-color: rgba(190,24,93,.35); }
+    .dt-tag--genel     { background: rgba(137,179,207,.12); color: var(--mist); border-color: rgba(137,179,207,.25); }
+
+    /* Başlık */
+    .dt-hero__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--cream);
+      margin: 0 0 20px;
+      letter-spacing: -0.01em;
+    }
+    .dt-hero__lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-weight: 400;
+      color: var(--paper-mid);
+      margin: 0 0 26px;
+      max-width: 720px;
+    }
+    .dt-hero__meta {
+      display: flex; flex-wrap: wrap; gap: 18px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .82rem;
+      color: var(--paper-mid);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .dt-hero__meta-item {
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .dt-hero__meta-item svg { color: var(--dawn); flex-shrink: 0; }
+
+    /* ── Görsel / video alanı ───────────── */
+    .dt-media {
+      max-width: 980px;
+      margin: -40px auto 0;
+      padding: 0 32px;
+      position: relative;
+      z-index: 2;
+    }
+    .dt-media__inner {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 0 0 1px var(--line-warm);
+      background: var(--bg-1);
+    }
+    /* Detay sayfa ana görseli — smart-img'i 16/10 yerine biraz daha geniş tut */
+    .dt-media__inner .smart-img {
+      aspect-ratio: 16 / 10;
+      max-height: 640px;
+    }
+    .dt-media__video {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+    }
+    .dt-media__video iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* ── İçerik gövdesi ──────────────────── */
+    .dt-body {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 64px 32px;
+    }
+    .dt-prose {
+      font-size: 1.08rem;
+      line-height: 1.85;
+      color: var(--paper);
+    }
+    .dt-prose p {
+      margin: 0 0 1.4em;
+    }
+    .dt-inline-link {
+      color: #7990f8;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      word-break: break-all;
+    }
+    .dt-inline-link:hover { color: #a8b8ff; }
+    .dt-prose p:first-of-type {
+      font-size: 1.18rem;
+      line-height: 1.75;
+      color: var(--paper);
+    }
+
+    /* Etkinlik bilgi kutusu */
+    .dt-info {
+      margin: 48px 0;
+      padding: 28px 32px;
+      border: 1px solid var(--line-warm);
+      border-radius: 6px;
+      background: rgba(232,183,117,.04);
+      display: grid;
+      gap: 14px;
+    }
+    .dt-info__head {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .35em; text-transform: uppercase;
+      color: var(--dawn);
+      margin-bottom: 4px;
+    }
+    .dt-info__row {
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .dt-info__icon {
+      width: 22px; height: 22px;
+      color: var(--dawn);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .dt-info__lab {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .72rem; font-weight: 600;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--paper-soft);
+      margin: 0 0 2px;
+    }
+    .dt-info__val {
+      font-size: 1.02rem;
+      color: var(--cream);
+      margin: 0;
+      font-weight: 500;
+    }
+
+    /* Paylaş bölümü */
+    .dt-share {
+      margin: 56px 0 0;
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between;
+      gap: 18px;
+    }
+    .dt-share__lab {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .82rem; font-weight: 700;
+      letter-spacing: .3em; text-transform: uppercase;
+      color: var(--paper-mid);
+    }
+    .dt-share__btns {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .dt-share__btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--paper);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .82rem; font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .2s ease;
+    }
+    .dt-share__btn:hover {
+      background: rgba(232,183,117,.08);
+      border-color: var(--dawn);
+      color: var(--dawn);
+    }
+    .dt-share__btn svg { width: 16px; height: 16px; }
+    .dt-share__btn--copied {
+      background: rgba(127,181,138,.12);
+      border-color: #7fb58a;
+      color: #7fb58a;
+    }
+
+    /* ── İlgili içerikler ──────────────── */
+    .dt-related {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 32px;
+      border-top: 1px solid var(--line);
+    }
+    .dt-related__head {
+      display: flex; align-items: baseline; gap: 14px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .dt-related__num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: .8rem;
+      letter-spacing: .3em; color: var(--dawn);
+    }
+    .dt-related__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 500;
+      color: var(--cream);
+      margin: 0;
+    }
+    .dt-related__italic {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--paper-soft);
+    }
+    .dt-related__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .dt-rcard {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--bg-1);
+      transition: all .25s ease;
+    }
+    .dt-rcard:hover {
+      transform: translateY(-3px);
+      border-color: var(--line-warm);
+      box-shadow: 0 18px 40px rgba(0,0,0,.4);
+    }
+    .dt-rcard .smart-img {
+      aspect-ratio: 16 / 10;
+    }
+    .dt-rcard__no-img {
+      aspect-ratio: 16 / 10;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; color: var(--dawn);
+      background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+    }
+    .dt-rcard__body { padding: 18px 20px 22px; }
+    .dt-rcard__meta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: .7rem; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--paper-soft);
+      margin-bottom: 8px;
+    }
+    .dt-rcard__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 500;
+      color: var(--cream);
+      margin: 0 0 8px;
+      line-height: 1.25;
+    }
+    .dt-rcard__lead {
+      font-size: .9rem;
+      color: var(--paper-mid);
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Yükleme / hata */
+    .dt-state {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 200px 32px 120px;
+      text-align: center;
+    }
+    .dt-state__icon {
+      font-size: 3.2rem;
+      color: var(--dawn);
+      margin-bottom: 18px;
+    }
+    .dt-state__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--cream);
+      margin: 0 0 10px;
+    }
+    .dt-state__text {
+      color: var(--paper-mid);
+      margin: 0 0 28px;
+    }
+    .dt-state__cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px;
+      background: var(--dawn);
+      color: var(--ink);
+      text-decoration: none;
+      border-radius: 999px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      transition: all .2s ease;
+    }
+    .dt-state__cta:hover { background: var(--dawn-glow); transform: translateY(-2px); }
+
+    .dt-spinner {
+      width: 38px; height: 38px;
+      border: 3px solid var(--line);
+      border-top-color: var(--dawn);
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      animation: dt-spin .8s linear infinite;
+    }
+    @keyframes dt-spin { to { transform: rotate(360deg); } }
+
+    /* Animasyon */
+    .reveal { opacity: 0; transform: translateY(20px); transition: all .7s cubic-bezier(.2,.8,.2,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 768px) {
+      .dt-hero { padding: calc(var(--header-height) + 28px) 0 48px; }
+      .dt-hero__inner { padding: 0 20px; }
+      .dt-media { padding: 0 16px; margin-top: -28px; }
+      .dt-body { padding: 48px 20px; }
+      .dt-related { padding: 56px 20px; }
+      .dt-prose p:first-of-type { font-size: 1.08rem; }
+      .dt-share { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ===== Galeri ===== */
+    .dt-gallery {
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--line);
+    }
+    .dt-gallery__head {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .dt-gallery__num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.32em;
+      color: var(--dawn);
+    }
+    .dt-gallery__title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin: 0;
+      color: var(--paper);
+    }
+    .dt-gallery__italic {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--paper-soft);
+    }
+    .dt-gallery__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .dt-gallery__cell {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 6px;
+      background: var(--bg-2);
+      transition: transform .3s ease;
+    }
+    .dt-gallery__cell:hover { transform: scale(1.02); }
+    .dt-gallery__cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .dt-gallery__cell:hover img { transform: scale(1.06); }
+    .dt-gallery__cell::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,.4));
+      opacity: 0;
+      transition: opacity .3s ease;
+      pointer-events: none;
+    }
+    .dt-gallery__cell:hover::after { opacity: 1; }
+
+    /* ===== Lightbox ===== */
+    .dt-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(8, 19, 30, 0.96);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: lbFadeIn .25s ease;
+    }
+    .dt-lightbox[hidden] { display: none; }
+    @keyframes lbFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .dt-lightbox__stage {
+      max-width: 92vw;
+      max-height: 86vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dt-lightbox__stage img {
+      max-width: 100%;
+      max-height: 86vh;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+
+    .dt-lightbox__close,
+    .dt-lightbox__nav {
+      position: absolute;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      color: var(--paper);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s ease, transform .2s ease;
+      backdrop-filter: blur(6px);
+    }
+    .dt-lightbox__close:hover,
+    .dt-lightbox__nav:hover {
+      background: rgba(255,255,255,.18);
+    }
+
+    .dt-lightbox__close {
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+    }
+
+    .dt-lightbox__nav {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+    }
+    .dt-lightbox__nav--prev { left: 24px; }
+    .dt-lightbox__nav--next { right: 24px; }
+    .dt-lightbox__nav:hover { transform: translateY(-50%) scale(1.05); }
+    .dt-lightbox__nav:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .dt-lightbox__counter {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--paper-mid);
+      letter-spacing: 0.1em;
+      background: rgba(0,0,0,.4);
+      padding: 6px 14px;
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+    }
+
+    @media (max-width: 768px) {
+      .dt-gallery__grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 8px;
+      }
+      .dt-lightbox__close { top: 14px; right: 14px; width: 40px; height: 40px; }
+      .dt-lightbox__nav { width: 44px; height: 44px; }
+      .dt-lightbox__nav--prev { left: 12px; }
+      .dt-lightbox__nav--next { right: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/images/dinamik-logo.svg" alt="Dinamik Spor Kulübü Logo">
+        <span class="logo-text">Dinamik <span>SK</span></span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Ana Sayfa</a>
+        <a href="dinamik-calismalar.html" class="nav-link">Dinamik Çalışmalar</a>
+        <a href="sporlar.html" class="nav-link">Sporlar</a>
+        <a href="vefa.html" class="nav-link">Vefa</a>
+        <a href="orman.html" class="nav-link">Hatıra Ormanı</a>
+        <a href="duyurular.html" class="nav-link active">Duyurular</a>
+        <a href="arsiv.html" class="nav-link">Arşiv</a>
+        <a href="iletisim.html" class="nav-link">İletişim</a>
+        <a href="admin.html" class="nav-cta">Yönetim</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Yükleniyor ekranı (varsayılan) -->
+  <div id="dt-loading" class="dt-state">
+    <div class="dt-spinner"></div>
+    <p class="dt-state__text">İçerik yükleniyor…</p>
+  </div>
+
+  <!-- Hata ekranı (gizli) -->
+  <div id="dt-error" class="dt-state" style="display:none;">
+    <div class="dt-state__icon">◇</div>
+    <h1 class="dt-state__title">İçerik bulunamadı</h1>
+    <p class="dt-state__text">Aradığınız duyuru, etkinlik veya haber kaldırılmış olabilir. Tüm güncel içerikler bültende.</p>
+    <a href="duyurular.html" class="dt-state__cta">
+      Bültene Dön
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+        <path d="M5 12h14M13 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Asıl içerik (id ile doldurulur) -->
+  <article id="dt-article" style="display:none;">
+    <section class="dt-hero">
+      <div class="dt-hero__bg" id="dt-hero-bg"></div>
+      <div class="dt-hero__tone"></div>
+      <div class="dt-hero__inner">
+        <a href="duyurular.html" class="dt-back">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Bültene Dön
+        </a>
+        <div class="dt-tags" id="dt-tags"></div>
+        <h1 class="dt-hero__title" id="dt-h1"></h1>
+        <p class="dt-hero__lead" id="dt-lead" style="display:none;"></p>
+        <div class="dt-hero__meta" id="dt-meta"></div>
+      </div>
+    </section>
+
+    <div class="dt-media" id="dt-media-wrap" style="display:none;">
+      <div class="dt-media__inner" id="dt-media"></div>
+    </div>
+
+    <div class="dt-body">
+      <div class="dt-prose" id="dt-prose"></div>
+
+      <div class="dt-gallery" id="dt-gallery" style="display:none;">
+        <div class="dt-gallery__head">
+          <span class="dt-gallery__num">02</span>
+          <h2 class="dt-gallery__title">Galeri</h2>
+          <span class="dt-gallery__italic">tıkla, büyüt</span>
+        </div>
+        <div class="dt-gallery__grid" id="dt-gallery-grid"></div>
+      </div>
+
+      <div class="dt-info" id="dt-info" style="display:none;">
+        <div class="dt-info__head">Etkinlik Bilgileri</div>
+        <div id="dt-info-rows"></div>
+      </div>
+
+      <div class="dt-share">
+        <span class="dt-share__lab">Paylaş</span>
+        <div class="dt-share__btns">
+          <a id="dt-share-wa" class="dt-share__btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.8-1.4-1.7-1.5-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.2 1.7.7 2.3.8 3.2.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4z"/><path d="M20.5 3.5C18.3 1.2 15.3 0 12.1 0 5.5 0 .2 5.4.2 12c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.7c1.7.9 3.7 1.4 5.7 1.4 6.6 0 12-5.4 12-12 0-3.2-1.3-6.2-3.5-8.2zm-8.4 18.5c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.4 4.5-9.9 10-9.9 2.6 0 5.1 1 7 2.9 1.9 1.9 2.9 4.4 2.9 7-.1 5.5-4.5 9.9-10 9.9z"/></svg>
+            WhatsApp
+          </a>
+          <a id="dt-share-x" class="dt-share__btn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X
+          </a>
+          <button id="dt-share-copy" class="dt-share__btn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>Linki Kopyala</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <section class="dt-related" id="dt-related" style="display:none;">
+      <div class="dt-related__head">
+        <span class="dt-related__num">03</span>
+        <h2 class="dt-related__title">İlgili Paylaşımlar</h2>
+        <span class="dt-related__italic">aynı kategoriden</span>
+      </div>
+      <div class="dt-related__grid" id="dt-related-grid"></div>
+    </section>
+  </article>
+
+  <!-- Lightbox (galeri için) -->
+  <div class="dt-lightbox" id="dt-lightbox" hidden role="dialog" aria-modal="true" aria-label="Galeri görüntüleyici">
+    <button class="dt-lightbox__close" id="dt-lb-close" aria-label="Kapat">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="dt-lightbox__nav dt-lightbox__nav--prev" id="dt-lb-prev" aria-label="Önceki">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="dt-lightbox__nav dt-lightbox__nav--next" id="dt-lb-next" aria-label="Sonraki">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="dt-lightbox__stage">
+      <img id="dt-lb-img" alt="">
+    </div>
+    <div class="dt-lightbox__counter" id="dt-lb-counter"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height: 40px;">
+            <span class="logo-text">Dinamik <span>SK</span></span>
+          </a>
+          <p style="margin-top: 16px;">İman. Disiplin. Spor. 2010'dan beri Antalya'da gençleri güçlü bireyler olarak yetiştiriyoruz.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Hızlı Linkler</h4>
+          <div class="footer-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="dinamik-calismalar.html">Dinamik Çalışmalar</a>
+            <a href="sporlar.html">Sporlar</a>
+            <a href="vefa.html">Vefa Köşesi</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Modüller</h4>
+          <div class="footer-links">
+            <a href="dinamik-calismalar/erkek/index.html">Dinamik SK Erkek</a>
+            <a href="dinamik-calismalar/kiz/index.html">Dinamik SK Kız</a>
+            <a href="orman.html">Hatıra Ormanı</a>
+            <a href="duyurular.html">Duyurular</a>
+            <a href="arsiv.html">Arşiv</a>
+            <a href="iletisim.html">İletişim</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Sosyal Medya</h4>
+          <div class="footer-social">
+            <a href="https://instagram.com/dinamiksk" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Akdeniz Dinamik Spor Kulübü. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="firebase-init.js"></script>
+  <script src="main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', async () => {
+
+    const $ = (id) => document.getElementById(id);
+
+    /* ── Yardımcılar ──────────────────────── */
+    const TIP = {
+      duyuru:   { ad: 'Duyuru' },
+      haber:    { ad: 'Haber' },
+      etkinlik: { ad: 'Etkinlik' },
+      video:    { ad: 'Video' }
+    };
+    const KAT = {
+      'bilek-guresi': { ad: 'Bilek Güreşi' },
+      dalgiclik:      { ad: 'Dalgıçlık' },
+      erkek:          { ad: 'Dinamik Erkek' },
+      kiz:            { ad: 'Dinamik Kız' },
+      genel:          { ad: 'Genel' }
+    };
+
+    function escapeHTML(s) {
+      if (s == null) return '';
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function formatTarih(t) {
+      if (!t) return '';
+      const d = new Date(t);
+      if (isNaN(d)) return '';
+      return d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    function linkify(html) {
+      return html.replace(/(https?:\/\/[^\s<>"]+)/g, url =>
+        `<a href="${url}" target="_blank" rel="noopener noreferrer" class="dt-inline-link">${url}</a>`
+      );
+    }
+
+    function metniParagrafla(metin) {
+      if (!metin) return '';
+      return String(metin)
+        .split(/\n\s*\n+/)
+        .map(p => p.trim())
+        .filter(Boolean)
+        .map(p => `<p>${linkify(escapeHTML(p).replace(/\n/g, '<br>'))}</p>`)
+        .join('');
+    }
+
+    function showError() {
+      $('dt-loading').style.display = 'none';
+      $('dt-article').style.display = 'none';
+      $('dt-error').style.display = '';
+    }
+
+    /* ── URL parametresi ──────────────────── */
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    if (!id) { showError(); return; }
+
+    /* ── Firebase bekle ──────────────────── */
+    try {
+      if (window.firebaseReady) await window.firebaseReady;
+      if (!window.FB?.ready) { showError(); return; }
+    } catch (e) {
+      console.error('Firebase init hatası:', e);
+      showError();
+      return;
+    }
+
+    const { db, doc, getDoc, collection, getDocs } = window.FB;
+
+    /* ── İçeriği çek ──────────────────────── */
+    let item;
+    try {
+      const snap = await getDoc(doc(db, 'icerik', id));
+      if (!snap.exists()) { showError(); return; }
+      item = { id: snap.id, ...snap.data() };
+      if (item.yayinda === false) { showError(); return; }
+    } catch (e) {
+      console.error('İçerik okunurken hata:', e);
+      showError();
+      return;
+    }
+
+    /* ── Sayfayı doldur ──────────────────── */
+    const tip = TIP[item.tip] || TIP.duyuru;
+    const kat = KAT[item.kategori] || KAT.genel;
+    const tarihStr = formatTarih(item.tarih);
+    const baslik = item.baslik || 'Başlıksız';
+
+    // <head> meta'larını güncelle
+    document.title = `${baslik} — Akdeniz Dinamik Spor Kulübü`;
+    const desc = (item.kisaMetin || (item.tamMetin ? item.tamMetin.slice(0, 160) : '')).slice(0, 200);
+    if (desc) {
+      $('dt-desc').setAttribute('content', desc);
+      $('dt-og-desc').setAttribute('content', desc);
+    }
+    $('dt-title').textContent = `${baslik} — Akdeniz Dinamik Spor Kulübü`;
+    $('dt-og-title').setAttribute('content', `${baslik} — Akdeniz Dinamik Spor Kulübü`);
+    $('dt-canonical').setAttribute('href', window.location.href);
+    if (item.gorsel) $('dt-og-image').setAttribute('content', item.gorsel);
+
+    const cld = (u, t) => (window.cldUrl ? window.cldUrl(u, t) : u);
+
+    // Hero arkaplanı (görsel varsa)
+    if (item.gorsel) {
+      $('dt-hero-bg').style.backgroundImage = `url('${cld(item.gorsel, 'w_1600,q_auto,f_auto')}')`;
+    } else if (item.videoId) {
+      $('dt-hero-bg').style.backgroundImage = `url('https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg')`;
+    }
+
+    // Etiketler
+    const tagsHtml = [
+      `<span class="dt-tag dt-tag--tip">${escapeHTML(tip.ad)}</span>`,
+      `<span class="dt-tag dt-tag--${item.kategori || 'genel'}">${escapeHTML(kat.ad)}</span>`
+    ].join('');
+    $('dt-tags').innerHTML = tagsHtml;
+
+    // Başlık
+    $('dt-h1').textContent = baslik;
+
+    // Lead (kısa metin) — sadece tam metin de varsa veya etkinlikse göster
+    if (item.kisaMetin && item.tamMetin && item.kisaMetin !== item.tamMetin) {
+      $('dt-lead').textContent = item.kisaMetin;
+      $('dt-lead').style.display = '';
+    }
+
+    // Meta satırı
+    const metaParts = [];
+    if (tarihStr) metaParts.push(`
+      <span class="dt-hero__meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        ${escapeHTML(tarihStr)}
+      </span>`);
+    if (item.saat) metaParts.push(`
+      <span class="dt-hero__meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        ${escapeHTML(item.saat)}
+      </span>`);
+    if (item.konum) metaParts.push(`
+      <span class="dt-hero__meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        ${escapeHTML(item.konum)}
+      </span>`);
+    $('dt-meta').innerHTML = metaParts.join('');
+
+    // Medya: video → iframe, görsel → resim
+    const mediaWrap = $('dt-media-wrap');
+    const media = $('dt-media');
+    if (item.tip === 'video' && item.videoId) {
+      media.innerHTML = `
+        <div class="dt-media__video">
+          <iframe src="https://www.youtube.com/embed/${escapeHTML(item.videoId)}"
+                  title="${escapeHTML(baslik)}"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>`;
+      mediaWrap.style.display = '';
+    } else if (item.gorsel) {
+      media.innerHTML = window.smartImg(item.gorsel, baslik, { foregroundW: 1400, eager: true });
+      mediaWrap.style.display = '';
+    }
+
+    // Tam metin
+    const tamMetin = item.tamMetin || item.kisaMetin || '';
+    $('dt-prose').innerHTML = metniParagrafla(tamMetin) || '<p style="color:var(--paper-soft);font-style:italic;">Bu içerik için detay metni eklenmemiş.</p>';
+
+    // Galeri (eski etkinlik albümleri için)
+    const galeri = Array.isArray(item.gorseller) ? item.gorseller.filter(u => typeof u === 'string' && u) : [];
+    if (galeri.length) {
+      const grid = $('dt-gallery-grid');
+      grid.innerHTML = galeri.map((url, idx) => `
+        <button type="button" class="dt-gallery__cell" data-lb-index="${idx}" aria-label="${idx + 1}. görseli büyüt">
+          <img src="${escapeHTML(cld(url, 'w_400,h_400,c_fill,q_auto,f_auto'))}" alt="Galeri görseli ${idx + 1}" loading="lazy">
+        </button>
+      `).join('');
+      $('dt-gallery').style.display = '';
+
+      // Lightbox kontrolcüsü
+      const lb = {
+        el: $('dt-lightbox'),
+        img: $('dt-lb-img'),
+        counter: $('dt-lb-counter'),
+        prev: $('dt-lb-prev'),
+        next: $('dt-lb-next'),
+        index: 0,
+        urls: galeri.map(u => cld(u, 'w_1600,q_auto,f_auto')),
+        open(i) {
+          this.index = i;
+          this.update();
+          this.el.hidden = false;
+          document.body.style.overflow = 'hidden';
+        },
+        close() {
+          this.el.hidden = true;
+          document.body.style.overflow = '';
+        },
+        go(delta) {
+          this.index = (this.index + delta + this.urls.length) % this.urls.length;
+          this.update();
+        },
+        update() {
+          this.img.src = this.urls[this.index];
+          this.img.alt = `Galeri görseli ${this.index + 1} / ${this.urls.length}`;
+          this.counter.textContent = `${this.index + 1} / ${this.urls.length}`;
+          // Tek görselse navigasyon butonlarını gizle
+          const single = this.urls.length === 1;
+          this.prev.style.display = single ? 'none' : '';
+          this.next.style.display = single ? 'none' : '';
+        }
+      };
+
+      grid.addEventListener('click', (e) => {
+        const cell = e.target.closest('[data-lb-index]');
+        if (cell) lb.open(Number(cell.dataset.lbIndex));
+      });
+      $('dt-lb-close').addEventListener('click', () => lb.close());
+      $('dt-lb-prev').addEventListener('click', () => lb.go(-1));
+      $('dt-lb-next').addEventListener('click', () => lb.go(1));
+      lb.el.addEventListener('click', (e) => {
+        if (e.target === lb.el || e.target.classList.contains('dt-lightbox__stage')) lb.close();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (lb.el.hidden) return;
+        if (e.key === 'Escape') lb.close();
+        if (e.key === 'ArrowLeft') lb.go(-1);
+        if (e.key === 'ArrowRight') lb.go(1);
+      });
+    }
+
+    // Etkinlik bilgi kutusu
+    if (item.tip === 'etkinlik' && (item.tarih || item.saat || item.konum)) {
+      const rows = [];
+      if (tarihStr) rows.push(`
+        <div class="dt-info__row">
+          <svg class="dt-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <div><p class="dt-info__lab">Tarih</p><p class="dt-info__val">${escapeHTML(tarihStr)}</p></div>
+        </div>`);
+      if (item.saat) rows.push(`
+        <div class="dt-info__row">
+          <svg class="dt-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div><p class="dt-info__lab">Saat</p><p class="dt-info__val">${escapeHTML(item.saat)}</p></div>
+        </div>`);
+      if (item.konum) rows.push(`
+        <div class="dt-info__row">
+          <svg class="dt-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><p class="dt-info__lab">Konum</p><p class="dt-info__val">${escapeHTML(item.konum)}</p></div>
+        </div>`);
+      $('dt-info-rows').innerHTML = rows.join('');
+      $('dt-info').style.display = '';
+    }
+
+    // Paylaş butonları
+    const url = window.location.href;
+    const shareText = `${baslik} — Akdeniz Dinamik Spor Kulübü`;
+    $('dt-share-wa').setAttribute('href', `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + url)}`);
+    $('dt-share-x').setAttribute('href', `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(url)}`);
+    $('dt-share-copy').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        const btn = $('dt-share-copy');
+        const span = btn.querySelector('span');
+        const old = span.textContent;
+        span.textContent = 'Kopyalandı';
+        btn.classList.add('dt-share__btn--copied');
+        setTimeout(() => {
+          span.textContent = old;
+          btn.classList.remove('dt-share__btn--copied');
+        }, 2000);
+      } catch (e) { console.error(e); }
+    });
+
+    // Yükleme bitti — makaleyi göster
+    $('dt-loading').style.display = 'none';
+    $('dt-article').style.display = '';
+
+    /* ── İlgili paylaşımlar ──────────────── */
+    try {
+      const snap = await getDocs(collection(db, 'icerik'));
+      const all = snap.docs
+        .map(d => ({ id: d.id, ...d.data() }))
+        .filter(i => i.yayinda !== false && i.id !== item.id);
+
+      // Önce aynı kategoriden, sonra aynı tipten doldur
+      const sameKat = all.filter(i => i.kategori === item.kategori);
+      const sameTip = all.filter(i => i.kategori !== item.kategori && i.tip === item.tip);
+      const others  = all.filter(i => i.kategori !== item.kategori && i.tip !== item.tip);
+
+      const sortByDate = (a, b) => {
+        if (!a.tarih && !b.tarih) return 0;
+        if (!a.tarih) return 1;
+        if (!b.tarih) return -1;
+        return new Date(b.tarih) - new Date(a.tarih);
+      };
+      sameKat.sort(sortByDate);
+      sameTip.sort(sortByDate);
+      others.sort(sortByDate);
+
+      const related = [...sameKat, ...sameTip, ...others].slice(0, 3);
+
+      if (related.length) {
+        const html = related.map(r => {
+          const rk = KAT[r.kategori] || KAT.genel;
+          const rt = TIP[r.tip] || TIP.duyuru;
+          const rTarih = formatTarih(r.tarih);
+          const meta = [rt.ad, rk.ad, rTarih].filter(Boolean).join(' · ');
+          let imgHtml;
+          if (r.gorsel) {
+            imgHtml = window.smartImg(r.gorsel, r.baslik || '', { foregroundW: 700, klass: 'smart-img--zoom' });
+          } else if (r.videoId) {
+            const ytUrl = `https://img.youtube.com/vi/${escapeHTML(r.videoId)}/hqdefault.jpg`;
+            imgHtml = `<div class="smart-img smart-img--zoom" style="aspect-ratio:16/10; --smart-img-bg:url('${ytUrl}');">
+              <img class="smart-img__fg" src="${ytUrl}" alt="${escapeHTML(r.baslik || '')}" loading="lazy" decoding="async">
+            </div>`;
+          } else {
+            imgHtml = `<div class="dt-rcard__no-img">◇</div>`;
+          }
+          return `
+            <a class="dt-rcard reveal" href="duyuru.html?id=${encodeURIComponent(r.id)}">
+              ${imgHtml}
+              <div class="dt-rcard__body">
+                <div class="dt-rcard__meta">${escapeHTML(meta)}</div>
+                <h3 class="dt-rcard__title">${escapeHTML(r.baslik || 'Başlıksız')}</h3>
+                ${r.kisaMetin ? `<p class="dt-rcard__lead">${escapeHTML(r.kisaMetin)}</p>` : ''}
+              </div>
+            </a>`;
+        }).join('');
+        $('dt-related-grid').innerHTML = html;
+        $('dt-related').style.display = '';
+
+        // Reveal animasyonu
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              obs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal:not(.visible)').forEach(el => obs.observe(el));
+      }
+    } catch (e) {
+      console.warn('İlgili paylaşımlar yüklenemedi:', e);
+    }
+  });
+  </script>
+  <script src="site-ayarlar.js?v=2" defer></script>
+</body>
+</html>

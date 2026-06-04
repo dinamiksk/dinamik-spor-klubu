@@ -5,7 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hatıra Ormanı | Akdeniz Dinamik Spor Kulübü</title>
   <meta name="description" content="Geleceği yeşertiyoruz. Bağış yapın, fidan dikin, Hatıra Ormanı'mıza katkıda bulunun.">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌲</text></svg>">
+  <link rel="canonical" href="https://dinamikspor.com/orman.html">
+  <link rel="preconnect" href="https://res.cloudinary.com">
+  <link rel="preconnect" href="https://firestore.googleapis.com">
+  <link rel="preconnect" href="https://www.gstatic.com">
+  <link rel="dns-prefetch" href="https://res.cloudinary.com">
+  <link rel="dns-prefetch" href="https://firestore.googleapis.com">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hatıra Ormanı | Akdeniz Dinamik Spor Kulübü">
+  <meta property="og:description" content="Geleceği yeşertiyoruz. Bağış yapın, fidan dikin, Hatıra Ormanı'mıza katkıda bulunun.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="Akdeniz Dinamik Spor Kulübü">
+  <meta property="og:url" content="https://dinamikspor.com/orman.html">
+  <meta property="og:image" content="https://dinamikspor.com/assets/images/dalgiclik-hero.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dinamikspor.com/assets/images/dalgiclik-hero.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/dinamik-logo.svg">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Hatıra Ormanı - Soft Orman & Altın Tema */
@@ -35,6 +56,7 @@
     /* Hero — Soft Orman */
     .orman-hero {
       min-height: 100vh;
+      min-height: 100svh;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -48,7 +70,7 @@
       inset: 0;
       background-image:
         linear-gradient(180deg, rgba(244,239,223,0.05) 0%, rgba(244,239,223,0.0) 40%, rgba(244,239,223,0.1) 100%),
-        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=85');
+        url('assets/images/orman-hero-bg.webp');
       background-size: cover;
       background-position: center 45%;
       filter: brightness(0.95) saturate(1.05) contrast(1);
@@ -58,7 +80,7 @@
     .orman-hero__bg-blur {
       position: absolute;
       inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&q=60');
+      background-image: url('assets/images/orman-bg-2.webp');
       background-size: cover;
       background-position: center;
       filter: blur(2px) brightness(0.9);
@@ -183,13 +205,14 @@
       margin-bottom: 24px;
       letter-spacing: 0.01em;
       line-height: 1.05;
-      text-shadow: 0 2px 24px rgba(244,239,223,0.6);
+      text-shadow: 0 1px 2px rgba(255,255,255,0.55), 0 2px 28px rgba(244,239,223,0.7);
     }
 
     .orman-hero h1 span {
-      color: var(--hero-gold);
+      color: #6b4e12;
       font-style: italic;
       font-family: var(--font-display), serif;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.7), 0 2px 16px rgba(244,239,223,0.85);
     }
 
     .orman-hero-lead {
@@ -201,7 +224,7 @@
     }
 
     .orman-hero-lead strong {
-      color: var(--hero-gold);
+      color: #7a5814;
       font-weight: 700;
     }
 
@@ -745,7 +768,7 @@
     .orman-story-banner__bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=1920&q=85');
+      background-image: url('assets/images/orman-bg-3.webp');
       background-size: cover;
       background-position: center;
       filter: brightness(0.48) saturate(1.15);
@@ -1181,6 +1204,1743 @@
         min-height: 70vh;
       }
     }
+
+    /* =========================================================
+       YENİ TASARIM — Niyet · Hadisler · Misyon · Çalışmalar
+       ========================================================= */
+    @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+    .orman-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--orman-gold);
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+    .orman-eyebrow::before,
+    .orman-eyebrow::after {
+      content: '';
+      width: 36px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--orman-gold), transparent);
+    }
+    .orman-eyebrow.left::before { display: none; }
+    .orman-eyebrow.left::after { display: none; }
+
+    /* ---------- 1) NİYET ---------- */
+    .orman-intent {
+      position: relative;
+      padding: 120px 24px 80px;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(200,168,75,0.08) 0%, transparent 60%),
+        var(--orman-bg);
+      text-align: center;
+      overflow: hidden;
+    }
+    .orman-intent::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 1px; height: 80px;
+      background: linear-gradient(180deg, transparent, var(--orman-gold));
+      opacity: 0.5;
+    }
+    .orman-intent__inner {
+      max-width: 820px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .orman-intent__title {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: clamp(2rem, 4.6vw, 3.5rem);
+      line-height: 1.15;
+      color: #f5f0e0;
+      font-weight: 500;
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+    .orman-intent__title em {
+      font-style: italic;
+      color: var(--orman-gold);
+      font-weight: 600;
+    }
+    .orman-intent__lead {
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 1.85;
+      color: rgba(245,240,224,0.72);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .orman-intent__divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 48px;
+      color: var(--orman-gold);
+    }
+    .orman-intent__divider span {
+      width: 60px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--orman-gold));
+    }
+    .orman-intent__divider span:last-child {
+      background: linear-gradient(90deg, var(--orman-gold), transparent);
+    }
+    .orman-intent__divider svg { width: 18px; height: 18px; opacity: 0.85; }
+
+    /* ---------- 2) HADİSLER & AYET ---------- */
+    .orman-hadis-section {
+      padding: 100px 24px;
+      background:
+        linear-gradient(180deg, var(--orman-bg) 0%, #0c1f12 50%, var(--orman-bg) 100%);
+      position: relative;
+    }
+    .orman-hadis-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 12% 20%, rgba(200,168,75,0.05), transparent 40%),
+        radial-gradient(circle at 88% 80%, rgba(45,90,45,0.18), transparent 45%);
+      pointer-events: none;
+    }
+    .orman-hadis-head {
+      max-width: 720px;
+      margin: 0 auto 70px;
+      text-align: center;
+      position: relative;
+    }
+    .orman-hadis-head h2 {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.2;
+      color: #f5f0e0;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+    .orman-hadis-head h2 em { color: var(--orman-gold); font-style: italic; }
+    .orman-hadis-head p {
+      color: rgba(245,240,224,0.65);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    /* Featured (büyük) hadis kartı */
+    .orman-hadis-featured {
+      max-width: 960px;
+      margin: 0 auto 56px;
+      padding: 56px 48px;
+      background:
+        linear-gradient(180deg, rgba(200,168,75,0.06) 0%, rgba(255,255,255,0.02) 100%),
+        rgba(18,36,20,0.6);
+      border: 1px solid rgba(200,168,75,0.25);
+      border-radius: 4px;
+      position: relative;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .orman-hadis-featured::before,
+    .orman-hadis-featured::after {
+      content: '';
+      position: absolute;
+      width: 32px; height: 32px;
+      border: 1px solid var(--orman-gold);
+    }
+    .orman-hadis-featured::before {
+      top: -1px; left: -1px;
+      border-right: none; border-bottom: none;
+    }
+    .orman-hadis-featured::after {
+      bottom: -1px; right: -1px;
+      border-left: none; border-top: none;
+    }
+    .orman-hadis-featured__quote {
+      position: absolute;
+      top: 24px; left: 36px;
+      font-family: 'Amiri', serif;
+      font-size: 90px;
+      line-height: 1;
+      color: var(--orman-gold);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .orman-hadis-featured__arabic {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+      line-height: 2;
+      direction: rtl;
+      text-align: center;
+      color: rgba(232,200,106,0.92);
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+    .orman-hadis-featured__divider {
+      width: 80px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--orman-gold), transparent);
+      margin: 0 auto 28px;
+    }
+    .orman-hadis-featured__text {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: clamp(1.2rem, 1.9vw, 1.55rem);
+      line-height: 1.7;
+      color: #f5f0e0;
+      text-align: center;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: 0.005em;
+    }
+    .orman-hadis-featured__source {
+      display: block;
+      margin-top: 24px;
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--orman-gold);
+      font-weight: 600;
+    }
+
+    /* Hadis grid (3'lü) */
+    .orman-hadis-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+    .orman-hadis-card {
+      padding: 40px 32px 32px;
+      background: rgba(18,36,20,0.5);
+      border: 1px solid rgba(200,168,75,0.12);
+      border-radius: 4px;
+      position: relative;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .orman-hadis-card:hover {
+      border-color: rgba(200,168,75,0.32);
+      background: rgba(18,36,20,0.7);
+      transform: translateY(-4px);
+    }
+    .orman-hadis-card__icon {
+      width: 44px; height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--orman-gold);
+      border: 1px solid rgba(200,168,75,0.25);
+      border-radius: 50%;
+    }
+    .orman-hadis-card__icon svg { width: 20px; height: 20px; }
+    .orman-hadis-card__type {
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--orman-gold);
+      font-weight: 600;
+      margin-bottom: 14px;
+      opacity: 0.85;
+    }
+    .orman-hadis-card__text {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: 1.18rem;
+      line-height: 1.6;
+      color: #f0ead8;
+      font-style: italic;
+      font-weight: 500;
+      flex: 1;
+      margin-bottom: 22px;
+    }
+    .orman-hadis-card__source {
+      padding-top: 18px;
+      border-top: 1px solid rgba(200,168,75,0.15);
+      font-size: 13px;
+      color: rgba(245,240,224,0.55);
+      letter-spacing: 0.04em;
+    }
+    .orman-hadis-card__source strong {
+      display: block;
+      color: var(--orman-gold);
+      font-weight: 600;
+      margin-bottom: 4px;
+      letter-spacing: 0.08em;
+    }
+
+    /* ---------- 3) MİSYON · VİZYON · DEĞERLER ---------- */
+    .orman-mission {
+      padding: 110px 24px;
+      background: var(--orman-bg);
+      position: relative;
+    }
+    .orman-mission__head {
+      max-width: 760px;
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+    .orman-mission__head h2 {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.2;
+      color: #f5f0e0;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .orman-mission__head h2 em { color: var(--orman-gold); font-style: italic; }
+    .orman-mission__head p {
+      color: rgba(245,240,224,0.65);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+    .orman-mission__grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid rgba(200,168,75,0.15);
+      border-radius: 4px;
+      overflow: hidden;
+      background: rgba(18,36,20,0.35);
+    }
+    .orman-mission__card {
+      padding: 56px 40px;
+      border-right: 1px solid rgba(200,168,75,0.12);
+      transition: background 0.4s ease;
+      position: relative;
+    }
+    .orman-mission__card:last-child { border-right: none; }
+    .orman-mission__card:hover {
+      background: rgba(200,168,75,0.04);
+    }
+    .orman-mission__num {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: 60px;
+      line-height: 1;
+      color: var(--orman-gold);
+      opacity: 0.28;
+      font-weight: 400;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .orman-mission__card h3 {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: 1.65rem;
+      color: #f5f0e0;
+      font-weight: 500;
+      margin-bottom: 18px;
+      letter-spacing: -0.005em;
+    }
+    .orman-mission__card h3 em { color: var(--orman-gold); font-style: italic; }
+    .orman-mission__card p {
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: rgba(245,240,224,0.7);
+    }
+    .orman-mission__card__line {
+      width: 32px; height: 2px;
+      background: var(--orman-gold);
+      margin-bottom: 22px;
+      opacity: 0.7;
+    }
+
+    /* ---------- 4) ÇALIŞMALARIMIZ (Galeri) ---------- */
+    .orman-works {
+      padding: 110px 24px;
+      background:
+        linear-gradient(180deg, var(--orman-bg) 0%, #0c1f12 100%);
+      position: relative;
+    }
+    .orman-works__head {
+      max-width: 820px;
+      margin: 0 auto 56px;
+      text-align: center;
+    }
+    .orman-works__head h2 {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.2;
+      color: #f5f0e0;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+    .orman-works__head h2 em { color: var(--orman-gold); font-style: italic; }
+    .orman-works__head p {
+      color: rgba(245,240,224,0.65);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+    .orman-works__grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .orman-work {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 4px;
+      background:
+        linear-gradient(135deg, #0e2114 0%, #1a3520 100%);
+      border: 1px solid rgba(200,168,75,0.15);
+      cursor: default;
+      transition: all 0.4s ease;
+    }
+    .orman-work--tall { aspect-ratio: 4 / 5; grid-row: span 1; }
+    .orman-work--wide {
+      grid-column: span 2;
+      aspect-ratio: 16 / 9;
+    }
+    .orman-work::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(200,168,75,0.06), transparent 60%),
+        repeating-linear-gradient(45deg, transparent 0 12px, rgba(200,168,75,0.025) 12px 13px);
+      pointer-events: none;
+    }
+    .orman-work:hover {
+      border-color: rgba(200,168,75,0.35);
+      transform: translateY(-3px);
+    }
+    .orman-work__inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 26px;
+      z-index: 2;
+    }
+    .orman-work__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .orman-work__date {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--orman-gold);
+      font-weight: 600;
+      padding: 6px 12px;
+      border: 1px solid rgba(200,168,75,0.3);
+      border-radius: 999px;
+      background: rgba(10,26,15,0.7);
+    }
+    .orman-work__media-pill {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,240,224,0.55);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .orman-work__media-pill svg { width: 12px; height: 12px; }
+    .orman-work__title {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: 1.4rem;
+      line-height: 1.3;
+      color: #f5f0e0;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .orman-work__title em { font-style: normal; }
+    .orman-work__meta {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: rgba(245,240,224,0.55);
+    }
+    .orman-work__icon {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px; height: 72px;
+      border: 1px dashed rgba(200,168,75,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--orman-gold);
+      opacity: 0.55;
+      transition: all 0.4s ease;
+    }
+    .orman-work:hover .orman-work__icon {
+      opacity: 0.85;
+      border-color: rgba(200,168,75,0.7);
+    }
+    .orman-work__icon svg { width: 28px; height: 28px; }
+    .orman-works__note {
+      max-width: 580px;
+      margin: 56px auto 0;
+      text-align: center;
+      padding: 22px 28px;
+      border-top: 1px solid rgba(200,168,75,0.18);
+      border-bottom: 1px solid rgba(200,168,75,0.18);
+      font-size: 14px;
+      color: rgba(245,240,224,0.62);
+      letter-spacing: 0.02em;
+      font-style: italic;
+    }
+
+    /* Loading & empty states */
+    .orman-works__loading,
+    .orman-works__empty {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 70px 20px;
+      color: rgba(245,240,224,0.55);
+      text-align: center;
+    }
+    .orman-works__spinner {
+      width: 36px; height: 36px;
+      border: 2px solid rgba(200,168,75,0.18);
+      border-top-color: var(--orman-gold);
+      border-radius: 50%;
+      animation: ormanSpin 0.9s linear infinite;
+    }
+    @keyframes ormanSpin { to { transform: rotate(360deg); } }
+    .orman-works__empty h3 {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: 1.4rem;
+      font-style: italic;
+      color: #f5f0e0;
+      margin-bottom: 4px;
+    }
+
+    /* Kart medyası — kapak görseli + (varsa) play overlay */
+    .orman-work {
+      cursor: pointer;
+    }
+    .orman-work__media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .orman-work__media img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease, filter 0.4s ease;
+    }
+    .orman-work:hover .orman-work__media img {
+      transform: scale(1.04);
+      filter: brightness(0.85);
+    }
+    .orman-work__media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg,
+          rgba(8,18,12,0.15) 0%,
+          rgba(8,18,12,0.55) 70%,
+          rgba(8,18,12,0.85) 100%);
+      pointer-events: none;
+    }
+    .orman-work__inner { z-index: 2; }
+    .orman-work .orman-work__icon { display: none; }
+    .orman-work:has(.orman-work__media)::before { display: none; }
+    .orman-work__play {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 68px; height: 68px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      color: #0a1a0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, background 0.3s ease;
+      pointer-events: none;
+    }
+    .orman-work:hover .orman-work__play {
+      transform: translate(-50%, -50%) scale(1.08);
+      background: var(--orman-gold);
+    }
+    .orman-work__play svg { width: 26px; height: 26px; }
+
+    /* Lightbox modal */
+    .orman-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(5,12,8,0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 24px;
+    }
+    .orman-lightbox.open { display: flex; }
+    .orman-lightbox__close {
+      position: absolute;
+      top: 20px; right: 20px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.5);
+      color: #f5f0e0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .orman-lightbox__close:hover {
+      background: rgba(200,168,75,0.2);
+      border-color: var(--orman-gold);
+      color: var(--orman-gold);
+    }
+    .orman-lightbox__close svg { width: 20px; height: 20px; }
+    .orman-lightbox__inner {
+      max-width: min(1100px, 100%);
+      max-height: 90vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .orman-lightbox__media {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
+    }
+    .orman-lightbox__media img,
+    .orman-lightbox__media video {
+      max-width: 100%;
+      max-height: 75vh;
+      border-radius: 4px;
+      display: block;
+      box-shadow: 0 12px 60px rgba(0,0,0,0.6);
+    }
+    .orman-lightbox__caption {
+      text-align: center;
+      color: rgba(245,240,224,0.85);
+      flex-shrink: 0;
+    }
+    .orman-lightbox__caption-date {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--orman-gold);
+      margin-bottom: 8px;
+    }
+    .orman-lightbox__caption-title {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+      font-weight: 500;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .orman-lightbox__caption-title em { color: var(--orman-gold); font-style: italic; }
+    .orman-lightbox__caption-meta {
+      font-size: 13px;
+      color: rgba(245,240,224,0.55);
+      letter-spacing: 0.05em;
+    }
+    /* Slider navigasyon */
+    .orman-lightbox__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.55);
+      color: #f5f0e0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      z-index: 2;
+    }
+    .orman-lightbox__nav:hover {
+      background: rgba(200,168,75,0.25);
+      border-color: var(--orman-gold);
+      color: var(--orman-gold);
+    }
+    .orman-lightbox__nav[data-dir="prev"] { left: 12px; }
+    .orman-lightbox__nav[data-dir="next"] { right: 12px; }
+    .orman-lightbox__nav[hidden] { display: none; }
+    .orman-lightbox__nav svg { width: 20px; height: 20px; }
+    .orman-lightbox__counter {
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: rgba(245,240,224,0.5);
+      flex-shrink: 0;
+      margin-bottom: -4px;
+    }
+    .orman-lightbox__caption-date { margin-top: 4px; }
+
+    @media (max-width: 768px) {
+      .orman-lightbox { padding: 12px; }
+      .orman-lightbox__close { top: 12px; right: 12px; width: 38px; height: 38px; }
+      .orman-lightbox__media img,
+      .orman-lightbox__media video { max-height: 60vh; }
+      .orman-lightbox__nav { width: 38px; height: 38px; }
+      .orman-lightbox__nav[data-dir="prev"] { left: 4px; }
+      .orman-lightbox__nav[data-dir="next"] { right: 4px; }
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1024px) {
+      .orman-hadis-grid { grid-template-columns: 1fr 1fr; }
+      .orman-mission__grid { grid-template-columns: 1fr; }
+      .orman-mission__card { border-right: none; border-bottom: 1px solid rgba(200,168,75,0.12); }
+      .orman-mission__card:last-child { border-bottom: none; }
+      .orman-works__grid { grid-template-columns: 1fr 1fr; }
+      .orman-work--wide { grid-column: span 2; }
+    }
+    @media (max-width: 768px) {
+      .orman-intent { padding: 90px 20px 60px; }
+      .orman-hadis-section { padding: 70px 20px; }
+      .orman-hadis-featured { padding: 40px 24px; }
+      .orman-hadis-featured__quote { display: none; }
+      .orman-hadis-grid { grid-template-columns: 1fr; gap: 16px; }
+      .orman-mission { padding: 70px 20px; }
+      .orman-mission__card { padding: 40px 28px; }
+      .orman-works { padding: 70px 20px; }
+      .orman-works__grid { grid-template-columns: 1fr; }
+      .orman-work--wide { grid-column: span 1; aspect-ratio: 4/3; }
+    }
+
+    /* ============================================================
+       AKÇED Bağış Köprüsü
+       ============================================================ */
+    .orman-akced {
+      padding: 110px 24px 90px;
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(200,168,75,0.08), transparent 55%),
+        radial-gradient(ellipse at 80% 100%, rgba(45,90,45,0.18), transparent 55%),
+        var(--orman-bg);
+      position: relative;
+      overflow: hidden;
+    }
+    .orman-akced__head {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+    .orman-akced__head h2 {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.18;
+      color: #f5f0e0;
+      font-weight: 500;
+      margin-bottom: 20px;
+      letter-spacing: -0.005em;
+    }
+    .orman-akced__head h2 em {
+      color: var(--orman-gold);
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+    .orman-akced__head p {
+      color: rgba(245,240,224,0.72);
+      font-size: 1.04rem;
+      line-height: 1.85;
+    }
+
+    .orman-akced__bridge {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    /* Browser preview kartı */
+    .orman-akced__preview {
+      position: relative;
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #0e1f12;
+      border: 1px solid rgba(200,168,75,0.22);
+      box-shadow:
+        0 30px 80px -20px rgba(0,0,0,0.55),
+        0 0 0 1px rgba(200,168,75,0.06) inset;
+      text-decoration: none;
+      transition: transform 0.5s cubic-bezier(.2,.8,.2,1), box-shadow 0.5s;
+      transform-style: preserve-3d;
+    }
+    .orman-akced__preview:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 50px 110px -20px rgba(0,0,0,0.7),
+        0 0 0 1px rgba(200,168,75,0.18) inset;
+    }
+    .orman-akced__chrome {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      background: linear-gradient(180deg, #14271a 0%, #0f1f15 100%);
+      border-bottom: 1px solid rgba(200,168,75,0.12);
+    }
+    .orman-akced__dots {
+      display: flex;
+      gap: 7px;
+    }
+    .orman-akced__dot {
+      width: 11px; height: 11px;
+      border-radius: 50%;
+    }
+    .orman-akced__dot.r { background: #ff5f57; }
+    .orman-akced__dot.y { background: #febc2e; }
+    .orman-akced__dot.g { background: #28c840; }
+    .orman-akced__url {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 7px 14px;
+      background: rgba(8,18,11,0.7);
+      border: 1px solid rgba(200,168,75,0.1);
+      border-radius: 999px;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      color: rgba(245,240,224,0.78);
+      font-family: 'SF Mono', ui-monospace, Menlo, monospace;
+    }
+    .orman-akced__url svg { width: 13px; height: 13px; color: var(--orman-gold); flex-shrink: 0; }
+    .orman-akced__url strong { color: #fff; font-weight: 500; }
+
+    /* ====== Viewport — Sinematik Orman Kompozisyonu ====== */
+    .orman-akced__viewport {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background:
+        radial-gradient(ellipse 60% 50% at 78% 28%, rgba(255,190,95,0.22) 0%, rgba(220,150,70,0.08) 35%, transparent 60%),
+        radial-gradient(ellipse at 50% 100%, rgba(8,40,18,0.6) 0%, transparent 55%),
+        linear-gradient(170deg, #061714 0%, #0d2218 28%, #1b2a1a 55%, #2c1e0f 100%);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    /* Sun/ışık parçacığı */
+    .orman-akced__sun {
+      position: absolute;
+      top: 18%;
+      right: 14%;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(255,210,120,0.5) 0%, rgba(220,170,80,0.18) 35%, transparent 65%);
+      border-radius: 50%;
+      filter: blur(18px);
+      z-index: 0;
+      mix-blend-mode: screen;
+    }
+    .orman-akced__sun::after {
+      content: '';
+      position: absolute;
+      inset: 30%;
+      background: radial-gradient(circle, rgba(255,225,150,0.7) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(8px);
+    }
+    /* Atmosferik sis ve toz */
+    .orman-akced__mist {
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(180deg, transparent 0 5px, rgba(255,255,255,0.012) 5px 6px),
+        radial-gradient(ellipse at 25% 75%, rgba(140,170,130,0.13) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 60%, rgba(255,180,90,0.08) 0%, transparent 50%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    /* Yıldız tozu */
+    .orman-akced__stars {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 55%;
+      background-image:
+        radial-gradient(1px 1px at 12% 18%, rgba(255,240,200,0.7) 50%, transparent),
+        radial-gradient(1px 1px at 28% 32%, rgba(255,240,200,0.5) 50%, transparent),
+        radial-gradient(1px 1px at 45% 12%, rgba(255,240,200,0.6) 50%, transparent),
+        radial-gradient(1px 1px at 62% 22%, rgba(255,240,200,0.4) 50%, transparent),
+        radial-gradient(1px 1px at 84% 8%, rgba(255,240,200,0.5) 50%, transparent),
+        radial-gradient(1px 1px at 92% 38%, rgba(255,240,200,0.3) 50%, transparent);
+      opacity: 0.65;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Orman silüetleri — 3 katman parallaks */
+    .orman-akced__forest {
+      position: absolute;
+      left: -2%; right: -2%;
+      width: 104%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .orman-akced__forest--back {
+      bottom: 14%;
+      height: 22%;
+      opacity: 0.55;
+      filter: blur(0.6px);
+    }
+    .orman-akced__forest--mid {
+      bottom: 6%;
+      height: 26%;
+      opacity: 0.85;
+    }
+    .orman-akced__forest--front {
+      bottom: 0;
+      height: 22%;
+    }
+    /* Orman zemini */
+    .orman-akced__ground {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 8%;
+      background: linear-gradient(180deg, rgba(8,15,8,0.4) 0%, #03090a 100%);
+      z-index: 1;
+    }
+
+    /* Canlı durum rozeti */
+    .orman-akced__live {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px 6px 10px;
+      background: rgba(8,18,11,0.78);
+      border: 1px solid rgba(108,209,108,0.28);
+      border-radius: 999px;
+      font-size: 9.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,240,224,0.92);
+      font-weight: 700;
+      z-index: 4;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .orman-akced__live-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #6cd16c;
+      box-shadow: 0 0 0 0 rgba(108,209,108,0.7), 0 0 8px rgba(108,209,108,0.6);
+      animation: akcedPulse 2.2s ease-out infinite;
+    }
+    @keyframes akcedPulse {
+      0% { box-shadow: 0 0 0 0 rgba(108,209,108,0.7), 0 0 8px rgba(108,209,108,0.6); }
+      70% { box-shadow: 0 0 0 9px rgba(108,209,108,0), 0 0 8px rgba(108,209,108,0.6); }
+      100% { box-shadow: 0 0 0 0 rgba(108,209,108,0), 0 0 8px rgba(108,209,108,0.6); }
+    }
+
+    /* Resmi bağış noktası mühürü */
+    .orman-akced__cert {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 12px;
+      background: linear-gradient(180deg, rgba(200,168,75,0.18) 0%, rgba(200,168,75,0.08) 100%);
+      border: 1px solid rgba(200,168,75,0.45);
+      border-radius: 999px;
+      font-size: 9.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--orman-gold-light);
+      font-weight: 700;
+      z-index: 4;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .orman-akced__cert svg { width: 11px; height: 11px; flex-shrink: 0; }
+
+    /* Merkezi içerik */
+    .orman-akced__viewport-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 32px 80px;
+      z-index: 3;
+    }
+    .orman-akced__viewport-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      background: rgba(6,15,8,0.65);
+      border: 1px solid rgba(200,168,75,0.42);
+      border-radius: 999px;
+      font-size: 10px;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--orman-gold-light);
+      font-weight: 700;
+      margin-bottom: 26px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04) inset,
+        0 10px 28px rgba(0,0,0,0.35);
+    }
+    .orman-akced__viewport-brand svg { width: 13px; height: 13px; }
+    .orman-akced__viewport-title {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: clamp(1.7rem, 3.1vw, 2.85rem);
+      line-height: 1.05;
+      color: #fbf3da;
+      font-weight: 500;
+      margin-bottom: 18px;
+      max-width: 480px;
+      letter-spacing: -0.013em;
+      text-shadow: 0 6px 28px rgba(0,0,0,0.55);
+    }
+    .orman-akced__viewport-title em {
+      color: #f0d585;
+      font-style: italic;
+      font-weight: 600;
+      background: linear-gradient(180deg, #f5dc8e 0%, #d4a94d 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .orman-akced__viewport-sub {
+      font-size: 0.92rem;
+      color: rgba(245,240,224,0.78);
+      max-width: 380px;
+      margin-bottom: 30px;
+      line-height: 1.65;
+      letter-spacing: 0.005em;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    .orman-akced__viewport-cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      padding: 14px 30px;
+      background: linear-gradient(180deg, #f0d180 0%, #d4a94d 50%, #a8842f 100%);
+      color: #0a1a0f;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.22) inset,
+        0 0 0 4px rgba(200,168,75,0.12),
+        0 22px 44px -12px rgba(200,168,75,0.55),
+        0 4px 14px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .orman-akced__viewport-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: -120%;
+      width: 55%;
+      background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.55) 50%, transparent 70%);
+      animation: akcedShimmer 3.6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes akcedShimmer {
+      0%, 55% { left: -120%; }
+      100% { left: 200%; }
+    }
+    .orman-akced__viewport-cta-label,
+    .orman-akced__viewport-cta svg {
+      position: relative;
+      z-index: 1;
+    }
+    .orman-akced__viewport-cta svg { width: 14px; height: 14px; }
+
+    /* Hover'da viewport ince zoom */
+    .orman-akced__preview:hover .orman-akced__viewport > * {
+      transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
+    }
+    .orman-akced__preview:hover .orman-akced__forest--back { transform: translateY(-2px); }
+    .orman-akced__preview:hover .orman-akced__forest--mid { transform: translateY(-3px); }
+    .orman-akced__preview:hover .orman-akced__forest--front { transform: translateY(-4px); }
+    .orman-akced__preview:hover .orman-akced__sun { transform: scale(1.04); }
+
+    .orman-akced__hover-hint {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0.92);
+      width: 92px; height: 92px;
+      border-radius: 50%;
+      background: rgba(200,168,75,0.95);
+      color: #0a1a0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      z-index: 5;
+      pointer-events: none;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+    }
+    .orman-akced__hover-hint svg { width: 24px; height: 24px; margin-bottom: 2px; }
+    .orman-akced__preview:hover .orman-akced__hover-hint {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Sağ taraf — info kolonu */
+    .orman-akced__info {
+      padding: 8px 0;
+    }
+    .orman-akced__info-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--orman-gold);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    .orman-akced__info-eyebrow::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: var(--orman-gold);
+    }
+    .orman-akced__info h3 {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+      line-height: 1.25;
+      color: #f5f0e0;
+      font-weight: 500;
+      margin-bottom: 18px;
+      letter-spacing: -0.005em;
+    }
+    .orman-akced__info h3 em { color: var(--orman-gold); font-style: italic; }
+    .orman-akced__info > p {
+      color: rgba(245,240,224,0.72);
+      font-size: 1rem;
+      line-height: 1.78;
+      margin-bottom: 26px;
+    }
+    .orman-akced__bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px;
+    }
+    .orman-akced__bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(200,168,75,0.1);
+      color: rgba(245,240,224,0.78);
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+    .orman-akced__bullets li:last-child { border-bottom: none; }
+    .orman-akced__bullets li svg {
+      width: 18px; height: 18px;
+      flex-shrink: 0;
+      color: var(--orman-gold);
+      margin-top: 2px;
+    }
+    .orman-akced__bullets li strong { color: #f5f0e0; font-weight: 600; }
+
+    .orman-akced__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 32px;
+      background: var(--orman-gold);
+      color: #0a1a0f;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 14px 32px -10px rgba(200,168,75,0.5);
+    }
+    .orman-akced__cta:hover {
+      background: var(--orman-gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px -10px rgba(200,168,75,0.6);
+    }
+    .orman-akced__cta svg { width: 16px; height: 16px; }
+    .orman-akced__alt-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 18px;
+      color: rgba(245,240,224,0.6);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245,240,224,0.2);
+      padding-bottom: 2px;
+      transition: all 0.3s;
+    }
+    .orman-akced__alt-link:hover {
+      color: var(--orman-gold);
+      border-bottom-color: var(--orman-gold);
+    }
+    .orman-akced__alt-link svg { width: 13px; height: 13px; }
+
+    /* Bölücü → IBAN bölümüne yumuşak geçiş */
+    .orman-akced-divider {
+      max-width: 720px;
+      margin: 90px auto 0;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 0 24px;
+    }
+    .orman-akced-divider span.line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(200,168,75,0.35), transparent);
+    }
+    .orman-akced-divider span.text {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(245,240,224,0.55);
+      font-weight: 600;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 1024px) {
+      .orman-akced__bridge { grid-template-columns: 1fr; gap: 56px; }
+      .orman-akced__info { text-align: center; }
+      .orman-akced__info-eyebrow { justify-content: center; }
+      .orman-akced__info-eyebrow::before { display: none; }
+    }
+    @media (max-width: 768px) {
+      .orman-akced { padding: 70px 20px 60px; }
+      .orman-akced__hover-hint { display: none; }
+      .orman-akced__alt-link { display: flex; margin: 16px 0 0; justify-content: center; }
+      .orman-akced-divider { margin-top: 60px; gap: 14px; }
+      .orman-akced-divider span.text { font-size: 10px; letter-spacing: 0.16em; white-space: normal; text-align: center; }
+      .orman-akced__live, .orman-akced__cert { font-size: 8.5px; letter-spacing: 0.14em; padding: 5px 10px; }
+      .orman-akced__viewport-content { padding: 30px 22px 56px; }
+      .orman-akced__viewport-brand { font-size: 9px; padding: 6px 14px; letter-spacing: 0.26em; }
+      .orman-akced__sun { width: 160px; height: 160px; right: 8%; }
+    }
+
+    /* ============================================================
+       BAĞIŞ BİLDİRİM — Bilgilendirme + Form
+       ============================================================ */
+    .orman-bilgilendirme {
+      max-width: 1200px;
+      margin: 0 auto 56px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .orman-bilgi-card {
+      position: relative;
+      padding: 40px 30px 34px;
+      background:
+        linear-gradient(165deg, rgba(200,168,75,0.10) 0%, rgba(18,36,20,0.55) 55%, rgba(10,26,15,0.65) 100%);
+      border: 1px solid rgba(200,168,75,0.20);
+      border-radius: 14px;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 20px 44px rgba(0,0,0,0.32);
+      transition: transform .42s cubic-bezier(.2,.7,.3,1), border-color .42s ease, box-shadow .42s ease;
+    }
+    .orman-bilgi-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 64px; height: 3px;
+      border-radius: 0 0 4px 4px;
+      background: linear-gradient(to right, transparent, var(--orman-gold), transparent);
+      opacity: 0.8;
+      transition: width .45s ease;
+    }
+    .orman-bilgi-card::after {
+      content: '';
+      position: absolute;
+      top: -45%; left: 50%;
+      transform: translateX(-50%);
+      width: 70%; height: 70%;
+      background: radial-gradient(circle, rgba(200,168,75,0.16) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity .5s ease;
+      pointer-events: none;
+    }
+    .orman-bilgi-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(200,168,75,0.45);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(200,168,75,0.14);
+    }
+    .orman-bilgi-card:hover::before { width: 120px; }
+    .orman-bilgi-card:hover::after { opacity: 1; }
+    .orman-bilgi-icon {
+      position: relative;
+      z-index: 2;
+      width: 64px; height: 64px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(232,200,106,0.38);
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(232,200,106,0.20), rgba(200,168,75,0.05));
+      color: var(--orman-gold-light);
+      box-shadow: 0 10px 24px rgba(200,168,75,0.16), inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+    .orman-bilgi-icon svg { width: 26px; height: 26px; }
+    .orman-bilgi-num {
+      position: relative;
+      z-index: 2;
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: 58px;
+      line-height: 1;
+      color: var(--orman-gold-light);
+      font-weight: 500;
+      margin-bottom: 8px;
+      font-style: italic;
+      letter-spacing: -0.02em;
+    }
+    .orman-bilgi-num.small { font-size: 42px; font-style: italic; }
+    .orman-bilgi-num small { font-size: 0.4em; margin-left: 4px; opacity: 0.85; font-style: normal; }
+    .orman-bilgi-label {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(245,240,224,0.82);
+      font-weight: 700;
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+    }
+    .orman-bilgi-label::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 30px; height: 1px;
+      background: rgba(200,168,75,0.5);
+    }
+    .orman-bilgi-card p {
+      position: relative;
+      z-index: 2;
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(245,240,224,0.72);
+      margin: 0;
+    }
+    .orman-bilgi-card p strong { color: var(--orman-gold-light); }
+
+    /* IBAN copy + uyarı */
+    .orman-iban-copy {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 18px 0 0 auto;
+      padding: 9px 14px;
+      background: rgba(200,168,75,0.1);
+      border: 1px solid rgba(200,168,75,0.3);
+      color: var(--orman-gold);
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .orman-iban-copy:hover { background: rgba(200,168,75,0.2); }
+    .orman-iban-copy.copied {
+      background: rgba(108,209,108,0.15);
+      border-color: rgba(108,209,108,0.4);
+      color: #6cd16c;
+    }
+    .orman-iban-copy svg { width: 14px; height: 14px; }
+    .orman-uyari {
+      margin-top: 22px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      background: rgba(255,180,90,0.06);
+      border: 1px solid rgba(255,180,90,0.22);
+      border-left: 3px solid #ffba5a;
+      border-radius: 4px;
+    }
+    .orman-uyari svg { width: 18px; height: 18px; color: #ffba5a; flex-shrink: 0; margin-top: 2px; }
+    .orman-uyari p { font-size: 13.5px; line-height: 1.6; color: rgba(245,240,224,0.85); margin: 0; }
+    .orman-uyari p strong { color: #ffd28a; }
+
+    /* Form içi yenilemeler */
+    .orman-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .orman-form-help {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--orman-gold);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      min-height: 16px;
+    }
+    .orman-form-help.warn { color: #ffba5a; }
+    .orman-form-help.muted { color: rgba(245,240,224,0.5); font-weight: 400; font-style: italic; }
+
+    /* Miktar input — sağ tarafta birim suffix (TL veya Adet) */
+    .orman-amount-input {
+      position: relative;
+      display: flex;
+      align-items: stretch;
+    }
+    .orman-amount-input input {
+      flex: 1;
+      padding-right: 76px;
+    }
+    .orman-amount-suffix {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 4px 10px;
+      background: rgba(200,168,75,0.16);
+      border: 1px solid rgba(200,168,75,0.32);
+      border-radius: 4px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--orman-gold);
+      text-transform: uppercase;
+      pointer-events: none;
+      transition: all 0.25s;
+    }
+
+    /* Radio tile (kanal seçimi) */
+    .orman-radio-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .orman-radio { position: relative; cursor: pointer; }
+    .orman-radio input { position: absolute; opacity: 0; pointer-events: none; }
+    .orman-radio-tile {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.025);
+      border: 1.5px solid rgba(200,168,75,0.16);
+      border-radius: 6px;
+      transition: all 0.25s;
+    }
+    .orman-radio-tile strong {
+      color: #f5f0e0;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .orman-radio-tile small {
+      color: rgba(245,240,224,0.55);
+      font-size: 11.5px;
+      font-family: 'SF Mono', ui-monospace, Menlo, monospace;
+    }
+    .orman-radio:hover .orman-radio-tile { border-color: rgba(200,168,75,0.35); }
+    .orman-radio input:checked + .orman-radio-tile {
+      border-color: var(--orman-gold);
+      background: rgba(200,168,75,0.08);
+      box-shadow: 0 0 0 3px rgba(200,168,75,0.12);
+    }
+    .orman-radio input:checked + .orman-radio-tile strong { color: var(--orman-gold); }
+
+    /* File drop */
+    .orman-file-drop {
+      position: relative;
+      padding: 28px 18px;
+      border: 1.5px dashed rgba(200,168,75,0.32);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.02);
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .orman-file-drop:hover, .orman-file-drop.dragover {
+      border-color: var(--orman-gold);
+      background: rgba(200,168,75,0.05);
+    }
+    .orman-file-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+      color: rgba(245,240,224,0.7);
+    }
+    .orman-file-empty svg { width: 28px; height: 28px; color: var(--orman-gold); }
+    .orman-file-empty strong { font-size: 14px; color: #f5f0e0; font-weight: 600; }
+    .orman-file-empty span { font-size: 12px; color: rgba(245,240,224,0.5); }
+    .orman-file-preview {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .orman-file-preview img {
+      width: 60px; height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid rgba(200,168,75,0.25);
+      background: #0a1f12;
+    }
+    .orman-file-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+    .orman-file-info strong {
+      color: #f5f0e0;
+      font-size: 13px;
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .orman-file-clear {
+      align-self: flex-start;
+      background: none;
+      border: none;
+      color: var(--orman-gold);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0;
+      letter-spacing: 0.04em;
+    }
+    .orman-file-clear:hover { text-decoration: underline; }
+
+    /* Checkbox onaylar */
+    .orman-checkboxes {
+      margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 18px;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(200,168,75,0.12);
+      border-radius: 6px;
+    }
+    .orman-check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      cursor: pointer;
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(245,240,224,0.78);
+    }
+    .orman-check input {
+      flex-shrink: 0;
+      margin-top: 3px;
+      accent-color: var(--orman-gold);
+      width: 16px; height: 16px;
+      cursor: pointer;
+    }
+    .orman-check span strong { color: #f5f0e0; font-weight: 600; }
+
+    /* Form status */
+    .orman-form-status {
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .orman-form-status.error {
+      background: rgba(255,107,107,0.08);
+      border: 1px solid rgba(255,107,107,0.3);
+      color: #ff9090;
+    }
+    .orman-form-status.success {
+      background: rgba(108,209,108,0.08);
+      border: 1px solid rgba(108,209,108,0.3);
+      color: #98e398;
+    }
+    .orman-form-status.info {
+      background: rgba(200,168,75,0.08);
+      border: 1px solid rgba(200,168,75,0.25);
+      color: var(--orman-gold-light);
+    }
+
+    /* Submit button (gold) */
+    .btn-orman {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      background: linear-gradient(180deg, #f0d180 0%, #d4a94d 50%, #a8842f 100%);
+      color: #0a1a0f;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14.5px;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.15) inset,
+        0 14px 32px -10px rgba(200,168,75,0.5);
+    }
+    .btn-orman:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.2) inset,
+        0 20px 40px -10px rgba(200,168,75,0.6);
+    }
+    .btn-orman:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* AKÇED return modal */
+    .orman-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .orman-modal[hidden] { display: none; }
+    .orman-modal-bg {
+      position: absolute;
+      inset: 0;
+      background: rgba(8,18,11,0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .orman-modal-card {
+      position: relative;
+      max-width: 440px;
+      width: 100%;
+      padding: 40px 32px 32px;
+      background: linear-gradient(180deg, #122414 0%, #0a1a0f 100%);
+      border: 1px solid rgba(200,168,75,0.3);
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+      animation: ormanModalIn 0.3s cubic-bezier(.2,.8,.2,1);
+    }
+    @keyframes ormanModalIn {
+      from { transform: translateY(16px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .orman-modal-close {
+      position: absolute;
+      top: 12px; right: 14px;
+      background: none;
+      border: none;
+      color: rgba(245,240,224,0.55);
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .orman-modal-close:hover { color: var(--orman-gold); background: rgba(200,168,75,0.08); }
+    .orman-modal-icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid var(--orman-gold);
+      border-radius: 50%;
+      color: var(--orman-gold);
+    }
+    .orman-modal-icon svg { width: 24px; height: 24px; }
+    .orman-modal-card h3 {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: 1.7rem;
+      color: #f5f0e0;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .orman-modal-card p {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: rgba(245,240,224,0.72);
+      margin-bottom: 24px;
+    }
+    .orman-modal-card p strong { color: var(--orman-gold); }
+    .orman-modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .orman-modal-actions .btn-orman { width: 100%; }
+    .orman-modal-skip {
+      background: none;
+      border: none;
+      color: rgba(245,240,224,0.55);
+      font-size: 13px;
+      cursor: pointer;
+      padding: 6px;
+      letter-spacing: 0.02em;
+    }
+    .orman-modal-skip:hover { color: var(--orman-gold); }
+
+    @media (max-width: 768px) {
+      .orman-bilgilendirme { grid-template-columns: 1fr; gap: 14px; }
+      .orman-form-row { grid-template-columns: 1fr; }
+      .orman-radio-row { grid-template-columns: 1fr; }
+      .orman-iban-copy { margin: 14px auto 0; width: 100%; justify-content: center; }
+    }
   </style>
 </head>
 <body>
@@ -1198,6 +2958,7 @@
         <a href="vefa.html" class="nav-link">Vefa</a>
         <a href="orman.html" class="nav-link active">Hatıra Ormanı</a>
         <a href="duyurular.html" class="nav-link">Duyurular</a>
+        <a href="arsiv.html" class="nav-link">Arşiv</a>
         <a href="iletisim.html" class="nav-link">İletişim</a>
         <a href="admin.html" class="nav-cta">Yönetim</a>
       </nav>
@@ -1234,13 +2995,13 @@
     <div class="orman-hero-content">
       <div class="orman-badge">
         <span class="orman-badge-dot"></span>
-        Canlı Bağış Kampanyası — 2020'den Beri
+        Canlı Bağış Kampanyası · 2020'den Beri
       </div>
 
-      <h1>Her Fidan, <span>Bir Vefa.</span><br>Her Bağış, Bir <span>Miras.</span></h1>
+      <h1>Her Fidan, <span>Bir Vefa.</span><br>Her Bağış, <span>Bir</span> <span>Miras.</span></h1>
 
       <p class="orman-hero-lead">
-        Antalya'nın yeşil geleceği için <strong>1000 fidan</strong> hedefliyoruz. Senin adına dikilen her fidan, <strong>nesiller boyu</strong> yaşayacak bir iz — bir kalpte, bir toprakta, bir umutta.
+        Antalya'nın yeşil geleceği için <strong>1000 fidan</strong> hedefliyoruz. Senin adına dikilen her fidan, <strong>nesiller boyu</strong> yaşayacak bir iz; bir kalpte, bir toprakta, bir umutta.
       </p>
 
       <!-- İlerleme çubuğu -->
@@ -1253,7 +3014,7 @@
           <div class="orman-progress-fill" id="hero-progress-fill"></div>
         </div>
         <div class="orman-progress-note">
-          <span id="hero-kalan">477</span> fidana daha ihtiyacımız var — hedefe ulaşmak senin elinde.
+          <span id="hero-kalan">477</span> fidana daha ihtiyacımız var; hedefe ulaşmak senin elinde.
         </div>
       </div>
 
@@ -1276,123 +3037,183 @@
     </div>
   </section>
 
-  <!-- HİKAYEMİZ — Cinematic Story Arc -->
-  <section class="orman-story" id="hikaye">
-    <!-- Cinematic Banner -->
-    <div class="orman-story-banner reveal">
-      <div class="orman-story-banner__bg"></div>
-      <div class="orman-story-banner__overlay"></div>
-      <div class="orman-story-banner__grain"></div>
-      <div class="orman-story-banner__content">
-        <div class="orman-story-eyebrow">Hikayemiz</div>
-        <h2 class="orman-story-banner-title">
-          Her büyük orman,<br>
-          <em>tek bir fidanla</em> başladı.
-        </h2>
-        <div class="orman-story-banner-line"></div>
+  <!-- ============== NİYET ============== -->
+  <section class="orman-intent" id="hikaye">
+    <div class="orman-intent__inner reveal">
+      <div class="orman-eyebrow">Niyet</div>
+      <h2 class="orman-intent__title">
+        Bir fidan dikmek, <em>asırlara uzanan</em> bir duadır.
+      </h2>
+      <p class="orman-intent__lead">
+        Hatıra Ormanı; sadece bir bağış kampanyası değildir. Peygamber Efendimizin
+        <em style="color:var(--orman-gold);font-style:italic">"Kıyamet kopuyor olsa bile elinizdeki fidanı dikin"</em>
+        emrine bir vefa, gelecek nesillere bırakacağımız bir sadaka-i cariyedir.
+        Toprağa düşen her bir tohumla, hem geleceğin gölgesini hem de niyetimizin sürekliliğini ekiyoruz.
+      </p>
+      <div class="orman-intent__divider" aria-hidden="true">
+        <span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M12 2 L12 22 M12 8 C9 8 6 6 6 4 C9 4 12 5 12 8 Z M12 8 C15 8 18 6 18 4 C15 4 12 5 12 8 Z M12 14 C8.5 14 5 12 5 9 C8.5 9 12 11 12 14 Z M12 14 C15.5 14 19 12 19 9 C15.5 9 12 11 12 14 Z"/>
+        </svg>
+        <span></span>
       </div>
     </div>
+  </section>
 
-    <!-- 3 Bölüm Story Arc -->
-    <div class="container">
-      <div class="orman-chapters">
+  <!-- ============== HADİSLER & AYET ============== -->
+  <section class="orman-hadis-section">
+    <div class="orman-hadis-head reveal">
+      <div class="orman-eyebrow">Nebevî Miras</div>
+      <h2>İslam'da fidanın <em>yeri</em> ve <em>değeri</em>.</h2>
+      <p>
+        Ağaç dikmek, dinimizde sıradan bir ekim değil; ardında bereket, sadaka ve
+        merhamet bırakan kalıcı bir hayır kapısıdır. İşte rehberimiz olan birkaç söz:
+      </p>
+    </div>
 
-        <article class="orman-chapter reveal">
-          <div class="orman-chapter__img-wrap">
-            <div class="orman-chapter__num">01</div>
-            <div class="orman-chapter__img">
-              <img src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=900&q=85" alt="Kurak toprak, yalnız bir ağaç">
-              <div class="orman-chapter__badge">Başlangıç · 2020</div>
-            </div>
-          </div>
-          <div class="orman-chapter__body">
-            <span class="orman-chapter__eyebrow">Bölüm Bir</span>
-            <h3 class="orman-chapter__title">Toprak <em>kurumuştu.</em><br>Ama umudumuz değil.</h3>
-            <div class="orman-chapter__text">
-              <p>2020 yılı, rekor sıcaklıklar. Antrenman sahasının kenarındaki tek gölge ağacı bir sabah yaprakları sararmış halde uyandı. Sporcularımız yine koşuyordu — gölgesiz.</p>
-              <p>O gün kaptanımız antrenmanı durdurdu ve tek cümle kurdu: <strong>"Bu sadece bir ağaç değildi. Bizim gölgemizdi."</strong></p>
-            </div>
-          </div>
-        </article>
+    <!-- Featured büyük hadis -->
+    <div class="orman-hadis-featured reveal">
+      <div class="orman-hadis-featured__quote" aria-hidden="true">"</div>
+      <p class="orman-hadis-featured__arabic" lang="ar" dir="rtl">
+        مَا مِنْ مُسْلِمٍ يَغْرِسُ غَرْسًا أَوْ يَزْرَعُ زَرْعًا فَيَأْكُلُ مِنْهُ طَيْرٌ أَوْ إِنْسَانٌ أَوْ بَهِيمَةٌ إِلَّا كَانَ لَهُ بِهِ صَدَقَةٌ
+      </p>
+      <div class="orman-hadis-featured__divider" aria-hidden="true"></div>
+      <p class="orman-hadis-featured__text">
+        "Bir Müslüman bir ağaç diker de o ağaçtan insan, hayvan veya kuş yerse,
+        bu onun için kıyamete kadar sürecek bir sadaka olur."
+      </p>
+      <span class="orman-hadis-featured__source">Hz. Muhammed (s.a.v.) · Sahîh-i Buhârî, Edeb 27</span>
+    </div>
 
-        <article class="orman-chapter orman-chapter--flip reveal">
-          <div class="orman-chapter__img-wrap">
-            <div class="orman-chapter__num">02</div>
-            <div class="orman-chapter__img">
-              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=85" alt="İlk fidan dikim töreni">
-              <div class="orman-chapter__badge">Söz · 2020</div>
-            </div>
-          </div>
-          <div class="orman-chapter__body">
-            <span class="orman-chapter__eyebrow">Bölüm İki</span>
-            <h3 class="orman-chapter__title">Bir söz verdik:<br><em>"Aldığımızdan fazlasını vereceğiz."</em></h3>
-            <div class="orman-chapter__text">
-              <p>İlk <strong>12 fidanı</strong> sporcularımız kendi elleriyle dikti. Her biri bir şampiyonluğun, bir dostluğun, bir anının adıydı.</p>
-              <p>Adını <strong>Hatıra Ormanı</strong> koyduk — çünkü her fidanın bir hikayesi, her hikayenin bir sahibi olacaktı.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="orman-chapter reveal">
-          <div class="orman-chapter__img-wrap">
-            <div class="orman-chapter__num">03</div>
-            <div class="orman-chapter__img">
-              <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=900&q=85" alt="Yeşeren orman, güneş ışıkları">
-              <div class="orman-chapter__badge">Miras · 2026</div>
-            </div>
-          </div>
-          <div class="orman-chapter__body">
-            <span class="orman-chapter__eyebrow">Bölüm Üç</span>
-            <h3 class="orman-chapter__title">Bugün <em>523 fidan</em><br>sabırla büyüyor.</h3>
-            <div class="orman-chapter__text">
-              <p>6 yıl, 87 bağışçı, 523 fidan. Her biri hâlâ genç, hâlâ hassas — ama her biri bir neslin imzasını taşıyor.</p>
-              <p><strong>Hedefimiz 1000 fidan.</strong> 50 yıl sonra burada bir çocuk, gölgede oturup kitap okuduğunda — senin adını bilmeyecek. Ama o gölge, <em>senin sözünden</em> büyüyecek.</p>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- Pull Quote -->
-      <figure class="orman-story-quote reveal">
-        <blockquote>
-          Bir sporcuyu yetiştirmek kadar, diktiğin bir fidana göz kulak olmak da <em>sorumluluktur.</em><br>
-          Biz sporu topraktan öğrendik —<br>borcumuzu ona ödüyoruz.
-        </blockquote>
-        <cite>Kulüp Başkanı</cite>
-      </figure>
-
-      <!-- Before / After Impact -->
-      <div class="orman-impact reveal">
-        <div class="orman-impact__col orman-impact__col--before">
-          <div class="orman-impact__img">
-            <img src="https://images.unsplash.com/photo-1604187354081-67d42d04b11a?w=800&q=85" alt="2020 — Kurak saha">
-          </div>
-          <div class="orman-impact__info">
-            <span class="orman-impact__year">2020</span>
-            <div class="orman-impact__count">0</div>
-            <div class="orman-impact__label">Fidan · Bir söz verdik.</div>
-          </div>
-        </div>
-        <div class="orman-impact__arrow">
-          <div class="orman-impact__arrow-line"></div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
+    <!-- 3'lü hadis grid -->
+    <div class="orman-hadis-grid">
+      <article class="orman-hadis-card reveal delay-1">
+        <div class="orman-hadis-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 22V12"/><path d="M12 12c-3 0-6-2-6-5 3 0 6 1 6 5z"/>
+            <path d="M12 12c3 0 6-2 6-5-3 0-6 1-6 5z"/>
           </svg>
-          <div class="orman-impact__arrow-line"></div>
         </div>
-        <div class="orman-impact__col">
-          <div class="orman-impact__img">
-            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=85" alt="2026 — Yeşeren orman">
-          </div>
-          <div class="orman-impact__info">
-            <span class="orman-impact__year">2026 · Bugün</span>
-            <div class="orman-impact__count" id="impact-count">523</div>
-            <div class="orman-impact__label">Fidan · Hâlâ büyüyoruz.</div>
-          </div>
+        <div class="orman-hadis-card__type">Hadîs-i Şerîf</div>
+        <p class="orman-hadis-card__text">
+          "Kıyamet kopmaya başladığında bile sizden birinin elinde bir fidan varsa,
+          kıyamet kopmadan önce onu diksin."
+        </p>
+        <div class="orman-hadis-card__source">
+          <strong>Hz. Muhammed (s.a.v.)</strong>
+          Ahmed b. Hanbel, Müsned, III/184
         </div>
+      </article>
+
+      <article class="orman-hadis-card reveal delay-2">
+        <div class="orman-hadis-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3 2"/>
+          </svg>
+        </div>
+        <div class="orman-hadis-card__type">Sadaka-i Cariye</div>
+        <p class="orman-hadis-card__text">
+          "İnsan ölünce üç şey dışında ameli kesilir: Sadaka-i cariye, faydalanılan
+          ilim ve kendisine dua eden hayırlı evlat."
+        </p>
+        <div class="orman-hadis-card__source">
+          <strong>Hz. Muhammed (s.a.v.)</strong>
+          Sahîh-i Müslim, Vasiyyet 14
+        </div>
+      </article>
+
+      <article class="orman-hadis-card reveal delay-3">
+        <div class="orman-hadis-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M4 19.5V5a2 2 0 0 1 2-2h13.5"/>
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3"/>
+          </svg>
+        </div>
+        <div class="orman-hadis-card__type">Kur'ân-ı Kerîm</div>
+        <p class="orman-hadis-card__text">
+          "Görmediler mi? Biz, çorak toprağa suyu sevk ediyor, onunla ekinler
+          çıkarıyoruz. Onlardan hayvanları da, kendileri de yiyorlar."
+        </p>
+        <div class="orman-hadis-card__source">
+          <strong>Allah Teâlâ buyurdu</strong>
+          Secde Sûresi · 27. Ayet
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============== MİSYON · VİZYON · DEĞER ============== -->
+  <section class="orman-mission">
+    <div class="orman-mission__head reveal">
+      <div class="orman-eyebrow">Duruşumuz</div>
+      <h2>Toprağa düşen niyetimiz, <em>kalıcı</em> bir mirasa dönüşsün.</h2>
+      <p>
+        Akdeniz Dinamik Spor Kulübü olarak; sporcumuzu sahada, gencimizi salonda
+        yetiştirirken; vefamızı toprakta yaşatıyoruz. Hatıra Ormanı'nın temelinde
+        üç sade söz var:
+      </p>
+    </div>
+
+    <div class="orman-mission__grid reveal">
+      <div class="orman-mission__card">
+        <div class="orman-mission__num">01</div>
+        <div class="orman-mission__card__line"></div>
+        <h3>Misyonumuz</h3>
+        <p>
+          Antalya'nın yeşil dokusunu büyütmek; her dikilen fidanı bir niyetin,
+          bir vefânın, bir hatıranın somut karşılığına dönüştürmek. Sadece ağaç
+          değil; <em>iz</em> bırakmak.
+        </p>
+      </div>
+
+      <div class="orman-mission__card">
+        <div class="orman-mission__num">02</div>
+        <div class="orman-mission__card__line"></div>
+        <h3>Vizyonumuz</h3>
+        <p>
+          1000 fidanlık bir Hatıra Ormanı; içinden çocukların geçtiği, kuşların
+          yuvalandığı, gölgesinde sporcuların dinlendiği <em>yaşayan</em> bir
+          mirasın temelini atmak.
+        </p>
+      </div>
+
+      <div class="orman-mission__card">
+        <div class="orman-mission__num">03</div>
+        <div class="orman-mission__card__line"></div>
+        <h3>Değerlerimiz</h3>
+        <p>
+          Sadaka-i cariye bilinci, çevreye karşı sorumluluk, gelecek nesillerin
+          hakkını gözetmek. Bir fidan dikilirken eken kadar gören de, sulayan
+          da, dua eden de <em>ortaktır</em>.
+        </p>
       </div>
     </div>
+  </section>
+
+  <!-- ============== ÇALIŞMALARIMIZ — GALERİ ============== -->
+  <section class="orman-works">
+    <div class="orman-works__head reveal">
+      <div class="orman-eyebrow">Yaptıklarımız</div>
+      <h2>Toprakla buluşan <em>anılar</em>.</h2>
+      <p>
+        2020'den bu yana sporcularımız, gönüllülerimiz ve ailelerimizle birlikte
+        düzenlediğimiz fidan dikim etkinliklerinden kareler. Her dikim bir niyettir;
+        her niyet bir hatıraya dönüşür.
+      </p>
+    </div>
+
+    <div class="orman-works__grid reveal" id="orman-works-grid" data-state="loading">
+      <!-- Firestore'dan canlı yüklenir — orman_calismalar koleksiyonu -->
+      <div class="orman-works__loading">
+        <div class="orman-works__spinner" aria-hidden="true"></div>
+        <p>Anılar yükleniyor…</p>
+      </div>
+    </div>
+
+    <p class="orman-works__note" id="orman-works-note" hidden>
+      Her bir kart, bir etkinliğin canlı tanığıdır. Karta tıklayarak büyük göster.
+    </p>
   </section>
 
   <!-- Stats -->
@@ -1426,15 +3247,254 @@
     </div>
   </section>
 
-  <!-- Donation -->
-  <section class="orman-section orman-section-alt" id="bagis">
+  <!-- ============== AKÇED Bağış Köprüsü — Birincil Yol ============== -->
+  <section class="orman-akced" id="bagis">
+    <div class="orman-akced__head reveal">
+      <div class="orman-eyebrow">Çatı Derneğimiz · AKÇED</div>
+      <h2>Fidanını <em>akced.dikiliagacimvar.com</em> üzerinden dik.</h2>
+      <p>
+        Akdeniz Dinamik Spor Kulübü olarak bağlı bulunduğumuz çatı derneğimiz
+        <strong style="color:var(--orman-gold);">AKÇED</strong>; yıllardır anlaşmalı
+        olduğumuz, fidan dikim çalışmalarımızda gönüllerimizi birleştirdiğimiz
+        kurumumuzdur. Bu derneğin Antalya genelinde yürüttüğü tüm dikim seferberliklerinde
+        biz öncüyüz; sahada ilk kürek vuran, ilk fidanı toprağa veren olmayı
+        boynumuzun borcu biliyoruz.
+      </p>
+    </div>
+
+    <div class="orman-akced__bridge">
+      <!-- Sol — Browser preview -->
+      <a class="orman-akced__preview reveal" href="https://akced.dikiliagacimvar.com" target="_blank" rel="noopener" aria-label="AKÇED bağış sayfasını yeni sekmede aç">
+        <div class="orman-akced__chrome">
+          <div class="orman-akced__dots">
+            <span class="orman-akced__dot r"></span>
+            <span class="orman-akced__dot y"></span>
+            <span class="orman-akced__dot g"></span>
+          </div>
+          <div class="orman-akced__url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <rect x="4" y="11" width="16" height="10" rx="2"/>
+              <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+            </svg>
+            <strong>akced.dikiliagacimvar.com</strong>
+          </div>
+        </div>
+
+        <div class="orman-akced__viewport">
+          <!-- Atmosferik katmanlar -->
+          <div class="orman-akced__stars" aria-hidden="true"></div>
+          <div class="orman-akced__sun" aria-hidden="true"></div>
+          <div class="orman-akced__mist" aria-hidden="true"></div>
+
+          <!-- Orman silüetleri — 3 katman parallaks -->
+          <svg class="orman-akced__forest orman-akced__forest--back" viewBox="0 0 600 100" preserveAspectRatio="none" aria-hidden="true">
+            <g fill="#0a1f15">
+              <polygon points="0,100 0,55 22,28 44,55"/>
+              <polygon points="38,100 38,52 58,22 78,52"/>
+              <polygon points="72,100 72,58 92,32 112,58"/>
+              <polygon points="108,100 108,48 132,18 156,48"/>
+              <polygon points="148,100 148,55 168,28 188,55"/>
+              <polygon points="180,100 180,50 202,22 224,50"/>
+              <polygon points="218,100 218,58 238,32 258,58"/>
+              <polygon points="248,100 248,45 274,12 300,45"/>
+              <polygon points="290,100 290,55 312,28 334,55"/>
+              <polygon points="324,100 324,52 344,22 364,52"/>
+              <polygon points="358,100 358,58 378,32 398,58"/>
+              <polygon points="390,100 390,48 414,18 438,48"/>
+              <polygon points="430,100 430,55 450,28 470,55"/>
+              <polygon points="464,100 464,52 484,22 504,52"/>
+              <polygon points="498,100 498,58 520,32 542,58"/>
+              <polygon points="534,100 534,45 558,15 582,45"/>
+              <polygon points="572,100 572,55 588,30 600,42 600,100"/>
+            </g>
+          </svg>
+
+          <svg class="orman-akced__forest orman-akced__forest--mid" viewBox="0 0 600 100" preserveAspectRatio="none" aria-hidden="true">
+            <g fill="#06140c">
+              <!-- Sıralı çam silüetleri -->
+              <path d="M0 100 L0 60 L18 30 L24 50 L40 22 L48 42 L60 28 L70 52 L84 18 L94 38 L106 30 L116 50 L130 14 L140 34 L154 26 L164 46 L180 22 L188 42 L202 32 L212 52 L226 18 L236 38 L250 28 L260 48 L274 14 L284 34 L298 24 L308 44 L322 18 L332 38 L348 30 L358 50 L372 22 L382 42 L396 28 L406 48 L420 16 L432 36 L446 26 L458 46 L472 32 L484 52 L498 22 L508 42 L522 28 L534 48 L548 18 L560 38 L574 26 L586 46 L600 32 L600 100 Z"/>
+            </g>
+          </svg>
+
+          <svg class="orman-akced__forest orman-akced__forest--front" viewBox="0 0 600 100" preserveAspectRatio="none" aria-hidden="true">
+            <g fill="url(#akcedFrontGrad)">
+              <path d="M0 100 L0 70 L14 35 L26 60 L40 22 L54 50 L68 38 L78 60 L94 18 L106 42 L120 30 L132 56 L148 14 L162 40 L176 28 L188 52 L204 22 L218 48 L232 36 L244 60 L260 18 L272 44 L286 32 L298 56 L314 20 L328 46 L342 34 L354 58 L370 16 L384 42 L398 30 L410 54 L424 22 L438 48 L452 36 L464 58 L480 18 L494 44 L508 32 L520 56 L534 20 L548 46 L562 34 L576 58 L590 24 L600 44 L600 100 Z"/>
+            </g>
+            <defs>
+              <linearGradient id="akcedFrontGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#08180c"/>
+                <stop offset="100%" stop-color="#020805"/>
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <div class="orman-akced__ground" aria-hidden="true"></div>
+
+          <!-- Canlı durum -->
+          <div class="orman-akced__live" aria-hidden="true">
+            <span class="orman-akced__live-dot"></span>
+            <span>Bağış Açık</span>
+          </div>
+
+          <!-- Resmi mühür -->
+          <div class="orman-akced__cert" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="9" r="6"/>
+              <path d="M9 13.5 7 22l5-3 5 3-2-8.5"/>
+            </svg>
+            Resmi Bağış Noktası
+          </div>
+
+          <!-- Merkezi içerik -->
+          <div class="orman-akced__viewport-content">
+            <span class="orman-akced__viewport-brand">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M12 8c-3 0-6-2-6-5 3 0 6 1 6 5z"/>
+                <path d="M12 8c3 0 6-2 6-5-3 0-6 1-6 5z"/>
+                <path d="M12 14c-3.5 0-7-2-7-5 3.5 0 7 2 7 5zM12 14c3.5 0 7-2 7-5-3.5 0-7 2-7 5z"/>
+              </svg>
+              AKÇED · Dikili Ağacım Var
+            </span>
+            <h3 class="orman-akced__viewport-title">
+              Fidanın isminle <em>asırlara</em> uzansın.
+            </h3>
+            <p class="orman-akced__viewport-sub">
+              Sertifikalı, anlık, güvenli. Bir tıkla diktiğin fidanı sahada biz toprağa veriyoruz.
+            </p>
+            <span class="orman-akced__viewport-cta">
+              <span class="orman-akced__viewport-cta-label">Fidanını Şimdi Dik</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="orman-akced__hover-hint" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <path d="M7 17L17 7M17 7H8M17 7v9"/>
+          </svg>
+          Siteye Git
+        </div>
+      </a>
+
+      <!-- Sağ — bilgi kolonu -->
+      <div class="orman-akced__info reveal delay-1">
+        <div class="orman-akced__info-eyebrow">En Kolay Yol</div>
+        <h3>Bir tık uzaklıkta — <em>doğrudan</em> AKÇED bağış sayfası.</h3>
+        <p>
+          Sertifikalı bağışınızı kart ile yapabilir, fidanınızı kendi adınıza ya da
+          sevdiklerinizin anısına dikebilirsiniz. Kayıt da, koordinasyon da, dikim
+          de derneğimizin güvencesindedir.
+        </p>
+
+        <ul class="orman-akced__bullets">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+            <span><strong>Sertifikalı bağış:</strong> Adınıza ya da sevdiğinizin anısına dijital sertifika.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+            <span><strong>Anlık kart ödemesi:</strong> havale beklemeden, fidanınız aynı gün listeye yazılır.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+            <span><strong>Sahada biz varız:</strong> toprağa veren el, Dinamik Spor Kulübü gönüllüleridir.</span>
+          </li>
+        </ul>
+
+        <a href="https://akced.dikiliagacimvar.com" target="_blank" rel="noopener" class="orman-akced__cta">
+          AKÇED Üzerinden Bağış Yap
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M7 17L17 7M17 7H8M17 7v9"/>
+          </svg>
+        </a>
+        <a href="#iban" class="orman-akced__alt-link">
+          ya da kulübümüze IBAN ile gönder
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Geçiş çizgisi → IBAN bölümüne -->
+    <div class="orman-akced-divider reveal" aria-hidden="true">
+      <span class="line"></span>
+      <span class="text">veya gönlünden koptuğu kadar, bizzat kulübümüze</span>
+      <span class="line"></span>
+    </div>
+  </section>
+
+  <!-- Donation — IBAN + Bağış Bildirim (Anti-Fraud) -->
+  <section class="orman-section orman-section-alt" id="iban">
     <div class="container">
-      <div class="reveal" style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
-        <div class="orman-tag" style="justify-content: center;">Bağış Yap</div>
-        <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); color: white; margin-bottom: 16px;">Bağış Bilgileri</h2>
-        <p style="color: rgba(255,255,255,0.55);">Havale veya EFT yoluyla bağışınızı yapabilirsiniz.</p>
+      <div class="reveal" style="text-align: center; max-width: 760px; margin: 0 auto 36px;">
+        <div class="orman-tag" style="justify-content: center;">Doğrudan Kulübümüze · IBAN</div>
+        <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); color: white; margin-bottom: 16px;">Bağışınızı Bildirin<br><em style="color:var(--orman-gold);font-style:italic;">İz Sürebileceğimiz Bir Emanet</em></h2>
+        <p style="color: rgba(255,255,255,0.7); line-height: 1.85;">
+          AKÇED ya da kulüp IBAN'ımızdan gönlünüzden koptuğu kadarını yolladıysanız;
+          <strong style="color:var(--orman-gold);">bağışınızı aşağıdaki form ile mutlaka bildirin.</strong>
+          Bildirimi yapılmayan, dekontu/sertifikası eklenmeyen kayıtlar listemize işlenmez;
+          bu, sahte ya da yalandan bildirimleri engellemek, gerçek bağışçımızı korumak içindir.
+        </p>
       </div>
 
+      <!-- Üst bilgilendirme: 3 kart (fidan hesabı / masraf niyeti / genel kullanım) -->
+      <div class="orman-bilgilendirme reveal">
+        <div class="orman-bilgi-card">
+          <div class="orman-bilgi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M12 22V12"/><path d="M12 12c-3 0-6-2-6-5 3 0 6 1 6 5z"/>
+              <path d="M12 12c3 0 6-2 6-5-3 0-6 1-6 5z"/>
+            </svg>
+          </div>
+          <div class="orman-bilgi-num"><span id="bilgi-fidan-fiyat">150</span><small>TL</small></div>
+          <div class="orman-bilgi-label">= 1 Fidan</div>
+          <p id="bilgi-fidan-aciklama">
+            Her <strong><span class="bilgi-fidan-fiyat-inline">150</span> TL</strong>'lik bağış, isminize bir fidan olarak Hatıra Ormanı'na yazılır.
+          </p>
+        </div>
+
+        <div class="orman-bilgi-card">
+          <div class="orman-bilgi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>
+            </svg>
+          </div>
+          <div class="orman-bilgi-num small">Altı</div>
+          <div class="orman-bilgi-label">Etkinlik Masrafı</div>
+          <p id="bilgi-masraf-aciklama">
+            <span class="bilgi-fidan-fiyat-inline">150</span> TL ve altında bağışlar; fidan dikim etkinliği gün masrafları,
+            ulaşım, ikram, fidan bakım malzemeleri için kullanılır.
+          </p>
+        </div>
+
+        <div class="orman-bilgi-card">
+          <div class="orman-bilgi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="orman-bilgi-num small">Tüm</div>
+          <div class="orman-bilgi-label">Kulüp Faaliyetleri</div>
+          <p id="bilgi-genel-aciklama">
+            Tek işimiz fidan dikimi değil. Bağışlarınız gençlerimizin spor eğitimi, malzeme, kamp ve dikim seferberliklerinde
+            ortak kumbaramız olarak kullanılır.
+          </p>
+        </div>
+      </div>
+
+      <!-- Banka + Form -->
       <div class="orman-donation">
         <div class="orman-card reveal delay-1">
           <h3 class="orman-card-title">
@@ -1452,12 +3512,22 @@
             </div>
             <div class="orman-info-row">
               <div class="orman-info-label">IBAN</div>
-              <div class="orman-info-value mono">TR12 3456 7890 1234 5678 9012 34</div>
+              <div class="orman-info-value mono" id="iban-numara">TR12 3456 7890 1234 5678 9012 34</div>
             </div>
             <div class="orman-info-row">
               <div class="orman-info-label">Açıklama</div>
               <div class="orman-info-value" style="color: var(--orman-gold);">"Hatıra Ormanı - Fidan Bağışı"</div>
             </div>
+          </div>
+
+          <button type="button" id="iban-kopyala" class="orman-iban-copy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>IBAN'ı Kopyala</span>
+          </button>
+
+          <div class="orman-uyari">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <p>Havale ya da kart bağışı yaptıktan sonra <strong>kesinlikle yandaki formla bildirim yapın.</strong> Bildirimsiz bağışlar liste/sayaca işlenemez.</p>
           </div>
         </div>
 
@@ -1466,32 +3536,123 @@
             <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             Bağış Bildirim Formu
           </h3>
-          <form id="bagis-form" class="orman-form">
+
+          <form id="bagis-form" class="orman-form" novalidate>
+            <!-- Kanal seçimi -->
             <div class="orman-form-group">
-              <label class="orman-form-label">Ad Soyad *</label>
-              <input type="text" name="ad" class="orman-form-input" required placeholder="Adınız ve soyadınız">
+              <label class="orman-form-label">Bağışınızı Hangisi Üzerinden Yaptınız? *</label>
+              <div class="orman-radio-row">
+                <label class="orman-radio">
+                  <input type="radio" name="kanal" value="akced" required>
+                  <span class="orman-radio-tile">
+                    <strong>AKÇED</strong>
+                    <small>akced.dikiliagacimvar.com</small>
+                  </span>
+                </label>
+                <label class="orman-radio">
+                  <input type="radio" name="kanal" value="iban" required>
+                  <span class="orman-radio-tile">
+                    <strong>Banka / IBAN</strong>
+                    <small>Havale veya EFT</small>
+                  </span>
+                </label>
+              </div>
             </div>
+
+            <div class="orman-form-row">
+              <div class="orman-form-group">
+                <label class="orman-form-label" for="form-ad">Ad Soyad *</label>
+                <input id="form-ad" type="text" name="ad" class="orman-form-input" required placeholder="Adınız ve soyadınız">
+              </div>
+              <div class="orman-form-group">
+                <label class="orman-form-label" for="form-tel">Telefon *</label>
+                <input id="form-tel" type="tel" name="tel" class="orman-form-input" required placeholder="05XX XXX XX XX" pattern="[0-9 +]{10,17}">
+              </div>
+            </div>
+
+            <div class="orman-form-group" id="form-miktar-group">
+              <label class="orman-form-label" for="form-miktar" id="form-miktar-label">Bağış Miktarı (TL) *</label>
+              <div class="orman-amount-input">
+                <input id="form-miktar" type="number" name="miktar" class="orman-form-input" required placeholder="150" min="10" step="1" inputmode="numeric">
+                <span class="orman-amount-suffix" id="form-miktar-suffix">TL</span>
+              </div>
+              <small class="orman-form-help" id="form-miktar-hesap">Önce yukarıdan bağış kanalını seçin.</small>
+            </div>
+
             <div class="orman-form-group">
-              <label class="orman-form-label">Bağış Miktarı (TL) *</label>
-              <input type="number" name="miktar" class="orman-form-input" required placeholder="100" min="1">
+              <label class="orman-form-label" for="form-dekont" id="form-dekont-label">Bağış Belgesi · Görsel veya PDF *</label>
+              <div class="orman-file-drop" id="form-dekont-drop">
+                <input id="form-dekont" type="file" name="dekont" accept="image/*,application/pdf" required hidden>
+                <div class="orman-file-empty" id="form-dekont-empty">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <strong id="form-dekont-strong">Banka dekontu veya AKÇED sertifika ekran görüntüsü</strong>
+                  <span>Görsel veya PDF · max 8MB · Çapraz kontrol için zorunludur</span>
+                </div>
+                <div class="orman-file-preview" id="form-dekont-preview" hidden>
+                  <img id="form-dekont-thumb" alt="Dekont önizleme">
+                  <div class="orman-file-info">
+                    <strong id="form-dekont-name">—</strong>
+                    <button type="button" id="form-dekont-clear" class="orman-file-clear">Değiştir</button>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div class="orman-form-group">
-              <label class="orman-form-label">Not (opsiyonel)</label>
-              <textarea name="not" class="orman-form-input" placeholder="Kısa bir not..."></textarea>
+              <label class="orman-form-label" for="form-niyet">Niyet / Anısına / Not (opsiyonel)</label>
+              <textarea id="form-niyet" name="niyet" class="orman-form-input" rows="2" placeholder="Bağışın anlamı, kime adandığı, kısa bir niyet..."></textarea>
             </div>
-            <button type="submit" class="btn-orman">Bağış Bildir</button>
+
+            <div class="orman-checkboxes">
+              <label class="orman-check">
+                <input type="checkbox" name="rizaKullanim" required>
+                <span>Bağışımın <strong>fidan dikim etkinlikleri</strong> ve <strong>kulübün diğer gençlik faaliyetleri</strong> için kullanılmasını kabul ediyorum.</span>
+              </label>
+              <label class="orman-check">
+                <input type="checkbox" name="rizaToplu" required>
+                <span>Küçük bağışların <strong>biriken kumbarada</strong> toplu fidan dikimleri için değerlendirilebileceğini biliyor ve onaylıyorum.</span>
+              </label>
+              <label class="orman-check">
+                <input type="checkbox" name="rizaDogrulama" required>
+                <span>Bağışımın dekont/sertifika ile <strong>çapraz kontrol edilip onaylanacağını</strong> ve onay sonrası listeye işleneceğini biliyorum.</span>
+              </label>
+            </div>
+
+            <div class="orman-form-status" id="form-status" hidden></div>
+
+            <button type="submit" class="btn-orman" id="form-submit" disabled aria-disabled="true">
+              <span class="orman-btn-label">Önce 3 onayı işaretleyin</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
           </form>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- AKÇED dönüş hatırlatma modali -->
+  <div class="orman-modal" id="akced-return-modal" hidden>
+    <div class="orman-modal-bg"></div>
+    <div class="orman-modal-card">
+      <button class="orman-modal-close" id="akced-modal-close" aria-label="Kapat">×</button>
+      <div class="orman-modal-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3>AKÇED'den döndünüz mü?</h3>
+      <p>Bağışınızı tamamladıysanız, <strong>kayıtlara işlemek için</strong> kısa bir bildirim formunu doldurmanız gerekiyor. Aksi halde fidanınız listeye yazılamaz.</p>
+      <div class="orman-modal-actions">
+        <button type="button" class="btn-orman" id="akced-modal-go">Bildirim Formuna Git</button>
+        <button type="button" class="orman-modal-skip" id="akced-modal-skip">Henüz bağış yapmadım</button>
+      </div>
+    </div>
+  </div>
+
   <!-- CTA -->
   <section class="orman-section">
     <div class="container">
       <div class="orman-cta reveal">
         <h2>50 Yıl Sonra Burayı<br>Sen <span>Yeşerteceksin.</span></h2>
-        <p>Bugün diktiğin fidan, yarın bir çocuğun altında soluklandığı gölge olacak. Bir iz bırak — kalıcı, yeşil, senin.</p>
+        <p>Bugün diktiğin fidan, yarın bir çocuğun altında soluklandığı gölge olacak. Bir iz bırak: kalıcı, yeşil, senin.</p>
         <a href="#bagis" class="btn-orman-primary" style="padding: 16px 36px;">
           Hemen Bağış Yap
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -1518,13 +3679,14 @@
             <a href="index.html">Ana Sayfa</a>
             <a href="dinamik-calismalar.html">Dinamik Çalışmalar</a>
             <a href="sporlar.html">Sporlar</a>
+            <a href="arsiv.html">Arşiv</a>
             <a href="iletisim.html">İletişim</a>
           </div>
         </div>
         <div>
           <h4 class="footer-title" style="color: var(--orman-gold);">Sosyal Medya</h4>
           <div class="footer-social">
-            <a href="https://instagram.com/dinamikspor" target="_blank" aria-label="Instagram">
+            <a href="https://instagram.com/dinamiksk" target="_blank" aria-label="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -1539,54 +3701,753 @@
     </div>
   </footer>
 
+  <!-- Lightbox modal — Çalışmalar/Anılar galerisi -->
+  <div class="orman-lightbox" id="orman-lightbox" role="dialog" aria-modal="true" aria-labelledby="orman-lightbox-title">
+    <button class="orman-lightbox__close" id="orman-lightbox-close" aria-label="Kapat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="orman-lightbox__nav" id="orman-lightbox-prev" data-dir="prev" aria-label="Önceki" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="orman-lightbox__nav" id="orman-lightbox-next" data-dir="next" aria-label="Sonraki" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="orman-lightbox__inner">
+      <div class="orman-lightbox__media" id="orman-lightbox-media"></div>
+      <div class="orman-lightbox__caption">
+        <div class="orman-lightbox__counter" id="orman-lightbox-counter" hidden></div>
+        <div class="orman-lightbox__caption-date" id="orman-lightbox-date" hidden></div>
+        <div class="orman-lightbox__caption-title" id="orman-lightbox-title"></div>
+        <div class="orman-lightbox__caption-meta" id="orman-lightbox-meta" hidden></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="firebase-init.js"></script>
   <script src="main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Load bagis stats from DB
-      const data = DinamikSK.DB.getData();
-      const bagis = data.bagis || { toplamFidan: 523, toplamKisi: 87, hedef: 1000 };
 
-      document.getElementById('fidan-sayisi').textContent = bagis.toplamFidan;
-      document.getElementById('kisi-sayisi').textContent = bagis.toplamKisi;
-      document.getElementById('hedef-sayisi').textContent = bagis.hedef;
-      const impactEl = document.getElementById('impact-count');
-      if (impactEl) impactEl.textContent = bagis.toplamFidan;
+      // ================ Yardımcılar ================
+      const $ = (s, r = document) => r.querySelector(s);
+      const toast = (msg, tip = 'info') => {
+        if (window.DinamikSK?.Toast?.show) {
+          window.DinamikSK.Toast.show(msg);
+        } else {
+          alert(msg);
+        }
+      };
 
-      // Hero progress — canlı sayaç + çubuk animasyonu
-      const heroFidan = document.getElementById('hero-fidan');
-      const heroHedef = document.getElementById('hero-hedef');
-      const heroKalan = document.getElementById('hero-kalan');
-      const heroFill = document.getElementById('hero-progress-fill');
-      heroHedef.textContent = bagis.hedef;
-      heroKalan.textContent = Math.max(0, bagis.hedef - bagis.toplamFidan);
+      const waitFB = () => {
+        if (window.FB?.ready) return Promise.resolve();
+        return new Promise((res) => {
+          const i = setInterval(() => { if (window.FB?.ready) { clearInterval(i); res(); } }, 50);
+        });
+      };
 
-      const yuzde = Math.min(100, (bagis.toplamFidan / bagis.hedef) * 100);
-      setTimeout(() => { heroFill.style.width = yuzde + '%'; }, 400);
+      // ================ Ayarlar (default fallback) ================
+      const DEFAULT_AYARLAR = {
+        fidanFiyati: 150,
+        hedef: 1000,
+        baselineFidan: 0,
+        baselineKisi: 0,
+        toplamFidan: 0,
+        toplamKisi: 0,
+        metinler: {
+          fidanHesabi: "Her {fiyat} TL'lik bağış, isminize bir fidan olarak Hatıra Ormanı'na yazılır.",
+          masrafKullanim: "{fiyat} TL ve altında bağışlar; fidan dikim etkinliği gün masrafları, ulaşım, ikram, fidan bakım malzemeleri için kullanılır.",
+          genelKullanim: "Tek işimiz fidan dikimi değil. Bağışlarınız gençlerimizin spor eğitimi, malzeme, kamp ve dikim seferberliklerinde ortak kumbaramız olarak kullanılır.",
+          ibanNo: "TR12 3456 7890 1234 5678 9012 34"
+        }
+      };
 
-      // Sayaç animasyonu
-      let current = 0;
-      const target = bagis.toplamFidan;
-      const step = Math.max(1, Math.ceil(target / 60));
-      const sayacAnim = setInterval(() => {
-        current = Math.min(target, current + step);
-        heroFidan.textContent = current;
-        if (current >= target) clearInterval(sayacAnim);
-      }, 30);
+      let ayarlar = { ...DEFAULT_AYARLAR };
 
-      // Bagis form
-      document.getElementById('bagis-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const ad = formData.get('ad');
-        const miktar = formData.get('miktar');
+      const fillTpl = (str, fiyat) => String(str || '').replaceAll('{fiyat}', String(fiyat));
 
-        if (ad && miktar) {
-          DinamikSK.Toast.show(`${ad}, bağışınız için teşekkür ederiz!`);
-          e.target.reset();
+      const renderBilgilendirme = () => {
+        const f = ayarlar.fidanFiyati || 150;
+        $('#bilgi-fidan-fiyat').textContent = f;
+        document.querySelectorAll('.bilgi-fidan-fiyat-inline').forEach(el => el.textContent = f);
+        const m = ayarlar.metinler || {};
+        $('#bilgi-fidan-aciklama').innerHTML = `Her <strong><span class="bilgi-fidan-fiyat-inline">${f}</span> TL</strong>'lik bağış, isminize bir fidan olarak Hatıra Ormanı'na yazılır.`;
+        $('#bilgi-masraf-aciklama').innerHTML = fillTpl(m.masrafKullanim || DEFAULT_AYARLAR.metinler.masrafKullanim, f);
+        $('#bilgi-genel-aciklama').textContent = fillTpl(m.genelKullanim || DEFAULT_AYARLAR.metinler.genelKullanim, f);
+        if (m.ibanNo) $('#iban-numara').textContent = m.ibanNo;
+      };
+
+      // ================ Sayaç ================
+      const renderSayac = () => {
+        const toplamFidan = (ayarlar.baselineFidan || 0) + (ayarlar.toplamFidan || 0);
+        const toplamKisi  = (ayarlar.baselineKisi  || 0) + (ayarlar.toplamKisi  || 0);
+        const hedef = ayarlar.hedef || 1000;
+
+        $('#fidan-sayisi') && ($('#fidan-sayisi').textContent = toplamFidan);
+        $('#kisi-sayisi')  && ($('#kisi-sayisi').textContent  = toplamKisi);
+        $('#hedef-sayisi') && ($('#hedef-sayisi').textContent = hedef);
+        const impactEl = $('#impact-count');
+        if (impactEl) impactEl.textContent = toplamFidan;
+
+        // Hero progress
+        const heroFidan = $('#hero-fidan');
+        const heroHedef = $('#hero-hedef');
+        const heroKalan = $('#hero-kalan');
+        const heroFill  = $('#hero-progress-fill');
+        if (heroHedef) heroHedef.textContent = hedef;
+        if (heroKalan) heroKalan.textContent = Math.max(0, hedef - toplamFidan);
+
+        const yuzde = hedef > 0 ? Math.min(100, (toplamFidan / hedef) * 100) : 0;
+        if (heroFill) setTimeout(() => { heroFill.style.width = yuzde + '%'; }, 400);
+
+        if (heroFidan) {
+          let current = 0;
+          const target = toplamFidan;
+          const step = Math.max(1, Math.ceil(target / 60));
+          const t = setInterval(() => {
+            current = Math.min(target, current + step);
+            heroFidan.textContent = current;
+            if (current >= target) clearInterval(t);
+          }, 30);
+        }
+      };
+
+      // ================ Firestore'dan ayarları çek ================
+      const loadAyarlar = async () => {
+        try {
+          await waitFB();
+          const { db, doc, getDoc, onSnapshot } = window.FB;
+          const ref = doc(db, 'ayarlar', 'orman');
+          const snap = await getDoc(ref);
+          if (snap.exists()) {
+            ayarlar = { ...DEFAULT_AYARLAR, ...snap.data(), metinler: { ...DEFAULT_AYARLAR.metinler, ...(snap.data().metinler || {}) } };
+          }
+          renderBilgilendirme();
+          renderSayac();
+          // Canlı dinleme — admin onayı sayacı anında değişsin
+          onSnapshot(ref, (s) => {
+            if (s.exists()) {
+              ayarlar = { ...DEFAULT_AYARLAR, ...s.data(), metinler: { ...DEFAULT_AYARLAR.metinler, ...(s.data().metinler || {}) } };
+              renderBilgilendirme();
+              renderSayac();
+            }
+          });
+        } catch (err) {
+          console.warn('Ayarlar okunamadı, default kullanılıyor:', err);
+          renderBilgilendirme();
+          renderSayac();
+        }
+      };
+      loadAyarlar();
+
+      // ================ ÇALIŞMALAR / ANILAR — Firestore canlı galeri ================
+      const escapeHtml = (s = '') => String(s)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+
+      // Başlıkta tek bir kelimeyi <em> içine al — son anlamlı kelimeyi vurgular,
+      // mevcut tasarım dilinde olduğu gibi.
+      const emphasizeTitle = (title) => escapeHtml(title || '');
+
+      const calismaCardHTML = (c) => {
+        const wide = c.boyut === 'wide' ? ' orman-work--wide' : '';
+        const kapakCard = c.kapak && window.cldThumb ? window.cldThumb(c.kapak) : (c.kapak || '');
+        const kapakBig = c.kapak && window.cldFit ? window.cldFit(c.kapak, 1200) : (c.kapak || '');
+        const media = c.kapak
+          ? `<div class="orman-work__media">
+               <img src="${escapeHtml(kapakCard)}" data-full="${escapeHtml(kapakBig)}" alt="${escapeHtml(c.baslik || '')}" decoding="async">
+             </div>`
+          : '';
+        const playOverlay = c.video
+          ? `<div class="orman-work__play" aria-hidden="true">
+               <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+             </div>`
+          : '';
+        const tarih = c.tarih
+          ? `<span class="orman-work__date">${escapeHtml(c.tarih)}</span>`
+          : `<span class="orman-work__date" style="visibility:hidden">·</span>`;
+        const mediaPill = c.video
+          ? `<span class="orman-work__media-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16"/></svg>Fotoğraf · Video</span>`
+          : `<span class="orman-work__media-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>Fotoğraf</span>`;
+        const meta = c.meta
+          ? `<p class="orman-work__meta">${escapeHtml(c.meta)}</p>`
+          : '';
+        return `
+          <article class="orman-work${wide}" data-calisma-id="${escapeHtml(c.id)}">
+            ${media}
+            ${playOverlay}
+            <div class="orman-work__inner">
+              <div class="orman-work__top">
+                ${tarih}
+                ${mediaPill}
+              </div>
+              <div>
+                <h3 class="orman-work__title">${emphasizeTitle(c.baslik || '')}</h3>
+                ${meta}
+              </div>
+            </div>
+          </article>`;
+      };
+
+      const renderCalismalar = (list) => {
+        const grid = $('#orman-works-grid');
+        const note = $('#orman-works-note');
+        if (!grid) return;
+
+        if (!list.length) {
+          grid.dataset.state = 'empty';
+          grid.innerHTML = `
+            <div class="orman-works__empty">
+              <h3>Galeri yakında dolacak</h3>
+              <p>İlk dikim anılarımız hazırlanıyor, kısa süre içinde burada paylaşılacak.</p>
+            </div>`;
+          if (note) note.hidden = true;
+          return;
+        }
+
+        grid.dataset.state = 'ready';
+        grid.innerHTML = list.map(calismaCardHTML).join('');
+        if (note) note.hidden = false;
+
+        // Görsel hazır olana kadar kartın tüm içeriğini gizle
+        grid.querySelectorAll('.orman-work').forEach(card => {
+          const img = card.querySelector('.orman-work__media img');
+          if (!img) return;
+          const inner = card.querySelector('.orman-work__inner');
+          const play = card.querySelector('.orman-work__play');
+          if (inner) inner.style.opacity = '0';
+          if (play) play.style.opacity = '0';
+          img.style.opacity = '0';
+          const reveal = () => {
+            img.style.transition = 'opacity 0.35s ease';
+            img.style.opacity = '1';
+            if (inner) { inner.style.transition = 'opacity 0.35s ease'; inner.style.opacity = '1'; }
+            if (play) { play.style.transition = 'opacity 0.35s ease'; play.style.opacity = '1'; }
+          };
+          if (img.complete) {
+            reveal();
+          } else {
+            img.decode().then(reveal).catch(reveal);
+          }
+        });
+
+        // Kart tıklama → lightbox
+        grid.querySelectorAll('.orman-work').forEach(el => {
+          el.addEventListener('click', () => {
+            const id = el.dataset.calismaId;
+            const c = list.find(x => x.id === id);
+            if (c) openLightbox(c);
+          });
+        });
+        // Reveal animasyonu — eğer parent zaten visible olduysa kartlara yansıt
+        const grandparent = grid.classList.contains('reveal') ? grid : null;
+        if (grandparent && !grandparent.classList.contains('visible')) {
+          // IntersectionObserver kontrol etsin
+        }
+      };
+
+      const loadCalismalar = async () => {
+        const grid = $('#orman-works-grid');
+        try {
+          await waitFB();
+          const { db, collection, getDocs } = window.FB;
+          const ref = collection(db, 'orman_calismalar');
+          const snap = await getDocs(ref);
+          const items = [];
+          snap.forEach(d => items.push({ id: d.id, ...d.data() }));
+          const yayinda = items.filter(x => x.yayinda !== false);
+          yayinda.sort((a, b) => {
+            const oa = Number.isFinite(a.oncelik) ? a.oncelik : 99;
+            const ob = Number.isFinite(b.oncelik) ? b.oncelik : 99;
+            if (oa !== ob) return oa - ob;
+            const ta = a.olusturuldu?.toDate?.()?.getTime() || 0;
+            const tb = b.olusturuldu?.toDate?.()?.getTime() || 0;
+            return tb - ta;
+          });
+          renderCalismalar(yayinda);
+        } catch (err) {
+          console.warn('Çalışmalar yüklenemedi:', err);
+          if (grid) {
+            grid.dataset.state = 'error';
+            grid.innerHTML = `
+              <div class="orman-works__empty">
+                <h3>Galeri yüklenemedi</h3>
+                <p>Sayfayı yenileyerek tekrar dene.</p>
+              </div>`;
+          }
+        }
+      };
+      loadCalismalar();
+
+      // ================ Lightbox — Slider ================
+      const lightbox   = $('#orman-lightbox');
+      const lbMedia    = $('#orman-lightbox-media');
+      const lbDate     = $('#orman-lightbox-date');
+      const lbTitle    = $('#orman-lightbox-title');
+      const lbMeta     = $('#orman-lightbox-meta');
+      const lbClose    = $('#orman-lightbox-close');
+      const lbPrev     = $('#orman-lightbox-prev');
+      const lbNext     = $('#orman-lightbox-next');
+      const lbCounter  = $('#orman-lightbox-counter');
+
+      let lbSlides = [];   // [{ type:'photo'|'video', url, poster? }]
+      let lbIdx    = 0;
+
+      const buildSlides = (c) => {
+        const slides = [];
+        if (c.kapak) slides.push({ type: 'photo', url: c.kapak });
+        if (Array.isArray(c.galeri)) {
+          c.galeri.forEach(url => { if (url) slides.push({ type: 'photo', url }); });
+        }
+        if (c.video) {
+          const videoUrl = window.cldVideo
+            ? window.cldVideo(c.video, 'q_auto:eco,f_auto,w_1080')
+            : c.video;
+          const poster = c.kapak && window.cldFit ? window.cldFit(c.kapak, 1200) : '';
+          slides.push({ type: 'video', url: videoUrl, poster });
+        }
+        return slides;
+      };
+
+      const stopVideo = () => {
+        const v = lbMedia.querySelector('video');
+        if (v) { try { v.pause(); } catch {} v.removeAttribute('src'); v.load?.(); }
+      };
+
+      const renderSlide = (idx) => {
+        stopVideo();
+        lbMedia.innerHTML = '';
+        const s = lbSlides[idx];
+        if (!s) return;
+
+        if (s.type === 'video') {
+          const v = document.createElement('video');
+          v.src = s.url;
+          v.controls = true;
+          v.autoplay = true;
+          v.preload = 'metadata';
+          v.playsInline = true;
+          if (s.poster) v.poster = s.poster;
+          lbMedia.appendChild(v);
+        } else {
+          const fullUrl = window.cldFit ? window.cldFit(s.url, 1600) : s.url;
+          const img = document.createElement('img');
+          img.src = fullUrl;
+          img.alt = '';
+          lbMedia.appendChild(img);
+        }
+
+        // Sayaç + nav güncelle
+        const total = lbSlides.length;
+        if (total > 1) {
+          lbCounter.textContent = `${idx + 1} / ${total}`;
+          lbCounter.hidden = false;
+          lbPrev.hidden = (idx === 0);
+          lbNext.hidden = (idx === total - 1);
+        } else {
+          lbCounter.hidden = true;
+          lbPrev.hidden = true;
+          lbNext.hidden = true;
+        }
+      };
+
+      const goSlide = (delta) => {
+        const next = lbIdx + delta;
+        if (next < 0 || next >= lbSlides.length) return;
+        lbIdx = next;
+        renderSlide(lbIdx);
+      };
+
+      const openLightbox = (c, startIdx = 0) => {
+        lbSlides = buildSlides(c);
+        lbIdx    = Math.min(startIdx, lbSlides.length - 1);
+
+        // Caption
+        if (c.tarih) { lbDate.textContent = c.tarih; lbDate.hidden = false; } else { lbDate.hidden = true; }
+        lbTitle.innerHTML = emphasizeTitle(c.baslik || '');
+        if (c.meta) { lbMeta.textContent = c.meta; lbMeta.hidden = false; } else { lbMeta.hidden = true; }
+
+        renderSlide(lbIdx);
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeLightbox = () => {
+        stopVideo();
+        lbMedia.innerHTML = '';
+        lbSlides = [];
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+      };
+
+      lbClose?.addEventListener('click', closeLightbox);
+      lbPrev?.addEventListener('click', () => goSlide(-1));
+      lbNext?.addEventListener('click', () => goSlide(+1));
+
+      lightbox?.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape')     closeLightbox();
+        if (e.key === 'ArrowLeft')  goSlide(-1);
+        if (e.key === 'ArrowRight') goSlide(+1);
+      });
+
+      // Touch swipe (mobil)
+      let lbTouchX = null;
+      lightbox?.addEventListener('touchstart', (e) => { lbTouchX = e.touches[0].clientX; }, { passive: true });
+      lightbox?.addEventListener('touchend', (e) => {
+        if (lbTouchX === null) return;
+        const dx = e.changedTouches[0].clientX - lbTouchX;
+        if (Math.abs(dx) > 50) goSlide(dx < 0 ? +1 : -1);
+        lbTouchX = null;
+      });
+
+      // ================ IBAN kopyala ================
+      const ibanBtn = $('#iban-kopyala');
+      if (ibanBtn) {
+        ibanBtn.addEventListener('click', async () => {
+          const txt = ($('#iban-numara')?.textContent || '').replace(/\s+/g, '');
+          try {
+            await navigator.clipboard.writeText(txt);
+            ibanBtn.classList.add('copied');
+            ibanBtn.querySelector('span').textContent = 'Kopyalandı!';
+            setTimeout(() => { ibanBtn.classList.remove('copied'); ibanBtn.querySelector('span').textContent = 'IBAN\'ı Kopyala'; }, 2000);
+          } catch {
+            toast('Kopyalanamadı, manuel kopyalayabilirsiniz.');
+          }
+        });
+      }
+
+      // ================ AKÇED redirect tracking ================
+      const AKCED_KEY = 'orman_akced_redirect_at';
+      document.querySelectorAll('a[href*="akced.dikiliagacimvar.com"]').forEach(a => {
+        a.addEventListener('click', () => {
+          try { localStorage.setItem(AKCED_KEY, Date.now().toString()); } catch {}
+        });
+      });
+
+      const akcedModal = $('#akced-return-modal');
+      const showAkcedModal = () => {
+        if (!akcedModal) return;
+        akcedModal.hidden = false;
+        document.body.style.overflow = 'hidden';
+      };
+      const hideAkcedModal = () => {
+        if (!akcedModal) return;
+        akcedModal.hidden = true;
+        document.body.style.overflow = '';
+      };
+      $('#akced-modal-close')?.addEventListener('click', hideAkcedModal);
+      $('#akced-modal-skip')?.addEventListener('click', () => {
+        try { localStorage.removeItem(AKCED_KEY); } catch {}
+        hideAkcedModal();
+      });
+      $('#akced-modal-go')?.addEventListener('click', () => {
+        try { localStorage.removeItem(AKCED_KEY); } catch {}
+        hideAkcedModal();
+        const form = $('#bagis-form');
+        document.querySelector('input[name="kanal"][value="akced"]').checked = true;
+        $('#iban')?.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Sayfa odağa geri geldiğinde (tab değişti, AKÇED'den döndü) kontrol
+      const checkAkcedReturn = () => {
+        try {
+          const ts = parseInt(localStorage.getItem(AKCED_KEY) || '0', 10);
+          if (ts && Date.now() - ts > 8000 && Date.now() - ts < 1000 * 60 * 60 * 6) {
+            // 8 saniye - 6 saat arası geri dönüş, modal göster
+            showAkcedModal();
+          }
+        } catch {}
+      };
+      window.addEventListener('focus', checkAkcedReturn);
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) checkAkcedReturn();
+      });
+
+      // ================ Form: dosya upload UX ================
+      const dropZone = $('#form-dekont-drop');
+      const fileInput = $('#form-dekont');
+      const emptyEl = $('#form-dekont-empty');
+      const previewEl = $('#form-dekont-preview');
+      const thumbEl = $('#form-dekont-thumb');
+      const nameEl = $('#form-dekont-name');
+      const clearEl = $('#form-dekont-clear');
+
+      const showFile = (file) => {
+        if (!file) {
+          emptyEl.hidden = false;
+          previewEl.hidden = true;
+          fileInput.value = '';
+          return;
+        }
+        emptyEl.hidden = true;
+        previewEl.hidden = false;
+        nameEl.textContent = file.name + ' · ' + (file.size / 1024).toFixed(0) + ' KB';
+        if (file.type.startsWith('image/')) {
+          const url = URL.createObjectURL(file);
+          thumbEl.src = url;
+        } else {
+          thumbEl.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c8a84b'><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><path fill='%23080808' d='M14 2v6h6'/></svg>";
+        }
+      };
+
+      dropZone?.addEventListener('click', (e) => {
+        if (e.target.id !== 'form-dekont-clear') fileInput.click();
+      });
+      fileInput?.addEventListener('change', () => {
+        const f = fileInput.files?.[0];
+        if (f && f.size > 8 * 1024 * 1024) {
+          toast('Dosya 8MB\'dan büyük olamaz.');
+          fileInput.value = '';
+          return;
+        }
+        showFile(f);
+      });
+      clearEl?.addEventListener('click', (e) => { e.stopPropagation(); showFile(null); });
+
+      ['dragover','dragleave','drop'].forEach(ev => {
+        dropZone?.addEventListener(ev, (e) => {
+          e.preventDefault();
+          if (ev === 'dragover') dropZone.classList.add('dragover');
+          else dropZone.classList.remove('dragover');
+          if (ev === 'drop') {
+            const f = e.dataTransfer.files?.[0];
+            if (f) {
+              if (f.size > 8 * 1024 * 1024) { toast('Dosya 8MB\'dan büyük olamaz.'); return; }
+              const dt = new DataTransfer();
+              dt.items.add(f);
+              fileInput.files = dt.files;
+              showFile(f);
+            }
+          }
+        });
+      });
+
+      // ================ Form: kanal'a göre miktar input dinamik ================
+      const miktarInput = $('#form-miktar');
+      const miktarHelp  = $('#form-miktar-hesap');
+      const miktarLabel = $('#form-miktar-label');
+      const miktarSuffix = $('#form-miktar-suffix');
+      const dekontStrong = $('#form-dekont-strong');
+
+      const getKanal = () => (document.querySelector('input[name="kanal"]:checked')?.value || '');
+
+      const configureMiktarFor = (kanal) => {
+        const f = ayarlar.fidanFiyati || 150;
+        if (kanal === 'akced') {
+          miktarLabel.textContent = 'Bağış Adeti (Fidan) *';
+          miktarSuffix.textContent = 'Adet';
+          miktarInput.placeholder = '1';
+          miktarInput.min = '1';
+          miktarInput.max = '999';
+          if (dekontStrong) dekontStrong.textContent = 'AKÇED sertifika / sipariş ekran görüntüsü';
+        } else if (kanal === 'iban') {
+          miktarLabel.textContent = 'Bağış Miktarı (TL) *';
+          miktarSuffix.textContent = 'TL';
+          miktarInput.placeholder = String(f);
+          miktarInput.min = '10';
+          miktarInput.removeAttribute('max');
+          if (dekontStrong) dekontStrong.textContent = 'Banka dekontu görseli';
+        } else {
+          miktarLabel.textContent = 'Bağış Miktarı *';
+          miktarSuffix.textContent = '—';
+          miktarInput.placeholder = '';
+          miktarInput.min = '1';
+          if (dekontStrong) dekontStrong.textContent = 'Banka dekontu veya AKÇED sertifika ekran görüntüsü';
+        }
+        refreshMiktarHelp();
+      };
+
+      const refreshMiktarHelp = () => {
+        const kanal = getKanal();
+        const f = ayarlar.fidanFiyati || 150;
+        const v = parseInt(miktarInput.value || '0', 10);
+
+        if (!kanal) {
+          miktarHelp.textContent = 'Önce yukarıdan bağış kanalını seçin.';
+          miktarHelp.className = 'orman-form-help muted';
+          return;
+        }
+
+        if (kanal === 'akced') {
+          if (!v || v < 1) {
+            miktarHelp.textContent = 'En az 1 fidan girin.';
+            miktarHelp.className = 'orman-form-help muted';
+            return;
+          }
+          const tl = v * f;
+          miktarHelp.textContent = `→ ${v} fidan · toplam ${new Intl.NumberFormat('tr-TR').format(tl)} TL`;
+          miktarHelp.className = 'orman-form-help';
+          return;
+        }
+
+        // iban
+        if (!v) {
+          miktarHelp.textContent = 'Minimum 10 TL.';
+          miktarHelp.className = 'orman-form-help muted';
+          return;
+        }
+        if (v < 10) {
+          miktarHelp.textContent = 'Minimum bağış 10 TL.';
+          miktarHelp.className = 'orman-form-help warn';
+          return;
+        }
+        if (v < f) {
+          miktarHelp.textContent = `${f} TL altında; bağış kumbaraya yazılır, etkinlik masrafı niyetiyle kullanılır.`;
+          miktarHelp.className = 'orman-form-help warn';
+          return;
+        }
+        const fidan = Math.floor(v / f);
+        const kalan = v - fidan * f;
+        let txt = `→ ${fidan} fidan olarak işlenecek`;
+        if (kalan > 0) txt += ` · kalan ${kalan} TL kumbaraya`;
+        miktarHelp.textContent = txt;
+        miktarHelp.className = 'orman-form-help';
+      };
+
+      miktarInput?.addEventListener('input', refreshMiktarHelp);
+      document.querySelectorAll('input[name="kanal"]').forEach(r => {
+        r.addEventListener('change', () => {
+          configureMiktarFor(r.value);
+          miktarInput.value = '';
+          miktarInput.focus();
+        });
+      });
+
+      // ================ Form: 3 onay tikli olmadan submit kapalı ================
+      const checkboxes = document.querySelectorAll('.orman-checkboxes input[type="checkbox"]');
+      const refreshSubmitGate = () => {
+        const allChecked = Array.from(checkboxes).every(c => c.checked);
+        const btn = $('#form-submit');
+        if (!btn) return;
+        btn.disabled = !allChecked;
+        btn.setAttribute('aria-disabled', String(!allChecked));
+        $('.orman-btn-label', btn).textContent = allChecked
+          ? 'Bağış Bildirimini Gönder'
+          : 'Önce 3 onayı işaretleyin';
+      };
+      checkboxes.forEach(c => c.addEventListener('change', refreshSubmitGate));
+
+      // ================ Form: telefon normalize ================
+      const telInput = $('#form-tel');
+      telInput?.addEventListener('blur', () => {
+        const v = (telInput.value || '').replace(/\s+/g, '');
+        if (v && /^[+0-9]+$/.test(v)) {
+          // hafif format
+          telInput.value = v.replace(/^(\+\d{2})?(\d{3})(\d{3})(\d{2})(\d{2})$/, (_, a, b, c, d, e) => (a ? a + ' ' : '') + b + ' ' + c + ' ' + d + ' ' + e);
         }
       });
 
-      // Scroll reveal
+      // ================ Form Submit ================
+      const form = $('#bagis-form');
+      const statusEl = $('#form-status');
+      const submitBtn = $('#form-submit');
+
+      const setStatus = (tip, msg) => {
+        if (!msg) { statusEl.hidden = true; return; }
+        statusEl.hidden = false;
+        statusEl.className = 'orman-form-status ' + tip;
+        statusEl.textContent = msg;
+      };
+
+      form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        setStatus('', '');
+
+        const fd = new FormData(form);
+        const ad = (fd.get('ad') || '').toString().trim();
+        const tel = (fd.get('tel') || '').toString().trim();
+        const kanal = (fd.get('kanal') || '').toString();
+        const inputDeger = parseInt(fd.get('miktar') || '0', 10);
+        const niyet = (fd.get('niyet') || '').toString().trim();
+        const dekont = fd.get('dekont');
+        const rizaKullanim = !!fd.get('rizaKullanim');
+        const rizaToplu = !!fd.get('rizaToplu');
+        const rizaDogrulama = !!fd.get('rizaDogrulama');
+
+        if (!kanal) return setStatus('error', 'Bağışı hangi kanaldan yaptığınızı seçin.');
+        if (!ad || ad.length < 3) return setStatus('error', 'Ad soyad en az 3 karakter olmalı.');
+        if (!tel || tel.replace(/\s+/g,'').length < 10) return setStatus('error', 'Geçerli bir telefon numarası girin.');
+
+        // Kanal'a göre miktar/fidan hesabı
+        const f = ayarlar.fidanFiyati || 150;
+        let miktar = 0;       // toplam TL
+        let fidanAdet = 0;
+        if (kanal === 'akced') {
+          if (!inputDeger || inputDeger < 1) return setStatus('error', 'En az 1 fidan girin.');
+          if (inputDeger > 999) return setStatus('error', 'Tek seferde 999\'dan fazla fidan giremezsiniz.');
+          fidanAdet = inputDeger;
+          miktar = fidanAdet * f;
+        } else { // iban
+          if (!inputDeger || inputDeger < 10) return setStatus('error', 'Minimum bağış 10 TL.');
+          miktar = inputDeger;
+          fidanAdet = miktar >= f ? Math.floor(miktar / f) : 0;
+        }
+        const niyetMasraf = miktar < f;
+
+        if (!dekont || !dekont.size) return setStatus('error', 'Bağış belgesi (dekont/sertifika görseli) yüklemelisiniz.');
+        if (dekont.size > 8 * 1024 * 1024) return setStatus('error', 'Dosya 8MB\'dan büyük olamaz.');
+        if (!rizaKullanim || !rizaToplu || !rizaDogrulama) return setStatus('error', 'Devam etmek için 3 zorunlu onay kutusunu işaretleyin.');
+
+        submitBtn.disabled = true;
+        $('.orman-btn-label', submitBtn).textContent = 'Yükleniyor...';
+        setStatus('info', 'Bağış bildiriminiz gönderiliyor — belge yükleniyor...');
+
+        try {
+          await waitFB();
+          // 1) Cloudinary upload
+          let dekontUrl = '', dekontPublicId = '';
+          if (window.uploadToCloudinary) {
+            const file = window.resizeImage ? await window.resizeImage(dekont, 1600, 0.85) : dekont;
+            const res = await window.uploadToCloudinary(file, (p) => {
+              setStatus('info', `Belge yükleniyor: %${p}`);
+            });
+            dekontUrl = res.secure_url;
+            dekontPublicId = res.public_id;
+          }
+
+          // 2) Firestore'a yaz
+          const { db, collection, addDoc, serverTimestamp } = window.FB;
+          const payload = {
+            ad, tel, kanal,
+            miktar,                  // her zaman TL toplamı
+            fidanAdetSnapshot: fidanAdet,  // bağışçının niyeti / akced için bizzat girilen
+            niyet,
+            dekontUrl, dekontPublicId,
+            durum: 'bekleyen',
+            fidanSayisi: fidanAdet,
+            fidanFiyatiSnapshot: f,
+            niyetMasraf,
+            rizaKullanim, rizaToplu, rizaDogrulama,
+            kayitTarihi: new Date().toISOString().slice(0,10),
+            olusturuldu: serverTimestamp()
+          };
+          await addDoc(collection(db, 'bagislar'), payload);
+
+          setStatus('success', 'Bağış bildiriminiz alındı! Belgenizle çapraz kontrol sonrası 24-48 saat içinde listeye işlenecektir.');
+          toast(`${ad}, bildirim alındı — onay bekliyor`);
+          form.reset();
+          showFile(null);
+          configureMiktarFor('');
+          refreshSubmitGate();
+          try { localStorage.removeItem(AKCED_KEY); } catch {}
+        } catch (err) {
+          console.error('Bağış gönderme hatası:', err);
+          setStatus('error', 'Gönderim başarısız: ' + (err?.message || 'Bilinmeyen hata') + '. Lütfen tekrar deneyin.');
+        } finally {
+          // Buton'u tekrar disabled'a alma — refreshSubmitGate karar versin (form reset sonrası tekrar 0/3)
+          $('.orman-btn-label', submitBtn).textContent = 'Bağış Bildirimini Gönder';
+          refreshSubmitGate();
+        }
+      });
+
+      // ================ Scroll reveal ================
       const revealElements = document.querySelectorAll('.reveal');
       const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1599,5 +4460,6 @@
       revealElements.forEach(el => revealObserver.observe(el));
     });
   </script>
+  <script src="site-ayarlar.js?v=2" defer></script>
 </body>
 </html>

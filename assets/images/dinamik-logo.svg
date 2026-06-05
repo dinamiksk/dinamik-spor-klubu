@@ -1160,7 +1160,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1176,7 +1176,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-2" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-2" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1224,7 +1224,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-3" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-4" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1240,7 +1240,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-4" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-6" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1288,7 +1288,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-5" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-8" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1304,7 +1304,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-6" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-10" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1352,7 +1352,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-7" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-12" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1368,7 +1368,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-8" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-14" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1416,7 +1416,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-9" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-16" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1432,7 +1432,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-10" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-18" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1480,7 +1480,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-11" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-20" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1496,7 +1496,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-12" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-22" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1544,7 +1544,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-13" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-24" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1560,7 +1560,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-14" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-26" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1608,7 +1608,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-15" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-28" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1624,7 +1624,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-16" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-30" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1672,7 +1672,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-17" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-32" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1688,7 +1688,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-18" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-34" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1736,7 +1736,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-19" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-36" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1752,7 +1752,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-20" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-38" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1800,7 +1800,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-21" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-40" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1816,7 +1816,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-22" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-42" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1864,7 +1864,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-23" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-44" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1880,7 +1880,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-24" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-46" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1928,7 +1928,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-25" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-48" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -1944,7 +1944,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-26" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-50" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -1992,7 +1992,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-27" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-52" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -2008,7 +2008,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-28" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-54" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -2056,7 +2056,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-29" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-56" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -2072,7 +2072,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-30" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-58" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -2120,7 +2120,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-31" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-60" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -2136,7 +2136,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-32" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-62" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -2184,7 +2184,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-33" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-64" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -2200,7 +2200,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-34" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-66" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -2248,7 +2248,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-35" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-68" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -2264,7 +2264,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-36" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-70" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -2312,7 +2312,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-37" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-72" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -2328,7 +2328,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-38" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-74" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -2376,7 +2376,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-39" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-76" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -2392,7 +2392,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-40" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-78" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">
@@ -2440,7 +2440,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-41" x="87.53" y="308.54" width="363.37" height="336.84" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-80" x="87.53" y="308.54" width="363.37" height="336.84" maskUnits="userSpaceOnUse">
@@ -2456,7 +2456,7 @@
     </clipPath>
     <filter id="luminosity-invert-noclip-42" x="87.88" y="308.9" width="362.66" height="336.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feColorMatrix result="cm" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"/>
-      <feFlood flood-color="#fff" result="bg"/>
+      <feFlood flood-color="#000" result="bg"/>
       <feBlend in="cm" in2="bg"/>
     </filter>
     <mask id="mask-82" x="87.88" y="308.9" width="362.66" height="336.13" maskUnits="userSpaceOnUse">

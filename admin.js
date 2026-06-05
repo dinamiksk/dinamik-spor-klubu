@@ -3163,6 +3163,8 @@ const renderKiz = () => {
   if (seedBtn) {
     seedBtn.hidden = isGorsel || state.kizProjeler.length > 0;
   }
+  const uniteBtn = $('#btn-kiz-unite');
+  if (uniteBtn) uniteBtn.hidden = isGorsel || state.kizTab !== 'yerel' || state.kizProjeler.some(p => p.id === 'unite-calismalari');
 
   const labelBtn = $('#btn-yeni-kiz-proje-label');
   if (labelBtn) labelBtn.textContent = state.kizTab === 'yerel' ? 'Yeni Yerel Proje' : 'Yeni Merkez Projesi';
@@ -3196,26 +3198,62 @@ const renderKiz = () => {
   });
 };
 
-// ----- Bölüm editörü -----
-const kizBolumHTML = (b, idx, total) => {
-  const tipBadge = b.tip === 'intro'
-    ? '<span class="kiz-bolum-type intro">İntro · italik</span>'
-    : '<span class="kiz-bolum-type p">Paragraf</span>';
+// ----- Bölüm editörü (ortak, 6 tip) -----
+const BOLUM_META = {
+  p:     'Paragraf',
+  intro: 'İntro · italik',
+  h:     'Başlık',
+  lead:  'Açılış cümlesi',
+  team:  'Ekip kartı',
+  feat:  'Faaliyet öğesi',
+};
+const BOLUM_TIPLERI = ['p', 'intro', 'h', 'lead', 'team', 'feat'];
+
+// pfx: '' (kız) | 'erkek-' (erkek)
+const bolumBlockHTML = (b, idx, total, pfx) => {
+  const da = (name) => `data-${pfx}bolum-${name}="${idx}"`;
+  const tip = BOLUM_TIPLERI.includes(b.tip) ? b.tip : 'p';
+  const label = BOLUM_META[tip];
+  const canToggle = tip === 'p' || tip === 'intro';
+  let body;
+  if (tip === 'team') {
+    body = `
+      <div class="kiz-bolum-row">
+        <input class="kiz-bolum-mini" ${da('ikon')} placeholder="🙂" value="${escapeHtml(b.ikon || '')}">
+        <input class="kiz-bolum-grow" ${da('isim')} placeholder="Ekip adı (örn. Kaşifler Ekibi)" value="${escapeHtml(b.isim || '')}">
+        <input class="kiz-bolum-mid" ${da('yas')} placeholder="7 – 10 Yaş" value="${escapeHtml(b.yas || '')}">
+      </div>
+      <textarea ${da('text')} placeholder="Ekip açıklaması…">${escapeHtml(b.text || '')}</textarea>`;
+  } else if (tip === 'feat') {
+    body = `
+      <div class="kiz-bolum-row">
+        <input class="kiz-bolum-mini" ${da('ikon')} placeholder="✨" value="${escapeHtml(b.ikon || '')}">
+        <input class="kiz-bolum-grow" ${da('baslik')} placeholder="Başlık (örn. Manevi Değerler)" value="${escapeHtml(b.baslik || '')}">
+      </div>
+      <textarea ${da('text')} placeholder="Açıklama…">${escapeHtml(b.text || '')}</textarea>`;
+  } else {
+    const ph = tip === 'intro' ? 'İtalik giriş metni…'
+      : tip === 'h' ? 'Bölüm başlığı…'
+      : tip === 'lead' ? 'Açılış cümlesi (vurgulu büyük metin)…'
+      : 'Paragraf metni… (**kelime** ile kalın)';
+    body = `<textarea ${da('text')} placeholder="${ph}">${escapeHtml(b.text || '')}</textarea>`;
+  }
   return `
-    <div class="kiz-bolum" data-bolum-idx="${idx}">
+    <div class="kiz-bolum" data-${pfx}bolum-idx="${idx}">
       <div class="kiz-bolum-head">
-        ${tipBadge}
+        <span class="kiz-bolum-type ${tip}">${label}</span>
         <div class="kiz-bolum-actions">
-          <button type="button" data-bolum-toggle="${idx}" title="Tipi değiştir">${b.tip === 'intro' ? '→ P' : '→ İntro'}</button>
-          <button type="button" data-bolum-up="${idx}" ${idx === 0 ? 'disabled' : ''} title="Yukarı taşı">↑</button>
-          <button type="button" data-bolum-down="${idx}" ${idx === total - 1 ? 'disabled' : ''} title="Aşağı taşı">↓</button>
-          <button type="button" class="danger" data-bolum-remove="${idx}" title="Bölümü sil">×</button>
+          ${canToggle ? `<button type="button" ${da('toggle')} title="Tipi değiştir">${tip === 'intro' ? '→ P' : '→ İntro'}</button>` : ''}
+          <button type="button" ${da('up')} ${idx === 0 ? 'disabled' : ''} title="Yukarı taşı">↑</button>
+          <button type="button" ${da('down')} ${idx === total - 1 ? 'disabled' : ''} title="Aşağı taşı">↓</button>
+          <button type="button" class="danger" ${da('remove')} title="Bölümü sil">×</button>
         </div>
       </div>
-      <textarea data-bolum-text="${idx}" placeholder="${b.tip === 'intro' ? 'İtalik giriş metni…' : 'Paragraf metni… (**kelime** ile kalın)'}">${escapeHtml(b.text || '')}</textarea>
-    </div>
-  `;
+      ${body}
+    </div>`;
 };
+
+const kizBolumHTML = (b, idx, total) => bolumBlockHTML(b, idx, total, '');
 
 const renderKizBolumler = () => {
   const cont = $('#kiz-bolumler-list');
@@ -3232,6 +3270,20 @@ const renderKizBolumler = () => {
     ta.addEventListener('input', () => {
       const idx = parseInt(ta.dataset.bolumText, 10);
       if (state.kizBolumler[idx]) state.kizBolumler[idx].text = ta.value;
+      schedulePreviewUpdate();
+    });
+  });
+
+  // Ek alan binding'leri (ekip/faaliyet: ikon, isim, yaş, başlık)
+  $$('input[data-bolum-ikon], input[data-bolum-isim], input[data-bolum-yas], input[data-bolum-baslik]', cont).forEach(inp => {
+    inp.addEventListener('input', () => {
+      const m = { bolumIkon: 'ikon', bolumIsim: 'isim', bolumYas: 'yas', bolumBaslik: 'baslik' };
+      for (const dk in m) {
+        if (inp.dataset[dk] != null) {
+          const idx = parseInt(inp.dataset[dk], 10);
+          if (state.kizBolumler[idx]) state.kizBolumler[idx][m[dk]] = inp.value;
+        }
+      }
       schedulePreviewUpdate();
     });
   });
@@ -3255,8 +3307,36 @@ const renderKizBolumler = () => {
   });
 };
 
+const yeniBolum = (tip) => {
+  const t = BOLUM_TIPLERI.includes(tip) ? tip : 'p';
+  const b = { tip: t, text: '' };
+  if (t === 'team') Object.assign(b, { ikon: '', isim: '', yas: '' });
+  if (t === 'feat') Object.assign(b, { ikon: '', baslik: '' });
+  return b;
+};
+
+// State bloğunu Firestore'a yazılacak temiz objeye çevir (tipe göre alanlar)
+const bolumToData = (b) => {
+  if (b.tip === 'team') return { tip: 'team', ikon: b.ikon || '', isim: b.isim || '', yas: b.yas || '', text: b.text || '' };
+  if (b.tip === 'feat') return { tip: 'feat', ikon: b.ikon || '', baslik: b.baslik || '', text: b.text || '' };
+  return { tip: b.tip || 'p', text: b.text || '' };
+};
+
+// Boş blok mu? (kaydederken atılır)
+const bolumBos = (b) => {
+  if (b.tip === 'team') return !((b.isim || '') + (b.text || '')).trim();
+  if (b.tip === 'feat') return !((b.baslik || '') + (b.text || '')).trim();
+  return !(b.text || '').trim();
+};
+
+// State'e yüklerken tüm alanları taşı
+const bolumFromData = (b) => ({
+  tip: b.tip || 'p', text: b.text || '',
+  ikon: b.ikon || '', isim: b.isim || '', yas: b.yas || '', baslik: b.baslik || ''
+});
+
 const addKizBolum = (tip) => {
-  state.kizBolumler.push({ tip: tip === 'intro' ? 'intro' : 'p', text: '' });
+  state.kizBolumler.push(yeniBolum(tip));
   renderKizBolumler();
   schedulePreviewUpdate();
   // Focus newly added textarea
@@ -3290,7 +3370,7 @@ const collectKizFormDraft = () => {
     teaser: (fd.get('teaser') || '').trim(),
     gorsel: (fd.get('gorsel') || uwState['kiz-proje'].url || '').trim(),
     videolar: mvwGetUrls('kiz'),
-    bolumler: state.kizBolumler.map(b => ({ tip: b.tip, text: b.text || '' })),
+    bolumler: state.kizBolumler.map(bolumToData),
     yayinda: getToggle('#t-kiz-yayin')
   };
 };
@@ -3325,7 +3405,7 @@ const openKizEdit = (id) => {
   const p = state.kizProjeler.find(x => x.id === id);
   if (!p) return;
   state.kizDuzenleId = id;
-  state.kizBolumler = (p.bolumler || []).map(b => ({ tip: b.tip || 'p', text: b.text || '' }));
+  state.kizBolumler = (p.bolumler || []).map(bolumFromData);
 
   const form = $('#form-kiz-proje');
   form.reset();
@@ -3364,7 +3444,7 @@ const submitKizForm = async (e) => {
   if (!draft.teaser) { toast('Teaser (kart kısa metni) zorunlu', 'error'); return; }
 
   // Boş bölümleri at
-  draft.bolumler = draft.bolumler.filter(b => (b.text || '').trim().length > 0);
+  draft.bolumler = draft.bolumler.filter(b => !bolumBos(b));
   if (!draft.bolumler.length) {
     if (!confirm('Hiç hikâye bölümü yok. Yine de kaydedeyim mi?')) return;
   }
@@ -3699,6 +3779,87 @@ const deleteErkekProje = async (id) => {
   await deleteDoc(doc(db, ERKEK_COLLECTION, id));
 };
 
+// ===== Ünite Çalışmaları — içe aktarma şablonları (yerel proje) =====
+const UNITE_ERKEK = {
+  kategori: 'yerel', sira: 5, no: '01', yayinda: true, gorsel: '',
+  baslik: 'Dinamik Spor Kulübü Ünite Çalışmaları',
+  teaser: 'İnançla, sporla ve güzel ahlakla; kalbi samimiyetle, zihni bilgiyle, bedeni sağlıkla dolu erdemli şahsiyetler yetiştiriyoruz.',
+  bolumler: [
+    { tip: 'lead', text: 'Hayata değer katan gençler: İnançla, sporla ve güzel ahlakla büyüyoruz.' },
+    { tip: 'p', text: 'Akdeniz Dinamik Spor Kulübü olarak, erkek çocuklarımızı ve gençlerimizi sadece bugüne değil; köklerinden aldıkları güçle yarınlara hazırlıyoruz.' },
+    { tip: 'p', text: 'Faaliyet alanımızda, modern dünyanın karmaşasından uzak, samimi ve güvenli bir yuva kuruyoruz. Burada sporu, doğayı ve dostluğu; inancımızın zarafetini, İslam ahlakının güzelliğini evrensel değerlerimizle harmanlıyoruz. **Gayemiz; kalbi samimiyetle, zihni bilgiyle, bedeni sağlıkla dolu erdemli şahsiyetler yetiştirmektir.**' },
+    { tip: 'h', text: 'Geleceğe Yürüyen Ekiplerimiz' },
+    { tip: 'p', text: 'Erkek çocuklarımızın ve gençlerimizin yaş gruplarına ve gelişim süreçlerine uygun olarak hazırladığımız 3 özel çalışma grubumuz:' },
+    { tip: 'team', ikon: '🕵️‍♂️', isim: 'Fidanlar Ekibi', yas: '7 – 11 Yaş', text: 'Çevresini ve kâinatı temiz bir merakla inceleyen, ilk ahlaki ve manevi değerleri oyunlarla, sevgiyle ve samimiyetle öğrendiğimiz; en küçük adımlarımızı attığımız grubumuzdur.' },
+    { tip: 'team', ikon: '🧐', isim: 'Yiğitler Ekibi', yas: '11 – 15 Yaş', text: 'Takım ruhunu ve bir olma bilincini kavrayan, helal dairesinde eğlenerek sağlam ve samimi dostlukların temelini atan dinamik ekibimizdir.' },
+    { tip: 'team', ikon: '🧗‍♂️', isim: 'Neferler Ekibi', yas: '15 – 18 Yaş', text: 'Gençlik enerjisini hayırlı işlere ve iyiliğe yönlendiren, sorumluluk alarak liderlik, karakter ve şahsiyet bilincini geliştiren genç ekibimizdir.' },
+    { tip: 'h', text: 'Nasıl Bir Araya Geliyoruz?' },
+    { tip: 'feat', ikon: '📅', baslik: 'Düzenli ve İstikrarlı Buluşmalar', text: 'Sürdürülebilir bir gelişim ve güçlü bağlar kurabilmek adına, haftalık planlamalarımız eşliğinde ayda 2 kez (iki haftada bir) bir araya geliyoruz.' },
+    { tip: 'feat', ikon: '🌳', baslik: 'Doğanın Kalbinde ve Güvenli Çatımızda', text: 'Çalışmalarımızı tek bir mekâna hapsetmiyoruz. Bazen muazzam doğayı tefekkür etmek için açık alanda, bazen de sıcak ve güvenli kulüp ortamımızda buluşuyoruz.' },
+    { tip: 'h', text: 'Faaliyetlerimizin Özü' },
+    { tip: 'p', text: 'Çalışmalarımız, gençlerimizin hayat yolculuğuna rehberlik edecek çok yönlü bir içeriğe sahiptir:' },
+    { tip: 'feat', ikon: '❤️', baslik: 'Manevi Değerler & İslam Ahlakı', text: 'Sevgi, saygı, dürüstlük, büyüklere hürmet, sorumluluk ve yardımlaşma gibi dinimizin emrettiği güzel ahlakı teoride bırakmıyor, hayatın içinde yaşayarak içselleştiriyoruz.' },
+    { tip: 'feat', ikon: '🏃‍♂️', baslik: 'Fiziksel Gelişim & Beden Emaneti', text: 'Sağlıklı yaşam bilinciyle hareket ediyor, temel spor alışkanlıkları kazanıyor ve doğada yaşam becerileriyle fiziki direncimizi artırıyoruz.' },
+    { tip: 'feat', ikon: '🤝', baslik: 'Sosyal Gelişim & Mümin Kardeşliği', text: 'Bencilliğin öne çıktığı bir çağda; "Biz" olmayı, paylaşmayı, ekip iş birliğini ve birbirine hayırda destek olmayı öğretiyoruz.' },
+    { tip: 'feat', ikon: '🎨', baslik: 'Atölyeler ve Öğretici Oyunlar', text: 'El becerilerini, üretkenliği, estetik bakış açısını ve analitik düşünmeyi geliştiren, pedagojik ve özgün atölyelerle öğrenmeyi keyifli hale getiriyoruz.' },
+    { tip: 'feat', ikon: '✨', baslik: 'Kulübümüze Özel ve Özgün İçerik', text: 'Tüm programlarımız; çocuklarımızı ve gençlerimizi çağın olumsuz etkilerinden koruyup kalplerini ve zihinlerini zenginleştirecek şekilde tamamen özgün içeriklerle hazırlanır.' },
+    { tip: 'intro', text: 'Akdeniz Dinamik Spor Kulübü çatısı altındaki her bir gencimiz; inancından aldığı güç, ahlakından aldığı sağlam duruş ve spordan kazandığı disiplinle, hayatın her alanında örnek olacak bir geleceğe hazırlanmaktadır.' }
+  ]
+};
+
+const UNITE_KIZ = {
+  kategori: 'yerel', sira: 5, no: '01', yayinda: true, gorsel: '',
+  baslik: 'Dinamik Spor Kulübü Ünite Çalışmaları',
+  teaser: 'İnançla, sporla ve güzel ahlakla; kalbi samimiyetle, zihni bilgiyle, bedeni sağlıkla dolu erdemli şahsiyetler yetiştiriyoruz.',
+  bolumler: [
+    { tip: 'lead', text: 'Hayata değer katan kızlar: İnançla, sporla ve güzel ahlakla büyüyoruz.' },
+    { tip: 'p', text: 'Akdeniz Dinamik Spor Kulübü olarak, kız çocuklarımızı ve gençlerimizi sadece bugüne değil; köklerinden aldıkları güçle yarınlara hazırlıyoruz.' },
+    { tip: 'p', text: 'Faaliyet alanımızda, modern dünyanın karmaşasından uzak, samimi ve güvenli bir yuva kuruyoruz. Burada sporu, doğayı ve dostluğu; inancımızın zarafetini, İslam ahlakının güzelliğini evrensel değerlerimizle harmanlıyoruz. **Gayemiz; kalbi samimiyetle, zihni bilgiyle, bedeni sağlıkla dolu erdemli şahsiyetler yetiştirmeyi amaçlıyoruz.**' },
+    { tip: 'h', text: 'Geleceğe Yürüyen Ekiplerimiz' },
+    { tip: 'p', text: 'Kızlarımızın yaş gruplarına ve fıtratlarına uygun olarak hazırladığımız 3 özel çalışma grubumuz:' },
+    { tip: 'team', ikon: '🕵️‍♀️', isim: 'Kaşifler Ekibi', yas: '7 – 10 Yaş', text: 'Çevresini ve kâinatı temiz bir merakla inceleyen, ilk ahlaki ve manevi değerleri oyunlarla, sevgiyle ve tatlılıkla öğrendiğimiz; en küçük adımlarımızı attığımız grubumuzdur.' },
+    { tip: 'team', ikon: '🧐', isim: 'Araştırmacılar Ekibi', yas: '11 – 14 Yaş', text: 'Takım ruhunu ve bir olma bilincini kavrayan, helal dairesinde eğlenerek sağlam ve samimi dostlukların temelini atan dinamik ekibimizdir.' },
+    { tip: 'team', ikon: '🧗‍♀️', isim: 'Maceracılar Ekibi', yas: '15 – 17 Yaş', text: 'Gençlik enerjisini hayırlı işlere ve iyiliğe yönlendiren, sorumluluk alarak liderlik ve şahsiyet bilincini geliştiren genç ekibimizdir.' },
+    { tip: 'h', text: 'Nasıl Bir Araya Geliyoruz?' },
+    { tip: 'feat', ikon: '📅', baslik: 'Düzenli ve İstikrarlı Buluşmalar', text: 'Sürdürülebilir bir gelişim ve bağ kurabilmek adına, haftalık planlamalarımız eşliğinde ayda 2 kez (iki haftada bir) bir araya geliyoruz.' },
+    { tip: 'feat', ikon: '🌳', baslik: 'Doğanın Kalbinde ve Güvenli Çatımızda', text: 'Çalışmalarımızı tek bir mekâna hapsetmiyoruz. Belirlediğimiz program dahilinde bazen muazzam doğayı tefekkür etmek için açık alanda, bazen de sıcak ve güvenli kulüp ortamımızda buluşuyoruz.' },
+    { tip: 'h', text: 'Faaliyetlerimizin Özü' },
+    { tip: 'p', text: 'Çalışmalarımız, kızlarımızın hayat yolculuğuna rehberlik edecek çok yönlü bir içeriğe sahiptir:' },
+    { tip: 'feat', ikon: '❤️', baslik: 'Manevi Değerler & İslam Ahlakı', text: 'Sevgi, saygı, dürüstlük, büyüklere hürmet ve yardımlaşma gibi dinimizin emrettiği güzel ahlakı teoride bırakmıyor, hayatın içinde yaşayarak içselleştiriyoruz.' },
+    { tip: 'feat', ikon: '🏃‍♀️', baslik: 'Fiziksel Gelişim & Beden Emaneti', text: 'Sağlıklı yaşam bilinciyle hareket ediyor, temel spor alışkanlıkları kazanıyor ve doğada yaşam becerileriyle fiziki direncimizi artırıyoruz.' },
+    { tip: 'feat', ikon: '🤝', baslik: 'Sosyal Gelişim & Mümin Kardeşliği', text: 'Bencilliğin öne çıktığı bir çağda; "Biz" olmayı, paylaşmayı, ekip iş birliğini ve birbirine hayırda destek olan samimi arkadaşlıklar kurmayı öğretiyoruz.' },
+    { tip: 'feat', ikon: '🎨', baslik: 'Atölyeler ve Öğretici Oyunlar', text: 'El becerilerini, estetik bakış açısını ve analitik düşünmeyi geliştiren, pedagojik ve özgün atölyelerle öğrenmeyi keyifli hale getiriyoruz.' },
+    { tip: 'feat', ikon: '✨', baslik: 'Kulübümüze Özel ve Özgün İçerik', text: 'Tüm programlarımız, kızlarımızın dünyasına hitap edecek; onları çağın olumsuz etkilerinden koruyup kalplerini ve zihinlerini zenginleştirecek şekilde tamamen özgün içeriklerle hazırlanır.' },
+    { tip: 'intro', text: 'Akdeniz Dinamik Spor Kulübü çatısı altındaki her bir kızımız; inancından aldığı zarafetle, spordan sosyal hayata kadar her alanda ahlakı ve duruşuyla örnek olacak birer gelecektir.' }
+  ]
+};
+
+const importUniteKiz = async () => {
+  if (state.kizProjeler.some(p => p.id === 'unite-calismalari')) { toast('Ünite Çalışmaları zaten ekli', 'error'); return; }
+  if (!confirm('"Dinamik Spor Kulübü Ünite Çalışmaları" kız yerel projelerine eklenecek. Onaylıyor musun?')) return;
+  const btn = $('#btn-kiz-unite');
+  if (btn) btn.disabled = true;
+  try {
+    await saveKizProje('unite-calismalari', UNITE_KIZ);
+    toast('Ünite Çalışmaları eklendi', 'success');
+    await refreshKiz();
+  } catch (err) { console.error(err); toast('Hata: ' + err.message, 'error'); }
+  finally { if (btn) btn.disabled = false; }
+};
+
+const importUniteErkek = async () => {
+  if (state.erkekProjeler.some(p => p.id === 'unite-calismalari')) { toast('Ünite Çalışmaları zaten ekli', 'error'); return; }
+  if (!confirm('"Dinamik Spor Kulübü Ünite Çalışmaları" erkek yerel projelerine eklenecek. Onaylıyor musun?')) return;
+  const btn = $('#btn-erkek-unite');
+  if (btn) btn.disabled = true;
+  try {
+    await saveErkekProje('unite-calismalari', UNITE_ERKEK);
+    toast('Ünite Çalışmaları eklendi', 'success');
+    await refreshErkek();
+  } catch (err) { console.error(err); toast('Hata: ' + err.message, 'error'); }
+  finally { if (btn) btn.disabled = false; }
+};
+
 const refreshErkek = async () => {
   try {
     state.erkekProjeler = await fetchErkekProjeler();
@@ -3796,6 +3957,8 @@ const renderErkek = () => {
   if (listEl) listEl.style.display = isGorsel ? 'none' : '';
   if (yeniBtn) yeniBtn.style.display = isGorsel ? 'none' : '';
   if (seedBtn) seedBtn.hidden = isGorsel;
+  const uniteBtn = $('#btn-erkek-unite');
+  if (uniteBtn) uniteBtn.hidden = isGorsel || state.erkekTab !== 'yerel' || state.erkekProjeler.some(p => p.id === 'unite-calismalari');
 
   const labelBtn = $('#btn-yeni-erkek-proje-label');
   if (labelBtn) labelBtn.textContent = state.erkekTab === 'yerel' ? 'Yeni Yerel Proje' : 'Yeni Merkez Projesi';
@@ -3826,25 +3989,7 @@ const renderErkek = () => {
 };
 
 // ----- Bölüm editörü -----
-const erkekBolumHTML = (b, idx, total) => {
-  const tipBadge = b.tip === 'intro'
-    ? '<span class="kiz-bolum-type intro">İntro · italik</span>'
-    : '<span class="kiz-bolum-type p">Paragraf</span>';
-  return `
-    <div class="kiz-bolum" data-erkek-bolum-idx="${idx}">
-      <div class="kiz-bolum-head">
-        ${tipBadge}
-        <div class="kiz-bolum-actions">
-          <button type="button" data-erkek-bolum-toggle="${idx}" title="Tipi değiştir">${b.tip === 'intro' ? '→ P' : '→ İntro'}</button>
-          <button type="button" data-erkek-bolum-up="${idx}" ${idx === 0 ? 'disabled' : ''} title="Yukarı taşı">↑</button>
-          <button type="button" data-erkek-bolum-down="${idx}" ${idx === total - 1 ? 'disabled' : ''} title="Aşağı taşı">↓</button>
-          <button type="button" class="danger" data-erkek-bolum-remove="${idx}" title="Bölümü sil">×</button>
-        </div>
-      </div>
-      <textarea data-erkek-bolum-text="${idx}" placeholder="${b.tip === 'intro' ? 'İtalik giriş metni…' : 'Paragraf metni… (**kelime** ile kalın)'}">${escapeHtml(b.text || '')}</textarea>
-    </div>
-  `;
-};
+const erkekBolumHTML = (b, idx, total) => bolumBlockHTML(b, idx, total, 'erkek-');
 
 const renderErkekBolumler = () => {
   const cont = $('#erkek-bolumler-list');
@@ -3860,6 +4005,20 @@ const renderErkekBolumler = () => {
     ta.addEventListener('input', () => {
       const idx = parseInt(ta.dataset.erkekBolumText, 10);
       if (state.erkekBolumler[idx]) state.erkekBolumler[idx].text = ta.value;
+      scheduleErkekPreviewUpdate();
+    });
+  });
+
+  // Ek alan binding'leri (ekip/faaliyet: ikon, isim, yaş, başlık)
+  $$('input[data-erkek-bolum-ikon], input[data-erkek-bolum-isim], input[data-erkek-bolum-yas], input[data-erkek-bolum-baslik]', cont).forEach(inp => {
+    inp.addEventListener('input', () => {
+      const m = { erkekBolumIkon: 'ikon', erkekBolumIsim: 'isim', erkekBolumYas: 'yas', erkekBolumBaslik: 'baslik' };
+      for (const dk in m) {
+        if (inp.dataset[dk] != null) {
+          const idx = parseInt(inp.dataset[dk], 10);
+          if (state.erkekBolumler[idx]) state.erkekBolumler[idx][m[dk]] = inp.value;
+        }
+      }
       scheduleErkekPreviewUpdate();
     });
   });
@@ -3883,7 +4042,7 @@ const renderErkekBolumler = () => {
 };
 
 const addErkekBolum = (tip) => {
-  state.erkekBolumler.push({ tip: tip === 'intro' ? 'intro' : 'p', text: '' });
+  state.erkekBolumler.push(yeniBolum(tip));
   renderErkekBolumler();
   scheduleErkekPreviewUpdate();
   setTimeout(() => {
@@ -3916,7 +4075,7 @@ const collectErkekFormDraft = () => {
     teaser: (fd.get('teaser') || '').trim(),
     gorsel: (fd.get('gorsel') || uwState['erkek-proje']?.url || '').trim(),
     videolar: mvwGetUrls('erkek'),
-    bolumler: state.erkekBolumler.map(b => ({ tip: b.tip, text: b.text || '' })),
+    bolumler: state.erkekBolumler.map(bolumToData),
     yayinda: getToggle('#t-erkek-yayin')
   };
 };
@@ -3950,7 +4109,7 @@ const openErkekEdit = (id) => {
   const p = state.erkekProjeler.find(x => x.id === id);
   if (!p) return;
   state.erkekDuzenleId = id;
-  state.erkekBolumler = (p.bolumler || []).map(b => ({ tip: b.tip || 'p', text: b.text || '' }));
+  state.erkekBolumler = (p.bolumler || []).map(bolumFromData);
 
   const form = $('#form-erkek-proje');
   form.reset();
@@ -3988,7 +4147,7 @@ const submitErkekForm = async (e) => {
   if (!draft.baslik) { toast('Başlık zorunlu', 'error'); return; }
   if (!draft.teaser) { toast('Teaser (kart kısa metni) zorunlu', 'error'); return; }
 
-  draft.bolumler = draft.bolumler.filter(b => (b.text || '').trim().length > 0);
+  draft.bolumler = draft.bolumler.filter(b => !bolumBos(b));
   if (!draft.bolumler.length) {
     if (!confirm('Hiç hikâye bölümü yok. Yine de kaydedeyim mi?')) return;
   }
@@ -4693,6 +4852,7 @@ const setupPanelListeners = () => {
   try {
     $('#btn-yeni-kiz-proje')?.addEventListener('click', openKizNew);
     $('#btn-kiz-seed')?.addEventListener('click', seedKizProjeler);
+    $('#btn-kiz-unite')?.addEventListener('click', importUniteKiz);
 
     // Tab değişimi
     $$('#kiz-tabs .sub-tab').forEach(t => {
@@ -4817,6 +4977,7 @@ const setupPanelListeners = () => {
   try {
     $('#btn-yeni-erkek-proje')?.addEventListener('click', openErkekNew);
     $('#btn-erkek-seed')?.addEventListener('click', seedErkekProjeler);
+    $('#btn-erkek-unite')?.addEventListener('click', importUniteErkek);
 
     // Tab değişimi
     $$('#erkek-tabs .sub-tab').forEach(t => {

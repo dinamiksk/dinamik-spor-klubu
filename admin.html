@@ -1930,6 +1930,19 @@
   .kiz-bolum-type.p {
     background: rgba(255,255,255,.06); color: var(--text-2); border: 1px solid var(--border);
   }
+  .kiz-bolum-type.h    { background: rgba(122,144,248,.16); color: #aeb8ff; border: 1px solid rgba(122,144,248,.32); }
+  .kiz-bolum-type.lead { background: rgba(245,200,80,.15); color: #f1c84a; border: 1px solid rgba(245,200,80,.3); }
+  .kiz-bolum-type.team { background: rgba(80,200,160,.15); color: #6fe0bc; border: 1px solid rgba(80,200,160,.3); }
+  .kiz-bolum-type.feat { background: rgba(255,160,120,.15); color: #ffb086; border: 1px solid rgba(255,160,120,.3); }
+  .kiz-bolum-row { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+  .kiz-bolum-row input {
+    padding: 7px 10px; font-size: 13px;
+    background: var(--bg-3); border: 1px solid var(--border);
+    border-radius: 4px; color: var(--text);
+  }
+  .kiz-bolum-row input.kiz-bolum-grow { flex: 1; min-width: 140px; }
+  .kiz-bolum-row input.kiz-bolum-mini { width: 64px; text-align: center; }
+  .kiz-bolum-row input.kiz-bolum-mid  { width: 120px; }
   .kiz-bolum-actions { margin-left: auto; display: flex; gap: 6px; }
   .kiz-bolum-actions button {
     padding: 3px 8px; font-size: 11px;
@@ -1943,7 +1956,7 @@
     font-family: ui-monospace, monospace; font-size: 13px;
     line-height: 1.6;
   }
-  .kiz-bolum-add-row { display: flex; gap: 8px; }
+  .kiz-bolum-add-row { display: flex; gap: 8px; flex-wrap: wrap; }
 
   @media (max-width: 1100px) {
     .modal-split { grid-template-columns: 1fr; }
@@ -2568,6 +2581,10 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
           Mevcut 6 projeyi içe aktar
         </button>
+        <button type="button" class="btn btn-ghost btn-tiny" id="btn-kiz-unite" hidden>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          Ünite Çalışmaları'nı içe aktar
+        </button>
       </div>
 
       <div class="content-list" id="kiz-list">
@@ -2907,6 +2924,10 @@
         <button type="button" class="btn btn-ghost btn-tiny" id="btn-erkek-seed" hidden>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
           Tüm projeleri sıfırla & yeniden yaz (6 merkez + Rota)
+        </button>
+        <button type="button" class="btn btn-ghost btn-tiny" id="btn-erkek-unite" hidden>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          Ünite Çalışmaları'nı içe aktar
         </button>
       </div>
 
@@ -4490,10 +4511,16 @@
               <div class="kiz-bolum-add-row">
                 <button type="button" class="btn-tiny" data-bolum-add="p">+ Paragraf</button>
                 <button type="button" class="btn-tiny" data-bolum-add="intro">+ İntro (italik)</button>
+                <button type="button" class="btn-tiny" data-bolum-add="h">+ Başlık</button>
+                <button type="button" class="btn-tiny" data-bolum-add="lead">+ Açılış cümlesi</button>
+                <button type="button" class="btn-tiny" data-bolum-add="team">+ Ekip kartı</button>
+                <button type="button" class="btn-tiny" data-bolum-add="feat">+ Faaliyet öğesi</button>
               </div>
               <span class="hint" style="display:block;margin-top:8px;line-height:1.6;">
-                <strong>İntro:</strong> italik blockquote, edebi giriş için ·
-                <strong>Paragraf:</strong> normal metin · <br>
+                <strong>İntro:</strong> italik blockquote · <strong>Başlık:</strong> bölüm başlığı ·
+                <strong>Açılış cümlesi:</strong> vurgulu büyük giriş ·
+                <strong>Ekip kartı:</strong> ikon + ad + yaş + açıklama ·
+                <strong>Faaliyet öğesi:</strong> ikon + başlık + açıklama · <br>
                 Metinde <code>**kalın**</code> yazarsan rose renginde vurgulanır.
               </span>
             </div>
@@ -4630,13 +4657,19 @@
             <div class="field">
               <label>Hikâye Bölümleri</label>
               <div id="erkek-bolumler-list"></div>
-              <div class="erkek-bolum-add-row">
+              <div class="erkek-bolum-add-row kiz-bolum-add-row">
                 <button type="button" class="btn-tiny" data-erkek-bolum-add="p">+ Paragraf</button>
                 <button type="button" class="btn-tiny" data-erkek-bolum-add="intro">+ İntro (italik)</button>
+                <button type="button" class="btn-tiny" data-erkek-bolum-add="h">+ Başlık</button>
+                <button type="button" class="btn-tiny" data-erkek-bolum-add="lead">+ Açılış cümlesi</button>
+                <button type="button" class="btn-tiny" data-erkek-bolum-add="team">+ Ekip kartı</button>
+                <button type="button" class="btn-tiny" data-erkek-bolum-add="feat">+ Faaliyet öğesi</button>
               </div>
               <span class="hint" style="display:block;margin-top:8px;line-height:1.6;">
-                <strong>İntro:</strong> italik blockquote, edebi giriş için ·
-                <strong>Paragraf:</strong> normal metin · <br>
+                <strong>İntro:</strong> italik blockquote · <strong>Başlık:</strong> bölüm başlığı ·
+                <strong>Açılış cümlesi:</strong> vurgulu büyük giriş ·
+                <strong>Ekip kartı:</strong> ikon + ad + yaş + açıklama ·
+                <strong>Faaliyet öğesi:</strong> ikon + başlık + açıklama · <br>
                 Metinde <code>**kalın**</code> yazarsan amber renginde vurgulanır.
               </span>
             </div>
@@ -4697,6 +4730,6 @@
 <div class="toast-container" id="toasts"></div>
 
 <script type="module" src="firebase-init.js?v=20260604-cloud"></script>
-<script src="admin.js?v=20260604-logout"></script>
+<script src="admin.js?v=20260605-unite"></script>
 </body>
 </html>

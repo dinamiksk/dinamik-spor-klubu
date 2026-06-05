@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../styles.css?v=2026060503">
 
   <style>
     /* ═══ Tema: Forest + Sage Green ═══ */
@@ -60,6 +60,7 @@
     .er-hero__bg {
       position: absolute; inset: 0;
       background-color: #14110d;
+      background-image: url('../../assets/images/erkek-cami-avlusu.webp');
       background-size: cover;
       background-position: center 38%;
       filter: brightness(0.5) saturate(0.85) contrast(1.05);
@@ -444,11 +445,11 @@
       scroll-behavior: smooth;
       padding: 14px 0 28px;
       margin: 0 -24px; padding-left: 24px; padding-right: 24px;
-      scrollbar-color: var(--er-amber-dk) transparent;
+      scrollbar-width: none;          /* Firefox: native scrollbar gizli */
+      -ms-overflow-style: none;       /* eski Edge/IE */
     }
-    .er-projects__rail::-webkit-scrollbar { height: 6px; }
-    .er-projects__rail::-webkit-scrollbar-thumb { background: rgba(138,168,144,.3); border-radius: 3px; }
-    .er-projects__rail::-webkit-scrollbar-track { background: rgba(255,255,255,.04); }
+    /* Native kaydırma çubuğu gizli — tek gösterge alttaki özel ilerleme çubuğu */
+    .er-projects__rail::-webkit-scrollbar { display: none; }
     .er-projects__rail > * { scroll-snap-align: start; }
     /* Rail kontrolleri */
     .er-projects__rail-nav {
@@ -780,6 +781,49 @@
       letter-spacing: .04em;
       color: var(--er-amber-lt); margin: 32px 0 14px;
     }
+    /* Ünite — açılış cümlesi */
+    .er-modal__lead-line {
+      font-family: var(--ff-serif); font-style: italic;
+      font-size: 1.3rem; line-height: 1.55;
+      color: var(--er-amber-lt); margin: 0 0 26px;
+    }
+    /* Ünite — ekip kartları */
+    .er-modal__teams { display: grid; gap: 12px; margin: 6px 0 28px; }
+    .er-modal__team {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 16px 18px; border-radius: 4px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--er-border);
+      border-left: 3px solid var(--er-amber);
+    }
+    .er-modal__team-ic { font-size: 1.7rem; line-height: 1.2; flex: 0 0 auto; }
+    .er-modal__team-main { flex: 1; min-width: 0; }
+    .er-modal__team-top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 5px; }
+    .er-modal__team-name {
+      font-family: var(--ff-cond); font-weight: 800; text-transform: uppercase;
+      letter-spacing: .03em; font-size: 1.12rem; color: var(--er-amber-lt);
+    }
+    .er-modal__team-age {
+      font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--er-amber); border: 1px solid var(--er-border-s);
+      padding: 2px 9px; border-radius: 99px; white-space: nowrap;
+    }
+    .er-modal__team-desc { margin: 0; font-size: .96rem; line-height: 1.68; color: rgba(240,236,227,.78); }
+    /* Ünite — faaliyet öğeleri */
+    .er-modal__feats { display: grid; gap: 16px; margin: 6px 0 28px; }
+    .er-modal__feat { display: flex; gap: 14px; align-items: flex-start; }
+    .er-modal__feat-ic {
+      font-size: 1.2rem; flex: 0 0 auto;
+      width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,.04); border-radius: 50%; border: 1px solid var(--er-border);
+    }
+    .er-modal__feat-main { flex: 1; min-width: 0; padding-top: 2px; }
+    .er-modal__feat-title {
+      display: block; font-family: var(--ff-cond); font-weight: 700;
+      font-size: 1.05rem; color: var(--er-amber-lt); margin-bottom: 3px;
+      text-transform: uppercase; letter-spacing: .02em;
+    }
+    .er-modal__feat-desc { margin: 0; font-size: .96rem; line-height: 1.68; color: rgba(240,236,227,.78); }
 
     /* ════════════════════════════════════════════
        ROTA MODAL — "Farklı bir dünya"
@@ -1494,7 +1538,7 @@
       <header class="er-projects__head reveal">
         <div class="er-eyebrow">Faaliyetler &amp; Projeler</div>
         <h2 class="er-h2">Ocaktan <em>sahaya.</em></h2>
-        <p class="er-projects__lead">Akdeniz Dinamik Erkek Bölümü olarak attığımız her adım bir prova değil, gerçek hayatın kendisidir. Kamp ateşinde, masa başında, doğanın ortasında; her faaliyet bir gencin omurgasına tuğla örüyor.</p>
+        <p class="er-projects__lead">Akdeniz Dinamik Spor Kulübü Erkek Bölümü olarak attığımız her adım bir prova değil, gerçek hayatın kendisidir. Kamp ateşinde, masa başında, doğanın ortasında; her faaliyet bir gencin omurgasına tuğla örüyor.</p>
       </header>
 
       <!-- MERKEZ -->
@@ -1742,7 +1786,7 @@
             <img src="../../assets/images/dinamik-logo.svg" alt="Dinamik SK" style="height:40px;">
             <span class="logo-text">Dinamik <span style="color:var(--er-amber-lt);">SK</span></span>
           </a>
-          <p style="margin-top:16px;">İman. Disiplin. Spor. 2010'dan beri Antalya'da gençleri güçlü bireyler olarak yetiştiriyoruz.</p>
+          <p style="margin-top:16px;">İman. Disiplin. Karakter. 2010'dan beri Antalya'da gençleri omurgalı bireyler olarak yetiştiriyoruz.</p>
         </div>
         <div>
           <h4 class="footer-title" style="color:var(--er-amber-lt);">Çalışmalarımız</h4>
@@ -1860,6 +1904,37 @@
             { tip: 'p', text: 'Gençlerimize işte böyle seslendik. Onları birer inci tanesi olarak gördük, ashabın ruhunu yüreklerine kondurduk. **Maneviyatın enginlere ulaştığı, benlikten öteye geçip ruhumuzun en derinlerinde hissettiğimiz ilahi rahmeti gönlümüze nakşettik** ve her birimiz yeryüzünde dolaşan birer yıldız olduk. Gençlerimize şükranlarımızı sunuyor ve biz de onların her birine gökyüzünden bir yıldız ithaf ediyoruz.' }
           ]
         },
+        /* ════ DİNAMİK SPOR KULÜBÜ ÜNİTE ÇALIŞMALARI — Yerel (zengin modal) ════ */
+        {
+          id: 'unite-calismalari',
+          kategori: 'yerel',
+          sira: 5,
+          no: '01',
+          baslik: 'Dinamik Spor Kulübü Ünite Çalışmaları',
+          teaser: 'İnançla, sporla ve güzel ahlakla; kalbi samimiyetle, zihni bilgiyle, bedeni sağlıkla dolu erdemli şahsiyetler yetiştiriyoruz.',
+          gorsel: '',
+          bolumler: [
+            { tip: 'lead', text: 'Hayata değer katan gençler: İnançla, sporla ve güzel ahlakla büyüyoruz.' },
+            { tip: 'p', text: 'Akdeniz Dinamik Spor Kulübü olarak, erkek çocuklarımızı ve gençlerimizi sadece bugüne değil; köklerinden aldıkları güçle yarınlara hazırlıyoruz.' },
+            { tip: 'p', text: 'Faaliyet alanımızda, modern dünyanın karmaşasından uzak, samimi ve güvenli bir yuva kuruyoruz. Burada sporu, doğayı ve dostluğu; inancımızın zarafetini, İslam ahlakının güzelliğini evrensel değerlerimizle harmanlıyoruz. **Gayemiz; kalbi samimiyetle, zihni bilgiyle, bedeni sağlıkla dolu erdemli şahsiyetler yetiştirmektir.**' },
+            { tip: 'h', text: 'Geleceğe Yürüyen Ekiplerimiz' },
+            { tip: 'p', text: 'Erkek çocuklarımızın ve gençlerimizin yaş gruplarına ve gelişim süreçlerine uygun olarak hazırladığımız 3 özel çalışma grubumuz:' },
+            { tip: 'team', ikon: '🕵️‍♂️', isim: 'Fidanlar Ekibi', yas: '7 – 11 Yaş', text: 'Çevresini ve kâinatı temiz bir merakla inceleyen, ilk ahlaki ve manevi değerleri oyunlarla, sevgiyle ve samimiyetle öğrendiğimiz; en küçük adımlarımızı attığımız grubumuzdur.' },
+            { tip: 'team', ikon: '🧐', isim: 'Yiğitler Ekibi', yas: '11 – 15 Yaş', text: 'Takım ruhunu ve bir olma bilincini kavrayan, helal dairesinde eğlenerek sağlam ve samimi dostlukların temelini atan dinamik ekibimizdir.' },
+            { tip: 'team', ikon: '🧗‍♂️', isim: 'Neferler Ekibi', yas: '15 – 18 Yaş', text: 'Gençlik enerjisini hayırlı işlere ve iyiliğe yönlendiren, sorumluluk alarak liderlik, karakter ve şahsiyet bilincini geliştiren genç ekibimizdir.' },
+            { tip: 'h', text: 'Nasıl Bir Araya Geliyoruz?' },
+            { tip: 'feat', ikon: '📅', baslik: 'Düzenli ve İstikrarlı Buluşmalar', text: 'Sürdürülebilir bir gelişim ve güçlü bağlar kurabilmek adına, haftalık planlamalarımız eşliğinde ayda 2 kez (iki haftada bir) bir araya geliyoruz.' },
+            { tip: 'feat', ikon: '🌳', baslik: 'Doğanın Kalbinde ve Güvenli Çatımızda', text: 'Çalışmalarımızı tek bir mekâna hapsetmiyoruz. Bazen muazzam doğayı tefekkür etmek için açık alanda, bazen de sıcak ve güvenli kulüp ortamımızda buluşuyoruz.' },
+            { tip: 'h', text: 'Faaliyetlerimizin Özü' },
+            { tip: 'p', text: 'Çalışmalarımız, gençlerimizin hayat yolculuğuna rehberlik edecek çok yönlü bir içeriğe sahiptir:' },
+            { tip: 'feat', ikon: '❤️', baslik: 'Manevi Değerler & İslam Ahlakı', text: 'Sevgi, saygı, dürüstlük, büyüklere hürmet, sorumluluk ve yardımlaşma gibi dinimizin emrettiği güzel ahlakı teoride bırakmıyor, hayatın içinde yaşayarak içselleştiriyoruz.' },
+            { tip: 'feat', ikon: '🏃‍♂️', baslik: 'Fiziksel Gelişim & Beden Emaneti', text: 'Sağlıklı yaşam bilinciyle hareket ediyor, temel spor alışkanlıkları kazanıyor ve doğada yaşam becerileriyle fiziki direncimizi artırıyoruz.' },
+            { tip: 'feat', ikon: '🤝', baslik: 'Sosyal Gelişim & Mümin Kardeşliği', text: 'Bencilliğin öne çıktığı bir çağda; "Biz" olmayı, paylaşmayı, ekip iş birliğini ve birbirine hayırda destek olmayı öğretiyoruz.' },
+            { tip: 'feat', ikon: '🎨', baslik: 'Atölyeler ve Öğretici Oyunlar', text: 'El becerilerini, üretkenliği, estetik bakış açısını ve analitik düşünmeyi geliştiren, pedagojik ve özgün atölyelerle öğrenmeyi keyifli hale getiriyoruz.' },
+            { tip: 'feat', ikon: '✨', baslik: 'Kulübümüze Özel ve Özgün İçerik', text: 'Tüm programlarımız; çocuklarımızı ve gençlerimizi çağın olumsuz etkilerinden koruyup kalplerini ve zihinlerini zenginleştirecek şekilde tamamen özgün içeriklerle hazırlanır.' },
+            { tip: 'intro', text: 'Akdeniz Dinamik Spor Kulübü çatısı altındaki her bir gencimiz; inancından aldığı güç, ahlakından aldığı sağlam duruş ve spordan kazandığı disiplinle, hayatın her alanında örnek olacak bir geleceğe hazırlanmaktadır.' }
+          ]
+        },
         /* ════ ROTA GENÇLİK BULUŞMALARI — Özel template ════ */
         {
           id: 'rota-genclik-bulusmalari',
@@ -1884,6 +1959,14 @@
           ]
         }
       ];
+
+      /* Ünite Çalışmaları yerelde her zaman görünsün (Firestore'da yoksa fallback'ten ekle) */
+      const ensureUnite = (list) => {
+        const arr = Array.isArray(list) ? list : [];
+        if (arr.some(p => p && p.id === 'unite-calismalari')) return arr;
+        const u = FALLBACK_PROJELER.find(p => p.id === 'unite-calismalari');
+        return u ? [...arr, u] : arr;
+      };
 
       const esc = (s='') => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
       const bold = (s='') => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -2055,11 +2138,36 @@
         }
 
         // Uzun metin bölümleri (her zaman gösterilir)
-        contentEl.innerHTML = (p.bolumler || []).map(b => {
-          if (b.tip === 'intro') return `<blockquote><p>${bold(b.text)}</p></blockquote>`;
-          if (b.tip === 'h')     return `<h3 class="er-modal__h">${bold(b.text)}</h3>`;
-          return `<p>${bold(b.text)}</p>`;
-        }).join('') + (() => {
+        contentEl.innerHTML = (() => {
+          const arr = p.bolumler || [];
+          const teamCard = (t) => `
+            <div class="er-modal__team">
+              <span class="er-modal__team-ic">${esc(t.ikon||'')}</span>
+              <div class="er-modal__team-main">
+                <div class="er-modal__team-top"><span class="er-modal__team-name">${esc(t.isim||'')}</span>${t.yas?`<span class="er-modal__team-age">${esc(t.yas)}</span>`:''}</div>
+                <p class="er-modal__team-desc">${bold(t.text||'')}</p>
+              </div>
+            </div>`;
+          const featCard = (f) => `
+            <div class="er-modal__feat">
+              <span class="er-modal__feat-ic">${esc(f.ikon||'')}</span>
+              <div class="er-modal__feat-main">
+                <span class="er-modal__feat-title">${esc(f.baslik||'')}</span>
+                <p class="er-modal__feat-desc">${bold(f.text||'')}</p>
+              </div>
+            </div>`;
+          let out = '', i = 0;
+          while (i < arr.length) {
+            const b = arr[i] || {};
+            if (b.tip === 'team')      { let g=''; while (i<arr.length && arr[i].tip==='team') { g+=teamCard(arr[i]); i++; } out+=`<div class="er-modal__teams">${g}</div>`; }
+            else if (b.tip === 'feat') { let g=''; while (i<arr.length && arr[i].tip==='feat') { g+=featCard(arr[i]); i++; } out+=`<div class="er-modal__feats">${g}</div>`; }
+            else if (b.tip === 'intro') { out+=`<blockquote><p>${bold(b.text)}</p></blockquote>`; i++; }
+            else if (b.tip === 'h')     { out+=`<h3 class="er-modal__h">${bold(b.text)}</h3>`; i++; }
+            else if (b.tip === 'lead')  { out+=`<p class="er-modal__lead-line">${bold(b.text)}</p>`; i++; }
+            else { out+=`<p>${bold(b.text)}</p>`; i++; }
+          }
+          return out;
+        })() + (() => {
           const vids = p.videolar?.length ? p.videolar : (p.videoUrl ? [p.videoUrl] : []);
           if (!vids.length) return '';
           const poster0 = window.cldVideoPoster ? window.cldVideoPoster(vids[0]) : '';
@@ -2244,7 +2352,7 @@
             const { db, collection, getDocs } = window.FB;
             const snap = await getDocs(collection(db, 'erkek_projeler'));
             const items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-            renderProjeler(items.length ? items : FALLBACK_PROJELER);
+            renderProjeler(ensureUnite(items.length ? items : FALLBACK_PROJELER));
           } catch (err) {
             console.warn('Erkek projeler Firestore yüklenemedi, fallback:', err);
             renderProjeler(FALLBACK_PROJELER);

@@ -708,13 +708,15 @@ p:last-child {
   z-index: 2;
   width: 380px;
   height: auto;
+  /* SVG çizimi tuvalde hafif solda; daire merkezine oturması için küçük sağa kaydırma */
+  --logo-nudge: 14px;
   filter: drop-shadow(0 0 30px rgba(26,97,172,0.6)) drop-shadow(0 0 60px rgba(26,97,172,0.3));
   animation: logoBob 4s ease-in-out infinite;
 }
 
 @keyframes logoBob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { transform: translate(var(--logo-nudge, 0), 0); }
+  50% { transform: translate(var(--logo-nudge, 0), -10px); }
 }
 
 /* Hero Badge - Uçan Etiketler */
@@ -881,11 +883,13 @@ p:last-child {
   .hero-logo-frame {
     width: 300px;
     height: 300px;
-    margin: 0 auto;
+    /* altta istifli rozetler için yer bırak */
+    margin: 0 auto 196px;
   }
 
   .hero-logo-img {
     width: 180px;
+    --logo-nudge: 7px;
   }
 
   .frame-ring2 {
@@ -896,9 +900,23 @@ p:last-child {
     inset: 40px;
   }
 
+  /* Rozetler mobilde logonun altında ortalı dikey istif */
   .hero-badge {
-    display: none;
+    display: inline-flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: max-content;
+    max-width: 88%;
+    top: auto;
+    bottom: auto;
+    animation: none;
   }
+
+  .badge-a { top: 320px; }
+  .badge-b { top: 380px; }
+  .badge-c { top: 440px; }
 }
 
 /* Page Hero (smaller) */
@@ -1456,7 +1474,7 @@ p:last-child {
 }
 
 .split-pane--dalg {
-  background-image: url('assets/images/dalgiclik-coklu.jpg');
+  background-image: url('assets/images/dalgiclik-coklu.webp');
   background-position: 22% center;
   clip-path: polygon(0 0, calc(50% + 16px) 0, calc(50% - 16px) 100%, 0 100%);
   transform-origin: left center;

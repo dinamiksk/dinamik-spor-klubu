@@ -272,6 +272,8 @@ p:last-child {
   height: var(--header-height-scrolled);
 }
 
+.header.scrolled .logo img { height: 52px; }
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -292,7 +294,7 @@ p:last-child {
 
 .logo-text {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 400;
 }
 
@@ -1880,10 +1882,25 @@ body.loading .footer { display: none; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
   padding-top: var(--space-xl);
   border-top: 1px solid var(--border);
   font-size: 0.85rem;
   color: var(--text-muted);
+}
+
+.footer-admin {
+  color: inherit;
+  opacity: 0.4;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: opacity 0.25s;
+}
+.footer-admin:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
 
 /* ========================================

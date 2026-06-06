@@ -16,6 +16,8 @@
   <meta property="og:image" content="https://dinamiksk.com/assets/images/dalgiclik-takim.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dinamiksk.com/assets/images/dalgiclik-takim.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon-16.png">
   <link rel="icon" type="image/svg+xml" href="../../assets/images/dinamik-logo.svg?v=2026060604">
   <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -3127,7 +3129,8 @@
         setText('bg-hero-cta-primary', d.hero_cta_primary);
         setText('bg-hero-cta-ghost',   d.hero_cta_ghost);
         // — İstatistikler —
-        setText('bg-stat1-num', d.stat1_num); setText('bg-stat1-suffix', d.stat1_suffix); setText('bg-stat1-lbl', d.stat1_label);
+        // Yıl tecrübe: 2010 kuruluşundan otomatik hesaplanır (admin değerini yok say, her yıl artar)
+        setText('bg-stat1-num', new Date().getFullYear() - 2010); setText('bg-stat1-suffix', 'y'); setText('bg-stat1-lbl', d.stat1_label);
         setText('bg-stat2-num', d.stat2_num); setText('bg-stat2-suffix', d.stat2_suffix); setText('bg-stat2-lbl', d.stat2_label);
         setText('bg-stat3-num', d.stat3_num); setText('bg-stat3-suffix', d.stat3_suffix); setText('bg-stat3-lbl', d.stat3_label);
         setText('bg-stat4-num', d.stat4_num); setText('bg-stat4-suffix', d.stat4_suffix); setText('bg-stat4-lbl', d.stat4_label);
@@ -3179,5 +3182,14 @@
   </script>
 
   <script src="../../site-ayarlar.js?v=2" defer></script>
+  <script>
+    /* Yıl Tecrübe: 2010 kuruluşundan otomatik (Firestore yüklenmese bile doğru) */
+    (function () {
+      var n = document.getElementById('bg-stat1-num');
+      if (n) n.textContent = new Date().getFullYear() - 2010;
+      var s = document.getElementById('bg-stat1-suffix');
+      if (s) s.textContent = 'y';
+    })();
+  </script>
 </body>
 </html>

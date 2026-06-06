@@ -16,6 +16,8 @@
   <meta property="og:image" content="https://dinamiksk.com/assets/images/dalgiclik-takim.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://dinamiksk.com/assets/images/dalgiclik-takim.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
   <link rel="icon" type="image/svg+xml" href="assets/images/dinamik-logo.svg?v=2026060604">
   <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -290,6 +292,7 @@
     }
 
     .sp-hero__side {
+      flex: 1 1 0;
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.7rem;
       font-weight: 600;
@@ -1311,7 +1314,7 @@
                 <div class="sp-poster__meta-lbl">Sporcu</div>
               </div>
               <div class="sp-poster__meta-item">
-                <div class="sp-poster__meta-num">10<em>y</em></div>
+                <div class="sp-poster__meta-num"><span id="sp-bilek-yil">16</span><em>y</em></div>
                 <div class="sp-poster__meta-lbl">Deneyim</div>
               </div>
             </div>
@@ -1466,5 +1469,12 @@
     });
   </script>
   <script src="site-ayarlar.js?v=2" defer></script>
+  <script>
+    /* Bilek Güreşi deneyim yılı: 2010 kuruluşundan otomatik (her yıl artar) */
+    (function () {
+      var el = document.getElementById('sp-bilek-yil');
+      if (el) el.textContent = new Date().getFullYear() - 2010;
+    })();
+  </script>
 </body>
 </html>

@@ -9,6 +9,8 @@
   <meta property="og:description" content="Pusulamız vicdan, rehberimiz doğa. Akdeniz Dinamik Kız Bölümü'nde izini bırak.">
   <meta property="og:image" content="https://dinamiksk.com/assets/images/kiz-hero.jpg">
   <link rel="canonical" href="https://dinamiksk.com/dinamik-calismalar/kiz/">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon-16.png">
   <link rel="icon" type="image/svg+xml" href="../../assets/images/dinamik-logo.svg?v=2026060604">
   <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
 
@@ -1564,7 +1566,7 @@
               <span class="kz-pcard__no">${esc(p.no)}</span>
               <div class="kz-pcard__body">
                 <h4 class="kz-pcard__title">${esc(p.baslik)}</h4>
-                <p class="kz-pcard__teaser">${esc(p.teaser)}</p>
+                <p class="kz-pcard__teaser">${esc((p.teaser || '').replace(/\s*[—–]\s*/g, ' '))}</p>
                 <span class="kz-pcard__read">
                   Hikâyeyi Oku
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

@@ -149,6 +149,7 @@ const Toast = {
 // ========================================
 class Modal {
   constructor(modalEl) {
+    if (!modalEl) return;
     this.modal = modalEl;
     this.backdrop = modalEl.closest('.modal-backdrop');
     this.closeBtn = modalEl.querySelector('.modal-close');
@@ -516,7 +517,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize all modals
   document.querySelectorAll('.modal-backdrop').forEach(modalEl => {
-    new Modal(modalEl.querySelector('.modal'));
+    const m = modalEl.querySelector('.modal');
+    if (m) new Modal(m);
   });
 });
 

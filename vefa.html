@@ -2088,7 +2088,7 @@
           <div class="vb-photo-outer">
             <div class="vb-photo-box">
               ${mevcut.gorsel
-                ? `<img src="${escapeVefa(vfImg(mevcut.gorsel, 900))}" alt="${escapeVefa(mevcut.isim)}" class="vb-photo">`
+                ? `<img src="${escapeVefa(vfImg(mevcut.gorsel, 900))}" alt="${escapeVefa(mevcut.isim)}" class="vb-photo" style="object-position:${escapeVefa(mevcut.gorselFocus || '50% 50%')}">`
                 : `<div class="vb-initials">${initials(mevcut.isim)}</div>`}
             </div>
           </div>
@@ -2113,7 +2113,7 @@
           <article class="vboard-card vf-reveal" style="transition-delay:${((i%4)*0.08).toFixed(2)}s">
             <div class="vboard-card__photo">
               ${item.gorsel
-                ? `<img src="${escapeVefa(vfImg(item.gorsel, 600))}" alt="${escapeVefa(item.isim)}" loading="lazy">`
+                ? `<img src="${escapeVefa(vfImg(item.gorsel, 600))}" alt="${escapeVefa(item.isim)}" loading="lazy" style="object-position:${escapeVefa(item.gorselFocus || '50% 50%')}">`
                 : `<div class="vboard-card__initials">${initials(item.isim)}</div>`}
               <div class="vboard-card__overlay"></div>
             </div>
@@ -2191,7 +2191,7 @@
         <div class="vt-item vf-reveal" style="transition-delay:${(i*0.08).toFixed(2)}s">
           <div class="vt-photo-wrap">
             ${item.gorsel
-              ? `<img src="${escapeVefa(vfImg(item.gorsel, 600))}" alt="${escapeVefa(item.isim)}" class="vt-photo">`
+              ? `<img src="${escapeVefa(vfImg(item.gorsel, 600))}" alt="${escapeVefa(item.isim)}" class="vt-photo" style="object-position:${escapeVefa(item.gorselFocus || '50% 50%')}">`
               : `<div class="vt-photo-init">${initials(item.isim)}</div>`}
           </div>
           <div class="vt-info">

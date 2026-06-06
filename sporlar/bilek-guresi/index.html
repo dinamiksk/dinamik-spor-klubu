@@ -1043,6 +1043,7 @@
 
     .bg-hand--right::before {
       background-image: var(--hand-r-img, url('https://images.pexels.com/photos/7322494/pexels-photo-7322494.jpeg?auto=compress&cs=tinysrgb&w=1200'));
+      background-position: var(--hand-r-pos, center);
     }
 
     .bg-hand--left  {
@@ -1051,6 +1052,7 @@
 
     .bg-hand--left::before {
       background-image: var(--hand-l-img, url('https://images.pexels.com/photos/11030582/pexels-photo-11030582.jpeg?auto=compress&cs=tinysrgb&w=1200'));
+      background-position: var(--hand-l-pos, center);
     }
 
     /* Dev R / L harfi arkaplan */
@@ -3092,26 +3094,30 @@
         const el = document.getElementById(id);
         if (el) el.textContent = v;
       };
-      const setBg = (id, v) => {
+      const setBg = (id, v, focus) => {
         if (v === undefined || v === null) return;
         const el = document.getElementById(id);
-        if (el) el.style.backgroundImage = v ? `url('${v}')` : '';
+        if (el) {
+          el.style.backgroundImage = v ? `url('${v}')` : '';
+          if (focus) el.style.backgroundPosition = focus;
+        }
       };
-      const setHand = (id, prop, v) => {
+      const setHand = (id, prop, v, focus, posProp) => {
         if (v === undefined || v === null) return;
         const el = document.getElementById(id);
         if (!el) return;
         if (v) el.style.setProperty(prop, `url('${v}')`);
         else el.style.removeProperty(prop);
+        if (focus && posProp) el.style.setProperty(posProp, focus);
       };
 
       const applyBilekData = (d) => {
         if (!d) return;
         // — Görseller —
-        setBg('bg-hero-img',   d.hero_bg);
-        setBg('bg-cinema-img', d.cinema_img);
-        setHand('bg-hand-right', '--hand-r-img', d.hand_right);
-        setHand('bg-hand-left',  '--hand-l-img', d.hand_left);
+        setBg('bg-hero-img',   d.hero_bg,    d.hero_bg_focus);
+        setBg('bg-cinema-img', d.cinema_img, d.cinema_img_focus);
+        setHand('bg-hand-right', '--hand-r-img', d.hand_right, d.hand_right_focus, '--hand-r-pos');
+        setHand('bg-hand-left',  '--hand-l-img', d.hand_left,  d.hand_left_focus,  '--hand-l-pos');
         // — Hero metni —
         setText('bg-hero-label',       d.hero_label);
         setText('bg-hero-t1',          d.hero_title_1);

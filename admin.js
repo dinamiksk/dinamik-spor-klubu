@@ -883,9 +883,79 @@ const uwSetPreview = (key, url) => {
   if (BILEK_GORSEL_KEYS.has(key)) scheduleBilekSayfaPreviewUpdate();
 };
 
+// ───────── Odak noktası (focal point) seçici — yeniden kullanılabilir ─────────
+// Bu key'lerde görselin üstünde sürükle-bırak odak seçici aktif olur.
+// Tüm hero/görsel slotları + tekil görsel widget'ları (logo hariç değil — zararsız).
+const UW_FOCUS_KEYS = new Set([
+  'kiz-proje', 'erkek-proje', 'rota-hero', 'vefa',
+  ...KIZ_GORSEL_SLOTS.map(s => s.key),
+  ...ERKEK_GORSEL_SLOTS.map(s => s.key),
+  ...BILEK_GORSEL_SLOTS.map(s => s.key),
+  ...ROTA_GORSEL_SLOTS.map(s => s.key),
+]);
+// NOT: vefa/kapak/calisma/yonetim-grup tekil widget'ları sonraki fazda (kalıcılık + render ile) eklenecek.
+const uwFocusGet = (key) => (uwState[key] && uwState[key].focus) || '50% 50%';
+
+const uwSetFocus = (key, val) => {
+  if (!uwState[key]) return;
+  const v = (typeof val === 'string' && /%/.test(val)) ? val.trim() : '50% 50%';
+  uwState[key].focus = v;
+  const dot = document.querySelector(`#uw-${key} [data-uw-focus-dot]`);
+  if (dot) {
+    const [x, y] = v.split(/\s+/);
+    dot.style.left = x;
+    dot.style.top = y || '50%';
+  }
+};
+
+const uwTriggerPreview = (key) => {
+  if (key === 'kiz-proje')   schedulePreviewUpdate();
+  if (key === 'erkek-proje') scheduleErkekPreviewUpdate();
+};
+
+const uwInitFocus = (key) => {
+  const prev = uwEl(key, 'preview');
+  if (!prev || prev.querySelector('[data-uw-focus]')) return;
+  prev.insertAdjacentHTML('beforeend',
+    '<div class="uw-focus" data-uw-focus><span class="uw-focus__dot" data-uw-focus-dot></span></div>' +
+    '<div class="uw-focus__hint">Odak: görselin önemli kısmına tıkla / sürükle</div>');
+  const layer = prev.querySelector('[data-uw-focus]');
+  uwSetFocus(key, uwFocusGet(key));
+  let dragging = false;
+  const apply = (e) => {
+    const r = layer.getBoundingClientRect();
+    if (!r.width || !r.height) return;
+    const x = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+    const y = Math.min(1, Math.max(0, (e.clientY - r.top) / r.height));
+    uwSetFocus(key, `${Math.round(x * 100)}% ${Math.round(y * 100)}%`);
+    uwTriggerPreview(key);
+  };
+  layer.addEventListener('pointerdown', (e) => { dragging = true; try { layer.setPointerCapture(e.pointerId); } catch (_) {} apply(e); });
+  layer.addEventListener('pointermove', (e) => { if (dragging) apply(e); });
+  layer.addEventListener('pointerup',   () => { dragging = false; });
+  layer.addEventListener('pointercancel', () => { dragging = false; });
+};
+
+// Odak seçici stilleri (bir kez)
+(() => {
+  if (document.getElementById('uw-focus-style')) return;
+  const st = document.createElement('style');
+  st.id = 'uw-focus-style';
+  st.textContent =
+    '.uw-preview:has([data-uw-focus]){height:auto;aspect-ratio:auto;}' +
+    '.uw-preview:has([data-uw-focus]) [data-uw-img]{width:100%;height:auto;display:block;object-fit:fill;background:#0c0c0e;}' +
+    '.uw-focus{position:absolute;inset:0;cursor:crosshair;z-index:2;touch-action:none;}' +
+    '.uw-focus__dot{position:absolute;width:22px;height:22px;margin:-11px 0 0 -11px;border:2px solid #fff;border-radius:50%;box-shadow:0 0 0 2px rgba(0,0,0,.55),0 0 10px rgba(0,0,0,.6);background:rgba(255,255,255,.15);pointer-events:none;}' +
+    '.uw-focus__dot::after{content:"";position:absolute;inset:6px;border-radius:50%;background:#fff;}' +
+    '.uw-focus__hint{position:absolute;left:8px;right:8px;bottom:8px;z-index:3;font-size:11px;line-height:1.3;text-align:center;color:#fff;background:rgba(0,0,0,.6);padding:4px 8px;border-radius:6px;pointer-events:none;}' +
+    '.uw-preview:has([data-uw-focus]) [data-uw-replace],.uw-preview:has([data-uw-focus]) [data-uw-remove]{position:relative;z-index:4;}';
+  document.head.appendChild(st);
+})();
+
 const uwClear = (key) => {
   uwState[key].url = '';
   uwState[key].uploading = false;
+  uwSetFocus(key, '50% 50%');
   uwEl(key, 'empty').hidden = false;
   uwEl(key, 'preview').hidden = true;
   uwEl(key, 'progress').hidden = true;
@@ -955,6 +1025,7 @@ const uwHandleFile = async (key, file) => {
 
 const initSingleUpload = (key) => {
   if (!uwState[key]) uwState[key] = { url: '', uploading: false };
+  if (UW_FOCUS_KEYS.has(key)) uwInitFocus(key);
   const wrap = $(`#uw-${key}`);
   const input = $(`#uw-${key}-input`);
   const empty = uwEl(key, 'empty');
@@ -1476,6 +1547,7 @@ const openVefaEdit = (id) => {
 
   if (v.gorsel) uwSetPreview('vefa', v.gorsel);
   else uwClear('vefa');
+  uwSetFocus('vefa', v.gorselFocus || '50% 50%');
 
   vefaModal.open();
   initVefaPreview();
@@ -1712,6 +1784,7 @@ const collectVefaFormDraft = () => {
     donem:     (fd.get('donem') || '').trim(),
     biyografi: (fd.get('biyografi') || '').trim(),
     gorsel:    (fd.get('gorsel') || uwState.vefa?.url || '').trim(),
+    gorselFocus: uwState.vefa?.focus || '50% 50%',
     oncelik:   parseInt(fd.get('oncelik'), 10) || 10,
     yayinda:   getToggle('#t-vefa-yayin')
   };
@@ -3088,6 +3161,7 @@ const saveKizSayfaData = async (fields) => {
 const renderKizSayfa = () => {
   const data = state.kizSayfaData || {};
   KIZ_GORSEL_SLOTS.forEach(({ field, key }) => {
+    uwSetFocus(key, data[field + '_focus']);
     const url = data[field];
     if (url) {
       uwSetPreview(key, url);
@@ -3369,6 +3443,7 @@ const collectKizFormDraft = () => {
     baslik: (fd.get('baslik') || '').trim(),
     teaser: (fd.get('teaser') || '').trim(),
     gorsel: (fd.get('gorsel') || uwState['kiz-proje'].url || '').trim(),
+    gorselFocus: uwState['kiz-proje'].focus || '50% 50%',
     videolar: mvwGetUrls('kiz'),
     bolumler: state.kizBolumler.map(bolumToData),
     yayinda: getToggle('#t-kiz-yayin')
@@ -3426,6 +3501,7 @@ const openKizEdit = (id) => {
 
   if (p.gorsel) uwSetPreview('kiz-proje', p.gorsel);
   else uwClear('kiz-proje');
+  uwSetFocus('kiz-proje', p.gorselFocus || '50% 50%');
 
   renderKizBolumler();
   kizModal.open();
@@ -3456,6 +3532,7 @@ const submitKizForm = async (e) => {
     baslik: draft.baslik,
     teaser: draft.teaser,
     gorsel: draft.gorsel,
+    gorselFocus: draft.gorselFocus || '50% 50%',
     videolar: draft.videolar || [],
     bolumler: draft.bolumler,
     yayinda: draft.yayinda
@@ -3558,6 +3635,7 @@ const collectKizSayfaData = () => {
   KIZ_GORSEL_SLOTS.forEach(({ field, key }) => {
     // Boş slot da '' olarak gönderilir ki önizleme/kayıt görseli temizleyebilsin
     d[field] = uwState[key]?.url || ($(`#uw-${key}-url`)?.value?.trim() || '');
+    d[field + '_focus'] = uwState[key]?.focus || '50% 50%';
   });
   return d;
 };
@@ -3565,6 +3643,7 @@ const collectErkekSayfaData = () => {
   const d = {};
   ERKEK_GORSEL_SLOTS.forEach(({ field, key }) => {
     d[field] = uwState[key]?.url || ($(`#uw-${key}-url`)?.value?.trim() || '');
+    d[field + '_focus'] = uwState[key]?.focus || '50% 50%';
   });
   return d;
 };
@@ -3664,6 +3743,7 @@ const collectBilekSayfaData = () => {
   BILEK_GORSEL_SLOTS.forEach(({ field, key }) => {
     // Boş slot '' olarak gönderilir → eski görsel temizlenir
     d[field] = uwState[key]?.url || ($(`#uw-${key}-url`)?.value?.trim() || '');
+    d[field + '_focus'] = uwState[key]?.focus || '50% 50%';
   });
   $$('#section-bilek [data-bilek-field]').forEach(el => {
     d[el.dataset.bilekField] = el.value;
@@ -3676,6 +3756,7 @@ const renderBilekSayfa = () => {
   const data = state.bilekSayfaData || {};
   // Görseller
   BILEK_GORSEL_SLOTS.forEach(({ field, key }) => {
+    uwSetFocus(key, data[field + '_focus']);
     if (data[field]) uwSetPreview(key, data[field]);
     else uwClear(key);
   });
@@ -3888,6 +3969,7 @@ const saveErkekSayfaData = async (fields) => {
 const renderErkekSayfa = () => {
   const data = state.erkekSayfaData || {};
   ERKEK_GORSEL_SLOTS.forEach(({ field, key }) => {
+    uwSetFocus(key, data[field + '_focus']);
     const url = data[field];
     if (url) uwSetPreview(key, url);
     else uwClear(key);
@@ -4074,6 +4156,7 @@ const collectErkekFormDraft = () => {
     baslik: (fd.get('baslik') || '').trim(),
     teaser: (fd.get('teaser') || '').trim(),
     gorsel: (fd.get('gorsel') || uwState['erkek-proje']?.url || '').trim(),
+    gorselFocus: uwState['erkek-proje']?.focus || '50% 50%',
     videolar: mvwGetUrls('erkek'),
     bolumler: state.erkekBolumler.map(bolumToData),
     yayinda: getToggle('#t-erkek-yayin')
@@ -4130,6 +4213,7 @@ const openErkekEdit = (id) => {
 
   if (p.gorsel) uwSetPreview('erkek-proje', p.gorsel);
   else uwClear('erkek-proje');
+  uwSetFocus('erkek-proje', p.gorselFocus || '50% 50%');
 
   renderErkekBolumler();
   erkekModal.open();
@@ -4165,6 +4249,7 @@ const submitErkekForm = async (e) => {
     baslik: draft.baslik,
     teaser: draft.teaser,
     gorsel: draft.gorsel,
+    gorselFocus: draft.gorselFocus || '50% 50%',
     videolar: draft.videolar || [],
     bolumler: draft.bolumler,
     yayinda: draft.yayinda
@@ -4402,11 +4487,13 @@ const fetchRotaSayfa = async () => {
 const collectRotaSayfaData = () => {
   const d = {
     hero_bg: uwState['rota-hero']?.url || '',
+    hero_bg_focus: uwState['rota-hero']?.focus || '50% 50%',
     galeri: rotaGallery.getUrls(),
   };
   ROTA_GORSEL_SLOTS.forEach(({ field, key }) => {
     // Boş slot '' olarak gönderilir → sayfa gömülü görsele döner
     d[field] = uwState[key]?.url || ($(`#uw-${key}-url`)?.value?.trim() || '');
+    d[field + '_focus'] = uwState[key]?.focus || '50% 50%';
   });
   return d;
 };
@@ -4463,9 +4550,11 @@ const renderRota = async () => {
   rotaSayfaLoaded = true;
   try {
     const data = await fetchRotaSayfa();
+    uwSetFocus('rota-hero', data.hero_bg_focus);
     if (data.hero_bg) uwSetPreview('rota-hero', data.hero_bg);
     else uwClear('rota-hero');
     ROTA_GORSEL_SLOTS.forEach(({ field, key }) => {
+      uwSetFocus(key, data[field + '_focus']);
       if (data[field]) uwSetPreview(key, data[field]);
       else uwClear(key);
     });
@@ -4912,6 +5001,7 @@ const setupPanelListeners = () => {
         if (uwState[key]?.uploading) { anyUploading = true; return; }
         // Boş slot '' olarak kaydedilir → eski görsel temizlenir (silme bug fix)
         fields[field] = uwState[key]?.url || ($(`#uw-${key}-url`)?.value?.trim() || '');
+        fields[field + '_focus'] = uwState[key]?.focus || '50% 50%';
       });
 
       if (anyUploading) {
@@ -5033,6 +5123,7 @@ const setupPanelListeners = () => {
         if (uwState[key]?.uploading) { anyUploading = true; return; }
         // Boş slot '' olarak kaydedilir → eski görsel temizlenir (silme bug fix)
         fields[field] = uwState[key]?.url || ($(`#uw-${key}-url`)?.value?.trim() || '');
+        fields[field + '_focus'] = uwState[key]?.focus || '50% 50%';
       });
       if (anyUploading) { toast('Görsel yükleniyor, lütfen bekleyin…', 'info'); return; }
       if (statusEl) { statusEl.textContent = 'Kaydediliyor…'; statusEl.className = 'status-msg'; }

@@ -810,18 +810,18 @@
     });
 
     /* ══ Sayfa Görselleri (Firestore sayfalar/rota) + admin canlı önizleme ══ */
-    const setImg = (id, url) => { if (!url) return; const el = document.getElementById(id); if (el) el.src = cld(url, 'w_1200,q_auto,f_auto'); };
-    const setBg  = (id, url) => { if (!url) return; const el = document.getElementById(id); if (el) el.style.backgroundImage = `url('${cld(url, 'w_1600,q_auto,f_auto')}')`; };
+    const setImg = (id, url, focus) => { if (!url) return; const el = document.getElementById(id); if (el) { el.src = cld(url, 'w_1200,q_auto,f_auto'); if (focus) el.style.objectPosition = focus; } };
+    const setBg  = (id, url, focus) => { if (!url) return; const el = document.getElementById(id); if (el) { el.style.backgroundImage = `url('${cld(url, 'w_1600,q_auto,f_auto')}')`; if (focus) el.style.backgroundPosition = focus; } };
     const applyRotaSayfa = (g) => {
       if (!g) return;
-      if (g.hero_bg) { const el = document.getElementById('ro-hero-bg'); if (el) el.style.backgroundImage = `url('${g.hero_bg}')`; }
+      if (g.hero_bg) { const el = document.getElementById('ro-hero-bg'); if (el) { el.style.backgroundImage = `url('${g.hero_bg}')`; if (g.hero_bg_focus) el.style.backgroundPosition = g.hero_bg_focus; } }
       setImg('ro-img-logo',       g.logo);
-      setImg('ro-img-meclis',     g.img_meclis);
-      setBg ('ro-band-konusmaci', g.img_konusmaci);
-      setImg('ro-img-sohbet',     g.img_sohbet);
-      setImg('ro-img-iftar',      g.img_iftar);
-      setBg ('ro-band-gaye',      g.img_gaye);
-      setImg('ro-img-grup',       g.img_grup);
+      setImg('ro-img-meclis',     g.img_meclis,     g.img_meclis_focus);
+      setBg ('ro-band-konusmaci', g.img_konusmaci,  g.img_konusmaci_focus);
+      setImg('ro-img-sohbet',     g.img_sohbet,     g.img_sohbet_focus);
+      setImg('ro-img-iftar',      g.img_iftar,      g.img_iftar_focus);
+      setBg ('ro-band-gaye',      g.img_gaye,       g.img_gaye_focus);
+      setImg('ro-img-grup',       g.img_grup,       g.img_grup_focus);
       if (Array.isArray(g.galeri) && g.galeri.length) renderGallery(g.galeri);
     };
     const urlParams = new URLSearchParams(location.search);

@@ -1989,7 +1989,7 @@
       const cardHTML = (p) => {
         const rota = isRota(p);
         const hero = p.gorsel
-          ? `<img src="${esc(cld(p.gorsel, 'w_700,h_900,c_fill,q_auto,f_auto'))}" alt="${esc(p.baslik)} görseli" loading="lazy">`
+          ? `<img src="${esc(cld(p.gorsel, 'w_700,h_900,c_limit,q_auto,f_auto'))}" alt="${esc(p.baslik)} görseli" loading="lazy" style="object-position:${esc(p.gorselFocus || '50% 50%')}">`
           : `<div class="er-pcard__hero-empty"><span>${rota ? '✦' : esc(p.no)}</span></div>`;
         const inner = `
             <div class="er-pcard__hero">${hero}</div>
@@ -2304,16 +2304,16 @@
           if (!g) return;
           if ('hero_bg' in g) {
             const bgEl = document.getElementById('er-hero-bg');
-            if (bgEl) bgEl.style.backgroundImage = g.hero_bg ? `url('${g.hero_bg}')` : '';
+            if (bgEl) { bgEl.style.backgroundImage = g.hero_bg ? `url('${g.hero_bg}')` : ''; if (g.hero_bg_focus) bgEl.style.backgroundPosition = g.hero_bg_focus; }
           }
-          const si = (id, url) => { if (!url) return; const el = document.getElementById(id); if (el) el.src = url; };
-          si('er-biz1-img',          g.biz_kimiz_1);
-          si('er-biz2-img',          g.biz_kimiz_2);
-          si('er-fidanlar-img',      g.fidanlar_1);
-          si('er-yigitler1-img',     g.yigitler_1);
-          si('er-yigitler2-img',     g.yigitler_2);
-          si('er-neferler-main-img', g.neferler_main);
-          si('er-neferler-sub-img',  g.neferler_sub);
+          const si = (id, url, focus) => { if (!url) return; const el = document.getElementById(id); if (el) { el.src = url; if (focus) el.style.objectPosition = focus; } };
+          si('er-biz1-img',          g.biz_kimiz_1,   g.biz_kimiz_1_focus);
+          si('er-biz2-img',          g.biz_kimiz_2,   g.biz_kimiz_2_focus);
+          si('er-fidanlar-img',      g.fidanlar_1,    g.fidanlar_1_focus);
+          si('er-yigitler1-img',     g.yigitler_1,    g.yigitler_1_focus);
+          si('er-yigitler2-img',     g.yigitler_2,    g.yigitler_2_focus);
+          si('er-neferler-main-img', g.neferler_main, g.neferler_main_focus);
+          si('er-neferler-sub-img',  g.neferler_sub,  g.neferler_sub_focus);
         };
 
         let lastFocusedId = null;
@@ -2371,20 +2371,20 @@
         const g = snap.data();
         if (g.hero_bg) {
           const bgEl = document.getElementById('er-hero-bg');
-          if (bgEl) bgEl.style.backgroundImage = `url('${g.hero_bg}')`;
+          if (bgEl) { bgEl.style.backgroundImage = `url('${g.hero_bg}')`; if (g.hero_bg_focus) bgEl.style.backgroundPosition = g.hero_bg_focus; }
         }
-        const setImg = (id, url) => {
+        const setImg = (id, url, focus) => {
           if (!url) return;
           const el = document.getElementById(id);
-          if (el) el.src = url;
+          if (el) { el.src = url; if (focus) el.style.objectPosition = focus; }
         };
-        setImg('er-biz1-img',          g.biz_kimiz_1);
-        setImg('er-biz2-img',          g.biz_kimiz_2);
-        setImg('er-fidanlar-img',      g.fidanlar_1);
-        setImg('er-yigitler1-img',     g.yigitler_1);
-        setImg('er-yigitler2-img',     g.yigitler_2);
-        setImg('er-neferler-main-img', g.neferler_main);
-        setImg('er-neferler-sub-img',  g.neferler_sub);
+        setImg('er-biz1-img',          g.biz_kimiz_1,   g.biz_kimiz_1_focus);
+        setImg('er-biz2-img',          g.biz_kimiz_2,   g.biz_kimiz_2_focus);
+        setImg('er-fidanlar-img',      g.fidanlar_1,    g.fidanlar_1_focus);
+        setImg('er-yigitler1-img',     g.yigitler_1,    g.yigitler_1_focus);
+        setImg('er-yigitler2-img',     g.yigitler_2,    g.yigitler_2_focus);
+        setImg('er-neferler-main-img', g.neferler_main, g.neferler_main_focus);
+        setImg('er-neferler-sub-img',  g.neferler_sub,  g.neferler_sub_focus);
       } catch (err) {
         console.warn('Erkek sayfa görselleri yüklenemedi:', err);
       }

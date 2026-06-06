@@ -1555,7 +1555,7 @@
 
         const cardHTML = (p) => {
           const hero = p.gorsel
-            ? `<img src="${esc(cld(p.gorsel, 'w_700,h_900,c_fill,q_auto,f_auto'))}" alt="${esc(p.baslik)} görseli" loading="lazy">`
+            ? `<img src="${esc(cld(p.gorsel, 'w_700,h_900,c_limit,q_auto,f_auto'))}" alt="${esc(p.baslik)} görseli" loading="lazy" style="object-position:${esc(p.gorselFocus || '50% 50%')}">`
             : `<div class="kz-pcard__hero-empty"><span>${esc(p.no)}</span></div>`;
           return `
             <button class="kz-pcard" type="button" data-proje-id="${esc(p.id)}" aria-label="${esc(p.baslik)} projesini aç">
@@ -1722,16 +1722,16 @@
             if (!g) return;
             if ('hero_bg' in g) {
               const bgEl = document.getElementById('kz-hero-bg');
-              if (bgEl) bgEl.style.backgroundImage = g.hero_bg ? `url('${g.hero_bg}')` : '';
+              if (bgEl) { bgEl.style.backgroundImage = g.hero_bg ? `url('${g.hero_bg}')` : ''; if (g.hero_bg_focus) bgEl.style.backgroundPosition = g.hero_bg_focus; }
             }
-            const si = (id, url) => { if (!url) return; const el = document.getElementById(id); if (el) el.src = url; };
-            si('kiz-biz1-img',       g.biz_kimiz_1);
-            si('kiz-biz2-img',       g.biz_kimiz_2);
-            si('kiz-kasifler-img',   g.kasifler_1);
-            si('kiz-arstr1-img',     g.arastirmacilar_1);
-            si('kiz-arstr2-img',     g.arastirmacilar_2);
-            si('kiz-macer-main-img', g.maceracilar_main);
-            si('kiz-macer-sub-img',  g.maceracilar_sub);
+            const si = (id, url, focus) => { if (!url) return; const el = document.getElementById(id); if (el) { el.src = url; if (focus) el.style.objectPosition = focus; } };
+            si('kiz-biz1-img',       g.biz_kimiz_1,      g.biz_kimiz_1_focus);
+            si('kiz-biz2-img',       g.biz_kimiz_2,      g.biz_kimiz_2_focus);
+            si('kiz-kasifler-img',   g.kasifler_1,       g.kasifler_1_focus);
+            si('kiz-arstr1-img',     g.arastirmacilar_1, g.arastirmacilar_1_focus);
+            si('kiz-arstr2-img',     g.arastirmacilar_2, g.arastirmacilar_2_focus);
+            si('kiz-macer-main-img', g.maceracilar_main, g.maceracilar_main_focus);
+            si('kiz-macer-sub-img',  g.maceracilar_sub,  g.maceracilar_sub_focus);
           };
 
           let lastFocusedId = null;
@@ -1792,20 +1792,20 @@
           const g = snap.data();
           if (g.hero_bg) {
             const bgEl = document.getElementById('kz-hero-bg');
-            if (bgEl) bgEl.style.backgroundImage = `url('${g.hero_bg}')`;
+            if (bgEl) { bgEl.style.backgroundImage = `url('${g.hero_bg}')`; if (g.hero_bg_focus) bgEl.style.backgroundPosition = g.hero_bg_focus; }
           }
-          const setImg = (id, url) => {
+          const setImg = (id, url, focus) => {
             if (!url) return;
             const el = document.getElementById(id);
-            if (el) el.src = url;
+            if (el) { el.src = url; if (focus) el.style.objectPosition = focus; }
           };
-          setImg('kiz-biz1-img',       g.biz_kimiz_1);
-          setImg('kiz-biz2-img',       g.biz_kimiz_2);
-          setImg('kiz-kasifler-img',   g.kasifler_1);
-          setImg('kiz-arstr1-img',     g.arastirmacilar_1);
-          setImg('kiz-arstr2-img',     g.arastirmacilar_2);
-          setImg('kiz-macer-main-img', g.maceracilar_main);
-          setImg('kiz-macer-sub-img',  g.maceracilar_sub);
+          setImg('kiz-biz1-img',       g.biz_kimiz_1,      g.biz_kimiz_1_focus);
+          setImg('kiz-biz2-img',       g.biz_kimiz_2,      g.biz_kimiz_2_focus);
+          setImg('kiz-kasifler-img',   g.kasifler_1,       g.kasifler_1_focus);
+          setImg('kiz-arstr1-img',     g.arastirmacilar_1, g.arastirmacilar_1_focus);
+          setImg('kiz-arstr2-img',     g.arastirmacilar_2, g.arastirmacilar_2_focus);
+          setImg('kiz-macer-main-img', g.maceracilar_main, g.maceracilar_main_focus);
+          setImg('kiz-macer-sub-img',  g.maceracilar_sub,  g.maceracilar_sub_focus);
         } catch (err) {
           console.warn('Sayfa görselleri yüklenemedi:', err);
         }

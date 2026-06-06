@@ -4,4 +4,4 @@ Allow: /
 # Yönetim paneli dizine eklenmesin
 Disallow: /admin.html
 
-Sitemap: https://dinamikspor.com/sitemap.xml
+Sitemap: https://dinamiksk.com/sitemap.xml

@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dinamikspor.com/</loc>
+    <loc>https://dinamiksk.com/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dinamikspor.com/dinamik-calismalar.html</loc>
+    <loc>https://dinamiksk.com/dinamik-calismalar.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://dinamikspor.com/dinamik-calismalar/erkek/</loc>
+    <loc>https://dinamiksk.com/dinamik-calismalar/erkek/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://dinamikspor.com/dinamik-calismalar/kiz/</loc>
+    <loc>https://dinamiksk.com/dinamik-calismalar/kiz/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://dinamikspor.com/sporlar.html</loc>
+    <loc>https://dinamiksk.com/sporlar.html</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://dinamikspor.com/sporlar/bilek-guresi/</loc>
+    <loc>https://dinamiksk.com/sporlar/bilek-guresi/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://dinamikspor.com/sporlar/dalgiclik/</loc>
+    <loc>https://dinamiksk.com/sporlar/dalgiclik/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://dinamikspor.com/vefa.html</loc>
+    <loc>https://dinamiksk.com/vefa.html</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://dinamikspor.com/orman.html</loc>
+    <loc>https://dinamiksk.com/orman.html</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://dinamikspor.com/duyurular.html</loc>
+    <loc>https://dinamiksk.com/duyurular.html</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://dinamikspor.com/arsiv.html</loc>
+    <loc>https://dinamiksk.com/arsiv.html</loc>
     <priority>0.4</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://dinamikspor.com/iletisim.html</loc>
+    <loc>https://dinamiksk.com/iletisim.html</loc>
     <priority>0.7</priority>
     <changefreq>yearly</changefreq>
   </url>

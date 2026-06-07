@@ -1794,7 +1794,16 @@
 
       .vf-hero {
         min-height: 85vh;
-        padding: 120px 20px 100px;
+        padding: 120px 20px 64px;
+      }
+
+      /* Mühür mobilde mutlak konumdan çıkar, epigrafın altına akar (iç içe binmesin) */
+      .vf-hero__seal {
+        position: static;
+        transform: none;
+        bottom: auto;
+        left: auto;
+        margin: 40px auto 0;
       }
 
       .vb-initials { font-size: 5.5rem; }
@@ -1866,7 +1875,7 @@
   <header class="header">
     <div class="container header-inner">
       <a href="index.html" class="logo">
-        <img src="assets/images/dinamik-logo.svg?v=2026060604" alt="Dinamik Spor Kulübü Logo">
+        <img src="assets/images/dinamik-logo.webp?v=2026060604" alt="Dinamik Spor Kulübü Logo">
         <span class="logo-text">Dinamik <span>SK</span></span>
       </a>
       <nav class="nav">
@@ -1992,7 +2001,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            <img src="assets/images/dinamik-logo.svg?v=2026060604" alt="Dinamik SK" style="height:40px;">
+            <img src="assets/images/dinamik-logo.webp?v=2026060604" alt="Dinamik SK" style="height:40px;">
             <span class="logo-text">Dinamik <span>SK</span></span>
           </a>
           <p style="margin-top:16px;font-size:.9rem;line-height:1.6;color:var(--vf-muted);">

@@ -220,10 +220,8 @@
     }
 
     .vf-hero__seal {
-      position: absolute;
-      bottom: 36px;
-      left: 50%;
-      transform: translateX(-50%);
+      /* Akışta, epigrafın altında ortalı — her cihazda binmeden durur */
+      margin: 52px auto 0;
       z-index: 3;
       display: flex;
       flex-direction: column;
@@ -1794,16 +1792,7 @@
 
       .vf-hero {
         min-height: 85vh;
-        padding: 120px 20px 64px;
-      }
-
-      /* Mühür mobilde mutlak konumdan çıkar, epigrafın altına akar (iç içe binmesin) */
-      .vf-hero__seal {
-        position: static;
-        transform: none;
-        bottom: auto;
-        left: auto;
-        margin: 40px auto 0;
+        padding: 120px 20px 90px;
       }
 
       .vb-initials { font-size: 5.5rem; }
@@ -1917,10 +1906,10 @@
       <p class="vf-hero__epigraph">
         Emek veren unutulmaz. Bu köşe; kulübümüze kalbini koyanların, adımlarını bugünlere taşıyanların, iz bırakan her elin minnetle anılması içindir.
       </p>
-    </div>
-    <div class="vf-hero__seal">
-      <div class="vf-hero__seal-ring">MMX</div>
-      Kurulduğumuz Günden Beri
+      <div class="vf-hero__seal">
+        <div class="vf-hero__seal-ring">MMX</div>
+        Kurulduğumuz Günden Beri
+      </div>
     </div>
   </section>
 

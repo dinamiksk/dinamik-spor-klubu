@@ -846,6 +846,10 @@ p:last-child {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 3rem;
+    /* Dar ekranlarda (ör. Samsung S23 360px) 3rem yan boşluk + sabit
+       amblem taşmaya yol açıyordu; küçültüldü ki içerik ortada kalsın. */
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .hero-content {
@@ -853,8 +857,20 @@ p:last-child {
     padding-top: 120px;
   }
 
+  /* Overline: blok + ortalı; uzun metin doğal olarak 2 satıra sarar,
+     nokta metnin başında satır-içi durur (ortalamayı bozmaz) */
   .hero-overline {
-    justify-content: center;
+    display: block;
+  }
+
+  .overline-dot {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  .overline-text {
+    white-space: normal;
   }
 
   .hero-desc {
@@ -879,46 +895,63 @@ p:last-child {
   }
 
   .hero-h1 {
-    font-size: clamp(3rem, 12vw, 5rem);
+    /* min 3rem (48px) çok dar ekranda "KAZANIRSIN..!" taşırıyordu;
+       alt sınır düşürüldü, normal telefonlarda boyut korunur */
+    font-size: clamp(2.4rem, 12vw, 5rem);
   }
 
+  /* Amblem + rozetler tek sütun, ortalı dikey istif */
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Amblem dairesi akışkan: ekran ne kadar darsa o kadar küçülür,
+     asla viewport'u taşmaz → her şey ortada kalır. */
   .hero-logo-frame {
-    width: 300px;
-    height: 300px;
-    /* altta istifli rozetler için yer bırak */
-    margin: 0 auto 196px;
+    width: min(300px, 76vw);
+    height: min(300px, 76vw);
+    margin: 0 auto;
   }
 
   .hero-logo-img {
-    width: 112px;
+    width: min(112px, 28vw);
     --logo-nudge: 0px;
   }
 
-  .frame-ring2 {
-    inset: 20px;
+  .frame-ring1 { inset: -16px; }
+  .frame-ring2 { inset: 16px; }
+  .frame-ring3 { inset: 34px; }
+
+  /* Rozetler: amblemin altında doğal akışlı, ortalı, eşit aralıklı
+     dikey istif. Sabit-piksel absolute kaldırıldı → üst üste binmez. */
+  .hero-badges {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 32px;
   }
 
-  .frame-ring3 {
-    inset: 40px;
-  }
-
-  /* Rozetler mobilde logonun altında ortalı dikey istif */
   .hero-badge {
+    position: static;
     display: inline-flex;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
     width: max-content;
-    max-width: 88%;
-    top: auto;
-    bottom: auto;
+    max-width: 92%;
+    white-space: normal;
     animation: none;
   }
 
-  .badge-a { top: 320px; }
-  .badge-b { top: 380px; }
-  .badge-c { top: 440px; }
+  .badge-a,
+  .badge-b,
+  .badge-c {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
 }
 
 /* Page Hero (smaller) */
